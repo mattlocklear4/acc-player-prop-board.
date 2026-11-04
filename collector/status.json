@@ -1,8 +1,8 @@
 {
-  "status": "not_run",
+  "checked_at": "2026-11-04T02:55:59Z",
   "season": 2027,
   "source": "toRvik",
-  "checked_at": null,
+  "status": "unavailable",
   "teams": [],
-  "note": "The collector has not run. Trigger ACC advanced stats source test in GitHub Actions."
+  "note": "toRvik package not installed"
 }
