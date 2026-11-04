@@ -21,15 +21,10 @@ jobs:
           Rscript -e 'install.packages(c("curl", "httr", "httr2", "rvest", "hoopR", "jsonlite"), repos="https://packagemanager.posit.co/cran/__linux__/noble/latest")'
           Rscript -e 'stopifnot(requireNamespace("hoopR", quietly=TRUE))'
       - name: Collect and test 2027 game data
-        run:  
+        shell: bash
+        run: |
           mkdir -p collector/output
-          Rscript -e '
-            players <- hoopR::torvik_player_stats(year = 2027)
-            cat("Player records:", nrow(players), "\n")
-            if (nrow(players) == 0) stop("No player data returned")
-            print(head(players[, intersect(c("player_name", "team", "conf", "games", "usage", "o_rtg"), names(players))], 10))
-            write.csv(players, "collector/output/torvik_players_2027.csv", row.names = FALSE)
-          '
+          Rscript -e 'players <- hoopR::torvik_player_stats(year = 2027); cat("Player records:", nrow(players), "\n"); if (nrow(players) == 0) stop("No player data returned"); print(head(players, 5)); write.csv(players, "collector/output/torvik_players_2027.csv", row.names = FALSE)'
       - name: Archive diagnostic output
         if: always()
         uses: actions/upload-artifact@v4
