@@ -16,9 +16,18 @@ jobs:
           use-public-rspm: true
       - name: Install collector packages
         run: |
-          Rscript -e 'install.packages(c("jsonlite", "remotes"), repos="https://cloud.r-project.org"); remotes::install_github("andreweatherman/toRvik", dependencies=TRUE, upgrade="never"); stopifnot(requireNamespace("toRvik", quietly=TRUE))'
+          Rscript -e 'install.packages(c("hoopR", "jsonlite"), repos="https://cloud.r-project.org")'
+          Rscript -e 'stopifnot(requireNamespace("hoopR", quietly=TRUE))'
       - name: Collect and test 2027 game data
-        run: Rscript collect.R
+        run:  
+          mkdir -p collector/output
+          Rscript -e '
+            players <- hoopR::torvik_player_stats(year = 2027)
+            cat("Player records:", nrow(players), "\n")
+            if (nrow(players) == 0) stop("No player data returned")
+            print(head(players[, intersect(c("player_name", "team", "conf", "games", "usage", "o_rtg"), names(players))], 10))
+            write.csv(players, "collector/output/torvik_players_2027.csv", row.names = FALSE)
+          '
       - name: Archive diagnostic output
         if: always()
         uses: actions/upload-artifact@v4
