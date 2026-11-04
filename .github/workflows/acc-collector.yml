@@ -16,7 +16,9 @@ jobs:
           use-public-rspm: true
       - name: Install collector packages
         run: |
-          Rscript -e 'install.packages(c("hoopR", "jsonlite"), repos="https://cloud.r-project.org")'
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+          Rscript -e 'install.packages(c("curl", "httr", "httr2", "rvest", "hoopR", "jsonlite"), repos="https://packagemanager.posit.co/cran/__linux__/noble/latest")'
           Rscript -e 'stopifnot(requireNamespace("hoopR", quietly=TRUE))'
       - name: Collect and test 2027 game data
         run:  
