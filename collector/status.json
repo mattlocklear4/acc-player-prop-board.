@@ -1,0 +1,8 @@
+{
+  "status": "not_run",
+  "season": 2027,
+  "source": "toRvik",
+  "checked_at": null,
+  "teams": [],
+  "note": "The collector has not run. Trigger ACC advanced stats source test in GitHub Actions."
+}

@@ -33,3 +33,12 @@ A responsive, static GitHub Pages website for ACC men's basketball game logs, ad
 2. Add a scheduled GitHub Actions ingestion workflow only after successful validation.
 3. Import preseason and exhibition data; implement minutes and opportunity modeling.
 4. Add calibrated distributions and backtesting, then secure cross-device syncing if desired.
+
+
+## v1.1 — automated source diagnostic
+
+This release adds a GitHub Actions workflow (`.github/workflows/acc-collector.yml`) that runs once daily and on demand. It tests `toRvik::bart_player_game(year=2027, stat='advanced'/'box', team=...)` for Duke, NC State and Miami. The collector writes a status report to `collector/status.json` and, if successful, raw CSVs to `collector/output/`. The website displays status in **Imports & Export**.
+
+**Run it:** Repository → Actions → ACC advanced stats source test → Run workflow. Then review the action log, `acc-source-test` artifact and the website status. GitHub Actions may ask you to enable workflows first. The workflow needs `Read and write permissions` for `GITHUB_TOKEN` under Settings → Actions → General to publish status. The test runs independently of the website's existing manually verified data; no player stats or projections are replaced.
+
+**Limitations:** The external source may block access or lag the current season. Successful downloads are *not* automatically accepted as verified; compare Duke–Army, NC State–Campbell and Miami–Florida against the screenshot-based baseline before wiring a full ACC ingestion pipeline. Data is published to a **public** repository; never put credentials or private betting records in the collector. GitHub Actions schedules can be delayed or skipped.
