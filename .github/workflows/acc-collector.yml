@@ -16,7 +16,7 @@ jobs:
           use-public-rspm: true
       - name: Install collector packages
         run: |
-          Rscript -e 'install.packages(c("jsonlite", "toRvik"), repos="https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("jsonlite", "remotes"), repos="https://cloud.r-project.org"); remotes::install_github("andreweatherman/toRvik", dependencies=TRUE, upgrade="never"); stopifnot(requireNamespace("toRvik", quietly=TRUE))'
       - name: Collect and test 2027 game data
         run: Rscript collect.R
       - name: Archive diagnostic output
