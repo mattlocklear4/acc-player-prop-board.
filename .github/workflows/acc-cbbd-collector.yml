@@ -36,10 +36,7 @@ jobs:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
           SEASON_INPUT: ${{ inputs.season }}
         run: |
-          python collector/collect_cbbd.py --season "${SEASON_INPUT:-2027}"
-      - name: Commit updated statistics
-        run: |
-          
+          python collector/collect_cbbd.py --season "${SEASON_INPUT:-2027}"  
       - name: Commit updated statistics
         run: |
           git config user.name 'github-actions[bot]'
@@ -51,8 +48,6 @@ jobs:
             git commit -m 'Update ACC CBBD player game statistics'
             git pull --rebase origin main
             git push origin HEAD:main
-          fi
-
           fi
       - name: Upload CSV backup
         if: always()
