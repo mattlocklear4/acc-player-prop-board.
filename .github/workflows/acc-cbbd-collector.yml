@@ -39,6 +39,9 @@ jobs:
           python collector/collect_cbbd.py --season "${SEASON_INPUT:-2027}"
       - name: Commit updated statistics
         run: |
+          
+      - name: Commit updated statistics
+        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/cbbd/
@@ -46,7 +49,10 @@ jobs:
             echo 'No changes to commit'
           else
             git commit -m 'Update ACC CBBD player game statistics'
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
           fi
       - name: Upload CSV backup
         if: always()
