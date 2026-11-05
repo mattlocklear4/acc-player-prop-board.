@@ -1,0 +1,57 @@
+name: ACC CBBD nightly collector
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'Basketball season ending year (2027 = 2026-27)'
+        required: true
+        default: '2027'
+        type: string
+  schedule:
+    - cron: '20 11 * * *' # 11:20 UTC each day; after overnight games
+
+permissions:
+  contents: write
+
+concurrency:
+  group: acc-cbbd-collector
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect ACC player game logs
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+          SEASON_INPUT: ${{ inputs.season }}
+        run: |
+          python collector/collect_cbbd.py --season "${SEASON_INPUT:-2027}"
+      - name: Commit updated statistics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/cbbd/
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'Update ACC CBBD player game statistics'
+            git push
+          fi
+      - name: Upload CSV backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acc-cbbd-data
+          path: data/cbbd/
+          if-no-files-found: warn
