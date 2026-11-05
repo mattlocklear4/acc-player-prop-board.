@@ -1,0 +1,81 @@
+{
+  "season": 2025,
+  "last_successful_run_utc": "2026-11-05T04:53:37.598479+00:00",
+  "api_requests": 18,
+  "team_counts": {
+    "Boston College": {
+      "games": 31,
+      "players": 308
+    },
+    "California": {
+      "games": 33,
+      "players": 322
+    },
+    "Clemson": {
+      "games": 34,
+      "players": 356
+    },
+    "Duke": {
+      "games": 39,
+      "players": 419
+    },
+    "Florida State": {
+      "games": 32,
+      "players": 366
+    },
+    "Georgia Tech": {
+      "games": 34,
+      "players": 279
+    },
+    "Louisville": {
+      "games": 35,
+      "players": 331
+    },
+    "Miami": {
+      "games": 31,
+      "players": 293
+    },
+    "NC State": {
+      "games": 31,
+      "players": 338
+    },
+    "North Carolina": {
+      "games": 37,
+      "players": 385
+    },
+    "Notre Dame": {
+      "games": 33,
+      "players": 344
+    },
+    "Pittsburgh": {
+      "games": 32,
+      "players": 294
+    },
+    "SMU": {
+      "games": 35,
+      "players": 363
+    },
+    "Stanford": {
+      "games": 35,
+      "players": 351
+    },
+    "Syracuse": {
+      "games": 33,
+      "players": 321
+    },
+    "Virginia": {
+      "games": 32,
+      "players": 310
+    },
+    "Virginia Tech": {
+      "games": 32,
+      "players": 326
+    },
+    "Wake Forest": {
+      "games": 32,
+      "players": 268
+    }
+  },
+  "total_player_games": 5974,
+  "csv_file": "data/cbbd/acc_player_games_2025.csv"
+}
