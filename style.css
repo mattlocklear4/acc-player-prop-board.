@@ -2,3 +2,14 @@
 
 /* v1.3 player drilldowns */
 .click-player{cursor:pointer}.click-player:hover td,.click-player:focus td{background:#244569;outline:none}.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin:12px 0 20px}.metric{background:#0e1a2e;border:1px solid #2d4767;padding:12px;border-radius:10px}.metric small{display:block}.metric strong{display:block;font-size:22px;margin-top:7px}#playerDetail{scroll-margin-top:20px}#statsStatus{margin:0 0 12px}#statsWindow,#statsSeason{max-width:220px}@media(max-width:800px){#playerTable table th:nth-child(2),#playerTable table td:nth-child(2){position:sticky;left:0;z-index:2;background:#182b44;box-shadow:2px 0 3px #0b1426}#playerTable table th:first-child,#playerTable table td:first-child{display:none}#playerTable table th:nth-child(2){z-index:3}}
+
+/* v1.3.1 player detail dialog: always visible on mobile when a player is tapped */
+[hidden]{display:none!important}
+.player-link{color:#88baff;text-decoration:underline;text-underline-offset:3px;font-weight:700;cursor:pointer}
+.click-player{cursor:pointer}
+.click-player:focus-visible{outline:2px solid #7cb7ff;outline-offset:-2px}
+.player-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(0,5,18,.78)}
+.player-modal{position:fixed;z-index:1001;inset:4vh max(12px,calc((100vw - 1050px)/2));max-height:92vh;overflow:auto;overscroll-behavior:contain;box-shadow:0 24px 90px #000a;border:1px solid #5278a5}
+.player-modal .toolbar{position:sticky;top:-17px;z-index:2;background:#132239;padding:10px 0;border-bottom:1px solid #304967}
+.player-dialog-open{overflow:hidden}
+@media(max-width:800px){.player-modal{inset:2vh 8px;max-height:96vh;padding:12px}.player-modal .toolbar{top:-12px}.player-modal .toolbar h3{font-size:15px}}
