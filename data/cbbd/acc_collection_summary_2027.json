@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-05T02:47:29.155260+00:00",
+  "last_successful_run_utc": "2026-11-05T12:11:47.017464+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -8,8 +8,8 @@
       "players": 9
     },
     "California": {
-      "games": 1,
-      "players": 14
+      "games": 2,
+      "players": 23
     },
     "Clemson": {
       "games": 1,
@@ -76,6 +76,6 @@
       "players": 12
     }
   },
-  "total_player_games": 204,
+  "total_player_games": 213,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
