@@ -1,0 +1,100 @@
+name: ACC CBBD historical backfill
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'Choose 2026 (2025-26), 2025 (2024-25), or both'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - '2026'
+          - '2025'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: acc-cbbd-collector
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect historical ACC player games
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+          SEASON_INPUT: ${{ inputs.season }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$SEASON_INPUT" == "both" ]]; then
+            seasons=(2026 2025)
+          else
+            seasons=("$SEASON_INPUT")
+          fi
+          for season in "${seasons[@]}"; do
+            echo "::group::CBBD season $season"
+            python collector/collect_cbbd.py --season "$season"
+            echo "::endgroup::"
+          done
+      - name: Validate backfill CSVs
+        env:
+          SEASON_INPUT: ${{ inputs.season }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, os, pathlib
+          seasons = ['2026', '2025'] if os.environ['SEASON_INPUT'] == 'both' else [os.environ['SEASON_INPUT']]
+          for season in seasons:
+              path = pathlib.Path(f'data/cbbd/acc_player_games_{season}.csv')
+              if not path.exists():
+                  raise SystemExit(f'Missing expected output: {path}')
+              with path.open(encoding='utf-8', newline='') as f:
+                  rows = list(csv.DictReader(f))
+              if not rows:
+                  raise SystemExit(f'Empty data: {path}')
+              keys = [(r['game_id'], r['team_id'] or r['team'], r['athlete_id'] or r['player']) for r in rows]
+              if len(keys) != len(set(keys)):
+                  raise SystemExit(f'Duplicate player-game identifiers: {path}')
+              teams = {r['team'] for r in rows}
+              print(f'{season}: {len(rows)} player-game rows, {len(teams)} teams; no duplicate keys')
+          PY
+      - name: Commit historical data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/cbbd/
+          if git diff --cached --quiet; then
+            echo 'No historical data changes to commit'
+          else
+            git commit -m 'Backfill historical ACC CBBD player game statistics'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Upload historical data backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acc-cbbd-history-${{ inputs.season }}
+          path: |
+            data/cbbd/acc_player_games_2025.csv
+            data/cbbd/acc_player_games_2026.csv
+            data/cbbd/acc_collection_summary_2025.json
+            data/cbbd/acc_collection_summary_2026.json
+          if-no-files-found: warn
+          
