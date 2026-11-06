@@ -1,0 +1,26 @@
+name: ACC CBBD team statistics test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test team season statistics
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+        run: python collector/collect_team_stats_test.py
+      - name: Upload team statistics diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acc-team-stats-test
+          path: data/cbbd/team_test/
+          if-no-files-found: warn
