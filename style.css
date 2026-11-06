@@ -16,3 +16,8 @@
 
 /* v1.4 projection engine */
 .projection-input{width:76px;max-width:76px}.projection-input.overridden{border-color:#e3a854;background:#30291f}#projectionTable th{cursor:default}#projectionTable td:nth-child(1){position:sticky;left:0;background:#132239;z-index:1}#projectionTable th:nth-child(1){left:0;z-index:2}
+
+/* v1.5 projection overrides */
+.projection-input.overridden{border-color:#e9ad58;background:#302717}
+.projection-input.minutes-scaled{border-color:#4a94c9;background:#102a40}
+#resetMinutes{white-space:nowrap}
