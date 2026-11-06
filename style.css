@@ -13,3 +13,6 @@
 .player-modal .toolbar{position:sticky;top:-17px;z-index:2;background:#132239;padding:10px 0;border-bottom:1px solid #304967}
 .player-dialog-open{overflow:hidden}
 @media(max-width:800px){.player-modal{inset:2vh 8px;max-height:96vh;padding:12px}.player-modal .toolbar{top:-12px}.player-modal .toolbar h3{font-size:15px}}
+
+/* v1.4 projection engine */
+.projection-input{width:76px;max-width:76px}.projection-input.overridden{border-color:#e3a854;background:#30291f}#projectionTable th{cursor:default}#projectionTable td:nth-child(1){position:sticky;left:0;background:#132239;z-index:1}#projectionTable th:nth-child(1){left:0;z-index:2}
