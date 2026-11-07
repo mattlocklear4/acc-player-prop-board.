@@ -1,0 +1,29 @@
+{
+  "season": 2027,
+  "last_successful_run_utc": "2026-11-07T02:04:07.418212+00:00",
+  "api_requests": 1,
+  "team_count": 18,
+  "teams": [
+    "Boston College",
+    "California",
+    "Clemson",
+    "Duke",
+    "Florida State",
+    "Georgia Tech",
+    "Louisville",
+    "Miami",
+    "NC State",
+    "North Carolina",
+    "Notre Dame",
+    "Pittsburgh",
+    "SMU",
+    "Stanford",
+    "Syracuse",
+    "Virginia",
+    "Virginia Tech",
+    "Wake Forest"
+  ],
+  "csv_file": "data/cbbd/acc_team_stats_2027.csv",
+  "json_file": "data/cbbd/acc_team_stats_2027.json",
+  "notes": "Season-to-date raw team and opponent ratings; not opponent-adjusted."
+}\n
