@@ -1,0 +1,24 @@
+name: ACC Torvik historical archive test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test historical archive and pregame matching
+        run: python collector/test_torvik_archive.py
+      - name: Upload archive validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acc-torvik-archive-test
+          path: torvik_archive_test_results/
+          if-no-files-found: warn
