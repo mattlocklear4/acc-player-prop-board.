@@ -1,0 +1,59 @@
+name: ACC CBBD nightly team statistics
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "CBBD season ending year"
+        required: true
+        default: "2027"
+        type: string
+  schedule:
+    - cron: '40 11 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: acc-cbbd-team-statistics
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect ACC team statistics
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+          SEASON_INPUT: ${{ inputs.season }}
+        run: |
+          python collector/collect_team_stats.py --season "${SEASON_INPUT:-2027}"
+      - name: Commit updated team statistics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/cbbd/acc_team_stats_*.csv data/cbbd/acc_team_stats_*.json data/cbbd/acc_team_collection_summary_*.json
+          if git diff --cached --quiet; then
+            echo 'No team statistics changed'
+          else
+            git commit -m 'Update ACC CBBD team statistics'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Upload team statistics backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acc-cbbd-team-statistics
+          path: |
+            data/cbbd/acc_team_stats_*.csv
+            data/cbbd/acc_team_stats_*.json
+            data/cbbd/acc_team_collection_summary_*.json
+          if-no-files-found: warn
