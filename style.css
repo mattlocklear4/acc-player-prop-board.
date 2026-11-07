@@ -24,3 +24,20 @@
 
 /* v1.6 historical research accuracy tab */
 .accuracy-label{margin:0;min-width:210px;font-size:12px}.accuracy-label select{margin-top:6px;width:100%}.accuracy-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}.accuracy-card{border:1px solid #36516f;border-radius:10px;background:#0d192c;padding:14px}.accuracy-card small{display:block;color:#a5b8d0}.accuracy-card strong{font-size:24px;display:block;margin-top:7px}.accuracy-best{color:#6bdca9}
+
+/* v1.7 Team Stats */
+.team-label{display:flex;flex-direction:column;gap:6px;min-width:165px;color:#c5d5ea;font-size:13px}
+.team-label select,.team-label input{min-width:160px}
+.team-stats-table{width:100%;border-collapse:collapse;white-space:nowrap}
+.team-stats-table th,.team-stats-table td{padding:12px 13px;text-align:right;border-bottom:1px solid #29405b}
+.team-stats-table th:first-child,.team-stats-table td:first-child{text-align:left;position:sticky;left:0;background:#14243b}
+.team-stats-table thead th{background:#1e3552}
+.team-stats-table thead th:first-child{background:#1e3552}
+.team-stats-table th button{background:transparent;border:0;padding:0;color:#d4e6ff;font-weight:700;cursor:pointer;white-space:nowrap}
+.team-matchup-cards{margin-top:16px;max-width:850px}
+.team-matchup-pace{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #3a5575;border-radius:10px;padding:16px;margin-bottom:14px}
+.team-matchup-pace strong{font-size:20px;color:#a7d6ff}
+.team-compare-row{display:grid;grid-template-columns:minmax(120px,1.2fr) minmax(95px,1fr) minmax(95px,1fr);gap:12px;padding:12px 8px;border-bottom:1px solid #29405b}
+.team-compare-row strong{text-align:right}
+.team-compare-head{color:#9dbde2;font-size:13px}
+@media(max-width:620px){.team-compare-row{font-size:12px;gap:5px}.team-matchup-pace{flex-direction:column;align-items:flex-start}}
