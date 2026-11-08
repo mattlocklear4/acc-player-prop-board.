@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-07T11:54:28.697638+00:00",
+  "last_successful_run_utc": "2026-11-08T11:54:53.622001+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -28,8 +28,8 @@
       "players": 24
     },
     "Louisville": {
-      "games": 1,
-      "players": 10
+      "games": 2,
+      "players": 21
     },
     "Miami": {
       "games": 2,
@@ -76,6 +76,6 @@
       "players": 22
     }
   },
-  "total_player_games": 406,
+  "total_player_games": 417,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
