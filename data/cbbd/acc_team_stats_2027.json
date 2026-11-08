@@ -725,117 +725,117 @@
     "teamId": 150,
     "team": "Louisville",
     "conference": "ACC",
-    "games": 1,
-    "wins": 1,
+    "games": 2,
+    "wins": 2,
     "losses": 0,
-    "totalMinutes": 40,
-    "pace": 72.5,
+    "totalMinutes": 80,
+    "pace": 71.3,
     "teamStats": {
-      "assists": 17,
-      "blocks": 1,
-      "steals": 12,
-      "possessions": 73,
-      "trueShooting": 52.9,
-      "rating": 115.1,
+      "assists": 38,
+      "blocks": 7,
+      "steals": 19,
+      "possessions": 143,
+      "trueShooting": 59.4,
+      "rating": 133.6,
       "fieldGoals": {
-        "made": 30,
-        "attempted": 68,
-        "pct": 44.1
+        "made": 67,
+        "attempted": 137,
+        "pct": 48.9
       },
       "twoPointFieldGoals": {
-        "made": 21,
-        "attempted": 33,
-        "pct": 63.6
+        "made": 45,
+        "attempted": 64,
+        "pct": 70.3
       },
       "threePointFieldGoals": {
-        "made": 9,
-        "attempted": 35,
-        "pct": 25.7
+        "made": 22,
+        "attempted": 73,
+        "pct": 30.1
       },
       "freeThrows": {
-        "made": 15,
-        "attempted": 26,
-        "pct": 57.7
+        "made": 35,
+        "attempted": 54,
+        "pct": 64.8
       },
       "rebounds": {
-        "offensive": 18,
-        "defensive": 24,
-        "total": 42
+        "offensive": 38,
+        "defensive": 63,
+        "total": 101
       },
       "turnovers": {
-        "total": 10,
+        "total": 17,
         "teamTotal": 0
       },
       "fouls": {
-        "total": 16,
+        "total": 33,
         "technical": 0,
         "flagrant": 0
       },
       "points": {
-        "total": 84,
-        "inPaint": 42,
-        "offTurnovers": 20,
-        "fastBreak": 13
+        "total": 191,
+        "inPaint": 90,
+        "offTurnovers": 30,
+        "fastBreak": 23
       },
       "fourFactors": {
-        "effectiveFieldGoalPct": 50.7,
-        "turnoverRatio": 0.14,
-        "offensiveReboundPct": 42.9,
-        "freeThrowRate": 38.2
+        "effectiveFieldGoalPct": 56.9,
+        "turnoverRatio": 0.12,
+        "offensiveReboundPct": 37.6,
+        "freeThrowRate": 39.4
       }
     },
     "opponentStats": {
-      "assists": 18,
-      "blocks": 1,
-      "steals": 8,
-      "possessions": 72,
-      "trueShooting": 55.4,
-      "rating": 97.2,
+      "assists": 27,
+      "blocks": 2,
+      "steals": 11,
+      "possessions": 142,
+      "trueShooting": 48,
+      "rating": 89.4,
       "fieldGoals": {
-        "made": 25,
-        "attempted": 57,
-        "pct": 43.9
+        "made": 46,
+        "attempted": 120,
+        "pct": 38.3
       },
       "twoPointFieldGoals": {
-        "made": 13,
-        "attempted": 24,
-        "pct": 54.2
+        "made": 28,
+        "attempted": 69,
+        "pct": 40.6
       },
       "threePointFieldGoals": {
-        "made": 12,
-        "attempted": 33,
-        "pct": 36.4
+        "made": 18,
+        "attempted": 51,
+        "pct": 35.3
       },
       "freeThrows": {
-        "made": 8,
-        "attempted": 14,
-        "pct": 57.1
+        "made": 17,
+        "attempted": 28,
+        "pct": 60.7
       },
       "rebounds": {
-        "offensive": 11,
-        "defensive": 27,
-        "total": 38
+        "offensive": 18,
+        "defensive": 43,
+        "total": 61
       },
       "turnovers": {
-        "total": 18,
+        "total": 26,
         "teamTotal": 0
       },
       "fouls": {
-        "total": 19,
+        "total": 39,
         "technical": 0,
-        "flagrant": 0
+        "flagrant": 1
       },
       "points": {
-        "total": 70,
-        "inPaint": 26,
-        "offTurnovers": 10,
+        "total": 127,
+        "inPaint": 50,
+        "offTurnovers": 17,
         "fastBreak": 6
       },
       "fourFactors": {
-        "effectiveFieldGoalPct": 54.4,
-        "turnoverRatio": 0.25,
-        "offensiveReboundPct": 28.9,
-        "freeThrowRate": 24.6
+        "effectiveFieldGoalPct": 45.8,
+        "turnoverRatio": 0.18,
+        "offensiveReboundPct": 29.5,
+        "freeThrowRate": 23.3
       }
     }
   },
