@@ -1,0 +1,366 @@
+Source,Season,SnapshotDate,SnapshotStatus,Team,Conference,Wins,Losses,AdjEM,AdjO,AdjD,AdjT,SOS_AdjEM,SOS_AdjO,SOS_AdjD
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Duke,ACC,2,0,+34.83,124.3,89.4,70.9,-16.13,96.7,112.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Florida,SEC,2,0,+34.00,124.7,90.7,72.2,+6.32,108.8,102.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Houston,B12,1,0,+31.59,118.6,87.0,68.9,-7.64,103.2,110.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Illinois,B10,2,0,+31.18,125.2,94.0,73.3,-11.50,99.3,110.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Kansas,B12,2,0,+30.85,120.8,90.0,72.5,-3.27,103.2,106.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Michigan St.,B10,2,0,+28.83,119.5,90.7,70.7,-7.99,99.9,107.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Vanderbilt,SEC,2,0,+28.23,119.1,90.9,71.2,-5.30,104.3,109.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Texas,SEC,2,0,+27.92,121.7,93.7,71.0,-20.56,92.1,112.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Gonzaga,P12,2,0,+26.95,121.6,94.7,72.2,+7.45,109.7,102.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Connecticut,BE,2,0,+26.92,118.0,91.1,70.0,-2.12,103.7,105.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Arizona,B12,1,1,+25.85,119.2,93.3,74.1,+9.81,111.6,101.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Iowa St.,B12,1,1,+25.77,117.0,91.2,70.2,+0.96,106.7,105.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Nebraska,B10,2,0,+25.72,117.9,92.2,70.5,-0.52,103.7,104.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UCLA,B10,2,0,+25.16,118.2,93.1,70.2,+4.91,108.8,103.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Alabama,SEC,2,0,+25.11,121.6,96.5,77.0,-6.01,101.4,107.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Virginia,ACC,2,0,+25.07,117.9,92.8,71.8,-12.47,99.6,112.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Arkansas,SEC,1,0,+23.87,119.6,95.7,73.8,-24.12,93.5,117.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Texas Tech,B12,2,0,+23.84,119.3,95.4,69.1,-12.83,97.3,110.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Louisville,ACC,2,0,+23.75,117.6,93.8,72.7,-15.46,100.0,115.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),BYU,B12,2,0,+23.27,123.5,100.2,72.0,+2.03,108.3,106.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tennessee,SEC,1,0,+23.13,118.7,95.6,69.7,-16.35,98.4,114.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Auburn,SEC,1,0,+22.96,119.3,96.3,71.5,-12.46,99.1,111.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Miami FL,ACC,1,1,+22.66,116.3,93.7,71.2,+7.63,108.5,100.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Texas A&M,SEC,2,0,+22.38,119.2,96.9,75.4,-11.30,100.3,111.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Marquette,BE,2,0,+22.30,115.1,92.8,70.9,-17.36,96.9,114.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Ohio St.,B10,1,1,+22.12,119.8,97.7,70.3,+8.69,113.3,104.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),St. John's,BE,1,0,+21.87,115.0,93.1,73.1,-9.03,99.2,108.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Missouri,SEC,1,1,+21.80,120.9,99.1,70.5,+1.25,108.8,107.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Kentucky,SEC,2,0,+21.07,120.8,99.7,70.8,-11.85,101.1,112.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Michigan,B10,1,1,+20.86,116.7,95.8,72.6,+9.62,110.8,101.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cincinnati,B12,2,0,+20.53,114.1,93.5,71.4,-9.38,100.9,110.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),West Virginia,B12,2,0,+20.51,114.9,94.4,68.1,-18.20,97.3,115.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),LSU,SEC,2,0,+20.47,116.5,96.0,72.8,-17.21,95.5,112.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),USC,B10,1,0,+20.37,116.0,95.6,73.5,-13.60,98.0,111.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Mississippi,SEC,2,0,+20.13,113.9,93.8,71.1,-12.68,99.3,112.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Oklahoma St.,B12,2,0,+19.94,116.8,96.8,74.9,-12.81,101.6,114.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Baylor,B12,2,0,+19.70,116.8,97.1,73.3,-20.88,93.6,114.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Iowa,B10,2,0,+19.31,115.8,96.5,66.2,-18.69,95.1,113.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Minnesota,B10,2,0,+19.10,113.6,94.5,67.4,-11.81,102.1,113.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Villanova,BE,1,1,+19.07,117.4,98.3,70.7,-6.58,101.8,108.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Purdue,B10,0,2,+19.06,116.8,97.7,67.8,+13.67,113.3,99.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),TCU,B12,2,0,+19.03,115.5,96.4,71.5,-15.87,95.3,111.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Xavier,BE,2,0,+18.93,114.8,95.8,74.4,-11.75,96.8,108.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Saint Louis,A10,2,0,+18.29,118.1,99.8,73.7,+4.89,108.5,103.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Carolina,ACC,2,0,+18.12,115.9,97.7,72.1,-11.37,101.0,112.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Indiana,B10,2,0,+18.12,116.4,98.3,70.0,-21.35,95.4,116.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Utah St.,P12,2,0,+18.01,115.9,97.9,70.0,-18.24,96.7,114.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Virginia Tech,ACC,2,0,+17.68,115.5,97.8,71.0,-17.81,95.3,113.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Creighton,BE,2,0,+17.65,114.0,96.4,71.1,-15.21,98.5,113.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Grand Canyon,MWC,1,0,+17.49,113.8,96.3,73.0,-19.41,92.3,111.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wisconsin,B10,2,0,+16.81,113.7,96.9,71.1,-9.91,100.7,110.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Providence,BE,1,1,+16.46,111.9,95.4,72.8,+3.22,104.8,101.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Oklahoma,SEC,1,1,+15.86,114.2,98.3,69.7,-20.92,93.5,114.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Georgia,SEC,2,0,+15.70,116.6,100.9,72.6,-16.34,97.9,114.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Florida St.,ACC,2,0,+15.59,114.8,99.2,73.6,-11.81,98.7,110.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),VCU,A10,1,1,+14.93,113.9,99.0,72.3,+3.84,109.9,106.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Maryland,B10,1,1,+14.57,115.2,100.6,70.5,-1.59,104.7,106.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Oregon,B10,2,0,+14.55,115.4,100.8,71.1,-8.69,102.1,110.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Nevada,MWC,1,0,+14.43,111.0,96.6,69.8,-10.49,98.6,109.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Boise St.,P12,1,0,+14.12,111.0,96.9,69.8,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),New Mexico,MWC,2,0,+14.07,113.9,99.8,72.2,-14.15,100.3,114.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Mississippi St.,SEC,2,0,+13.99,114.3,100.3,71.7,-13.48,99.0,112.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UCF,B12,2,0,+13.99,114.4,100.4,71.9,-6.53,104.2,110.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Saint Mary's,WCC,2,0,+13.97,112.4,98.4,69.9,-4.85,105.5,110.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Pittsburgh,ACC,2,0,+13.90,111.2,97.3,69.9,-17.19,95.8,113.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),DePaul,BE,2,0,+13.65,110.9,97.2,69.7,-7.06,102.1,109.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),San Diego St.,P12,2,0,+13.64,111.8,98.2,72.5,-0.19,104.5,104.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Clemson,ACC,2,0,+13.57,114.2,100.6,69.2,-12.19,100.0,112.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Georgetown,BE,2,0,+13.38,112.7,99.3,69.8,-6.57,102.8,109.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Notre Dame,ACC,2,0,+13.27,111.3,98.0,69.2,+1.00,106.8,105.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),High Point,BSth,3,0,+13.26,112.7,99.5,70.4,-8.40,100.5,108.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Arizona St.,B12,2,0,+13.25,113.5,100.3,67.6,-8.60,103.3,111.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),N.C. State,ACC,2,0,+13.22,115.0,101.8,70.2,-10.51,101.4,111.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Santa Clara,WCC,2,0,+13.04,115.6,102.6,74.0,-10.82,98.6,109.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Memphis,Amer,2,0,+12.86,115.1,102.2,72.8,+18.04,114.3,96.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Stanford,ACC,2,0,+12.40,111.0,98.6,69.1,-7.83,103.6,111.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),SMU,ACC,2,0,+12.30,112.0,99.7,73.9,-16.63,96.2,112.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Washington,B10,1,0,+12.19,114.0,101.8,71.1,-10.00,101.9,111.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Syracuse,ACC,2,0,+12.02,110.5,98.5,69.4,-23.10,90.5,113.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Seton Hall,BE,2,0,+11.98,107.5,95.6,68.5,-15.30,94.2,109.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wichita St.,Amer,1,0,+11.69,112.2,100.5,71.2,-6.11,100.7,106.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Rutgers,B10,1,0,+11.36,113.0,101.7,70.7,-23.70,90.1,113.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Butler,BE,2,0,+11.04,113.2,102.2,72.2,-20.70,91.3,112.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Colorado,B12,1,1,+10.83,110.0,99.2,71.6,+2.32,105.7,103.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Colorado St.,P12,2,0,+10.23,112.8,102.6,69.3,-6.97,102.0,109.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),South Carolina,SEC,1,0,+10.22,112.0,101.8,68.1,-16.16,100.4,116.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Oregon St.,P12,2,0,+10.14,113.9,103.7,71.0,-15.81,96.6,112.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northwestern,B10,2,0,+9.75,112.8,103.0,67.8,-15.85,98.1,114.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UC Santa Barbara,BW,2,0,+9.52,113.6,104.1,68.1,-9.99,102.5,112.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),South Florida,Amer,1,1,+9.51,113.8,104.3,71.5,-0.14,103.8,103.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wake Forest,ACC,1,1,+9.49,108.7,99.2,71.1,+4.69,105.2,100.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Dayton,A10,1,1,+9.37,108.4,99.0,69.7,-18.49,97.1,115.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Murray St.,MVC,1,0,+9.03,109.8,100.8,75.3,-6.72,100.0,106.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UC San Diego,BW,1,0,+8.44,110.2,101.7,71.0,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Boston College,ACC,2,0,+8.33,110.0,101.7,67.8,-10.64,97.3,107.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),George Washington,A10,2,0,+8.32,108.3,100.0,71.5,-15.18,95.2,110.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Penn St.,B10,2,0,+8.29,113.0,104.7,72.7,-18.10,98.2,116.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Akron,MAC,1,0,+7.98,110.1,102.1,71.8,-2.76,101.8,104.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Illinois Chicago,MVC,2,0,+7.85,109.3,101.4,70.7,-10.42,98.6,109.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UNLV,MWC,2,0,+7.84,108.6,100.8,72.8,-12.37,102.6,115.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),California,ACC,2,0,+7.60,110.5,102.9,71.5,-13.42,98.6,112.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Utah,B12,2,0,+7.53,106.4,98.9,69.2,-10.08,99.4,109.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),George Mason,A10,2,0,+7.44,107.5,100.1,67.9,-20.96,93.4,114.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Texas St.,P12,2,0,+7.25,109.8,102.6,68.6,-8.76,97.0,105.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Georgia Tech,ACC,2,0,+7.09,109.2,102.1,72.6,-12.33,97.9,110.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Texas,Amer,2,0,+6.95,107.8,100.9,69.0,+2.05,107.9,105.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Davidson,A10,2,0,+6.90,110.2,103.3,67.8,-2.06,106.8,108.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),McNeese,Slnd,1,1,+6.87,110.3,103.5,69.6,+5.76,109.0,103.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Rhode Island,A10,2,0,+6.20,108.6,102.4,71.0,-15.25,97.0,112.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Seattle,WCC,0,1,+6.17,104.1,97.9,71.7,+6.64,107.0,100.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tulsa,Amer,2,0,+6.16,111.5,105.3,71.2,-13.10,102.8,115.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Illinois St.,MVC,1,1,+5.93,110.9,105.0,69.8,+18.71,114.8,96.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UNC Wilmington,CAA,2,0,+5.77,109.2,103.4,71.2,+2.07,105.9,103.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Fordham,A10,1,1,+5.75,107.5,101.7,70.2,+7.40,108.1,100.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wyoming,MWC,2,0,+5.65,109.7,104.1,70.0,-20.87,95.3,116.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Charlotte,Amer,2,0,+5.47,109.7,104.2,69.0,-4.95,103.0,108.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Kansas St.,B12,1,1,+5.44,108.5,103.0,72.8,-7.04,101.8,108.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UC Irvine,BW,1,0,+5.20,103.2,98.0,71.8,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wright St.,Horz,2,0,+5.06,111.4,106.4,71.0,-9.59,100.3,109.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Utah Valley,BW,1,0,+4.76,105.8,101.1,71.9,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Valparaiso,MVC,2,0,+4.70,107.1,102.4,69.0,-2.19,103.8,106.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Western Kentucky,CUSA,2,0,+4.51,107.2,102.7,72.7,-20.59,96.1,116.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Loyola Chicago,A10,2,0,+4.07,105.3,101.2,68.6,-18.99,94.5,113.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Miami OH,MAC,2,0,+3.90,108.4,104.5,72.8,-5.53,106.5,112.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Pacific,WCC,2,0,+3.74,105.1,101.3,68.3,+0.06,102.4,102.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Richmond,A10,2,0,+3.74,108.9,105.2,72.1,-17.93,97.4,115.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Temple,Amer,1,0,+3.40,106.9,103.5,69.7,-22.39,91.0,113.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Charleston,CAA,2,0,+3.15,108.8,105.7,72.1,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Duquesne,A10,2,0,+2.95,107.0,104.1,71.2,-13.06,99.0,112.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Furman,SC,3,0,+2.81,110.7,107.9,70.5,-6.21,102.1,108.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Montana St.,BSky,1,1,+2.76,107.8,105.1,70.6,+1.54,107.5,105.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Yale,Ivy,1,1,+2.48,109.2,106.7,68.5,+5.44,109.6,104.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Saint Joseph's,A10,2,0,+2.35,102.1,99.7,72.3,-14.80,94.9,109.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Washington St.,P12,0,2,+2.19,109.0,106.8,70.2,+10.14,111.5,101.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Hawaii,MWC,2,0,+2.18,104.8,102.6,72.1,+1.70,101.9,100.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Penn,Ivy,0,1,+2.11,107.3,105.2,74.8,+35.40,127.3,91.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Harvard,Ivy,1,0,+2.05,105.2,103.1,68.5,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Belmont,MVC,2,0,+1.79,105.6,103.8,71.9,-18.27,92.6,110.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Toledo,MAC,1,2,+1.67,106.9,105.2,72.3,+10.36,109.6,99.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Ohio,MAC,2,0,+1.18,109.4,108.2,72.2,-9.88,100.3,110.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),San Jose St.,MWC,1,0,+1.11,107.6,106.5,70.1,-14.71,98.3,113.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Florida Atlantic,Amer,1,1,+1.09,106.1,105.0,72.3,-1.11,105.4,106.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Hofstra,CAA,1,1,+0.82,104.0,103.2,68.5,+4.65,107.5,102.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),New Mexico St.,CUSA,1,1,+0.79,105.1,104.3,70.0,+31.53,123.9,92.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Kent St.,MAC,1,1,+0.66,106.9,106.2,72.0,-2.42,104.4,106.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Drake,MVC,1,0,+0.49,105.3,104.8,71.3,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UAB,Amer,1,1,+0.05,107.9,107.8,72.4,-3.74,103.0,106.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),James Madison,SB,0,2,+0.02,108.6,108.6,69.8,+12.36,114.5,102.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),San Francisco,WCC,2,0,-0.06,104.9,104.9,69.5,-12.25,100.4,112.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Liberty,CUSA,1,1,-0.14,105.3,105.5,68.3,+13.26,112.7,99.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cal Poly,BW,1,1,-0.26,107.6,107.8,76.3,+29.95,121.2,91.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Princeton,Ivy,2,0,-0.31,105.1,105.4,68.1,-4.14,101.5,105.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Stephen F. Austin,Slnd,2,0,-0.36,104.0,104.4,70.1,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),St. Thomas,Sum,1,1,-0.67,107.8,108.4,70.9,+11.18,111.9,100.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Loyola Marymount,WCC,1,1,-0.69,106.7,107.4,70.7,-7.97,108.0,116.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northern Iowa,MVC,1,1,-0.98,106.5,107.5,70.8,+7.44,113.0,105.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Eastern Washington,BSky,0,2,-1.06,107.0,108.1,71.3,+18.11,115.5,97.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Vermont,AE,1,1,-1.15,103.2,104.3,67.2,-1.27,103.1,104.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Central Arkansas,UAC,1,1,-1.26,104.2,105.5,71.7,+4.02,106.9,102.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Kennesaw St.,CUSA,2,0,-1.31,102.5,103.9,74.1,-8.39,100.1,108.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),St. Bonaventure,A10,1,1,-1.40,102.8,104.2,70.2,-12.33,99.6,111.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Massachusetts,MAC,1,1,-1.46,102.9,104.3,70.3,+4.41,107.6,103.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Pepperdine,WCC,1,1,-1.51,106.6,108.1,71.8,-0.41,106.8,107.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Old Dominion,SB,3,0,-1.54,103.6,105.2,68.9,-10.99,100.3,111.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),CSUN,BW,0,2,-1.85,102.9,104.7,76.2,+12.74,112.4,99.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Western Carolina,SC,1,1,-1.91,105.9,107.8,70.8,+7.06,110.1,103.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Arkansas St.,SB,1,1,-1.93,102.6,104.5,75.1,+13.74,114.4,100.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Sam Houston St.,CUSA,1,1,-1.96,104.2,106.2,73.1,+29.23,123.6,94.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),East Tennessee St.,SC,0,2,-2.14,106.4,108.5,68.0,+18.17,116.7,98.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Fresno St.,P12,1,0,-2.19,103.5,105.7,72.9,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southern Illinois,MVC,1,1,-2.32,105.3,107.7,73.1,-3.75,106.2,110.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),East Carolina,Amer,1,1,-2.40,103.7,106.1,72.6,-10.29,100.1,110.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Jacksonville St.,CUSA,1,1,-2.63,104.2,106.8,68.3,-2.53,104.3,106.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Marshall,SB,1,1,-2.66,103.3,106.0,73.4,-6.65,102.5,109.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Elon,CAA,2,0,-2.72,106.2,108.9,69.3,-8.89,101.5,110.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),San Diego,WCC,2,0,-2.91,105.0,107.9,71.1,-10.55,100.7,111.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),La Salle,A10,1,1,-2.93,105.6,108.5,71.0,+11.74,108.7,97.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Howard,MEAC,1,1,-3.14,104.8,108.0,71.7,-1.88,106.2,108.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tulane,Amer,1,1,-3.16,107.6,110.7,72.1,-15.98,96.0,112.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Eastern Michigan,MAC,1,1,-3.18,102.2,105.4,68.8,+10.36,110.4,100.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Middle Tennessee,CUSA,1,1,-3.22,103.4,106.6,69.9,+35.40,123.1,87.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Towson,CAA,0,2,-3.33,101.6,105.0,68.3,+15.10,113.4,98.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Bowling Green,MAC,1,0,-3.41,104.6,108.0,71.9,-1.34,104.6,106.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UTEP,MWC,0,1,-3.43,102.1,105.5,70.5,-3.68,105.0,108.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Sacramento St.,BW,1,0,-3.49,104.0,107.5,74.0,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Queens,ASun,2,1,-3.58,110.2,113.8,74.3,+6.93,111.6,104.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),South Dakota St.,Sum,2,0,-3.59,105.1,108.7,69.4,+10.01,110.8,100.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Iona,MC,2,0,-3.64,100.4,104.0,69.9,-15.11,96.1,111.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Youngstown St.,Horz,1,1,-3.65,104.3,107.9,71.8,+14.94,113.6,98.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northern Kentucky,Horz,2,1,-3.68,105.0,108.7,73.3,+4.22,108.9,104.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),American,PL,0,2,-3.70,102.0,105.7,70.8,+21.75,116.5,94.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Texas A&M Corpus Chris,Slnd,1,1,-3.89,99.5,103.3,69.3,+4.81,107.1,102.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Portland,WCC,1,1,-3.97,104.6,108.6,73.6,-5.00,101.5,106.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Indiana St.,MVC,1,1,-4.01,103.6,107.7,71.1,-0.35,104.5,104.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Austin Peay,UAC,1,1,-4.05,102.2,106.3,71.8,+3.03,104.7,101.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Troy,SB,0,2,-4.10,102.9,107.0,69.8,+7.26,108.9,101.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Samford,SC,1,1,-4.26,106.7,110.9,71.9,+12.26,110.8,98.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cal St. Fullerton,BW,1,1,-4.31,102.4,106.7,75.5,+6.03,109.8,103.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),FIU,CUSA,2,0,-4.41,102.4,106.8,73.1,-22.86,94.4,117.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UC Riverside,BW,2,0,-4.48,100.6,105.0,71.5,-9.32,100.6,109.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Bethune Cookman,SWAC,0,2,-4.52,101.1,105.6,71.3,+16.70,116.7,100.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Monmouth,CAA,0,2,-4.61,101.4,106.0,71.5,+16.39,113.0,96.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cornell,Ivy,1,1,-4.78,104.6,109.4,73.7,-4.53,102.5,107.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Denver,WCC,0,2,-4.78,102.8,107.6,71.1,+10.68,109.4,98.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Bradley,MVC,1,1,-4.80,100.0,104.8,69.6,-1.13,102.6,103.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UT Arlington,UAC,2,0,-5.00,101.5,106.5,71.8,-3.97,104.6,108.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),William & Mary,CAA,1,0,-5.02,103.6,108.6,74.8,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northern Colorado,BSky,1,1,-5.19,105.2,110.4,72.0,+17.98,115.9,97.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Appalachian St.,SB,2,0,-5.20,101.2,106.4,66.6,-9.62,97.6,107.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Oakland,Horz,0,3,-5.20,104.9,110.1,71.0,+19.01,116.2,97.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tennessee Tech,SC,1,1,-5.21,106.5,111.7,72.6,+18.44,116.5,98.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UC Davis,MWC,1,1,-5.23,101.5,106.7,72.9,-15.60,95.5,111.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Longwood,BSth,2,1,-5.34,102.5,107.8,71.7,-7.17,98.7,105.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Western Michigan,MAC,1,1,-5.43,103.9,109.3,69.5,+3.28,106.0,102.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Little Rock,UAC,0,2,-5.43,104.6,110.1,70.7,+3.75,107.8,104.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Colgate,PL,0,2,-5.45,104.2,109.6,71.3,+7.20,109.3,102.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Portland St.,BSky,1,0,-5.47,100.2,105.6,72.2,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Robert Morris,Horz,0,2,-5.72,100.9,106.7,69.5,+15.85,112.5,96.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Stony Brook,CAA,1,1,-5.73,103.8,109.5,68.9,+14.70,115.2,100.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),East Texas A&M,Slnd,2,0,-5.73,100.8,106.5,70.2,+9.11,110.6,101.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Delaware,CUSA,1,1,-5.77,103.1,108.9,68.9,+21.52,116.1,94.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Green Bay,Horz,1,1,-5.80,104.5,110.3,68.5,+25.25,116.4,91.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Georgia St.,SB,1,2,-5.88,102.4,108.3,70.7,+0.94,107.1,106.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tarleton St.,UAC,1,1,-6.01,103.0,109.0,71.5,+1.63,107.3,105.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Lipscomb,ASun,1,2,-6.03,103.9,109.9,72.9,-0.81,103.7,104.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Chattanooga,SC,0,2,-6.04,106.1,112.2,71.2,+20.49,117.5,97.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Ball St.,MAC,0,2,-6.12,99.4,105.5,69.4,-5.96,102.7,108.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Dakota St.,Sum,1,2,-6.14,104.7,110.9,69.9,+11.72,111.0,99.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Jacksonville,ASun,1,1,-6.15,103.2,109.4,67.6,+38.72,127.1,88.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Florida Gulf Coast,ASun,1,1,-6.17,104.0,110.1,70.4,+18.55,116.6,98.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Mercer,SC,1,2,-6.18,104.6,110.8,72.4,+17.01,115.2,98.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Presbyterian,BSth,0,2,-6.26,105.4,111.6,68.0,+7.62,112.2,104.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Buffalo,MAC,0,2,-6.27,102.4,108.7,71.9,+9.90,109.4,99.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southern Miss,SB,1,1,-6.47,100.6,107.1,72.3,+30.32,119.3,89.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tennessee St.,OVC,1,1,-6.72,100.0,106.7,74.5,+9.02,109.8,100.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Houston Christian,Slnd,2,0,-6.74,99.4,106.1,69.9,-20.11,92.5,112.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Abilene Christian,UAC,1,1,-6.82,100.7,107.6,72.0,+1.19,105.2,104.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Rice,Amer,1,1,-7.07,102.3,109.4,69.7,-10.45,98.5,108.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Drexel,CAA,1,1,-7.09,99.9,106.9,70.2,+9.86,111.0,101.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Long Beach St.,BW,0,2,-7.10,102.1,109.2,69.7,+9.86,109.5,99.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Louisiana Tech,SB,2,0,-7.10,102.1,109.2,68.5,-4.02,104.5,108.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),LIU,NEC,0,3,-7.17,99.3,106.5,72.4,+7.70,108.6,100.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Montana,BSky,1,1,-7.20,101.8,109.0,71.1,+19.12,117.7,98.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southern Utah,BSky,3,0,-7.22,101.9,109.1,73.0,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Idaho,BSky,1,1,-7.25,100.9,108.2,70.9,+14.93,115.2,100.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Winthrop,BSth,0,2,-7.31,106.9,114.3,73.9,-11.56,104.2,115.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UT Rio Grande Valley,Slnd,2,0,-7.37,101.3,108.7,69.3,-17.40,95.1,112.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),South Alabama,SB,1,1,-7.49,101.8,109.3,68.3,-5.49,104.4,109.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Louisiana,SB,0,2,-7.50,99.4,106.9,67.9,-2.67,102.4,105.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Lehigh,PL,1,1,-7.60,98.4,106.0,70.4,+6.76,111.3,104.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Utah Tech,BSky,1,1,-7.65,102.2,109.8,71.8,+18.52,116.1,97.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Missouri St.,CUSA,2,0,-7.67,101.1,108.7,69.5,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southeastern Louisiana,Slnd,1,1,-7.83,101.4,109.3,69.8,+13.50,114.3,100.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Georgia Southern,SB,1,1,-7.86,101.8,109.7,73.1,+0.63,104.4,103.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Hampton,CAA,0,2,-7.91,98.4,106.3,70.1,+12.27,111.1,98.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Columbia,Ivy,1,1,-8.03,102.5,110.6,70.1,-7.47,103.8,111.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Coastal Carolina,SB,0,2,-8.06,101.0,109.1,71.1,+16.12,113.4,97.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Kansas City,Sum,1,1,-8.23,104.0,112.2,70.4,+7.52,109.6,102.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cal St. Bakersfield,BW,1,0,-8.34,101.8,110.1,71.0,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northern Illinois,Horz,1,2,-8.45,105.1,113.6,69.9,+5.03,108.6,103.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Lamar,Slnd,1,1,-8.47,100.4,108.8,71.5,-2.33,103.0,105.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Purdue Fort Wayne,Horz,1,1,-8.54,101.3,109.8,71.7,+7.48,109.3,101.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Evansville,MVC,1,0,-8.59,99.1,107.6,71.1,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Quinnipiac,MC,1,1,-8.61,97.5,106.1,72.0,+8.02,108.1,100.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Fairfield,MC,0,1,-8.62,100.8,109.5,70.9,-6.00,100.8,106.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northeastern,CAA,0,2,-8.83,103.9,112.7,73.2,+12.24,112.7,100.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Radford,BSth,0,2,-8.95,100.8,109.8,72.3,+8.36,110.0,101.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Brown,Ivy,0,2,-9.21,97.0,106.2,69.4,-16.83,95.7,112.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Milwaukee,Horz,0,2,-9.26,100.2,109.4,72.5,+21.02,118.0,97.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Campbell,CAA,0,1,-9.26,101.2,110.4,71.7,+17.81,117.3,99.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southeast Missouri,OVC,2,0,-9.30,97.8,107.1,73.3,-10.36,101.7,112.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Central Michigan,MAC,2,0,-9.35,101.6,111.0,70.9,-11.04,101.5,112.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Nicholls,Slnd,1,1,-9.60,98.0,107.6,71.5,+4.51,110.1,105.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),South Dakota,Sum,1,2,-9.62,103.8,113.4,74.5,-8.18,101.6,109.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Merrimack,MC,0,2,-9.62,97.6,107.2,66.5,-10.04,99.9,110.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UMass Lowell,AE,2,0,-9.68,101.3,111.0,72.0,-4.81,100.0,104.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UNC Greensboro,SC,1,1,-9.73,100.6,110.3,71.1,+1.97,108.6,106.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UTSA,Amer,1,1,-10.14,100.5,110.7,72.2,-6.68,103.0,109.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Eastern Kentucky,UAC,2,0,-10.18,101.0,111.1,71.5,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Dartmouth,Ivy,2,0,-10.34,97.4,107.8,71.4,-6.72,97.6,104.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southern,SWAC,0,2,-10.39,98.0,108.4,72.4,+20.00,115.9,95.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Boston University,PL,2,0,-10.40,102.7,113.1,68.5,-9.02,100.4,109.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Alabama St.,SWAC,0,1,-10.54,99.8,110.3,73.2,+26.58,121.3,94.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cal Baptist,BW,0,2,-10.66,98.5,109.2,70.4,-0.93,107.2,108.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),LSU New Orleans,Slnd,1,1,-10.72,100.7,111.4,73.9,+24.77,118.6,93.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Norfolk St.,MEAC,2,0,-10.73,99.4,110.2,71.2,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),SIUE,OVC,2,1,-10.74,98.3,109.1,69.6,-1.48,106.2,107.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Nebraska Omaha,Sum,1,2,-11.02,100.3,111.3,71.3,+25.24,122.0,96.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Tennessee Martin,OVC,0,2,-11.05,98.4,109.4,68.2,-3.43,106.6,110.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Alabama,UAC,2,0,-11.12,97.7,108.8,70.7,-0.75,103.7,104.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Bellarmine,ASun,0,3,-11.15,104.4,115.6,68.7,+21.52,117.0,95.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Stetson,ASun,0,3,-11.20,102.8,114.0,68.6,+19.67,116.1,96.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Marist,MC,1,1,-11.28,95.3,106.6,70.9,-15.75,97.0,112.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Air Force,MWC,1,1,-11.28,99.0,110.3,71.5,+9.61,113.7,104.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Mount St. Mary's,MC,1,1,-11.33,95.9,107.2,71.7,+0.80,105.2,104.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Florida,ASun,1,1,-11.42,100.7,112.1,74.9,+11.61,110.6,99.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northern Arizona,BSky,0,2,-11.60,103.0,114.6,68.1,+15.62,113.6,98.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Cleveland St.,Horz,1,1,-11.61,101.7,113.3,72.2,+26.33,123.1,96.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wofford,SC,0,2,-11.78,100.7,112.5,72.5,+25.07,119.5,94.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Jackson St.,SWAC,1,1,-11.80,98.2,110.0,72.8,+14.55,115.5,101.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Grambling St.,SWAC,1,0,-11.87,100.3,112.1,70.8,-8.46,105.1,113.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Weber St.,BSky,0,1,-11.87,99.2,111.1,73.1,+14.59,116.1,101.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Siena,MC,0,1,-11.90,98.2,110.1,72.9,-8.37,98.9,107.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Oral Roberts,Sum,1,1,-12.06,99.9,111.9,71.2,+3.27,106.5,103.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UMBC,AE,0,2,-12.13,101.1,113.2,73.3,+2.42,103.6,101.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Carolina A&T,CAA,0,1,-12.16,98.9,111.1,71.4,+5.66,111.7,106.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Detroit Mercy,Horz,0,1,-12.38,100.3,112.7,70.7,+26.91,117.4,90.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Lindenwood,OVC,2,1,-12.50,96.9,109.4,74.1,+23.39,117.6,94.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Alabama A&M,SWAC,2,0,-12.65,97.7,110.4,69.5,-99.00,0.0,200.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Prairie View A&M,SWAC,2,1,-12.76,97.4,110.1,71.9,-2.73,103.6,106.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),IU Indy,Horz,2,0,-12.76,101.1,113.8,74.5,-15.59,96.1,111.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Northwestern St.,Slnd,0,2,-12.83,96.1,108.9,69.1,+21.49,117.9,96.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Bryant,AE,1,1,-12.87,96.6,109.5,70.4,-10.27,97.8,108.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Mercyhurst,NEC,1,2,-12.94,98.3,111.2,67.7,+22.71,115.6,92.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Le Moyne,NEC,0,2,-13.04,97.7,110.7,72.6,+26.16,118.2,92.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Charleston Southern,BSth,1,1,-13.09,97.1,110.2,74.2,+13.86,116.0,102.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Navy,PL,1,1,-13.21,96.6,109.8,69.9,-7.05,99.1,106.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Dakota,Sum,1,1,-13.28,101.3,114.5,71.4,+9.87,112.3,102.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),UNC Asheville,BSth,1,2,-13.40,99.6,113.1,70.8,+0.94,107.4,106.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),New Hampshire,AE,2,0,-13.59,93.6,107.2,69.9,-9.40,97.7,107.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Chicago St.,NEC,1,1,-13.69,94.6,108.2,70.8,+11.65,111.6,100.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Incarnate Word,Slnd,0,2,-13.77,97.1,110.8,71.1,+3.60,105.9,102.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Southern Indiana,OVC,1,1,-13.78,94.8,108.6,71.5,+6.28,107.8,101.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Sacred Heart,MC,1,1,-13.83,99.8,113.6,72.6,-19.65,91.4,111.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Saint Peter's,MC,0,2,-14.03,93.8,107.8,67.3,-2.01,102.5,104.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),The Citadel,SC,1,1,-14.10,98.8,112.9,68.3,+9.01,107.8,98.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),VMI,SC,1,2,-14.23,98.6,112.8,72.3,+5.59,108.5,103.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),West Georgia,UAC,0,2,-14.28,95.0,109.3,72.3,+13.51,110.4,96.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Manhattan,MC,0,2,-14.35,98.2,112.5,70.0,+3.32,108.9,105.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Albany,AE,2,0,-14.68,96.9,111.6,69.9,-9.63,100.5,110.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Florida A&M,SWAC,0,2,-14.91,96.7,111.6,72.4,+15.58,114.8,99.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Wagner,NEC,0,2,-15.00,94.1,109.1,69.9,+20.43,115.6,95.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Alcorn St.,SWAC,0,2,-15.02,98.9,114.0,71.8,+8.45,109.3,100.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Army,PL,1,1,-15.04,97.0,112.1,70.5,+39.45,126.6,87.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Maine,AE,1,1,-15.07,93.7,108.8,69.4,+5.92,108.2,102.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Texas Southern,SWAC,0,2,-15.08,94.5,109.6,73.1,+23.32,117.3,94.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Niagara,MC,0,2,-15.32,96.7,112.1,69.6,+1.27,105.3,104.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Lafayette,PL,1,2,-15.33,91.7,107.0,71.4,+11.17,109.9,98.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Louisiana Monroe,SB,1,1,-15.56,99.2,114.8,72.0,-13.88,99.4,113.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Morehead St.,OVC,1,2,-15.97,98.4,114.4,68.7,+18.75,114.7,96.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Binghamton,AE,1,1,-16.07,97.5,113.5,68.2,+2.93,105.8,102.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Idaho St.,BSky,0,2,-16.17,97.7,113.8,70.2,+16.53,115.2,98.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Morgan St.,MEAC,3,0,-16.22,96.5,112.7,74.7,-10.88,99.0,109.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Bucknell,PL,0,2,-16.49,96.8,113.3,70.1,+6.61,109.4,102.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Stonehill,NEC,1,1,-16.88,95.0,111.8,70.0,+10.45,109.8,99.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Fairleigh Dickinson,NEC,1,2,-17.03,95.3,112.4,69.8,+25.73,121.5,95.8
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),North Carolina Central,MEAC,0,2,-17.05,95.1,112.1,69.6,+9.85,111.9,102.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),USC Upstate,BSth,0,2,-17.34,95.4,112.8,72.0,-10.10,98.8,108.9
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Central Connecticut,NEC,0,2,-17.58,93.4,111.0,69.0,+12.51,111.1,98.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),South Carolina St.,MEAC,2,0,-17.77,94.0,111.8,72.9,-12.93,97.6,110.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Gardner Webb,BSth,0,2,-18.30,94.2,112.5,72.5,+31.94,122.1,90.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Loyola MD,PL,0,2,-18.36,95.0,113.4,70.4,+5.50,106.5,101.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),West Florida,ASun,1,1,-18.47,96.6,115.1,72.0,-0.02,104.6,104.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),New Haven,NEC,0,2,-18.85,92.5,111.4,67.4,+16.58,114.2,97.6
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Rider,MC,0,2,-18.96,93.7,112.7,70.4,+0.15,102.4,102.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),NJIT,AE,0,2,-19.04,93.9,113.0,70.2,+7.57,106.7,99.2
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Maryland Eastern Shore,MEAC,1,2,-19.69,90.9,110.6,68.7,+16.12,113.1,97.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Arkansas Pine Bluff,SWAC,0,2,-19.88,95.6,115.5,73.9,+26.05,120.3,94.3
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Coppin St.,MEAC,0,2,-20.51,90.4,110.9,71.0,+17.36,113.9,96.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Canisius,MC,0,2,-21.31,94.8,116.1,69.4,+3.53,107.9,104.4
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Holy Cross,PL,0,2,-21.45,94.8,116.2,70.4,+17.25,115.3,98.1
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Eastern Illinois,OVC,0,2,-21.92,91.1,113.0,70.1,+23.54,118.5,95.0
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Western Illinois,OVC,0,2,-22.44,91.3,113.7,71.0,+0.11,103.8,103.7
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Delaware St.,MEAC,1,1,-22.58,89.8,112.4,70.7,-8.54,99.0,107.5
+KenPom,2027,2026-11-07,Partial-day (52 of 61 games per screenshot),Mississippi Valley St.,SWAC,0,1,-26.65,90.9,117.5,70.5,+20.56,116.6,96.0
