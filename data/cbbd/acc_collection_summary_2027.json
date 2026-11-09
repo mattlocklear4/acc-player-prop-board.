@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-08T11:54:53.622001+00:00",
+  "last_successful_run_utc": "2026-11-09T12:13:35.429893+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -8,8 +8,8 @@
       "players": 22
     },
     "California": {
-      "games": 2,
-      "players": 23
+      "games": 3,
+      "players": 35
     },
     "Clemson": {
       "games": 2,
@@ -48,8 +48,8 @@
       "players": 27
     },
     "Pittsburgh": {
-      "games": 2,
-      "players": 22
+      "games": 3,
+      "players": 31
     },
     "SMU": {
       "games": 2,
@@ -64,8 +64,8 @@
       "players": 24
     },
     "Virginia": {
-      "games": 2,
-      "players": 30
+      "games": 3,
+      "players": 43
     },
     "Virginia Tech": {
       "games": 2,
@@ -76,6 +76,6 @@
       "players": 22
     }
   },
-  "total_player_games": 417,
+  "total_player_games": 451,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
