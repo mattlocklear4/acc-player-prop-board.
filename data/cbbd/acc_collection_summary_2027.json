@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-09T12:13:35.429893+00:00",
+  "last_successful_run_utc": "2026-11-10T12:05:43.040689+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -12,8 +12,8 @@
       "players": 35
     },
     "Clemson": {
-      "games": 2,
-      "players": 17
+      "games": 3,
+      "players": 25
     },
     "Duke": {
       "games": 2,
@@ -32,8 +32,8 @@
       "players": 21
     },
     "Miami": {
-      "games": 2,
-      "players": 22
+      "games": 3,
+      "players": 33
     },
     "NC State": {
       "games": 2,
@@ -44,8 +44,8 @@
       "players": 24
     },
     "Notre Dame": {
-      "games": 2,
-      "players": 27
+      "games": 3,
+      "players": 39
     },
     "Pittsburgh": {
       "games": 3,
@@ -56,12 +56,12 @@
       "players": 24
     },
     "Stanford": {
-      "games": 2,
-      "players": 18
+      "games": 3,
+      "players": 29
     },
     "Syracuse": {
-      "games": 2,
-      "players": 24
+      "games": 3,
+      "players": 33
     },
     "Virginia": {
       "games": 3,
@@ -76,6 +76,6 @@
       "players": 22
     }
   },
-  "total_player_games": 451,
+  "total_player_games": 502,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
