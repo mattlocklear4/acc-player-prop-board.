@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-11T15:54:03.148384+00:00",
+  "collected_at": "2026-11-11T22:56:16.877800+00:00",
   "source": "The Odds API",
   "sport": "basketball_ncaab",
   "games": [
@@ -15,32 +15,32 @@
           "title": "BetOnline.ag",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
-                  "point": -27.5,
-                  "price": -105
+                  "point": -26.5,
+                  "price": -115
                 },
                 {
                   "name": "South Carolina St Bulldogs",
-                  "point": 27.5,
-                  "price": -115
+                  "point": 26.5,
+                  "price": -105
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 148.0,
-                  "price": -110
+                  "point": 149.5,
+                  "price": -118
                 },
                 {
                   "name": "Under",
-                  "point": 148.0,
-                  "price": -110
+                  "point": 149.5,
+                  "price": -102
                 }
               ]
             }
@@ -51,32 +51,32 @@
           "title": "LowVig.ag",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:22Z",
+              "last_update": "2026-11-11T22:55:07Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
-                  "point": -27.5,
-                  "price": -101
+                  "point": -26.5,
+                  "price": -111
                 },
                 {
                   "name": "South Carolina St Bulldogs",
-                  "point": 27.5,
-                  "price": -111
+                  "point": 26.5,
+                  "price": -101
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:22Z",
+              "last_update": "2026-11-11T22:55:07Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 148.0,
-                  "price": -108
+                  "point": 149.5,
+                  "price": -117
                 },
                 {
                   "name": "Under",
-                  "point": 148.0,
-                  "price": -108
+                  "point": 149.5,
+                  "price": 100
                 }
               ]
             }
@@ -87,32 +87,32 @@
           "title": "BetMGM",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:41Z",
+              "last_update": "2026-11-11T22:55:22Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
-                  "point": -27.5,
-                  "price": -105
+                  "point": -26.5,
+                  "price": -115
                 },
                 {
                   "name": "South Carolina St Bulldogs",
-                  "point": 27.5,
-                  "price": -115
+                  "point": 26.5,
+                  "price": -105
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:41Z",
+              "last_update": "2026-11-11T22:55:22Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 148.5,
-                  "price": -110
+                  "point": 149.5,
+                  "price": -105
                 },
                 {
                   "name": "Under",
-                  "point": 148.5,
-                  "price": -110
+                  "point": 149.5,
+                  "price": -115
                 }
               ]
             }
@@ -123,32 +123,32 @@
           "title": "DraftKings",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:52:41Z",
+              "last_update": "2026-11-11T22:55:41Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
                   "point": -26.5,
-                  "price": -110
+                  "price": -115
                 },
                 {
                   "name": "South Carolina St Bulldogs",
                   "point": 26.5,
-                  "price": -110
+                  "price": -105
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:52:41Z",
+              "last_update": "2026-11-11T22:55:41Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 148.5,
-                  "price": -110
+                  "point": 149.5,
+                  "price": -108
                 },
                 {
                   "name": "Under",
-                  "point": 148.5,
-                  "price": -110
+                  "point": 149.5,
+                  "price": -112
                 }
               ]
             }
@@ -159,32 +159,32 @@
           "title": "BetRivers",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
                   "point": -26.5,
-                  "price": -112
+                  "price": -114
                 },
                 {
                   "name": "South Carolina St Bulldogs",
                   "point": 26.5,
-                  "price": -112
+                  "price": -108
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 147.5,
+                  "point": 148.5,
                   "price": -114
                 },
                 {
                   "name": "Under",
-                  "point": 147.5,
-                  "price": -109
+                  "point": 148.5,
+                  "price": -108
                 }
               ]
             }
@@ -195,22 +195,22 @@
           "title": "Bovada",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:25Z",
+              "last_update": "2026-11-11T22:55:10Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
                   "point": -27.0,
-                  "price": -105
+                  "price": -110
                 },
                 {
                   "name": "South Carolina St Bulldogs",
                   "point": 27.0,
-                  "price": -115
+                  "price": -110
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:25Z",
+              "last_update": "2026-11-11T22:55:10Z",
               "outcomes": [
                 {
                   "name": "Over",
@@ -231,7 +231,7 @@
           "title": "FanDuel",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:42Z",
+              "last_update": "2026-11-11T22:55:45Z",
               "outcomes": [
                 {
                   "name": "Notre Dame Fighting Irish",
@@ -246,7 +246,7 @@
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:42Z",
+              "last_update": "2026-11-11T22:55:45Z",
               "outcomes": [
                 {
                   "name": "Over",
@@ -276,31 +276,31 @@
           "title": "BetOnline.ag",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
                   "point": 8.5,
-                  "price": -113
+                  "price": -115
                 },
                 {
                   "name": "USC Trojans",
                   "point": -8.5,
-                  "price": -107
+                  "price": -105
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -110
                 }
               ]
@@ -312,31 +312,31 @@
           "title": "LowVig.ag",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:22Z",
+              "last_update": "2026-11-11T22:55:07Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
                   "point": 8.5,
-                  "price": -109
+                  "price": -111
                 },
                 {
                   "name": "USC Trojans",
                   "point": -8.5,
-                  "price": -103
+                  "price": -101
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:22Z",
+              "last_update": "2026-11-11T22:55:07Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -108
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -108
                 }
               ]
@@ -348,31 +348,31 @@
           "title": "DraftKings",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:52:41Z",
+              "last_update": "2026-11-11T22:55:41Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
                   "point": 8.5,
-                  "price": -110
+                  "price": -115
                 },
                 {
                   "name": "USC Trojans",
                   "point": -8.5,
-                  "price": -110
+                  "price": -105
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:52:41Z",
+              "last_update": "2026-11-11T22:55:41Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -110
                 }
               ]
@@ -384,32 +384,32 @@
           "title": "FanDuel",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:42Z",
+              "last_update": "2026-11-11T22:55:44Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
                   "point": 8.5,
-                  "price": -118
+                  "price": -108
                 },
                 {
                   "name": "USC Trojans",
                   "point": -8.5,
-                  "price": -104
+                  "price": -112
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:42Z",
+              "last_update": "2026-11-11T22:55:44Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
-                  "price": -115
+                  "point": 160.5,
+                  "price": -108
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
-                  "price": -105
+                  "point": 160.5,
+                  "price": -112
                 }
               ]
             }
@@ -420,7 +420,7 @@
           "title": "BetMGM",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:41Z",
+              "last_update": "2026-11-11T22:55:22Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
@@ -435,17 +435,17 @@
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:41Z",
+              "last_update": "2026-11-11T22:55:22Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
-                  "price": -110
+                  "point": 160.5,
+                  "price": -105
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
-                  "price": -110
+                  "point": 160.5,
+                  "price": -115
                 }
               ]
             }
@@ -456,7 +456,7 @@
           "title": "BetUS",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:19Z",
+              "last_update": "2026-11-11T22:55:41Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
@@ -471,16 +471,16 @@
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:19Z",
+              "last_update": "2026-11-11T22:55:41Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -110
                 }
               ]
@@ -492,31 +492,31 @@
           "title": "Bovada",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:25Z",
+              "last_update": "2026-11-11T22:55:11Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
-                  "point": 8.5,
-                  "price": -115
+                  "point": 8.0,
+                  "price": -110
                 },
                 {
                   "name": "USC Trojans",
-                  "point": -8.5,
-                  "price": -105
+                  "point": -8.0,
+                  "price": -110
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:25Z",
+              "last_update": "2026-11-11T22:55:11Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -105
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -115
                 }
               ]
@@ -528,31 +528,31 @@
           "title": "BetRivers",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
                   "point": 8.5,
-                  "price": -121
+                  "price": -110
                 },
                 {
                   "name": "USC Trojans",
                   "point": -8.5,
-                  "price": -104
+                  "price": -113
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-11T15:53:20Z",
+              "last_update": "2026-11-11T22:55:59Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 161.5,
-                  "price": -110
+                  "point": 160.5,
+                  "price": -109
                 },
                 {
                   "name": "Under",
-                  "point": 161.5,
+                  "point": 160.5,
                   "price": -113
                 }
               ]
