@@ -1,11 +1,11 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-10T12:05:43.040689+00:00",
+  "last_successful_run_utc": "2026-11-11T12:10:15.439734+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
-      "games": 2,
-      "players": 22
+      "games": 3,
+      "players": 33
     },
     "California": {
       "games": 3,
@@ -16,16 +16,16 @@
       "players": 25
     },
     "Duke": {
-      "games": 2,
-      "players": 25
+      "games": 3,
+      "players": 34
     },
     "Florida State": {
-      "games": 2,
-      "players": 23
+      "games": 3,
+      "players": 33
     },
     "Georgia Tech": {
-      "games": 2,
-      "players": 24
+      "games": 3,
+      "players": 37
     },
     "Louisville": {
       "games": 2,
@@ -36,12 +36,12 @@
       "players": 33
     },
     "NC State": {
-      "games": 2,
-      "players": 22
+      "games": 3,
+      "players": 35
     },
     "North Carolina": {
-      "games": 2,
-      "players": 24
+      "games": 3,
+      "players": 34
     },
     "Notre Dame": {
       "games": 3,
@@ -52,8 +52,8 @@
       "players": 31
     },
     "SMU": {
-      "games": 2,
-      "players": 24
+      "games": 3,
+      "players": 35
     },
     "Stanford": {
       "games": 3,
@@ -64,18 +64,18 @@
       "players": 33
     },
     "Virginia": {
-      "games": 3,
-      "players": 43
+      "games": 4,
+      "players": 60
     },
     "Virginia Tech": {
-      "games": 2,
-      "players": 27
+      "games": 3,
+      "players": 38
     },
     "Wake Forest": {
-      "games": 2,
-      "players": 22
+      "games": 3,
+      "players": 34
     }
   },
-  "total_player_games": 502,
+  "total_player_games": 619,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
