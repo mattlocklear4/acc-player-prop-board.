@@ -3,7 +3,7 @@ name: ACC Projection Dry Run (v2.3)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT (UTC schedule)
+    - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
 
 permissions:
   contents: read
@@ -21,7 +21,10 @@ jobs:
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
         run: python scripts/acc_schedule.py --season 2027 --horizon-hours 36
-      - name: Generate projection diagnostic (read only)
+      - name: Generate projection diagnostic using latest Supabase KenPom (read only)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json --today-only
       - name: Upload diagnostic reports
         if: always()
