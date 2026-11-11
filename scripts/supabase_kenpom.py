@@ -10,7 +10,9 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from research_engine import canon
 
-EXPECTED_COLUMNS = ('Team','Conference','Wins','Losses','AdjEM','AdjO','AdjD','AdjT','SOS_AdjEM','SOS_AdjO','SOS_AdjD')
+REQUIRED_COLUMNS = ('Team','Conference','Wins','Losses','AdjEM','AdjO','AdjD','AdjT')
+# Strength-of-schedule fields may legitimately be null in imported KenPom rows.
+# Preserve missing values as None; never manufacture a rating.
 FIELD_MAP = {'team':'Team','conference':'Conference','wins':'Wins','losses':'Losses',
              'adj_em':'AdjEM','adj_o':'AdjO','adj_d':'AdjD','adj_t':'AdjT',
              'sos_adj_em':'SOS_AdjEM','sos_adj_o':'SOS_AdjO','sos_adj_d':'SOS_AdjD'}
@@ -69,7 +71,9 @@ def fetch_latest_kenpom(now,season=2027,fetch=None):
     kp={}
     for row in rows:
         r={out:row.get(field) for field,out in FIELD_MAP.items()}
-        if any(r[c] is None for c in EXPECTED_COLUMNS):raise ValueError('KenPom snapshot contains missing fields')
+        if any(r[c] is None for c in REQUIRED_COLUMNS):
+            missing = [c for c in REQUIRED_COLUMNS if r[c] is None]
+            raise ValueError(f'KenPom snapshot missing required fields for {r.get("Team")}: {missing}')
         c=canon(r['Team'])
         if c in kp:raise ValueError('Duplicate KenPom team: '+str(r['Team']))
         kp[c]=r
