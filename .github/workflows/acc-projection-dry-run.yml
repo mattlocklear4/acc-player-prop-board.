@@ -1,0 +1,32 @@
+name: ACC Projection Dry Run (v2.3)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  projection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch upcoming ACC schedule (read only)
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+        run: python scripts/acc_schedule.py --season 2027 --horizon-hours 72
+      - name: Generate projection diagnostic (read only)
+        run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json
+      - name: Upload diagnostic reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acc-projection-dry-run
+          path: |
+            research/acc_schedule_dry_run.json
+            research/acc_projection_dry_run.json
+          if-no-files-found: warn
