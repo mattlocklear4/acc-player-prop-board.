@@ -11,7 +11,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from acc_schedule import TEAMS, discover, get_games, parse_time
 from research_engine import build_baselines, load_kenpom, apply_matchup, canon
-from pregame_prepare import consensus, resolve_opponent, team_id, timestamp
+from pregame_prepare import consensus, team_id, timestamp
+from supabase_kenpom import fetch_latest_kenpom, resolve_opponent
 
 ACC_CANON = {canon(x):x for x in TEAMS}
 
@@ -22,7 +23,7 @@ def school_match(odds_name, scheduled_name):
     a,b=canon(odds_name),canon(scheduled_name)
     return a==b or (a.startswith(b) and len(a)>len(b) and len(b)>=3)
 
-def matchup(schedule, odds_feed, now, root, kp, lock_lead_minutes=None, max_odds_age_hours=24):
+def matchup(schedule, odds_feed, now, root, kp, source_meta, lock_lead_minutes=None, max_odds_age_hours=24):
     results=[]
     collected=timestamp(odds_feed.get('collected_at'))
     feed_games=odds_feed.get('games') or []
@@ -58,7 +59,7 @@ def matchup(schedule, odds_feed, now, root, kp, lock_lead_minutes=None, max_odds
                             if not market:market_issue='no_complete_pregame_market'
                     players=apply_matchup(baselines_by_day[local_date],team,opponent_kp,kp,market)
                     if not players:raise ValueError('no_eligible_players')
-                    item.update(status='research_candidate_unverified',reason='kenpom_freshness_and_browser_parity_not_verified',players=players,odds=market,odds_status=market_issue or 'available',kenpom_source='repository_csv_unverified_age')
+                    item.update(status='research_candidate_unverified',reason='browser_parity_and_manual_minutes_not_verified',players=players,odds=market,odds_status=market_issue or 'available',kenpom_source=source_meta['source'],kenpom_snapshot_id=source_meta['snapshot_id'])
                 except (KeyError,ValueError,FileNotFoundError,TypeError) as exc:item['reason']='projection_input_error:'+str(exc)
             base['teams'].append(item)
         results.append(base)
@@ -68,7 +69,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--schedule',type=Path,required=True,help='JSON output from acc_schedule.py')
     p.add_argument('--odds',type=Path,default=Path('data/acc_odds.json'))
-    p.add_argument('--kenpom',type=Path,default=Path('data/cbbd/kenpom_2027_initial.csv'))
+    p.add_argument('--kenpom',type=Path,default=None,help='Optional offline fixture CSV; live Supabase is default')
     p.add_argument('--root',type=Path,default=Path('.'))
     p.add_argument('--output',type=Path,default=Path('research/acc_projection_dry_run.json'))
     p.add_argument('--now',help='ISO8601 aware timestamp for fixture testing')
@@ -79,21 +80,25 @@ def main():
     schedule=json.loads(a.schedule.read_text())
     if schedule.get('mode')!='DRY_RUN_NO_WRITES':p.error('Expected read-only schedule artifact')
     odds=json.loads(a.odds.read_text())
-    kp=load_kenpom(a.kenpom)
+    if a.kenpom is not None:
+        kp=load_kenpom(a.kenpom)
+        source_meta={'source':'offline_fixture_csv','snapshot_id':None,'imported_at':None,'team_count':len(kp)}
+    else:
+        kp,source_meta=fetch_latest_kenpom(now=now,season=2027)
     eligible=schedule['games']
     if a.today_only:
         today=now.astimezone(ZoneInfo('America/New_York')).date()
         eligible=[g for g in eligible if parse_time(g.get('tipoff_utc')) and parse_time(g['tipoff_utc']).astimezone(ZoneInfo('America/New_York')).date()==today]
-    games=matchup(eligible,odds,now,a.root,kp)
+    games=matchup(eligible,odds,now,a.root,kp,source_meta)
     counts={}
     for g in games:
         for t in g['teams']:
             key=t['status'] if t['status'].startswith('research_candidate') else t['reason']
             counts[key]=counts.get(key,0)+1
     payload={'mode':'DRY_RUN_NO_WRITES','not_a_pregame_lock':True,'generated_at_utc':now.isoformat(),
-             'kenpom_source':str(a.kenpom),'projection_stage':'EARLY_DAY_RESEARCH','kenpom_freshness_verified':False,
+             'kenpom_source':source_meta,'projection_stage':'EARLY_DAY_RESEARCH','kenpom_freshness_verified':source_meta['source']=='supabase_snapshot' and source_meta['imported_at'] is not None,
              'browser_parity_verified':False,'manual_minutes_overrides_applied':False,
-             'warning':'Early-day research only. No Supabase writes; no pregame lock. Repository KenPom may be stale; manual minutes overrides not applied. Vegas/Combined unavailable if no valid odds.',
+             'warning':'Early-day research only. No Supabase writes; no pregame lock. KenPom snapshot time is checked, but its ratings source-as-of may be unknown; manual minutes overrides not applied. Vegas/Combined unavailable if no valid odds.',
              'summary':counts,'games':games}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(payload,indent=2)+'\n')
