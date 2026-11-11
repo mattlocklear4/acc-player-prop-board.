@@ -2,6 +2,8 @@ name: ACC Projection Dry Run (v2.3)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT (UTC schedule)
 
 permissions:
   contents: read
@@ -18,9 +20,9 @@ jobs:
       - name: Fetch upcoming ACC schedule (read only)
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
-        run: python scripts/acc_schedule.py --season 2027 --horizon-hours 72
+        run: python scripts/acc_schedule.py --season 2027 --horizon-hours 36
       - name: Generate projection diagnostic (read only)
-        run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json
+        run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json --today-only
       - name: Upload diagnostic reports
         if: always()
         uses: actions/upload-artifact@v4
