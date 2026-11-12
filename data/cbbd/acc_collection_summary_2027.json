@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-11T12:10:15.439734+00:00",
+  "last_successful_run_utc": "2026-11-12T12:13:48.591182+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -8,8 +8,8 @@
       "players": 33
     },
     "California": {
-      "games": 3,
-      "players": 35
+      "games": 4,
+      "players": 45
     },
     "Clemson": {
       "games": 3,
@@ -44,8 +44,8 @@
       "players": 34
     },
     "Notre Dame": {
-      "games": 3,
-      "players": 39
+      "games": 4,
+      "players": 54
     },
     "Pittsburgh": {
       "games": 3,
@@ -76,6 +76,6 @@
       "players": 34
     }
   },
-  "total_player_games": 619,
+  "total_player_games": 644,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
