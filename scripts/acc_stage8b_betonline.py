@@ -56,6 +56,15 @@ def main():
         now=dt.datetime.now(dt.timezone.utc)
         api_events,headers=get(ROOT+'/events',{'apiKey':key}) # Free endpoint
         out['discovered_ncaab_events']=len(api_events)
+        # Diagnostic-only: capture provider names and times without additional API calls.
+        out['discovery_diagnostic'] = {
+            'api_event_sample': [
+                {'home_team': e.get('home_team'), 'away_team': e.get('away_team'),
+                 'commence_time': e.get('commence_time')}
+                for e in api_events[:80]
+            ],
+            'schedule_comparisons': []
+        }
         matches=[]
         for game in games:
             home=game.get('home_team') or game.get('homeTeam') or game.get('home')
@@ -66,6 +75,25 @@ def main():
             if not (home and away and start):
                 out['warnings'].append('Schedule game missing recognizable home/away/time; skipped safely.')
                 continue
+            # Include a short ranked shortlist so mismatched aliases or dates are visible.
+            def similarity(event):
+                from difflib import SequenceMatcher
+                eh, ea = norm(event.get('home_team')), norm(event.get('away_team'))
+                gh, ga = norm(home), norm(away)
+                direct = (SequenceMatcher(None, eh, gh).ratio() + SequenceMatcher(None, ea, ga).ratio()) / 2
+                reverse = (SequenceMatcher(None, eh, ga).ratio() + SequenceMatcher(None, ea, gh).ratio()) / 2
+                return max(direct, reverse)
+            nearest = sorted(api_events, key=similarity, reverse=True)[:5]
+            out['discovery_diagnostic']['schedule_comparisons'].append({
+                'schedule_home': home, 'schedule_away': away, 'schedule_tipoff_utc': start.isoformat(),
+                'top_candidates': [
+                    {'home_team': e.get('home_team'), 'away_team': e.get('away_team'),
+                     'commence_time': e.get('commence_time'), 'name_similarity': round(similarity(e), 3),
+                     'tipoff_difference_minutes': round((utc(e.get('commence_time')) - start).total_seconds()/60)
+                        if utc(e.get('commence_time')) else None}
+                    for e in nearest
+                ]
+            })
             if start<=now:continue
             candidates=[e for e in api_events if norm(e.get('home_team'))==norm(home) and norm(e.get('away_team'))==norm(away)
                         and (utc(e.get('commence_time')) is not None) and abs((utc(e['commence_time'])-start).total_seconds())<=4*3600]
