@@ -62,7 +62,7 @@ def main():
             away=game.get('away_team') or game.get('awayTeam') or game.get('away')
             if isinstance(home,dict):home=home.get('name') or home.get('school')
             if isinstance(away,dict):away=away.get('name') or away.get('school')
-            start=utc(game.get('start_time') or game.get('commence_time') or game.get('startTime') or game.get('date'))
+            start=utc(game.get('tipoff_utc') or game.get('start_time') or game.get('commence_time') or game.get('startTime') or game.get('date'))
             if not (home and away and start):
                 out['warnings'].append('Schedule game missing recognizable home/away/time; skipped safely.')
                 continue
