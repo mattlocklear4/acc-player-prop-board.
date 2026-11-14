@@ -1,82 +1,46 @@
 {
-  "collected_at": "2026-11-14T15:40:23.528155+00:00",
+  "collected_at": "2026-11-14T22:39:33.754648+00:00",
   "source": "The Odds API",
   "sport": "basketball_ncaab",
   "games": [
     {
-      "id": "81c7fbbb761806436869922f63aa1309",
-      "commence_time": "2026-11-14T21:00:00Z",
-      "home_team": "Georgia Tech Yellow Jackets",
-      "away_team": "UNC Asheville Bulldogs",
-      "acc_team": "Georgia Tech",
+      "id": "0c36ec4e319c96e1812150132adea725",
+      "commence_time": "2026-11-14T21:01:07Z",
+      "home_team": "Wake Forest Demon Deacons",
+      "away_team": "Southern Utah Thunderbirds",
+      "acc_team": "Wake Forest",
       "bookmakers": [
         {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
+          "key": "fanduel",
+          "title": "FanDuel",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:40:00Z",
+              "last_update": "2026-11-14T22:39:20Z",
               "outcomes": [
                 {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -17.0,
-                  "price": -115
+                  "name": "Southern Utah Thunderbirds",
+                  "point": 29.5,
+                  "price": -110
                 },
                 {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 17.0,
-                  "price": -105
+                  "name": "Wake Forest Demon Deacons",
+                  "point": -29.5,
+                  "price": -120
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:40:00Z",
+              "last_update": "2026-11-14T22:39:20Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 157.5,
-                  "price": -110
+                  "point": 143.5,
+                  "price": 100
                 },
                 {
                   "name": "Under",
-                  "point": 157.5,
-                  "price": -110
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:03Z",
-              "outcomes": [
-                {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -17.0,
-                  "price": -111
-                },
-                {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 17.0,
-                  "price": -101
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:03Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 157.5,
-                  "price": -108
-                },
-                {
-                  "name": "Under",
-                  "point": 157.5,
-                  "price": -108
+                  "point": 143.5,
+                  "price": -132
                 }
               ]
             }
@@ -87,31 +51,31 @@
           "title": "DraftKings",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:43Z",
+              "last_update": "2026-11-14T22:37:27Z",
               "outcomes": [
                 {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -17.5,
+                  "name": "Southern Utah Thunderbirds",
+                  "point": 28.5,
                   "price": -105
                 },
                 {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 17.5,
-                  "price": -115
+                  "name": "Wake Forest Demon Deacons",
+                  "point": -28.5,
+                  "price": -125
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:43Z",
+              "last_update": "2026-11-14T22:37:27Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 156.5,
-                  "price": -115
+                  "point": 141.5,
+                  "price": -125
                 },
                 {
                   "name": "Under",
-                  "point": 156.5,
+                  "point": 141.5,
                   "price": -105
                 }
               ]
@@ -119,35 +83,35 @@
           }
         },
         {
-          "key": "bovada",
-          "title": "Bovada",
+          "key": "betmgm",
+          "title": "BetMGM",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:01Z",
+              "last_update": "2026-11-14T22:38:44Z",
               "outcomes": [
                 {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -17.0,
-                  "price": -115
+                  "name": "Southern Utah Thunderbirds",
+                  "point": 28.5,
+                  "price": -110
                 },
                 {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 17.0,
-                  "price": -105
+                  "name": "Wake Forest Demon Deacons",
+                  "point": -28.5,
+                  "price": -118
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:01Z",
+              "last_update": "2026-11-14T22:38:44Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 157.0,
-                  "price": -110
+                  "point": 144.5,
+                  "price": -118
                 },
                 {
                   "name": "Under",
-                  "point": 157.0,
+                  "point": 144.5,
                   "price": -110
                 }
               ]
@@ -159,104 +123,68 @@
           "title": "BetRivers",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:40:00Z",
+              "last_update": "2026-11-14T22:39:19Z",
               "outcomes": [
                 {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -17.5,
-                  "price": -105
+                  "name": "Southern Utah Thunderbirds",
+                  "point": 30.5,
+                  "price": -125
                 },
                 {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 17.5,
-                  "price": -120
+                  "name": "Wake Forest Demon Deacons",
+                  "point": -30.5,
+                  "price": -117
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:40:00Z",
+              "last_update": "2026-11-14T22:39:19Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 157.5,
-                  "price": -109
+                  "point": 143.5,
+                  "price": -113
                 },
                 {
                   "name": "Under",
-                  "point": 157.5,
-                  "price": -114
+                  "point": 143.5,
+                  "price": -130
                 }
               ]
             }
           }
         },
         {
-          "key": "fanduel",
-          "title": "FanDuel",
+          "key": "bovada",
+          "title": "Bovada",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:40:14Z",
+              "last_update": "2026-11-14T22:37:34Z",
               "outcomes": [
                 {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -16.5,
-                  "price": -120
+                  "name": "Southern Utah Thunderbirds",
+                  "point": 28.5,
+                  "price": -105
                 },
                 {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 16.5,
-                  "price": -102
+                  "name": "Wake Forest Demon Deacons",
+                  "point": -28.5,
+                  "price": -125
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:40:14Z",
+              "last_update": "2026-11-14T22:37:34Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 157.5,
-                  "price": -112
+                  "point": 141.5,
+                  "price": -125
                 },
                 {
                   "name": "Under",
-                  "point": 157.5,
-                  "price": -108
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:39:59Z",
-              "outcomes": [
-                {
-                  "name": "Georgia Tech Yellow Jackets",
-                  "point": -17.5,
+                  "point": 141.5,
                   "price": -105
-                },
-                {
-                  "name": "UNC Asheville Bulldogs",
-                  "point": 17.5,
-                  "price": -115
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:39:59Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 157.5,
-                  "price": -105
-                },
-                {
-                  "name": "Under",
-                  "point": 157.5,
-                  "price": -115
                 }
               ]
             }
@@ -265,223 +193,43 @@
       ]
     },
     {
-      "id": "0c36ec4e319c96e1812150132adea725",
-      "commence_time": "2026-11-14T21:00:00Z",
-      "home_team": "Wake Forest Demon Deacons",
-      "away_team": "Southern Utah Thunderbirds",
-      "acc_team": "Wake Forest",
+      "id": "81c7fbbb761806436869922f63aa1309",
+      "commence_time": "2026-11-14T21:01:52Z",
+      "home_team": "Georgia Tech Yellow Jackets",
+      "away_team": "UNC Asheville Bulldogs",
+      "acc_team": "Georgia Tech",
       "bookmakers": [
-        {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:00Z",
-              "outcomes": [
-                {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.0,
-                  "price": -110
-                },
-                {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.0,
-                  "price": -110
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:00Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 156.0,
-                  "price": -107
-                },
-                {
-                  "name": "Under",
-                  "point": 156.0,
-                  "price": -113
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:03Z",
-              "outcomes": [
-                {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.0,
-                  "price": -106
-                },
-                {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.0,
-                  "price": -106
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:03Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 156.0,
-                  "price": -105
-                },
-                {
-                  "name": "Under",
-                  "point": 156.0,
-                  "price": -111
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:14Z",
-              "outcomes": [
-                {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.5,
-                  "price": -110
-                },
-                {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.5,
-                  "price": -110
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:14Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 156.5,
-                  "price": -110
-                },
-                {
-                  "name": "Under",
-                  "point": 156.5,
-                  "price": -110
-                }
-              ]
-            }
-          }
-        },
         {
           "key": "draftkings",
           "title": "DraftKings",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:43Z",
+              "last_update": "2026-11-14T22:37:27Z",
               "outcomes": [
                 {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.5,
-                  "price": -112
+                  "name": "Georgia Tech Yellow Jackets",
+                  "point": 4.5,
+                  "price": -105
                 },
                 {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.5,
-                  "price": -108
+                  "name": "UNC Asheville Bulldogs",
+                  "point": -4.5,
+                  "price": -125
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:43Z",
+              "last_update": "2026-11-14T22:37:27Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 156.5,
-                  "price": -105
+                  "point": 138.5,
+                  "price": -115
                 },
                 {
                   "name": "Under",
-                  "point": 156.5,
+                  "point": 138.5,
                   "price": -115
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:39:59Z",
-              "outcomes": [
-                {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.5,
-                  "price": -115
-                },
-                {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.5,
-                  "price": -105
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:39:59Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 156.5,
-                  "price": -105
-                },
-                {
-                  "name": "Under",
-                  "point": 156.5,
-                  "price": -115
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:00Z",
-              "outcomes": [
-                {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.5,
-                  "price": -108
-                },
-                {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.5,
-                  "price": -115
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:00Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 155.5,
-                  "price": -109
-                },
-                {
-                  "name": "Under",
-                  "point": 155.5,
-                  "price": -114
                 }
               ]
             }
@@ -492,68 +240,140 @@
           "title": "Bovada",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:01Z",
+              "last_update": "2026-11-14T22:35:23Z",
               "outcomes": [
                 {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.5,
+                  "name": "Georgia Tech Yellow Jackets",
+                  "point": 8.5,
                   "price": -115
                 },
                 {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.5,
-                  "price": -105
+                  "name": "UNC Asheville Bulldogs",
+                  "point": -8.5,
+                  "price": -115
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:01Z",
+              "last_update": "2026-11-14T22:35:23Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 156.5,
+                  "point": 135.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 156.5,
-                  "price": -110
+                  "point": 135.5,
+                  "price": -120
                 }
               ]
             }
           }
         },
         {
-          "key": "betus",
-          "title": "BetUS",
+          "key": "betrivers",
+          "title": "BetRivers",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:29Z",
+              "last_update": "2026-11-14T22:39:19Z",
               "outcomes": [
                 {
-                  "name": "Southern Utah Thunderbirds",
-                  "point": 18.0,
-                  "price": -110
+                  "name": "Georgia Tech Yellow Jackets",
+                  "point": 5.5,
+                  "price": -124
                 },
                 {
-                  "name": "Wake Forest Demon Deacons",
-                  "point": -18.0,
+                  "name": "UNC Asheville Bulldogs",
+                  "point": -5.5,
+                  "price": -118
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:19Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 137.5,
+                  "price": -130
+                },
+                {
+                  "name": "Under",
+                  "point": 137.5,
+                  "price": -112
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:19Z",
+              "outcomes": [
+                {
+                  "name": "Georgia Tech Yellow Jackets",
+                  "point": 4.5,
+                  "price": -106
+                },
+                {
+                  "name": "UNC Asheville Bulldogs",
+                  "point": -4.5,
+                  "price": -125
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:19Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 139.5,
+                  "price": -102
+                },
+                {
+                  "name": "Under",
+                  "point": 139.5,
+                  "price": -130
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:38:44Z",
+              "outcomes": [
+                {
+                  "name": "Georgia Tech Yellow Jackets",
+                  "point": 4.5,
+                  "price": -118
+                },
+                {
+                  "name": "UNC Asheville Bulldogs",
+                  "point": -4.5,
                   "price": -110
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:29Z",
+              "last_update": "2026-11-14T22:38:44Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 155.0,
+                  "point": 139.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 155.0,
-                  "price": -110
+                  "point": 139.5,
+                  "price": -115
                 }
               ]
             }
@@ -563,114 +383,42 @@
     },
     {
       "id": "3930c9baece5db0aff8cc39629b2457d",
-      "commence_time": "2026-11-14T22:00:00Z",
+      "commence_time": "2026-11-14T22:01:52Z",
       "home_team": "California Golden Bears",
       "away_team": "Utah Tech Trailblazers",
       "acc_team": "California",
       "bookmakers": [
         {
-          "key": "betonlineag",
-          "title": "BetOnline.ag",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:00Z",
-              "outcomes": [
-                {
-                  "name": "California Golden Bears",
-                  "point": -14.0,
-                  "price": -118
-                },
-                {
-                  "name": "Utah Tech Trailblazers",
-                  "point": 14.0,
-                  "price": -102
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:00Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 159.0,
-                  "price": -110
-                },
-                {
-                  "name": "Under",
-                  "point": 159.0,
-                  "price": -110
-                }
-              ]
-            }
-          }
-        },
-        {
-          "key": "lowvig",
-          "title": "LowVig.ag",
-          "markets": {
-            "spreads": {
-              "last_update": "2026-11-14T15:40:03Z",
-              "outcomes": [
-                {
-                  "name": "California Golden Bears",
-                  "point": -14.0,
-                  "price": -114
-                },
-                {
-                  "name": "Utah Tech Trailblazers",
-                  "point": 14.0,
-                  "price": 102
-                }
-              ]
-            },
-            "totals": {
-              "last_update": "2026-11-14T15:40:03Z",
-              "outcomes": [
-                {
-                  "name": "Over",
-                  "point": 159.0,
-                  "price": -108
-                },
-                {
-                  "name": "Under",
-                  "point": 159.0,
-                  "price": -108
-                }
-              ]
-            }
-          }
-        },
-        {
           "key": "fanduel",
           "title": "FanDuel",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:40:14Z",
+              "last_update": "2026-11-14T22:39:20Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
-                  "point": -14.5,
-                  "price": -110
+                  "point": -1.5,
+                  "price": -114
                 },
                 {
                   "name": "Utah Tech Trailblazers",
-                  "point": 14.5,
-                  "price": -110
+                  "point": 1.5,
+                  "price": -114
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:40:14Z",
+              "last_update": "2026-11-14T22:39:20Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 159.5,
-                  "price": -110
+                  "point": 156.5,
+                  "price": -108
                 },
                 {
                   "name": "Under",
-                  "point": 159.5,
-                  "price": -110
+                  "point": 156.5,
+                  "price": -122
                 }
               ]
             }
@@ -681,31 +429,31 @@
           "title": "DraftKings",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:43Z",
+              "last_update": "2026-11-14T22:37:27Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
-                  "point": -14.5,
-                  "price": -110
+                  "point": -1.5,
+                  "price": -105
                 },
                 {
                   "name": "Utah Tech Trailblazers",
-                  "point": 14.5,
-                  "price": -110
+                  "point": 1.5,
+                  "price": -125
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:43Z",
+              "last_update": "2026-11-14T22:37:27Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 159.5,
-                  "price": -105
+                  "point": 155.5,
+                  "price": -115
                 },
                 {
                   "name": "Under",
-                  "point": 159.5,
+                  "point": 155.5,
                   "price": -115
                 }
               ]
@@ -717,31 +465,31 @@
           "title": "BetMGM",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:59Z",
+              "last_update": "2026-11-14T22:38:44Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
-                  "point": -14.5,
-                  "price": -110
+                  "point": -1.5,
+                  "price": -118
                 },
                 {
                   "name": "Utah Tech Trailblazers",
-                  "point": 14.5,
+                  "point": 1.5,
                   "price": -110
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:59Z",
+              "last_update": "2026-11-14T22:38:44Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 159.5,
-                  "price": -105
+                  "point": 156.5,
+                  "price": -115
                 },
                 {
                   "name": "Under",
-                  "point": 159.5,
+                  "point": 156.5,
                   "price": -115
                 }
               ]
@@ -753,31 +501,148 @@
           "title": "Bovada",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:01Z",
+              "last_update": "2026-11-14T22:37:34Z",
               "outcomes": [
                 {
                   "name": "California Golden Bears",
-                  "point": -14.5,
-                  "price": -115
+                  "point": -1.5,
+                  "price": -105
                 },
                 {
                   "name": "Utah Tech Trailblazers",
-                  "point": 14.5,
-                  "price": -105
+                  "point": 1.5,
+                  "price": -125
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:01Z",
+              "last_update": "2026-11-14T22:37:34Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 159.0,
+                  "point": 155.5,
+                  "price": -115
+                },
+                {
+                  "name": "Under",
+                  "point": 155.5,
+                  "price": -115
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:19Z",
+              "outcomes": [
+                {
+                  "name": "California Golden Bears",
+                  "point": -0.5,
+                  "price": -115
+                },
+                {
+                  "name": "Utah Tech Trailblazers",
+                  "point": 0.5,
+                  "price": -127
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:19Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 154.5,
+                  "price": -115
+                },
+                {
+                  "name": "Under",
+                  "point": 154.5,
+                  "price": -125
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "460c23d41c84519f5edf6c04d47cb25a",
+      "commence_time": "2026-11-15T18:00:00Z",
+      "home_team": "Memphis Tigers",
+      "away_team": "Louisville Cardinals",
+      "acc_team": "Louisville",
+      "bookmakers": [
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Louisville Cardinals",
+                  "point": -8.5,
+                  "price": -110
+                },
+                {
+                  "name": "Memphis Tigers",
+                  "point": 8.5,
+                  "price": -110
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 162.5,
+                  "price": -115
+                },
+                {
+                  "name": "Under",
+                  "point": 162.5,
+                  "price": -105
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Louisville Cardinals",
+                  "point": -9.0,
+                  "price": -110
+                },
+                {
+                  "name": "Memphis Tigers",
+                  "point": 9.0,
+                  "price": -110
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 163.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 159.0,
+                  "point": 163.5,
                   "price": -110
                 }
               ]
@@ -785,35 +650,71 @@
           }
         },
         {
-          "key": "betus",
-          "title": "BetUS",
+          "key": "lowvig",
+          "title": "LowVig.ag",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:39:29Z",
+              "last_update": "2026-11-14T22:38:32Z",
               "outcomes": [
                 {
-                  "name": "California Golden Bears",
-                  "point": -14.5,
-                  "price": -110
+                  "name": "Louisville Cardinals",
+                  "point": -9.0,
+                  "price": -106
                 },
                 {
-                  "name": "Utah Tech Trailblazers",
-                  "point": 14.5,
-                  "price": -110
+                  "name": "Memphis Tigers",
+                  "point": 9.0,
+                  "price": -106
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:39:29Z",
+              "last_update": "2026-11-14T22:38:32Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 159.0,
+                  "point": 163.5,
+                  "price": -108
+                },
+                {
+                  "name": "Under",
+                  "point": 163.5,
+                  "price": -108
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:37:27Z",
+              "outcomes": [
+                {
+                  "name": "Louisville Cardinals",
+                  "point": -8.5,
+                  "price": -112
+                },
+                {
+                  "name": "Memphis Tigers",
+                  "point": 8.5,
+                  "price": -108
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:37:27Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 163.5,
                   "price": -110
                 },
                 {
                   "name": "Under",
-                  "point": 159.0,
+                  "point": 163.5,
                   "price": -110
                 }
               ]
@@ -825,32 +726,359 @@
           "title": "BetRivers",
           "markets": {
             "spreads": {
-              "last_update": "2026-11-14T15:40:00Z",
+              "last_update": "2026-11-14T22:39:20Z",
               "outcomes": [
                 {
-                  "name": "California Golden Bears",
-                  "point": -14.5,
+                  "name": "Louisville Cardinals",
+                  "point": -8.5,
                   "price": -112
                 },
                 {
-                  "name": "Utah Tech Trailblazers",
-                  "point": 14.5,
+                  "name": "Memphis Tigers",
+                  "point": 8.5,
                   "price": -112
                 }
               ]
             },
             "totals": {
-              "last_update": "2026-11-14T15:40:00Z",
+              "last_update": "2026-11-14T22:39:20Z",
               "outcomes": [
                 {
                   "name": "Over",
-                  "point": 158.5,
-                  "price": -114
+                  "point": 163.5,
+                  "price": -112
                 },
                 {
                   "name": "Under",
-                  "point": 158.5,
+                  "point": 163.5,
+                  "price": -112
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:38:45Z",
+              "outcomes": [
+                {
+                  "name": "Louisville Cardinals",
+                  "point": -8.5,
+                  "price": -110
+                },
+                {
+                  "name": "Memphis Tigers",
+                  "point": 8.5,
+                  "price": -110
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:38:45Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 163.5,
+                  "price": -105
+                },
+                {
+                  "name": "Under",
+                  "point": 163.5,
+                  "price": -115
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "7bd8e4044302f52d0233d1a4f9b0cc19",
+      "commence_time": "2026-11-15T18:30:00Z",
+      "home_team": "Boston College Eagles",
+      "away_team": "New Hampshire Wildcats",
+      "acc_team": "Boston College",
+      "bookmakers": [
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:21Z",
+              "outcomes": [
+                {
+                  "name": "Boston College Eagles",
+                  "point": -21.5,
+                  "price": -115
+                },
+                {
+                  "name": "New Hampshire Wildcats",
+                  "point": 21.5,
+                  "price": -105
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:21Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 134.0,
+                  "price": -110
+                },
+                {
+                  "name": "Under",
+                  "point": 134.0,
+                  "price": -110
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:38:33Z",
+              "outcomes": [
+                {
+                  "name": "Boston College Eagles",
+                  "point": -21.5,
+                  "price": -111
+                },
+                {
+                  "name": "New Hampshire Wildcats",
+                  "point": 21.5,
+                  "price": -101
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:38:33Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 134.0,
                   "price": -108
+                },
+                {
+                  "name": "Under",
+                  "point": 134.0,
+                  "price": -108
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "582afe6b3fd7ef51b57ac7c6fc777820",
+      "commence_time": "2026-11-16T00:00:00Z",
+      "home_team": "St. John's Red Storm",
+      "away_team": "Syracuse Orange",
+      "acc_team": "Syracuse",
+      "bookmakers": [
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "St. John's Red Storm",
+                  "point": -12.5,
+                  "price": -110
+                },
+                {
+                  "name": "Syracuse Orange",
+                  "point": 12.5,
+                  "price": -110
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 149.5,
+                  "price": -115
+                },
+                {
+                  "name": "Under",
+                  "point": 149.5,
+                  "price": -105
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "lowvig",
+          "title": "LowVig.ag",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:38:33Z",
+              "outcomes": [
+                {
+                  "name": "St. John's Red Storm",
+                  "point": -12.5,
+                  "price": -111
+                },
+                {
+                  "name": "Syracuse Orange",
+                  "point": 12.5,
+                  "price": -101
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:38:33Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 151.0,
+                  "price": -108
+                },
+                {
+                  "name": "Under",
+                  "point": 151.0,
+                  "price": -108
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "St. John's Red Storm",
+                  "point": -12.5,
+                  "price": -115
+                },
+                {
+                  "name": "Syracuse Orange",
+                  "point": 12.5,
+                  "price": -105
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 151.0,
+                  "price": -110
+                },
+                {
+                  "name": "Under",
+                  "point": 151.0,
+                  "price": -110
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "draftkings",
+          "title": "DraftKings",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:37:27Z",
+              "outcomes": [
+                {
+                  "name": "St. John's Red Storm",
+                  "point": -12.5,
+                  "price": -112
+                },
+                {
+                  "name": "Syracuse Orange",
+                  "point": 12.5,
+                  "price": -108
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:37:27Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 150.5,
+                  "price": -110
+                },
+                {
+                  "name": "Under",
+                  "point": 150.5,
+                  "price": -110
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "markets": {
+            "spreads": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "St. John's Red Storm",
+                  "point": -12.5,
+                  "price": -109
+                },
+                {
+                  "name": "Syracuse Orange",
+                  "point": 12.5,
+                  "price": -114
+                }
+              ]
+            },
+            "totals": {
+              "last_update": "2026-11-14T22:39:20Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 149.5,
+                  "price": -115
+                },
+                {
+                  "name": "Under",
+                  "point": 149.5,
+                  "price": -108
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "markets": {
+            "totals": {
+              "last_update": "2026-11-14T22:38:45Z",
+              "outcomes": [
+                {
+                  "name": "Over",
+                  "point": 150.5,
+                  "price": -115
+                },
+                {
+                  "name": "Under",
+                  "point": 150.5,
+                  "price": -105
                 }
               ]
             }
