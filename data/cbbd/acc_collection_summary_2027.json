@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-13T12:10:34.493668+00:00",
+  "last_successful_run_utc": "2026-11-14T11:55:46.829028+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -12,16 +12,16 @@
       "players": 45
     },
     "Clemson": {
-      "games": 3,
-      "players": 25
-    },
-    "Duke": {
-      "games": 3,
+      "games": 4,
       "players": 34
     },
+    "Duke": {
+      "games": 4,
+      "players": 47
+    },
     "Florida State": {
-      "games": 3,
-      "players": 33
+      "games": 4,
+      "players": 43
     },
     "Georgia Tech": {
       "games": 3,
@@ -32,50 +32,50 @@
       "players": 21
     },
     "Miami": {
-      "games": 3,
-      "players": 33
+      "games": 4,
+      "players": 44
     },
     "NC State": {
-      "games": 3,
-      "players": 35
+      "games": 4,
+      "players": 45
     },
     "North Carolina": {
-      "games": 3,
-      "players": 34
+      "games": 4,
+      "players": 43
     },
     "Notre Dame": {
       "games": 4,
       "players": 54
     },
     "Pittsburgh": {
-      "games": 3,
-      "players": 31
+      "games": 4,
+      "players": 39
     },
     "SMU": {
-      "games": 3,
-      "players": 35
+      "games": 4,
+      "players": 48
     },
     "Stanford": {
-      "games": 3,
-      "players": 29
+      "games": 4,
+      "players": 40
     },
     "Syracuse": {
       "games": 3,
       "players": 33
     },
     "Virginia": {
-      "games": 4,
-      "players": 60
+      "games": 5,
+      "players": 70
     },
     "Virginia Tech": {
-      "games": 3,
-      "players": 38
+      "games": 4,
+      "players": 53
     },
     "Wake Forest": {
       "games": 3,
       "players": 34
     }
   },
-  "total_player_games": 644,
+  "total_player_games": 763,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
