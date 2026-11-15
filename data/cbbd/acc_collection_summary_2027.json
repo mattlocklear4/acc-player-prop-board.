@@ -1,6 +1,6 @@
 {
   "season": 2027,
-  "last_successful_run_utc": "2026-11-14T11:55:46.829028+00:00",
+  "last_successful_run_utc": "2026-11-15T11:57:18.266942+00:00",
   "api_requests": 18,
   "team_counts": {
     "Boston College": {
@@ -8,8 +8,8 @@
       "players": 33
     },
     "California": {
-      "games": 4,
-      "players": 45
+      "games": 5,
+      "players": 55
     },
     "Clemson": {
       "games": 4,
@@ -24,8 +24,8 @@
       "players": 43
     },
     "Georgia Tech": {
-      "games": 3,
-      "players": 37
+      "games": 4,
+      "players": 50
     },
     "Louisville": {
       "games": 2,
@@ -72,10 +72,10 @@
       "players": 53
     },
     "Wake Forest": {
-      "games": 3,
-      "players": 34
+      "games": 4,
+      "players": 48
     }
   },
-  "total_player_games": 763,
+  "total_player_games": 800,
   "csv_file": "data/cbbd/acc_player_games_2027.csv"
 }
