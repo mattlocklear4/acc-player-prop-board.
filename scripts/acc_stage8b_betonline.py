@@ -26,6 +26,17 @@ def utc(s):
 def norm(s):
     return re.sub(r'[^a-z0-9]', '', str(s or '').lower().replace('university', '').replace('college', ''))
 
+def team_match(schedule_name, api_name):
+    """Match a known school prefix, allowing API team nicknames."""
+    aliases = {
+        'floridastate': 'floridast',
+        'texasamcorpuschristi': 'texasamcc',
+    }
+    school = norm(schedule_name)
+    provider = norm(api_name)
+    school = aliases.get(school, school)
+    return len(school) >= 5 and provider.startswith(school)
+
 def get(url, params):
     request = urllib.request.Request(url + '?' + urllib.parse.urlencode(params), headers={'User-Agent':'ACC-Prop-Preview/1.0'})
     with urllib.request.urlopen(request, timeout=25) as resp:
@@ -39,6 +50,8 @@ def main():
     p.add_argument('--max-events', type=int, default=2)
     p.add_argument('--min-credits-remaining', type=int, default=30)
     a=p.parse_args()
+    if a.fetch_odds:
+        p.error('Paid odds requests are disabled. This workflow supports free event discovery only.')
     out={'mode':'READ_ONLY','generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(), 'bookmaker':BOOK,
          'markets':list(MARKETS),'paid_requests_enabled':a.fetch_odds,'events':[], 'warnings':[],
          'quota':{'estimated_max_credits':max(0,min(a.max_events,10))*len(MARKETS),'requests_sent':0,'credits_spent_reported':0}}
@@ -95,7 +108,7 @@ def main():
                 ]
             })
             if start<=now:continue
-            candidates=[e for e in api_events if norm(e.get('home_team'))==norm(home) and norm(e.get('away_team'))==norm(away)
+            candidates=[e for e in api_events if team_match(home,e.get('home_team')) and team_match(away,e.get('away_team'))
                         and (utc(e.get('commence_time')) is not None) and abs((utc(e['commence_time'])-start).total_seconds())<=4*3600]
             if len(candidates)==1:matches.append((game,candidates[0]))
             elif len(candidates)>1:out['warnings'].append(f'Ambiguous event match: {home} vs {away}; skipped.')
@@ -104,37 +117,6 @@ def main():
         if not a.fetch_odds:
             out['events']=[{'event_id':e['id'],'home_team':e['home_team'],'away_team':e['away_team'], 'status':'DISCOVERY_ONLY_NO_CREDITS'} for _,e in matches]
             out['warnings'].append('Discovery-only mode: use --fetch-odds to explicitly authorize paid calls.');save();return
-        if a.max_events<1 or a.max_events>10:raise ValueError('max-events must be 1..10')
-        for _,e in matches[:a.max_events]:
-            # one region, 4 markets; only BetOnline returned (bookmaker filter)
-            params={'apiKey':key,'regions':'us','bookmakers':BOOK,'markets':','.join(MARKETS),'oddsFormat':'american'}
-            data,h=get(ROOT+'/events/'+urllib.parse.quote(e['id'],safe='')+'/odds',params)
-            out['quota']['requests_sent']+=1
-            cost=int(h.get('x-requests-last','0'))
-            out['quota']['credits_spent_reported']+=cost
-            remaining=int(h.get('x-requests-remaining','-1'))
-            out['quota']['remaining_after_last_request']=remaining
-            record={'event_id':e['id'],'home_team':e['home_team'],'away_team':e['away_team'],
-                    'commence_time':e.get('commence_time'),'markets':{},'bookmaker_found':False}
-            for book in data.get('bookmakers',[]):
-                if book.get('key')!=BOOK:continue
-                record['bookmaker_found']=True
-                for market in book.get('markets',[]):
-                    if market.get('key') not in MARKETS:continue
-                    grouped={}
-                    for o in market.get('outcomes',[]):
-                        side=o.get('name','').lower()
-                        player=o.get('description')
-                        if not player or side not in ('over','under'):continue
-                        line=o.get('point')
-                        k=(player,line)
-                        item=grouped.setdefault(k,{'player':player,'line':line,'last_update':market.get('last_update')})
-                        item[side+'_odds']=o.get('price')
-                    record['markets'][market['key']]=list(grouped.values())
-            out['events'].append(record)
-            if remaining>=0 and remaining<a.min_credits_remaining:
-                out['warnings'].append('Stopped: remaining API credits below safety threshold.');break
-        if len(matches)>a.max_events:out['warnings'].append('Additional matched events skipped due to max-events cap.')
     except (OSError, ValueError, urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError) as ex:
         out['warnings'].append('Preview error: '+str(ex).split('?')[0][:240])
     finally:save()
