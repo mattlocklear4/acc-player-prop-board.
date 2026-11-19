@@ -88,15 +88,27 @@ def main():
         key=os.getenv('CBBD_API_KEY','').strip()
         if not key: p.error('CBBD_API_KEY secret is required')
         records={}
+        provider_error=None
         for team in TEAMS:
-            records[team]=get_games(team,args.season,key)
+            try:
+                records[team]=get_games(team,args.season,key)
+            except RuntimeError as exc:
+                # Never treat a partial team schedule as complete.
+                provider_error=str(exc)
+                break
             time.sleep(.15)
-    games,problems=discover(records,now,args.horizon_hours)
-    result={'mode':'DRY_RUN_NO_WRITES','generated_at_utc':now.isoformat(),'season':args.season,'horizon_hours':args.horizon_hours,'games':games,'warnings':problems,'queried_teams':len(records)}
+    if not args.fixture and provider_error:
+        games=[]
+        problems=[{'reason':'schedule_provider_unavailable','detail':provider_error}]
+        schedule_status='UNAVAILABLE'
+    else:
+        games,problems=discover(records,now,args.horizon_hours)
+        schedule_status='OK'
+    result={'mode':'DRY_RUN_NO_WRITES','schedule_status':schedule_status,'generated_at_utc':now.isoformat(),'season':args.season,'horizon_hours':args.horizon_hours,'games':games,'warnings':problems,'queried_teams':len(records)}
     dest=Path(args.output);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(f'DRY RUN: {len(games)} upcoming ACC games; {len(problems)} incomplete/conflicting records; output {dest}')
     for g in games:print(g['tipoff_utc'],g['home_team'],'vs',g['away_team'],'CBBD ID',g['game_id'])
-    if problems:print('WARNING: some schedule records require review; see artifact')
+    if problems:print('WARNING: schedule incomplete or unavailable; see artifact. Do not interpret empty games as no ACC games.')
 
 if __name__=='__main__':main()
