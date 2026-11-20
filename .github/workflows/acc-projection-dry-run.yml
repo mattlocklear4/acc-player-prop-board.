@@ -96,23 +96,28 @@ jobs:
         if: success()
         run: |
           if [ -f data/friday_board.json ]; then
+            cp data/friday_board.json /tmp/acc-friday-board.json
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add data/friday_board.json
-            if ! git diff --cached --quiet; then
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git checkout -B friday-publish origin/main
+              cp /tmp/acc-friday-board.json data/friday_board.json
+              git add data/friday_board.json
+              if git diff --cached --quiet; then
+                echo "Friday board already up to date"
+                break
+              fi
               git commit -m 'Update Friday ACC projection and odds board [skip ci]'
-              for attempt in 1 2 3; do
-                git fetch origin main
-                if git rebase origin/main && git push origin HEAD:main; then
-                  break
-                fi
-                if [ "$attempt" -eq 3 ]; then
-                  echo "Board publish push failed after 3 attempts"
-                  exit 1
-                fi
-                sleep 3
-              done
-            fi
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Board publish push failed after 3 attempts"
+                exit 1
+              fi
+              sleep 3
+            done
           fi
       - name: Upload diagnostic reports
         if: always()
