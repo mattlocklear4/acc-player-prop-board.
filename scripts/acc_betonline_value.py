@@ -52,6 +52,11 @@ def main():
     history=defaultdict(list)
     for r in read_csv(Path('data/cbbd/acc_player_games_2027.csv')):
         if r.get('athlete_id'):history[str(r['athlete_id'])].append(r)
+    availability={}
+    flagfile=Path('data/acc_friday_availability_review.csv')
+    if flagfile.exists():
+        for flag in read_csv(flagfile):
+            availability[(norm(flag.get('team')),norm(flag.get('player')))]=flag
     rows=[];warnings=[];unmatched=0
     with open(a.lines,newline='',encoding='utf-8-sig') as file:
         for line in csv.DictReader(file):
@@ -64,6 +69,9 @@ def main():
                 if gid:candidates=[x for x in candidates if str(x[0]['game_id'])==gid]
                 if len(candidates)!=1:raise ValueError('player_or_game_missing_or_ambiguous')
                 game,team,player=candidates[0]
+                flag=availability.get((norm(team['team']),norm(player.get('Player'))))
+                if flag and flag.get('status') in ('out','reported_out','review_out'):
+                    raise ValueError('availability_review_required:'+flag['status'])
                 tip=datetime.fromisoformat(game['tipoff_utc'].replace('Z','+00:00'))
                 if a.date_eastern and tip.astimezone(ZoneInfo('America/New_York')).date().isoformat()!=a.date_eastern:
                     raise ValueError('game_outside_selected_date')
