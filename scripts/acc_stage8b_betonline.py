@@ -47,16 +47,16 @@ def main():
     p.add_argument('--schedule', default='research/acc_schedule_dry_run.json')
     p.add_argument('--output', default='research/acc_stage8b_betonline_preview.json')
     p.add_argument('--fetch-odds', action='store_true', help='Spend credits; disabled by default')
-    p.add_argument('--max-events', type=int, default=2)
+    p.add_argument('--max-events', type=int, default=100)
     p.add_argument('--min-credits-remaining', type=int, default=30)
     a=p.parse_args()
-    if not 1<=a.max_events<=2:
-        p.error('Safety cap: at most 2 paid events per manual run')
-    if a.min_credits_remaining<30:
-        p.error('Safety floor: at least 30 credits must remain')
+    if not 1<=a.max_events<=100:
+        p.error('max-events must be between 1 and 100')
+    if a.min_credits_remaining<0:
+        p.error('min-credits-remaining must be nonnegative')
     out={'mode':'READ_ONLY','generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(), 'bookmaker':BOOK,
          'markets':list(MARKETS),'paid_requests_enabled':a.fetch_odds,'events':[], 'warnings':[],
-         'quota':{'estimated_max_credits':max(0,min(a.max_events,10))*len(MARKETS),'requests_sent':0,'credits_spent_reported':0}}
+         'quota':{'estimated_max_credits':a.max_events*len(MARKETS),'requests_sent':0,'credits_spent_reported':0}}
     def save():
         path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
@@ -119,14 +119,14 @@ def main():
         if not a.fetch_odds:
             out['events']=[{'event_id':e['id'],'home_team':e['home_team'],'away_team':e['away_team'], 'status':'DISCOVERY_ONLY_NO_CREDITS'} for _,e in matches]
             out['warnings'].append('Discovery-only mode; no paid event odds requested.');save();return
-        # Only Friday in Eastern time. Manual dispatch only; hard limit 2 events x 4 markets.
+        # Only Friday in Eastern time. Manual dispatch only; all matched Friday games.
         from zoneinfo import ZoneInfo
         today=now.astimezone(ZoneInfo('America/New_York')).date()
         friday=today+dt.timedelta(days=(4-today.weekday())%7)
         friday_matches=[(g,e) for g,e in matches
             if utc(e.get('commence_time')).astimezone(ZoneInfo('America/New_York')).date()==friday]
         out['target_date_eastern']=friday.isoformat()
-        out['quota']['estimated_max_credits']=a.max_events*len(MARKETS)
+        out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches))*len(MARKETS)
         if not friday_matches:
             out['warnings'].append('No matched upcoming Friday events; zero paid requests.');return
         for game,event in friday_matches[:a.max_events]:
