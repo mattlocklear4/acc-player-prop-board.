@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       fetch_draftkings_props:
-        description: 'Retrieve DraftKings props for ALL matched Friday ACC games (uses Odds API credits; manual only)'
+        description: 'Retrieve DraftKings props for up to 20 matched Friday ACC games (uses Odds API credits; manual only)'
         type: boolean
         default: false
   push:
@@ -75,7 +75,7 @@ jobs:
           fi
       - name: Convert live DraftKings response to prop CSV (NO ADDITIONAL API CALLS)
         run: |
-          if { [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; } || { [ '${{ github.event_name }}' = 'schedule' ] && [ '${{ github.event.schedule }}' = '0 15 20 11 *' ] && [ "$(date -u +%F)" = '2026-11-20' ]; }; then
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; then
             python scripts/acc_draftkings_preview_to_csv.py
           fi
       - name: Compare DraftKings player prop CSV against projections (NO API CALLS)
