@@ -24,8 +24,11 @@ def game_team(name):
              'miamihurricanes':'Miami','californiagoldenbears':'California'}
     for prefix,team in aliases.items():
         if key.startswith(prefix):return team
-    candidates=[team for k,team in ACC_CANON.items() if len(k)>=5 and key.startswith(k)]
-    return candidates[0] if len(candidates)==1 else None
+    candidates=[(len(k),team) for k,team in ACC_CANON.items() if len(k)>=5 and key.startswith(k)]
+    if not candidates:return None
+    longest=max(n for n,_ in candidates)
+    winners=[team for n,team in candidates if n==longest]
+    return winners[0] if len(winners)==1 else None
 
 def school_match(odds_name, scheduled_name):
     a,b=canon(odds_name),canon(scheduled_name)
