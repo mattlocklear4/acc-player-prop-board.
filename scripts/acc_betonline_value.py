@@ -70,7 +70,7 @@ def main():
                 if len(candidates)!=1:raise ValueError('player_or_game_missing_or_ambiguous')
                 game,team,player=candidates[0]
                 flag=availability.get((norm(team['team']),norm(player.get('Player'))))
-                if flag and flag.get('status') in ('out','reported_out','review_out'):
+                if flag and flag.get('status') in ('out','reported_out','review_out','questionable'):
                     raise ValueError('availability_review_required:'+flag['status'])
                 tip=datetime.fromisoformat(game['tipoff_utc'].replace('Z','+00:00'))
                 if a.date_eastern and tip.astimezone(ZoneInfo('America/New_York')).date().isoformat()!=a.date_eastern:
