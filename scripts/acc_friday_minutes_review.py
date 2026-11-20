@@ -30,11 +30,13 @@ for game in slate['games']:
     for team in game['teams']:
         for p in team['players']:
             history=sorted(by_player.get((team['team'],str(p.get('AthleteId'))),[]),key=lambda r:r['game_date'],reverse=True)
-            minutes=[num(r.get('minutes')) for r in history]
+            # Regulation minutes only: overtime games distort a 200-minute rotation.
+            regulation=[r for r in history if (num(r.get('game_minutes')) or 40)<=40]
+            minutes=[num(r.get('minutes')) for r in regulation]
             minutes=[v for v in minutes if v is not None]
-            usage=[num(r.get('usage_pct')) for r in history[:5]]
+            usage=[num(r.get('usage_pct')) for r in regulation[:5]]
             usage=[v for v in usage if v is not None]
-            starts=sum(str(r.get('starter')).lower()=='true' for r in history[:5])
+            starts=sum(str(r.get('starter')).lower()=='true' for r in regulation[:5])
             # Weighted recent-game signal, not an injury-adjusted minute projection.
             last3=minutes[:3];last5=minutes[:5]
             recent=avg(last3);season=avg(minutes)
@@ -46,8 +48,8 @@ for game in slate['games']:
                          'season_minutes':season,'last3_minutes':recent,'last5_minutes':avg(last5),
                          'last5_minutes_sd':round(statistics.pstdev(last5),2) if len(last5)>=2 else None,
                          'recent_weighted_minutes_signal':round(sample,2) if sample is not None else None,
-                         'starts_last5':starts,'games_last5':len(history[:5]),'usage_pct_last5':avg(usage),
-                         'minutes_sample_size':len(minutes),'risk':risk,
+                         'starts_last5':starts,'games_last5':len(regulation[:5]),'usage_pct_last5':avg(usage),
+                         'minutes_sample_size':len(minutes),'overtime_games_excluded':len(history)-len(regulation),'risk':risk,
                          'availability_status':flag.get('status','').strip().casefold() if flag else None,
                          'availability_source':flag.get('source_url') if flag else None})
 # Exploratory rotation-adjusted scenario. Never overwrite verified baseline.
