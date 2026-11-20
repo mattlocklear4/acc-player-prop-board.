@@ -69,7 +69,9 @@ for teamrows in by_team.values():
     # at least eight players have a meaningful sample; cap any player at 40.
     active=[r for r in teamrows if r['rotation_minutes_raw']>0]
     if len(active)<8:
-        for r in teamrows:r['rotation_minutes_scenario']=None
+        for r in teamrows:
+            r['rotation_minutes_scenario']=None
+            r['rotation_minutes_delta']=None
         continue
     allocation={id(r):r['rotation_minutes_raw'] for r in active}
     for _ in range(20):
@@ -82,8 +84,30 @@ for teamrows in by_team.values():
         for r,w in zip(eligible,weights):
             old=allocation[id(r)]
             allocation[id(r)]=max(0,min(40,old+deficit*w/total))
+    # A 200-minute allocation is not credible if the candidate pool cannot
+    # absorb it. Never publish a misleading partial allocation as complete.
+    if abs(sum(allocation.values())-200)>0.05:
+        for r in teamrows:
+            r['rotation_minutes_scenario']=None
+            r['rotation_minutes_delta']=None
+        continue
+    # Round consistently while retaining the exact 200-minute team total.
+    cents={id(r):int(allocation.get(id(r),0)*100) for r in teamrows}
+    remainder=20000-sum(cents.values())
+    if remainder:
+        ranked=sorted(teamrows,key=lambda r:(allocation.get(id(r),0)*100-cents[id(r)]),reverse=True)
+        for r in ranked:
+            if remainder<=0:break
+            if allocation.get(id(r),0)>0 and cents[id(r)]<4000:
+                cents[id(r)]+=1
+                remainder-=1
+    if remainder:
+        for r in teamrows:
+            r['rotation_minutes_scenario']=None
+            r['rotation_minutes_delta']=None
+        continue
     for r in teamrows:
-        r['rotation_minutes_scenario']=round(allocation.get(id(r),0),2)
+        r['rotation_minutes_scenario']=cents[id(r)]/100
         r['rotation_minutes_delta']=round(r['rotation_minutes_scenario']-(r['model_minutes'] or 0),2)
 dest=Path('research/acc_friday_minutes_review.json')
 dest.parent.mkdir(parents=True,exist_ok=True)
