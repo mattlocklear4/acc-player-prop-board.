@@ -139,7 +139,7 @@ def main():
             schedule_status='FALLBACK_FREE_ODDS_EVENTS'
             problems.append({'reason':'fallback_used','events_discovered':discovered,
                              'note':'Event IDs and nickname-bearing team names come from free Odds API; verify opponent mapping before betting.'})
-        except (OSError,ValueError,urllib.error.HTTPError,urllib.error.URLError) as exc:
+        except (OSError,ValueError,RuntimeError,urllib.error.HTTPError,urllib.error.URLError) as exc:
             games=[]
             problems.append({'reason':'fallback_unavailable','detail':str(exc).split('?')[0][:150]})
             schedule_status='UNAVAILABLE'
