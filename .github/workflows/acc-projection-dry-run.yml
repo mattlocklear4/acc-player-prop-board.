@@ -2,6 +2,11 @@ name: ACC Projection Dry Run (v2.3)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_*.py'
+      - '.github/workflows/acc-projection-dry-run.yml'
   schedule:
     - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
 
