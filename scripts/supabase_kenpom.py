@@ -30,7 +30,19 @@ def resolve_opponent(name, kp):
     key = canon(name)
     key = OPPONENT_ALIASES.get(key,key)
     matches=[r['Team'] for k,r in kp.items() if OPPONENT_ALIASES.get(k,k)==key]
-    return matches[0] if len(matches)==1 else None
+    if len(matches)==1:return matches[0]
+    # Free event discovery appends mascots; accept a unique KenPom school prefix only.
+    # Refuse short or ambiguous prefixes, and never silently guess an opponent.
+    prefixes=[r['Team'] for k,r in kp.items() if len(k)>=5 and key.startswith(k)]
+    if len(prefixes)==1:return prefixes[0]
+    aliases={'texasamccislanders':'texasamcorpuschristi',
+             'floridastseminoles':'floridast',
+             'siuedwardsvillecougars':'siuedwardsville'}
+    alias=aliases.get(key)
+    if alias:
+        found=[r['Team'] for k,r in kp.items() if k==alias]
+        if len(found)==1:return found[0]
+    return None
 
 def _iso(ts):
     if not ts: return None
