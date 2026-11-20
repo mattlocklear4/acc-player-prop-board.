@@ -76,7 +76,11 @@ jobs:
       - name: Convert live DraftKings response to prop CSV (NO ADDITIONAL API CALLS)
         run: |
           if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; then
-            python scripts/acc_draftkings_preview_to_csv.py
+            if [ ! -f data/draftkings_player_props.csv ]; then
+              python scripts/acc_draftkings_preview_to_csv.py
+            else
+              echo 'Keeping existing DraftKings CSV imported from Google Sheets; not overwriting it.'
+            fi
           fi
       - name: Compare DraftKings player prop CSV against projections (NO API CALLS)
         run: |
