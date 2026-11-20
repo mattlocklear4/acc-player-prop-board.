@@ -1,9 +1,9 @@
 (()=>{'use strict';
 const el=document.getElementById('fridayLiveBoard');if(!el)return;
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const num=(n,d=1)=>Number.isFinite(Number(n))?Number(n).toFixed(d):'—';
-const odds=n=>Number.isFinite(Number(n))?(Number(n)>0?'+':'')+n:'—';
-const pct=n=>Number.isFinite(Number(n))?(100*Number(n)).toFixed(1)+'%':'—';
+const num=(n,d=1)=>n!==null&&n!==undefined&&n!==''&&Number.isFinite(Number(n))?Number(n).toFixed(d):'—';
+const odds=n=>n!==null&&n!==undefined&&n!==''&&Number.isFinite(Number(n))?(Number(n)>0?'+':'')+n:'—';
+const pct=n=>n!==null&&n!==undefined&&n!==''&&Number.isFinite(Number(n))?(100*Number(n)).toFixed(1)+'%':'—';
 const state={model:'KenPom',positive:false,team:''};
 let data=null;
 function render(){
