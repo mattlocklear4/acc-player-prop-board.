@@ -70,8 +70,8 @@ def main():
                 if len(candidates)!=1:raise ValueError('player_or_game_missing_or_ambiguous')
                 game,team,player=candidates[0]
                 flag=availability.get((norm(team['team']),norm(player.get('Player'))))
-                if flag and flag.get('status') in ('out','reported_out','review_out','questionable'):
-                    raise ValueError('availability_review_required:'+flag['status'])
+                if flag and str(flag.get('status') or '').strip().casefold() in ('out','reported_out','review_out','questionable','doubtful'):
+                    raise ValueError('availability_review_required:'+str(flag['status']).strip().casefold())
                 tip=datetime.fromisoformat(game['tipoff_utc'].replace('Z','+00:00'))
                 if a.date_eastern and tip.astimezone(ZoneInfo('America/New_York')).date().isoformat()!=a.date_eastern:
                     raise ValueError('game_outside_selected_date')
@@ -82,6 +82,8 @@ def main():
                 if raw_line.is_integer():raise ValueError('integer_lines_not_supported_push_risk')
                 over=float(line['over_odds']);under=float(line['under_odds'])
                 po,pu=profit(over),profit(under)
+                # A line with a missing side is not a two-way comparable market.
+                # Reject invalid odds instead of fabricating a fair price.
                 prior=[numeric(r.get({'Points':'points','Rebounds':'reb','Assists':'assists','Threes':'three_pm'}[stat]))
                        for r in history.get(str(player.get('AthleteId')),[])
                        if r.get('game_date','')<tip.date().isoformat()]
