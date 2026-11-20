@@ -52,10 +52,13 @@ def free_odds_events_fallback(now, horizon_hours):
         return ''.join(c for c in str(x or '').lower() if c.isalnum())
     def acc_school(name):
         n=norm_name(name)
-        found=[team for team in TEAMS if n.startswith(aliases.get(norm_name(team),norm_name(team)))]
+        found=[(len(aliases.get(norm_name(team),norm_name(team))),team)
+               for team in TEAMS if n.startswith(aliases.get(norm_name(team),norm_name(team)))]
         # Miami is ambiguous without its nickname; never assume Miami (OH) is ACC.
-        if n.startswith('miamiohio'):return None
-        return found[0] if len(found)==1 else None
+        if n.startswith('miamiohio') or not found:return None
+        longest=max(length for length,_ in found)
+        winners=[team for length,team in found if length==longest]
+        return winners[0] if len(winners)==1 else None
     games=[]
     for e in events:
         tip=parse_time(e.get('commence_time'))
