@@ -97,7 +97,17 @@ jobs:
             git add data/friday_board.json
             if ! git diff --cached --quiet; then
               git commit -m 'Update Friday ACC projection and odds board [skip ci]'
-              git push origin HEAD:main
+              for attempt in 1 2 3; do
+                git fetch origin main
+                if git rebase origin/main && git push origin HEAD:main; then
+                  break
+                fi
+                if [ "$attempt" -eq 3 ]; then
+                  echo "Board publish push failed after 3 attempts"
+                  exit 1
+                fi
+                sleep 3
+              done
             fi
           fi
       - name: Upload diagnostic reports
