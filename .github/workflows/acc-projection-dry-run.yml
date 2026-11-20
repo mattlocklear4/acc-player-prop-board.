@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/acc_*.py'
+      - 'scripts/research_engine.py'
+      - 'scripts/supabase_kenpom.py'
       - '.github/workflows/acc-projection-dry-run.yml'
   schedule:
     - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
