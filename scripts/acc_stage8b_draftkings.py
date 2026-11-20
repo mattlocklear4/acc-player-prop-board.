@@ -15,7 +15,7 @@ import urllib.request
 
 SPORT = 'basketball_ncaab'
 MARKETS = ('player_points', 'player_rebounds', 'player_assists', 'player_threes')
-BOOK = 'draftkingsag'
+BOOK = 'draftkings'
 ROOT = f'https://api.the-odds-api.com/v4/sports/{SPORT}'
 
 def utc(s):
