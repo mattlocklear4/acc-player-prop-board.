@@ -47,7 +47,7 @@ def get(url, params):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--schedule', default='research/acc_schedule_dry_run.json')
-    p.add_argument('--output', default='research/acc_stage8b_draftkings_preview.json')
+    p.add_argument('--output', default='research/acc_stage8b_multibook_preview.json')
     p.add_argument('--fetch-odds', action='store_true', help='Spend credits; disabled by default')
     p.add_argument('--max-events', type=int, default=100)
     p.add_argument('--min-credits-remaining', type=int, default=30)
