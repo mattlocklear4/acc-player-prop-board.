@@ -16,6 +16,7 @@ on:
       - '.github/workflows/acc-projection-dry-run.yml'
   schedule:
     - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
+    - cron: '0 15 20 11 *' # One-time authorized 10:00 AM EST Nov 20, 2026 (guarded by year below)
 
 permissions:
   contents: read
@@ -51,11 +52,11 @@ jobs:
         run: python scripts/acc_saturday_slate.py
       - name: Stage 8A morning archive preview (NO DATABASE WRITES)
         run: python scripts/acc_stage8a_archive.py
-      - name: Stage 8B BetOnline event discovery (FREE, read only)
+      - name: Stage 8B BetOnline discovery or authorized Friday odds retrieval
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
-          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; then
+          if { [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; } || { [ '${{ github.event_name }}' = 'schedule' ] && [ '${{ github.event.schedule }}' = '0 15 20 11 *' ] && [ "$(date -u +%F)" = '2026-11-20' ]; }; then
             python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 100 --min-credits-remaining 0
           else
             python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
@@ -69,7 +70,7 @@ jobs:
           fi
       - name: Convert live BetOnline response to prop CSV (NO ADDITIONAL API CALLS)
         run: |
-          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; then
+          if { [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; } || { [ '${{ github.event_name }}' = 'schedule' ] && [ '${{ github.event.schedule }}' = '0 15 20 11 *' ] && [ "$(date -u +%F)" = '2026-11-20' ]; }; then
             python scripts/acc_odds_preview_to_csv.py
           fi
       - name: Compare BetOnline player prop CSV against projections (NO API CALLS)
