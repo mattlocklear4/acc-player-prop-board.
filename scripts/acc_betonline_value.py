@@ -9,6 +9,7 @@ import argparse,csv,json,math,statistics,re
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from research_engine import read_csv, numeric
 
 STATS={'points':'Points','pts':'Points','rebounds':'Rebounds','reb':'Rebounds',
@@ -39,6 +40,7 @@ def main():
     p.add_argument('--projections',default='research/acc_projection_dry_run.json')
     p.add_argument('--lines',default='data/betonline_player_props.csv')
     p.add_argument('--output',default='research/acc_betonline_value_preview.json')
+    p.add_argument('--date-eastern',default='',help='Only compare games on YYYY-MM-DD Eastern date')
     a=p.parse_args()
     payload=json.loads(Path(a.projections).read_text())
     players=defaultdict(list)
@@ -63,6 +65,8 @@ def main():
                 if len(candidates)!=1:raise ValueError('player_or_game_missing_or_ambiguous')
                 game,team,player=candidates[0]
                 tip=datetime.fromisoformat(game['tipoff_utc'].replace('Z','+00:00'))
+                if a.date_eastern and tip.astimezone(ZoneInfo('America/New_York')).date().isoformat()!=a.date_eastern:
+                    raise ValueError('game_outside_selected_date')
                 if datetime.now(tip.tzinfo)>=tip:raise ValueError('game_already_started')
                 raw_line=float(line['line'])
                 if raw_line<0 or abs(raw_line*2-round(raw_line*2))>1e-7:raise ValueError('line_must_be_half_point_or_integer')
