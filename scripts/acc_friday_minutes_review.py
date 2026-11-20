@@ -24,7 +24,7 @@ flags=[]
 flagpath=Path('data/acc_friday_availability_review.csv')
 if flagpath.exists():
     with flagpath.open(newline='',encoding='utf-8-sig') as f:flags=list(csv.DictReader(f))
-flagmap={(r['team'].strip().lower(),r['player'].strip().lower()):r for r in flags}
+flagmap={(r['team'].strip().casefold(),r['player'].strip().casefold()):r for r in flags if r.get('team') and r.get('player')}
 rows=[]
 for game in slate['games']:
     for team in game['teams']:
@@ -39,7 +39,7 @@ for game in slate['games']:
             last3=minutes[:3];last5=minutes[:5]
             recent=avg(last3);season=avg(minutes)
             sample=(0.65*recent+0.35*season) if recent is not None and season is not None else season
-            flag=flagmap.get((team['team'].lower(),p['Player'].lower()))
+            flag=flagmap.get((team['team'].strip().casefold(),p['Player'].strip().casefold()))
             risk='availability_review' if flag else ('limited_sample' if len(minutes)<4 else 'minutes_volatile' if len(last5)>=3 and statistics.pstdev(last5)>7 else 'normal')
             rows.append({'game_id':game['game_id'],'team':team['team'],'player':p['Player'],'athlete_id':p.get('AthleteId'),
                          'model_minutes':round(p['Minutes'],2) if p.get('Minutes') is not None else None,
@@ -48,7 +48,7 @@ for game in slate['games']:
                          'recent_weighted_minutes_signal':round(sample,2) if sample is not None else None,
                          'starts_last5':starts,'games_last5':len(history[:5]),'usage_pct_last5':avg(usage),
                          'minutes_sample_size':len(minutes),'risk':risk,
-                         'availability_status':flag.get('status') if flag else None,
+                         'availability_status':flag.get('status','').strip().casefold() if flag else None,
                          'availability_source':flag.get('source_url') if flag else None})
 # Exploratory rotation-adjusted scenario. Never overwrite verified baseline.
 # Keep known-out players at zero; leave reported injuries as review flags.
