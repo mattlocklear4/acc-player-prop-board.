@@ -37,6 +37,38 @@ def get_games(team, season, key):
             if attempt<2: time.sleep(2*(attempt+1)); continue
             raise RuntimeError(f'CBBD /games network error for {team}: {type(e).__name__}') from e
 
+def free_odds_events_fallback(now, horizon_hours):
+    """Free event discovery only. No event-odds or player-prop endpoints."""
+    key=os.getenv('ODDS_API_KEY','').strip()
+    if not key: raise RuntimeError('ODDS_API_KEY missing for free schedule fallback')
+    url='https://api.the-odds-api.com/v4/sports/basketball_ncaab/events?' + urllib.parse.urlencode({'apiKey':key})
+    req=urllib.request.Request(url,headers={'User-Agent':'acc-player-prop-board/free-schedule'})
+    with urllib.request.urlopen(req,timeout=25) as res: events=json.load(res)
+    if not isinstance(events,list):raise ValueError('Unexpected free events response')
+    # The API appends nicknames. Restrict to distinct ACC school prefixes.
+    aliases={'floridastate':'floridast','ncstate':'ncstate','miami':'miamihurricanes',
+             'california':'californiagoldenbears','pittsburgh':'pittsburgh'}
+    def norm_name(x):
+        return ''.join(c for c in str(x or '').lower() if c.isalnum())
+    def acc_school(name):
+        n=norm_name(name)
+        found=[team for team in TEAMS if n.startswith(aliases.get(norm_name(team),norm_name(team)))]
+        # Miami is ambiguous without its nickname; never assume Miami (OH) is ACC.
+        if n.startswith('miamiohio'):return None
+        return found[0] if len(found)==1 else None
+    games=[]
+    for e in events:
+        tip=parse_time(e.get('commence_time'))
+        if not tip or not now<=tip<=now+dt.timedelta(hours=horizon_hours):continue
+        home,away=e.get('home_team'),e.get('away_team')
+        acc=[x for x in (acc_school(home),acc_school(away)) if x]
+        if not acc or not home or not away or not e.get('id'):continue
+        games.append({'game_id':'odds_event_'+str(e['id']),'odds_event_id':str(e['id']),
+                      'tipoff_utc':tip.isoformat(),'home_team':home,'away_team':away,
+                      'acc_teams':sorted(set(acc)),'status':'scheduled',
+                      'schedule_source':'odds_api_free_events','team_names_include_nicknames':True})
+    return sorted(games,key=lambda x:x['tipoff_utc']),len(events)
+
 def pick(g, *keys):
     for key in keys:
         if g.get(key) is not None: return g[key]
@@ -98,9 +130,16 @@ def main():
                 break
             time.sleep(.15)
     if not args.fixture and provider_error:
-        games=[]
-        problems=[{'reason':'schedule_provider_unavailable','detail':provider_error}]
-        schedule_status='UNAVAILABLE'
+        problems=[{'reason':'primary_schedule_provider_unavailable','detail':provider_error}]
+        try:
+            games,discovered=free_odds_events_fallback(now,args.horizon_hours)
+            schedule_status='FALLBACK_FREE_ODDS_EVENTS'
+            problems.append({'reason':'fallback_used','events_discovered':discovered,
+                             'note':'Event IDs and nickname-bearing team names come from free Odds API; verify opponent mapping before betting.'})
+        except (OSError,ValueError,urllib.error.HTTPError,urllib.error.URLError) as exc:
+            games=[]
+            problems.append({'reason':'fallback_unavailable','detail':str(exc).split('?')[0][:150]})
+            schedule_status='UNAVAILABLE'
     else:
         games,problems=discover(records,now,args.horizon_hours)
         schedule_status='OK'
@@ -109,6 +148,6 @@ def main():
     dest.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(f'DRY RUN: {len(games)} upcoming ACC games; {len(problems)} incomplete/conflicting records; output {dest}')
     for g in games:print(g['tipoff_utc'],g['home_team'],'vs',g['away_team'],'CBBD ID',g['game_id'])
-    if problems:print('WARNING: schedule incomplete or unavailable; see artifact. Do not interpret empty games as no ACC games.')
+    if problems:print('WARNING: schedule provider warning or fallback used; inspect schedule_status and warnings.')
 
 if __name__=='__main__':main()
