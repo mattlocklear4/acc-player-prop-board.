@@ -30,8 +30,8 @@ for game in slate.get('games',[]):
             ratio=max(0,min(2,projected/baseline))
             for model in ('Baseline','KenPom','Vegas','Combined'):
                 for stat in ('Points','Rebounds','Assists','Threes'):
-                    value=player.get(model+stat)
-                    player['Rotation'+model+stat]=(round(value*ratio,3) if isinstance(value,(int,float)) else None)
+                    estimate=player.get(model+stat)
+                    player['Rotation'+model+stat]=(round(estimate*ratio,3) if isinstance(estimate,(int,float)) else None)
 output={'date_eastern':slate.get('date_eastern'),'generated_at_utc':slate.get('generated_at_utc'),
         'schedule_status':slate.get('schedule_status'),'games':slate.get('games',[]),
         'minute_reviews':minutes.get('rows',[]),'value_rows':value.get('rows',[]),
