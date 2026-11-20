@@ -19,7 +19,7 @@ on:
     - cron: '0 15 20 11 *' # One-time authorized 10:00 AM EST Nov 20, 2026 (guarded by year below)
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   projection:
@@ -82,6 +82,24 @@ jobs:
           else
             echo "No manual BetOnline CSV yet; skipped value comparison."
           fi
+      - name: Build public Friday projection and odds board JSON
+        if: always()
+        run: |
+          if [ -f research/acc_friday_slate.json ]; then
+            python scripts/acc_publish_friday_board.py
+          fi
+      - name: Publish Friday board data to GitHub Pages source
+        if: success()
+        run: |
+          if [ -f data/friday_board.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/friday_board.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Update Friday ACC projection and odds board [skip ci]'
+              git push origin HEAD:main
+            fi
+          fi
       - name: Upload diagnostic reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -99,4 +117,5 @@ jobs:
             research/acc_stage8a_archive_preview.json
             research/acc_stage8b_betonline_preview.json
             research/acc_betonline_value_preview.json
+            data/friday_board.json
           if-no-files-found: warn
