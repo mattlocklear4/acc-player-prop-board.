@@ -72,19 +72,16 @@ def espn_public_schedule(now, horizon_hours):
             if not sides.get('home') or not sides.get('away'):continue
             home,away=sides['home'],sides['away']
             def school(t):
-                n=''.join(c for c in str(t.get('displayName') or '').lower() if c.isalnum())
-                if n.startswith('miamiohio'):return None
-                aliases={'floridastate':'floridast','miami':'miamihurricanes',
-                         'california':'californiagoldenbears'}
-                found=[(len(aliases.get(''.join(c for c in team.lower() if c.isalnum()),
-                                        ''.join(c for c in team.lower() if c.isalnum()))),team)
-                       for team in TEAMS
-                       if n.startswith(aliases.get(''.join(c for c in team.lower() if c.isalnum()),
-                                                   ''.join(c for c in team.lower() if c.isalnum())))]
-                if not found:return None
-                longest=max(length for length,_ in found)
-                selected=[name for length,name in found if length==longest]
-                return selected[0] if len(selected)==1 else None
+                # ESPN exposes school location separately from the mascot.
+                # Exact school matching prevents false ACC matches such as
+                # Virginia-Lynchburg, Notre Dame (MD), and North Carolina A&T.
+                location=''.join(c for c in str(t.get('location') or '').lower() if c.isalnum())
+                aliases={'cal':'california','pitt':'pittsburgh','floridast':'floridastate',
+                         'miamifl':'miami','northcarolinastate':'ncstate'}
+                location=aliases.get(location,location)
+                candidates=[team for team in TEAMS
+                            if ''.join(c for c in team.lower() if c.isalnum())==location]
+                return candidates[0] if len(candidates)==1 else None
             acc=[t for t in (school(home),school(away)) if t]
             if not acc:continue
             eid=str(event.get('id') or '')
