@@ -20,12 +20,12 @@ jobs:
       - name: Fetch upcoming ACC schedule (read only)
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
-        run: python scripts/acc_schedule.py --season 2027 --horizon-hours 36
+        run: python scripts/acc_schedule.py --season 2027 --horizon-hours 96
       - name: Generate projection diagnostic using latest Supabase KenPom (read only)
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json --today-only
+        run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json
       - name: Verify matchup model arithmetic (read only)
         run: python scripts/acc_stage7_verify.py
       - name: Verify browser vs Python baseline parity (read only)
@@ -38,6 +38,13 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
+      - name: Compare BetOnline player prop CSV against projections (NO API CALLS)
+        run: |
+          if [ -f data/betonline_player_props.csv ]; then
+            python scripts/acc_betonline_value.py --lines data/betonline_player_props.csv
+          else
+            echo "No manual BetOnline CSV yet; skipped value comparison."
+          fi
       - name: Upload diagnostic reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -51,4 +58,5 @@ jobs:
             research/acc_stage7c_verification.json
             research/acc_stage8a_archive_preview.json
             research/acc_stage8b_betonline_preview.json
+            research/acc_betonline_value_preview.json
           if-no-files-found: warn
