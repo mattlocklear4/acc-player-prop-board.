@@ -46,6 +46,8 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
+      - name: Verify BetOnline fair-odds arithmetic (NO API CALLS)
+        run: python scripts/acc_value_selftest.py
       - name: Compare BetOnline player prop CSV against projections (NO API CALLS)
         run: |
           if [ -f data/betonline_player_props.csv ]; then
