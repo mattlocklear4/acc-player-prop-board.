@@ -18,6 +18,10 @@ on:
     - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
     - cron: '0 15 20 11 *' # One-time authorized 10:00 AM EST Nov 20, 2026 (guarded by year below)
 
+concurrency:
+  group: acc-projection-dry-run
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
