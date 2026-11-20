@@ -2,8 +2,8 @@
 """Read-only DraftKings line comparison. Uses a manually supplied CSV; ZERO API calls.
 
 CSV columns: player,stat,line,over_odds,under_odds; optional game_id,book.
-No odds are invented. Fair probabilities require >=8 prior player games for
-PTS/REB/AST, and use Poisson for threes (model assumption, not calibrated).
+No odds are invented. Small samples use conservative, explicitly flagged
+stat-level variance priors; threes use Poisson (not calibrated).
 """
 import argparse,csv,json,math,statistics,re
 from collections import defaultdict
@@ -57,6 +57,10 @@ def main():
     if flagfile.exists():
         for flag in read_csv(flagfile):
             availability[(norm(flag.get('team')),norm(flag.get('player')))]=flag
+    # Empirical-Bayes shrinkage toward conservative stat-level standard deviations.
+    # These are modeling assumptions, NOT measured or validated 2026-27 accuracy.
+    prior_sigma={'Points':7.0,'Rebounds':3.5,'Assists':2.5}
+    prior_weight=8
     rows=[];warnings=[];unmatched=0
     with open(a.lines,newline='',encoding='utf-8-sig') as file:
         for line in csv.DictReader(file):
@@ -88,7 +92,14 @@ def main():
                        for r in history.get(str(player.get('AthleteId')),[])
                        if r.get('game_date','')<tip.date().isoformat()]
                 prior=[v for v in prior if v is not None]
-                sigma=statistics.stdev(prior) if len(prior)>=8 and stat!='Threes' else None
+                sample_sigma=statistics.stdev(prior) if len(prior)>=2 and stat!='Threes' else None
+                sigma=None
+                sigma_method='poisson_assumption' if stat=='Threes' else 'empirical_bayes_prior'
+                if stat!='Threes':
+                    fallback=prior_sigma[stat]
+                    n=max(0,len(prior)-1)
+                    sigma=math.sqrt((n*(sample_sigma**2 if sample_sigma is not None else fallback**2)+prior_weight*fallback**2)/(n+prior_weight))
+                    sigma_method='sample_shrunk_to_prior' if sample_sigma is not None else 'prior_only'
                 model_values={}
                 for model in MODELS:
                     mu=numeric(player.get(model+stat))
@@ -100,13 +111,14 @@ def main():
                        'under_roi':round((1-probability)*pu-probability,4) if probability is not None else None}
                 rows.append({'game_id':game['game_id'],'tipoff_utc':game['tipoff_utc'],'player':name,'team':team['team'],
                     'stat':stat,'book':line.get('book') or 'DraftKings (manual)','line':raw_line,'over_odds':over,'under_odds':under,
-                    'historical_games_for_sigma':len(prior),'historical_sigma':round(sigma,3) if sigma else None,
-                    'models':model_values,'warning':'Uncalibrated distribution; research only; confirm lineup/minutes'})
+                    'historical_games_for_sigma':len(prior),'historical_sigma':round(sample_sigma,3) if sample_sigma else None,
+                    'pricing_sigma':round(sigma,3) if sigma else None,'sigma_method':sigma_method,
+                    'models':model_values,'warning':'Exploratory variance-prior pricing, not calibrated; confirm lineup/minutes'})
             except (ValueError,KeyError,TypeError) as exc:
                 unmatched+=1;warnings.append({'player':line.get('player'),'stat':line.get('stat'),'reason':str(exc)})
     result={'mode':'READ_ONLY_MANUAL_ODDS_NO_API_CALLS','schedule_status':payload.get('schedule_status'),
             'matched_lines':len(rows),'unmatched_lines':unmatched,'rows':rows,'warnings':warnings,
-            'caution':'Probabilities are exploratory. PTS/REB/AST require >=8 historical games for player sigma; threes use Poisson. No calibrated edge or betting profitability is claimed.'}
+            'caution':'Exploratory probabilities: PTS/REB/AST use conservative assumed variance priors shrunk toward player samples; threes use Poisson. Not backtested or calibrated; no verified betting edge.'}
     dest=Path(a.output);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'matched_lines':len(rows),'unmatched_lines':unmatched,'paid_api_calls':0}))
