@@ -17,7 +17,15 @@ from supabase_kenpom import fetch_latest_kenpom, resolve_opponent
 ACC_CANON = {canon(x):x for x in TEAMS}
 
 def game_team(name):
-    return ACC_CANON.get(canon(name))
+    key=canon(name)
+    if key in ACC_CANON:return ACC_CANON[key]
+    # Odds API adds nicknames; only accept unambiguous ACC school prefixes.
+    aliases={'floridast':'Florida State','ncstate':'NC State',
+             'miamihurricanes':'Miami','californiagoldenbears':'California'}
+    for prefix,team in aliases.items():
+        if key.startswith(prefix):return team
+    candidates=[team for k,team in ACC_CANON.items() if len(k)>=5 and key.startswith(k)]
+    return candidates[0] if len(candidates)==1 else None
 
 def school_match(odds_name, scheduled_name):
     a,b=canon(odds_name),canon(scheduled_name)
@@ -97,7 +105,7 @@ def main():
             counts[key]=counts.get(key,0)+1
     payload={'mode':'DRY_RUN_NO_WRITES','not_a_pregame_lock':True,'generated_at_utc':now.isoformat(),
              'kenpom_source':source_meta,'projection_stage':'EARLY_DAY_RESEARCH','kenpom_freshness_verified':source_meta['source']=='supabase_snapshot' and source_meta['imported_at'] is not None,
-             'browser_parity_verified':False,'manual_minutes_overrides_applied':False,
+             'schedule_status':schedule.get('schedule_status','UNKNOWN'),'browser_parity_verified':False,'manual_minutes_overrides_applied':False,
              'warning':'Early-day research only. No Supabase writes; no pregame lock. KenPom snapshot time is checked, but its ratings source-as-of may be unknown; manual minutes overrides not applied. Vegas/Combined unavailable if no valid odds.',
              'summary':counts,'games':games}
     a.output.parent.mkdir(parents=True,exist_ok=True)
