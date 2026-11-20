@@ -22,3 +22,8 @@ The projection artifact is `research/acc_projection_dry_run.json` inside the `ac
 - The browser's manual minutes overrides are not applied to the scheduled Python diagnostic.
 - A stale KenPom snapshot, missing current-season game logs, and injuries can make a model projection unreliable.
 - Model MAE and BetOnline-line MAE require separately captured pregame lines and final actual player stats; this comparison tool does not claim historical accuracy.
+
+
+## Authorized Friday BetOnline fetch (November 20, 2026)
+
+From GitHub Actions, manually run **ACC Projection Dry Run (v2.3)** on `main` with `fetch_betonline_props=true`. This is intentionally **not** enabled for scheduled or push-triggered runs. The script requests all four player markets for every uniquely matched upcoming Friday ACC event in The Odds API, bookmaker `betonlineag`, until the account quota is exhausted or an error stops retrieval. The script records quota usage in `research/acc_stage8b_betonline_preview.json`, converts paired Over/Under quotes to CSV, and generates `research/acc_betonline_value_preview.json`. A sportsbook may not list every market or player. Do not rerun the paid workflow merely to inspect results: retrieve the previous run's artifact first. This workflow still performs no database writes or bet placements.
