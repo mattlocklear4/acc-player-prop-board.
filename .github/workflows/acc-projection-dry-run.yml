@@ -3,8 +3,8 @@ name: ACC Projection Dry Run (v2.3)
 on:
   workflow_dispatch:
     inputs:
-      fetch_betonline_props:
-        description: 'Retrieve BetOnline props for ALL matched Friday ACC games (uses Odds API credits; manual only)'
+      fetch_draftkings_props:
+        description: 'Retrieve DraftKings props for ALL matched Friday ACC games (uses Odds API credits; manual only)'
         type: boolean
         default: false
   push:
@@ -16,7 +16,6 @@ on:
       - '.github/workflows/acc-projection-dry-run.yml'
   schedule:
     - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
-    - cron: '0 15 20 11 *' # One-time authorized 10:00 AM EST Nov 20, 2026 (guarded by year below)
 
 concurrency:
   group: acc-projection-dry-run
@@ -58,33 +57,33 @@ jobs:
         run: python scripts/acc_saturday_slate.py
       - name: Stage 8A morning archive preview (NO DATABASE WRITES)
         run: python scripts/acc_stage8a_archive.py
-      - name: Stage 8B BetOnline discovery or authorized Friday odds retrieval
+      - name: Stage 8B DraftKings discovery or authorized Friday odds retrieval
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
-          if { [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; } || { [ '${{ github.event_name }}' = 'schedule' ] && [ '${{ github.event.schedule }}' = '0 15 20 11 *' ] && [ "$(date -u +%F)" = '2026-11-20' ]; }; then
-            python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 100 --min-credits-remaining 0
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; then
+            python scripts/acc_stage8b_draftkings.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 20 --min-credits-remaining 30
           else
-            python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
+            python scripts/acc_stage8b_draftkings.py --schedule research/acc_schedule_dry_run.json
           fi
-      - name: Verify BetOnline fair-odds arithmetic (NO API CALLS)
+      - name: Verify DraftKings fair-odds arithmetic (NO API CALLS)
         run: python scripts/acc_value_selftest.py
       - name: Convert optional Odds API Google Sheets export (NO API CALLS)
         run: |
           if [ -f data/odds_api_sheet_export.csv ]; then
             python scripts/acc_odds_sheet_import.py --input data/odds_api_sheet_export.csv
           fi
-      - name: Convert live BetOnline response to prop CSV (NO ADDITIONAL API CALLS)
+      - name: Convert live DraftKings response to prop CSV (NO ADDITIONAL API CALLS)
         run: |
-          if { [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; } || { [ '${{ github.event_name }}' = 'schedule' ] && [ '${{ github.event.schedule }}' = '0 15 20 11 *' ] && [ "$(date -u +%F)" = '2026-11-20' ]; }; then
-            python scripts/acc_odds_preview_to_csv.py
+          if { [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; } || { [ '${{ github.event_name }}' = 'schedule' ] && [ '${{ github.event.schedule }}' = '0 15 20 11 *' ] && [ "$(date -u +%F)" = '2026-11-20' ]; }; then
+            python scripts/acc_draftkings_preview_to_csv.py
           fi
-      - name: Compare BetOnline player prop CSV against projections (NO API CALLS)
+      - name: Compare DraftKings player prop CSV against projections (NO API CALLS)
         run: |
-          if [ -f data/betonline_player_props.csv ]; then
-            python scripts/acc_betonline_value.py --lines data/betonline_player_props.csv
+          if [ -f data/draftkings_player_props.csv ]; then
+            python scripts/acc_draftkings_value.py --lines data/draftkings_player_props.csv
           else
-            echo "No manual BetOnline CSV yet; skipped value comparison."
+            echo "No manual DraftKings CSV yet; skipped value comparison."
           fi
       - name: Test minute-adjusted Friday publishing (offline)
         run: python scripts/acc_friday_scenario_selftest.py
@@ -136,7 +135,7 @@ jobs:
             research/acc_stage7b_parity.json
             research/acc_stage7c_verification.json
             research/acc_stage8a_archive_preview.json
-            research/acc_stage8b_betonline_preview.json
-            research/acc_betonline_value_preview.json
+            research/acc_stage8b_draftkings_preview.json
+            research/acc_draftkings_value_preview.json
             data/friday_board.json
           if-no-files-found: warn
