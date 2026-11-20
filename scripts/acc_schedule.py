@@ -21,8 +21,16 @@ def parse_time(value):
         return parsed.astimezone(dt.timezone.utc)
     except ValueError: return None
 
-def get_games(team, season, key):
-    url = BASE + '/games?' + urllib.parse.urlencode({'season': season, 'team': team})
+def get_games(team, season, key, now=None, horizon_hours=96):
+    params={'season':season}
+    if team=='ACC':
+        params['conference']='ACC'
+        if now:
+            params['startDateRange']=now.isoformat()
+            params['endDateRange']=(now+dt.timedelta(hours=horizon_hours)).isoformat()
+    else:
+        params['team']=team
+    url = BASE + '/games?' + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={'Authorization':'Bearer '+key, 'Accept':'application/json', 'User-Agent':'acc-player-prop-board/2.3'})
     for attempt in range(3):
         try:
@@ -124,14 +132,11 @@ def main():
         if not key: p.error('CBBD_API_KEY secret is required')
         records={}
         provider_error=None
-        for team in TEAMS:
-            try:
-                records[team]=get_games(team,args.season,key)
-            except RuntimeError as exc:
-                # Never treat a partial team schedule as complete.
-                provider_error=str(exc)
-                break
-            time.sleep(.15)
+        try:
+            # One conference/date-filtered call replaces 18 team calls.
+            records['ACC']=get_games('ACC',args.season,key,now,args.horizon_hours)
+        except RuntimeError as exc:
+            provider_error=str(exc)
     if not args.fixture and provider_error:
         problems=[{'reason':'primary_schedule_provider_unavailable','detail':provider_error}]
         try:
