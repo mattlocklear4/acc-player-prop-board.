@@ -2,7 +2,7 @@
 
 ## Automated schedule and projections
 
-GitHub Actions **ACC Projection Dry Run (v2.3)** checks the next **96 hours**. It first tries CollegeBasketballData; if that provider returns a rate limit, it uses **The Odds API's free NCAAB events endpoint** as a fallback. A fallback is explicitly labeled `FALLBACK_FREE_ODDS_EVENTS` in the schedule artifact. Free event listings may omit games not covered by sportsbooks. No paid odds endpoint is called.
+GitHub Actions **ACC Projection Dry Run (v2.3)** checks the next **96 hours**. It first tries a **single date-filtered ACC request** to CollegeBasketballData; if that provider is rate-limited, it uses ESPN's public scoreboard as a fallback, then **The Odds API's free NCAAB events endpoint** if ESPN is unavailable. A fallback is explicitly labeled `FALLBACK_ESPN_PUBLIC` or `FALLBACK_FREE_ODDS_EVENTS` in the schedule artifact. Free event listings may omit games not covered by sportsbooks. No paid odds endpoint is called.
 
 The projection artifact is `research/acc_projection_dry_run.json` inside the `acc-projection-dry-run` GitHub Actions artifact. Models: Baseline, KenPom, Vegas, Combined. Vegas and Combined may be unavailable without a timestamp-valid game market. Player minutes are estimates, not injury-adjusted confirmed rotations. KenPom ratings should be refreshed and verified before wagering. Never interpret an unavailable schedule as zero games.
 
