@@ -158,7 +158,7 @@ def main():
                                 'odds':outcome.get('price'),'last_update':market.get('last_update')})
                 out['events'].append({'event_id':event['id'],'schedule_game_id':game.get('game_id'),
                     'home_team':event['home_team'],'away_team':event['away_team'],
-                    'status':'ODDS_RETRIEVED' if props else 'NO_BETONLINE_PROPS_RETURNED','props':props})
+                    'status':'ODDS_RETRIEVED' if props else 'NO_DRAFTKINGS_PROPS_RETURNED','props':props})
             except (OSError,ValueError,urllib.error.HTTPError,urllib.error.URLError) as exc:
                 out['warnings'].append('Paid event request failed; stopping to prevent repeated charges: '+str(exc).split('?')[0][:120])
                 break
