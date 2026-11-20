@@ -33,8 +33,11 @@ def resolve_opponent(name, kp):
     if len(matches)==1:return matches[0]
     # Free event discovery appends mascots; accept a unique KenPom school prefix only.
     # Refuse short or ambiguous prefixes, and never silently guess an opponent.
-    prefixes=[r['Team'] for k,r in kp.items() if len(k)>=5 and key.startswith(k)]
-    if len(prefixes)==1:return prefixes[0]
+    prefixes=[(len(k),r['Team']) for k,r in kp.items() if len(k)>=5 and key.startswith(k)]
+    if prefixes:
+        longest=max(n for n,_ in prefixes)
+        winners=[team for n,team in prefixes if n==longest]
+        if len(winners)==1:return winners[0]
     aliases={'texasamccislanders':'texasamcorpuschristi',
              'floridastseminoles':'floridast',
              'siuedwardsvillecougars':'siuedwardsville'}
