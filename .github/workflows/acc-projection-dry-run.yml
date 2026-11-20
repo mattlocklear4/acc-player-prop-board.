@@ -25,6 +25,7 @@ jobs:
       - name: Fetch upcoming ACC schedule (read only)
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/acc_schedule.py --season 2027 --horizon-hours 96
       - name: Generate projection diagnostic using latest Supabase KenPom (read only)
         env:
