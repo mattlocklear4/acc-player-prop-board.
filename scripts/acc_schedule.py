@@ -45,6 +45,56 @@ def get_games(team, season, key, now=None, horizon_hours=96):
             if attempt<2: time.sleep(2*(attempt+1)); continue
             raise RuntimeError(f'CBBD /games network error for {team}: {type(e).__name__}') from e
 
+def espn_public_schedule(now, horizon_hours):
+    """Public ESPN scoreboard fallback, no API key and no paid requests.
+
+    ESPN's scoreboard endpoint is unofficial; failures are explicitly reported.
+    """
+    import re
+    end=now+dt.timedelta(hours=horizon_hours)
+    days=(end.date()-now.date()).days+1
+    games={}
+    for offset in range(days):
+        day=(now.date()+dt.timedelta(days=offset)).strftime('%Y%m%d')
+        params={'dates':day,'limit':'500','groups':'50'}
+        url='https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?'+urllib.parse.urlencode(params)
+        req=urllib.request.Request(url,headers={'User-Agent':'ACC-research-schedule/1.0','Accept':'application/json'})
+        with urllib.request.urlopen(req,timeout=20) as response:payload=json.load(response)
+        for event in payload.get('events') or []:
+            tip=parse_time(event.get('date'))
+            if not tip or not now<=tip<=end:continue
+            competitions=event.get('competitions') or []
+            if len(competitions)!=1:continue
+            sides={}
+            for entry in competitions[0].get('competitors') or []:
+                team=entry.get('team') or {}
+                sides[entry.get('homeAway')]=team
+            if not sides.get('home') or not sides.get('away'):continue
+            home,away=sides['home'],sides['away']
+            def school(t):
+                n=''.join(c for c in str(t.get('displayName') or '').lower() if c.isalnum())
+                if n.startswith('miamiohio'):return None
+                aliases={'floridastate':'floridast','miami':'miamihurricanes',
+                         'california':'californiagoldenbears'}
+                found=[(len(aliases.get(''.join(c for c in team.lower() if c.isalnum()),
+                                        ''.join(c for c in team.lower() if c.isalnum()))),team)
+                       for team in TEAMS
+                       if n.startswith(aliases.get(''.join(c for c in team.lower() if c.isalnum()),
+                                                   ''.join(c for c in team.lower() if c.isalnum())))]
+                if not found:return None
+                longest=max(length for length,_ in found)
+                selected=[name for length,name in found if length==longest]
+                return selected[0] if len(selected)==1 else None
+            acc=[t for t in (school(home),school(away)) if t]
+            if not acc:continue
+            eid=str(event.get('id') or '')
+            if not eid:continue
+            games[eid]={'game_id':'espn_event_'+eid,'tipoff_utc':tip.isoformat(),
+                        'home_team':home.get('displayName'),'away_team':away.get('displayName'),
+                        'acc_teams':sorted(set(acc)),'status':'scheduled',
+                        'schedule_source':'espn_public_scoreboard'}
+    return sorted(games.values(),key=lambda x:x['tipoff_utc'])
+
 def free_odds_events_fallback(now, horizon_hours):
     """Free event discovery only. No event-odds or player-prop endpoints."""
     key=os.getenv('ODDS_API_KEY','').strip()
@@ -140,14 +190,22 @@ def main():
     if not args.fixture and provider_error:
         problems=[{'reason':'primary_schedule_provider_unavailable','detail':provider_error}]
         try:
-            games,discovered=free_odds_events_fallback(now,args.horizon_hours)
-            schedule_status='FALLBACK_FREE_ODDS_EVENTS'
-            problems.append({'reason':'fallback_used','events_discovered':discovered,
-                             'note':'Event IDs and nickname-bearing team names come from free Odds API; verify opponent mapping before betting.'})
-        except (OSError,ValueError,RuntimeError,urllib.error.HTTPError,urllib.error.URLError) as exc:
-            games=[]
-            problems.append({'reason':'fallback_unavailable','detail':str(exc).split('?')[0][:150]})
-            schedule_status='UNAVAILABLE'
+            games=espn_public_schedule(now,args.horizon_hours)
+            if not games:raise ValueError('ESPN scoreboard returned no ACC games in window')
+            schedule_status='FALLBACK_ESPN_PUBLIC'
+            problems.append({'reason':'fallback_used','source':'ESPN public scoreboard',
+                             'note':'Unofficial schedule source; confirm tipoffs and opponent names.'})
+        except (OSError,ValueError,RuntimeError,urllib.error.HTTPError,urllib.error.URLError) as espn_exc:
+            problems.append({'reason':'espn_fallback_unavailable','detail':str(espn_exc).split('?')[0][:150]})
+            try:
+                games,discovered=free_odds_events_fallback(now,args.horizon_hours)
+                schedule_status='FALLBACK_FREE_ODDS_EVENTS'
+                problems.append({'reason':'fallback_used','events_discovered':discovered,
+                                 'note':'Free Odds API events may omit unlisted games.'})
+            except (OSError,ValueError,RuntimeError,urllib.error.HTTPError,urllib.error.URLError) as exc:
+                games=[]
+                problems.append({'reason':'fallback_unavailable','detail':str(exc).split('?')[0][:150]})
+                schedule_status='UNAVAILABLE'
     else:
         games,problems=discover(records,now,args.horizon_hours)
         schedule_status='OK'
