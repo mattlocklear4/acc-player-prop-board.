@@ -6,6 +6,7 @@ on:
       - 'index.html'
       - 'style.css'
       - 'app.js'
+      - 'friday-board.js'
       - 'data.js'
       - 'data/friday_board.json'
       - '.github/workflows/deploy-pages.yml'
