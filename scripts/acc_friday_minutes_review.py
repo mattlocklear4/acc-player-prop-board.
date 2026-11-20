@@ -50,8 +50,43 @@ for game in slate['games']:
                          'minutes_sample_size':len(minutes),'risk':risk,
                          'availability_status':flag.get('status') if flag else None,
                          'availability_source':flag.get('source_url') if flag else None})
+# Exploratory rotation-adjusted scenario. Never overwrite verified baseline.
+# Keep known-out players at zero; leave reported injuries as review flags.
+by_team=defaultdict(list)
+for row in rows:by_team[(row['game_id'],row['team'])].append(row)
+for teamrows in by_team.values():
+    for row in teamrows:
+        model=row['model_minutes']
+        signal=row['recent_weighted_minutes_signal']
+        if row['availability_status']=='out':candidate=0.0
+        elif model is None:candidate=0.0
+        elif signal is None:candidate=model
+        else:
+            candidate=.45*model+.55*signal
+            if row['starts_last5']>=3 and row['games_last5']>=3:candidate+=.7
+        row['rotation_minutes_raw']=round(max(0,min(40,candidate)),2)
+    # Regulation basketball provides 200 team-minutes. Scale only when
+    # at least eight players have a meaningful sample; cap any player at 40.
+    active=[r for r in teamrows if r['rotation_minutes_raw']>0]
+    if len(active)<8:
+        for r in teamrows:r['rotation_minutes_scenario']=None
+        continue
+    allocation={id(r):r['rotation_minutes_raw'] for r in active}
+    for _ in range(20):
+        deficit=200-sum(allocation.values())
+        if abs(deficit)<.01:break
+        eligible=[r for r in active if (allocation[id(r)]<39.99 if deficit>0 else allocation[id(r)]>0.01)]
+        if not eligible:break
+        weights=[max(1,r['rotation_minutes_raw']) for r in eligible]
+        total=sum(weights)
+        for r,w in zip(eligible,weights):
+            old=allocation[id(r)]
+            allocation[id(r)]=max(0,min(40,old+deficit*w/total))
+    for r in teamrows:
+        r['rotation_minutes_scenario']=round(allocation.get(id(r),0),2)
+        r['rotation_minutes_delta']=round(r['rotation_minutes_scenario']-(r['model_minutes'] or 0),2)
 dest=Path('research/acc_friday_minutes_review.json')
 dest.parent.mkdir(parents=True,exist_ok=True)
 dest.write_text(json.dumps({'date_eastern':date,'rows':rows,'flagged':sum(r['risk']!='normal' for r in rows),
-                            'note':'Review signals only, not injury-adjusted projections. Verify statuses and distribute 200 regulation team minutes before applying overrides.'},indent=2)+'\n')
+                            'note':'Research-only 200-minute rotation scenarios use last 3/5 games, starting frequency and confirmed out statuses. Reported injuries require confirmation. Do not overwrite official projections without review.'},indent=2)+'\n')
 print(json.dumps({'minute_rows':len(rows),'flagged_for_review':sum(r['risk']!='normal' for r in rows)}))
