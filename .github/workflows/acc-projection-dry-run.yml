@@ -86,6 +86,8 @@ jobs:
           else
             echo "No manual BetOnline CSV yet; skipped value comparison."
           fi
+      - name: Test minute-adjusted Friday publishing (offline)
+        run: python scripts/acc_friday_scenario_selftest.py
       - name: Build public Friday projection and odds board JSON
         if: always()
         run: |
