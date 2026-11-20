@@ -57,7 +57,7 @@ jobs:
         run: python scripts/acc_saturday_slate.py
       - name: Stage 8A morning archive preview (NO DATABASE WRITES)
         run: python scripts/acc_stage8a_archive.py
-      - name: Stage 8B DraftKings discovery or authorized Friday odds retrieval
+      - name: Stage 8B multi-book discovery or authorized Friday odds retrieval
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
@@ -73,14 +73,10 @@ jobs:
           if [ -f data/odds_api_sheet_export.csv ]; then
             python scripts/acc_odds_sheet_import.py --input data/odds_api_sheet_export.csv
           fi
-      - name: Convert live DraftKings response to prop CSV (NO ADDITIONAL API CALLS)
+      - name: Convert live multi-book response to prop CSV (NO ADDITIONAL API CALLS)
         run: |
           if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_multibook_props }}' = 'true' ]; then
-            if [ ! -f data/draftkings_player_props.csv ]; then
-              python scripts/acc_multibook_preview_to_csv.py
-            else
-              echo 'Keeping existing DraftKings CSV imported from Google Sheets; not overwriting it.'
-            fi
+            python scripts/acc_multibook_preview_to_csv.py
           fi
       - name: Compare all retrieved sportsbook props against projections (NO API CALLS)
         run: |
@@ -90,14 +86,6 @@ jobs:
             python scripts/acc_draftkings_value.py --lines data/draftkings_player_props.csv
           else
             echo 'No paired sportsbook props available.'
-          fi
-      - name: Legacy single-book comparison (disabled)
-        if: false
-        run: |
-          if [ -f data/draftkings_player_props.csv ]; then
-            python scripts/acc_draftkings_value.py --lines data/draftkings_player_props.csv
-          else
-            echo "No manual DraftKings CSV yet; skipped value comparison."
           fi
       - name: Test minute-adjusted Friday publishing (offline)
         run: python scripts/acc_friday_scenario_selftest.py
