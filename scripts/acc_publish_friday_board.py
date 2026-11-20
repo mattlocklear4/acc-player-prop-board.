@@ -6,9 +6,9 @@ def load(path):
     p=Path(path)
     return json.loads(p.read_text()) if p.exists() else {}
 slate=load('research/acc_friday_slate.json')
-value=load('research/acc_betonline_value_preview.json')
+value=load('research/acc_draftkings_value_preview.json')
 minutes=load('research/acc_friday_minutes_review.json')
-odds=load('research/acc_stage8b_betonline_preview.json')
+odds=load('research/acc_stage8b_draftkings_preview.json')
 # Keep original model estimates intact; attach explicit minute-adjusted
 # research scenarios. This scales opportunity with minutes but does not
 # pretend to estimate injury-driven usage redistribution.
