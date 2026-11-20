@@ -2,6 +2,11 @@ name: ACC Projection Dry Run (v2.3)
 
 on:
   workflow_dispatch:
+    inputs:
+      fetch_betonline_props:
+        description: 'Spend up to 8 Odds API credits on 2 Friday BetOnline games (manual only)'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -49,13 +54,23 @@ jobs:
       - name: Stage 8B BetOnline event discovery (FREE, read only)
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
+        run: |
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; then
+            python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 2 --min-credits-remaining 30
+          else
+            python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
+          fi
       - name: Verify BetOnline fair-odds arithmetic (NO API CALLS)
         run: python scripts/acc_value_selftest.py
       - name: Convert optional Odds API Google Sheets export (NO API CALLS)
         run: |
           if [ -f data/odds_api_sheet_export.csv ]; then
             python scripts/acc_odds_sheet_import.py --input data/odds_api_sheet_export.csv
+          fi
+      - name: Convert live BetOnline response to prop CSV (NO ADDITIONAL API CALLS)
+        run: |
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; then
+            python scripts/acc_odds_preview_to_csv.py
           fi
       - name: Compare BetOnline player prop CSV against projections (NO API CALLS)
         run: |
