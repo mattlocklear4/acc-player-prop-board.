@@ -52,6 +52,11 @@ jobs:
         run: python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
       - name: Verify BetOnline fair-odds arithmetic (NO API CALLS)
         run: python scripts/acc_value_selftest.py
+      - name: Convert optional Odds API Google Sheets export (NO API CALLS)
+        run: |
+          if [ -f data/odds_api_sheet_export.csv ]; then
+            python scripts/acc_odds_sheet_import.py --input data/odds_api_sheet_export.csv
+          fi
       - name: Compare BetOnline player prop CSV against projections (NO API CALLS)
         run: |
           if [ -f data/betonline_player_props.csv ]; then
