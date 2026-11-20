@@ -102,13 +102,15 @@ jobs:
         run: |
           if [ -f data/friday_board.json ]; then
             cp data/friday_board.json /tmp/acc-friday-board.json
+            if [ -f data/validation_summary.json ]; then cp data/validation_summary.json /tmp/acc-validation-summary.json; fi
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             for attempt in 1 2 3; do
               git fetch origin main
               git checkout -B friday-publish origin/main
               cp /tmp/acc-friday-board.json data/friday_board.json
-              git add data/friday_board.json
+              if [ -f /tmp/acc-validation-summary.json ]; then cp /tmp/acc-validation-summary.json data/validation_summary.json; fi
+              git add data/friday_board.json data/validation_summary.json
               if git diff --cached --quiet; then
                 echo "Friday board already up to date"
                 break
