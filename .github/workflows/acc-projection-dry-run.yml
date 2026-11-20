@@ -49,6 +49,8 @@ jobs:
         run: python scripts/acc_stage7b_parity.py --as-of "$(date -u +%F)"
       - name: Stage 7C independent matchup and minutes arithmetic parity (read only)
         run: python scripts/acc_stage7c_verify.py
+      - name: Validate live baseline with chronological out-of-sample player games (offline)
+        run: python scripts/acc_validation_walkforward.py
       - name: Prepare Friday ACC projection slate (read only)
         run: python scripts/acc_friday_slate.py
       - name: Review Friday minutes, usage and availability (read only)
@@ -140,4 +142,5 @@ jobs:
             research/acc_stage8b_multibook_preview.json
             research/acc_draftkings_value_preview.json
             data/friday_board.json
+            data/validation_summary.json
           if-no-files-found: warn
