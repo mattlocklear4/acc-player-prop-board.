@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATS = {'Points': 'points', 'Rebounds': 'reb', 'Assists': 'assists', 'Threes': 'three_pm'}
-ALIASES = {'floridastate':'floridast','miamiflorida':'miamifl','ncstate':'ncstate','northcarolinastate':'ncstate','cal':'california','pitt':'pittsburgh'}
+ALIASES = {'floridastate':'floridast','miamiflorida':'miamifl','miami':'miamifl','ncstate':'ncstate','northcarolinastate':'ncstate','cal':'california','pitt':'pittsburgh'}
 
 def norm(s):
     return ''.join(c for c in str(s or '').lower() if c.isalnum())
