@@ -3,8 +3,8 @@ name: ACC Projection Dry Run (v2.3)
 on:
   workflow_dispatch:
     inputs:
-      fetch_draftkings_props:
-        description: 'Retrieve DraftKings props for up to 20 matched Friday ACC games (uses Odds API credits; manual only)'
+      fetch_multibook_props:
+        description: 'Retrieve props from DraftKings, FanDuel, Caesars, Fanatics and BetOnline for up to 20 Friday games (uses Odds API credits; manual only)'
         type: boolean
         default: false
   push:
@@ -61,10 +61,10 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
-          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; then
-            python scripts/acc_stage8b_draftkings.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 20 --min-credits-remaining 30
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_multibook_props }}' = 'true' ]; then
+            python scripts/acc_stage8b_multibook.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 20 --min-credits-remaining 30
           else
-            python scripts/acc_stage8b_draftkings.py --schedule research/acc_schedule_dry_run.json
+            python scripts/acc_stage8b_multibook.py --schedule research/acc_schedule_dry_run.json
           fi
       - name: Verify DraftKings fair-odds arithmetic (NO API CALLS)
         run: python scripts/acc_value_selftest.py
@@ -75,14 +75,24 @@ jobs:
           fi
       - name: Convert live DraftKings response to prop CSV (NO ADDITIONAL API CALLS)
         run: |
-          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_draftkings_props }}' = 'true' ]; then
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_multibook_props }}' = 'true' ]; then
             if [ ! -f data/draftkings_player_props.csv ]; then
-              python scripts/acc_draftkings_preview_to_csv.py
+              python scripts/acc_multibook_preview_to_csv.py
             else
               echo 'Keeping existing DraftKings CSV imported from Google Sheets; not overwriting it.'
             fi
           fi
-      - name: Compare DraftKings player prop CSV against projections (NO API CALLS)
+      - name: Compare all retrieved sportsbook props against projections (NO API CALLS)
+        run: |
+          if [ -f data/multibook_player_props.csv ]; then
+            python scripts/acc_draftkings_value.py --lines data/multibook_player_props.csv
+          elif [ -f data/draftkings_player_props.csv ]; then
+            python scripts/acc_draftkings_value.py --lines data/draftkings_player_props.csv
+          else
+            echo 'No paired sportsbook props available.'
+          fi
+      - name: Legacy single-book comparison (disabled)
+        if: false
         run: |
           if [ -f data/draftkings_player_props.csv ]; then
             python scripts/acc_draftkings_value.py --lines data/draftkings_player_props.csv
@@ -139,7 +149,7 @@ jobs:
             research/acc_stage7b_parity.json
             research/acc_stage7c_verification.json
             research/acc_stage8a_archive_preview.json
-            research/acc_stage8b_draftkings_preview.json
+            research/acc_stage8b_multibook_preview.json
             research/acc_draftkings_value_preview.json
             data/friday_board.json
           if-no-files-found: warn
