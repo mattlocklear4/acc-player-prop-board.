@@ -40,6 +40,8 @@ jobs:
         run: python scripts/acc_stage7b_parity.py --as-of "$(date -u +%F)"
       - name: Stage 7C independent matchup and minutes arithmetic parity (read only)
         run: python scripts/acc_stage7c_verify.py
+      - name: Prepare Saturday ACC projection slate (read only)
+        run: python scripts/acc_saturday_slate.py
       - name: Stage 8A morning archive preview (NO DATABASE WRITES)
         run: python scripts/acc_stage8a_archive.py
       - name: Stage 8B BetOnline event discovery (FREE, read only)
@@ -63,6 +65,7 @@ jobs:
           path: |
             research/acc_schedule_dry_run.json
             research/acc_projection_dry_run.json
+            research/acc_saturday_slate.json
             research/acc_stage7_verification.json
             research/acc_stage7b_parity.json
             research/acc_stage7c_verification.json
