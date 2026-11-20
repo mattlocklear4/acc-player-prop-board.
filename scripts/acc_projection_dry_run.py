@@ -21,7 +21,8 @@ def game_team(name):
     if key in ACC_CANON:return ACC_CANON[key]
     # Odds API adds nicknames; only accept unambiguous ACC school prefixes.
     aliases={'floridast':'Florida State','ncstate':'NC State',
-             'miamihurricanes':'Miami','californiagoldenbears':'California'}
+             'miamihurricanes':'Miami','californiagoldenbears':'California',
+             'dukebluedevils':'Duke','smumustangs':'SMU'}
     for prefix,team in aliases.items():
         if key.startswith(prefix):return team
     candidates=[(len(k),team) for k,team in ACC_CANON.items() if len(k)>=5 and key.startswith(k)]
