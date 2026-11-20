@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       fetch_betonline_props:
-        description: 'Spend up to 8 Odds API credits on 2 Friday BetOnline games (manual only)'
+        description: 'Retrieve BetOnline props for ALL matched Friday ACC games (uses Odds API credits; manual only)'
         type: boolean
         default: false
   push:
@@ -56,7 +56,7 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
           if [ '${{ github.event_name }}' = 'workflow_dispatch' ] && [ '${{ inputs.fetch_betonline_props }}' = 'true' ]; then
-            python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 2 --min-credits-remaining 30
+            python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json --fetch-odds --max-events 100 --min-credits-remaining 0
           else
             python scripts/acc_stage8b_betonline.py --schedule research/acc_schedule_dry_run.json
           fi
