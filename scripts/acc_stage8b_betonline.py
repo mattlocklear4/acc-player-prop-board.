@@ -30,12 +30,14 @@ def team_match(schedule_name, api_name):
     """Match a known school prefix, allowing API team nicknames."""
     aliases = {
         'floridastate': 'floridast',
+        'loyolamaryland': 'loyolamd',
         'texasamcorpuschristi': 'texasamcc',
+        'northcarolina': 'northcarolina',
     }
     school = norm(schedule_name)
     provider = norm(api_name)
     school = aliases.get(school, school)
-    return len(school) >= 5 and provider.startswith(school)
+    return len(school) >= 5 and (provider.startswith(school) or school.startswith(provider) and len(provider)>=6)
 
 def get(url, params):
     request = urllib.request.Request(url + '?' + urllib.parse.urlencode(params), headers={'User-Agent':'ACC-Prop-Preview/1.0'})
@@ -110,11 +112,15 @@ def main():
                 ]
             })
             if start<=now:continue
-            candidates=[e for e in api_events if team_match(home,e.get('home_team')) and team_match(away,e.get('away_team'))
-                        and (utc(e.get('commence_time')) is not None) and abs((utc(e['commence_time'])-start).total_seconds())<=4*3600]
+            candidates=[e for e in api_events
+                        if ((team_match(home,e.get('home_team')) and team_match(away,e.get('away_team')))
+                            or (team_match(home,e.get('away_team')) and team_match(away,e.get('home_team'))))
+                        and utc(e.get('commence_time')) is not None
+                        and abs((utc(e['commence_time'])-start).total_seconds())<=4*3600]
             if len(candidates)==1:matches.append((game,candidates[0]))
             elif len(candidates)>1:out['warnings'].append(f'Ambiguous event match: {home} vs {away}; skipped.')
             else:out['warnings'].append(f'No exact Odds API event match: {home} vs {away}.')
+        matches=list({str(e['id']):(g,e) for g,e in matches}.values())
         out['matched_events']=len(matches)
         if not a.fetch_odds:
             out['events']=[{'event_id':e['id'],'home_team':e['home_team'],'away_team':e['away_team'], 'status':'DISCOVERY_ONLY_NO_CREDITS'} for _,e in matches]
