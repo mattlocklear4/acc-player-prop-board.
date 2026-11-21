@@ -104,20 +104,20 @@ jobs:
           if [ -f data/friday_board.json ]; then
             cp data/friday_board.json /tmp/acc-friday-board.json
             python - <<'PY'
-            import json, datetime, pathlib
-            d=json.loads(pathlib.Path('data/friday_board.json').read_text())
-            day=d.get('date_eastern','')
-            games=d.get('games') or []
-            try:
-                friday=datetime.date.fromisoformat(day).weekday()==4
-                generated=datetime.datetime.fromisoformat(d['generated_at_utc'].replace('Z','+00:00'))
-                before_all=all(g.get('tipoff_utc') and generated < datetime.datetime.fromisoformat(g['tipoff_utc'].replace('Z','+00:00')) for g in games)
-            except (ValueError,KeyError,TypeError):
-                friday=before_all=False
-            if friday and games and before_all:
-                pathlib.Path('/tmp/acc-friday-archive.json').write_text(json.dumps(d,indent=2)+'\n')
-                pathlib.Path('/tmp/acc-friday-archive-date').write_text(day)
-            PY
+          import json, datetime, pathlib
+          d=json.loads(pathlib.Path('data/friday_board.json').read_text())
+          day=d.get('date_eastern','')
+          games=d.get('games') or []
+          try:
+              friday=datetime.date.fromisoformat(day).weekday()==4
+              generated=datetime.datetime.fromisoformat(d['generated_at_utc'].replace('Z','+00:00'))
+              before_all=all(g.get('tipoff_utc') and generated < datetime.datetime.fromisoformat(g['tipoff_utc'].replace('Z','+00:00')) for g in games)
+          except (ValueError,KeyError,TypeError):
+              friday=before_all=False
+          if friday and games and before_all:
+              pathlib.Path('/tmp/acc-friday-archive.json').write_text(json.dumps(d,indent=2)+'\n')
+              pathlib.Path('/tmp/acc-friday-archive-date').write_text(day)
+          PY
             if [ -f data/validation_summary.json ]; then cp data/validation_summary.json /tmp/acc-validation-summary.json; fi
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
