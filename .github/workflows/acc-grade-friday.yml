@@ -1,6 +1,11 @@
 name: Grade archived Friday ACC projections
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_grade_friday.py'
+      - '.github/workflows/acc-grade-friday.yml'
   schedule:
     - cron: '45 12 * * 6'
 permissions:
