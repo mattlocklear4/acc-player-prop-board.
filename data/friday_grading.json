@@ -1,0 +1,94 @@
+{
+  "graded_at_utc": "2026-11-21T12:21:40.142456+00:00",
+  "projection_snapshot_utc": "2026-11-21T12:17:29.152120+00:00",
+  "slate_date_eastern": "2026-11-27",
+  "status": "RESEARCH_GRADED_FROM_PUBLIC_ESPN",
+  "games_in_snapshot": 0,
+  "players_graded": 0,
+  "metrics": {
+    "baseline": {
+      "Minutes": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Points": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Rebounds": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Assists": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Threes": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      }
+    },
+    "kenpom": {
+      "Minutes": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Points": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Rebounds": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Assists": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Threes": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      }
+    },
+    "rotation_kenpom": {
+      "Minutes": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Points": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Rebounds": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Assists": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      },
+      "Threes": {
+        "n": 0,
+        "mae": null,
+        "bias": null
+      }
+    }
+  },
+  "issues": [],
+  "rows": [],
+  "caution": "Player names matched uniquely within game; ESPN public stats unofficial. No betting ROI or historical odds grading."
+}
