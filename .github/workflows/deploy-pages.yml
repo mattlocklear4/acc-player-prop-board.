@@ -5,6 +5,7 @@ on:
     paths:
       - 'index.html'
       - 'daily.html'
+      - 'daily-tab.js'
       - 'data/daily_board.json'
       - 'data/archives/daily/**'
       - 'data/odds_snapshots/**'
