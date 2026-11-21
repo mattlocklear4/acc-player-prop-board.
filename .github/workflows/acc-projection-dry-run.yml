@@ -11,6 +11,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/acc_*.py'
+      - '!scripts/acc_grade_friday.py'
       - 'scripts/research_engine.py'
       - 'scripts/supabase_kenpom.py'
       - '.github/workflows/acc-projection-dry-run.yml'
