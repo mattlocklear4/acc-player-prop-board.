@@ -143,7 +143,7 @@ def main():
         out['target_date_eastern']=(today if a.daily else friday).isoformat()
         out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches),a.max_credits//len(MARKETS))*len(MARKETS)
         if not friday_matches:
-            out['warnings'].append('No matched eligible events on target date; zero paid requests.');return
+            out['warnings'].append('No matched eligible events on target date; zero paid requests.');save();return
         for game,event in friday_matches[:a.max_events]:
             if out['quota']['credits_spent_reported']+len(MARKETS)>a.max_credits:
                 out['warnings'].append('Daily credit cap reached; remaining events skipped.');break
