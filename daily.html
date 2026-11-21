@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACC Daily Projections</title><style>body{background:#101827;color:#f1f5f9;font:15px system-ui;margin:auto;max-width:1250px;padding:20px}a{color:#93c5fd}table{border-collapse:collapse;width:100%;margin:15px 0 30px}th,td{padding:9px;border-bottom:1px solid #334155;text-align:right}th:first-child,td:first-child{text-align:left}th{color:#a5b4fc}h2{margin-top:28px}.note{color:#fbbf24}.muted{color:#94a3b8}</style></head><body><p><a href="./">← ACC Player Prop Board</a></p><h1>Today's ACC Player Projections</h1><p id="status">Loading published daily board…</p><main id="results"></main><script>
+const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=x=>typeof x==='number'?x.toFixed(1):'—';
+fetch('data/daily_board.json?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('No daily board published yet');return r.json()}).then(d=>{
+document.getElementById('status').textContent='Slate '+d.date_eastern+' · Generated '+new Date(d.generated_at_utc).toLocaleString()+' · '+(d.game_count||0)+' upcoming games · '+(d.projection_player_rows||0)+' player projections';
+let out='<p class="note">'+esc(d.caution)+'</p>';
+if(!d.games?.length)out+='<p>No future ACC games were included in the latest published snapshot. Check the workflow for schedule or projection errors.</p>';
+for(const g of d.games||[]){out+='<h2>'+esc(g.away_team)+' at '+esc(g.home_team)+'</h2><p class="muted">Tipoff: '+new Date(g.tipoff_utc).toLocaleString()+'</p>';
+for(const t of g.teams||[]){out+='<h3>'+esc(t.team)+' — '+esc(t.status)+'</h3>';if(!t.players?.length){out+='<p>'+esc(t.reason||'No projections available')+'</p>';continue;}
+out+='<div style="overflow:auto"><table><thead><tr><th>Player</th><th>Min</th><th>Pts</th><th>Reb</th><th>Ast</th><th>3PM</th></tr></thead><tbody>';
+for(const p of t.players){out+='<tr><td>'+esc(p.Player)+'</td><td>'+fmt(p.Minutes)+'</td><td>'+fmt(p.KenPomPoints??p.BaselinePoints)+'</td><td>'+fmt(p.KenPomRebounds??p.BaselineRebounds)+'</td><td>'+fmt(p.KenPomAssists??p.BaselineAssists)+'</td><td>'+fmt(p.KenPomThrees??p.BaselineThrees)+'</td></tr>';}
+out+='</tbody></table></div>';}}
+document.getElementById('results').innerHTML=out;
+}).catch(e=>document.getElementById('status').textContent='Daily board not yet available: '+e.message);
+</script></body></html>
