@@ -102,6 +102,21 @@ jobs:
         run: |
           if [ -f data/friday_board.json ]; then
             cp data/friday_board.json /tmp/acc-friday-board.json
+            python - <<'PY'
+            import json, datetime, pathlib
+            d=json.loads(pathlib.Path('data/friday_board.json').read_text())
+            day=d.get('date_eastern','')
+            games=d.get('games') or []
+            try:
+                friday=datetime.date.fromisoformat(day).weekday()==4
+                generated=datetime.datetime.fromisoformat(d['generated_at_utc'].replace('Z','+00:00'))
+                before_all=all(g.get('tipoff_utc') and generated < datetime.datetime.fromisoformat(g['tipoff_utc'].replace('Z','+00:00')) for g in games)
+            except (ValueError,KeyError,TypeError):
+                friday=before_all=False
+            if friday and games and before_all:
+                pathlib.Path('/tmp/acc-friday-archive.json').write_text(json.dumps(d,indent=2)+'\n')
+                pathlib.Path('/tmp/acc-friday-archive-date').write_text(day)
+            PY
             if [ -f data/validation_summary.json ]; then cp data/validation_summary.json /tmp/acc-validation-summary.json; fi
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -109,8 +124,13 @@ jobs:
               git fetch origin main
               git checkout -B friday-publish origin/main
               cp /tmp/acc-friday-board.json data/friday_board.json
+              if [ -f /tmp/acc-friday-archive-date ]; then
+                archive_path="data/archives/friday_$(cat /tmp/acc-friday-archive-date).json"
+                mkdir -p data/archives
+                if [ ! -f "$archive_path" ]; then cp /tmp/acc-friday-archive.json "$archive_path"; fi
+              fi
               if [ -f /tmp/acc-validation-summary.json ]; then cp /tmp/acc-validation-summary.json data/validation_summary.json; fi
-              git add data/friday_board.json data/validation_summary.json
+              git add data/friday_board.json data/validation_summary.json data/archives/
               if git diff --cached --quiet; then
                 echo "Friday board already up to date"
                 break
