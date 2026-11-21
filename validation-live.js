@@ -6,4 +6,9 @@ fetch('data/validation_summary.json?cache='+Date.now(),{cache:'no-store'}).then(
  '<div class="tablewrap"><table><thead><tr><th>Stat</th><th>Samples</th><th>MAE</th><th>RMSE</th><th>Bias (predicted − actual)</th></tr></thead><tbody>'+
  stats.map(k=>{const m=(d.metrics||{})[k]||{};return '<tr><td>'+esc(k)+'</td><td>'+esc(m.n)+'</td><td>'+esc(m.mae)+'</td><td>'+esc(m.rmse)+'</td><td>'+esc(m.bias)+'</td></tr>'}).join('')+
  '</tbody></table></div><p class="note">'+esc(d.method)+'</p><p class="note"><strong>Not yet betting-validated:</strong> historical pregame odds and matched outcomes are needed for probability calibration, ROI, and closing-line value. No recommendations are qualified from this scorecard alone.</p>';
-}).catch(e=>{root.textContent=e.message+'. The next successful scheduled workflow should publish it.'})})();
+}).catch(e=>{root.textContent=e.message+'. The next successful scheduled workflow should publish it.'});
+const friday=document.createElement('div');friday.className='panel';friday.textContent='Loading Friday game grading…';root.after(friday);
+fetch('data/friday_grading.json?cache='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Friday grading has not been published yet');return r.json()}).then(d=>{
+const fmt=x=>x==null?'—':Number(x).toFixed(2);
+friday.innerHTML='<h3>Friday '+esc(d.slate_date_eastern)+' · pregame projections vs final results</h3><p class="note">'+esc(d.players_graded)+' matched players · '+esc(d.games_in_snapshot)+' games in archive · '+esc(d.status)+'</p><div class="tablewrap"><table><thead><tr><th>Model</th><th>Stat</th><th>Graded</th><th>MAE</th><th>Bias</th></tr></thead><tbody>'+['baseline','kenpom','rotation_kenpom'].flatMap(model=>['Minutes','Points','Rebounds','Assists','Threes'].map(stat=>{const m=d.metrics?.[model]?.[stat]||{};return '<tr><td>'+esc(model)+'</td><td>'+esc(stat)+'</td><td>'+esc(m.n)+'</td><td>'+fmt(m.mae)+'</td><td>'+fmt(m.bias)+'</td></tr>'})).join('')+'</tbody></table></div><p class="note">Only uniquely matched player box scores are graded. No historical sportsbook ROI is inferred.</p>';
+}).catch(e=>{friday.textContent=e.message});})();
