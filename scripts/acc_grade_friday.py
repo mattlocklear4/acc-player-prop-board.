@@ -9,7 +9,7 @@ from pathlib import Path
 from collections import defaultdict
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/'data/archives/friday_2026-11-20.json'
+ARCHIVE_DIR=ROOT/'data/archives'
 OUT=ROOT/'data/friday_grading.json'
 FIELDS={'Points':'points','Rebounds':'rebounds','Assists':'assists','Threes':'threePointFieldGoalsMade'}
 def number(v):
@@ -51,9 +51,15 @@ def boxplayers(payload):
     return found
 def norm(s):return ''.join(c for c in str(s or '').lower() if c.isalnum())
 def main():
-    archive=json.loads(SOURCE.read_text())
-    if archive.get('date_eastern')!='2026-11-20' or not archive.get('games'):
-        raise RuntimeError('Missing immutable 2026-11-20 pregame snapshot; refusing to grade a different slate')
+    today_et=(dt.datetime.now(dt.timezone.utc)-dt.timedelta(hours=5)).date()
+    candidates=[p for p in ARCHIVE_DIR.glob('friday_????-??-??.json')
+                if dt.date.fromisoformat(p.stem.replace('friday_','')) < today_et]
+    if not candidates:
+        raise RuntimeError('No past Friday pregame archive exists; cannot grade an overwritten upcoming board')
+    source=max(candidates)
+    archive=json.loads(source.read_text())
+    if not archive.get('games') or archive.get('date_eastern')!=source.stem.replace('friday_',''):
+        raise RuntimeError('Invalid immutable pregame snapshot: '+str(source))
     results=[];issues=[]
     for game in archive.get('games') or []:
         eid=str(game.get('game_id') or '').replace('espn_event_','')
