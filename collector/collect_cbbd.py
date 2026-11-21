@@ -76,10 +76,19 @@ def main():
             counts[team]={'games':len(games),'players':player_count}
             print(f'{team}: {len(games)} team-game objects; {player_count} player records',flush=True)
         except Exception as e:
+            if 'Monthly call quota exceeded' in str(e):
+                quota_exhausted=True
+                failures.append(f'{team}: CBBD monthly quota exhausted; stopping further requests')
+                print('CBBD monthly quota exhausted; stopping all subsequent team requests.',file=sys.stderr,flush=True)
+                break
             failures.append(f'{team}: {e}')
             print(f'ERROR: {team}: {e}',file=sys.stderr,flush=True)
         time.sleep(0.15)
     if failures:
+        if quota_exhausted:
+            (output/'acc_collector_status.json').write_text(json.dumps({'status':'CBBD_MONTHLY_QUOTA_EXHAUSTED','checked_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'data_updated':False,'message':'Existing CSV preserved; no additional team requests attempted after quota response.'},indent=2)+'\n')
+            print('WARNING: CBBD monthly quota exhausted; existing data preserved. Exiting without retrying remaining teams.',file=sys.stderr)
+            return
         sys.exit('Collection incomplete; not overwriting CSV. Errors:\n'+'\n'.join(failures))
     ordered=sorted(rows.values(),key=lambda r:(str(r.get('game_date') or ''),str(r.get('game_id') or ''),str(r.get('team') or ''),str(r.get('player') or '')))
     if not ordered:sys.exit('No player records received; refusing to create empty CSV')
