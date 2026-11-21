@@ -36,8 +36,16 @@ jobs:
           test -s app.js
           test -s style.css
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Package static site for Pages
+        run: |
+          mkdir -p /tmp/acc-pages
+          tar --dereference --hard-dereference --directory=. -cvf /tmp/acc-pages/artifact.tar --exclude=.git --exclude=.github .
+      - name: Upload named GitHub Pages artifact
+        uses: actions/upload-artifact@v4
         with:
-          path: '.'
+          name: github-pages
+          path: /tmp/acc-pages/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
       - id: deployment
         uses: actions/deploy-pages@v4
