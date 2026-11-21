@@ -4,6 +4,10 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'daily.html'
+      - 'data/daily_board.json'
+      - 'data/archives/daily/**'
+      - 'data/odds_snapshots/**'
       - 'style.css'
       - 'app.js'
       - 'friday-board.js'
