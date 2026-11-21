@@ -1,0 +1,35 @@
+name: Grade archived Friday ACC projections
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 12 * * 6'
+permissions:
+  contents: write
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Grade pregame projections from completed public ESPN box scores
+        run: python scripts/acc_grade_friday.py
+      - name: Publish grading report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp data/friday_grading.json /tmp/friday_grading.json
+          git fetch origin main
+          git checkout -B grading-publish origin/main
+          cp /tmp/friday_grading.json data/friday_grading.json
+          git add data/friday_grading.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Grade archived ACC Friday projections [skip ci]'
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: friday-grading
+          path: data/friday_grading.json
