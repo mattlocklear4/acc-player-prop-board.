@@ -1,0 +1,3248 @@
+{
+  "generated_at_utc": "2026-11-21T12:15:40.473385+00:00",
+  "status": "DESCRIPTIVE_WALK_FORWARD_NOT_BETTING_VALIDATED",
+  "method": "Live baseline rebuilt per game date, strict earlier-game cutoff; no opponent or retroactive KenPom adjustments",
+  "minimum_prior_current_games": 1,
+  "dates_evaluated": 14,
+  "player_game_observations": 553,
+  "metrics": {
+    "Minutes": {
+      "n": 553,
+      "mae": 6.325,
+      "rmse": 8.385,
+      "bias": 0.91
+    },
+    "Points": {
+      "n": 552,
+      "mae": 4.722,
+      "rmse": 6.259,
+      "bias": 0.11
+    },
+    "Rebounds": {
+      "n": 552,
+      "mae": 2.068,
+      "rmse": 2.714,
+      "bias": -0.074
+    },
+    "Assists": {
+      "n": 552,
+      "mae": 1.057,
+      "rmse": 1.591,
+      "bias": -0.111
+    },
+    "Threes": {
+      "n": 552,
+      "mae": 0.743,
+      "rmse": 1.16,
+      "bias": -0.044
+    }
+  },
+  "limitations": [
+    "Only players with earlier current-season games and a model baseline qualify",
+    "No historical pregame sportsbook lines; ROI/CLV/Brier/log loss not measurable",
+    "Same-date games excluded from inputs; historic prior seasons used by live baseline",
+    "Not a test of live KenPom or injury-adjusted projections"
+  ],
+  "recent_observations": [
+    {
+      "date": "2026-11-14",
+      "athlete_id": "202026",
+      "player": "Jaden Toombs",
+      "team": "SMU",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 21.1549,
+        "actual": 23.0,
+        "error": -1.8451
+      },
+      "Points": {
+        "predicted": 9.2896,
+        "actual": 11.0,
+        "error": -1.7104
+      },
+      "Rebounds": {
+        "predicted": 5.1707,
+        "actual": 3.0,
+        "error": 2.1707
+      },
+      "Assists": {
+        "predicted": 1.8333,
+        "actual": 1.0,
+        "error": 0.8333
+      },
+      "Threes": {
+        "predicted": 0.2503,
+        "actual": 0.0,
+        "error": 0.2503
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "234361",
+      "player": "Jakub Szumert",
+      "team": "SMU",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 22.3333,
+        "actual": 22.0,
+        "error": 0.3333
+      },
+      "Points": {
+        "predicted": 15.6667,
+        "actual": 10.0,
+        "error": 5.6667
+      },
+      "Rebounds": {
+        "predicted": 5.3333,
+        "actual": 9.0,
+        "error": -3.6667
+      },
+      "Assists": {
+        "predicted": 2.0,
+        "actual": 0.0,
+        "error": 2.0
+      },
+      "Threes": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": -0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "202023",
+      "player": "Jermaine O'Neal Jr.",
+      "team": "SMU",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 16.9091,
+        "actual": 26.0,
+        "error": -9.0909
+      },
+      "Points": {
+        "predicted": 6.6697,
+        "actual": 13.0,
+        "error": -6.3303
+      },
+      "Rebounds": {
+        "predicted": 2.7119,
+        "actual": 5.0,
+        "error": -2.2881
+      },
+      "Assists": {
+        "predicted": 0.593,
+        "actual": 1.0,
+        "error": -0.407
+      },
+      "Threes": {
+        "predicted": 0.7642,
+        "actual": 0.0,
+        "error": 0.7642
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "6858",
+      "player": "Johan Munch",
+      "team": "SMU",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 19.7742,
+        "actual": 12.0,
+        "error": 7.7742
+      },
+      "Points": {
+        "predicted": 7.1567,
+        "actual": 6.0,
+        "error": 1.1567
+      },
+      "Rebounds": {
+        "predicted": 4.9105,
+        "actual": 8.0,
+        "error": -3.0895
+      },
+      "Assists": {
+        "predicted": 0.9249,
+        "actual": 0.0,
+        "error": 0.9249
+      },
+      "Threes": {
+        "predicted": 0.022,
+        "actual": 0.0,
+        "error": 0.022
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "442",
+      "player": "Nic Codie",
+      "team": "SMU",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 15.3333,
+        "actual": 10.0,
+        "error": 5.3333
+      },
+      "Points": {
+        "predicted": 3.6585,
+        "actual": 0.0,
+        "error": 3.6585
+      },
+      "Rebounds": {
+        "predicted": 2.7034,
+        "actual": 5.0,
+        "error": -2.2966
+      },
+      "Assists": {
+        "predicted": 0.615,
+        "actual": 0.0,
+        "error": 0.615
+      },
+      "Threes": {
+        "predicted": 0.0647,
+        "actual": 0.0,
+        "error": 0.0647
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "202028",
+      "player": "Nigel Walls",
+      "team": "SMU",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 3.8667,
+        "actual": 2.0,
+        "error": 1.8667
+      },
+      "Points": {
+        "predicted": 0.1933,
+        "actual": 0.0,
+        "error": 0.1933
+      },
+      "Rebounds": {
+        "predicted": 0.2707,
+        "actual": 0.0,
+        "error": 0.2707
+      },
+      "Assists": {
+        "predicted": 0.2062,
+        "actual": 0.0,
+        "error": 0.2062
+      },
+      "Threes": {
+        "predicted": 0.0644,
+        "actual": 0.0,
+        "error": 0.0644
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "908",
+      "player": "Oziyah Sellers",
+      "team": "SMU",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 27.6339,
+        "actual": 29.0,
+        "error": -1.3661
+      },
+      "Points": {
+        "predicted": 11.4699,
+        "actual": 21.0,
+        "error": -9.5301
+      },
+      "Rebounds": {
+        "predicted": 3.1226,
+        "actual": 6.0,
+        "error": -2.8774
+      },
+      "Assists": {
+        "predicted": 1.6411,
+        "actual": 2.0,
+        "error": -0.3589
+      },
+      "Threes": {
+        "predicted": 1.6087,
+        "actual": 4.0,
+        "error": -2.3913
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224082",
+      "player": "Bryson Howard",
+      "team": "Duke",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 10.0,
+        "actual": 7.0,
+        "error": 3.0
+      },
+      "Points": {
+        "predicted": 6.0,
+        "actual": 0.0,
+        "error": 6.0
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 3.0,
+        "error": -2.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.5,
+        "actual": 0.0,
+        "error": 0.5
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "208",
+      "player": "Caleb Foster",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 23.6391,
+        "actual": 18.0,
+        "error": 5.6391
+      },
+      "Points": {
+        "predicted": 8.676,
+        "actual": 12.0,
+        "error": -3.324
+      },
+      "Rebounds": {
+        "predicted": 3.2955,
+        "actual": 3.0,
+        "error": 0.2955
+      },
+      "Assists": {
+        "predicted": 2.5607,
+        "actual": 1.0,
+        "error": 1.5607
+      },
+      "Threes": {
+        "predicted": 1.3451,
+        "actual": 3.0,
+        "error": -1.6549
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224090",
+      "player": "Cameron Williams",
+      "team": "Duke",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 12.0,
+        "actual": 14.0,
+        "error": -2.0
+      },
+      "Points": {
+        "predicted": 3.5,
+        "actual": 9.0,
+        "error": -5.5
+      },
+      "Rebounds": {
+        "predicted": 2.5,
+        "actual": 2.0,
+        "error": 0.5
+      },
+      "Assists": {
+        "predicted": 0.5,
+        "actual": 0.0,
+        "error": 0.5
+      },
+      "Threes": {
+        "predicted": 0.5,
+        "actual": 2.0,
+        "error": -1.5
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "198978",
+      "player": "Cayden Boozer",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 22.3923,
+        "actual": 22.0,
+        "error": 0.3923
+      },
+      "Points": {
+        "predicted": 7.9533,
+        "actual": 11.0,
+        "error": -3.0467
+      },
+      "Rebounds": {
+        "predicted": 2.4949,
+        "actual": 10.0,
+        "error": -7.5051
+      },
+      "Assists": {
+        "predicted": 3.7096,
+        "actual": 4.0,
+        "error": -0.2904
+      },
+      "Threes": {
+        "predicted": 0.4715,
+        "actual": 1.0,
+        "error": -0.5285
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "198985",
+      "player": "Dame Sarr",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 23.4354,
+        "actual": 23.0,
+        "error": 0.4354
+      },
+      "Points": {
+        "predicted": 7.7667,
+        "actual": 12.0,
+        "error": -4.2333
+      },
+      "Rebounds": {
+        "predicted": 3.5541,
+        "actual": 4.0,
+        "error": -0.4459
+      },
+      "Assists": {
+        "predicted": 1.4034,
+        "actual": 3.0,
+        "error": -1.5966
+      },
+      "Threes": {
+        "predicted": 0.8216,
+        "actual": 1.0,
+        "error": -0.1784
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224085",
+      "player": "Deron Rippey Jr.",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 16.3333,
+        "actual": 18.0,
+        "error": -1.6667
+      },
+      "Points": {
+        "predicted": 5.6667,
+        "actual": 0.0,
+        "error": 5.6667
+      },
+      "Rebounds": {
+        "predicted": 2.0,
+        "actual": 0.0,
+        "error": 2.0
+      },
+      "Assists": {
+        "predicted": 1.6667,
+        "actual": 1.0,
+        "error": 0.6667
+      },
+      "Threes": {
+        "predicted": 0.6667,
+        "actual": 0.0,
+        "error": 0.6667
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "3845",
+      "player": "Drew Scharnowski",
+      "team": "Duke",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 19.66,
+        "actual": 11.0,
+        "error": 8.66
+      },
+      "Points": {
+        "predicted": 9.8309,
+        "actual": 2.0,
+        "error": 7.8309
+      },
+      "Rebounds": {
+        "predicted": 5.7406,
+        "actual": 1.0,
+        "error": 4.7406
+      },
+      "Assists": {
+        "predicted": 2.3973,
+        "actual": 2.0,
+        "error": 0.3973
+      },
+      "Threes": {
+        "predicted": 0.0242,
+        "actual": 0.0,
+        "error": 0.0242
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "2408",
+      "player": "Jacob Theodosiou",
+      "team": "Duke",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 2.0,
+        "actual": 2.0,
+        "error": 0.0
+      },
+      "Points": {
+        "predicted": 0.0,
+        "actual": 2.0,
+        "error": -2.0
+      },
+      "Rebounds": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224079",
+      "player": "Joaquim Boumtje Boumtje",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 19.6667,
+        "actual": 22.0,
+        "error": -2.3333
+      },
+      "Points": {
+        "predicted": 9.6667,
+        "actual": 11.0,
+        "error": -1.3333
+      },
+      "Rebounds": {
+        "predicted": 5.3333,
+        "actual": 9.0,
+        "error": -3.6667
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      },
+      "Threes": {
+        "predicted": 0.6667,
+        "actual": 1.0,
+        "error": -0.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "5418",
+      "player": "John Blackwell",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 31.7594,
+        "actual": 22.0,
+        "error": 9.7594
+      },
+      "Points": {
+        "predicted": 16.904,
+        "actual": 3.0,
+        "error": 13.904
+      },
+      "Rebounds": {
+        "predicted": 4.4444,
+        "actual": 0.0,
+        "error": 4.4444
+      },
+      "Assists": {
+        "predicted": 1.917,
+        "actual": 1.0,
+        "error": 0.917
+      },
+      "Threes": {
+        "predicted": 2.6973,
+        "actual": 1.0,
+        "error": 1.6973
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224083",
+      "player": "Maxime Meyer",
+      "team": "Duke",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 4.5,
+        "actual": 5.0,
+        "error": -0.5
+      },
+      "Points": {
+        "predicted": 1.0,
+        "actual": 4.0,
+        "error": -3.0
+      },
+      "Rebounds": {
+        "predicted": 2.0,
+        "actual": 3.0,
+        "error": -1.0
+      },
+      "Assists": {
+        "predicted": 0.5,
+        "actual": 1.0,
+        "error": -0.5
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "216",
+      "player": "Patrick Ngongba II",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 23.0455,
+        "actual": 21.0,
+        "error": 2.0455
+      },
+      "Points": {
+        "predicted": 11.66,
+        "actual": 13.0,
+        "error": -1.34
+      },
+      "Rebounds": {
+        "predicted": 6.2702,
+        "actual": 9.0,
+        "error": -2.7298
+      },
+      "Assists": {
+        "predicted": 2.1726,
+        "actual": 4.0,
+        "error": -1.8274
+      },
+      "Threes": {
+        "predicted": 0.3522,
+        "actual": 0.0,
+        "error": 0.3522
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "198989",
+      "player": "Sebastian Wilkins",
+      "team": "Duke",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 20.3333,
+        "actual": 15.0,
+        "error": 5.3333
+      },
+      "Points": {
+        "predicted": 6.3333,
+        "actual": 11.0,
+        "error": -4.6667
+      },
+      "Rebounds": {
+        "predicted": 5.0,
+        "actual": 6.0,
+        "error": -1.0
+      },
+      "Assists": {
+        "predicted": 1.3333,
+        "actual": 2.0,
+        "error": -0.6667
+      },
+      "Threes": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "225974",
+      "player": "Alex Samodurov",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 13.0,
+        "actual": 10.0,
+        "error": 3.0
+      },
+      "Points": {
+        "predicted": 4.3333,
+        "actual": 4.0,
+        "error": 0.3333
+      },
+      "Rebounds": {
+        "predicted": 3.3333,
+        "actual": 2.0,
+        "error": 1.3333
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      },
+      "Threes": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "200977",
+      "player": "Isaiah Denis",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 6.9273,
+        "actual": 19.0,
+        "error": -12.0727
+      },
+      "Points": {
+        "predicted": 3.7022,
+        "actual": 11.0,
+        "error": -7.2978
+      },
+      "Rebounds": {
+        "predicted": 1.2746,
+        "actual": 4.0,
+        "error": -2.7254
+      },
+      "Assists": {
+        "predicted": 0.5337,
+        "actual": 1.0,
+        "error": -0.4663
+      },
+      "Threes": {
+        "predicted": 0.7469,
+        "actual": 3.0,
+        "error": -2.2531
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "83",
+      "player": "Jarin Stevenson",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 25.3912,
+        "actual": 23.0,
+        "error": 2.3912
+      },
+      "Points": {
+        "predicted": 8.1436,
+        "actual": 4.0,
+        "error": 4.1436
+      },
+      "Rebounds": {
+        "predicted": 3.927,
+        "actual": 7.0,
+        "error": -3.073
+      },
+      "Assists": {
+        "predicted": 0.819,
+        "actual": 0.0,
+        "error": 0.819
+      },
+      "Threes": {
+        "predicted": 0.659,
+        "actual": 0.0,
+        "error": 0.659
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "5706",
+      "player": "Jaydon Young",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 9.2727,
+        "actual": 10.0,
+        "error": -0.7273
+      },
+      "Points": {
+        "predicted": 2.9756,
+        "actual": 0.0,
+        "error": 2.9756
+      },
+      "Rebounds": {
+        "predicted": 0.9968,
+        "actual": 2.0,
+        "error": -1.0032
+      },
+      "Assists": {
+        "predicted": 0.3816,
+        "actual": 3.0,
+        "error": -2.6184
+      },
+      "Threes": {
+        "predicted": 0.7779,
+        "actual": 0.0,
+        "error": 0.7779
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "200773",
+      "player": "Matt Able",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 22.0374,
+        "actual": 31.0,
+        "error": -8.9626
+      },
+      "Points": {
+        "predicted": 9.5726,
+        "actual": 8.0,
+        "error": 1.5726
+      },
+      "Rebounds": {
+        "predicted": 3.2194,
+        "actual": 2.0,
+        "error": 1.2194
+      },
+      "Assists": {
+        "predicted": 1.2185,
+        "actual": 3.0,
+        "error": -1.7815
+      },
+      "Threes": {
+        "predicted": 1.5011,
+        "actual": 2.0,
+        "error": -0.4989
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "225965",
+      "player": "Maximo Adams",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 21.6667,
+        "actual": 23.0,
+        "error": -1.3333
+      },
+      "Points": {
+        "predicted": 11.3333,
+        "actual": 4.0,
+        "error": 7.3333
+      },
+      "Rebounds": {
+        "predicted": 8.0,
+        "actual": 11.0,
+        "error": -3.0
+      },
+      "Assists": {
+        "predicted": 0.6667,
+        "actual": 2.0,
+        "error": -1.3333
+      },
+      "Threes": {
+        "predicted": 1.6667,
+        "actual": 0.0,
+        "error": 1.6667
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203203",
+      "player": "Neo Avdalas",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 29.6305,
+        "actual": 23.0,
+        "error": 6.6305
+      },
+      "Points": {
+        "predicted": 10.6817,
+        "actual": 14.0,
+        "error": -3.3183
+      },
+      "Rebounds": {
+        "predicted": 3.4492,
+        "actual": 2.0,
+        "error": 1.4492
+      },
+      "Assists": {
+        "predicted": 4.4128,
+        "actual": 3.0,
+        "error": 1.4128
+      },
+      "Threes": {
+        "predicted": 1.2976,
+        "actual": 0.0,
+        "error": 1.2976
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "225973",
+      "player": "Sayon Keita",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 20.3333,
+        "actual": 27.0,
+        "error": -6.6667
+      },
+      "Points": {
+        "predicted": 7.6667,
+        "actual": 4.0,
+        "error": 3.6667
+      },
+      "Rebounds": {
+        "predicted": 4.6667,
+        "actual": 6.0,
+        "error": -1.3333
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 1.0,
+        "error": -0.6667
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "3062",
+      "player": "Terrence Brown",
+      "team": "North Carolina",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 30.0682,
+        "actual": 34.0,
+        "error": -3.9318
+      },
+      "Points": {
+        "predicted": 18.8976,
+        "actual": 21.0,
+        "error": -2.1024
+      },
+      "Rebounds": {
+        "predicted": 2.8139,
+        "actual": 3.0,
+        "error": -0.1861
+      },
+      "Assists": {
+        "predicted": 3.1901,
+        "actual": 1.0,
+        "error": 2.1901
+      },
+      "Threes": {
+        "predicted": 0.7987,
+        "actual": 4.0,
+        "error": -3.2013
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203206",
+      "player": "Antonio Dorn",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 8.2424,
+        "actual": 9.0,
+        "error": -0.7576
+      },
+      "Points": {
+        "predicted": 2.0263,
+        "actual": 0.0,
+        "error": 2.0263
+      },
+      "Rebounds": {
+        "predicted": 1.5925,
+        "actual": 1.0,
+        "error": 0.5925
+      },
+      "Assists": {
+        "predicted": 0.4908,
+        "actual": 0.0,
+        "error": 0.4908
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "233546",
+      "player": "Gallagher Placide",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 17.3333,
+        "actual": 17.0,
+        "error": 0.3333
+      },
+      "Points": {
+        "predicted": 9.0,
+        "actual": 9.0,
+        "error": 0.0
+      },
+      "Rebounds": {
+        "predicted": 3.6667,
+        "actual": 3.0,
+        "error": 0.6667
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      },
+      "Threes": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "233547",
+      "player": "Gavin Placide",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 30.6667,
+        "actual": 27.0,
+        "error": 3.6667
+      },
+      "Points": {
+        "predicted": 14.6667,
+        "actual": 16.0,
+        "error": -1.3333
+      },
+      "Rebounds": {
+        "predicted": 7.6667,
+        "actual": 7.0,
+        "error": 0.6667
+      },
+      "Assists": {
+        "predicted": 1.3333,
+        "actual": 1.0,
+        "error": 0.3333
+      },
+      "Threes": {
+        "predicted": 0.6667,
+        "actual": 0.0,
+        "error": 0.6667
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203255",
+      "player": "Isaac Carr",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 14.7692,
+        "actual": 28.0,
+        "error": -13.2308
+      },
+      "Points": {
+        "predicted": 3.537,
+        "actual": 18.0,
+        "error": -14.463
+      },
+      "Rebounds": {
+        "predicted": 1.9067,
+        "actual": 4.0,
+        "error": -2.0933
+      },
+      "Assists": {
+        "predicted": 1.3004,
+        "actual": 3.0,
+        "error": -1.6996
+      },
+      "Threes": {
+        "predicted": 0.4065,
+        "actual": 1.0,
+        "error": -0.5935
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "62",
+      "player": "Jamari McDowell",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 19.1169,
+        "actual": 19.0,
+        "error": 0.1169
+      },
+      "Points": {
+        "predicted": 4.6439,
+        "actual": 2.0,
+        "error": 2.6439
+      },
+      "Rebounds": {
+        "predicted": 1.649,
+        "actual": 3.0,
+        "error": -1.351
+      },
+      "Assists": {
+        "predicted": 1.2583,
+        "actual": 2.0,
+        "error": -0.7417
+      },
+      "Threes": {
+        "predicted": 0.9791,
+        "actual": 0.0,
+        "error": 0.9791
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "17256",
+      "player": "Justin Abson",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 4.3333,
+        "actual": 12.0,
+        "error": -7.6667
+      },
+      "Points": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      },
+      "Rebounds": {
+        "predicted": 0.6667,
+        "actual": 3.0,
+        "error": -2.3333
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "2462",
+      "player": "Justin Ray",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 26.9358,
+        "actual": 21.0,
+        "error": 5.9358
+      },
+      "Points": {
+        "predicted": 10.3424,
+        "actual": 8.0,
+        "error": 2.3424
+      },
+      "Rebounds": {
+        "predicted": 2.0786,
+        "actual": 4.0,
+        "error": -1.9214
+      },
+      "Assists": {
+        "predicted": 1.2776,
+        "actual": 2.0,
+        "error": -0.7224
+      },
+      "Threes": {
+        "predicted": 1.6578,
+        "actual": 1.0,
+        "error": 0.6578
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "200461",
+      "player": "Kevair Kennedy",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 35.8503,
+        "actual": 32.0,
+        "error": 3.8503
+      },
+      "Points": {
+        "predicted": 17.8586,
+        "actual": 23.0,
+        "error": -5.1414
+      },
+      "Rebounds": {
+        "predicted": 4.9551,
+        "actual": 10.0,
+        "error": -5.0449
+      },
+      "Assists": {
+        "predicted": 3.9581,
+        "actual": 7.0,
+        "error": -3.0419
+      },
+      "Threes": {
+        "predicted": 0.5643,
+        "actual": 3.0,
+        "error": -2.4357
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "233538",
+      "player": "Lukas Bojovic",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 7.3333,
+        "actual": 12.0,
+        "error": -4.6667
+      },
+      "Points": {
+        "predicted": 0.0,
+        "actual": 8.0,
+        "error": -8.0
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": -0.0
+      },
+      "Assists": {
+        "predicted": 1.0,
+        "actual": 2.0,
+        "error": -1.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "1843",
+      "player": "Ring Nyeri",
+      "team": "Wake Forest",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 22.675,
+        "actual": 7.0,
+        "error": 15.675
+      },
+      "Points": {
+        "predicted": 6.6684,
+        "actual": 2.0,
+        "error": 4.6684
+      },
+      "Rebounds": {
+        "predicted": 4.9062,
+        "actual": 0.0,
+        "error": 4.9062
+      },
+      "Assists": {
+        "predicted": 0.6654,
+        "actual": 0.0,
+        "error": 0.6654
+      },
+      "Threes": {
+        "predicted": 0.7532,
+        "actual": 0.0,
+        "error": 0.7532
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "5777",
+      "player": "Vincent Ricchiuti",
+      "team": "Wake Forest",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 1.9,
+        "actual": 3.0,
+        "error": -1.1
+      },
+      "Points": {
+        "predicted": 1.14,
+        "actual": 3.0,
+        "error": -1.86
+      },
+      "Rebounds": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.38,
+        "actual": 1.0,
+        "error": -0.62
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "199213",
+      "player": "Xander Pintelon",
+      "team": "Wake Forest",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 18.9284,
+        "actual": 9.0,
+        "error": 9.9284
+      },
+      "Points": {
+        "predicted": 5.7995,
+        "actual": 0.0,
+        "error": 5.7995
+      },
+      "Rebounds": {
+        "predicted": 3.6232,
+        "actual": 3.0,
+        "error": 0.6232
+      },
+      "Assists": {
+        "predicted": 0.7514,
+        "actual": 0.0,
+        "error": 0.7514
+      },
+      "Threes": {
+        "predicted": 1.0961,
+        "actual": 0.0,
+        "error": 1.0961
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "906",
+      "player": "Aidan Cammann",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 21.8017,
+        "actual": 7.0,
+        "error": 14.8017
+      },
+      "Points": {
+        "predicted": 7.3229,
+        "actual": 0.0,
+        "error": 7.3229
+      },
+      "Rebounds": {
+        "predicted": 3.5071,
+        "actual": 1.0,
+        "error": 2.5071
+      },
+      "Assists": {
+        "predicted": 1.3096,
+        "actual": 0.0,
+        "error": 1.3096
+      },
+      "Threes": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "916",
+      "player": "Anthony Batson Jr.",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 5.6727,
+        "actual": 2.0,
+        "error": 3.6727
+      },
+      "Points": {
+        "predicted": 0.9168,
+        "actual": 0.0,
+        "error": 0.9168
+      },
+      "Rebounds": {
+        "predicted": 0.438,
+        "actual": 0.0,
+        "error": 0.438
+      },
+      "Assists": {
+        "predicted": 0.2042,
+        "actual": 0.0,
+        "error": 0.2042
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "6410",
+      "player": "Austin Maurer",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 17.7143,
+        "actual": 33.0,
+        "error": -15.2857
+      },
+      "Points": {
+        "predicted": 6.8874,
+        "actual": 20.0,
+        "error": -13.1126
+      },
+      "Rebounds": {
+        "predicted": 4.8052,
+        "actual": 9.0,
+        "error": -4.1948
+      },
+      "Assists": {
+        "predicted": 0.4433,
+        "actual": 0.0,
+        "error": 0.4433
+      },
+      "Threes": {
+        "predicted": 0.2061,
+        "actual": 0.0,
+        "error": 0.2061
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "232577",
+      "player": "Aziz Olajuwon",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 24.3333,
+        "actual": 30.0,
+        "error": -5.6667
+      },
+      "Points": {
+        "predicted": 8.3333,
+        "actual": 7.0,
+        "error": 1.3333
+      },
+      "Rebounds": {
+        "predicted": 3.6667,
+        "actual": 4.0,
+        "error": -0.3333
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 1.0,
+        "error": -0.6667
+      },
+      "Threes": {
+        "predicted": 1.6667,
+        "actual": 1.0,
+        "error": 0.6667
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "8202",
+      "player": "Christian Bliss",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 35.563,
+        "actual": 19.0,
+        "error": 16.563
+      },
+      "Points": {
+        "predicted": 15.2503,
+        "actual": 3.0,
+        "error": 12.2503
+      },
+      "Rebounds": {
+        "predicted": 5.3702,
+        "actual": 2.0,
+        "error": 3.3702
+      },
+      "Assists": {
+        "predicted": 4.3911,
+        "actual": 7.0,
+        "error": -2.6089
+      },
+      "Threes": {
+        "predicted": 2.2026,
+        "actual": 0.0,
+        "error": 2.2026
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "919",
+      "player": "Donavin Young",
+      "team": "Stanford",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 14.9365,
+        "actual": 13.0,
+        "error": 1.9365
+      },
+      "Points": {
+        "predicted": 2.7753,
+        "actual": 5.0,
+        "error": -2.2247
+      },
+      "Rebounds": {
+        "predicted": 2.7474,
+        "actual": 4.0,
+        "error": -1.2526
+      },
+      "Assists": {
+        "predicted": 0.7246,
+        "actual": 0.0,
+        "error": 0.7246
+      },
+      "Threes": {
+        "predicted": 0.3278,
+        "actual": 0.0,
+        "error": 0.3278
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "232576",
+      "player": "Elias Obenyah",
+      "team": "Stanford",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 7.0,
+        "actual": 23.0,
+        "error": -16.0
+      },
+      "Points": {
+        "predicted": 4.0,
+        "actual": 4.0,
+        "error": 0.0
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 3.0,
+        "error": -2.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 3.0,
+        "error": -3.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "920",
+      "player": "Evan Stinson",
+      "team": "Stanford",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 6.4,
+        "actual": 3.0,
+        "error": 3.4
+      },
+      "Points": {
+        "predicted": 2.1721,
+        "actual": 0.0,
+        "error": 2.1721
+      },
+      "Rebounds": {
+        "predicted": 0.6622,
+        "actual": 0.0,
+        "error": 0.6622
+      },
+      "Assists": {
+        "predicted": 0.2438,
+        "actual": 0.0,
+        "error": 0.2438
+      },
+      "Threes": {
+        "predicted": 0.2438,
+        "actual": 0.0,
+        "error": 0.2438
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "232579",
+      "player": "Isaiah Rogers",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 21.3333,
+        "actual": 9.0,
+        "error": 12.3333
+      },
+      "Points": {
+        "predicted": 6.0,
+        "actual": 2.0,
+        "error": 4.0
+      },
+      "Rebounds": {
+        "predicted": 1.3333,
+        "actual": 0.0,
+        "error": 1.3333
+      },
+      "Assists": {
+        "predicted": 2.0,
+        "actual": 0.0,
+        "error": 2.0
+      },
+      "Threes": {
+        "predicted": 1.3333,
+        "actual": 0.0,
+        "error": 1.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "232578",
+      "player": "Julius Price",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 33.0,
+        "actual": 34.0,
+        "error": -1.0
+      },
+      "Points": {
+        "predicted": 11.6667,
+        "actual": 16.0,
+        "error": -4.3333
+      },
+      "Rebounds": {
+        "predicted": 2.6667,
+        "actual": 0.0,
+        "error": 2.6667
+      },
+      "Assists": {
+        "predicted": 4.0,
+        "actual": 0.0,
+        "error": 4.0
+      },
+      "Threes": {
+        "predicted": 0.6667,
+        "actual": 2.0,
+        "error": -1.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "4819",
+      "player": "Nick Townsend",
+      "team": "Stanford",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 33.9515,
+        "actual": 27.0,
+        "error": 6.9515
+      },
+      "Points": {
+        "predicted": 17.9537,
+        "actual": 11.0,
+        "error": 6.9537
+      },
+      "Rebounds": {
+        "predicted": 7.4116,
+        "actual": 6.0,
+        "error": 1.4116
+      },
+      "Assists": {
+        "predicted": 4.486,
+        "actual": 2.0,
+        "error": 2.486
+      },
+      "Threes": {
+        "predicted": 1.3453,
+        "actual": 0.0,
+        "error": 1.3453
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "3317",
+      "player": "Amani Hansberry",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 31.0788,
+        "actual": 34.0,
+        "error": -2.9212
+      },
+      "Points": {
+        "predicted": 15.3975,
+        "actual": 20.0,
+        "error": -4.6025
+      },
+      "Rebounds": {
+        "predicted": 6.9188,
+        "actual": 4.0,
+        "error": 2.9188
+      },
+      "Assists": {
+        "predicted": 2.4714,
+        "actual": 5.0,
+        "error": -2.5286
+      },
+      "Threes": {
+        "predicted": 1.275,
+        "actual": 3.0,
+        "error": -1.725
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "5715",
+      "player": "Ben Hammond",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 31.25,
+        "actual": 33.0,
+        "error": -1.75
+      },
+      "Points": {
+        "predicted": 15.8462,
+        "actual": 18.0,
+        "error": -2.1538
+      },
+      "Rebounds": {
+        "predicted": 2.5739,
+        "actual": 3.0,
+        "error": -0.4261
+      },
+      "Assists": {
+        "predicted": 3.8069,
+        "actual": 8.0,
+        "error": -4.1931
+      },
+      "Threes": {
+        "predicted": 1.8268,
+        "actual": 2.0,
+        "error": -0.1732
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "3955",
+      "player": "Butta Johnson",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 20.174,
+        "actual": 7.0,
+        "error": 13.174
+      },
+      "Points": {
+        "predicted": 6.0487,
+        "actual": 0.0,
+        "error": 6.0487
+      },
+      "Rebounds": {
+        "predicted": 1.7806,
+        "actual": 0.0,
+        "error": 1.7806
+      },
+      "Assists": {
+        "predicted": 0.9025,
+        "actual": 0.0,
+        "error": 0.9025
+      },
+      "Threes": {
+        "predicted": 1.2888,
+        "actual": 0.0,
+        "error": 1.2888
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "233496",
+      "player": "Eltayeb Eltayeb",
+      "team": "Virginia Tech",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": 0.0
+      },
+      "Points": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Rebounds": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "202283",
+      "player": "Ethan Copeland",
+      "team": "Virginia Tech",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 26.1727,
+        "actual": 1.0,
+        "error": 25.1727
+      },
+      "Points": {
+        "predicted": 11.8808,
+        "actual": 0.0,
+        "error": 11.8808
+      },
+      "Rebounds": {
+        "predicted": 3.4591,
+        "actual": 0.0,
+        "error": 3.4591
+      },
+      "Assists": {
+        "predicted": 2.3914,
+        "actual": 0.0,
+        "error": 2.3914
+      },
+      "Threes": {
+        "predicted": 2.1551,
+        "actual": 0.0,
+        "error": 2.1551
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "7094",
+      "player": "Isaiah Elohim",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 26.7955,
+        "actual": 36.0,
+        "error": -9.2045
+      },
+      "Points": {
+        "predicted": 11.6333,
+        "actual": 16.0,
+        "error": -4.3667
+      },
+      "Rebounds": {
+        "predicted": 3.8226,
+        "actual": 5.0,
+        "error": -1.1774
+      },
+      "Assists": {
+        "predicted": 0.9458,
+        "actual": 0.0,
+        "error": 0.9458
+      },
+      "Threes": {
+        "predicted": 1.1586,
+        "actual": 2.0,
+        "error": -0.8414
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "233491",
+      "player": "James Caldarella",
+      "team": "Virginia Tech",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": 0.0
+      },
+      "Points": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Rebounds": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "2885",
+      "player": "Jaylen Curry",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 25.3003,
+        "actual": 21.0,
+        "error": 4.3003
+      },
+      "Points": {
+        "predicted": 12.3298,
+        "actual": 3.0,
+        "error": 9.3298
+      },
+      "Rebounds": {
+        "predicted": 3.0885,
+        "actual": 2.0,
+        "error": 1.0885
+      },
+      "Assists": {
+        "predicted": 3.1895,
+        "actual": 2.0,
+        "error": 1.1895
+      },
+      "Threes": {
+        "predicted": 1.0565,
+        "actual": 0.0,
+        "error": 1.0565
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "6246",
+      "player": "Kuol Atak",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 9.9697,
+        "actual": 11.0,
+        "error": -1.0303
+      },
+      "Points": {
+        "predicted": 4.1153,
+        "actual": 6.0,
+        "error": -1.8847
+      },
+      "Rebounds": {
+        "predicted": 0.7349,
+        "actual": 0.0,
+        "error": 0.7349
+      },
+      "Assists": {
+        "predicted": 0.098,
+        "actual": 0.0,
+        "error": 0.098
+      },
+      "Threes": {
+        "predicted": 1.0533,
+        "actual": 2.0,
+        "error": -0.9467
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "8459",
+      "player": "Miles Heide",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 18.3182,
+        "actual": 15.0,
+        "error": 3.3182
+      },
+      "Points": {
+        "predicted": 5.111,
+        "actual": 5.0,
+        "error": 0.111
+      },
+      "Rebounds": {
+        "predicted": 4.4922,
+        "actual": 1.0,
+        "error": 3.4922
+      },
+      "Assists": {
+        "predicted": 0.6916,
+        "actual": 0.0,
+        "error": 0.6916
+      },
+      "Threes": {
+        "predicted": 0.0437,
+        "actual": 0.0,
+        "error": 0.0437
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "200785",
+      "player": "Musa Sagnia",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 12.2086,
+        "actual": 13.0,
+        "error": -0.7914
+      },
+      "Points": {
+        "predicted": 1.8524,
+        "actual": 4.0,
+        "error": -2.1476
+      },
+      "Rebounds": {
+        "predicted": 2.7809,
+        "actual": 6.0,
+        "error": -3.2191
+      },
+      "Assists": {
+        "predicted": 0.2635,
+        "actual": 1.0,
+        "error": -0.7365
+      },
+      "Threes": {
+        "predicted": 0.021,
+        "actual": 0.0,
+        "error": 0.021
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "232",
+      "player": "Ned Hull",
+      "team": "Virginia Tech",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 1.0,
+        "actual": 0.0,
+        "error": 1.0
+      },
+      "Points": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Rebounds": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203212",
+      "player": "Sin'Cere Jones",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 7.3306,
+        "actual": 3.0,
+        "error": 4.3306
+      },
+      "Points": {
+        "predicted": 0.8014,
+        "actual": 0.0,
+        "error": 0.8014
+      },
+      "Rebounds": {
+        "predicted": 1.471,
+        "actual": 2.0,
+        "error": -0.529
+      },
+      "Assists": {
+        "predicted": 0.0689,
+        "actual": 0.0,
+        "error": 0.0689
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203205",
+      "player": "Solomon Davis",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 5.3333,
+        "actual": 2.0,
+        "error": 3.3333
+      },
+      "Points": {
+        "predicted": 2.3333,
+        "actual": 0.0,
+        "error": 2.3333
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "5713",
+      "player": "Tyler Johnson",
+      "team": "Virginia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 26.1283,
+        "actual": 22.0,
+        "error": 4.1283
+      },
+      "Points": {
+        "predicted": 8.0001,
+        "actual": 10.0,
+        "error": -1.9999
+      },
+      "Rebounds": {
+        "predicted": 5.1152,
+        "actual": 9.0,
+        "error": -3.8848
+      },
+      "Assists": {
+        "predicted": 1.7011,
+        "actual": 1.0,
+        "error": 0.7011
+      },
+      "Threes": {
+        "predicted": 0.8173,
+        "actual": 0.0,
+        "error": 0.8173
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "834",
+      "player": "Christian Hammond",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 29.4171,
+        "actual": 23.0,
+        "error": 6.4171
+      },
+      "Points": {
+        "predicted": 15.0014,
+        "actual": 3.0,
+        "error": 12.0014
+      },
+      "Rebounds": {
+        "predicted": 3.1854,
+        "actual": 6.0,
+        "error": -2.8146
+      },
+      "Assists": {
+        "predicted": 2.5355,
+        "actual": 2.0,
+        "error": 0.5355
+      },
+      "Threes": {
+        "predicted": 1.6941,
+        "actual": 1.0,
+        "error": 0.6941
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "200345",
+      "player": "Darius Adams",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 25.1901,
+        "actual": 27.0,
+        "error": -1.8099
+      },
+      "Points": {
+        "predicted": 10.6454,
+        "actual": 13.0,
+        "error": -2.3546
+      },
+      "Rebounds": {
+        "predicted": 3.6874,
+        "actual": 1.0,
+        "error": 2.6874
+      },
+      "Assists": {
+        "predicted": 2.1235,
+        "actual": 5.0,
+        "error": -2.8765
+      },
+      "Threes": {
+        "predicted": 1.0963,
+        "actual": 2.0,
+        "error": -0.9037
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "7591",
+      "player": "Eemeli Yalaho",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 26.25,
+        "actual": 24.0,
+        "error": 2.25
+      },
+      "Points": {
+        "predicted": 8.8981,
+        "actual": 7.0,
+        "error": 1.8981
+      },
+      "Rebounds": {
+        "predicted": 5.0799,
+        "actual": 4.0,
+        "error": 1.0799
+      },
+      "Assists": {
+        "predicted": 1.3465,
+        "actual": 0.0,
+        "error": 1.3465
+      },
+      "Threes": {
+        "predicted": 1.5353,
+        "actual": 1.0,
+        "error": 0.5353
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "231164",
+      "player": "Kingston Whitty",
+      "team": "NC State",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 5.0,
+        "actual": 5.0,
+        "error": 0.0
+      },
+      "Points": {
+        "predicted": 2.0,
+        "actual": 5.0,
+        "error": -3.0
+      },
+      "Rebounds": {
+        "predicted": 0.5,
+        "actual": 0.0,
+        "error": 0.5
+      },
+      "Assists": {
+        "predicted": 0.5,
+        "actual": 0.0,
+        "error": 0.5
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 1.0,
+        "error": -1.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "7297",
+      "player": "Kyle Evans",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 25.8208,
+        "actual": 15.0,
+        "error": 10.8208
+      },
+      "Points": {
+        "predicted": 9.7919,
+        "actual": 5.0,
+        "error": 4.7919
+      },
+      "Rebounds": {
+        "predicted": 7.4711,
+        "actual": 1.0,
+        "error": 6.4711
+      },
+      "Assists": {
+        "predicted": 1.1119,
+        "actual": 2.0,
+        "error": -0.8881
+      },
+      "Threes": {
+        "predicted": 0.1655,
+        "actual": 0.0,
+        "error": 0.1655
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "2862",
+      "player": "Paul McNeil Jr.",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 28.5829,
+        "actual": 32.0,
+        "error": -3.4171
+      },
+      "Points": {
+        "predicted": 13.5973,
+        "actual": 16.0,
+        "error": -2.4027
+      },
+      "Rebounds": {
+        "predicted": 4.5761,
+        "actual": 8.0,
+        "error": -3.4239
+      },
+      "Assists": {
+        "predicted": 0.8721,
+        "actual": 1.0,
+        "error": -0.1279
+      },
+      "Threes": {
+        "predicted": 3.064,
+        "actual": 4.0,
+        "error": -0.936
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "199567",
+      "player": "Preston Edmead",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 33.1403,
+        "actual": 31.0,
+        "error": 2.1403
+      },
+      "Points": {
+        "predicted": 14.9208,
+        "actual": 9.0,
+        "error": 5.9208
+      },
+      "Rebounds": {
+        "predicted": 3.1757,
+        "actual": 4.0,
+        "error": -0.8243
+      },
+      "Assists": {
+        "predicted": 4.9911,
+        "actual": 7.0,
+        "error": -2.0089
+      },
+      "Threes": {
+        "predicted": 2.4336,
+        "actual": 2.0,
+        "error": 0.4336
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "8360",
+      "player": "R.J. Keene II",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 18.1173,
+        "actual": 2.0,
+        "error": 16.1173
+      },
+      "Points": {
+        "predicted": 2.4711,
+        "actual": 0.0,
+        "error": 2.4711
+      },
+      "Rebounds": {
+        "predicted": 3.6218,
+        "actual": 2.0,
+        "error": 1.6218
+      },
+      "Assists": {
+        "predicted": 1.3562,
+        "actual": 1.0,
+        "error": 0.3562
+      },
+      "Threes": {
+        "predicted": 0.589,
+        "actual": 0.0,
+        "error": 0.589
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "240",
+      "player": "Ven-Allen Lubin",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 27.4278,
+        "actual": 27.0,
+        "error": 0.4278
+      },
+      "Points": {
+        "predicted": 14.1605,
+        "actual": 15.0,
+        "error": -0.8395
+      },
+      "Rebounds": {
+        "predicted": 7.4834,
+        "actual": 12.0,
+        "error": -4.5166
+      },
+      "Assists": {
+        "predicted": 1.3829,
+        "actual": 1.0,
+        "error": 0.3829
+      },
+      "Threes": {
+        "predicted": 0.4512,
+        "actual": 0.0,
+        "error": 0.4512
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "200787",
+      "player": "Zymicah Wilkins",
+      "team": "NC State",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 8.6667,
+        "actual": 14.0,
+        "error": -5.3333
+      },
+      "Points": {
+        "predicted": 5.6667,
+        "actual": 8.0,
+        "error": -2.3333
+      },
+      "Rebounds": {
+        "predicted": 3.0,
+        "actual": 6.0,
+        "error": -3.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "4034",
+      "player": "Colby Garland",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 33.5549,
+        "actual": 11.0,
+        "error": 22.5549
+      },
+      "Points": {
+        "predicted": 18.6813,
+        "actual": 0.0,
+        "error": 18.6813
+      },
+      "Rebounds": {
+        "predicted": 3.523,
+        "actual": 2.0,
+        "error": 1.523
+      },
+      "Assists": {
+        "predicted": 4.353,
+        "actual": 0.0,
+        "error": 4.353
+      },
+      "Threes": {
+        "predicted": 0.9422,
+        "actual": 0.0,
+        "error": 0.9422
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "199425",
+      "player": "Cole Kirouac",
+      "team": "Georgia Tech",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 12.4826,
+        "actual": 13.0,
+        "error": -0.5174
+      },
+      "Points": {
+        "predicted": 1.967,
+        "actual": 2.0,
+        "error": -0.033
+      },
+      "Rebounds": {
+        "predicted": 3.2909,
+        "actual": 0.0,
+        "error": 3.2909
+      },
+      "Assists": {
+        "predicted": 0.4161,
+        "actual": 0.0,
+        "error": 0.4161
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203271",
+      "player": "Courtland Muldrew",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 11.3273,
+        "actual": 11.0,
+        "error": 0.3273
+      },
+      "Points": {
+        "predicted": 3.317,
+        "actual": 10.0,
+        "error": -6.683
+      },
+      "Rebounds": {
+        "predicted": 1.6354,
+        "actual": 0.0,
+        "error": 1.6354
+      },
+      "Assists": {
+        "predicted": 0.9406,
+        "actual": 3.0,
+        "error": -2.0594
+      },
+      "Threes": {
+        "predicted": 0.1297,
+        "actual": 1.0,
+        "error": -0.8703
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224512",
+      "player": "Ilja Kurucs",
+      "team": "Georgia Tech",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 8.5,
+        "actual": 2.0,
+        "error": 6.5
+      },
+      "Points": {
+        "predicted": 3.0,
+        "actual": 0.0,
+        "error": 3.0
+      },
+      "Rebounds": {
+        "predicted": 2.0,
+        "actual": 0.0,
+        "error": 2.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "2533",
+      "player": "Jackson Fields",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 16.8687,
+        "actual": 32.0,
+        "error": -15.1313
+      },
+      "Points": {
+        "predicted": 5.0606,
+        "actual": 14.0,
+        "error": -8.9394
+      },
+      "Rebounds": {
+        "predicted": 4.1085,
+        "actual": 14.0,
+        "error": -9.8915
+      },
+      "Assists": {
+        "predicted": 1.0751,
+        "actual": 2.0,
+        "error": -0.9249
+      },
+      "Threes": {
+        "predicted": 0.2545,
+        "actual": 1.0,
+        "error": -0.7455
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "199382",
+      "player": "Jackson McVey",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 6.0,
+        "actual": 2.0,
+        "error": 4.0
+      },
+      "Points": {
+        "predicted": 2.6667,
+        "actual": 0.0,
+        "error": 2.6667
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224503",
+      "player": "Kaiden Bailey",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 10.6667,
+        "actual": 10.0,
+        "error": 0.6667
+      },
+      "Points": {
+        "predicted": 1.0,
+        "actual": 11.0,
+        "error": -10.0
+      },
+      "Rebounds": {
+        "predicted": 0.6667,
+        "actual": 3.0,
+        "error": -2.3333
+      },
+      "Assists": {
+        "predicted": 1.0,
+        "actual": 2.0,
+        "error": -1.0
+      },
+      "Threes": {
+        "predicted": 0.3333,
+        "actual": 2.0,
+        "error": -1.6667
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "1337",
+      "player": "Kam Craft",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 22.4075,
+        "actual": 33.0,
+        "error": -10.5925
+      },
+      "Points": {
+        "predicted": 8.083,
+        "actual": 13.0,
+        "error": -4.917
+      },
+      "Rebounds": {
+        "predicted": 2.4126,
+        "actual": 2.0,
+        "error": 0.4126
+      },
+      "Assists": {
+        "predicted": 1.0072,
+        "actual": 2.0,
+        "error": -0.9928
+      },
+      "Threes": {
+        "predicted": 1.8022,
+        "actual": 4.0,
+        "error": -2.1978
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224502",
+      "player": "Kayden Allen",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 8.3333,
+        "actual": 5.0,
+        "error": 3.3333
+      },
+      "Points": {
+        "predicted": 5.6667,
+        "actual": 0.0,
+        "error": 5.6667
+      },
+      "Rebounds": {
+        "predicted": 2.0,
+        "actual": 1.0,
+        "error": 1.0
+      },
+      "Assists": {
+        "predicted": 0.3333,
+        "actual": 1.0,
+        "error": -0.6667
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "224506",
+      "player": "Moustapha Diop",
+      "team": "Georgia Tech",
+      "prior_current_games": 1,
+      "Minutes": {
+        "predicted": 3.0,
+        "actual": 7.0,
+        "error": -4.0
+      },
+      "Points": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 1.0,
+        "error": 0.0
+      },
+      "Assists": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "5444",
+      "player": "Nasir Whitlock",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 32.6364,
+        "actual": 16.0,
+        "error": 16.6364
+      },
+      "Points": {
+        "predicted": 18.1933,
+        "actual": 1.0,
+        "error": 17.1933
+      },
+      "Rebounds": {
+        "predicted": 4.3919,
+        "actual": 1.0,
+        "error": 3.3919
+      },
+      "Assists": {
+        "predicted": 3.0169,
+        "actual": 2.0,
+        "error": 1.0169
+      },
+      "Threes": {
+        "predicted": 2.0747,
+        "actual": 0.0,
+        "error": 2.0747
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "201310",
+      "player": "Tylis Jordan",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 30.0,
+        "actual": 34.0,
+        "error": -4.0
+      },
+      "Points": {
+        "predicted": 15.6667,
+        "actual": 17.0,
+        "error": -1.3333
+      },
+      "Rebounds": {
+        "predicted": 6.0,
+        "actual": 7.0,
+        "error": -1.0
+      },
+      "Assists": {
+        "predicted": 1.0,
+        "actual": 0.0,
+        "error": 1.0
+      },
+      "Threes": {
+        "predicted": 0.3333,
+        "actual": 0.0,
+        "error": 0.3333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "2536",
+      "player": "Victor Valdes",
+      "team": "Georgia Tech",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 25.2452,
+        "actual": 24.0,
+        "error": 1.2452
+      },
+      "Points": {
+        "predicted": 13.0498,
+        "actual": 7.0,
+        "error": 6.0498
+      },
+      "Rebounds": {
+        "predicted": 4.5292,
+        "actual": 5.0,
+        "error": -0.4708
+      },
+      "Assists": {
+        "predicted": 3.9141,
+        "actual": 5.0,
+        "error": -1.0859
+      },
+      "Threes": {
+        "predicted": 1.2163,
+        "actual": 1.0,
+        "error": 0.2163
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "7645",
+      "player": "Amier Ali",
+      "team": "California",
+      "prior_current_games": 3,
+      "Minutes": {
+        "predicted": 7.4545,
+        "actual": 3.0,
+        "error": 4.4545
+      },
+      "Points": {
+        "predicted": 2.7916,
+        "actual": 0.0,
+        "error": 2.7916
+      },
+      "Rebounds": {
+        "predicted": 1.5852,
+        "actual": 0.0,
+        "error": 1.5852
+      },
+      "Assists": {
+        "predicted": 0.2941,
+        "actual": 0.0,
+        "error": 0.2941
+      },
+      "Threes": {
+        "predicted": 0.5832,
+        "actual": 0.0,
+        "error": 0.5832
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "223532",
+      "player": "Dominykas Daubaris",
+      "team": "California",
+      "prior_current_games": 2,
+      "Minutes": {
+        "predicted": 5.0,
+        "actual": 18.0,
+        "error": -13.0
+      },
+      "Points": {
+        "predicted": 1.5,
+        "actual": 3.0,
+        "error": -1.5
+      },
+      "Rebounds": {
+        "predicted": 1.0,
+        "actual": 3.0,
+        "error": -2.0
+      },
+      "Assists": {
+        "predicted": 0.5,
+        "actual": 1.0,
+        "error": -0.5
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "199387",
+      "player": "Jake Wilkins",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 14.4583,
+        "actual": 26.0,
+        "error": -11.5417
+      },
+      "Points": {
+        "predicted": 6.5051,
+        "actual": 9.0,
+        "error": -2.4949
+      },
+      "Rebounds": {
+        "predicted": 2.6806,
+        "actual": 6.0,
+        "error": -3.3194
+      },
+      "Assists": {
+        "predicted": 0.6167,
+        "actual": 0.0,
+        "error": 0.6167
+      },
+      "Threes": {
+        "predicted": 0.5643,
+        "actual": 0.0,
+        "error": 0.5643
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "6889",
+      "player": "Jordan Ross",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 23.2917,
+        "actual": 20.0,
+        "error": 3.2917
+      },
+      "Points": {
+        "predicted": 7.8518,
+        "actual": 6.0,
+        "error": 1.8518
+      },
+      "Rebounds": {
+        "predicted": 2.5523,
+        "actual": 3.0,
+        "error": -0.4477
+      },
+      "Assists": {
+        "predicted": 3.3743,
+        "actual": 3.0,
+        "error": 0.3743
+      },
+      "Threes": {
+        "predicted": 0.3718,
+        "actual": 1.0,
+        "error": -0.6282
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "198409",
+      "player": "Jovani Ruff",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 15.0,
+        "actual": 12.0,
+        "error": 3.0
+      },
+      "Points": {
+        "predicted": 5.75,
+        "actual": 0.0,
+        "error": 5.75
+      },
+      "Rebounds": {
+        "predicted": 1.25,
+        "actual": 0.0,
+        "error": 1.25
+      },
+      "Assists": {
+        "predicted": 0.25,
+        "actual": 1.0,
+        "error": -0.75
+      },
+      "Threes": {
+        "predicted": 0.0,
+        "actual": 0.0,
+        "error": 0.0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "3928",
+      "player": "Mantas Kocanas",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 11.3258,
+        "actual": 12.0,
+        "error": -0.6742
+      },
+      "Points": {
+        "predicted": 2.6891,
+        "actual": 5.0,
+        "error": -2.3109
+      },
+      "Rebounds": {
+        "predicted": 2.256,
+        "actual": 6.0,
+        "error": -3.744
+      },
+      "Assists": {
+        "predicted": 0.2398,
+        "actual": 0.0,
+        "error": 0.2398
+      },
+      "Threes": {
+        "predicted": 0.1966,
+        "actual": 0.0,
+        "error": 0.1966
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "203485",
+      "player": "Michael Cooper",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 26.2177,
+        "actual": 27.0,
+        "error": -0.7823
+      },
+      "Points": {
+        "predicted": 14.467,
+        "actual": 21.0,
+        "error": -6.533
+      },
+      "Rebounds": {
+        "predicted": 2.5754,
+        "actual": 6.0,
+        "error": -3.4246
+      },
+      "Assists": {
+        "predicted": 1.9585,
+        "actual": 0.0,
+        "error": 1.9585
+      },
+      "Threes": {
+        "predicted": 2.3807,
+        "actual": 3.0,
+        "error": -0.6193
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "154",
+      "player": "Nojus Indrusaitis",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 25.654,
+        "actual": 31.0,
+        "error": -5.346
+      },
+      "Points": {
+        "predicted": 11.5447,
+        "actual": 21.0,
+        "error": -9.4553
+      },
+      "Rebounds": {
+        "predicted": 3.3672,
+        "actual": 2.0,
+        "error": 1.3672
+      },
+      "Assists": {
+        "predicted": 1.7824,
+        "actual": 1.0,
+        "error": 0.7824
+      },
+      "Threes": {
+        "predicted": 2.0698,
+        "actual": 1.0,
+        "error": 1.0698
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "6409",
+      "player": "Sammie Yeanay",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 9.537,
+        "actual": 27.0,
+        "error": -17.463
+      },
+      "Points": {
+        "predicted": 3.4663,
+        "actual": 7.0,
+        "error": -3.5337
+      },
+      "Rebounds": {
+        "predicted": 2.0885,
+        "actual": 7.0,
+        "error": -4.9115
+      },
+      "Assists": {
+        "predicted": 0.5954,
+        "actual": 1.0,
+        "error": -0.4046
+      },
+      "Threes": {
+        "predicted": 0.3589,
+        "actual": 0.0,
+        "error": 0.3589
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "athlete_id": "198398",
+      "player": "Semetri Carr",
+      "team": "California",
+      "prior_current_games": 4,
+      "Minutes": {
+        "predicted": 16.9167,
+        "actual": 24.0,
+        "error": -7.0833
+      },
+      "Points": {
+        "predicted": 3.8979,
+        "actual": 7.0,
+        "error": -3.1021
+      },
+      "Rebounds": {
+        "predicted": 3.3613,
+        "actual": 6.0,
+        "error": -2.6387
+      },
+      "Assists": {
+        "predicted": 2.9828,
+        "actual": 3.0,
+        "error": -0.0172
+      },
+      "Threes": {
+        "predicted": 0.2717,
+        "actual": 0.0,
+        "error": 0.2717
+      }
+    }
+  ]
+}
