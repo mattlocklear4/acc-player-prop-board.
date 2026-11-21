@@ -24,14 +24,14 @@ def boxplayers(payload):
     found=defaultdict(list)
     for team in (payload.get('boxscore') or {}).get('players') or []:
         for group in team.get('statistics') or []:
-            keys=group.get('keys') or group.get('names') or []
+            keys=group.get('keys') or group.get('names') or group.get('labels') or []
             for a in group.get('athletes') or []:
                 athlete=a.get('athlete') or {}
                 stats=a.get('stats') or []
                 if not stats:continue
                 raw=statmap(keys,stats)
                 row={'name':athlete.get('displayName') or athlete.get('fullName'),'id':str(athlete.get('id') or ''),
-                     'minutes':number(raw.get('minutes') or stats[0])}
+                     'minutes':number(raw.get('minutes') or raw.get('MIN') or stats[0])}
                 for field,key in FIELDS.items():
                     val=raw.get(key)
                     if val is None:
@@ -42,9 +42,9 @@ def boxplayers(payload):
                                 pair=raw.get('threePointFieldGoalsMade-threePointFieldGoalsAttempted') or raw.get('3PT')
                                 if isinstance(pair,str) and '-' in pair:val=pair.split('-')[0]
                         elif field=='Rebounds':val=raw.get('totalRebounds') or raw.get('REB')
-                        else:val=raw.get(field.lower()) or raw.get(field.upper())
+                        else:val=raw.get(field.lower()) if raw.get(field.lower()) is not None else raw.get(field.upper())
                     row[field]=number(val)
-                found[team.get('team',{}).get('id') or 'unknown'].append(row)
+                if any(row.get(k) is not None for k in FIELDS):found[team.get('team',{}).get('id') or 'unknown'].append(row)
     return found
 def norm(s):return ''.join(c for c in str(s or '').lower() if c.isalnum())
 def main():
