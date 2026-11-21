@@ -1,94 +1,7885 @@
 {
-  "graded_at_utc": "2026-11-21T12:21:40.142456+00:00",
-  "projection_snapshot_utc": "2026-11-21T12:17:29.152120+00:00",
-  "slate_date_eastern": "2026-11-27",
+  "graded_at_utc": "2026-11-21T12:23:43.558329+00:00",
+  "projection_snapshot_utc": "2026-11-20T19:11:48.347889+00:00",
+  "slate_date_eastern": "2026-11-20",
   "status": "RESEARCH_GRADED_FROM_PUBLIC_ESPN",
-  "games_in_snapshot": 0,
-  "players_graded": 0,
+  "games_in_snapshot": 8,
+  "players_graded": 82,
   "metrics": {
     "baseline": {
       "Minutes": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 5.18,
+        "bias": 1.445
       },
       "Points": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 4.638,
+        "bias": -0.052
       },
       "Rebounds": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 1.81,
+        "bias": 0.294
       },
       "Assists": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 1.025,
+        "bias": -0.291
       },
       "Threes": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 0.896,
+        "bias": -0.131
       }
     },
     "kenpom": {
       "Minutes": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 5.18,
+        "bias": 1.445
       },
       "Points": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 4.603,
+        "bias": -0.092
       },
       "Rebounds": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 1.808,
+        "bias": 0.272
       },
       "Assists": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 1.022,
+        "bias": -0.301
       },
       "Threes": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 0.895,
+        "bias": -0.136
       }
     },
     "rotation_kenpom": {
       "Minutes": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 4.119,
+        "bias": -0.926
       },
       "Points": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 4.342,
+        "bias": -1.047
       },
       "Rebounds": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 1.689,
+        "bias": -0.116
       },
       "Assists": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 1.026,
+        "bias": -0.483
       },
       "Threes": {
-        "n": 0,
-        "mae": null,
-        "bias": null
+        "n": 82,
+        "mae": 0.842,
+        "bias": -0.237
       }
     }
   },
   "issues": [],
-  "rows": [],
+  "rows": [
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Amani Hansberry",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Amani Hansberry",
+        "id": "4685673",
+        "minutes": 27.0,
+        "Points": 12.0,
+        "Rebounds": 4.0,
+        "Assists": 8.0,
+        "Threes": 2.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 31.322,
+          "actual": 27.0,
+          "error": 4.322
+        },
+        "Points": {
+          "projection": 15.762,
+          "actual": 12.0,
+          "error": 3.762
+        },
+        "Rebounds": {
+          "projection": 6.692,
+          "actual": 4.0,
+          "error": 2.692
+        },
+        "Assists": {
+          "projection": 2.675,
+          "actual": 8.0,
+          "error": -5.325
+        },
+        "Threes": {
+          "projection": 1.413,
+          "actual": 2.0,
+          "error": -0.587
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 31.322,
+          "actual": 27.0,
+          "error": 4.322
+        },
+        "Points": {
+          "projection": 15.449,
+          "actual": 12.0,
+          "error": 3.449
+        },
+        "Rebounds": {
+          "projection": 6.621,
+          "actual": 4.0,
+          "error": 2.621
+        },
+        "Assists": {
+          "projection": 2.632,
+          "actual": 8.0,
+          "error": -5.368
+        },
+        "Threes": {
+          "projection": 1.398,
+          "actual": 2.0,
+          "error": -0.602
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 28.3,
+          "actual": 27.0,
+          "error": 1.3
+        },
+        "Points": {
+          "projection": 13.959,
+          "actual": 12.0,
+          "error": 1.959
+        },
+        "Rebounds": {
+          "projection": 5.982,
+          "actual": 4.0,
+          "error": 1.982
+        },
+        "Assists": {
+          "projection": 2.378,
+          "actual": 8.0,
+          "error": -5.622
+        },
+        "Threes": {
+          "projection": 1.263,
+          "actual": 2.0,
+          "error": -0.737
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Ben Hammond",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Ben Hammond",
+        "id": "4873105",
+        "minutes": 25.0,
+        "Points": 19.0,
+        "Rebounds": 2.0,
+        "Assists": 3.0,
+        "Threes": 5.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 31.396,
+          "actual": 25.0,
+          "error": 6.396
+        },
+        "Points": {
+          "projection": 15.992,
+          "actual": 19.0,
+          "error": -3.008
+        },
+        "Rebounds": {
+          "projection": 2.606,
+          "actual": 2.0,
+          "error": 0.606
+        },
+        "Assists": {
+          "projection": 4.15,
+          "actual": 3.0,
+          "error": 1.15
+        },
+        "Threes": {
+          "projection": 1.835,
+          "actual": 5.0,
+          "error": -3.165
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 31.396,
+          "actual": 25.0,
+          "error": 6.396
+        },
+        "Points": {
+          "projection": 15.675,
+          "actual": 19.0,
+          "error": -3.325
+        },
+        "Rebounds": {
+          "projection": 2.578,
+          "actual": 2.0,
+          "error": 0.578
+        },
+        "Assists": {
+          "projection": 4.084,
+          "actual": 3.0,
+          "error": 1.084
+        },
+        "Threes": {
+          "projection": 1.816,
+          "actual": 5.0,
+          "error": -3.184
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 28.67,
+          "actual": 25.0,
+          "error": 3.67
+        },
+        "Points": {
+          "projection": 14.314,
+          "actual": 19.0,
+          "error": -4.686
+        },
+        "Rebounds": {
+          "projection": 2.354,
+          "actual": 2.0,
+          "error": 0.354
+        },
+        "Assists": {
+          "projection": 3.73,
+          "actual": 3.0,
+          "error": 0.73
+        },
+        "Threes": {
+          "projection": 1.658,
+          "actual": 5.0,
+          "error": -3.342
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Butta Johnson",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Butta Johnson",
+        "id": "5107144",
+        "minutes": 23.0,
+        "Points": 12.0,
+        "Rebounds": 5.0,
+        "Assists": 2.0,
+        "Threes": 4.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 19.076,
+          "actual": 23.0,
+          "error": -3.924
+        },
+        "Points": {
+          "projection": 5.499,
+          "actual": 12.0,
+          "error": -6.501
+        },
+        "Rebounds": {
+          "projection": 1.591,
+          "actual": 5.0,
+          "error": -3.409
+        },
+        "Assists": {
+          "projection": 0.814,
+          "actual": 2.0,
+          "error": -1.186
+        },
+        "Threes": {
+          "projection": 1.181,
+          "actual": 4.0,
+          "error": -2.819
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 19.076,
+          "actual": 23.0,
+          "error": -3.924
+        },
+        "Points": {
+          "projection": 5.39,
+          "actual": 12.0,
+          "error": -6.61
+        },
+        "Rebounds": {
+          "projection": 1.575,
+          "actual": 5.0,
+          "error": -3.425
+        },
+        "Assists": {
+          "projection": 0.801,
+          "actual": 2.0,
+          "error": -1.199
+        },
+        "Threes": {
+          "projection": 1.169,
+          "actual": 4.0,
+          "error": -2.831
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 15.23,
+          "actual": 23.0,
+          "error": -7.77
+        },
+        "Points": {
+          "projection": 4.303,
+          "actual": 12.0,
+          "error": -7.697
+        },
+        "Rebounds": {
+          "projection": 1.257,
+          "actual": 5.0,
+          "error": -3.743
+        },
+        "Assists": {
+          "projection": 0.64,
+          "actual": 2.0,
+          "error": -1.36
+        },
+        "Threes": {
+          "projection": 0.933,
+          "actual": 4.0,
+          "error": -3.067
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Eltayeb Eltayeb",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Eltayeb Eltayeb",
+        "id": "5458717",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 1.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 0.91,
+          "actual": 2.0,
+          "error": -1.09
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Ethan Copeland",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Ethan Copeland",
+        "id": "5314558",
+        "minutes": 3.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 23.884,
+          "actual": 3.0,
+          "error": 20.884
+        },
+        "Points": {
+          "projection": 10.291,
+          "actual": 0.0,
+          "error": 10.291
+        },
+        "Rebounds": {
+          "projection": 3.087,
+          "actual": 0.0,
+          "error": 3.087
+        },
+        "Assists": {
+          "projection": 2.201,
+          "actual": 0.0,
+          "error": 2.201
+        },
+        "Threes": {
+          "projection": 1.788,
+          "actual": 0.0,
+          "error": 1.788
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 23.884,
+          "actual": 3.0,
+          "error": 20.884
+        },
+        "Points": {
+          "projection": 10.086,
+          "actual": 0.0,
+          "error": 10.086
+        },
+        "Rebounds": {
+          "projection": 3.054,
+          "actual": 0.0,
+          "error": 3.054
+        },
+        "Assists": {
+          "projection": 2.166,
+          "actual": 0.0,
+          "error": 2.166
+        },
+        "Threes": {
+          "projection": 1.769,
+          "actual": 0.0,
+          "error": 1.769
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 10.72,
+          "actual": 3.0,
+          "error": 7.72
+        },
+        "Points": {
+          "projection": 4.527,
+          "actual": 0.0,
+          "error": 4.527
+        },
+        "Rebounds": {
+          "projection": 1.371,
+          "actual": 0.0,
+          "error": 1.371
+        },
+        "Assists": {
+          "projection": 0.972,
+          "actual": 0.0,
+          "error": 0.972
+        },
+        "Threes": {
+          "projection": 0.794,
+          "actual": 0.0,
+          "error": 0.794
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Isaiah Elohim",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Isaiah Elohim",
+        "id": "4869767",
+        "minutes": 24.0,
+        "Points": 5.0,
+        "Rebounds": 1.0,
+        "Assists": 1.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 27.562,
+          "actual": 24.0,
+          "error": 3.562
+        },
+        "Points": {
+          "projection": 12.015,
+          "actual": 5.0,
+          "error": 7.015
+        },
+        "Rebounds": {
+          "projection": 3.932,
+          "actual": 1.0,
+          "error": 2.932
+        },
+        "Assists": {
+          "projection": 0.868,
+          "actual": 1.0,
+          "error": -0.132
+        },
+        "Threes": {
+          "projection": 1.231,
+          "actual": 1.0,
+          "error": 0.231
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 27.562,
+          "actual": 24.0,
+          "error": 3.562
+        },
+        "Points": {
+          "projection": 11.776,
+          "actual": 5.0,
+          "error": 6.776
+        },
+        "Rebounds": {
+          "projection": 3.89,
+          "actual": 1.0,
+          "error": 2.89
+        },
+        "Assists": {
+          "projection": 0.854,
+          "actual": 1.0,
+          "error": -0.146
+        },
+        "Threes": {
+          "projection": 1.217,
+          "actual": 1.0,
+          "error": 0.217
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.45,
+          "actual": 24.0,
+          "error": -0.55
+        },
+        "Points": {
+          "projection": 10.019,
+          "actual": 5.0,
+          "error": 5.019
+        },
+        "Rebounds": {
+          "projection": 3.31,
+          "actual": 1.0,
+          "error": 2.31
+        },
+        "Assists": {
+          "projection": 0.727,
+          "actual": 1.0,
+          "error": -0.273
+        },
+        "Threes": {
+          "projection": 1.036,
+          "actual": 1.0,
+          "error": 0.036
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "James Caldarella",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "James Caldarella",
+        "id": "5458718",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 0.91,
+          "actual": 2.0,
+          "error": -1.09
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Jaylen Curry",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Jaylen Curry",
+        "id": "5174611",
+        "minutes": 26.0,
+        "Points": 15.0,
+        "Rebounds": 4.0,
+        "Assists": 5.0,
+        "Threes": 3.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 24.942,
+          "actual": 26.0,
+          "error": -1.058
+        },
+        "Points": {
+          "projection": 11.685,
+          "actual": 15.0,
+          "error": -3.315
+        },
+        "Rebounds": {
+          "projection": 2.987,
+          "actual": 4.0,
+          "error": -1.013
+        },
+        "Assists": {
+          "projection": 3.067,
+          "actual": 5.0,
+          "error": -1.933
+        },
+        "Threes": {
+          "projection": 0.987,
+          "actual": 3.0,
+          "error": -2.013
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 24.942,
+          "actual": 26.0,
+          "error": -1.058
+        },
+        "Points": {
+          "projection": 11.453,
+          "actual": 15.0,
+          "error": -3.547
+        },
+        "Rebounds": {
+          "projection": 2.955,
+          "actual": 4.0,
+          "error": -1.045
+        },
+        "Assists": {
+          "projection": 3.019,
+          "actual": 5.0,
+          "error": -1.981
+        },
+        "Threes": {
+          "projection": 0.977,
+          "actual": 3.0,
+          "error": -2.023
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.71,
+          "actual": 26.0,
+          "error": -2.29
+        },
+        "Points": {
+          "projection": 10.888,
+          "actual": 15.0,
+          "error": -4.112
+        },
+        "Rebounds": {
+          "projection": 2.809,
+          "actual": 4.0,
+          "error": -1.191
+        },
+        "Assists": {
+          "projection": 2.87,
+          "actual": 5.0,
+          "error": -2.13
+        },
+        "Threes": {
+          "projection": 0.928,
+          "actual": 3.0,
+          "error": -2.072
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Kuol Atak",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Kuol Atak",
+        "id": "5144388",
+        "minutes": 6.0,
+        "Points": 5.0,
+        "Rebounds": 3.0,
+        "Assists": 1.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 10.056,
+          "actual": 6.0,
+          "error": 4.056
+        },
+        "Points": {
+          "projection": 4.719,
+          "actual": 5.0,
+          "error": -0.281
+        },
+        "Rebounds": {
+          "projection": 0.679,
+          "actual": 3.0,
+          "error": -2.321
+        },
+        "Assists": {
+          "projection": 0.091,
+          "actual": 1.0,
+          "error": -0.909
+        },
+        "Threes": {
+          "projection": 1.279,
+          "actual": 1.0,
+          "error": 0.279
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 10.056,
+          "actual": 6.0,
+          "error": 4.056
+        },
+        "Points": {
+          "projection": 4.625,
+          "actual": 5.0,
+          "error": -0.375
+        },
+        "Rebounds": {
+          "projection": 0.672,
+          "actual": 3.0,
+          "error": -2.328
+        },
+        "Assists": {
+          "projection": 0.089,
+          "actual": 1.0,
+          "error": -0.911
+        },
+        "Threes": {
+          "projection": 1.265,
+          "actual": 1.0,
+          "error": 0.265
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 7.42,
+          "actual": 6.0,
+          "error": 1.42
+        },
+        "Points": {
+          "projection": 3.413,
+          "actual": 5.0,
+          "error": -1.587
+        },
+        "Rebounds": {
+          "projection": 0.496,
+          "actual": 3.0,
+          "error": -2.504
+        },
+        "Assists": {
+          "projection": 0.066,
+          "actual": 1.0,
+          "error": -0.934
+        },
+        "Threes": {
+          "projection": 0.933,
+          "actual": 1.0,
+          "error": -0.067
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Miles Heide",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Miles Heide",
+        "id": "5176243",
+        "minutes": 19.0,
+        "Points": 7.0,
+        "Rebounds": 6.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 18.042,
+          "actual": 19.0,
+          "error": -0.958
+        },
+        "Points": {
+          "projection": 5.107,
+          "actual": 7.0,
+          "error": -1.893
+        },
+        "Rebounds": {
+          "projection": 4.175,
+          "actual": 6.0,
+          "error": -1.825
+        },
+        "Assists": {
+          "projection": 0.626,
+          "actual": 0.0,
+          "error": 0.626
+        },
+        "Threes": {
+          "projection": 0.039,
+          "actual": 0.0,
+          "error": 0.039
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 18.042,
+          "actual": 19.0,
+          "error": -0.958
+        },
+        "Points": {
+          "projection": 5.006,
+          "actual": 7.0,
+          "error": -1.994
+        },
+        "Rebounds": {
+          "projection": 4.13,
+          "actual": 6.0,
+          "error": -1.87
+        },
+        "Assists": {
+          "projection": 0.616,
+          "actual": 0.0,
+          "error": 0.616
+        },
+        "Threes": {
+          "projection": 0.039,
+          "actual": 0.0,
+          "error": 0.039
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 16.93,
+          "actual": 19.0,
+          "error": -2.07
+        },
+        "Points": {
+          "projection": 4.697,
+          "actual": 7.0,
+          "error": -2.303
+        },
+        "Rebounds": {
+          "projection": 3.876,
+          "actual": 6.0,
+          "error": -2.124
+        },
+        "Assists": {
+          "projection": 0.578,
+          "actual": 0.0,
+          "error": 0.578
+        },
+        "Threes": {
+          "projection": 0.037,
+          "actual": 0.0,
+          "error": 0.037
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Musa Sagnia",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Musa Sagnia",
+        "id": "5311995",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 12.275,
+          "actual": 2.0,
+          "error": 10.275
+        },
+        "Points": {
+          "projection": 2.043,
+          "actual": 0.0,
+          "error": 2.043
+        },
+        "Rebounds": {
+          "projection": 3.055,
+          "actual": 0.0,
+          "error": 3.055
+        },
+        "Assists": {
+          "projection": 0.326,
+          "actual": 0.0,
+          "error": 0.326
+        },
+        "Threes": {
+          "projection": 0.019,
+          "actual": 0.0,
+          "error": 0.019
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 12.275,
+          "actual": 2.0,
+          "error": 10.275
+        },
+        "Points": {
+          "projection": 2.003,
+          "actual": 0.0,
+          "error": 2.003
+        },
+        "Rebounds": {
+          "projection": 3.022,
+          "actual": 0.0,
+          "error": 3.022
+        },
+        "Assists": {
+          "projection": 0.32,
+          "actual": 0.0,
+          "error": 0.32
+        },
+        "Threes": {
+          "projection": 0.019,
+          "actual": 0.0,
+          "error": 0.019
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 11.12,
+          "actual": 2.0,
+          "error": 9.12
+        },
+        "Points": {
+          "projection": 1.814,
+          "actual": 0.0,
+          "error": 1.814
+        },
+        "Rebounds": {
+          "projection": 2.738,
+          "actual": 0.0,
+          "error": 2.738
+        },
+        "Assists": {
+          "projection": 0.29,
+          "actual": 0.0,
+          "error": 0.29
+        },
+        "Threes": {
+          "projection": 0.017,
+          "actual": 0.0,
+          "error": 0.017
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Ned Hull",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Ned Hull",
+        "id": "5174940",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 0.5,
+          "actual": 2.0,
+          "error": -1.5
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 0.5,
+          "actual": 2.0,
+          "error": -1.5
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 0.4,
+          "actual": 2.0,
+          "error": -1.6
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Sin'Cere Jones",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Sin'Cere Jones",
+        "id": "5311826",
+        "minutes": 15.0,
+        "Points": 5.0,
+        "Rebounds": 3.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 6.97,
+          "actual": 15.0,
+          "error": -8.03
+        },
+        "Points": {
+          "projection": 0.749,
+          "actual": 5.0,
+          "error": -4.251
+        },
+        "Rebounds": {
+          "projection": 1.49,
+          "actual": 3.0,
+          "error": -1.51
+        },
+        "Assists": {
+          "projection": 0.073,
+          "actual": 0.0,
+          "error": 0.073
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 6.97,
+          "actual": 15.0,
+          "error": -8.03
+        },
+        "Points": {
+          "projection": 0.734,
+          "actual": 5.0,
+          "error": -4.266
+        },
+        "Rebounds": {
+          "projection": 1.474,
+          "actual": 3.0,
+          "error": -1.526
+        },
+        "Assists": {
+          "projection": 0.071,
+          "actual": 0.0,
+          "error": 0.071
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 6.15,
+          "actual": 15.0,
+          "error": -8.85
+        },
+        "Points": {
+          "projection": 0.647,
+          "actual": 5.0,
+          "error": -4.353
+        },
+        "Rebounds": {
+          "projection": 1.301,
+          "actual": 3.0,
+          "error": -1.699
+        },
+        "Assists": {
+          "projection": 0.063,
+          "actual": 0.0,
+          "error": 0.063
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Solomon Davis",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Solomon Davis",
+        "id": "5311830",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 2.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 4.5,
+          "actual": 2.0,
+          "error": 2.5
+        },
+        "Points": {
+          "projection": 1.75,
+          "actual": 0.0,
+          "error": 1.75
+        },
+        "Rebounds": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 4.5,
+          "actual": 2.0,
+          "error": 2.5
+        },
+        "Points": {
+          "projection": 1.715,
+          "actual": 0.0,
+          "error": 1.715
+        },
+        "Rebounds": {
+          "projection": 0.989,
+          "actual": 2.0,
+          "error": -1.011
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 4.15,
+          "actual": 2.0,
+          "error": 2.15
+        },
+        "Points": {
+          "projection": 1.582,
+          "actual": 0.0,
+          "error": 1.582
+        },
+        "Rebounds": {
+          "projection": 0.912,
+          "actual": 2.0,
+          "error": -1.088
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401920380",
+      "player": "Tyler Johnson",
+      "team": "Virginia Tech",
+      "actual": {
+        "name": "Tyler Johnson",
+        "id": "5165275",
+        "minutes": 22.0,
+        "Points": 7.0,
+        "Rebounds": 7.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 25.784,
+          "actual": 22.0,
+          "error": 3.784
+        },
+        "Points": {
+          "projection": 8.176,
+          "actual": 7.0,
+          "error": 1.176
+        },
+        "Rebounds": {
+          "projection": 5.467,
+          "actual": 7.0,
+          "error": -1.533
+        },
+        "Assists": {
+          "projection": 1.645,
+          "actual": 0.0,
+          "error": 1.645
+        },
+        "Threes": {
+          "projection": 0.743,
+          "actual": 0.0,
+          "error": 0.743
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 25.784,
+          "actual": 22.0,
+          "error": 3.784
+        },
+        "Points": {
+          "projection": 8.013,
+          "actual": 7.0,
+          "error": 1.013
+        },
+        "Rebounds": {
+          "projection": 5.409,
+          "actual": 7.0,
+          "error": -1.591
+        },
+        "Assists": {
+          "projection": 1.618,
+          "actual": 0.0,
+          "error": 1.618
+        },
+        "Threes": {
+          "projection": 0.735,
+          "actual": 0.0,
+          "error": 0.735
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 21.93,
+          "actual": 22.0,
+          "error": -0.07
+        },
+        "Points": {
+          "projection": 6.816,
+          "actual": 7.0,
+          "error": -0.184
+        },
+        "Rebounds": {
+          "projection": 4.6,
+          "actual": 7.0,
+          "error": -2.4
+        },
+        "Assists": {
+          "projection": 1.377,
+          "actual": 0.0,
+          "error": 1.377
+        },
+        "Threes": {
+          "projection": 0.625,
+          "actual": 0.0,
+          "error": 0.625
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Acaden Lewis",
+      "team": "Miami",
+      "actual": {
+        "name": "Acaden Lewis",
+        "id": "5144105",
+        "minutes": 33.0,
+        "Points": 13.0,
+        "Rebounds": 7.0,
+        "Assists": 7.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 30.864,
+          "actual": 33.0,
+          "error": -2.136
+        },
+        "Points": {
+          "projection": 11.37,
+          "actual": 13.0,
+          "error": -1.63
+        },
+        "Rebounds": {
+          "projection": 3.266,
+          "actual": 7.0,
+          "error": -3.734
+        },
+        "Assists": {
+          "projection": 5.226,
+          "actual": 7.0,
+          "error": -1.774
+        },
+        "Threes": {
+          "projection": 0.796,
+          "actual": 0.0,
+          "error": 0.796
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 30.864,
+          "actual": 33.0,
+          "error": -2.136
+        },
+        "Points": {
+          "projection": 11.543,
+          "actual": 13.0,
+          "error": -1.457
+        },
+        "Rebounds": {
+          "projection": 3.244,
+          "actual": 7.0,
+          "error": -3.756
+        },
+        "Assists": {
+          "projection": 5.256,
+          "actual": 7.0,
+          "error": -1.744
+        },
+        "Threes": {
+          "projection": 0.791,
+          "actual": 0.0,
+          "error": 0.791
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 28.69,
+          "actual": 33.0,
+          "error": -4.31
+        },
+        "Points": {
+          "projection": 10.73,
+          "actual": 13.0,
+          "error": -2.27
+        },
+        "Rebounds": {
+          "projection": 3.016,
+          "actual": 7.0,
+          "error": -3.984
+        },
+        "Assists": {
+          "projection": 4.886,
+          "actual": 7.0,
+          "error": -2.114
+        },
+        "Threes": {
+          "projection": 0.735,
+          "actual": 0.0,
+          "error": 0.735
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Brent Bland",
+      "team": "Miami",
+      "actual": {
+        "name": "Brent Bland",
+        "id": "4898256",
+        "minutes": 17.0,
+        "Points": 3.0,
+        "Rebounds": 1.0,
+        "Assists": 2.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 27.175,
+          "actual": 17.0,
+          "error": 10.175
+        },
+        "Points": {
+          "projection": 13.37,
+          "actual": 3.0,
+          "error": 10.37
+        },
+        "Rebounds": {
+          "projection": 4.348,
+          "actual": 1.0,
+          "error": 3.348
+        },
+        "Assists": {
+          "projection": 0.997,
+          "actual": 2.0,
+          "error": -1.003
+        },
+        "Threes": {
+          "projection": 3.123,
+          "actual": 1.0,
+          "error": 2.123
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 27.175,
+          "actual": 17.0,
+          "error": 10.175
+        },
+        "Points": {
+          "projection": 13.573,
+          "actual": 3.0,
+          "error": 10.573
+        },
+        "Rebounds": {
+          "projection": 4.319,
+          "actual": 1.0,
+          "error": 3.319
+        },
+        "Assists": {
+          "projection": 1.003,
+          "actual": 2.0,
+          "error": -0.997
+        },
+        "Threes": {
+          "projection": 3.102,
+          "actual": 1.0,
+          "error": 2.102
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 19.11,
+          "actual": 17.0,
+          "error": 2.11
+        },
+        "Points": {
+          "projection": 9.545,
+          "actual": 3.0,
+          "error": 6.545
+        },
+        "Rebounds": {
+          "projection": 3.037,
+          "actual": 1.0,
+          "error": 2.037
+        },
+        "Assists": {
+          "projection": 0.705,
+          "actual": 2.0,
+          "error": -1.295
+        },
+        "Threes": {
+          "projection": 2.181,
+          "actual": 1.0,
+          "error": 1.181
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Caleb Gaskins",
+      "team": "Miami",
+      "actual": {
+        "name": "Caleb Gaskins",
+        "id": "5142723",
+        "minutes": 30.0,
+        "Points": 13.0,
+        "Rebounds": 8.0,
+        "Assists": 6.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 21.75,
+          "actual": 30.0,
+          "error": -8.25
+        },
+        "Points": {
+          "projection": 9.0,
+          "actual": 13.0,
+          "error": -4.0
+        },
+        "Rebounds": {
+          "projection": 5.0,
+          "actual": 8.0,
+          "error": -3.0
+        },
+        "Assists": {
+          "projection": 1.0,
+          "actual": 6.0,
+          "error": -5.0
+        },
+        "Threes": {
+          "projection": 1.5,
+          "actual": 0.0,
+          "error": 1.5
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 21.75,
+          "actual": 30.0,
+          "error": -8.25
+        },
+        "Points": {
+          "projection": 9.137,
+          "actual": 13.0,
+          "error": -3.863
+        },
+        "Rebounds": {
+          "projection": 4.967,
+          "actual": 8.0,
+          "error": -3.033
+        },
+        "Assists": {
+          "projection": 1.006,
+          "actual": 6.0,
+          "error": -4.994
+        },
+        "Threes": {
+          "projection": 1.49,
+          "actual": 0.0,
+          "error": 1.49
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 21.27,
+          "actual": 30.0,
+          "error": -8.73
+        },
+        "Points": {
+          "projection": 8.935,
+          "actual": 13.0,
+          "error": -4.065
+        },
+        "Rebounds": {
+          "projection": 4.857,
+          "actual": 8.0,
+          "error": -3.143
+        },
+        "Assists": {
+          "projection": 0.984,
+          "actual": 6.0,
+          "error": -5.016
+        },
+        "Threes": {
+          "projection": 1.457,
+          "actual": 0.0,
+          "error": 1.457
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Christopher Birden Jr.",
+      "team": "Miami",
+      "actual": {
+        "name": "Christopher Birden Jr.",
+        "id": "5144138",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 1.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 0.92,
+          "actual": 2.0,
+          "error": -1.08
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Dante Allen",
+      "team": "Miami",
+      "actual": {
+        "name": "Dante Allen",
+        "id": "5142709",
+        "minutes": 22.0,
+        "Points": 10.0,
+        "Rebounds": 6.0,
+        "Assists": 3.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 23.294,
+          "actual": 22.0,
+          "error": 1.294
+        },
+        "Points": {
+          "projection": 6.558,
+          "actual": 10.0,
+          "error": -3.442
+        },
+        "Rebounds": {
+          "projection": 3.703,
+          "actual": 6.0,
+          "error": -2.297
+        },
+        "Assists": {
+          "projection": 3.405,
+          "actual": 3.0,
+          "error": 0.405
+        },
+        "Threes": {
+          "projection": 0.627,
+          "actual": 1.0,
+          "error": -0.373
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 23.294,
+          "actual": 22.0,
+          "error": 1.294
+        },
+        "Points": {
+          "projection": 6.658,
+          "actual": 10.0,
+          "error": -3.342
+        },
+        "Rebounds": {
+          "projection": 3.678,
+          "actual": 6.0,
+          "error": -2.322
+        },
+        "Assists": {
+          "projection": 3.425,
+          "actual": 3.0,
+          "error": 0.425
+        },
+        "Threes": {
+          "projection": 0.623,
+          "actual": 1.0,
+          "error": -0.377
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 20.51,
+          "actual": 22.0,
+          "error": -1.49
+        },
+        "Points": {
+          "projection": 5.862,
+          "actual": 10.0,
+          "error": -4.138
+        },
+        "Rebounds": {
+          "projection": 3.238,
+          "actual": 6.0,
+          "error": -2.762
+        },
+        "Assists": {
+          "projection": 3.015,
+          "actual": 3.0,
+          "error": 0.015
+        },
+        "Threes": {
+          "projection": 0.548,
+          "actual": 1.0,
+          "error": -0.452
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "DeSean Goode",
+      "team": "Miami",
+      "actual": {
+        "name": "DeSean Goode",
+        "id": "5241658",
+        "minutes": 6.0,
+        "Points": 2.0,
+        "Rebounds": 1.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 7.0,
+          "actual": 6.0,
+          "error": 1.0
+        },
+        "Points": {
+          "projection": 0.667,
+          "actual": 2.0,
+          "error": -1.333
+        },
+        "Rebounds": {
+          "projection": 1.667,
+          "actual": 1.0,
+          "error": 0.667
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 2.0,
+          "error": -2.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 7.0,
+          "actual": 6.0,
+          "error": 1.0
+        },
+        "Points": {
+          "projection": 0.677,
+          "actual": 2.0,
+          "error": -1.323
+        },
+        "Rebounds": {
+          "projection": 1.656,
+          "actual": 1.0,
+          "error": 0.656
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 2.0,
+          "error": -2.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 6.4,
+          "actual": 6.0,
+          "error": 0.4
+        },
+        "Points": {
+          "projection": 0.619,
+          "actual": 2.0,
+          "error": -1.381
+        },
+        "Rebounds": {
+          "projection": 1.514,
+          "actual": 1.0,
+          "error": 0.514
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 2.0,
+          "error": -2.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Egor Ryzhov",
+      "team": "Miami",
+      "actual": {
+        "name": "Egor Ryzhov",
+        "id": "5455248",
+        "minutes": 7.0,
+        "Points": 6.0,
+        "Rebounds": 2.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 5.5,
+          "actual": 7.0,
+          "error": -1.5
+        },
+        "Points": {
+          "projection": 2.25,
+          "actual": 6.0,
+          "error": -3.75
+        },
+        "Rebounds": {
+          "projection": 1.75,
+          "actual": 2.0,
+          "error": -0.25
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 5.5,
+          "actual": 7.0,
+          "error": -1.5
+        },
+        "Points": {
+          "projection": 2.284,
+          "actual": 6.0,
+          "error": -3.716
+        },
+        "Rebounds": {
+          "projection": 1.738,
+          "actual": 2.0,
+          "error": -0.262
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 5.42,
+          "actual": 7.0,
+          "error": -1.58
+        },
+        "Points": {
+          "projection": 2.251,
+          "actual": 6.0,
+          "error": -3.749
+        },
+        "Rebounds": {
+          "projection": 1.713,
+          "actual": 2.0,
+          "error": -0.287
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 1.0,
+          "error": -1.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Nick Dorn",
+      "team": "Miami",
+      "actual": {
+        "name": "Nick Dorn",
+        "id": "5174935",
+        "minutes": 14.0,
+        "Points": 21.0,
+        "Rebounds": 1.0,
+        "Assists": 1.0,
+        "Threes": 7.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 20.989,
+          "actual": 14.0,
+          "error": 6.989
+        },
+        "Points": {
+          "projection": 8.291,
+          "actual": 21.0,
+          "error": -12.709
+        },
+        "Rebounds": {
+          "projection": 2.147,
+          "actual": 1.0,
+          "error": 1.147
+        },
+        "Assists": {
+          "projection": 0.393,
+          "actual": 1.0,
+          "error": -0.607
+        },
+        "Threes": {
+          "projection": 2.265,
+          "actual": 7.0,
+          "error": -4.735
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 20.989,
+          "actual": 14.0,
+          "error": 6.989
+        },
+        "Points": {
+          "projection": 8.417,
+          "actual": 21.0,
+          "error": -12.583
+        },
+        "Rebounds": {
+          "projection": 2.133,
+          "actual": 1.0,
+          "error": 1.133
+        },
+        "Assists": {
+          "projection": 0.395,
+          "actual": 1.0,
+          "error": -0.605
+        },
+        "Threes": {
+          "projection": 2.25,
+          "actual": 7.0,
+          "error": -4.75
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 17.43,
+          "actual": 14.0,
+          "error": 3.43
+        },
+        "Points": {
+          "projection": 6.99,
+          "actual": 21.0,
+          "error": -14.01
+        },
+        "Rebounds": {
+          "projection": 1.771,
+          "actual": 1.0,
+          "error": 0.771
+        },
+        "Assists": {
+          "projection": 0.328,
+          "actual": 1.0,
+          "error": -0.672
+        },
+        "Threes": {
+          "projection": 1.868,
+          "actual": 7.0,
+          "error": -5.132
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Robert Miller III",
+      "team": "Miami",
+      "actual": {
+        "name": "Robert Miller III",
+        "id": "5061596",
+        "minutes": 17.0,
+        "Points": 6.0,
+        "Rebounds": 2.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 17.737,
+          "actual": 17.0,
+          "error": 0.737
+        },
+        "Points": {
+          "projection": 6.477,
+          "actual": 6.0,
+          "error": 0.477
+        },
+        "Rebounds": {
+          "projection": 3.486,
+          "actual": 2.0,
+          "error": 1.486
+        },
+        "Assists": {
+          "projection": 0.555,
+          "actual": 0.0,
+          "error": 0.555
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 17.737,
+          "actual": 17.0,
+          "error": 0.737
+        },
+        "Points": {
+          "projection": 6.575,
+          "actual": 6.0,
+          "error": 0.575
+        },
+        "Rebounds": {
+          "projection": 3.463,
+          "actual": 2.0,
+          "error": 1.463
+        },
+        "Assists": {
+          "projection": 0.558,
+          "actual": 0.0,
+          "error": 0.558
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 14.32,
+          "actual": 17.0,
+          "error": -2.68
+        },
+        "Points": {
+          "projection": 5.309,
+          "actual": 6.0,
+          "error": -0.691
+        },
+        "Rebounds": {
+          "projection": 2.796,
+          "actual": 2.0,
+          "error": 0.796
+        },
+        "Assists": {
+          "projection": 0.451,
+          "actual": 0.0,
+          "error": 0.451
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Shelton Henderson",
+      "team": "Miami",
+      "actual": {
+        "name": "Shelton Henderson",
+        "id": "5101809",
+        "minutes": 29.0,
+        "Points": 21.0,
+        "Rebounds": 8.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 29.967,
+          "actual": 29.0,
+          "error": 0.967
+        },
+        "Points": {
+          "projection": 13.758,
+          "actual": 21.0,
+          "error": -7.242
+        },
+        "Rebounds": {
+          "projection": 5.98,
+          "actual": 8.0,
+          "error": -2.02
+        },
+        "Assists": {
+          "projection": 2.353,
+          "actual": 2.0,
+          "error": 0.353
+        },
+        "Threes": {
+          "projection": 0.329,
+          "actual": 0.0,
+          "error": 0.329
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 29.967,
+          "actual": 29.0,
+          "error": 0.967
+        },
+        "Points": {
+          "projection": 13.968,
+          "actual": 21.0,
+          "error": -7.032
+        },
+        "Rebounds": {
+          "projection": 5.94,
+          "actual": 8.0,
+          "error": -2.06
+        },
+        "Assists": {
+          "projection": 2.366,
+          "actual": 2.0,
+          "error": 0.366
+        },
+        "Threes": {
+          "projection": 0.326,
+          "actual": 0.0,
+          "error": 0.326
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 26.32,
+          "actual": 29.0,
+          "error": -2.68
+        },
+        "Points": {
+          "projection": 12.268,
+          "actual": 21.0,
+          "error": -8.732
+        },
+        "Rebounds": {
+          "projection": 5.217,
+          "actual": 8.0,
+          "error": -2.783
+        },
+        "Assists": {
+          "projection": 2.078,
+          "actual": 2.0,
+          "error": 0.078
+        },
+        "Threes": {
+          "projection": 0.287,
+          "actual": 0.0,
+          "error": 0.287
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921723",
+      "player": "Somto Cyril",
+      "team": "Miami",
+      "actual": {
+        "name": "Somto Cyril",
+        "id": "5238203",
+        "minutes": 21.0,
+        "Points": 11.0,
+        "Rebounds": 8.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 21.477,
+          "actual": 21.0,
+          "error": 0.477
+        },
+        "Points": {
+          "projection": 9.211,
+          "actual": 11.0,
+          "error": -1.789
+        },
+        "Rebounds": {
+          "projection": 5.452,
+          "actual": 8.0,
+          "error": -2.548
+        },
+        "Assists": {
+          "projection": 0.511,
+          "actual": 0.0,
+          "error": 0.511
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 21.477,
+          "actual": 21.0,
+          "error": 0.477
+        },
+        "Points": {
+          "projection": 9.352,
+          "actual": 11.0,
+          "error": -1.648
+        },
+        "Rebounds": {
+          "projection": 5.416,
+          "actual": 8.0,
+          "error": -2.584
+        },
+        "Assists": {
+          "projection": 0.514,
+          "actual": 0.0,
+          "error": 0.514
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 20.05,
+          "actual": 21.0,
+          "error": -0.95
+        },
+        "Points": {
+          "projection": 8.73,
+          "actual": 11.0,
+          "error": -2.27
+        },
+        "Rebounds": {
+          "projection": 5.056,
+          "actual": 8.0,
+          "error": -2.944
+        },
+        "Assists": {
+          "projection": 0.479,
+          "actual": 0.0,
+          "error": 0.479
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "A'lahn Sumler",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "A'lahn Sumler",
+        "id": "5106775",
+        "minutes": 33.0,
+        "Points": 4.0,
+        "Rebounds": 2.0,
+        "Assists": 5.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 30.905,
+          "actual": 33.0,
+          "error": -2.095
+        },
+        "Points": {
+          "projection": 17.136,
+          "actual": 4.0,
+          "error": 13.136
+        },
+        "Rebounds": {
+          "projection": 4.029,
+          "actual": 2.0,
+          "error": 2.029
+        },
+        "Assists": {
+          "projection": 3.777,
+          "actual": 5.0,
+          "error": -1.223
+        },
+        "Threes": {
+          "projection": 2.018,
+          "actual": 1.0,
+          "error": 1.018
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 30.905,
+          "actual": 33.0,
+          "error": -2.095
+        },
+        "Points": {
+          "projection": 17.528,
+          "actual": 4.0,
+          "error": 13.528
+        },
+        "Rebounds": {
+          "projection": 4.037,
+          "actual": 2.0,
+          "error": 2.037
+        },
+        "Assists": {
+          "projection": 3.829,
+          "actual": 5.0,
+          "error": -1.171
+        },
+        "Threes": {
+          "projection": 2.022,
+          "actual": 1.0,
+          "error": 1.022
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 27.18,
+          "actual": 33.0,
+          "error": -5.82
+        },
+        "Points": {
+          "projection": 15.416,
+          "actual": 4.0,
+          "error": 11.416
+        },
+        "Rebounds": {
+          "projection": 3.551,
+          "actual": 2.0,
+          "error": 1.551
+        },
+        "Assists": {
+          "projection": 3.368,
+          "actual": 5.0,
+          "error": -1.632
+        },
+        "Threes": {
+          "projection": 1.778,
+          "actual": 1.0,
+          "error": 0.778
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Akir Souare",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Akir Souare",
+        "id": "5174559",
+        "minutes": 21.0,
+        "Points": 4.0,
+        "Rebounds": 10.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 9.684,
+          "actual": 21.0,
+          "error": -11.316
+        },
+        "Points": {
+          "projection": 1.705,
+          "actual": 4.0,
+          "error": -2.295
+        },
+        "Rebounds": {
+          "projection": 2.421,
+          "actual": 10.0,
+          "error": -7.579
+        },
+        "Assists": {
+          "projection": 0.134,
+          "actual": 1.0,
+          "error": -0.866
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 9.684,
+          "actual": 21.0,
+          "error": -11.316
+        },
+        "Points": {
+          "projection": 1.744,
+          "actual": 4.0,
+          "error": -2.256
+        },
+        "Rebounds": {
+          "projection": 2.426,
+          "actual": 10.0,
+          "error": -7.574
+        },
+        "Assists": {
+          "projection": 0.136,
+          "actual": 1.0,
+          "error": -0.864
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 9.57,
+          "actual": 21.0,
+          "error": -11.43
+        },
+        "Points": {
+          "projection": 1.724,
+          "actual": 4.0,
+          "error": -2.276
+        },
+        "Rebounds": {
+          "projection": 2.398,
+          "actual": 10.0,
+          "error": -7.602
+        },
+        "Assists": {
+          "projection": 0.135,
+          "actual": 1.0,
+          "error": -0.865
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Armani Mighty",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Armani Mighty",
+        "id": "4917161",
+        "minutes": 6.0,
+        "Points": 0.0,
+        "Rebounds": 1.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 23.583,
+          "actual": 6.0,
+          "error": 17.583
+        },
+        "Points": {
+          "projection": 8.527,
+          "actual": 0.0,
+          "error": 8.527
+        },
+        "Rebounds": {
+          "projection": 6.97,
+          "actual": 1.0,
+          "error": 5.97
+        },
+        "Assists": {
+          "projection": 0.537,
+          "actual": 0.0,
+          "error": 0.537
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 23.583,
+          "actual": 6.0,
+          "error": 17.583
+        },
+        "Points": {
+          "projection": 8.722,
+          "actual": 0.0,
+          "error": 8.722
+        },
+        "Rebounds": {
+          "projection": 6.985,
+          "actual": 1.0,
+          "error": 5.985
+        },
+        "Assists": {
+          "projection": 0.544,
+          "actual": 0.0,
+          "error": 0.544
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 12.57,
+          "actual": 6.0,
+          "error": 6.57
+        },
+        "Points": {
+          "projection": 4.649,
+          "actual": 0.0,
+          "error": 4.649
+        },
+        "Rebounds": {
+          "projection": 3.723,
+          "actual": 1.0,
+          "error": 2.723
+        },
+        "Assists": {
+          "projection": 0.29,
+          "actual": 0.0,
+          "error": 0.29
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Baye Ndongo",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Baye Ndongo",
+        "id": "5142356",
+        "minutes": 32.0,
+        "Points": 30.0,
+        "Rebounds": 9.0,
+        "Assists": 0.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 27.173,
+          "actual": 32.0,
+          "error": -4.827
+        },
+        "Points": {
+          "projection": 12.943,
+          "actual": 30.0,
+          "error": -17.057
+        },
+        "Rebounds": {
+          "projection": 8.937,
+          "actual": 9.0,
+          "error": -0.063
+        },
+        "Assists": {
+          "projection": 2.078,
+          "actual": 0.0,
+          "error": 2.078
+        },
+        "Threes": {
+          "projection": 0.123,
+          "actual": 1.0,
+          "error": -0.877
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 27.173,
+          "actual": 32.0,
+          "error": -4.827
+        },
+        "Points": {
+          "projection": 13.239,
+          "actual": 30.0,
+          "error": -16.761
+        },
+        "Rebounds": {
+          "projection": 8.956,
+          "actual": 9.0,
+          "error": -0.044
+        },
+        "Assists": {
+          "projection": 2.107,
+          "actual": 0.0,
+          "error": 2.107
+        },
+        "Threes": {
+          "projection": 0.123,
+          "actual": 1.0,
+          "error": -0.877
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 24.2,
+          "actual": 32.0,
+          "error": -7.8
+        },
+        "Points": {
+          "projection": 11.79,
+          "actual": 30.0,
+          "error": -18.21
+        },
+        "Rebounds": {
+          "projection": 7.977,
+          "actual": 9.0,
+          "error": -1.023
+        },
+        "Assists": {
+          "projection": 1.877,
+          "actual": 0.0,
+          "error": 1.877
+        },
+        "Threes": {
+          "projection": 0.11,
+          "actual": 1.0,
+          "error": -0.89
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Chase Foster",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Chase Foster",
+        "id": "5144530",
+        "minutes": 17.0,
+        "Points": 5.0,
+        "Rebounds": 4.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 28.25,
+          "actual": 17.0,
+          "error": 11.25
+        },
+        "Points": {
+          "projection": 16.0,
+          "actual": 5.0,
+          "error": 11.0
+        },
+        "Rebounds": {
+          "projection": 6.75,
+          "actual": 4.0,
+          "error": 2.75
+        },
+        "Assists": {
+          "projection": 0.5,
+          "actual": 0.0,
+          "error": 0.5
+        },
+        "Threes": {
+          "projection": 1.25,
+          "actual": 0.0,
+          "error": 1.25
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 28.25,
+          "actual": 17.0,
+          "error": 11.25
+        },
+        "Points": {
+          "projection": 16.366,
+          "actual": 5.0,
+          "error": 11.366
+        },
+        "Rebounds": {
+          "projection": 6.764,
+          "actual": 4.0,
+          "error": 2.764
+        },
+        "Assists": {
+          "projection": 0.507,
+          "actual": 0.0,
+          "error": 0.507
+        },
+        "Threes": {
+          "projection": 1.253,
+          "actual": 0.0,
+          "error": 1.253
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.52,
+          "actual": 17.0,
+          "error": 6.52
+        },
+        "Points": {
+          "projection": 13.625,
+          "actual": 5.0,
+          "error": 8.625
+        },
+        "Rebounds": {
+          "projection": 5.632,
+          "actual": 4.0,
+          "error": 1.632
+        },
+        "Assists": {
+          "projection": 0.422,
+          "actual": 0.0,
+          "error": 0.422
+        },
+        "Threes": {
+          "projection": 1.043,
+          "actual": 0.0,
+          "error": 1.043
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Dominique Diomande",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Dominique Diomande",
+        "id": "5262996",
+        "minutes": 4.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 7.222,
+          "actual": 4.0,
+          "error": 3.222
+        },
+        "Points": {
+          "projection": 2.27,
+          "actual": 0.0,
+          "error": 2.27
+        },
+        "Rebounds": {
+          "projection": 1.336,
+          "actual": 0.0,
+          "error": 1.336
+        },
+        "Assists": {
+          "projection": 0.111,
+          "actual": 0.0,
+          "error": 0.111
+        },
+        "Threes": {
+          "projection": 0.074,
+          "actual": 0.0,
+          "error": 0.074
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 7.222,
+          "actual": 4.0,
+          "error": 3.222
+        },
+        "Points": {
+          "projection": 2.322,
+          "actual": 0.0,
+          "error": 2.322
+        },
+        "Rebounds": {
+          "projection": 1.339,
+          "actual": 0.0,
+          "error": 1.339
+        },
+        "Assists": {
+          "projection": 0.112,
+          "actual": 0.0,
+          "error": 0.112
+        },
+        "Threes": {
+          "projection": 0.074,
+          "actual": 0.0,
+          "error": 0.074
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 5.91,
+          "actual": 4.0,
+          "error": 1.91
+        },
+        "Points": {
+          "projection": 1.9,
+          "actual": 0.0,
+          "error": 1.9
+        },
+        "Rebounds": {
+          "projection": 1.096,
+          "actual": 0.0,
+          "error": 1.096
+        },
+        "Assists": {
+          "projection": 0.092,
+          "actual": 0.0,
+          "error": 0.092
+        },
+        "Threes": {
+          "projection": 0.061,
+          "actual": 0.0,
+          "error": 0.061
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Jalil Bethea",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Jalil Bethea",
+        "id": "5101656",
+        "minutes": 17.0,
+        "Points": 12.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 2.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 11.808,
+          "actual": 17.0,
+          "error": -5.192
+        },
+        "Points": {
+          "projection": 5.102,
+          "actual": 12.0,
+          "error": -6.898
+        },
+        "Rebounds": {
+          "projection": 1.938,
+          "actual": 0.0,
+          "error": 1.938
+        },
+        "Assists": {
+          "projection": 0.886,
+          "actual": 0.0,
+          "error": 0.886
+        },
+        "Threes": {
+          "projection": 0.709,
+          "actual": 2.0,
+          "error": -1.291
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 11.808,
+          "actual": 17.0,
+          "error": -5.192
+        },
+        "Points": {
+          "projection": 5.219,
+          "actual": 12.0,
+          "error": -6.781
+        },
+        "Rebounds": {
+          "projection": 1.942,
+          "actual": 0.0,
+          "error": 1.942
+        },
+        "Assists": {
+          "projection": 0.898,
+          "actual": 0.0,
+          "error": 0.898
+        },
+        "Threes": {
+          "projection": 0.711,
+          "actual": 2.0,
+          "error": -1.289
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 13.29,
+          "actual": 17.0,
+          "error": -3.71
+        },
+        "Points": {
+          "projection": 5.874,
+          "actual": 12.0,
+          "error": -6.126
+        },
+        "Rebounds": {
+          "projection": 2.186,
+          "actual": 0.0,
+          "error": 2.186
+        },
+        "Assists": {
+          "projection": 1.011,
+          "actual": 0.0,
+          "error": 1.011
+        },
+        "Threes": {
+          "projection": 0.8,
+          "actual": 2.0,
+          "error": -1.2
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Jermal Jones",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Jermal Jones",
+        "id": "5144501",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 4.0,
+          "actual": 2.0,
+          "error": 2.0
+        },
+        "Points": {
+          "projection": 2.0,
+          "actual": 0.0,
+          "error": 2.0
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 4.0,
+          "actual": 2.0,
+          "error": 2.0
+        },
+        "Points": {
+          "projection": 2.046,
+          "actual": 0.0,
+          "error": 2.046
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 3.33,
+          "actual": 2.0,
+          "error": 1.33
+        },
+        "Points": {
+          "projection": 1.703,
+          "actual": 0.0,
+          "error": 1.703
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Jonathan Powell",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Jonathan Powell",
+        "id": "5101669",
+        "minutes": 31.0,
+        "Points": 24.0,
+        "Rebounds": 3.0,
+        "Assists": 1.0,
+        "Threes": 5.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 22.972,
+          "actual": 31.0,
+          "error": -8.028
+        },
+        "Points": {
+          "projection": 7.341,
+          "actual": 24.0,
+          "error": -16.659
+        },
+        "Rebounds": {
+          "projection": 3.142,
+          "actual": 3.0,
+          "error": 0.142
+        },
+        "Assists": {
+          "projection": 0.893,
+          "actual": 1.0,
+          "error": -0.107
+        },
+        "Threes": {
+          "projection": 1.766,
+          "actual": 5.0,
+          "error": -3.234
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 22.972,
+          "actual": 31.0,
+          "error": -8.028
+        },
+        "Points": {
+          "projection": 7.509,
+          "actual": 24.0,
+          "error": -16.491
+        },
+        "Rebounds": {
+          "projection": 3.149,
+          "actual": 3.0,
+          "error": 0.149
+        },
+        "Assists": {
+          "projection": 0.906,
+          "actual": 1.0,
+          "error": -0.094
+        },
+        "Threes": {
+          "projection": 1.77,
+          "actual": 5.0,
+          "error": -3.23
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 26.58,
+          "actual": 31.0,
+          "error": -4.42
+        },
+        "Points": {
+          "projection": 8.688,
+          "actual": 24.0,
+          "error": -15.312
+        },
+        "Rebounds": {
+          "projection": 3.644,
+          "actual": 3.0,
+          "error": 0.644
+        },
+        "Assists": {
+          "projection": 1.048,
+          "actual": 1.0,
+          "error": 0.048
+        },
+        "Threes": {
+          "projection": 2.048,
+          "actual": 5.0,
+          "error": -2.952
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Kraig Gilbert",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Kraig Gilbert",
+        "id": "5322518",
+        "minutes": 1.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 28.111,
+          "actual": 1.0,
+          "error": 27.111
+        },
+        "Points": {
+          "projection": 6.71,
+          "actual": 0.0,
+          "error": 6.71
+        },
+        "Rebounds": {
+          "projection": 4.474,
+          "actual": 0.0,
+          "error": 4.474
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 2.237,
+          "actual": 0.0,
+          "error": 2.237
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 28.111,
+          "actual": 1.0,
+          "error": 27.111
+        },
+        "Points": {
+          "projection": 6.864,
+          "actual": 0.0,
+          "error": 6.864
+        },
+        "Rebounds": {
+          "projection": 4.483,
+          "actual": 0.0,
+          "error": 4.483
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 2.242,
+          "actual": 0.0,
+          "error": 2.242
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 12.81,
+          "actual": 1.0,
+          "error": 11.81
+        },
+        "Points": {
+          "projection": 3.128,
+          "actual": 0.0,
+          "error": 3.128
+        },
+        "Rebounds": {
+          "projection": 2.043,
+          "actual": 0.0,
+          "error": 2.043
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 1.021,
+          "actual": 0.0,
+          "error": 1.021
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Macari Moore",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Macari Moore",
+        "id": "5196882",
+        "minutes": 2.0,
+        "Points": 2.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 5.357,
+          "actual": 2.0,
+          "error": 3.357
+        },
+        "Points": {
+          "projection": 0.981,
+          "actual": 2.0,
+          "error": -1.019
+        },
+        "Rebounds": {
+          "projection": 1.023,
+          "actual": 0.0,
+          "error": 1.023
+        },
+        "Assists": {
+          "projection": 0.556,
+          "actual": 0.0,
+          "error": 0.556
+        },
+        "Threes": {
+          "projection": 0.098,
+          "actual": 0.0,
+          "error": 0.098
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 5.357,
+          "actual": 2.0,
+          "error": 3.357
+        },
+        "Points": {
+          "projection": 1.004,
+          "actual": 2.0,
+          "error": -0.996
+        },
+        "Rebounds": {
+          "projection": 1.025,
+          "actual": 0.0,
+          "error": 1.025
+        },
+        "Assists": {
+          "projection": 0.564,
+          "actual": 0.0,
+          "error": 0.564
+        },
+        "Threes": {
+          "projection": 0.098,
+          "actual": 0.0,
+          "error": 0.098
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 3.84,
+          "actual": 2.0,
+          "error": 1.84
+        },
+        "Points": {
+          "projection": 0.72,
+          "actual": 2.0,
+          "error": -1.28
+        },
+        "Rebounds": {
+          "projection": 0.735,
+          "actual": 0.0,
+          "error": 0.735
+        },
+        "Assists": {
+          "projection": 0.404,
+          "actual": 0.0,
+          "error": 0.404
+        },
+        "Threes": {
+          "projection": 0.071,
+          "actual": 0.0,
+          "error": 0.071
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401909709",
+      "player": "Naithan George",
+      "team": "Pittsburgh",
+      "actual": {
+        "name": "Naithan George",
+        "id": "5174557",
+        "minutes": 32.0,
+        "Points": 20.0,
+        "Rebounds": 4.0,
+        "Assists": 7.0,
+        "Threes": 3.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 31.021,
+          "actual": 32.0,
+          "error": -0.979
+        },
+        "Points": {
+          "projection": 10.77,
+          "actual": 20.0,
+          "error": -9.23
+        },
+        "Rebounds": {
+          "projection": 3.008,
+          "actual": 4.0,
+          "error": -0.992
+        },
+        "Assists": {
+          "projection": 5.754,
+          "actual": 7.0,
+          "error": -1.246
+        },
+        "Threes": {
+          "projection": 1.083,
+          "actual": 3.0,
+          "error": -1.917
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 31.021,
+          "actual": 32.0,
+          "error": -0.979
+        },
+        "Points": {
+          "projection": 11.017,
+          "actual": 20.0,
+          "error": -8.983
+        },
+        "Rebounds": {
+          "projection": 3.015,
+          "actual": 4.0,
+          "error": -0.985
+        },
+        "Assists": {
+          "projection": 5.835,
+          "actual": 7.0,
+          "error": -1.165
+        },
+        "Threes": {
+          "projection": 1.086,
+          "actual": 3.0,
+          "error": -1.914
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 25.32,
+          "actual": 32.0,
+          "error": -6.68
+        },
+        "Points": {
+          "projection": 8.992,
+          "actual": 20.0,
+          "error": -11.008
+        },
+        "Rebounds": {
+          "projection": 2.461,
+          "actual": 4.0,
+          "error": -1.539
+        },
+        "Assists": {
+          "projection": 4.763,
+          "actual": 7.0,
+          "error": -2.237
+        },
+        "Threes": {
+          "projection": 0.886,
+          "actual": 3.0,
+          "error": -2.114
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Billy White III",
+      "team": "SMU",
+      "actual": {
+        "name": "Billy White III",
+        "id": "5280896",
+        "minutes": 18.0,
+        "Points": 12.0,
+        "Rebounds": 2.0,
+        "Assists": 3.0,
+        "Threes": 4.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 18.0,
+          "actual": 18.0,
+          "error": 0.0
+        },
+        "Points": {
+          "projection": 5.25,
+          "actual": 12.0,
+          "error": -6.75
+        },
+        "Rebounds": {
+          "projection": 2.25,
+          "actual": 2.0,
+          "error": 0.25
+        },
+        "Assists": {
+          "projection": 2.0,
+          "actual": 3.0,
+          "error": -1.0
+        },
+        "Threes": {
+          "projection": 1.5,
+          "actual": 4.0,
+          "error": -2.5
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 18.0,
+          "actual": 18.0,
+          "error": 0.0
+        },
+        "Points": {
+          "projection": 5.212,
+          "actual": 12.0,
+          "error": -6.788
+        },
+        "Rebounds": {
+          "projection": 2.191,
+          "actual": 2.0,
+          "error": 0.191
+        },
+        "Assists": {
+          "projection": 1.969,
+          "actual": 3.0,
+          "error": -1.031
+        },
+        "Threes": {
+          "projection": 1.46,
+          "actual": 4.0,
+          "error": -2.54
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 15.41,
+          "actual": 18.0,
+          "error": -2.59
+        },
+        "Points": {
+          "projection": 4.462,
+          "actual": 12.0,
+          "error": -7.538
+        },
+        "Rebounds": {
+          "projection": 1.875,
+          "actual": 2.0,
+          "error": -0.125
+        },
+        "Assists": {
+          "projection": 1.686,
+          "actual": 3.0,
+          "error": -1.314
+        },
+        "Threes": {
+          "projection": 1.25,
+          "actual": 4.0,
+          "error": -2.75
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Cameron Lomax",
+      "team": "SMU",
+      "actual": {
+        "name": "Cameron Lomax",
+        "id": "5210787",
+        "minutes": 9.0,
+        "Points": 3.0,
+        "Rebounds": 2.0,
+        "Assists": 2.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 10.5,
+          "actual": 9.0,
+          "error": 1.5
+        },
+        "Points": {
+          "projection": 3.5,
+          "actual": 3.0,
+          "error": 0.5
+        },
+        "Rebounds": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 2.0,
+          "actual": 2.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.25,
+          "actual": 1.0,
+          "error": -0.75
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 10.5,
+          "actual": 9.0,
+          "error": 1.5
+        },
+        "Points": {
+          "projection": 3.475,
+          "actual": 3.0,
+          "error": 0.475
+        },
+        "Rebounds": {
+          "projection": 0.974,
+          "actual": 2.0,
+          "error": -1.026
+        },
+        "Assists": {
+          "projection": 1.969,
+          "actual": 2.0,
+          "error": -0.031
+        },
+        "Threes": {
+          "projection": 0.243,
+          "actual": 1.0,
+          "error": -0.757
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 9.14,
+          "actual": 9.0,
+          "error": 0.14
+        },
+        "Points": {
+          "projection": 3.025,
+          "actual": 3.0,
+          "error": 0.025
+        },
+        "Rebounds": {
+          "projection": 0.848,
+          "actual": 2.0,
+          "error": -1.152
+        },
+        "Assists": {
+          "projection": 1.714,
+          "actual": 2.0,
+          "error": -0.286
+        },
+        "Threes": {
+          "projection": 0.212,
+          "actual": 1.0,
+          "error": -0.788
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "David Terrell Jr.",
+      "team": "SMU",
+      "actual": {
+        "name": "David Terrell Jr.",
+        "id": "5177691",
+        "minutes": 16.0,
+        "Points": 2.0,
+        "Rebounds": 0.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 28.045,
+          "actual": 16.0,
+          "error": 12.045
+        },
+        "Points": {
+          "projection": 11.203,
+          "actual": 2.0,
+          "error": 9.203
+        },
+        "Rebounds": {
+          "projection": 2.991,
+          "actual": 0.0,
+          "error": 2.991
+        },
+        "Assists": {
+          "projection": 5.512,
+          "actual": 2.0,
+          "error": 3.512
+        },
+        "Threes": {
+          "projection": 0.563,
+          "actual": 0.0,
+          "error": 0.563
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 28.045,
+          "actual": 16.0,
+          "error": 12.045
+        },
+        "Points": {
+          "projection": 11.122,
+          "actual": 2.0,
+          "error": 9.122
+        },
+        "Rebounds": {
+          "projection": 2.912,
+          "actual": 0.0,
+          "error": 2.912
+        },
+        "Assists": {
+          "projection": 5.428,
+          "actual": 2.0,
+          "error": 3.428
+        },
+        "Threes": {
+          "projection": 0.549,
+          "actual": 0.0,
+          "error": 0.549
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 20.18,
+          "actual": 16.0,
+          "error": 4.18
+        },
+        "Points": {
+          "projection": 8.003,
+          "actual": 2.0,
+          "error": 6.003
+        },
+        "Rebounds": {
+          "projection": 2.095,
+          "actual": 0.0,
+          "error": 2.095
+        },
+        "Assists": {
+          "projection": 3.905,
+          "actual": 2.0,
+          "error": 1.905
+        },
+        "Threes": {
+          "projection": 0.395,
+          "actual": 0.0,
+          "error": 0.395
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Gehrig Normand",
+      "team": "SMU",
+      "actual": {
+        "name": "Gehrig Normand",
+        "id": "5086370",
+        "minutes": 4.0,
+        "Points": 6.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 2.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 5.5,
+          "actual": 4.0,
+          "error": 1.5
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 6.0,
+          "error": -6.0
+        },
+        "Rebounds": {
+          "projection": 0.5,
+          "actual": 0.0,
+          "error": 0.5
+        },
+        "Assists": {
+          "projection": 1.5,
+          "actual": 0.0,
+          "error": 1.5
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 2.0,
+          "error": -2.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 5.5,
+          "actual": 4.0,
+          "error": 1.5
+        },
+        "Points": {
+          "projection": 0,
+          "actual": 6.0,
+          "error": -6.0
+        },
+        "Rebounds": {
+          "projection": 0.487,
+          "actual": 0.0,
+          "error": 0.487
+        },
+        "Assists": {
+          "projection": 1.477,
+          "actual": 0.0,
+          "error": 1.477
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 2.0,
+          "error": -2.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 4.71,
+          "actual": 4.0,
+          "error": 0.71
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 6.0,
+          "error": -6.0
+        },
+        "Rebounds": {
+          "projection": 0.417,
+          "actual": 0.0,
+          "error": 0.417
+        },
+        "Assists": {
+          "projection": 1.265,
+          "actual": 0.0,
+          "error": 1.265
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 2.0,
+          "error": -2.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Jacob Patrick",
+      "team": "SMU",
+      "actual": {
+        "name": "Jacob Patrick",
+        "id": "5311934",
+        "minutes": 12.0,
+        "Points": 6.0,
+        "Rebounds": 4.0,
+        "Assists": 3.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 11.333,
+          "actual": 12.0,
+          "error": -0.667
+        },
+        "Points": {
+          "projection": 6.667,
+          "actual": 6.0,
+          "error": 0.667
+        },
+        "Rebounds": {
+          "projection": 2.0,
+          "actual": 4.0,
+          "error": -2.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 3.0,
+          "error": -3.0
+        },
+        "Threes": {
+          "projection": 2.0,
+          "actual": 1.0,
+          "error": 1.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 11.333,
+          "actual": 12.0,
+          "error": -0.667
+        },
+        "Points": {
+          "projection": 6.619,
+          "actual": 6.0,
+          "error": 0.619
+        },
+        "Rebounds": {
+          "projection": 1.947,
+          "actual": 4.0,
+          "error": -2.053
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 3.0,
+          "error": -3.0
+        },
+        "Threes": {
+          "projection": 1.947,
+          "actual": 1.0,
+          "error": 0.947
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 9.7,
+          "actual": 12.0,
+          "error": -2.3
+        },
+        "Points": {
+          "projection": 5.665,
+          "actual": 6.0,
+          "error": -0.335
+        },
+        "Rebounds": {
+          "projection": 1.667,
+          "actual": 4.0,
+          "error": -2.333
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 3.0,
+          "error": -3.0
+        },
+        "Threes": {
+          "projection": 1.667,
+          "actual": 1.0,
+          "error": 0.667
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Jaden Toombs",
+      "team": "SMU",
+      "actual": {
+        "name": "Jaden Toombs",
+        "id": "5101840",
+        "minutes": 21.0,
+        "Points": 12.0,
+        "Rebounds": 11.0,
+        "Assists": 5.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 21.309,
+          "actual": 21.0,
+          "error": 0.309
+        },
+        "Points": {
+          "projection": 9.429,
+          "actual": 12.0,
+          "error": -2.571
+        },
+        "Rebounds": {
+          "projection": 5.017,
+          "actual": 11.0,
+          "error": -5.983
+        },
+        "Assists": {
+          "projection": 1.779,
+          "actual": 5.0,
+          "error": -3.221
+        },
+        "Threes": {
+          "projection": 0.232,
+          "actual": 0.0,
+          "error": 0.232
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 21.309,
+          "actual": 21.0,
+          "error": 0.309
+        },
+        "Points": {
+          "projection": 9.361,
+          "actual": 12.0,
+          "error": -2.639
+        },
+        "Rebounds": {
+          "projection": 4.885,
+          "actual": 11.0,
+          "error": -6.115
+        },
+        "Assists": {
+          "projection": 1.751,
+          "actual": 5.0,
+          "error": -3.249
+        },
+        "Threes": {
+          "projection": 0.226,
+          "actual": 0.0,
+          "error": 0.226
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 19.6,
+          "actual": 21.0,
+          "error": -1.4
+        },
+        "Points": {
+          "projection": 8.61,
+          "actual": 12.0,
+          "error": -3.39
+        },
+        "Rebounds": {
+          "projection": 4.494,
+          "actual": 11.0,
+          "error": -6.506
+        },
+        "Assists": {
+          "projection": 1.611,
+          "actual": 5.0,
+          "error": -3.389
+        },
+        "Threes": {
+          "projection": 0.208,
+          "actual": 0.0,
+          "error": 0.208
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Jakub Szumert",
+      "team": "SMU",
+      "actual": {
+        "name": "Jakub Szumert",
+        "id": "5457323",
+        "minutes": 16.0,
+        "Points": 2.0,
+        "Rebounds": 4.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 22.25,
+          "actual": 16.0,
+          "error": 6.25
+        },
+        "Points": {
+          "projection": 14.25,
+          "actual": 2.0,
+          "error": 12.25
+        },
+        "Rebounds": {
+          "projection": 6.25,
+          "actual": 4.0,
+          "error": 2.25
+        },
+        "Assists": {
+          "projection": 1.5,
+          "actual": 2.0,
+          "error": -0.5
+        },
+        "Threes": {
+          "projection": 1.0,
+          "actual": 0.0,
+          "error": 1.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 22.25,
+          "actual": 16.0,
+          "error": 6.25
+        },
+        "Points": {
+          "projection": 14.147,
+          "actual": 2.0,
+          "error": 12.147
+        },
+        "Rebounds": {
+          "projection": 6.085,
+          "actual": 4.0,
+          "error": 2.085
+        },
+        "Assists": {
+          "projection": 1.477,
+          "actual": 2.0,
+          "error": -0.523
+        },
+        "Threes": {
+          "projection": 0.974,
+          "actual": 0.0,
+          "error": 0.974
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 18.76,
+          "actual": 16.0,
+          "error": 2.76
+        },
+        "Points": {
+          "projection": 11.928,
+          "actual": 2.0,
+          "error": 9.928
+        },
+        "Rebounds": {
+          "projection": 5.131,
+          "actual": 4.0,
+          "error": 1.131
+        },
+        "Assists": {
+          "projection": 1.245,
+          "actual": 2.0,
+          "error": -0.755
+        },
+        "Threes": {
+          "projection": 0.821,
+          "actual": 0.0,
+          "error": 0.821
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Jaylin Stewart",
+      "team": "SMU",
+      "actual": {
+        "name": "Jaylin Stewart",
+        "id": "4685647",
+        "minutes": 14.0,
+        "Points": 14.0,
+        "Rebounds": 2.0,
+        "Assists": 3.0,
+        "Threes": 4.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 8.0,
+          "actual": 14.0,
+          "error": -6.0
+        },
+        "Points": {
+          "projection": 7.0,
+          "actual": 14.0,
+          "error": -7.0
+        },
+        "Rebounds": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 1.0,
+          "actual": 3.0,
+          "error": -2.0
+        },
+        "Threes": {
+          "projection": 1.0,
+          "actual": 4.0,
+          "error": -3.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 8.0,
+          "actual": 14.0,
+          "error": -6.0
+        },
+        "Points": {
+          "projection": 6.95,
+          "actual": 14.0,
+          "error": -7.05
+        },
+        "Rebounds": {
+          "projection": 0.974,
+          "actual": 2.0,
+          "error": -1.026
+        },
+        "Assists": {
+          "projection": 0.985,
+          "actual": 3.0,
+          "error": -2.015
+        },
+        "Threes": {
+          "projection": 0.974,
+          "actual": 4.0,
+          "error": -3.026
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 6.85,
+          "actual": 14.0,
+          "error": -7.15
+        },
+        "Points": {
+          "projection": 5.951,
+          "actual": 14.0,
+          "error": -8.049
+        },
+        "Rebounds": {
+          "projection": 0.834,
+          "actual": 2.0,
+          "error": -1.166
+        },
+        "Assists": {
+          "projection": 0.843,
+          "actual": 3.0,
+          "error": -2.157
+        },
+        "Threes": {
+          "projection": 0.834,
+          "actual": 4.0,
+          "error": -3.166
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Jermaine O'Neal Jr.",
+      "team": "SMU",
+      "actual": {
+        "name": "Jermaine O'Neal Jr.",
+        "id": "5312289",
+        "minutes": 17.0,
+        "Points": 6.0,
+        "Rebounds": 2.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 17.667,
+          "actual": 17.0,
+          "error": 0.667
+        },
+        "Points": {
+          "projection": 7.095,
+          "actual": 6.0,
+          "error": 1.095
+        },
+        "Rebounds": {
+          "projection": 2.874,
+          "actual": 2.0,
+          "error": 0.874
+        },
+        "Assists": {
+          "projection": 0.62,
+          "actual": 2.0,
+          "error": -1.38
+        },
+        "Threes": {
+          "projection": 0.723,
+          "actual": 0.0,
+          "error": 0.723
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 17.667,
+          "actual": 17.0,
+          "error": 0.667
+        },
+        "Points": {
+          "projection": 7.044,
+          "actual": 6.0,
+          "error": 1.044
+        },
+        "Rebounds": {
+          "projection": 2.798,
+          "actual": 2.0,
+          "error": 0.798
+        },
+        "Assists": {
+          "projection": 0.611,
+          "actual": 2.0,
+          "error": -1.389
+        },
+        "Threes": {
+          "projection": 0.704,
+          "actual": 0.0,
+          "error": 0.704
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 18.14,
+          "actual": 17.0,
+          "error": 1.14
+        },
+        "Points": {
+          "projection": 7.232,
+          "actual": 6.0,
+          "error": 1.232
+        },
+        "Rebounds": {
+          "projection": 2.873,
+          "actual": 2.0,
+          "error": 0.873
+        },
+        "Assists": {
+          "projection": 0.627,
+          "actual": 2.0,
+          "error": -1.373
+        },
+        "Threes": {
+          "projection": 0.723,
+          "actual": 0.0,
+          "error": 0.723
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Johan Munch",
+      "team": "SMU",
+      "actual": {
+        "name": "Johan Munch",
+        "id": "5240884",
+        "minutes": 19.0,
+        "Points": 4.0,
+        "Rebounds": 7.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 19.126,
+          "actual": 19.0,
+          "error": 0.126
+        },
+        "Points": {
+          "projection": 7.083,
+          "actual": 4.0,
+          "error": 3.083
+        },
+        "Rebounds": {
+          "projection": 5.28,
+          "actual": 7.0,
+          "error": -1.72
+        },
+        "Assists": {
+          "projection": 0.834,
+          "actual": 1.0,
+          "error": -0.166
+        },
+        "Threes": {
+          "projection": 0.02,
+          "actual": 0.0,
+          "error": 0.02
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 19.126,
+          "actual": 19.0,
+          "error": 0.126
+        },
+        "Points": {
+          "projection": 7.032,
+          "actual": 4.0,
+          "error": 3.032
+        },
+        "Rebounds": {
+          "projection": 5.141,
+          "actual": 7.0,
+          "error": -1.859
+        },
+        "Assists": {
+          "projection": 0.821,
+          "actual": 1.0,
+          "error": -0.179
+        },
+        "Threes": {
+          "projection": 0.019,
+          "actual": 0.0,
+          "error": 0.019
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 14.98,
+          "actual": 19.0,
+          "error": -4.02
+        },
+        "Points": {
+          "projection": 5.508,
+          "actual": 4.0,
+          "error": 1.508
+        },
+        "Rebounds": {
+          "projection": 4.026,
+          "actual": 7.0,
+          "error": -2.974
+        },
+        "Assists": {
+          "projection": 0.643,
+          "actual": 1.0,
+          "error": -0.357
+        },
+        "Threes": {
+          "projection": 0.015,
+          "actual": 0.0,
+          "error": 0.015
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Nic Codie",
+      "team": "SMU",
+      "actual": {
+        "name": "Nic Codie",
+        "id": "5149083",
+        "minutes": 11.0,
+        "Points": 6.0,
+        "Rebounds": 7.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 14.848,
+          "actual": 11.0,
+          "error": 3.848
+        },
+        "Points": {
+          "projection": 3.259,
+          "actual": 6.0,
+          "error": -2.741
+        },
+        "Rebounds": {
+          "projection": 2.956,
+          "actual": 7.0,
+          "error": -4.044
+        },
+        "Assists": {
+          "projection": 0.541,
+          "actual": 1.0,
+          "error": -0.459
+        },
+        "Threes": {
+          "projection": 0.057,
+          "actual": 0.0,
+          "error": 0.057
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 14.848,
+          "actual": 11.0,
+          "error": 3.848
+        },
+        "Points": {
+          "projection": 3.235,
+          "actual": 6.0,
+          "error": -2.765
+        },
+        "Rebounds": {
+          "projection": 2.878,
+          "actual": 7.0,
+          "error": -4.122
+        },
+        "Assists": {
+          "projection": 0.533,
+          "actual": 1.0,
+          "error": -0.467
+        },
+        "Threes": {
+          "projection": 0.055,
+          "actual": 0.0,
+          "error": 0.055
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 11.53,
+          "actual": 11.0,
+          "error": 0.53
+        },
+        "Points": {
+          "projection": 2.512,
+          "actual": 6.0,
+          "error": -3.488
+        },
+        "Rebounds": {
+          "projection": 2.235,
+          "actual": 7.0,
+          "error": -4.765
+        },
+        "Assists": {
+          "projection": 0.414,
+          "actual": 1.0,
+          "error": -0.586
+        },
+        "Threes": {
+          "projection": 0.043,
+          "actual": 0.0,
+          "error": 0.043
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Niccolo Kalischer-Stork",
+      "team": "SMU",
+      "actual": {
+        "name": "Niccolo Kalischer-Stork",
+        "id": "5238183",
+        "minutes": 2.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0.222,
+          "actual": 0.0,
+          "error": 0.222
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 0.221,
+          "actual": 0.0,
+          "error": 0.221
+        },
+        "Rebounds": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 0.86,
+          "actual": 2.0,
+          "error": -1.14
+        },
+        "Points": {
+          "projection": 0.19,
+          "actual": 0.0,
+          "error": 0.19
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Oziyah Sellers",
+      "team": "SMU",
+      "actual": {
+        "name": "Oziyah Sellers",
+        "id": "5105642",
+        "minutes": 21.0,
+        "Points": 17.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 5.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 27.748,
+          "actual": 21.0,
+          "error": 6.748
+        },
+        "Points": {
+          "projection": 12.276,
+          "actual": 17.0,
+          "error": -4.724
+        },
+        "Rebounds": {
+          "projection": 3.365,
+          "actual": 0.0,
+          "error": 3.365
+        },
+        "Assists": {
+          "projection": 1.671,
+          "actual": 0.0,
+          "error": 1.671
+        },
+        "Threes": {
+          "projection": 1.815,
+          "actual": 5.0,
+          "error": -3.185
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 27.748,
+          "actual": 21.0,
+          "error": 6.748
+        },
+        "Points": {
+          "projection": 12.187,
+          "actual": 17.0,
+          "error": -4.813
+        },
+        "Rebounds": {
+          "projection": 3.276,
+          "actual": 0.0,
+          "error": 3.276
+        },
+        "Assists": {
+          "projection": 1.645,
+          "actual": 0.0,
+          "error": 1.645
+        },
+        "Threes": {
+          "projection": 1.767,
+          "actual": 5.0,
+          "error": -3.233
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.33,
+          "actual": 21.0,
+          "error": 2.33
+        },
+        "Points": {
+          "projection": 10.247,
+          "actual": 17.0,
+          "error": -6.753
+        },
+        "Rebounds": {
+          "projection": 2.755,
+          "actual": 0.0,
+          "error": 2.755
+        },
+        "Assists": {
+          "projection": 1.383,
+          "actual": 0.0,
+          "error": 1.383
+        },
+        "Threes": {
+          "projection": 1.486,
+          "actual": 5.0,
+          "error": -3.514
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401929459",
+      "player": "Rowan Brumbaugh",
+      "team": "SMU",
+      "actual": {
+        "name": "Rowan Brumbaugh",
+        "id": "5106280",
+        "minutes": 20.0,
+        "Points": 11.0,
+        "Rebounds": 2.0,
+        "Assists": 7.0,
+        "Threes": 3.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 32.135,
+          "actual": 20.0,
+          "error": 12.135
+        },
+        "Points": {
+          "projection": 15.513,
+          "actual": 11.0,
+          "error": 4.513
+        },
+        "Rebounds": {
+          "projection": 3.971,
+          "actual": 2.0,
+          "error": 1.971
+        },
+        "Assists": {
+          "projection": 3.472,
+          "actual": 7.0,
+          "error": -3.528
+        },
+        "Threes": {
+          "projection": 1.237,
+          "actual": 3.0,
+          "error": -1.763
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 32.135,
+          "actual": 20.0,
+          "error": 12.135
+        },
+        "Points": {
+          "projection": 15.402,
+          "actual": 11.0,
+          "error": 4.402
+        },
+        "Rebounds": {
+          "projection": 3.866,
+          "actual": 2.0,
+          "error": 1.866
+        },
+        "Assists": {
+          "projection": 3.419,
+          "actual": 7.0,
+          "error": -3.581
+        },
+        "Threes": {
+          "projection": 1.205,
+          "actual": 3.0,
+          "error": -1.795
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.19,
+          "actual": 20.0,
+          "error": 3.19
+        },
+        "Points": {
+          "projection": 11.114,
+          "actual": 11.0,
+          "error": 0.114
+        },
+        "Rebounds": {
+          "projection": 2.79,
+          "actual": 2.0,
+          "error": 0.79
+        },
+        "Assists": {
+          "projection": 2.467,
+          "actual": 7.0,
+          "error": -4.533
+        },
+        "Threes": {
+          "projection": 0.869,
+          "actual": 3.0,
+          "error": -2.131
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Colby Garland",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Colby Garland",
+        "id": "5176315",
+        "minutes": 31.0,
+        "Points": 19.0,
+        "Rebounds": 1.0,
+        "Assists": 4.0,
+        "Threes": 2.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 31.675,
+          "actual": 31.0,
+          "error": 0.675
+        },
+        "Points": {
+          "projection": 16.899,
+          "actual": 19.0,
+          "error": -2.101
+        },
+        "Rebounds": {
+          "projection": 3.462,
+          "actual": 1.0,
+          "error": 2.462
+        },
+        "Assists": {
+          "projection": 3.95,
+          "actual": 4.0,
+          "error": -0.05
+        },
+        "Threes": {
+          "projection": 0.832,
+          "actual": 2.0,
+          "error": -1.168
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 31.675,
+          "actual": 31.0,
+          "error": 0.675
+        },
+        "Points": {
+          "projection": 16.706,
+          "actual": 19.0,
+          "error": -2.294
+        },
+        "Rebounds": {
+          "projection": 3.45,
+          "actual": 1.0,
+          "error": 2.45
+        },
+        "Assists": {
+          "projection": 3.918,
+          "actual": 4.0,
+          "error": -0.082
+        },
+        "Threes": {
+          "projection": 0.829,
+          "actual": 2.0,
+          "error": -1.171
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 25.71,
+          "actual": 31.0,
+          "error": -5.29
+        },
+        "Points": {
+          "projection": 13.56,
+          "actual": 19.0,
+          "error": -5.44
+        },
+        "Rebounds": {
+          "projection": 2.8,
+          "actual": 1.0,
+          "error": 1.8
+        },
+        "Assists": {
+          "projection": 3.181,
+          "actual": 4.0,
+          "error": -0.819
+        },
+        "Threes": {
+          "projection": 0.673,
+          "actual": 2.0,
+          "error": -1.327
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Cole Kirouac",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Cole Kirouac",
+        "id": "5172343",
+        "minutes": 8.0,
+        "Points": 0.0,
+        "Rebounds": 3.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 12.53,
+          "actual": 8.0,
+          "error": 4.53
+        },
+        "Points": {
+          "projection": 1.98,
+          "actual": 0.0,
+          "error": 1.98
+        },
+        "Rebounds": {
+          "projection": 3.092,
+          "actual": 3.0,
+          "error": 0.092
+        },
+        "Assists": {
+          "projection": 0.39,
+          "actual": 2.0,
+          "error": -1.61
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 12.53,
+          "actual": 8.0,
+          "error": 4.53
+        },
+        "Points": {
+          "projection": 1.958,
+          "actual": 0.0,
+          "error": 1.958
+        },
+        "Rebounds": {
+          "projection": 3.082,
+          "actual": 3.0,
+          "error": 0.082
+        },
+        "Assists": {
+          "projection": 0.387,
+          "actual": 2.0,
+          "error": -1.613
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 12.89,
+          "actual": 8.0,
+          "error": 4.89
+        },
+        "Points": {
+          "projection": 2.014,
+          "actual": 0.0,
+          "error": 2.014
+        },
+        "Rebounds": {
+          "projection": 3.17,
+          "actual": 3.0,
+          "error": 0.17
+        },
+        "Assists": {
+          "projection": 0.398,
+          "actual": 2.0,
+          "error": -1.602
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Courtland Muldrew",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Courtland Muldrew",
+        "id": "5221320",
+        "minutes": 9.0,
+        "Points": 2.0,
+        "Rebounds": 3.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 11.3,
+          "actual": 9.0,
+          "error": 2.3
+        },
+        "Points": {
+          "projection": 4.033,
+          "actual": 2.0,
+          "error": 2.033
+        },
+        "Rebounds": {
+          "projection": 1.459,
+          "actual": 3.0,
+          "error": -1.541
+        },
+        "Assists": {
+          "projection": 1.192,
+          "actual": 0.0,
+          "error": 1.192
+        },
+        "Threes": {
+          "projection": 0.229,
+          "actual": 0.0,
+          "error": 0.229
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 11.3,
+          "actual": 9.0,
+          "error": 2.3
+        },
+        "Points": {
+          "projection": 3.987,
+          "actual": 2.0,
+          "error": 1.987
+        },
+        "Rebounds": {
+          "projection": 1.454,
+          "actual": 3.0,
+          "error": -1.546
+        },
+        "Assists": {
+          "projection": 1.183,
+          "actual": 0.0,
+          "error": 1.183
+        },
+        "Threes": {
+          "projection": 0.229,
+          "actual": 0.0,
+          "error": 0.229
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 8.13,
+          "actual": 9.0,
+          "error": -0.87
+        },
+        "Points": {
+          "projection": 2.868,
+          "actual": 2.0,
+          "error": 0.868
+        },
+        "Rebounds": {
+          "projection": 1.046,
+          "actual": 3.0,
+          "error": -1.954
+        },
+        "Assists": {
+          "projection": 0.851,
+          "actual": 0.0,
+          "error": 0.851
+        },
+        "Threes": {
+          "projection": 0.164,
+          "actual": 0.0,
+          "error": 0.164
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Jackson Fields",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Jackson Fields",
+        "id": "5106449",
+        "minutes": 29.0,
+        "Points": 7.0,
+        "Rebounds": 4.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 18.13,
+          "actual": 29.0,
+          "error": -10.87
+        },
+        "Points": {
+          "projection": 5.7,
+          "actual": 7.0,
+          "error": -1.3
+        },
+        "Rebounds": {
+          "projection": 4.778,
+          "actual": 4.0,
+          "error": 0.778
+        },
+        "Assists": {
+          "projection": 1.167,
+          "actual": 1.0,
+          "error": 0.167
+        },
+        "Threes": {
+          "projection": 0.304,
+          "actual": 0.0,
+          "error": 0.304
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 18.13,
+          "actual": 29.0,
+          "error": -10.87
+        },
+        "Points": {
+          "projection": 5.635,
+          "actual": 7.0,
+          "error": -1.365
+        },
+        "Rebounds": {
+          "projection": 4.762,
+          "actual": 4.0,
+          "error": 0.762
+        },
+        "Assists": {
+          "projection": 1.157,
+          "actual": 1.0,
+          "error": 0.157
+        },
+        "Threes": {
+          "projection": 0.303,
+          "actual": 0.0,
+          "error": 0.303
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 21.46,
+          "actual": 29.0,
+          "error": -7.54
+        },
+        "Points": {
+          "projection": 6.67,
+          "actual": 7.0,
+          "error": -0.33
+        },
+        "Rebounds": {
+          "projection": 5.636,
+          "actual": 4.0,
+          "error": 1.636
+        },
+        "Assists": {
+          "projection": 1.37,
+          "actual": 1.0,
+          "error": 0.37
+        },
+        "Threes": {
+          "projection": 0.359,
+          "actual": 0.0,
+          "error": 0.359
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Jackson McVey",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Jackson McVey",
+        "id": "5144145",
+        "minutes": 6.0,
+        "Points": 1.0,
+        "Rebounds": 0.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 5.0,
+          "actual": 6.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 2.0,
+          "actual": 1.0,
+          "error": 1.0
+        },
+        "Rebounds": {
+          "projection": 1.0,
+          "actual": 0.0,
+          "error": 1.0
+        },
+        "Assists": {
+          "projection": 0.25,
+          "actual": 1.0,
+          "error": -0.75
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 5.0,
+          "actual": 6.0,
+          "error": -1.0
+        },
+        "Points": {
+          "projection": 1.977,
+          "actual": 1.0,
+          "error": 0.977
+        },
+        "Rebounds": {
+          "projection": 0.997,
+          "actual": 0.0,
+          "error": 0.997
+        },
+        "Assists": {
+          "projection": 0.248,
+          "actual": 1.0,
+          "error": -0.752
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 4.58,
+          "actual": 6.0,
+          "error": -1.42
+        },
+        "Points": {
+          "projection": 1.811,
+          "actual": 1.0,
+          "error": 0.811
+        },
+        "Rebounds": {
+          "projection": 0.913,
+          "actual": 0.0,
+          "error": 0.913
+        },
+        "Assists": {
+          "projection": 0.227,
+          "actual": 1.0,
+          "error": -0.773
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Kaiden Bailey",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Kaiden Bailey",
+        "id": "5144491",
+        "minutes": 3.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 10.5,
+          "actual": 3.0,
+          "error": 7.5
+        },
+        "Points": {
+          "projection": 3.5,
+          "actual": 0.0,
+          "error": 3.5
+        },
+        "Rebounds": {
+          "projection": 1.25,
+          "actual": 0.0,
+          "error": 1.25
+        },
+        "Assists": {
+          "projection": 1.25,
+          "actual": 0.0,
+          "error": 1.25
+        },
+        "Threes": {
+          "projection": 0.75,
+          "actual": 0.0,
+          "error": 0.75
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 10.5,
+          "actual": 3.0,
+          "error": 7.5
+        },
+        "Points": {
+          "projection": 3.46,
+          "actual": 0.0,
+          "error": 3.46
+        },
+        "Rebounds": {
+          "projection": 1.246,
+          "actual": 0.0,
+          "error": 1.246
+        },
+        "Assists": {
+          "projection": 1.24,
+          "actual": 0.0,
+          "error": 1.24
+        },
+        "Threes": {
+          "projection": 0.747,
+          "actual": 0.0,
+          "error": 0.747
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 9.78,
+          "actual": 3.0,
+          "error": 6.78
+        },
+        "Points": {
+          "projection": 3.223,
+          "actual": 0.0,
+          "error": 3.223
+        },
+        "Rebounds": {
+          "projection": 1.16,
+          "actual": 0.0,
+          "error": 1.16
+        },
+        "Assists": {
+          "projection": 1.155,
+          "actual": 0.0,
+          "error": 1.155
+        },
+        "Threes": {
+          "projection": 0.696,
+          "actual": 0.0,
+          "error": 0.696
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Kam Craft",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Kam Craft",
+        "id": "5105607",
+        "minutes": 28.0,
+        "Points": 0.0,
+        "Rebounds": 3.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 23.29,
+          "actual": 28.0,
+          "error": -4.71
+        },
+        "Points": {
+          "projection": 8.46,
+          "actual": 0.0,
+          "error": 8.46
+        },
+        "Rebounds": {
+          "projection": 2.387,
+          "actual": 3.0,
+          "error": -0.613
+        },
+        "Assists": {
+          "projection": 1.081,
+          "actual": 1.0,
+          "error": 0.081
+        },
+        "Threes": {
+          "projection": 1.964,
+          "actual": 0.0,
+          "error": 1.964
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 23.29,
+          "actual": 28.0,
+          "error": -4.71
+        },
+        "Points": {
+          "projection": 8.364,
+          "actual": 0.0,
+          "error": 8.364
+        },
+        "Rebounds": {
+          "projection": 2.379,
+          "actual": 3.0,
+          "error": -0.621
+        },
+        "Assists": {
+          "projection": 1.072,
+          "actual": 1.0,
+          "error": 0.072
+        },
+        "Threes": {
+          "projection": 1.958,
+          "actual": 0.0,
+          "error": 1.958
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 24.0,
+          "actual": 28.0,
+          "error": -4.0
+        },
+        "Points": {
+          "projection": 8.619,
+          "actual": 0.0,
+          "error": 8.619
+        },
+        "Rebounds": {
+          "projection": 2.452,
+          "actual": 3.0,
+          "error": -0.548
+        },
+        "Assists": {
+          "projection": 1.105,
+          "actual": 1.0,
+          "error": 0.105
+        },
+        "Threes": {
+          "projection": 2.017,
+          "actual": 0.0,
+          "error": 2.017
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Kayden Allen",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Kayden Allen",
+        "id": "5174455",
+        "minutes": 18.0,
+        "Points": 16.0,
+        "Rebounds": 2.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 7.5,
+          "actual": 18.0,
+          "error": -10.5
+        },
+        "Points": {
+          "projection": 4.25,
+          "actual": 16.0,
+          "error": -11.75
+        },
+        "Rebounds": {
+          "projection": 1.75,
+          "actual": 2.0,
+          "error": -0.25
+        },
+        "Assists": {
+          "projection": 0.5,
+          "actual": 1.0,
+          "error": -0.5
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 7.5,
+          "actual": 18.0,
+          "error": -10.5
+        },
+        "Points": {
+          "projection": 4.202,
+          "actual": 16.0,
+          "error": -11.798
+        },
+        "Rebounds": {
+          "projection": 1.744,
+          "actual": 2.0,
+          "error": -0.256
+        },
+        "Assists": {
+          "projection": 0.496,
+          "actual": 1.0,
+          "error": -0.504
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 6.49,
+          "actual": 18.0,
+          "error": -11.51
+        },
+        "Points": {
+          "projection": 3.636,
+          "actual": 16.0,
+          "error": -12.364
+        },
+        "Rebounds": {
+          "projection": 1.509,
+          "actual": 2.0,
+          "error": -0.491
+        },
+        "Assists": {
+          "projection": 0.429,
+          "actual": 1.0,
+          "error": -0.571
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Nasir Whitlock",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Nasir Whitlock",
+        "id": "5176076",
+        "minutes": 15.0,
+        "Points": 3.0,
+        "Rebounds": 4.0,
+        "Assists": 2.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 31.25,
+          "actual": 15.0,
+          "error": 16.25
+        },
+        "Points": {
+          "projection": 16.487,
+          "actual": 3.0,
+          "error": 13.487
+        },
+        "Rebounds": {
+          "projection": 4.158,
+          "actual": 4.0,
+          "error": 0.158
+        },
+        "Assists": {
+          "projection": 2.943,
+          "actual": 2.0,
+          "error": 0.943
+        },
+        "Threes": {
+          "projection": 1.875,
+          "actual": 1.0,
+          "error": 0.875
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 31.25,
+          "actual": 15.0,
+          "error": 16.25
+        },
+        "Points": {
+          "projection": 16.299,
+          "actual": 3.0,
+          "error": 13.299
+        },
+        "Rebounds": {
+          "projection": 4.144,
+          "actual": 4.0,
+          "error": 0.144
+        },
+        "Assists": {
+          "projection": 2.919,
+          "actual": 2.0,
+          "error": 0.919
+        },
+        "Threes": {
+          "projection": 1.868,
+          "actual": 1.0,
+          "error": 0.868
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 25.9,
+          "actual": 15.0,
+          "error": 10.9
+        },
+        "Points": {
+          "projection": 13.509,
+          "actual": 3.0,
+          "error": 10.509
+        },
+        "Rebounds": {
+          "projection": 3.434,
+          "actual": 4.0,
+          "error": -0.566
+        },
+        "Assists": {
+          "projection": 2.419,
+          "actual": 2.0,
+          "error": 0.419
+        },
+        "Threes": {
+          "projection": 1.548,
+          "actual": 1.0,
+          "error": 0.548
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Tylis Jordan",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Tylis Jordan",
+        "id": "5144115",
+        "minutes": 34.0,
+        "Points": 19.0,
+        "Rebounds": 5.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 31.0,
+          "actual": 34.0,
+          "error": -3.0
+        },
+        "Points": {
+          "projection": 16.0,
+          "actual": 19.0,
+          "error": -3.0
+        },
+        "Rebounds": {
+          "projection": 6.25,
+          "actual": 5.0,
+          "error": 1.25
+        },
+        "Assists": {
+          "projection": 0.75,
+          "actual": 1.0,
+          "error": -0.25
+        },
+        "Threes": {
+          "projection": 0.25,
+          "actual": 0.0,
+          "error": 0.25
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 31.0,
+          "actual": 34.0,
+          "error": -3.0
+        },
+        "Points": {
+          "projection": 15.817,
+          "actual": 19.0,
+          "error": -3.183
+        },
+        "Rebounds": {
+          "projection": 6.229,
+          "actual": 5.0,
+          "error": 1.229
+        },
+        "Assists": {
+          "projection": 0.744,
+          "actual": 1.0,
+          "error": -0.256
+        },
+        "Threes": {
+          "projection": 0.249,
+          "actual": 0.0,
+          "error": 0.249
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 29.04,
+          "actual": 34.0,
+          "error": -4.96
+        },
+        "Points": {
+          "projection": 14.817,
+          "actual": 19.0,
+          "error": -4.183
+        },
+        "Rebounds": {
+          "projection": 5.835,
+          "actual": 5.0,
+          "error": 0.835
+        },
+        "Assists": {
+          "projection": 0.697,
+          "actual": 1.0,
+          "error": -0.303
+        },
+        "Threes": {
+          "projection": 0.233,
+          "actual": 0.0,
+          "error": 0.233
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401906784",
+      "player": "Victor Valdes",
+      "team": "Georgia Tech",
+      "actual": {
+        "name": "Victor Valdes",
+        "id": "5176736",
+        "minutes": 19.0,
+        "Points": 15.0,
+        "Rebounds": 0.0,
+        "Assists": 4.0,
+        "Threes": 2.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 25.141,
+          "actual": 19.0,
+          "error": 6.141
+        },
+        "Points": {
+          "projection": 12.305,
+          "actual": 15.0,
+          "error": -2.695
+        },
+        "Rebounds": {
+          "projection": 4.496,
+          "actual": 0.0,
+          "error": 4.496
+        },
+        "Assists": {
+          "projection": 4.052,
+          "actual": 4.0,
+          "error": 0.052
+        },
+        "Threes": {
+          "projection": 1.155,
+          "actual": 2.0,
+          "error": -0.845
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 25.141,
+          "actual": 19.0,
+          "error": 6.141
+        },
+        "Points": {
+          "projection": 12.165,
+          "actual": 15.0,
+          "error": -2.835
+        },
+        "Rebounds": {
+          "projection": 4.481,
+          "actual": 0.0,
+          "error": 4.481
+        },
+        "Assists": {
+          "projection": 4.02,
+          "actual": 4.0,
+          "error": 0.02
+        },
+        "Threes": {
+          "projection": 1.151,
+          "actual": 2.0,
+          "error": -0.849
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 19.81,
+          "actual": 19.0,
+          "error": 0.81
+        },
+        "Points": {
+          "projection": 9.585,
+          "actual": 15.0,
+          "error": -5.415
+        },
+        "Rebounds": {
+          "projection": 3.53,
+          "actual": 0.0,
+          "error": 3.53
+        },
+        "Assists": {
+          "projection": 3.167,
+          "actual": 4.0,
+          "error": -0.833
+        },
+        "Threes": {
+          "projection": 0.907,
+          "actual": 2.0,
+          "error": -1.093
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Alex Samodurov",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Alex Samodurov",
+        "id": "5351837",
+        "minutes": 10.0,
+        "Points": 5.0,
+        "Rebounds": 3.0,
+        "Assists": 0.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 12.25,
+          "actual": 10.0,
+          "error": 2.25
+        },
+        "Points": {
+          "projection": 4.25,
+          "actual": 5.0,
+          "error": -0.75
+        },
+        "Rebounds": {
+          "projection": 3.0,
+          "actual": 3.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.25,
+          "actual": 0.0,
+          "error": 0.25
+        },
+        "Threes": {
+          "projection": 0.25,
+          "actual": 1.0,
+          "error": -0.75
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 12.25,
+          "actual": 10.0,
+          "error": 2.25
+        },
+        "Points": {
+          "projection": 4.294,
+          "actual": 5.0,
+          "error": -0.706
+        },
+        "Rebounds": {
+          "projection": 3.027,
+          "actual": 3.0,
+          "error": 0.027
+        },
+        "Assists": {
+          "projection": 0.252,
+          "actual": 0.0,
+          "error": 0.252
+        },
+        "Threes": {
+          "projection": 0.252,
+          "actual": 1.0,
+          "error": -0.748
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 12.61,
+          "actual": 10.0,
+          "error": 2.61
+        },
+        "Points": {
+          "projection": 4.421,
+          "actual": 5.0,
+          "error": -0.579
+        },
+        "Rebounds": {
+          "projection": 3.116,
+          "actual": 3.0,
+          "error": 0.116
+        },
+        "Assists": {
+          "projection": 0.26,
+          "actual": 0.0,
+          "error": 0.26
+        },
+        "Threes": {
+          "projection": 0.26,
+          "actual": 1.0,
+          "error": -0.74
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Angelo Brizzi",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Angelo Brizzi",
+        "id": "4684022",
+        "minutes": 10.0,
+        "Points": 3.0,
+        "Rebounds": 2.0,
+        "Assists": 0.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 24.5,
+          "actual": 10.0,
+          "error": 14.5
+        },
+        "Points": {
+          "projection": 11.412,
+          "actual": 3.0,
+          "error": 8.412
+        },
+        "Rebounds": {
+          "projection": 2.075,
+          "actual": 2.0,
+          "error": 0.075
+        },
+        "Assists": {
+          "projection": 1.514,
+          "actual": 0.0,
+          "error": 1.514
+        },
+        "Threes": {
+          "projection": 1.365,
+          "actual": 1.0,
+          "error": 0.365
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 24.5,
+          "actual": 10.0,
+          "error": 14.5
+        },
+        "Points": {
+          "projection": 11.532,
+          "actual": 3.0,
+          "error": 8.532
+        },
+        "Rebounds": {
+          "projection": 2.094,
+          "actual": 2.0,
+          "error": 0.094
+        },
+        "Assists": {
+          "projection": 1.529,
+          "actual": 0.0,
+          "error": 1.529
+        },
+        "Threes": {
+          "projection": 1.377,
+          "actual": 1.0,
+          "error": 0.377
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 17.16,
+          "actual": 10.0,
+          "error": 7.16
+        },
+        "Points": {
+          "projection": 8.077,
+          "actual": 3.0,
+          "error": 5.077
+        },
+        "Rebounds": {
+          "projection": 1.466,
+          "actual": 2.0,
+          "error": -0.534
+        },
+        "Assists": {
+          "projection": 1.071,
+          "actual": 0.0,
+          "error": 1.071
+        },
+        "Threes": {
+          "projection": 0.965,
+          "actual": 1.0,
+          "error": -0.035
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Isaiah Denis",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Isaiah Denis",
+        "id": "5217193",
+        "minutes": 11.0,
+        "Points": 4.0,
+        "Rebounds": 0.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 7.933,
+          "actual": 11.0,
+          "error": -3.067
+        },
+        "Points": {
+          "projection": 4.278,
+          "actual": 4.0,
+          "error": 0.278
+        },
+        "Rebounds": {
+          "projection": 1.478,
+          "actual": 0.0,
+          "error": 1.478
+        },
+        "Assists": {
+          "projection": 0.583,
+          "actual": 1.0,
+          "error": -0.417
+        },
+        "Threes": {
+          "projection": 0.894,
+          "actual": 0.0,
+          "error": 0.894
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 7.933,
+          "actual": 11.0,
+          "error": -3.067
+        },
+        "Points": {
+          "projection": 4.323,
+          "actual": 4.0,
+          "error": 0.323
+        },
+        "Rebounds": {
+          "projection": 1.491,
+          "actual": 0.0,
+          "error": 1.491
+        },
+        "Assists": {
+          "projection": 0.589,
+          "actual": 1.0,
+          "error": -0.411
+        },
+        "Threes": {
+          "projection": 0.903,
+          "actual": 0.0,
+          "error": 0.903
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 14.26,
+          "actual": 11.0,
+          "error": 3.26
+        },
+        "Points": {
+          "projection": 7.77,
+          "actual": 4.0,
+          "error": 3.77
+        },
+        "Rebounds": {
+          "projection": 2.68,
+          "actual": 0.0,
+          "error": 2.68
+        },
+        "Assists": {
+          "projection": 1.059,
+          "actual": 1.0,
+          "error": 0.059
+        },
+        "Threes": {
+          "projection": 1.622,
+          "actual": 0.0,
+          "error": 1.622
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Jarin Stevenson",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Jarin Stevenson",
+        "id": "4873181",
+        "minutes": 28.0,
+        "Points": 13.0,
+        "Rebounds": 6.0,
+        "Assists": 1.0,
+        "Threes": 2.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 25.192,
+          "actual": 28.0,
+          "error": -2.808
+        },
+        "Points": {
+          "projection": 7.786,
+          "actual": 13.0,
+          "error": -5.214
+        },
+        "Rebounds": {
+          "projection": 4.193,
+          "actual": 6.0,
+          "error": -1.807
+        },
+        "Assists": {
+          "projection": 0.747,
+          "actual": 1.0,
+          "error": -0.253
+        },
+        "Threes": {
+          "projection": 0.601,
+          "actual": 2.0,
+          "error": -1.399
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 25.192,
+          "actual": 28.0,
+          "error": -2.808
+        },
+        "Points": {
+          "projection": 7.868,
+          "actual": 13.0,
+          "error": -5.132
+        },
+        "Rebounds": {
+          "projection": 4.232,
+          "actual": 6.0,
+          "error": -1.768
+        },
+        "Assists": {
+          "projection": 0.755,
+          "actual": 1.0,
+          "error": -0.245
+        },
+        "Threes": {
+          "projection": 0.606,
+          "actual": 2.0,
+          "error": -1.394
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 25.18,
+          "actual": 28.0,
+          "error": -2.82
+        },
+        "Points": {
+          "projection": 7.864,
+          "actual": 13.0,
+          "error": -5.136
+        },
+        "Rebounds": {
+          "projection": 4.23,
+          "actual": 6.0,
+          "error": -1.77
+        },
+        "Assists": {
+          "projection": 0.754,
+          "actual": 1.0,
+          "error": -0.246
+        },
+        "Threes": {
+          "projection": 0.606,
+          "actual": 2.0,
+          "error": -1.394
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Jaydon Young",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Jaydon Young",
+        "id": "4711266",
+        "minutes": 13.0,
+        "Points": 3.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 9.333,
+          "actual": 13.0,
+          "error": -3.667
+        },
+        "Points": {
+          "projection": 2.859,
+          "actual": 3.0,
+          "error": -0.141
+        },
+        "Rebounds": {
+          "projection": 1.047,
+          "actual": 0.0,
+          "error": 1.047
+        },
+        "Assists": {
+          "projection": 0.526,
+          "actual": 0.0,
+          "error": 0.526
+        },
+        "Threes": {
+          "projection": 0.751,
+          "actual": 1.0,
+          "error": -0.249
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 9.333,
+          "actual": 13.0,
+          "error": -3.667
+        },
+        "Points": {
+          "projection": 2.888,
+          "actual": 3.0,
+          "error": -0.112
+        },
+        "Rebounds": {
+          "projection": 1.057,
+          "actual": 0.0,
+          "error": 1.057
+        },
+        "Assists": {
+          "projection": 0.532,
+          "actual": 0.0,
+          "error": 0.532
+        },
+        "Threes": {
+          "projection": 0.758,
+          "actual": 1.0,
+          "error": -0.242
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 12.05,
+          "actual": 13.0,
+          "error": -0.95
+        },
+        "Points": {
+          "projection": 3.729,
+          "actual": 3.0,
+          "error": 0.729
+        },
+        "Rebounds": {
+          "projection": 1.364,
+          "actual": 0.0,
+          "error": 1.364
+        },
+        "Assists": {
+          "projection": 0.686,
+          "actual": 0.0,
+          "error": 0.686
+        },
+        "Threes": {
+          "projection": 0.978,
+          "actual": 1.0,
+          "error": -0.022
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Matt Able",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Matt Able",
+        "id": "5196877",
+        "minutes": 31.0,
+        "Points": 23.0,
+        "Rebounds": 2.0,
+        "Assists": 3.0,
+        "Threes": 5.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 22.784,
+          "actual": 31.0,
+          "error": -8.216
+        },
+        "Points": {
+          "projection": 9.449,
+          "actual": 23.0,
+          "error": -13.551
+        },
+        "Rebounds": {
+          "projection": 3.15,
+          "actual": 2.0,
+          "error": 1.15
+        },
+        "Assists": {
+          "projection": 1.343,
+          "actual": 3.0,
+          "error": -1.657
+        },
+        "Threes": {
+          "projection": 1.542,
+          "actual": 5.0,
+          "error": -3.458
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 22.784,
+          "actual": 31.0,
+          "error": -8.216
+        },
+        "Points": {
+          "projection": 9.548,
+          "actual": 23.0,
+          "error": -13.452
+        },
+        "Rebounds": {
+          "projection": 3.179,
+          "actual": 2.0,
+          "error": 1.179
+        },
+        "Assists": {
+          "projection": 1.356,
+          "actual": 3.0,
+          "error": -1.644
+        },
+        "Threes": {
+          "projection": 1.556,
+          "actual": 5.0,
+          "error": -3.444
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 25.26,
+          "actual": 31.0,
+          "error": -5.74
+        },
+        "Points": {
+          "projection": 10.585,
+          "actual": 23.0,
+          "error": -12.415
+        },
+        "Rebounds": {
+          "projection": 3.524,
+          "actual": 2.0,
+          "error": 1.524
+        },
+        "Assists": {
+          "projection": 1.504,
+          "actual": 3.0,
+          "error": -1.496
+        },
+        "Threes": {
+          "projection": 1.725,
+          "actual": 5.0,
+          "error": -3.275
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Maximo Adams",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Maximo Adams",
+        "id": "5144522",
+        "minutes": 34.0,
+        "Points": 2.0,
+        "Rebounds": 7.0,
+        "Assists": 2.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 22.0,
+          "actual": 34.0,
+          "error": -12.0
+        },
+        "Points": {
+          "projection": 9.5,
+          "actual": 2.0,
+          "error": 7.5
+        },
+        "Rebounds": {
+          "projection": 8.75,
+          "actual": 7.0,
+          "error": 1.75
+        },
+        "Assists": {
+          "projection": 1.0,
+          "actual": 2.0,
+          "error": -1.0
+        },
+        "Threes": {
+          "projection": 1.25,
+          "actual": 0.0,
+          "error": 1.25
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 22.0,
+          "actual": 34.0,
+          "error": -12.0
+        },
+        "Points": {
+          "projection": 9.599,
+          "actual": 2.0,
+          "error": 7.599
+        },
+        "Rebounds": {
+          "projection": 8.83,
+          "actual": 7.0,
+          "error": 1.83
+        },
+        "Assists": {
+          "projection": 1.01,
+          "actual": 2.0,
+          "error": -0.99
+        },
+        "Threes": {
+          "projection": 1.261,
+          "actual": 0.0,
+          "error": 1.261
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.08,
+          "actual": 34.0,
+          "error": -10.92
+        },
+        "Points": {
+          "projection": 10.071,
+          "actual": 2.0,
+          "error": 8.071
+        },
+        "Rebounds": {
+          "projection": 9.263,
+          "actual": 7.0,
+          "error": 2.263
+        },
+        "Assists": {
+          "projection": 1.059,
+          "actual": 2.0,
+          "error": -0.941
+        },
+        "Threes": {
+          "projection": 1.323,
+          "actual": 0.0,
+          "error": 1.323
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Sayon Keita",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Sayon Keita",
+        "id": "5347035",
+        "minutes": 16.0,
+        "Points": 6.0,
+        "Rebounds": 6.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 22.0,
+          "actual": 16.0,
+          "error": 6.0
+        },
+        "Points": {
+          "projection": 6.75,
+          "actual": 6.0,
+          "error": 0.75
+        },
+        "Rebounds": {
+          "projection": 5.0,
+          "actual": 6.0,
+          "error": -1.0
+        },
+        "Assists": {
+          "projection": 0.5,
+          "actual": 0.0,
+          "error": 0.5
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 22.0,
+          "actual": 16.0,
+          "error": 6.0
+        },
+        "Points": {
+          "projection": 6.821,
+          "actual": 6.0,
+          "error": 0.821
+        },
+        "Rebounds": {
+          "projection": 5.046,
+          "actual": 6.0,
+          "error": -0.954
+        },
+        "Assists": {
+          "projection": 0.505,
+          "actual": 0.0,
+          "error": 0.505
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 23.56,
+          "actual": 16.0,
+          "error": 7.56
+        },
+        "Points": {
+          "projection": 7.304,
+          "actual": 6.0,
+          "error": 1.304
+        },
+        "Rebounds": {
+          "projection": 5.403,
+          "actual": 6.0,
+          "error": -0.597
+        },
+        "Assists": {
+          "projection": 0.541,
+          "actual": 0.0,
+          "error": 0.541
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401912710",
+      "player": "Terrence Brown",
+      "team": "North Carolina",
+      "actual": {
+        "name": "Terrence Brown",
+        "id": "5177233",
+        "minutes": 29.0,
+        "Points": 20.0,
+        "Rebounds": 6.0,
+        "Assists": 5.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 30.396,
+          "actual": 29.0,
+          "error": 1.396
+        },
+        "Points": {
+          "projection": 19.075,
+          "actual": 20.0,
+          "error": -0.925
+        },
+        "Rebounds": {
+          "projection": 2.805,
+          "actual": 6.0,
+          "error": -3.195
+        },
+        "Assists": {
+          "projection": 3.013,
+          "actual": 5.0,
+          "error": -1.987
+        },
+        "Threes": {
+          "projection": 1.092,
+          "actual": 0.0,
+          "error": 1.092
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 30.396,
+          "actual": 29.0,
+          "error": 1.396
+        },
+        "Points": {
+          "projection": 19.274,
+          "actual": 20.0,
+          "error": -0.726
+        },
+        "Rebounds": {
+          "projection": 2.83,
+          "actual": 6.0,
+          "error": -3.17
+        },
+        "Assists": {
+          "projection": 3.043,
+          "actual": 5.0,
+          "error": -1.957
+        },
+        "Threes": {
+          "projection": 1.102,
+          "actual": 0.0,
+          "error": 1.102
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 30.52,
+          "actual": 29.0,
+          "error": 1.52
+        },
+        "Points": {
+          "projection": 19.353,
+          "actual": 20.0,
+          "error": -0.647
+        },
+        "Rebounds": {
+          "projection": 2.842,
+          "actual": 6.0,
+          "error": -3.158
+        },
+        "Assists": {
+          "projection": 3.055,
+          "actual": 5.0,
+          "error": -1.945
+        },
+        "Threes": {
+          "projection": 1.107,
+          "actual": 0.0,
+          "error": 1.107
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Christian Hammond",
+      "team": "NC State",
+      "actual": {
+        "name": "Christian Hammond",
+        "id": "5176359",
+        "minutes": 33.0,
+        "Points": 13.0,
+        "Rebounds": 0.0,
+        "Assists": 3.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 28.882,
+          "actual": 33.0,
+          "error": -4.118
+        },
+        "Points": {
+          "projection": 13.916,
+          "actual": 13.0,
+          "error": 0.916
+        },
+        "Rebounds": {
+          "projection": 3.46,
+          "actual": 0.0,
+          "error": 3.46
+        },
+        "Assists": {
+          "projection": 2.494,
+          "actual": 3.0,
+          "error": -0.506
+        },
+        "Threes": {
+          "projection": 1.638,
+          "actual": 1.0,
+          "error": 0.638
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 28.882,
+          "actual": 33.0,
+          "error": -4.118
+        },
+        "Points": {
+          "projection": 13.375,
+          "actual": 13.0,
+          "error": 0.375
+        },
+        "Rebounds": {
+          "projection": 3.432,
+          "actual": 0.0,
+          "error": 3.432
+        },
+        "Assists": {
+          "projection": 2.43,
+          "actual": 3.0,
+          "error": -0.57
+        },
+        "Threes": {
+          "projection": 1.625,
+          "actual": 1.0,
+          "error": 0.625
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 24.43,
+          "actual": 33.0,
+          "error": -8.57
+        },
+        "Points": {
+          "projection": 11.313,
+          "actual": 13.0,
+          "error": -1.687
+        },
+        "Rebounds": {
+          "projection": 2.903,
+          "actual": 0.0,
+          "error": 2.903
+        },
+        "Assists": {
+          "projection": 2.056,
+          "actual": 3.0,
+          "error": -0.944
+        },
+        "Threes": {
+          "projection": 1.374,
+          "actual": 1.0,
+          "error": 0.374
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Darius Adams",
+      "team": "NC State",
+      "actual": {
+        "name": "Darius Adams",
+        "id": "5311972",
+        "minutes": 19.0,
+        "Points": 4.0,
+        "Rebounds": 4.0,
+        "Assists": 5.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 25.341,
+          "actual": 19.0,
+          "error": 6.341
+        },
+        "Points": {
+          "projection": 10.843,
+          "actual": 4.0,
+          "error": 6.843
+        },
+        "Rebounds": {
+          "projection": 3.451,
+          "actual": 4.0,
+          "error": -0.549
+        },
+        "Assists": {
+          "projection": 2.358,
+          "actual": 5.0,
+          "error": -2.642
+        },
+        "Threes": {
+          "projection": 1.171,
+          "actual": 0.0,
+          "error": 1.171
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 25.341,
+          "actual": 19.0,
+          "error": 6.341
+        },
+        "Points": {
+          "projection": 10.422,
+          "actual": 4.0,
+          "error": 6.422
+        },
+        "Rebounds": {
+          "projection": 3.423,
+          "actual": 4.0,
+          "error": -0.577
+        },
+        "Assists": {
+          "projection": 2.298,
+          "actual": 5.0,
+          "error": -2.702
+        },
+        "Threes": {
+          "projection": 1.161,
+          "actual": 0.0,
+          "error": 1.161
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 22.25,
+          "actual": 19.0,
+          "error": 3.25
+        },
+        "Points": {
+          "projection": 9.151,
+          "actual": 4.0,
+          "error": 5.151
+        },
+        "Rebounds": {
+          "projection": 3.005,
+          "actual": 4.0,
+          "error": -0.995
+        },
+        "Assists": {
+          "projection": 2.017,
+          "actual": 5.0,
+          "error": -2.983
+        },
+        "Threes": {
+          "projection": 1.02,
+          "actual": 0.0,
+          "error": 1.02
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Eemeli Yalaho",
+      "team": "NC State",
+      "actual": {
+        "name": "Eemeli Yalaho",
+        "id": "5175078",
+        "minutes": 28.0,
+        "Points": 5.0,
+        "Rebounds": 2.0,
+        "Assists": 4.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 26.062,
+          "actual": 28.0,
+          "error": -1.938
+        },
+        "Points": {
+          "projection": 8.732,
+          "actual": 5.0,
+          "error": 3.732
+        },
+        "Rebounds": {
+          "projection": 4.983,
+          "actual": 2.0,
+          "error": 2.983
+        },
+        "Assists": {
+          "projection": 1.217,
+          "actual": 4.0,
+          "error": -2.783
+        },
+        "Threes": {
+          "projection": 1.482,
+          "actual": 1.0,
+          "error": 0.482
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 26.062,
+          "actual": 28.0,
+          "error": -1.938
+        },
+        "Points": {
+          "projection": 8.393,
+          "actual": 5.0,
+          "error": 3.393
+        },
+        "Rebounds": {
+          "projection": 4.942,
+          "actual": 2.0,
+          "error": 2.942
+        },
+        "Assists": {
+          "projection": 1.186,
+          "actual": 4.0,
+          "error": -2.814
+        },
+        "Threes": {
+          "projection": 1.47,
+          "actual": 1.0,
+          "error": 0.47
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 21.26,
+          "actual": 28.0,
+          "error": -6.74
+        },
+        "Points": {
+          "projection": 6.846,
+          "actual": 5.0,
+          "error": 1.846
+        },
+        "Rebounds": {
+          "projection": 4.031,
+          "actual": 2.0,
+          "error": 2.031
+        },
+        "Assists": {
+          "projection": 0.968,
+          "actual": 4.0,
+          "error": -3.032
+        },
+        "Threes": {
+          "projection": 1.199,
+          "actual": 1.0,
+          "error": 0.199
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Kingston Whitty",
+      "team": "NC State",
+      "actual": {
+        "name": "Kingston Whitty",
+        "id": "5308008",
+        "minutes": 0.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 5.0,
+          "actual": 0.0,
+          "error": 5.0
+        },
+        "Points": {
+          "projection": 3.0,
+          "actual": 0.0,
+          "error": 3.0
+        },
+        "Rebounds": {
+          "projection": 0.333,
+          "actual": 0.0,
+          "error": 0.333
+        },
+        "Assists": {
+          "projection": 0.333,
+          "actual": 0.0,
+          "error": 0.333
+        },
+        "Threes": {
+          "projection": 0.333,
+          "actual": 0.0,
+          "error": 0.333
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 5.0,
+          "actual": 0.0,
+          "error": 5.0
+        },
+        "Points": {
+          "projection": 2.883,
+          "actual": 0.0,
+          "error": 2.883
+        },
+        "Rebounds": {
+          "projection": 0.331,
+          "actual": 0.0,
+          "error": 0.331
+        },
+        "Assists": {
+          "projection": 0.325,
+          "actual": 0.0,
+          "error": 0.325
+        },
+        "Threes": {
+          "projection": 0.331,
+          "actual": 0.0,
+          "error": 0.331
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 4.46,
+          "actual": 0.0,
+          "error": 4.46
+        },
+        "Points": {
+          "projection": 2.572,
+          "actual": 0.0,
+          "error": 2.572
+        },
+        "Rebounds": {
+          "projection": 0.295,
+          "actual": 0.0,
+          "error": 0.295
+        },
+        "Assists": {
+          "projection": 0.29,
+          "actual": 0.0,
+          "error": 0.29
+        },
+        "Threes": {
+          "projection": 0.295,
+          "actual": 0.0,
+          "error": 0.295
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Kyle Evans",
+      "team": "NC State",
+      "actual": {
+        "name": "Kyle Evans",
+        "id": "5107567",
+        "minutes": 18.0,
+        "Points": 4.0,
+        "Rebounds": 4.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 24.919,
+          "actual": 18.0,
+          "error": 6.919
+        },
+        "Points": {
+          "projection": 9.337,
+          "actual": 4.0,
+          "error": 5.337
+        },
+        "Rebounds": {
+          "projection": 6.804,
+          "actual": 4.0,
+          "error": 2.804
+        },
+        "Assists": {
+          "projection": 1.243,
+          "actual": 0.0,
+          "error": 1.243
+        },
+        "Threes": {
+          "projection": 0.152,
+          "actual": 0.0,
+          "error": 0.152
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 24.919,
+          "actual": 18.0,
+          "error": 6.919
+        },
+        "Points": {
+          "projection": 8.974,
+          "actual": 4.0,
+          "error": 4.974
+        },
+        "Rebounds": {
+          "projection": 6.748,
+          "actual": 4.0,
+          "error": 2.748
+        },
+        "Assists": {
+          "projection": 1.211,
+          "actual": 0.0,
+          "error": 1.211
+        },
+        "Threes": {
+          "projection": 0.151,
+          "actual": 0.0,
+          "error": 0.151
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 19.46,
+          "actual": 18.0,
+          "error": 1.46
+        },
+        "Points": {
+          "projection": 7.008,
+          "actual": 4.0,
+          "error": 3.008
+        },
+        "Rebounds": {
+          "projection": 5.27,
+          "actual": 4.0,
+          "error": 1.27
+        },
+        "Assists": {
+          "projection": 0.945,
+          "actual": 0.0,
+          "error": 0.945
+        },
+        "Threes": {
+          "projection": 0.118,
+          "actual": 0.0,
+          "error": 0.118
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Paul McNeil Jr.",
+      "team": "NC State",
+      "actual": {
+        "name": "Paul McNeil Jr.",
+        "id": "4873151",
+        "minutes": 39.0,
+        "Points": 8.0,
+        "Rebounds": 3.0,
+        "Assists": 0.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 28.868,
+          "actual": 39.0,
+          "error": -10.132
+        },
+        "Points": {
+          "projection": 13.801,
+          "actual": 8.0,
+          "error": 5.801
+        },
+        "Rebounds": {
+          "projection": 4.836,
+          "actual": 3.0,
+          "error": 1.836
+        },
+        "Assists": {
+          "projection": 0.882,
+          "actual": 0.0,
+          "error": 0.882
+        },
+        "Threes": {
+          "projection": 3.142,
+          "actual": 1.0,
+          "error": 2.142
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 28.868,
+          "actual": 39.0,
+          "error": -10.132
+        },
+        "Points": {
+          "projection": 13.264,
+          "actual": 8.0,
+          "error": 5.264
+        },
+        "Rebounds": {
+          "projection": 4.797,
+          "actual": 3.0,
+          "error": 1.797
+        },
+        "Assists": {
+          "projection": 0.859,
+          "actual": 0.0,
+          "error": 0.859
+        },
+        "Threes": {
+          "projection": 3.116,
+          "actual": 1.0,
+          "error": 2.116
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 27.0,
+          "actual": 39.0,
+          "error": -12.0
+        },
+        "Points": {
+          "projection": 12.406,
+          "actual": 8.0,
+          "error": 4.406
+        },
+        "Rebounds": {
+          "projection": 4.486,
+          "actual": 3.0,
+          "error": 1.486
+        },
+        "Assists": {
+          "projection": 0.803,
+          "actual": 0.0,
+          "error": 0.803
+        },
+        "Threes": {
+          "projection": 2.915,
+          "actual": 1.0,
+          "error": 1.915
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Preston Edmead",
+      "team": "NC State",
+      "actual": {
+        "name": "Preston Edmead",
+        "id": "5236222",
+        "minutes": 33.0,
+        "Points": 14.0,
+        "Rebounds": 0.0,
+        "Assists": 5.0,
+        "Threes": 1.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 32.962,
+          "actual": 33.0,
+          "error": -0.038
+        },
+        "Points": {
+          "projection": 14.401,
+          "actual": 14.0,
+          "error": 0.401
+        },
+        "Rebounds": {
+          "projection": 3.25,
+          "actual": 0.0,
+          "error": 3.25
+        },
+        "Assists": {
+          "projection": 5.171,
+          "actual": 5.0,
+          "error": 0.171
+        },
+        "Threes": {
+          "projection": 2.396,
+          "actual": 1.0,
+          "error": 1.396
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 32.962,
+          "actual": 33.0,
+          "error": -0.038
+        },
+        "Points": {
+          "projection": 13.841,
+          "actual": 14.0,
+          "error": -0.159
+        },
+        "Rebounds": {
+          "projection": 3.223,
+          "actual": 0.0,
+          "error": 3.223
+        },
+        "Assists": {
+          "projection": 5.038,
+          "actual": 5.0,
+          "error": 0.038
+        },
+        "Threes": {
+          "projection": 2.377,
+          "actual": 1.0,
+          "error": 1.377
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 29.57,
+          "actual": 33.0,
+          "error": -3.43
+        },
+        "Points": {
+          "projection": 12.417,
+          "actual": 14.0,
+          "error": -1.583
+        },
+        "Rebounds": {
+          "projection": 2.892,
+          "actual": 0.0,
+          "error": 2.892
+        },
+        "Assists": {
+          "projection": 4.52,
+          "actual": 5.0,
+          "error": -0.48
+        },
+        "Threes": {
+          "projection": 2.132,
+          "actual": 1.0,
+          "error": 1.132
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "R.J. Keene II",
+      "team": "NC State",
+      "actual": {
+        "name": "R.J. Keene II",
+        "id": "4683941",
+        "minutes": 12.0,
+        "Points": 0.0,
+        "Rebounds": 0.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 16.774,
+          "actual": 12.0,
+          "error": 4.774
+        },
+        "Points": {
+          "projection": 2.267,
+          "actual": 0.0,
+          "error": 2.267
+        },
+        "Rebounds": {
+          "projection": 3.709,
+          "actual": 0.0,
+          "error": 3.709
+        },
+        "Assists": {
+          "projection": 1.426,
+          "actual": 0.0,
+          "error": 1.426
+        },
+        "Threes": {
+          "projection": 0.542,
+          "actual": 0.0,
+          "error": 0.542
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 16.774,
+          "actual": 12.0,
+          "error": 4.774
+        },
+        "Points": {
+          "projection": 2.179,
+          "actual": 0.0,
+          "error": 2.179
+        },
+        "Rebounds": {
+          "projection": 3.679,
+          "actual": 0.0,
+          "error": 3.679
+        },
+        "Assists": {
+          "projection": 1.39,
+          "actual": 0.0,
+          "error": 1.39
+        },
+        "Threes": {
+          "projection": 0.538,
+          "actual": 0.0,
+          "error": 0.538
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 9.45,
+          "actual": 12.0,
+          "error": -2.55
+        },
+        "Points": {
+          "projection": 1.227,
+          "actual": 0.0,
+          "error": 1.227
+        },
+        "Rebounds": {
+          "projection": 2.073,
+          "actual": 0.0,
+          "error": 2.073
+        },
+        "Assists": {
+          "projection": 0.783,
+          "actual": 0.0,
+          "error": 0.783
+        },
+        "Threes": {
+          "projection": 0.303,
+          "actual": 0.0,
+          "error": 0.303
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Ven-Allen Lubin",
+      "team": "NC State",
+      "actual": {
+        "name": "Ven-Allen Lubin",
+        "id": "4684799",
+        "minutes": 31.0,
+        "Points": 27.0,
+        "Rebounds": 8.0,
+        "Assists": 1.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 27.392,
+          "actual": 31.0,
+          "error": -3.608
+        },
+        "Points": {
+          "projection": 14.228,
+          "actual": 27.0,
+          "error": -12.772
+        },
+        "Rebounds": {
+          "projection": 7.876,
+          "actual": 8.0,
+          "error": -0.124
+        },
+        "Assists": {
+          "projection": 1.345,
+          "actual": 1.0,
+          "error": 0.345
+        },
+        "Threes": {
+          "projection": 0.409,
+          "actual": 0.0,
+          "error": 0.409
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 27.392,
+          "actual": 31.0,
+          "error": -3.608
+        },
+        "Points": {
+          "projection": 13.675,
+          "actual": 27.0,
+          "error": -13.325
+        },
+        "Rebounds": {
+          "projection": 7.812,
+          "actual": 8.0,
+          "error": -0.188
+        },
+        "Assists": {
+          "projection": 1.31,
+          "actual": 1.0,
+          "error": 0.31
+        },
+        "Threes": {
+          "projection": 0.405,
+          "actual": 0.0,
+          "error": 0.405
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 24.36,
+          "actual": 31.0,
+          "error": -6.64
+        },
+        "Points": {
+          "projection": 12.161,
+          "actual": 27.0,
+          "error": -14.839
+        },
+        "Rebounds": {
+          "projection": 6.947,
+          "actual": 8.0,
+          "error": -1.053
+        },
+        "Assists": {
+          "projection": 1.165,
+          "actual": 1.0,
+          "error": 0.165
+        },
+        "Threes": {
+          "projection": 0.36,
+          "actual": 0.0,
+          "error": 0.36
+        }
+      }
+    },
+    {
+      "game_id": "espn_event_401921691",
+      "player": "Zymicah Wilkins",
+      "team": "NC State",
+      "actual": {
+        "name": "Zymicah Wilkins",
+        "id": "5101858",
+        "minutes": 13.0,
+        "Points": 6.0,
+        "Rebounds": 4.0,
+        "Assists": 0.0,
+        "Threes": 0.0
+      },
+      "baseline": {
+        "Minutes": {
+          "projection": 10.0,
+          "actual": 13.0,
+          "error": -3.0
+        },
+        "Points": {
+          "projection": 6.25,
+          "actual": 6.0,
+          "error": 0.25
+        },
+        "Rebounds": {
+          "projection": 3.75,
+          "actual": 4.0,
+          "error": -0.25
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "kenpom": {
+        "Minutes": {
+          "projection": 10.0,
+          "actual": 13.0,
+          "error": -3.0
+        },
+        "Points": {
+          "projection": 6.007,
+          "actual": 6.0,
+          "error": 0.007
+        },
+        "Rebounds": {
+          "projection": 3.72,
+          "actual": 4.0,
+          "error": -0.28
+        },
+        "Assists": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      },
+      "rotation_kenpom": {
+        "Minutes": {
+          "projection": 9.45,
+          "actual": 13.0,
+          "error": -3.55
+        },
+        "Points": {
+          "projection": 5.677,
+          "actual": 6.0,
+          "error": -0.323
+        },
+        "Rebounds": {
+          "projection": 3.515,
+          "actual": 4.0,
+          "error": -0.485
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    }
+  ],
   "caution": "Player names matched uniquely within game; ESPN public stats unofficial. No betting ROI or historical odds grading."
 }
