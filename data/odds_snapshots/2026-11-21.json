@@ -1,0 +1,439 @@
+{
+  "mode": "READ_ONLY",
+  "generated_at_utc": "2026-11-21T16:45:20.462278+00:00",
+  "bookmakers": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "paid_requests_enabled": true,
+  "events": [
+    {
+      "event_id": "2da6119e4539c4666b49cb8015a6c289",
+      "schedule_game_id": "espn_event_401909730",
+      "home_team": "Wake Forest Demon Deacons",
+      "away_team": "Western Carolina Catamounts",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "props": []
+    },
+    {
+      "event_id": "6a6c3d772fb995d1205aae1324672ea7",
+      "schedule_game_id": "espn_event_401909719",
+      "home_team": "Syracuse Orange",
+      "away_team": "Lafayette Leopards",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "props": []
+    }
+  ],
+  "warnings": [
+    "No exact Odds API event match: Duke Blue Devils vs Washington State Cougars."
+  ],
+  "quota": {
+    "estimated_max_credits": 8,
+    "requests_sent": 2,
+    "credits_spent_reported": 0,
+    "remaining": 402
+  },
+  "discovered_ncaab_events": 51,
+  "discovery_diagnostic": {
+    "api_event_sample": [
+      {
+        "home_team": "Bucknell Bison",
+        "away_team": "Siena Saints",
+        "commence_time": "2026-11-21T16:00:00Z"
+      },
+      {
+        "home_team": "UNC Greensboro Spartans",
+        "away_team": "South Carolina Upstate Spartans",
+        "commence_time": "2026-11-21T16:00:00Z"
+      },
+      {
+        "home_team": "Boston Univ. Terriers",
+        "away_team": "Columbia Lions",
+        "commence_time": "2026-11-21T17:00:00Z"
+      },
+      {
+        "home_team": "Michigan St Spartans",
+        "away_team": "Detroit Mercy Titans",
+        "commence_time": "2026-11-21T17:00:00Z"
+      },
+      {
+        "home_team": "Cleveland St Vikings",
+        "away_team": "Kent State Golden Flashes",
+        "commence_time": "2026-11-21T18:00:00Z"
+      },
+      {
+        "home_team": "Eastern Michigan Eagles",
+        "away_team": "Denver Pioneers",
+        "commence_time": "2026-11-21T18:00:00Z"
+      },
+      {
+        "home_team": "LSU Tigers",
+        "away_team": "Queens University Royals",
+        "commence_time": "2026-11-21T18:00:00Z"
+      },
+      {
+        "home_team": "New Haven Chargers",
+        "away_team": "New Hampshire Wildcats",
+        "commence_time": "2026-11-21T18:00:00Z"
+      },
+      {
+        "home_team": "Western Illinois Leathernecks",
+        "away_team": "Mercyhurst Lakers",
+        "commence_time": "2026-11-21T18:30:00Z"
+      },
+      {
+        "home_team": "North Florida Ospreys",
+        "away_team": "Arkansas-Little Rock Trojans",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Bowling Green Falcons",
+        "away_team": "Northern Illinois Huskies",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Morgan St Bears",
+        "away_team": "Cornell Big Red",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Portland Pilots",
+        "away_team": "Fordham Rams",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Syracuse Orange",
+        "away_team": "Lafayette Leopards",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Rider Broncs",
+        "away_team": "Navy Midshipmen",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Wichita St Shockers",
+        "away_team": "New Mexico Lobos",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Saint Peter's Peacocks",
+        "away_team": "Stony Brook Seawolves",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Wake Forest Demon Deacons",
+        "away_team": "Western Carolina Catamounts",
+        "commence_time": "2026-11-21T19:00:00Z"
+      },
+      {
+        "home_team": "Austin Peay Governors",
+        "away_team": "UT Rio Grande Valley Vaqueros",
+        "commence_time": "2026-11-21T20:00:00Z"
+      },
+      {
+        "home_team": "Missouri St Bears",
+        "away_team": "Drake Bulldogs",
+        "commence_time": "2026-11-21T20:00:00Z"
+      },
+      {
+        "home_team": "Indiana St Sycamores",
+        "away_team": "Middle Tennessee Blue Raiders",
+        "commence_time": "2026-11-21T20:00:00Z"
+      },
+      {
+        "home_team": "Milwaukee Panthers",
+        "away_team": "St. Thomas (MN) Tommies",
+        "commence_time": "2026-11-21T20:00:00Z"
+      },
+      {
+        "home_team": "Binghamton Bearcats",
+        "away_team": "Army Knights",
+        "commence_time": "2026-11-21T20:30:00Z"
+      },
+      {
+        "home_team": "Canisius Golden Griffins",
+        "away_team": "Albany Great Danes",
+        "commence_time": "2026-11-21T21:00:00Z"
+      },
+      {
+        "home_team": "Jacksonville Dolphins",
+        "away_team": "Central Arkansas Bears",
+        "commence_time": "2026-11-21T21:00:00Z"
+      },
+      {
+        "home_team": "East Tennessee St Buccaneers",
+        "away_team": "Longwood Lancers",
+        "commence_time": "2026-11-21T21:00:00Z"
+      },
+      {
+        "home_team": "George Mason Patriots",
+        "away_team": "South Florida Bulls",
+        "commence_time": "2026-11-21T21:00:00Z"
+      },
+      {
+        "home_team": "La Salle Explorers",
+        "away_team": "Pennsylvania Quakers",
+        "commence_time": "2026-11-21T21:00:00Z"
+      },
+      {
+        "home_team": "San Diego Toreros",
+        "away_team": "UC Irvine Anteaters",
+        "commence_time": "2026-11-21T21:30:00Z"
+      },
+      {
+        "home_team": "UTSA Roadrunners",
+        "away_team": "Air Force Falcons",
+        "commence_time": "2026-11-21T22:00:00Z"
+      },
+      {
+        "home_team": "Southern Miss Golden Eagles",
+        "away_team": "Nicholls St Colonels",
+        "commence_time": "2026-11-21T22:00:00Z"
+      },
+      {
+        "home_team": "Stonehill Skyhawks",
+        "away_team": "Northeastern Huskies",
+        "commence_time": "2026-11-21T22:00:00Z"
+      },
+      {
+        "home_team": "Wofford Terriers",
+        "away_team": "Winthrop Eagles",
+        "commence_time": "2026-11-21T22:00:00Z"
+      },
+      {
+        "home_team": "East Carolina Pirates",
+        "away_team": "Southern Illinois Salukis",
+        "commence_time": "2026-11-21T22:30:00Z"
+      },
+      {
+        "home_team": "Georgetown Hoyas",
+        "away_team": "Coppin St Eagles",
+        "commence_time": "2026-11-21T23:00:00Z"
+      },
+      {
+        "home_team": "Massachusetts Minutemen",
+        "away_team": "Maine Black Bears",
+        "commence_time": "2026-11-21T23:00:00Z"
+      },
+      {
+        "home_team": "Norfolk St Spartans",
+        "away_team": "UNC Wilmington Seahawks",
+        "commence_time": "2026-11-21T23:00:00Z"
+      },
+      {
+        "home_team": "Vermont Catamounts",
+        "away_team": "Brown Bears",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Loyola Marymount Lions",
+        "away_team": "Cal Baptist Lancers",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Cal Poly Mustangs",
+        "away_team": "Northern Arizona Lumberjacks",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Mercer Bears",
+        "away_team": "Charleston Southern Buccaneers",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Chattanooga Mocs",
+        "away_team": "Radford Highlanders",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Elon Phoenix",
+        "away_team": "Morehead St Eagles",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "VMI Keydets",
+        "away_team": "Gardner-Webb Bulldogs",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Villanova Wildcats",
+        "away_team": "Michigan Wolverines",
+        "commence_time": "2026-11-22T00:00:00Z"
+      },
+      {
+        "home_team": "Tennessee Tech Golden Eagles",
+        "away_team": "Presbyterian Blue Hose",
+        "commence_time": "2026-11-22T00:30:00Z"
+      },
+      {
+        "home_team": "Oral Roberts Golden Eagles",
+        "away_team": "Texas A&M-CC Islanders",
+        "commence_time": "2026-11-22T01:00:00Z"
+      },
+      {
+        "home_team": "Troy Trojans",
+        "away_team": "Valparaiso Beacons",
+        "commence_time": "2026-11-22T01:00:00Z"
+      },
+      {
+        "home_team": "Texas Southern Tigers",
+        "away_team": "New Orleans Privateers",
+        "commence_time": "2026-11-22T01:30:00Z"
+      },
+      {
+        "home_team": "Pacific Tigers",
+        "away_team": "Bradley Braves",
+        "commence_time": "2026-11-22T03:00:00Z"
+      },
+      {
+        "home_team": "Duke Blue Devils",
+        "away_team": "Washington St Cougars",
+        "commence_time": "2026-11-22T04:00:00Z"
+      }
+    ],
+    "schedule_comparisons": [
+      {
+        "schedule_home": "Wake Forest Demon Deacons",
+        "schedule_away": "Western Carolina Catamounts",
+        "schedule_tipoff_utc": "2026-11-21T19:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Wake Forest Demon Deacons",
+            "away_team": "Western Carolina Catamounts",
+            "commence_time": "2026-11-21T19:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Vermont Catamounts",
+            "away_team": "Brown Bears",
+            "commence_time": "2026-11-22T00:00:00Z",
+            "name_similarity": 0.521,
+            "tipoff_difference_minutes": 300
+          },
+          {
+            "home_team": "UTSA Roadrunners",
+            "away_team": "Air Force Falcons",
+            "commence_time": "2026-11-21T22:00:00Z",
+            "name_similarity": 0.47,
+            "tipoff_difference_minutes": 180
+          },
+          {
+            "home_team": "Troy Trojans",
+            "away_team": "Valparaiso Beacons",
+            "commence_time": "2026-11-22T01:00:00Z",
+            "name_similarity": 0.451,
+            "tipoff_difference_minutes": 360
+          },
+          {
+            "home_team": "Bowling Green Falcons",
+            "away_team": "Northern Illinois Huskies",
+            "commence_time": "2026-11-21T19:00:00Z",
+            "name_similarity": 0.431,
+            "tipoff_difference_minutes": 0
+          }
+        ]
+      },
+      {
+        "schedule_home": "Syracuse Orange",
+        "schedule_away": "Lafayette Leopards",
+        "schedule_tipoff_utc": "2026-11-21T19:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Syracuse Orange",
+            "away_team": "Lafayette Leopards",
+            "commence_time": "2026-11-21T19:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Massachusetts Minutemen",
+            "away_team": "Maine Black Bears",
+            "commence_time": "2026-11-21T23:00:00Z",
+            "name_similarity": 0.41,
+            "tipoff_difference_minutes": 240
+          },
+          {
+            "home_team": "Milwaukee Panthers",
+            "away_team": "St. Thomas (MN) Tommies",
+            "commence_time": "2026-11-21T20:00:00Z",
+            "name_similarity": 0.397,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "La Salle Explorers",
+            "away_team": "Pennsylvania Quakers",
+            "commence_time": "2026-11-21T21:00:00Z",
+            "name_similarity": 0.394,
+            "tipoff_difference_minutes": 120
+          },
+          {
+            "home_team": "Saint Peter's Peacocks",
+            "away_team": "Stony Brook Seawolves",
+            "commence_time": "2026-11-21T19:00:00Z",
+            "name_similarity": 0.379,
+            "tipoff_difference_minutes": 0
+          }
+        ]
+      },
+      {
+        "schedule_home": "Duke Blue Devils",
+        "schedule_away": "Washington State Cougars",
+        "schedule_tipoff_utc": "2026-11-22T04:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Duke Blue Devils",
+            "away_team": "Washington St Cougars",
+            "commence_time": "2026-11-22T04:00:00Z",
+            "name_similarity": 0.963,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Missouri St Bears",
+            "away_team": "Drake Bulldogs",
+            "commence_time": "2026-11-21T20:00:00Z",
+            "name_similarity": 0.448,
+            "tipoff_difference_minutes": -480
+          },
+          {
+            "home_team": "Wichita St Shockers",
+            "away_team": "New Mexico Lobos",
+            "commence_time": "2026-11-21T19:00:00Z",
+            "name_similarity": 0.409,
+            "tipoff_difference_minutes": -540
+          },
+          {
+            "home_team": "Boston Univ. Terriers",
+            "away_team": "Columbia Lions",
+            "commence_time": "2026-11-21T17:00:00Z",
+            "name_similarity": 0.385,
+            "tipoff_difference_minutes": -660
+          },
+          {
+            "home_team": "Cleveland St Vikings",
+            "away_team": "Kent State Golden Flashes",
+            "commence_time": "2026-11-21T18:00:00Z",
+            "name_similarity": 0.384,
+            "tipoff_difference_minutes": -600
+          }
+        ]
+      }
+    ]
+  },
+  "matched_events": 2,
+  "target_date_eastern": "2026-11-21",
+  "snapshot_date_eastern": "2026-11-21",
+  "daily_credit_cap": 24,
+  "monthly_reserve_credits": 50,
+  "note": "Single pregame snapshot; games with no available player props may be missing."
+}
