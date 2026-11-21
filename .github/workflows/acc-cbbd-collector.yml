@@ -37,6 +37,12 @@ jobs:
           SEASON_INPUT: ${{ inputs.season }}
         run: |
           python collector/collect_cbbd.py --season "${SEASON_INPUT:-2027}"  
+      - name: Explain collector quota status
+        run: |
+          if [ -f data/cbbd/acc_collector_status.json ]; then
+            cat data/cbbd/acc_collector_status.json
+            echo '::warning::CBBD monthly quota exhausted. Existing player stats retained but stale.'
+          fi
       - name: Commit updated statistics
         run: |
           git config user.name 'github-actions[bot]'
