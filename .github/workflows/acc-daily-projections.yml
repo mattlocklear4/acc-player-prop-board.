@@ -1,0 +1,67 @@
+name: ACC daily pregame projections
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_publish_daily_board.py'
+      - '.github/workflows/acc-daily-projections.yml'
+  schedule:
+    - cron: '0 13 * * *'
+    - cron: '0 14 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: acc-daily-projections
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch next 24 hours ACC schedule
+        env:
+          CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python scripts/acc_schedule.py --season 2027 --horizon-hours 24
+      - name: Generate player projections with available KenPom and historical inputs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json
+      - name: Build today's board
+        run: python scripts/acc_publish_daily_board.py
+      - name: Preserve pregame board and publish current board
+        run: |
+          cp data/daily_board.json /tmp/acc-daily-board.json
+          python -c "import json,pathlib;d=json.loads(pathlib.Path('/tmp/acc-daily-board.json').read_text());p=pathlib.Path('/tmp/acc-daily-archive.json');p.write_text(json.dumps(d,indent=2)) if d.get('games') else None"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B daily-board-publish origin/main
+            cp /tmp/acc-daily-board.json data/daily_board.json
+            if [ -f /tmp/acc-daily-archive.json ]; then
+              mkdir -p data/archives/daily
+              target="data/archives/daily/$(python -c "import json;print(json.load(open('/tmp/acc-daily-board.json'))['date_eastern'])").json"
+              if [ ! -f "$target" ]; then cp /tmp/acc-daily-archive.json "$target"; fi
+            fi
+            git add data/daily_board.json data/archives/daily/ 2>/dev/null || git add data/daily_board.json
+            if git diff --cached --quiet; then break; fi
+            git commit -m 'Publish daily ACC pregame projections [skip ci]'
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 3
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: acc-daily-projections
+          path: |
+            data/daily_board.json
+            research/acc_schedule_dry_run.json
+            research/acc_projection_dry_run.json
