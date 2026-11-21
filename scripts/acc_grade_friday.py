@@ -9,7 +9,7 @@ from pathlib import Path
 from collections import defaultdict
 
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=ROOT/'data/friday_board.json'
+SOURCE=ROOT/'data/archives/friday_2026-11-20.json'
 OUT=ROOT/'data/friday_grading.json'
 FIELDS={'Points':'points','Rebounds':'rebounds','Assists':'assists','Threes':'threePointFieldGoalsMade'}
 def number(v):
@@ -25,30 +25,35 @@ def boxplayers(payload):
     for team in (payload.get('boxscore') or {}).get('players') or []:
         for group in team.get('statistics') or []:
             keys=group.get('keys') or group.get('names') or group.get('labels') or []
+            labels=group.get('labels') or []
             for a in group.get('athletes') or []:
                 athlete=a.get('athlete') or {}
                 stats=a.get('stats') or []
                 if not stats:continue
                 raw=statmap(keys,stats)
+                raw.update(statmap(labels,stats))
+                raw={str(k).lower():v for k,v in raw.items()}
                 row={'name':athlete.get('displayName') or athlete.get('fullName'),'id':str(athlete.get('id') or ''),
-                     'minutes':number(raw.get('minutes') or raw.get('MIN') or stats[0])}
+                     'minutes':number(raw.get('minutes') or raw.get('min') or stats[0])}
                 for field,key in FIELDS.items():
-                    val=raw.get(key)
+                    val=raw.get(key.lower())
                     if val is None:
                         # ESPN commonly supplies 3PM-3PA as '3PT' string.
                         if field=='Threes':
-                            val=raw.get('threePointFieldGoalsMade') or raw.get('3PM')
+                            val=raw.get('threepointfieldgoalsmade') or raw.get('3pm')
                             if val is None:
-                                pair=raw.get('threePointFieldGoalsMade-threePointFieldGoalsAttempted') or raw.get('3PT')
+                                pair=raw.get('threepointfieldgoalsmade-threepointfieldgoalsattempted') or raw.get('3pt')
                                 if isinstance(pair,str) and '-' in pair:val=pair.split('-')[0]
-                        elif field=='Rebounds':val=raw.get('totalRebounds') or raw.get('REB')
-                        else:val=raw.get(field.lower()) if raw.get(field.lower()) is not None else raw.get(field.upper())
+                        elif field=='Rebounds':val=raw.get('totalrebounds') or raw.get('reb')
+                        else:val=raw.get(field.lower())
                     row[field]=number(val)
                 if any(row.get(k) is not None for k in FIELDS):found[team.get('team',{}).get('id') or 'unknown'].append(row)
     return found
 def norm(s):return ''.join(c for c in str(s or '').lower() if c.isalnum())
 def main():
     archive=json.loads(SOURCE.read_text())
+    if archive.get('date_eastern')!='2026-11-20' or not archive.get('games'):
+        raise RuntimeError('Missing immutable 2026-11-20 pregame snapshot; refusing to grade a different slate')
     results=[];issues=[]
     for game in archive.get('games') or []:
         eid=str(game.get('game_id') or '').replace('espn_event_','')
@@ -93,6 +98,8 @@ def main():
             'games_in_snapshot':len(archive.get('games') or []),'players_graded':len(results),
             'metrics':metrics,'issues':issues,'rows':results,
             'caution':'Player names matched uniquely within game; ESPN public stats unofficial. No betting ROI or historical odds grading.'}
+    if not results:
+        raise RuntimeError('No player box scores matched; refusing to publish empty grading. Issues: '+json.dumps(issues))
     OUT.write_text(json.dumps(output,indent=2)+'\n')
     print(json.dumps({'players_graded':len(results),'games_unavailable':len(issues),'metrics':metrics}))
 if __name__=='__main__':main()
