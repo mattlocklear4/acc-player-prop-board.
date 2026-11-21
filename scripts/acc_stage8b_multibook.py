@@ -74,6 +74,13 @@ def main():
             out['warnings'].append('ODDS_API_KEY secret missing; no API calls made.');save();return
         now=dt.datetime.now(dt.timezone.utc)
         api_events,headers=get(ROOT+'/events',{'apiKey':key}) # Free endpoint
+        if a.fetch_odds:
+            remaining=headers.get('x-requests-remaining')
+            if remaining is None:
+                out['warnings'].append('Missing quota header; refusing paid calls.');save();return
+            out['quota']['remaining']=int(remaining)
+            if int(remaining)<a.min_credits_remaining+len(MARKETS):
+                out['warnings'].append('Monthly credit reserve reached; no paid calls.');save();return
         out['discovered_ncaab_events']=len(api_events)
         # Diagnostic-only: capture provider names and times without additional API calls.
         out['discovery_diagnostic'] = {
