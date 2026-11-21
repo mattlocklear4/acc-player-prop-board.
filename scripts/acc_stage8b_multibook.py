@@ -50,6 +50,8 @@ def main():
     p.add_argument('--output', default='research/acc_stage8b_multibook_preview.json')
     p.add_argument('--fetch-odds', action='store_true', help='Spend credits; disabled by default')
     p.add_argument('--max-events', type=int, default=100)
+    p.add_argument('--daily', action='store_true', help='Target only today in Eastern time, not Friday')
+    p.add_argument('--max-credits', type=int, default=24, help='Conservative maximum charged credits this invocation')
     p.add_argument('--min-credits-remaining', type=int, default=30)
     a=p.parse_args()
     if not 1<=a.max_events<=100:
@@ -125,17 +127,19 @@ def main():
         if not a.fetch_odds:
             out['events']=[{'event_id':e['id'],'home_team':e['home_team'],'away_team':e['away_team'], 'status':'DISCOVERY_ONLY_NO_CREDITS'} for _,e in matches]
             out['warnings'].append('Discovery-only mode; no paid event odds requested.');save();return
-        # Only Friday in Eastern time. Manual dispatch only; all matched Friday games.
+        # Date-scoped retrieval; daily mode must never retrieve a future Friday slate.
         from zoneinfo import ZoneInfo
         today=now.astimezone(ZoneInfo('America/New_York')).date()
         friday=today+dt.timedelta(days=(4-today.weekday())%7)
         friday_matches=[(g,e) for g,e in matches
-            if utc(e.get('commence_time')).astimezone(ZoneInfo('America/New_York')).date()==friday]
-        out['target_date_eastern']=friday.isoformat()
-        out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches))*len(MARKETS)
+            if utc(e.get('commence_time')).astimezone(ZoneInfo('America/New_York')).date()==(today if a.daily else friday)]
+        out['target_date_eastern']=(today if a.daily else friday).isoformat()
+        out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches),a.max_credits//len(MARKETS))*len(MARKETS)
         if not friday_matches:
-            out['warnings'].append('No matched upcoming Friday events; zero paid requests.');return
+            out['warnings'].append('No matched eligible events on target date; zero paid requests.');return
         for game,event in friday_matches[:a.max_events]:
+            if out['quota']['credits_spent_reported']+len(MARKETS)>a.max_credits:
+                out['warnings'].append('Daily credit cap reached; remaining events skipped.');break
             if out['quota']['requests_sent']>=a.max_events:break
             if out['quota'].get('remaining') is not None and out['quota']['remaining']<a.min_credits_remaining+len(MARKETS):
                 out['warnings'].append('Stopped: remaining credits below reserve plus worst-case request cost.');break
