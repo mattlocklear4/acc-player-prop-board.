@@ -49,7 +49,7 @@ jobs:
               cp -n /tmp/acc-odds-snapshots/* data/odds_snapshots/ 2>/dev/null || true
               git add data/odds_snapshots/
               if git diff --cached --quiet; then break; fi
-              git commit -m 'Archive daily ACC sportsbook lines [skip ci]'
+              git commit -m 'Archive daily ACC sportsbook lines'
               if git push origin HEAD:main; then break; fi
               if [ "$attempt" -eq 3 ]; then exit 1; fi
               sleep 3
