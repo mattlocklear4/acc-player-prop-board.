@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - 'scripts/acc_publish_daily_board.py'
+      - 'scripts/supabase_kenpom.py'
       - '.github/workflows/acc-daily-projections.yml'
   schedule:
     - cron: '0 13 * * *'
     - cron: '0 14 * * *'
+    - cron: '0 15 * * *'
 permissions:
   contents: write
   actions: write
