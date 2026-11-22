@@ -1,0 +1,49 @@
+name: Grade daily ACC projections
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 12 * * *'
+    - cron: '30 13 * * *'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: acc-daily-grading
+  cancel-in-progress: false
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Grade archived pregame projections against ESPN final player logs
+        run: python scripts/acc_grade_daily.py
+      - name: Publish daily grading
+        run: |
+          cp data/daily_grading.json /tmp/acc-daily-grading.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard HEAD
+            git checkout -B daily-grading-publish origin/main
+            cp /tmp/acc-daily-grading.json data/daily_grading.json
+            git add data/daily_grading.json
+            if git diff --cached --quiet; then break; fi
+            git commit -m 'Publish ACC daily projection grading'
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 3
+          done
+      - name: Update published dashboard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: acc-daily-grading
+          path: data/daily_grading.json
