@@ -7,16 +7,6 @@ on:
         description: 'Retrieve props from DraftKings, FanDuel, Caesars, Fanatics and BetOnline for up to 20 Friday games (uses Odds API credits; manual only)'
         type: boolean
         default: false
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/acc_*.py'
-      - '!scripts/acc_grade_friday.py'
-      - 'scripts/research_engine.py'
-      - 'scripts/supabase_kenpom.py'
-      - '.github/workflows/acc-projection-dry-run.yml'
-  schedule:
-    - cron: '30 13 * * *' # 8:30 AM EST / 9:30 AM EDT
 
 concurrency:
   group: acc-projection-dry-run
@@ -123,6 +113,7 @@ jobs:
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             for attempt in 1 2 3; do
               git fetch origin main
+              git reset --hard HEAD
               git checkout -B friday-publish origin/main
               cp /tmp/acc-friday-board.json data/friday_board.json
               if [ -f /tmp/acc-friday-archive-date ]; then
