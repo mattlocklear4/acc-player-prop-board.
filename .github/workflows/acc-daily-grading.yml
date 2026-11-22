@@ -1,6 +1,12 @@
 name: Grade daily ACC projections
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_grade_daily.py'
+      - 'scripts/acc_evaluate_odds.py'
+      - '.github/workflows/acc-daily-grading.yml'
   schedule:
     - cron: '30 12 * * *'
     - cron: '30 13 * * *'
