@@ -25,7 +25,7 @@ jobs:
           from zoneinfo import ZoneInfo
           n=datetime.datetime.now(ZoneInfo('America/New_York'))
           target=11 if n.weekday()>=5 else 18
-          print('run='+str(n.hour==target).lower())
+          print('run='+str(target<=n.hour<target+2).lower())
           print('date='+n.date().isoformat())
           PY
       - name: Collect today schedule and one quota-capped odds snapshot
