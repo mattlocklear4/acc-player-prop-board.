@@ -1,44 +1,44 @@
 {
-  "generated_at_utc": "2026-11-22T14:51:19.193546+00:00",
+  "generated_at_utc": "2026-11-22T14:58:02.556925+00:00",
   "status": "PARTIAL",
-  "players_graded": 21,
+  "players_graded": 31,
   "projected_players": 41,
   "days": [
     {
       "date": "2026-11-21",
       "games": 3,
       "games_with_final_logs": 3,
-      "players_graded": 21,
+      "players_graded": 31,
       "projected_players": 41,
-      "issues": 7,
+      "issues": 10,
       "snapshot_utc": "2026-11-21T13:33:34.124874+00:00"
     }
   ],
   "metrics": {
     "Minutes": {
-      "n": 21,
-      "mae": 6.986,
-      "bias": 0.538
+      "n": 31,
+      "mae": 7.12,
+      "bias": 0.729
     },
     "Points": {
-      "n": 21,
-      "mae": 5.02,
-      "bias": -0.307
+      "n": 31,
+      "mae": 5.301,
+      "bias": 0.139
     },
     "Rebounds": {
-      "n": 21,
-      "mae": 2.01,
-      "bias": -0.129
+      "n": 31,
+      "mae": 1.97,
+      "bias": 0.03
     },
     "Assists": {
-      "n": 21,
-      "mae": 1.091,
-      "bias": -0.078
+      "n": 31,
+      "mae": 1.122,
+      "bias": 0.068
     },
     "Threes": {
-      "n": 21,
-      "mae": 0.633,
-      "bias": 0.032
+      "n": 31,
+      "mae": 0.656,
+      "bias": 0.092
     }
   },
   "issues": [
@@ -81,8 +81,26 @@
     {
       "date": "2026-11-21",
       "game_id": "espn_event_401909567",
-      "team": "Duke",
-      "reason": "team_not_matched"
+      "player": "Bryson Howard",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "player": "Jacob Theodosiou",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "player": "Maxime Meyer",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "player": "Nick Arnold",
+      "reason": "player_not_uniquely_matched"
     }
   ],
   "rows": [
@@ -818,6 +836,356 @@
           "projection": 0.0,
           "actual": 0.0,
           "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Caleb Foster",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 23.169,
+          "actual": 32.0,
+          "error": -8.831
+        },
+        "Points": {
+          "projection": 9.051,
+          "actual": 3.0,
+          "error": 6.051
+        },
+        "Rebounds": {
+          "projection": 3.246,
+          "actual": 6.0,
+          "error": -2.754
+        },
+        "Assists": {
+          "projection": 2.406,
+          "actual": 4.0,
+          "error": -1.594
+        },
+        "Threes": {
+          "projection": 1.501,
+          "actual": 1.0,
+          "error": 0.501
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Cameron Williams",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 12.667,
+          "actual": 5.0,
+          "error": 7.667
+        },
+        "Points": {
+          "projection": 5.336,
+          "actual": 0.0,
+          "error": 5.336
+        },
+        "Rebounds": {
+          "projection": 2.311,
+          "actual": 0.0,
+          "error": 2.311
+        },
+        "Assists": {
+          "projection": 0.332,
+          "actual": 0.0,
+          "error": 0.332
+        },
+        "Threes": {
+          "projection": 0.991,
+          "actual": 0.0,
+          "error": 0.991
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Cayden Boozer",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.36,
+          "actual": 11.0,
+          "error": 11.36
+        },
+        "Points": {
+          "projection": 8.219,
+          "actual": 0.0,
+          "error": 8.219
+        },
+        "Rebounds": {
+          "projection": 3.114,
+          "actual": 0.0,
+          "error": 3.114
+        },
+        "Assists": {
+          "projection": 3.716,
+          "actual": 3.0,
+          "error": 0.716
+        },
+        "Threes": {
+          "projection": 0.513,
+          "actual": 0.0,
+          "error": 0.513
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Dame Sarr",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 23.399,
+          "actual": 29.0,
+          "error": -5.601
+        },
+        "Points": {
+          "projection": 8.129,
+          "actual": 14.0,
+          "error": -5.871
+        },
+        "Rebounds": {
+          "projection": 3.557,
+          "actual": 4.0,
+          "error": -0.443
+        },
+        "Assists": {
+          "projection": 1.532,
+          "actual": 4.0,
+          "error": -2.468
+        },
+        "Threes": {
+          "projection": 0.828,
+          "actual": 3.0,
+          "error": -2.172
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Deron Rippey Jr.",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 16.75,
+          "actual": 11.0,
+          "error": 5.75
+        },
+        "Points": {
+          "projection": 4.252,
+          "actual": 0.0,
+          "error": 4.252
+        },
+        "Rebounds": {
+          "projection": 1.486,
+          "actual": 1.0,
+          "error": 0.486
+        },
+        "Assists": {
+          "projection": 1.494,
+          "actual": 0.0,
+          "error": 1.494
+        },
+        "Threes": {
+          "projection": 0.495,
+          "actual": 0.0,
+          "error": 0.495
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Drew Scharnowski",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 18.873,
+          "actual": 8.0,
+          "error": 10.873
+        },
+        "Points": {
+          "projection": 8.912,
+          "actual": 4.0,
+          "error": 4.912
+        },
+        "Rebounds": {
+          "projection": 5.13,
+          "actual": 5.0,
+          "error": 0.13
+        },
+        "Assists": {
+          "projection": 2.392,
+          "actual": 0.0,
+          "error": 2.392
+        },
+        "Threes": {
+          "projection": 0.021,
+          "actual": 0.0,
+          "error": 0.021
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 20.25,
+          "actual": 27.0,
+          "error": -6.75
+        },
+        "Points": {
+          "projection": 10.004,
+          "actual": 16.0,
+          "error": -5.996
+        },
+        "Rebounds": {
+          "projection": 6.191,
+          "actual": 7.0,
+          "error": -0.809
+        },
+        "Assists": {
+          "projection": 0.249,
+          "actual": 0.0,
+          "error": 0.249
+        },
+        "Threes": {
+          "projection": 0.743,
+          "actual": 1.0,
+          "error": -0.257
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "John Blackwell",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 30.946,
+          "actual": 33.0,
+          "error": -2.054
+        },
+        "Points": {
+          "projection": 15.559,
+          "actual": 11.0,
+          "error": 4.559
+        },
+        "Rebounds": {
+          "projection": 3.97,
+          "actual": 5.0,
+          "error": -1.03
+        },
+        "Assists": {
+          "projection": 1.82,
+          "actual": 0.0,
+          "error": 1.82
+        },
+        "Threes": {
+          "projection": 2.517,
+          "actual": 1.0,
+          "error": 1.517
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.875,
+          "actual": 31.0,
+          "error": -8.125
+        },
+        "Points": {
+          "projection": 11.797,
+          "actual": 24.0,
+          "error": -12.203
+        },
+        "Rebounds": {
+          "projection": 6.422,
+          "actual": 9.0,
+          "error": -2.578
+        },
+        "Assists": {
+          "projection": 2.306,
+          "actual": 2.0,
+          "error": 0.306
+        },
+        "Threes": {
+          "projection": 0.325,
+          "actual": 0.0,
+          "error": 0.325
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "player": "Sebastian Wilkins",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-22T04:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.0,
+          "actual": 12.0,
+          "error": 7.0
+        },
+        "Points": {
+          "projection": 7.503,
+          "actual": 6.0,
+          "error": 1.503
+        },
+        "Rebounds": {
+          "projection": 5.2,
+          "actual": 0.0,
+          "error": 5.2
+        },
+        "Assists": {
+          "projection": 1.494,
+          "actual": 1.0,
+          "error": 0.494
+        },
+        "Threes": {
+          "projection": 0.248,
+          "actual": 0.0,
+          "error": 0.248
         }
       }
     }

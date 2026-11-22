@@ -20,6 +20,10 @@ FIELDS={'Minutes':('Minutes','minutes'),'Points':('KenPomPoints','points'),
         'Threes':('KenPomThrees','three_pm')}
 def norm(s):
     return ''.join(c for c in str(s or '').lower() if c.isalnum())
+def team_matches(school, boxscore_team):
+    """ESPN appends nicknames; event ID anchors short ACC school names such as Duke."""
+    target,observed=norm(school),norm(boxscore_team)
+    return bool(target and (observed==target or (len(target)>=4 and observed.startswith(target))))
 def num(v):
     try:return float(v) if v is not None and str(v).strip() else None
     except (ValueError,TypeError):return None
@@ -61,9 +65,7 @@ def main():
             for team in game.get('teams') or []:
                 players=team.get('players') or []
                 # ESPN logs use full team names; projection uses school names.
-                team_name=norm(team.get('team'))
-                team_actuals=[a for a in actuals if norm(a.get('team'))==team_name or
-                              (len(team_name)>=5 and norm(a.get('team')).startswith(team_name))]
+                team_actuals=[a for a in actuals if team_matches(team.get('team'),a.get('team'))]
                 if players and not team_actuals:
                     day_issues.append({'game_id':gid,'team':team.get('team'),'reason':'team_not_matched'});continue
                 for p in players:

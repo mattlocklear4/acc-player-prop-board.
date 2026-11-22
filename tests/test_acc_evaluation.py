@@ -5,8 +5,12 @@ from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from acc_evaluate_odds import evaluate, american_profit
+from acc_grade_daily import team_matches
 
 class EvaluationTests(unittest.TestCase):
+    def test_duke_school_name_matches_espn_nickname_without_guessing(self):
+        self.assertTrue(team_matches('Duke','Duke Blue Devils'))
+        self.assertFalse(team_matches('Duke','Duquesne Dukes'))
     def setUp(self):
         self.row={'date':'2026-11-21','game_id':'espn_event_123','team':'Boston College',
                   'player':'Example Player','tipoff_utc':'2026-11-21T19:00:00Z',
