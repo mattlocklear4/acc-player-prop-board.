@@ -1,0 +1,655 @@
+{
+  "mode": "READ_ONLY",
+  "generated_at_utc": "2026-11-22T16:38:13.673995+00:00",
+  "bookmakers": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "paid_requests_enabled": true,
+  "events": [
+    {
+      "event_id": "a43c29f68105ec56703e2c7c29568490",
+      "schedule_game_id": "espn_event_401920381",
+      "home_team": "Oklahoma St Cowboys",
+      "away_team": "Virginia Tech Hokies",
+      "status": "ODDS_RETRIEVED",
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kashie Natt",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 130,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kashie Natt",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -169,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jacob Walker",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 110,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jacob Walker",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -143,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Anthony Felesi",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 155,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Anthony Felesi",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -204,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jacob Walker",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -110,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jacob Walker",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -118,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kashie Natt",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 110,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kashie Natt",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -143,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Anthony Felesi",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -118,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Anthony Felesi",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -110,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Julius Halaifonua",
+          "side": "Over",
+          "line": 8.5,
+          "odds": -114,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Julius Halaifonua",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -114,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jordan Burks",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -114,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jordan Burks",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -114,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kashie Natt",
+          "side": "Over",
+          "line": 6.5,
+          "odds": 103,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kashie Natt",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -133,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jacob Walker",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -123,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jacob Walker",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -104,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Julius Halaifonua",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -120,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Julius Halaifonua",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -108,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Anthony Felesi",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -175,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Anthony Felesi",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 134,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jordan Burks",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -143,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jordan Burks",
+          "side": "Under",
+          "line": 4.5,
+          "odds": 110,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Julius Halaifonua",
+          "side": "Over",
+          "line": 0.5,
+          "odds": 186,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Julius Halaifonua",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -250,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jacob Walker",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -125,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jacob Walker",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -103,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kashie Natt",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -175,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kashie Natt",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 135,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jordan Burks",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 109,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jordan Burks",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -141,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Anthony Felesi",
+          "side": "Over",
+          "line": 0.5,
+          "odds": 195,
+          "last_update": "2026-11-22T16:37:26Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Anthony Felesi",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -263,
+          "last_update": "2026-11-22T16:37:26Z"
+        }
+      ]
+    },
+    {
+      "event_id": "a156f22faa101eae5a832cfc5de4fbca",
+      "schedule_game_id": "espn_event_401909556",
+      "home_team": "Boston College Eagles",
+      "away_team": "NJIT Highlanders",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "props": []
+    }
+  ],
+  "warnings": [],
+  "quota": {
+    "estimated_max_credits": 8,
+    "requests_sent": 2,
+    "credits_spent_reported": 4,
+    "remaining": 394
+  },
+  "discovered_ncaab_events": 38,
+  "discovery_diagnostic": {
+    "api_event_sample": [
+      {
+        "home_team": "Nebraska Cornhuskers",
+        "away_team": "Butler Bulldogs",
+        "commence_time": "2026-11-22T17:00:00Z"
+      },
+      {
+        "home_team": "UIC Flames",
+        "away_team": "Miami (OH) RedHawks",
+        "commence_time": "2026-11-22T17:00:00Z"
+      },
+      {
+        "home_team": "American Eagles",
+        "away_team": "Towson Tigers",
+        "commence_time": "2026-11-22T18:00:00Z"
+      },
+      {
+        "home_team": "Canisius Golden Griffins",
+        "away_team": "Western Illinois Leathernecks",
+        "commence_time": "2026-11-22T18:00:00Z"
+      },
+      {
+        "home_team": "Marquette Golden Eagles",
+        "away_team": "Chicago St Cougars",
+        "commence_time": "2026-11-22T18:00:00Z"
+      },
+      {
+        "home_team": "Northwestern Wildcats",
+        "away_team": "Dayton Flyers",
+        "commence_time": "2026-11-22T18:00:00Z"
+      },
+      {
+        "home_team": "LIU Sharks",
+        "away_team": "Fairfield Stags",
+        "commence_time": "2026-11-22T18:00:00Z"
+      },
+      {
+        "home_team": "Cincinnati Bearcats",
+        "away_team": "UMass Lowell River Hawks",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "Wyoming Cowboys",
+        "away_team": "Duquesne Dukes",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "Memphis Tigers",
+        "away_team": "Evansville Purple Aces",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "Fordham Rams",
+        "away_team": "San Diego Toreros",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "GW Revolutionaries",
+        "away_team": "Western Kentucky Hilltoppers",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "South Dakota Coyotes",
+        "away_team": "Utah Tech Trailblazers",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "Youngstown St Penguins",
+        "away_team": "William & Mary Tribe",
+        "commence_time": "2026-11-22T19:00:00Z"
+      },
+      {
+        "home_team": "New Mexico St Aggies",
+        "away_team": "Robert Morris Colonials",
+        "commence_time": "2026-11-22T19:30:00Z"
+      },
+      {
+        "home_team": "Troy Trojans",
+        "away_team": "Nicholls St Colonels",
+        "commence_time": "2026-11-22T20:00:00Z"
+      },
+      {
+        "home_team": "South Alabama Jaguars",
+        "away_team": "West Florida Argonauts",
+        "commence_time": "2026-11-22T20:00:00Z"
+      },
+      {
+        "home_team": "Texas Longhorns",
+        "away_team": "Southern Indiana Screaming Eagles",
+        "commence_time": "2026-11-22T20:00:00Z"
+      },
+      {
+        "home_team": "Albany Great Danes",
+        "away_team": "Mercyhurst Lakers",
+        "commence_time": "2026-11-22T20:30:00Z"
+      },
+      {
+        "home_team": "Texas State Bobcats",
+        "away_team": "McNeese Cowboys",
+        "commence_time": "2026-11-22T20:30:00Z"
+      },
+      {
+        "home_team": "Oklahoma St Cowboys",
+        "away_team": "Virginia Tech Hokies",
+        "commence_time": "2026-11-22T20:30:00Z"
+      },
+      {
+        "home_team": "IUPUI Jaguars",
+        "away_team": "Maryland-Eastern Shore Hawks",
+        "commence_time": "2026-11-22T21:30:00Z"
+      },
+      {
+        "home_team": "Richmond Spiders",
+        "away_team": "Liberty Flames",
+        "commence_time": "2026-11-22T21:30:00Z"
+      },
+      {
+        "home_team": "Loyola Marymount Lions",
+        "away_team": "UC Irvine Anteaters",
+        "commence_time": "2026-11-22T21:30:00Z"
+      },
+      {
+        "home_team": "Boston College Eagles",
+        "away_team": "NJIT Highlanders",
+        "commence_time": "2026-11-22T22:00:00Z"
+      },
+      {
+        "home_team": "Portland St Vikings",
+        "away_team": "CSU Fullerton Titans",
+        "commence_time": "2026-11-22T22:00:00Z"
+      },
+      {
+        "home_team": "Rice Owls",
+        "away_team": "Lamar Cardinals",
+        "commence_time": "2026-11-22T22:00:00Z"
+      },
+      {
+        "home_team": "Samford Bulldogs",
+        "away_team": "UNC Asheville Bulldogs",
+        "commence_time": "2026-11-22T22:00:00Z"
+      },
+      {
+        "home_team": "Stephen F. Austin Lumberjacks",
+        "away_team": "Temple Owls",
+        "commence_time": "2026-11-22T22:30:00Z"
+      },
+      {
+        "home_team": "Minnesota Golden Gophers",
+        "away_team": "Utah Utes",
+        "commence_time": "2026-11-22T23:00:00Z"
+      },
+      {
+        "home_team": "Southern Miss Golden Eagles",
+        "away_team": "Valparaiso Beacons",
+        "commence_time": "2026-11-22T23:00:00Z"
+      },
+      {
+        "home_team": "Portland Pilots",
+        "away_team": "Cal Baptist Lancers",
+        "commence_time": "2026-11-23T00:00:00Z"
+      },
+      {
+        "home_team": "UCLA Bruins",
+        "away_team": "Delaware Blue Hens",
+        "commence_time": "2026-11-23T00:00:00Z"
+      },
+      {
+        "home_team": "Rhode Island Rams",
+        "away_team": "UAB Blazers",
+        "commence_time": "2026-11-23T00:00:00Z"
+      },
+      {
+        "home_team": "USC Trojans",
+        "away_team": "Louisiana Ragin' Cajuns",
+        "commence_time": "2026-11-23T01:00:00Z"
+      },
+      {
+        "home_team": "Utah Valley Wolverines",
+        "away_team": "Tenn-Martin Skyhawks",
+        "commence_time": "2026-11-23T01:00:00Z"
+      },
+      {
+        "home_team": "UC San Diego Tritons",
+        "away_team": "Seattle Redhawks",
+        "commence_time": "2026-11-23T02:30:00Z"
+      },
+      {
+        "home_team": "Loyola (Chi) Ramblers",
+        "away_team": "San Jos\u00e9 St Spartans",
+        "commence_time": "2026-11-23T04:59:00Z"
+      }
+    ],
+    "schedule_comparisons": [
+      {
+        "schedule_home": "Oklahoma State Cowboys",
+        "schedule_away": "Virginia Tech Hokies",
+        "schedule_tipoff_utc": "2026-11-22T20:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Oklahoma St Cowboys",
+            "away_team": "Virginia Tech Hokies",
+            "commence_time": "2026-11-22T20:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Rice Owls",
+            "away_team": "Lamar Cardinals",
+            "commence_time": "2026-11-22T22:00:00Z",
+            "name_similarity": 0.386,
+            "tipoff_difference_minutes": 90
+          },
+          {
+            "home_team": "Texas State Bobcats",
+            "away_team": "McNeese Cowboys",
+            "commence_time": "2026-11-22T20:30:00Z",
+            "name_similarity": 0.384,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "South Dakota Coyotes",
+            "away_team": "Utah Tech Trailblazers",
+            "commence_time": "2026-11-22T19:00:00Z",
+            "name_similarity": 0.382,
+            "tipoff_difference_minutes": -90
+          },
+          {
+            "home_team": "Cincinnati Bearcats",
+            "away_team": "UMass Lowell River Hawks",
+            "commence_time": "2026-11-22T19:00:00Z",
+            "name_similarity": 0.38,
+            "tipoff_difference_minutes": -90
+          }
+        ]
+      },
+      {
+        "schedule_home": "Boston College Eagles",
+        "schedule_away": "NJIT Highlanders",
+        "schedule_tipoff_utc": "2026-11-22T22:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Boston College Eagles",
+            "away_team": "NJIT Highlanders",
+            "commence_time": "2026-11-22T22:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "American Eagles",
+            "away_team": "Towson Tigers",
+            "commence_time": "2026-11-22T18:00:00Z",
+            "name_similarity": 0.491,
+            "tipoff_difference_minutes": -240
+          },
+          {
+            "home_team": "Rhode Island Rams",
+            "away_team": "UAB Blazers",
+            "commence_time": "2026-11-23T00:00:00Z",
+            "name_similarity": 0.448,
+            "tipoff_difference_minutes": 120
+          },
+          {
+            "home_team": "Marquette Golden Eagles",
+            "away_team": "Chicago St Cougars",
+            "commence_time": "2026-11-22T18:00:00Z",
+            "name_similarity": 0.434,
+            "tipoff_difference_minutes": -240
+          },
+          {
+            "home_team": "Northwestern Wildcats",
+            "away_team": "Dayton Flyers",
+            "commence_time": "2026-11-22T18:00:00Z",
+            "name_similarity": 0.421,
+            "tipoff_difference_minutes": -240
+          }
+        ]
+      }
+    ]
+  },
+  "matched_events": 2,
+  "target_date_eastern": "2026-11-22",
+  "snapshot_date_eastern": "2026-11-22",
+  "daily_credit_cap": 24,
+  "monthly_reserve_credits": 50,
+  "note": "Single pregame snapshot; games with no available player props may be missing."
+}
