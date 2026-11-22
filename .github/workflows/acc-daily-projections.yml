@@ -57,6 +57,10 @@ jobs:
             if [ "$attempt" -eq 3 ]; then exit 1; fi
             sleep 3
           done
+      - name: Trigger Pages deployment for the published board
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main
       - uses: actions/upload-artifact@v4
         if: always()
         with:
