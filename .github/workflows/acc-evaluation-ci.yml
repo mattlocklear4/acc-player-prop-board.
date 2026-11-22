@@ -1,5 +1,7 @@
 name: ACC evaluation offline validation
 on:
+  push:
+    branches: [feature/automated-acc-evaluation]
   pull_request:
     paths:
       - 'scripts/acc_grade_daily.py'
