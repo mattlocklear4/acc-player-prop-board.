@@ -11,6 +11,7 @@ on:
     - cron: '0 14 * * *'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: acc-daily-projections
   cancel-in-progress: false
@@ -43,6 +44,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3; do
             git fetch origin main
+            git reset --hard HEAD
             git checkout -B daily-board-publish origin/main
             cp /tmp/acc-daily-board.json data/daily_board.json
             if [ -f /tmp/acc-daily-archive.json ]; then
