@@ -1,7 +1,13 @@
 name: ACC evaluation offline validation
 on:
   push:
-    branches: [feature/automated-acc-evaluation]
+    branches: [main, feature/automated-acc-evaluation]
+    paths:
+      - 'scripts/acc_stage8b_multibook.py'
+      - 'scripts/acc_grade_daily.py'
+      - 'scripts/acc_evaluate_odds.py'
+      - 'tests/**'
+      - '.github/workflows/acc-evaluation-ci.yml'
   pull_request:
     paths:
       - 'scripts/acc_grade_daily.py'
