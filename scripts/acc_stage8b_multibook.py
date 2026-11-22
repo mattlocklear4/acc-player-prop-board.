@@ -24,7 +24,7 @@ def utc(s):
     except (ValueError, TypeError): return None
 
 def norm(s):
-    return re.sub(r'[^a-z0-9]', '', str(s or '').lower().replace('university', '').replace('college', ''))
+    return re.sub(r'[^a-z0-9]', '', re.sub(r'\bstate\b', 'st', str(s or '').lower()).replace('university', '').replace('college', ''))
 
 def team_match(schedule_name, api_name):
     """Match a known school prefix, allowing API team nicknames."""
