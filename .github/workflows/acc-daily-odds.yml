@@ -44,6 +44,7 @@ jobs:
             cp -r data/odds_snapshots /tmp/acc-odds-snapshots
             for attempt in 1 2 3; do
               git fetch origin main
+              git reset --hard HEAD
               git checkout -B daily-odds-publish origin/main
               mkdir -p data/odds_snapshots
               cp -n /tmp/acc-odds-snapshots/* data/odds_snapshots/ 2>/dev/null || true
