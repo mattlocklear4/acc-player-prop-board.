@@ -20,10 +20,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Grade archived pregame projections against ESPN final player logs
-        run: python scripts/acc_grade_daily.py
+        run: |
+          python -m unittest discover -s tests -p 'test_acc_evaluation.py'
+          python scripts/acc_grade_daily.py
+          python scripts/acc_evaluate_odds.py
       - name: Publish daily grading
         run: |
           cp data/daily_grading.json /tmp/acc-daily-grading.json
+          cp data/daily_odds_evaluation.json /tmp/acc-daily-odds-evaluation.json
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3; do
@@ -31,7 +35,8 @@ jobs:
             git reset --hard HEAD
             git checkout -B daily-grading-publish origin/main
             cp /tmp/acc-daily-grading.json data/daily_grading.json
-            git add data/daily_grading.json
+            cp /tmp/acc-daily-odds-evaluation.json data/daily_odds_evaluation.json
+            git add data/daily_grading.json data/daily_odds_evaluation.json
             if git diff --cached --quiet; then break; fi
             git commit -m 'Publish ACC daily projection grading'
             if git push origin HEAD:main; then break; fi
@@ -46,4 +51,6 @@ jobs:
         if: always()
         with:
           name: acc-daily-grading
-          path: data/daily_grading.json
+          path: |
+            data/daily_grading.json
+            data/daily_odds_evaluation.json

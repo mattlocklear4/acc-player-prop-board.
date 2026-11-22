@@ -47,7 +47,12 @@ jobs:
               git reset --hard HEAD
               git checkout -B daily-odds-publish origin/main
               mkdir -p data/odds_snapshots
-              cp -n /tmp/acc-odds-snapshots/* data/odds_snapshots/ 2>/dev/null || true
+              # Preserve all previously committed snapshots without overwriting them.
+              for source in /tmp/acc-odds-snapshots/*.json; do
+                [ -f "$source" ] || continue
+                target="data/odds_snapshots/$(basename "$source")"
+                if [ ! -e "$target" ]; then cp "$source" "$target"; fi
+              done
               git add data/odds_snapshots/
               if git diff --cached --quiet; then break; fi
               git commit -m 'Archive daily ACC sportsbook lines'

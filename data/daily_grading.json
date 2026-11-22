@@ -1,0 +1,826 @@
+{
+  "generated_at_utc": "2026-11-22T14:51:19.193546+00:00",
+  "status": "PARTIAL",
+  "players_graded": 21,
+  "projected_players": 41,
+  "days": [
+    {
+      "date": "2026-11-21",
+      "games": 3,
+      "games_with_final_logs": 3,
+      "players_graded": 21,
+      "projected_players": 41,
+      "issues": 7,
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00"
+    }
+  ],
+  "metrics": {
+    "Minutes": {
+      "n": 21,
+      "mae": 6.986,
+      "bias": 0.538
+    },
+    "Points": {
+      "n": 21,
+      "mae": 5.02,
+      "bias": -0.307
+    },
+    "Rebounds": {
+      "n": 21,
+      "mae": 2.01,
+      "bias": -0.129
+    },
+    "Assists": {
+      "n": 21,
+      "mae": 1.091,
+      "bias": -0.078
+    },
+    "Threes": {
+      "n": 21,
+      "mae": 0.633,
+      "bias": 0.032
+    }
+  },
+  "issues": [
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "player": "Anson Beard Jr.",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "player": "Justin Abson",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "player": "Ring Nyeri",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "player": "Ethan Butler",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "player": "Francis Folefac",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "player": "Iker Martinez",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909567",
+      "team": "Duke",
+      "reason": "team_not_matched"
+    }
+  ],
+  "rows": [
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Antonio Dorn",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 8.306,
+          "actual": 19.0,
+          "error": -10.694
+        },
+        "Points": {
+          "projection": 1.884,
+          "actual": 8.0,
+          "error": -6.116
+        },
+        "Rebounds": {
+          "projection": 1.546,
+          "actual": 6.0,
+          "error": -4.454
+        },
+        "Assists": {
+          "projection": 0.449,
+          "actual": 1.0,
+          "error": -0.551
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Gallagher Placide",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 17.25,
+          "actual": 26.0,
+          "error": -8.75
+        },
+        "Points": {
+          "projection": 9.096,
+          "actual": 17.0,
+          "error": -7.904
+        },
+        "Rebounds": {
+          "projection": 3.5,
+          "actual": 11.0,
+          "error": -7.5
+        },
+        "Assists": {
+          "projection": 0.252,
+          "actual": 1.0,
+          "error": -0.748
+        },
+        "Threes": {
+          "projection": 1.0,
+          "actual": 0.0,
+          "error": 1.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 29.75,
+          "actual": 18.0,
+          "error": 11.75
+        },
+        "Points": {
+          "projection": 15.16,
+          "actual": 11.0,
+          "error": 4.16
+        },
+        "Rebounds": {
+          "projection": 7.5,
+          "actual": 7.0,
+          "error": 0.5
+        },
+        "Assists": {
+          "projection": 1.258,
+          "actual": 2.0,
+          "error": -0.742
+        },
+        "Threes": {
+          "projection": 0.5,
+          "actual": 1.0,
+          "error": -0.5
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Isaac Carr",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 15.872,
+          "actual": 19.0,
+          "error": -3.128
+        },
+        "Points": {
+          "projection": 4.426,
+          "actual": 7.0,
+          "error": -2.574
+        },
+        "Rebounds": {
+          "projection": 2.077,
+          "actual": 1.0,
+          "error": 1.077
+        },
+        "Assists": {
+          "projection": 1.442,
+          "actual": 0.0,
+          "error": 1.442
+        },
+        "Threes": {
+          "projection": 0.444,
+          "actual": 1.0,
+          "error": -0.556
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Jamari McDowell",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.107,
+          "actual": 20.0,
+          "error": -0.893
+        },
+        "Points": {
+          "projection": 4.541,
+          "actual": 3.0,
+          "error": 1.541
+        },
+        "Rebounds": {
+          "projection": 1.739,
+          "actual": 1.0,
+          "error": 0.739
+        },
+        "Assists": {
+          "projection": 1.319,
+          "actual": 1.0,
+          "error": 0.319
+        },
+        "Threes": {
+          "projection": 0.912,
+          "actual": 0.0,
+          "error": 0.912
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Justin Ray",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.441,
+          "actual": 28.0,
+          "error": -1.559
+        },
+        "Points": {
+          "projection": 10.249,
+          "actual": 18.0,
+          "error": -7.751
+        },
+        "Rebounds": {
+          "projection": 2.275,
+          "actual": 3.0,
+          "error": -0.725
+        },
+        "Assists": {
+          "projection": 1.362,
+          "actual": 6.0,
+          "error": -4.638
+        },
+        "Threes": {
+          "projection": 1.596,
+          "actual": 3.0,
+          "error": -1.404
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 35.529,
+          "actual": 28.0,
+          "error": 7.529
+        },
+        "Points": {
+          "projection": 18.527,
+          "actual": 8.0,
+          "error": 10.527
+        },
+        "Rebounds": {
+          "projection": 5.414,
+          "actual": 5.0,
+          "error": 0.414
+        },
+        "Assists": {
+          "projection": 4.259,
+          "actual": 3.0,
+          "error": 1.259
+        },
+        "Threes": {
+          "projection": 0.784,
+          "actual": 0.0,
+          "error": 0.784
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Lukas Bojovic",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 8.5,
+          "actual": 13.0,
+          "error": -4.5
+        },
+        "Points": {
+          "projection": 2.021,
+          "actual": 4.0,
+          "error": -1.979
+        },
+        "Rebounds": {
+          "projection": 1.0,
+          "actual": 0.0,
+          "error": 1.0
+        },
+        "Assists": {
+          "projection": 1.258,
+          "actual": 3.0,
+          "error": -1.742
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 1.0,
+          "error": -1.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Vincent Chaudhri",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 2.0,
+          "actual": 4.0,
+          "error": -2.0
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 1.0,
+          "actual": 1.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Vincent Ricchiuti",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 2.0,
+          "actual": 8.0,
+          "error": -6.0
+        },
+        "Points": {
+          "projection": 1.378,
+          "actual": 6.0,
+          "error": -4.622
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.455,
+          "actual": 2.0,
+          "error": -1.545
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909730",
+      "team": "Wake Forest",
+      "player": "Xander Pintelon",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 18.101,
+          "actual": 16.0,
+          "error": 2.101
+        },
+        "Points": {
+          "projection": 5.295,
+          "actual": 8.0,
+          "error": -2.705
+        },
+        "Rebounds": {
+          "projection": 3.547,
+          "actual": 4.0,
+          "error": -0.453
+        },
+        "Assists": {
+          "projection": 0.699,
+          "actual": 1.0,
+          "error": -0.301
+        },
+        "Threes": {
+          "projection": 0.997,
+          "actual": 0.0,
+          "error": 0.997
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Abdramane Siby",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 13.333,
+          "actual": 15.0,
+          "error": -1.667
+        },
+        "Points": {
+          "projection": 2.022,
+          "actual": 9.0,
+          "error": -6.978
+        },
+        "Rebounds": {
+          "projection": 1.338,
+          "actual": 3.0,
+          "error": -1.662
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Amarri Monroe",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 27.812,
+          "actual": 23.0,
+          "error": 4.812
+        },
+        "Points": {
+          "projection": 12.73,
+          "actual": 17.0,
+          "error": -4.27
+        },
+        "Rebounds": {
+          "projection": 6.588,
+          "actual": 4.0,
+          "error": 2.588
+        },
+        "Assists": {
+          "projection": 1.932,
+          "actual": 0.0,
+          "error": 1.932
+        },
+        "Threes": {
+          "projection": 1.12,
+          "actual": 2.0,
+          "error": -0.88
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Garwey Dual",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.134,
+          "actual": 10.0,
+          "error": 16.134
+        },
+        "Points": {
+          "projection": 8.084,
+          "actual": 3.0,
+          "error": 5.084
+        },
+        "Rebounds": {
+          "projection": 2.716,
+          "actual": 1.0,
+          "error": 1.716
+        },
+        "Assists": {
+          "projection": 3.81,
+          "actual": 1.0,
+          "error": 2.81
+        },
+        "Threes": {
+          "projection": 0.697,
+          "actual": 1.0,
+          "error": -0.303
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Gavin Doty",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 34.722,
+          "actual": 20.0,
+          "error": 14.722
+        },
+        "Points": {
+          "projection": 16.517,
+          "actual": 5.0,
+          "error": 11.517
+        },
+        "Rebounds": {
+          "projection": 7.466,
+          "actual": 3.0,
+          "error": 4.466
+        },
+        "Assists": {
+          "projection": 2.194,
+          "actual": 1.0,
+          "error": 1.194
+        },
+        "Threes": {
+          "projection": 1.338,
+          "actual": 1.0,
+          "error": 0.338
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Kiyan Anthony",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.84,
+          "actual": 28.0,
+          "error": -8.16
+        },
+        "Points": {
+          "projection": 9.958,
+          "actual": 13.0,
+          "error": -3.042
+        },
+        "Rebounds": {
+          "projection": 1.621,
+          "actual": 1.0,
+          "error": 0.621
+        },
+        "Assists": {
+          "projection": 1.252,
+          "actual": 2.0,
+          "error": -0.748
+        },
+        "Threes": {
+          "projection": 0.875,
+          "actual": 1.0,
+          "error": -0.125
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Luke Wilson",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.705,
+          "actual": 22.0,
+          "error": 4.705
+        },
+        "Points": {
+          "projection": 10.601,
+          "actual": 6.0,
+          "error": 4.601
+        },
+        "Rebounds": {
+          "projection": 7.007,
+          "actual": 9.0,
+          "error": -1.993
+        },
+        "Assists": {
+          "projection": 0.52,
+          "actual": 1.0,
+          "error": -0.48
+        },
+        "Threes": {
+          "projection": 0.022,
+          "actual": 0.0,
+          "error": 0.022
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Mark Morano",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 17.333,
+          "actual": 19.0,
+          "error": -1.667
+        },
+        "Points": {
+          "projection": 10.112,
+          "actual": 5.0,
+          "error": 5.112
+        },
+        "Rebounds": {
+          "projection": 2.006,
+          "actual": 1.0,
+          "error": 1.006
+        },
+        "Assists": {
+          "projection": 0.672,
+          "actual": 3.0,
+          "error": -2.328
+        },
+        "Threes": {
+          "projection": 2.675,
+          "actual": 1.0,
+          "error": 1.675
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Ryan Moesch",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 23.333,
+          "actual": 28.0,
+          "error": -4.667
+        },
+        "Points": {
+          "projection": 8.427,
+          "actual": 13.0,
+          "error": -4.573
+        },
+        "Rebounds": {
+          "projection": 1.003,
+          "actual": 1.0,
+          "error": 0.003
+        },
+        "Assists": {
+          "projection": 6.047,
+          "actual": 6.0,
+          "error": 0.047
+        },
+        "Threes": {
+          "projection": 1.003,
+          "actual": 0.0,
+          "error": 1.003
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Sadiq White Jr.",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 17.982,
+          "actual": 32.0,
+          "error": -14.018
+        },
+        "Points": {
+          "projection": 7.58,
+          "actual": 11.0,
+          "error": -3.42
+        },
+        "Rebounds": {
+          "projection": 4.324,
+          "actual": 10.0,
+          "error": -5.676
+        },
+        "Assists": {
+          "projection": 0.428,
+          "actual": 0.0,
+          "error": 0.428
+        },
+        "Threes": {
+          "projection": 0.259,
+          "actual": 0.0,
+          "error": 0.259
+        }
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "espn_event_401909719",
+      "team": "Syracuse",
+      "player": "Tasman Goodrick",
+      "snapshot_utc": "2026-11-21T13:33:34.124874+00:00",
+      "tipoff_utc": "2026-11-21T19:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 20.256,
+          "actual": 3.0,
+          "error": 17.256
+        },
+        "Points": {
+          "projection": 8.942,
+          "actual": 2.0,
+          "error": 6.942
+        },
+        "Rebounds": {
+          "projection": 5.627,
+          "actual": 0.0,
+          "error": 5.627
+        },
+        "Assists": {
+          "projection": 1.201,
+          "actual": 0.0,
+          "error": 1.201
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    }
+  ],
+  "caution": "Research-only grading from archived pregame projections and unofficial ESPN box scores. Missing player/game data excluded, not scored as zero. No sportsbook ROI inferred."
+}
