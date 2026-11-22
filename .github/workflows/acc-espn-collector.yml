@@ -26,6 +26,7 @@ jobs:
           cp -r data/espn /tmp/acc-espn-results
           for attempt in 1 2 3; do
             git fetch origin main
+            git reset --hard HEAD
             git checkout -B espn-publish origin/main
             mkdir -p data/espn
             cp /tmp/acc-espn-results/* data/espn/
