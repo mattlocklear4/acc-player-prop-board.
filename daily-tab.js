@@ -44,6 +44,23 @@ html+='</tbody></table></div>';
 html+='<p class="note">Grading uses archived pregame projections. This does not represent betting ROI.</p>';
 }
 }catch(_e){/* grading is optional until first publish */}
+try{
+const roiRes=await fetch('data/daily_odds_evaluation.json?ts='+Date.now(),{cache:'no-store'});
+if(roiRes.ok){
+const roi=await roiRes.json();
+html+='<h3>Historical sportsbook evaluation</h3>';
+html+='<p class="note">'+esc(roi.snapshots??0)+' saved odds snapshots · '+esc(roi.quotes_offered??0)+' quoted props · '+esc(roi.settled??0)+' settled hypothetical selections.</p>';
+if(roi.roi_percent==null){html+='<p class="note">ROI unavailable: no qualifying pregame odds quotes matched to graded final results yet. No odds or results have been estimated.</p>';}
+else{html+='<p class="note">Flat $1 research simulation: '+esc(roi.wins)+' wins, '+esc(roi.losses)+' losses, '+esc(roi.pushes)+' pushes · net '+esc(roi.profit_units)+' units · ROI '+esc(roi.roi_percent)+'% (settled stakes only).</p>';}
+const days=(roi.days||[]).slice(-7).reverse();
+if(days.length){
+html+='<h4>Recent odds coverage</h4><div class="tablewrap"><table><thead><tr><th>Date</th><th>Games quoted</th><th>Lines found</th><th>Selections settled or pushed</th></tr></thead><tbody>';
+for(const day of days)html+='<tr><td>'+esc(day.date)+'</td><td>'+esc(day.events)+'</td><td>'+esc(day.quotes_offered)+'</td><td>'+esc(day.hypothetical_selections)+'</td></tr>';
+html+='</tbody></table></div>';
+}
+html+='<p class="note">'+esc(roi.caution||'Research only; no real bets placed.')+'</p>';
+}
+}catch(_e){/* odds evaluation is optional until first publish */}
 el.innerHTML=html;
 }catch(e){status.textContent='Daily board unavailable: '+e.message;el.innerHTML='<p class="note">The daily automation must successfully publish a board before projections appear here.</p>';}
 }

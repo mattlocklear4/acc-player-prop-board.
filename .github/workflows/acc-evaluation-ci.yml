@@ -1,0 +1,52 @@
+name: ACC evaluation offline validation
+on:
+  push:
+    branches: [feature/automated-acc-evaluation]
+  pull_request:
+    paths:
+      - 'scripts/acc_grade_daily.py'
+      - 'scripts/acc_evaluate_odds.py'
+      - 'scripts/acc_daily_odds_snapshot.py'
+      - 'tests/**'
+      - '.github/workflows/acc-evaluation-ci.yml'
+      - '.github/workflows/acc-daily-grading.yml'
+      - '.github/workflows/acc-daily-odds.yml'
+      - 'daily-tab.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-evaluation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run no-network regression suite
+        run: python -m unittest discover -s tests -v
+      - name: Validate dashboard JavaScript
+        run: node --check daily-tab.js
+      - name: Grade committed archives and historical odds without paid API calls
+        run: |
+          python scripts/acc_grade_daily.py
+          python scripts/acc_evaluate_odds.py
+      - name: Assert integrity and absence of fabricated settlements
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          grading=json.loads(Path('data/daily_grading.json').read_text())
+          odds=json.loads(Path('data/daily_odds_evaluation.json').read_text())
+          assert grading['players_graded']==len(grading['rows'])
+          assert all(r.get('tipoff_utc') and r.get('snapshot_utc') for r in grading['rows'])
+          assert odds['selections']==len(odds['rows'])
+          assert odds['settled']==odds['wins']+odds['losses']
+          assert odds['roi_percent'] is None or odds['settled']>0
+          assert odds['quotes_offered']>=odds['selections']
+          print('Validated',grading['players_graded'],'graded player projections and',odds['settled'],'settled selections')
+          PY

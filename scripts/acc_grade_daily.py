@@ -20,8 +20,17 @@ FIELDS={'Minutes':('Minutes','minutes'),'Points':('KenPomPoints','points'),
         'Threes':('KenPomThrees','three_pm')}
 def norm(s):
     return ''.join(c for c in str(s or '').lower() if c.isalnum())
+def team_matches(school, boxscore_team):
+    """ESPN appends nicknames; event ID anchors short ACC school names such as Duke."""
+    target,observed=norm(school),norm(boxscore_team)
+    return bool(target and (observed==target or (len(target)>=4 and observed.startswith(target))))
 def num(v):
     try:return float(v) if v is not None and str(v).strip() else None
+    except (ValueError,TypeError):return None
+def timestamp(v):
+    try:
+        parsed=dt.datetime.fromisoformat(str(v).replace('Z','+00:00'))
+        return parsed.astimezone(dt.timezone.utc) if parsed.tzinfo else None
     except (ValueError,TypeError):return None
 def main():
     today=dt.datetime.now(ZoneInfo('America/New_York')).date()
@@ -38,21 +47,25 @@ def main():
         if archive.get('date_eastern')!=file.stem:
             issues.append({'date':file.stem,'reason':'archive_date_mismatch'});continue
         day_rows=[];day_issues=[];completed_games=0
+        projected_players=sum(len(t.get('players') or []) for g in archive.get('games') or [] for t in g.get('teams') or [])
+        archived_at=timestamp(archive.get('generated_at_utc'))
         for game in archive.get('games') or []:
             gid=str(game.get('game_id') or '')
+            tipoff=timestamp(game.get('tipoff_utc'))
+            if archived_at is None or tipoff is None or archived_at>=tipoff:
+                day_issues.append({'game_id':gid,'reason':'unverifiable_pregame_timestamp'});continue
             event_id=gid.removeprefix('espn_event_')
             if not event_id.isdigit():
                 day_issues.append({'game_id':gid,'reason':'unsupported_event_id'});continue
-            actuals=logs.get('espn_'+event_id,[])
+            actuals=[r for r in logs.get('espn_'+event_id,[]) if r.get('game_date')==file.stem
+                     and r.get('source')=='ESPN_UNOFFICIAL']
             if not actuals:
                 day_issues.append({'game_id':gid,'reason':'final_boxscore_not_collected'});continue
             completed_games+=1
             for team in game.get('teams') or []:
                 players=team.get('players') or []
                 # ESPN logs use full team names; projection uses school names.
-                team_name=norm(team.get('team'))
-                team_actuals=[a for a in actuals if norm(a.get('team'))==team_name or
-                              (len(team_name)>=5 and norm(a.get('team')).startswith(team_name))]
+                team_actuals=[a for a in actuals if team_matches(team.get('team'),a.get('team'))]
                 if players and not team_actuals:
                     day_issues.append({'game_id':gid,'team':team.get('team'),'reason':'team_not_matched'});continue
                 for p in players:
@@ -67,9 +80,11 @@ def main():
                             stats[field]={'projection':round(x,3),'actual':y,'error':round(x-y,3)}
                     if not stats:continue
                     day_rows.append({'date':file.stem,'game_id':gid,'team':team.get('team'),
-                                     'player':p.get('Player'),'stats':stats})
+                                     'player':p.get('Player'),'snapshot_utc':archive.get('generated_at_utc'),
+                                     'tipoff_utc':game.get('tipoff_utc'),'stats':stats})
         daily.append({'date':file.stem,'games':len(archive.get('games') or []),
                       'games_with_final_logs':completed_games,'players_graded':len(day_rows),
+                      'projected_players':projected_players,
                       'issues':len(day_issues),'snapshot_utc':archive.get('generated_at_utc')})
         rows.extend(day_rows);issues.extend([{'date':file.stem,**i} for i in day_issues])
     metrics={}
@@ -79,6 +94,7 @@ def main():
                         'bias':round(statistics.mean(errs),3) if errs else None}
     result={'generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),
             'status':'PARTIAL' if issues else 'OK','players_graded':len(rows),
+            'projected_players':sum(d['projected_players'] for d in daily),
             'days':daily,'metrics':metrics,'issues':issues,'rows':rows,
             'caution':'Research-only grading from archived pregame projections and unofficial ESPN box scores. Missing player/game data excluded, not scored as zero. No sportsbook ROI inferred.'}
     OUT.parent.mkdir(parents=True,exist_ok=True)

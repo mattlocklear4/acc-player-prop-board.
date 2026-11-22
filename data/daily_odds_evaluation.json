@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-11-22T14:58:02.597765+00:00",
+  "status": "PARTIAL",
+  "method": "Flat $1 hypothetical stake per distinct sportsbook quote, direction from immutable archived projection vs line; ties skipped; pushes refunded. All qualifying quotes are included, not an executable betting strategy.",
+  "snapshots": 1,
+  "quotes_offered": 0,
+  "selections": 0,
+  "settled": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "profit_units": 0,
+  "roi_percent": null,
+  "days": [
+    {
+      "date": "2026-11-21",
+      "events": 2,
+      "quotes_offered": 0,
+      "hypothetical_selections": 0,
+      "issues": {}
+    }
+  ],
+  "issues": [],
+  "rows": [],
+  "caution": "Historical research only. Quotes may not have been bettable or available to the user; no actual wagers, no fabricated odds, and missing matches excluded."
+}
