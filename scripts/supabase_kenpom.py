@@ -40,7 +40,8 @@ def resolve_opponent(name, kp):
         if len(winners)==1:return winners[0]
     aliases={'texasamccislanders':'texasamcorpuschristi',
              'floridastseminoles':'floridast',
-             'siuedwardsvillecougars':'siuedwardsville'}
+             'siuedwardsvillecougars':'siuedwardsville',
+             'njithighlanders':'njit'}
     alias=aliases.get(key)
     if alias:
         found=[r['Team'] for k,r in kp.items() if k==alias]
