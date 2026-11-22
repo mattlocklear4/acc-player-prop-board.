@@ -24,6 +24,26 @@ html+='<tr><td>'+esc(p.Player??p.player??p.name)+'</td><td>'+val(pick(p,'Minutes
 }
 html+='</tbody></table></div>';
 }}
+try{
+const gradeRes=await fetch('data/daily_grading.json?ts='+Date.now(),{cache:'no-store'});
+if(gradeRes.ok){
+const grade=await gradeRes.json();
+html+='<h3>Historical projection accuracy</h3><p class="note">'+esc(grade.players_graded||0)+' player-game projections graded against final ESPN box scores. Missing results are excluded.</p>';
+html+='<div class="tablewrap"><table><thead><tr><th>Stat</th><th>Sample</th><th>MAE</th><th>Bias</th></tr></thead><tbody>';
+for(const stat of ['Minutes','Points','Rebounds','Assists','Threes']){
+const m=grade.metrics?.[stat]||{};
+html+='<tr><td>'+esc(stat)+'</td><td>'+esc(m.n??0)+'</td><td>'+val(m.mae)+'</td><td>'+val(m.bias)+'</td></tr>';
+}
+html+='</tbody></table></div>';
+const recent=(grade.days||[]).slice(-7).reverse();
+if(recent.length){
+html+='<h4>Recent grading coverage</h4><div class="tablewrap"><table><thead><tr><th>Date</th><th>Games with results</th><th>Players graded</th><th>Issues</th></tr></thead><tbody>';
+for(const day of recent)html+='<tr><td>'+esc(day.date)+'</td><td>'+esc(day.games_with_final_logs)+' / '+esc(day.games)+'</td><td>'+esc(day.players_graded)+'</td><td>'+esc(day.issues)+'</td></tr>';
+html+='</tbody></table></div>';
+}
+html+='<p class="note">Grading uses archived pregame projections. This does not represent betting ROI.</p>';
+}
+}catch(_e){/* grading is optional until first publish */}
 el.innerHTML=html;
 }catch(e){status.textContent='Daily board unavailable: '+e.message;el.innerHTML='<p class="note">The daily automation must successfully publish a board before projections appear here.</p>';}
 }
