@@ -54,8 +54,8 @@ if(roi.roi_percent==null){html+='<p class="note">ROI unavailable: no qualifying 
 else{html+='<p class="note">Flat $1 research simulation: '+esc(roi.wins)+' wins, '+esc(roi.losses)+' losses, '+esc(roi.pushes)+' pushes · net '+esc(roi.profit_units)+' units · ROI '+esc(roi.roi_percent)+'% (settled stakes only).</p>';}
 const days=(roi.days||[]).slice(-7).reverse();
 if(days.length){
-html+='<h4>Recent odds coverage</h4><div class="tablewrap"><table><thead><tr><th>Date</th><th>Games quoted</th><th>Lines found</th><th>Selections settled or pushed</th></tr></thead><tbody>';
-for(const day of days)html+='<tr><td>'+esc(day.date)+'</td><td>'+esc(day.events)+'</td><td>'+esc(day.quotes_offered)+'</td><td>'+esc(day.hypothetical_selections)+'</td></tr>';
+html+='<h4>Recent odds coverage</h4><div class="tablewrap"><table><thead><tr><th>Date</th><th>Games checked</th><th>Real lines found</th><th>Unmatched player/market</th><th>Hypothetical selections</th></tr></thead><tbody>';
+for(const day of days)html+='<tr><td>'+esc(day.date)+'</td><td>'+esc(day.events)+'</td><td>'+esc(day.quotes_offered)+'</td><td>'+esc(day.issues?.unmatched_player_or_market??0)+'</td><td>'+esc(day.hypothetical_selections)+'</td></tr>';
 html+='</tbody></table></div>';
 }
 html+='<p class="note">'+esc(roi.caution||'Research only; no real bets placed.')+'</p>';
