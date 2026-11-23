@@ -25,6 +25,18 @@ html+='<tr><td>'+esc(p.Player??p.player??p.name)+'</td><td>'+val(pick(p,'Minutes
 html+='</tbody></table></div>';
 }}
 try{
+const healthRes=await fetch('data/pipeline_health.json?ts='+Date.now(),{cache:'no-store'});
+if(healthRes.ok){
+const health=await healthRes.json();
+const counts=(health.failures||0)+' failures · '+(health.warnings||0)+' warnings';
+html+='<h3>Daily pipeline health: '+esc(String(health.status||'unknown').toUpperCase())+'</h3>';
+html+='<p class="note">Last audited '+esc(health.generated_at_utc?new Date(health.generated_at_utc).toLocaleString():'unknown')+' · '+esc(counts)+'. An automated health alert indicates missing data or a failed workflow, not a fabricated result.</p>';
+html+='<div class="tablewrap"><table><thead><tr><th>Check</th><th>Status</th><th>Evidence / gap</th></tr></thead><tbody>';
+for(const check of health.checks||[])html+='<tr><td>'+esc(check.code)+'</td><td>'+esc(String(check.level||'').toUpperCase())+'</td><td>'+esc(check.detail)+'</td></tr>';
+html+='</tbody></table></div>';
+}
+}catch(_e){/* health report is optional until first scheduled publication */}
+try{
 const gradeRes=await fetch('data/daily_grading.json?ts='+Date.now(),{cache:'no-store'});
 if(gradeRes.ok){
 const grade=await gradeRes.json();
