@@ -9,6 +9,7 @@ on:
       - 'data/daily_board.json'
       - 'data/daily_grading.json'
       - 'data/daily_odds_evaluation.json'
+      - 'data/pipeline_health.json'
       - 'data/archives/daily/**'
       - 'data/odds_snapshots/**'
       - 'style.css'
