@@ -1,0 +1,491 @@
+{
+  "mode": "READ_ONLY",
+  "generated_at_utc": "2026-11-23T16:55:29.710501+00:00",
+  "bookmakers": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "paid_requests_enabled": true,
+  "events": [
+    {
+      "event_id": "f6407650f13adaa2fc13d17570ef3327",
+      "schedule_game_id": "espn_event_401918076",
+      "home_team": "Clemson Tigers",
+      "away_team": "Ole Miss Rebels",
+      "status": "ODDS_RETRIEVED",
+      "props": [
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Adam Clark",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -160,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Adam Clark",
+          "side": "Under",
+          "line": 3.5,
+          "odds": 120,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Ace Buckner",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -105,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Ace Buckner",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -125,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Adam Clark",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -104,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Adam Clark",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -125,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Ace Buckner",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -130,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Ace Buckner",
+          "side": "Under",
+          "line": 14.5,
+          "odds": 100,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Cole Certa",
+          "side": "Over",
+          "line": 12.5,
+          "odds": 102,
+          "last_update": "2026-11-23T16:55:22Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Cole Certa",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -132,
+          "last_update": "2026-11-23T16:55:22Z"
+        }
+      ]
+    },
+    {
+      "event_id": "5a237fcf6422f6a245d462ba2a6835dc",
+      "schedule_game_id": "espn_event_401913102",
+      "home_team": "North Carolina Tar Heels",
+      "away_team": "Monmouth Hawks",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "props": []
+    },
+    {
+      "event_id": "b7a4f6e90eb128b0d569dacbfe487e80",
+      "schedule_game_id": "espn_event_401918057",
+      "home_team": "California Golden Bears",
+      "away_team": "Alabama St Hornets",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "props": []
+    }
+  ],
+  "warnings": [],
+  "quota": {
+    "estimated_max_credits": 12,
+    "requests_sent": 3,
+    "credits_spent_reported": 2,
+    "remaining": 388
+  },
+  "discovered_ncaab_events": 42,
+  "discovery_diagnostic": {
+    "api_event_sample": [
+      {
+        "home_team": "St. Bonaventure Bonnies",
+        "away_team": "Appalachian St Mountaineers",
+        "commence_time": "2026-11-23T16:00:00Z"
+      },
+      {
+        "home_team": "Davidson Wildcats",
+        "away_team": "Northern Iowa Panthers",
+        "commence_time": "2026-11-23T16:00:00Z"
+      },
+      {
+        "home_team": "East Carolina Pirates",
+        "away_team": "Indiana St Sycamores",
+        "commence_time": "2026-11-23T17:30:00Z"
+      },
+      {
+        "home_team": "Florida Int'l Golden Panthers",
+        "away_team": "Long Beach St 49ers",
+        "commence_time": "2026-11-23T18:00:00Z"
+      },
+      {
+        "home_team": "Wright St Raiders",
+        "away_team": "Akron Zips",
+        "commence_time": "2026-11-23T18:30:00Z"
+      },
+      {
+        "home_team": "Florida Gulf Coast Eagles",
+        "away_team": "Charlotte 49ers",
+        "commence_time": "2026-11-23T18:30:00Z"
+      },
+      {
+        "home_team": "Oregon St Beavers",
+        "away_team": "Tulsa Golden Hurricane",
+        "commence_time": "2026-11-23T19:00:00Z"
+      },
+      {
+        "home_team": "Clemson Tigers",
+        "away_team": "Ole Miss Rebels",
+        "commence_time": "2026-11-23T19:30:00Z"
+      },
+      {
+        "home_team": "Southern Illinois Salukis",
+        "away_team": "Middle Tennessee Blue Raiders",
+        "commence_time": "2026-11-23T20:00:00Z"
+      },
+      {
+        "home_team": "Southern Utah Thunderbirds",
+        "away_team": "Arkansas St Red Wolves",
+        "commence_time": "2026-11-23T20:30:00Z"
+      },
+      {
+        "home_team": "IUPUI Jaguars",
+        "away_team": "William & Mary Tribe",
+        "commence_time": "2026-11-23T20:30:00Z"
+      },
+      {
+        "home_team": "Belmont Bruins",
+        "away_team": "Yale Bulldogs",
+        "commence_time": "2026-11-23T21:00:00Z"
+      },
+      {
+        "home_team": "Georgia St Panthers",
+        "away_team": "Tulane Green Wave",
+        "commence_time": "2026-11-23T21:00:00Z"
+      },
+      {
+        "home_team": "San Francisco Dons",
+        "away_team": "Nevada Wolf Pack",
+        "commence_time": "2026-11-23T21:30:00Z"
+      },
+      {
+        "home_team": "BYU Cougars",
+        "away_team": "Washington Huskies",
+        "commence_time": "2026-11-23T22:00:00Z"
+      },
+      {
+        "home_team": "Tenn-Martin Skyhawks",
+        "away_team": "Temple Owls",
+        "commence_time": "2026-11-23T22:30:00Z"
+      },
+      {
+        "home_team": "Youngstown St Penguins",
+        "away_team": "Maryland-Eastern Shore Hawks",
+        "commence_time": "2026-11-23T23:30:00Z"
+      },
+      {
+        "home_team": "North Florida Ospreys",
+        "away_team": "Central Arkansas Bears",
+        "commence_time": "2026-11-24T00:00:00Z"
+      },
+      {
+        "home_team": "Iona Gaels",
+        "away_team": "Fairleigh Dickinson Knights",
+        "commence_time": "2026-11-24T00:00:00Z"
+      },
+      {
+        "home_team": "Northern Kentucky Norse",
+        "away_team": "Georgia Southern Eagles",
+        "commence_time": "2026-11-24T00:00:00Z"
+      },
+      {
+        "home_team": "Santa Clara Broncos",
+        "away_team": "Illinois St Redbirds",
+        "commence_time": "2026-11-24T00:00:00Z"
+      },
+      {
+        "home_team": "South Carolina St Bulldogs",
+        "away_team": "North Carolina A&T Aggies",
+        "commence_time": "2026-11-24T00:00:00Z"
+      },
+      {
+        "home_team": "Wichita St Shockers",
+        "away_team": "Texas A&M-CC Islanders",
+        "commence_time": "2026-11-24T00:30:00Z"
+      },
+      {
+        "home_team": "Kansas Jayhawks",
+        "away_team": "Denver Pioneers",
+        "commence_time": "2026-11-24T01:00:00Z"
+      },
+      {
+        "home_team": "Illinois Fighting Illini",
+        "away_team": "Winthrop Eagles",
+        "commence_time": "2026-11-24T01:00:00Z"
+      },
+      {
+        "home_team": "North Carolina Tar Heels",
+        "away_team": "Monmouth Hawks",
+        "commence_time": "2026-11-24T01:00:00Z"
+      },
+      {
+        "home_team": "Stephen F. Austin Lumberjacks",
+        "away_team": "Utah Valley Wolverines",
+        "commence_time": "2026-11-24T01:00:00Z"
+      },
+      {
+        "home_team": "Providence Friars",
+        "away_team": "VCU Rams",
+        "commence_time": "2026-11-24T02:00:00Z"
+      },
+      {
+        "home_team": "Seattle Redhawks",
+        "away_team": "Loyola (Chi) Ramblers",
+        "commence_time": "2026-11-24T02:30:00Z"
+      },
+      {
+        "home_team": "Pepperdine Waves",
+        "away_team": "UNC Greensboro Spartans",
+        "commence_time": "2026-11-24T02:30:00Z"
+      },
+      {
+        "home_team": "California Golden Bears",
+        "away_team": "Alabama St Hornets",
+        "commence_time": "2026-11-24T03:00:00Z"
+      },
+      {
+        "home_team": "UNLV Rebels",
+        "away_team": "Eastern Washington Eagles",
+        "commence_time": "2026-11-24T03:00:00Z"
+      },
+      {
+        "home_team": "Arizona Wildcats",
+        "away_team": "Colorado St Rams",
+        "commence_time": "2026-11-24T04:30:00Z"
+      },
+      {
+        "home_team": "UC San Diego Tritons",
+        "away_team": "San Jos\u00e9 St Spartans",
+        "commence_time": "2026-11-24T04:59:00Z"
+      },
+      {
+        "home_team": "Maryland Terrapins",
+        "away_team": "Tennessee Volunteers",
+        "commence_time": "2026-11-24T20:00:00Z"
+      },
+      {
+        "home_team": "TCU Horned Frogs",
+        "away_team": "Miami Hurricanes",
+        "commence_time": "2026-11-24T20:00:00Z"
+      },
+      {
+        "home_team": "Iowa State Cyclones",
+        "away_team": "San Diego St Aztecs",
+        "commence_time": "2026-11-24T22:00:00Z"
+      },
+      {
+        "home_team": "Michigan Wolverines",
+        "away_team": "Creighton Bluejays",
+        "commence_time": "2026-11-24T22:30:00Z"
+      },
+      {
+        "home_team": "Louisville Cardinals",
+        "away_team": "Texas Tech Red Raiders",
+        "commence_time": "2026-11-25T01:00:00Z"
+      },
+      {
+        "home_team": "Alabama Crimson Tide",
+        "away_team": "Baylor Bears",
+        "commence_time": "2026-11-25T03:00:00Z"
+      },
+      {
+        "home_team": "St. John's Red Storm",
+        "away_team": "Oregon Ducks",
+        "commence_time": "2026-11-25T03:30:00Z"
+      },
+      {
+        "home_team": "Kansas St Wildcats",
+        "away_team": "Gonzaga Bulldogs",
+        "commence_time": "2026-11-25T05:30:00Z"
+      }
+    ],
+    "schedule_comparisons": [
+      {
+        "schedule_home": "Clemson Tigers",
+        "schedule_away": "Ole Miss Rebels",
+        "schedule_tipoff_utc": "2026-11-23T19:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Clemson Tigers",
+            "away_team": "Ole Miss Rebels",
+            "commence_time": "2026-11-23T19:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "UNLV Rebels",
+            "away_team": "Eastern Washington Eagles",
+            "commence_time": "2026-11-24T03:00:00Z",
+            "name_similarity": 0.471,
+            "tipoff_difference_minutes": 450
+          },
+          {
+            "home_team": "Belmont Bruins",
+            "away_team": "Yale Bulldogs",
+            "commence_time": "2026-11-23T21:00:00Z",
+            "name_similarity": 0.469,
+            "tipoff_difference_minutes": 90
+          },
+          {
+            "home_team": "Alabama Crimson Tide",
+            "away_team": "Baylor Bears",
+            "commence_time": "2026-11-25T03:00:00Z",
+            "name_similarity": 0.466,
+            "tipoff_difference_minutes": 1890
+          },
+          {
+            "home_team": "North Florida Ospreys",
+            "away_team": "Central Arkansas Bears",
+            "commence_time": "2026-11-24T00:00:00Z",
+            "name_similarity": 0.431,
+            "tipoff_difference_minutes": 270
+          }
+        ]
+      },
+      {
+        "schedule_home": "North Carolina Tar Heels",
+        "schedule_away": "Monmouth Hawks",
+        "schedule_tipoff_utc": "2026-11-24T01:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "North Carolina Tar Heels",
+            "away_team": "Monmouth Hawks",
+            "commence_time": "2026-11-24T01:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "South Carolina St Bulldogs",
+            "away_team": "North Carolina A&T Aggies",
+            "commence_time": "2026-11-24T00:00:00Z",
+            "name_similarity": 0.571,
+            "tipoff_difference_minutes": -60
+          },
+          {
+            "home_team": "Davidson Wildcats",
+            "away_team": "Northern Iowa Panthers",
+            "commence_time": "2026-11-23T16:00:00Z",
+            "name_similarity": 0.431,
+            "tipoff_difference_minutes": -540
+          },
+          {
+            "home_team": "Kansas Jayhawks",
+            "away_team": "Denver Pioneers",
+            "commence_time": "2026-11-24T01:00:00Z",
+            "name_similarity": 0.422,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Tenn-Martin Skyhawks",
+            "away_team": "Temple Owls",
+            "commence_time": "2026-11-23T22:30:00Z",
+            "name_similarity": 0.419,
+            "tipoff_difference_minutes": -150
+          }
+        ]
+      },
+      {
+        "schedule_home": "California Golden Bears",
+        "schedule_away": "Alabama State Hornets",
+        "schedule_tipoff_utc": "2026-11-24T03:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "California Golden Bears",
+            "away_team": "Alabama St Hornets",
+            "commence_time": "2026-11-24T03:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Alabama Crimson Tide",
+            "away_team": "Baylor Bears",
+            "commence_time": "2026-11-25T03:00:00Z",
+            "name_similarity": 0.546,
+            "tipoff_difference_minutes": 1440
+          },
+          {
+            "home_team": "Florida Int'l Golden Panthers",
+            "away_team": "Long Beach St 49ers",
+            "commence_time": "2026-11-23T18:00:00Z",
+            "name_similarity": 0.523,
+            "tipoff_difference_minutes": -540
+          },
+          {
+            "home_team": "Youngstown St Penguins",
+            "away_team": "Maryland-Eastern Shore Hawks",
+            "commence_time": "2026-11-23T23:30:00Z",
+            "name_similarity": 0.439,
+            "tipoff_difference_minutes": -210
+          },
+          {
+            "home_team": "TCU Horned Frogs",
+            "away_team": "Miami Hurricanes",
+            "commence_time": "2026-11-24T20:00:00Z",
+            "name_similarity": 0.426,
+            "tipoff_difference_minutes": 1020
+          }
+        ]
+      }
+    ]
+  },
+  "matched_events": 3,
+  "target_date_eastern": "2026-11-23",
+  "snapshot_date_eastern": "2026-11-23",
+  "daily_credit_cap": 24,
+  "monthly_reserve_credits": 50,
+  "note": "Single pregame snapshot; games with no available player props may be missing."
+}
