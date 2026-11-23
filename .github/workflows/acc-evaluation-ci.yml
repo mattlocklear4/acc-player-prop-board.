@@ -8,6 +8,7 @@ on:
       - 'scripts/acc_evaluate_odds.py'
       - 'scripts/acc_pipeline_health.py'
       - '.github/workflows/acc-pipeline-health.yml'
+      - '.github/workflows/acc-daily-odds.yml'
       - 'tests/**'
       - '.github/workflows/acc-evaluation-ci.yml'
   pull_request:
