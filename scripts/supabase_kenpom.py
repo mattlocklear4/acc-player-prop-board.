@@ -24,6 +24,9 @@ OPPONENT_ALIASES = {
     'northcarolinastate':'ncstate',
     'miamiflorida':'miamifl',
     'saintmarys':'saintmarys',
+    'olemiss':'mississippi',
+    'olemissrebels':'mississippi',
+    'mississippirebels':'mississippi',
 }
 
 def resolve_opponent(name, kp):
