@@ -21,12 +21,12 @@ function american(p){if(p<=0||p>=1)return null;return p>=.5?Math.round(-100*p/(1
 function evaluate(board,snapshot){
   const rows=[],diagnostics=[];
   if(board.date_eastern!==snapshot.snapshot_date_eastern){return {rows,diagnostics:[{reason:'Board and odds snapshot dates differ'}]};}
-  const collected=time(snapshot.generated_at_utc);
+  const collected=time(snapshot.generated_at_utc),projected=time(board.generated_at_utc);
   for(const event of snapshot.events||[]){
     const game=(board.games||[]).find(g=>g.game_id===event.schedule_game_id);
     if(!game){diagnostics.push({game:event.home_team+' / '+event.away_team,reason:'No matching game ID'});continue;}
     const tipoff=time(game.tipoff_utc);
-    if(!collected||!tipoff||collected>=tipoff){diagnostics.push({game:game.home_team+' / '+game.away_team,reason:'Snapshot not demonstrably pregame'});continue;}
+    if(!collected||!projected||!tipoff||collected>=tipoff||projected>=tipoff){diagnostics.push({game:game.home_team+' / '+game.away_team,reason:'Projection board or odds snapshot not demonstrably pregame'});continue;}
     const players=[];
     for(const team of game.teams||[])for(const p of team.players||[])players.push({team:team.team,p});
     const groups=new Map();
