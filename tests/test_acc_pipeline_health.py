@@ -63,5 +63,11 @@ class HealthTests(unittest.TestCase):
         self.assertEqual(self.checks()['projections']['level'], 'warn')
 
 
+    def test_pages_success_before_board_publish_is_not_current(self):
+        self.put('data/daily_board.json', {'date_eastern': '2026-11-23', 'generated_at_utc': '2026-11-23T16:00:00Z', 'games': []})
+        runs = {**RUNS, 'pages': {'conclusion': 'success', 'completed_at': '2026-11-23T15:00:00Z'}}
+        checks = {c['code']: c for c in audit(self.root, NOW, runs)['checks']}
+        self.assertEqual(checks['workflow_pages']['level'], 'fail')
+
 if __name__ == '__main__':
     unittest.main()
