@@ -13,6 +13,7 @@ from zoneinfo import ZoneInfo
 
 ROOT=Path(__file__).resolve().parents[1]
 ARCHIVES=ROOT/'data/archives/daily'
+SUPPLEMENTAL=ROOT/'data/archives/supplemental'
 LOGS=ROOT/'data/espn/acc_player_games_2027.csv'
 OUT=ROOT/'data/daily_grading.json'
 FIELDS={'Minutes':('Minutes','minutes'),'Points':('KenPomPoints','points'),
@@ -47,9 +48,27 @@ def main():
         if archive.get('date_eastern')!=file.stem:
             issues.append({'date':file.stem,'reason':'archive_date_mismatch'});continue
         day_rows=[];day_issues=[];completed_games=0
+        game_sources=[(g,archive.get('generated_at_utc')) for g in archive.get('games') or []]
+        # Supplemental archives are additive, timestamped and never replace the original.
+        for supplemental_file in sorted(SUPPLEMENTAL.glob(file.stem+'*.json')):
+            supplemental=json.loads(supplemental_file.read_text())
+            if supplemental.get('date_eastern')!=file.stem:
+                day_issues.append({'reason':'supplemental_date_mismatch','file':supplemental_file.name});continue
+            for extra_game in supplemental.get('games') or []:
+                original=next((g for g in archive.get('games') or [] if g.get('game_id')==extra_game.get('game_id')),None)
+                if original is None:
+                    day_issues.append({'reason':'supplemental_game_not_in_archive','game_id':extra_game.get('game_id')});continue
+                original_names={norm(p.get('Player')) for t in original.get('teams') or [] for p in t.get('players') or []}
+                added_teams=[]
+                for team in extra_game.get('teams') or []:
+                    new_players=[p for p in team.get('players') or [] if norm(p.get('Player')) not in original_names]
+                    if new_players:added_teams.append({**team,'players':new_players})
+                if added_teams:game_sources.append(({**extra_game,'teams':added_teams},supplemental.get('generated_at_utc')))
+        projected_players+=sum(len(t.get('players') or []) for g,_ in game_sources[len(archive.get('games') or []):] for t in g.get('teams') or [])
         projected_players=sum(len(t.get('players') or []) for g in archive.get('games') or [] for t in g.get('teams') or [])
         archived_at=timestamp(archive.get('generated_at_utc'))
-        for game in archive.get('games') or []:
+        for game,game_archive_time in game_sources:
+            archived_at=timestamp(game_archive_time)
             gid=str(game.get('game_id') or '')
             tipoff=timestamp(game.get('tipoff_utc'))
             if archived_at is None or tipoff is None or archived_at>=tipoff:
@@ -80,7 +99,7 @@ def main():
                             stats[field]={'projection':round(x,3),'actual':y,'error':round(x-y,3)}
                     if not stats:continue
                     day_rows.append({'date':file.stem,'game_id':gid,'team':team.get('team'),
-                                     'player':p.get('Player'),'snapshot_utc':archive.get('generated_at_utc'),
+                                     'player':p.get('Player'),'snapshot_utc':game_archive_time,
                                      'tipoff_utc':game.get('tipoff_utc'),'stats':stats})
         daily.append({'date':file.stem,'games':len(archive.get('games') or []),
                       'games_with_final_logs':completed_games,'players_graded':len(day_rows),
