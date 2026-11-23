@@ -17,4 +17,9 @@ class OpponentTests(unittest.TestCase):
         kp={canon('Boston College'):{'Team':'Boston College'}}
         self.assertEqual(resolve_opponent('Boston College Eagles',kp),'Boston College')
 
+    def test_ole_miss_kenpom_name(self):
+        kp={canon('Mississippi'):{'Team':'Mississippi'}, canon('Mississippi State'):{'Team':'Mississippi State'}}
+        self.assertEqual(resolve_opponent('Ole Miss Rebels',kp),'Mississippi')
+        self.assertEqual(resolve_opponent('Mississippi Rebels',kp),'Mississippi')
+
 if __name__=='__main__':unittest.main()
