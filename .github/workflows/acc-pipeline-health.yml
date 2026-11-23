@@ -1,0 +1,74 @@
+name: ACC daily pipeline health
+on:
+  workflow_dispatch:
+  schedule:
+    # 2:30 PM Eastern (standard time); safely after morning collectors.
+    - cron: '30 19 * * *'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: acc-pipeline-health
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run no-network health regression tests
+        run: python -m unittest discover -s tests -p 'test_acc_pipeline_health.py' -v
+      - name: Audit data, immutable archives, quotas and latest workflow conclusions
+        id: audit
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/acc_pipeline_health.py
+      - name: Publish health report without changing any archived data
+        run: |
+          test -s data/pipeline_health.json
+          cp data/pipeline_health.json /tmp/acc-pipeline-health.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B pipeline-health-publish origin/main
+            cp /tmp/acc-pipeline-health.json data/pipeline_health.json
+            git add data/pipeline_health.json
+            if git diff --cached --quiet; then break; fi
+            git commit -m 'Publish ACC pipeline health report [skip ci]'
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 3
+          done
+      - name: Deploy updated dashboard report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main
+      - name: Summarize health and raise visible Actions failure alert
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report=json.loads(Path('data/pipeline_health.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write(f"## ACC pipeline health: {report['status'].upper()}\n\n")
+              f.write(f"Date (ET): {report['date_eastern']} · {report['failures']} failures · {report['warnings']} warnings\n\n")
+              for c in report['checks']:
+                  f.write(f"- **{c['level'].upper()}** `{c['code']}`: {c['detail']}\n")
+                  if c['level']=='fail':
+                      print(f"::error title=ACC pipeline {c['code']}::{c['detail']}")
+          if report['failures']:
+              raise SystemExit('Health audit failed. Review the report and Actions annotations.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: acc-pipeline-health
+          path: data/pipeline_health.json
