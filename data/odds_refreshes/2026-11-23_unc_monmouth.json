@@ -1,0 +1,138 @@
+{
+  "generated_at_utc": "2026-11-23T21:26:38.045211+00:00",
+  "event_id": "5a237fcf6422f6a245d462ba2a6835dc",
+  "home_team": "North Carolina Tar Heels",
+  "away_team": "Monmouth Hawks",
+  "commence_time": "2026-11-24T01:00:00Z",
+  "requested_books": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "requested_markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "quota": {
+    "preflight_remaining": 386,
+    "charged_reported": 2,
+    "remaining_reported": 384,
+    "hard_estimated_ceiling": 4,
+    "reserve": 50
+  },
+  "status": "ODDS_RETRIEVED",
+  "props": [
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_points",
+      "player": "Jarin Stevenson",
+      "side": "Over",
+      "line": 9.5,
+      "odds": -122,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_points",
+      "player": "Jarin Stevenson",
+      "side": "Under",
+      "line": 9.5,
+      "odds": -106,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_points",
+      "player": "Terrence Brown",
+      "side": "Over",
+      "line": 19.5,
+      "odds": -115,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_points",
+      "player": "Terrence Brown",
+      "side": "Under",
+      "line": 19.5,
+      "odds": -112,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_points",
+      "player": "Matt Able",
+      "side": "Over",
+      "line": 12.5,
+      "odds": -108,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_points",
+      "player": "Matt Able",
+      "side": "Under",
+      "line": 12.5,
+      "odds": -120,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_rebounds",
+      "player": "Jarin Stevenson",
+      "side": "Over",
+      "line": 5.5,
+      "odds": 100,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_rebounds",
+      "player": "Jarin Stevenson",
+      "side": "Under",
+      "line": 5.5,
+      "odds": -130,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_rebounds",
+      "player": "Matt Able",
+      "side": "Over",
+      "line": 2.5,
+      "odds": -147,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_rebounds",
+      "player": "Matt Able",
+      "side": "Under",
+      "line": 2.5,
+      "odds": 113,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_rebounds",
+      "player": "Terrence Brown",
+      "side": "Over",
+      "line": 3.5,
+      "odds": -116,
+      "last_update": "2026-11-23T21:26:01Z"
+    },
+    {
+      "bookmaker": "betonlineag",
+      "market": "player_rebounds",
+      "player": "Terrence Brown",
+      "side": "Under",
+      "line": 3.5,
+      "odds": -111,
+      "last_update": "2026-11-23T21:26:01Z"
+    }
+  ]
+}
