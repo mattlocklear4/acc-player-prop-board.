@@ -20,6 +20,7 @@ class HealthTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.put('data/espn/collector_status.json', {'status': 'OK', 'checked_at_utc': '2026-11-23T12:30:00Z', 'total_player_rows': 5000})
         self.put('data/archives/daily/2026-11-22.json', {'date_eastern': '2026-11-22', 'generated_at_utc': '2026-11-22T13:00:00Z', 'games': [{'tipoff_utc': '2026-11-22T20:00:00Z'}]})
+        self.put('data/archives/daily/2026-11-23.json', {'date_eastern': '2026-11-23', 'generated_at_utc': '2026-11-23T13:00:00Z', 'games': [{'tipoff_utc': '2026-11-23T23:00:00Z', 'teams': [{'team': 'Duke', 'players': [{'Player': 'Example'}]}]}]})
         self.put('data/daily_grading.json', {'status': 'PARTIAL', 'players_graded': 10, 'issues': [{'reason': 'not_matched'}], 'days': [{'date': '2026-11-22'}]})
         self.put('data/daily_board.json', {'date_eastern': '2026-11-23', 'game_count': 1, 'projection_player_rows': 8, 'games': [{'teams': [{'team': 'Duke', 'players': [{'Player': 'Example'}]}]}]})
         self.put('data/daily_odds_evaluation.json', {'quotes_offered': 2, 'settled': 0, 'roi_percent': None, 'days': [{'date': '2026-11-22'}]})
