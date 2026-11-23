@@ -83,7 +83,25 @@ async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date
   if(!/^\d{4}-\d{2}-\d{2}$/.test(board.date_eastern||''))throw Error('Invalid projection date');
   const s=await fetch('data/odds_snapshots/'+board.date_eastern+'.json?edge='+Date.now(),{cache:'no-store'});
   if(!s.ok)throw Error('No saved odds snapshot for the published projection slate');
-  current=evaluate(board,await s.json());
+  const base=await s.json();
+  current=evaluate(board,base);
+  // Optional separately archived pregame refreshes; never rewrite the immutable morning snapshot.
+  if(board.date_eastern==='2026-11-23'){
+    try{
+      const rr=await fetch('data/odds_refreshes/2026-11-23_unc_monmouth.json?edge='+Date.now(),{cache:'no-store'});
+      if(rr.ok){
+        const fresh=await rr.json();
+        const match=(base.events||[]).find(e=>e.event_id===fresh.event_id);
+        if(match&&fresh.home_team===match.home_team&&fresh.away_team===match.away_team&&fresh.commence_time===board.games.find(g=>g.game_id===match.schedule_game_id)?.tipoff_utc?.replace('+00:00','Z')){
+          const supplemental={date_eastern:board.date_eastern,generated_at_utc:fresh.generated_at_utc,snapshot_date_eastern:board.date_eastern,events:[{...match,props:fresh.props||[]}]};
+          const extra=evaluate(board,supplemental);
+          current.rows.push(...extra.rows);
+          current.diagnostics.push(...extra.diagnostics);
+          current.rows.sort((a,b)=>b.bestRoi-a.bestRoi);
+        }else current.diagnostics.push({game:'North Carolina / Monmouth',reason:'Refresh event identity or tipoff mismatch; ignored'});
+      }
+    }catch(_e){current.diagnostics.push({game:'North Carolina / Monmouth',reason:'Supplemental odds refresh unavailable'});}
+  }
   const select=root.document.getElementById('edgeBook');select.innerHTML='<option value="">All books</option>'+[...new Set(current.rows.map(r=>r.book))].sort().map(k=>'<option>'+esc(k)+'</option>').join('');render();
 }catch(e){root.document.getElementById('edgeStatus').textContent=e.message+'; no edges shown.';}}
 root.document.getElementById('edgeBook').addEventListener('change',render);
