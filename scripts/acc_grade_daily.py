@@ -64,8 +64,8 @@ def main():
                     new_players=[p for p in team.get('players') or [] if norm(p.get('Player')) not in original_names]
                     if new_players:added_teams.append({**team,'players':new_players})
                 if added_teams:game_sources.append(({**extra_game,'teams':added_teams},supplemental.get('generated_at_utc')))
-        projected_players+=sum(len(t.get('players') or []) for g,_ in game_sources[len(archive.get('games') or []):] for t in g.get('teams') or [])
-        projected_players=sum(len(t.get('players') or []) for g in archive.get('games') or [] for t in g.get('teams') or [])
+
+        projected_players=sum(len(t.get('players') or []) for g,_ in game_sources for t in g.get('teams') or [])
         archived_at=timestamp(archive.get('generated_at_utc'))
         for game,game_archive_time in game_sources:
             archived_at=timestamp(game_archive_time)
