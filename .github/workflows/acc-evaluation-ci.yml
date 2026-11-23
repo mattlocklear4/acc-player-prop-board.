@@ -6,12 +6,16 @@ on:
       - 'scripts/acc_stage8b_multibook.py'
       - 'scripts/acc_grade_daily.py'
       - 'scripts/acc_evaluate_odds.py'
+      - 'scripts/acc_pipeline_health.py'
+      - '.github/workflows/acc-pipeline-health.yml'
       - 'tests/**'
       - '.github/workflows/acc-evaluation-ci.yml'
   pull_request:
     paths:
       - 'scripts/acc_grade_daily.py'
       - 'scripts/acc_evaluate_odds.py'
+      - 'scripts/acc_pipeline_health.py'
+      - '.github/workflows/acc-pipeline-health.yml'
       - 'scripts/acc_daily_odds_snapshot.py'
       - 'tests/**'
       - '.github/workflows/acc-evaluation-ci.yml'
