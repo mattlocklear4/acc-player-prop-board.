@@ -1,0 +1,78 @@
+name: One-time UNC Monmouth player props refresh (4-credit cap)
+on:
+  push:
+    paths:
+      - .github/workflows/unc-monmouth-one-time-refresh.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: unc-monmouth-2026-11-23-once
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: One-event pregame quota-guarded request
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python - <<'PY'
+          import datetime as dt, json, os, pathlib, urllib.parse, urllib.request
+          root='https://api.the-odds-api.com/v4/sports/basketball_ncaab'
+          event_id='5a237fcf6422f6a245d462ba2a6835dc'
+          tip=dt.datetime(2026,11,24,1,tzinfo=dt.timezone.utc)
+          path=pathlib.Path('data/odds_refreshes/2026-11-23_unc_monmouth.json')
+          now=dt.datetime.now(dt.timezone.utc)
+          if path.exists(): raise SystemExit('Already saved: no paid retry')
+          if now>=tip: raise SystemExit('Past tipoff: no paid request')
+          key=os.getenv('ODDS_API_KEY','').strip()
+          if not key: raise SystemExit('No secret: no request')
+          def request(url, params):
+              req=urllib.request.Request(url+'?'+urllib.parse.urlencode(params),headers={'User-Agent':'ACC-UNC-OneTime/1.0'})
+              with urllib.request.urlopen(req,timeout=25) as resp:
+                  return json.load(resp),dict((k.lower(),v) for k,v in resp.headers.items())
+          events,headers=request(root+'/events',{'apiKey':key})
+          remaining=int(headers.get('x-requests-remaining','-1'))
+          if remaining<54: raise SystemExit('Reserve guard: remaining='+str(remaining)+'; no paid call')
+          matches=[e for e in events if e.get('id')==event_id and e.get('home_team')=='North Carolina Tar Heels' and e.get('away_team')=='Monmouth Hawks' and e.get('commence_time')=='2026-11-24T01:00:00Z']
+          if len(matches)!=1: raise SystemExit('Event not uniquely found pregame: no paid call')
+          if dt.datetime.now(dt.timezone.utc)>=tip: raise SystemExit('Past tipoff: no paid request')
+          markets=['player_points','player_rebounds','player_assists','player_threes']
+          books=['draftkings','fanduel','williamhill_us','fanatics','betonlineag']
+          data,meta=request(root+'/events/'+event_id+'/odds',{'apiKey':key,'bookmakers':','.join(books),'markets':','.join(markets),'oddsFormat':'american'})
+          charged=int(meta.get('x-requests-last','-1'))
+          props=[]
+          for book in data.get('bookmakers',[]):
+              if book.get('key') not in books: continue
+              for market in book.get('markets',[]):
+                  if market.get('key') not in markets: continue
+                  for o in market.get('outcomes',[]):
+                      props.append({'bookmaker':book['key'],'market':market['key'],'player':o.get('description'),'side':o.get('name'),'line':o.get('point'),'odds':o.get('price'),'last_update':market.get('last_update')})
+          result={'generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'event_id':event_id,'home_team':data.get('home_team'),'away_team':data.get('away_team'),'commence_time':data.get('commence_time'),'requested_books':books,'requested_markets':markets,'quota':{'preflight_remaining':remaining,'charged_reported':charged,'remaining_reported':int(meta.get('x-requests-remaining','-1')),'hard_estimated_ceiling':4,'reserve':50},'status':'ODDS_RETRIEVED' if props else 'NO_REQUESTED_BOOK_PROPS_RETURNED','props':props}
+          path.parent.mkdir(parents=True,exist_ok=True)
+          path.write_text(json.dumps(result,indent=2)+'\n')
+          print('RESULT:',result['status'],'quotes:',len(props),'charged:',charged,'remaining:',result['quota']['remaining_reported'])
+          if charged<0 or charged>4 or result['quota']['remaining_reported']<50: raise SystemExit('Provider quota violation reported; saved response retained')
+          PY
+      - name: Commit separate timestamped refresh (never rewrite daily archive)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp data/odds_refreshes/2026-11-23_unc_monmouth.json /tmp/unc-refresh.json
+          git fetch origin main
+          git checkout -B unc-refresh-publish origin/main
+          mkdir -p data/odds_refreshes
+          if [ -e data/odds_refreshes/2026-11-23_unc_monmouth.json ]; then
+            echo 'Already archived; refusing overwrite'
+            exit 0
+          fi
+          cp /tmp/unc-refresh.json data/odds_refreshes/2026-11-23_unc_monmouth.json
+          git add data/odds_refreshes/2026-11-23_unc_monmouth.json
+          git commit -m 'Archive one-time UNC Monmouth pregame prop refresh'
+          git push origin HEAD:main
