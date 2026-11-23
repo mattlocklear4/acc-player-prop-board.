@@ -15,6 +15,8 @@ from acc_grade_daily import ROOT, norm, num, timestamp
 GRADING=ROOT/'data/daily_grading.json'
 SNAPSHOTS=ROOT/'data/odds_snapshots'
 OUT=ROOT/'data/daily_odds_evaluation.json'
+REFRESHES=ROOT/'data/odds_refreshes'
+ARCHIVES=ROOT/'data/archives/daily'
 MARKETS={'player_points':'Points','player_rebounds':'Rebounds',
          'player_assists':'Assists','player_threes':'Threes'}
 
@@ -37,6 +39,7 @@ def evaluate(grading, snapshots):
                              'hypothetical_selections':0,'issues':{'snapshot_date_mismatch':1}})
             continue
         for event in snapshot.get('events') or []:
+            event_snapshot_time=timestamp(event.get('_refresh_generated_at_utc') or snapshot.get('generated_at_utc'))
             gid=str(event.get('schedule_game_id') or '')
             for prop in event.get('props') or []:
                 offered+=1
@@ -53,8 +56,8 @@ def evaluate(grading, snapshots):
                 tipoff=timestamp(row.get('tipoff_utc'))
                 updated=timestamp(prop.get('last_update'))
                 # Both saved file and provider quote must demonstrably precede tipoff.
-                if (not tipoff or not snapshot_time or snapshot_time>=tipoff or not updated
-                        or updated>snapshot_time or updated>=tipoff):
+                if (not tipoff or not event_snapshot_time or event_snapshot_time>=tipoff or not updated
+                        or updated>event_snapshot_time or updated>=tipoff):
                     day_issues['unverifiable_pregame_quote']+=1;continue
                 stat=row.get('stats',{}).get(market)
                 line=num(prop.get('line'))
@@ -75,7 +78,7 @@ def evaluate(grading, snapshots):
                              'bookmaker':prop['bookmaker'],'market':market,'side':side,
                              'line':line,'american_odds':prop['odds'],'projection':projected,
                              'actual':actual,'result':result,'profit_units':round(pnl,6),
-                             'snapshot_utc':snapshot['generated_at_utc'],'quote_updated_utc':prop['last_update']})
+                             'snapshot_utc':event.get('_refresh_generated_at_utc') or snapshot['generated_at_utc'],'quote_updated_utc':prop['last_update']})
         for reason,count in day_issues.items():
             if reason!='not_selected_by_projection':
                 issues.append({'date':date,'reason':reason,'count':count})
@@ -99,6 +102,21 @@ def evaluate(grading, snapshots):
 def main():
     grading=json.loads(GRADING.read_text())
     snapshots={p.stem:json.loads(p.read_text()) for p in sorted(SNAPSHOTS.glob('????-??-??.json'))}
+    # Append independently saved pregame refreshes without modifying immutable snapshots.
+    for file in sorted(REFRESHES.glob('????-??-??_*.json')):
+        date=file.name[:10]
+        if date not in snapshots:continue
+        refresh=json.loads(file.read_text())
+        archive_file=ARCHIVES/(date+'.json')
+        if not archive_file.exists():continue
+        archive=json.loads(archive_file.read_text())
+        matched=[g for g in archive.get('games') or [] if g.get('home_team')==refresh.get('home_team') and g.get('away_team')==refresh.get('away_team') and timestamp(g.get('tipoff_utc'))==timestamp(refresh.get('commence_time'))]
+        if len(matched)!=1:continue
+        event_id=matched[0]['game_id']
+        if timestamp(refresh.get('generated_at_utc')) is None or timestamp(refresh.get('generated_at_utc'))>=timestamp(matched[0]['tipoff_utc']):continue
+        if refresh.get('status')!='ODDS_RETRIEVED':continue
+        # Each refresh is a distinct timestamped event, not a replacement for morning odds.
+        snapshots[date].setdefault('events',[]).append({'schedule_game_id':event_id,'home_team':refresh['home_team'],'away_team':refresh['away_team'],'props':refresh.get('props',[]),'_refresh_generated_at_utc':refresh['generated_at_utc']})
     result=evaluate(grading,snapshots)
     OUT.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:result[k] for k in ('snapshots','quotes_offered','selections','settled','roi_percent')}))
