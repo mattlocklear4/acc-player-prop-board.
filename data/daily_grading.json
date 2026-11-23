@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-22T15:00:24.480615+00:00",
+  "generated_at_utc": "2026-11-23T13:00:31.860004+00:00",
   "status": "PARTIAL",
-  "players_graded": 31,
-  "projected_players": 41,
+  "players_graded": 41,
+  "projected_players": 56,
   "days": [
     {
       "date": "2026-11-21",
@@ -12,33 +12,42 @@
       "projected_players": 41,
       "issues": 10,
       "snapshot_utc": "2026-11-21T13:33:34.124874+00:00"
+    },
+    {
+      "date": "2026-11-22",
+      "games": 2,
+      "games_with_final_logs": 2,
+      "players_graded": 10,
+      "projected_players": 15,
+      "issues": 5,
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00"
     }
   ],
   "metrics": {
     "Minutes": {
-      "n": 31,
-      "mae": 7.12,
-      "bias": 0.729
+      "n": 41,
+      "mae": 6.31,
+      "bias": 0.732
     },
     "Points": {
-      "n": 31,
-      "mae": 5.301,
-      "bias": 0.139
+      "n": 41,
+      "mae": 4.819,
+      "bias": 0.121
     },
     "Rebounds": {
-      "n": 31,
-      "mae": 1.97,
-      "bias": 0.03
+      "n": 41,
+      "mae": 1.824,
+      "bias": 0.219
     },
     "Assists": {
-      "n": 31,
-      "mae": 1.122,
-      "bias": 0.068
+      "n": 41,
+      "mae": 1.157,
+      "bias": -0.015
     },
     "Threes": {
-      "n": 31,
-      "mae": 0.656,
-      "bias": 0.092
+      "n": 41,
+      "mae": 0.621,
+      "bias": -0.008
     }
   },
   "issues": [
@@ -100,6 +109,36 @@
       "date": "2026-11-21",
       "game_id": "espn_event_401909567",
       "player": "Nick Arnold",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "player": "Eltayeb Eltayeb",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "player": "Ethan Copeland",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "player": "James Caldarella",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "player": "Ned Hull",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "player": "Solomon Davis",
       "reason": "player_not_uniquely_matched"
     }
   ],
@@ -859,13 +898,13 @@
         },
         "Rebounds": {
           "projection": 3.246,
-          "actual": 6.0,
-          "error": -2.754
+          "actual": 7.0,
+          "error": -3.754
         },
         "Assists": {
           "projection": 2.406,
-          "actual": 4.0,
-          "error": -1.594
+          "actual": 5.0,
+          "error": -2.594
         },
         "Threes": {
           "projection": 1.501,
@@ -1069,8 +1108,8 @@
         },
         "Rebounds": {
           "projection": 6.191,
-          "actual": 7.0,
-          "error": -0.809
+          "actual": 8.0,
+          "error": -1.809
         },
         "Assists": {
           "projection": 0.249,
@@ -1104,8 +1143,8 @@
         },
         "Rebounds": {
           "projection": 3.97,
-          "actual": 5.0,
-          "error": -1.03
+          "actual": 4.0,
+          "error": -0.03
         },
         "Assists": {
           "projection": 1.82,
@@ -1139,8 +1178,8 @@
         },
         "Rebounds": {
           "projection": 6.422,
-          "actual": 9.0,
-          "error": -2.578
+          "actual": 8.0,
+          "error": -1.578
         },
         "Assists": {
           "projection": 2.306,
@@ -1179,13 +1218,363 @@
         },
         "Assists": {
           "projection": 1.494,
-          "actual": 1.0,
-          "error": 0.494
+          "actual": 0.0,
+          "error": 1.494
         },
         "Threes": {
           "projection": 0.248,
           "actual": 0.0,
           "error": 0.248
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Amani Hansberry",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 31.322,
+          "actual": 35.0,
+          "error": -3.678
+        },
+        "Points": {
+          "projection": 15.547,
+          "actual": 9.0,
+          "error": 6.547
+        },
+        "Rebounds": {
+          "projection": 6.768,
+          "actual": 6.0,
+          "error": 0.768
+        },
+        "Assists": {
+          "projection": 2.667,
+          "actual": 3.0,
+          "error": -0.333
+        },
+        "Threes": {
+          "projection": 1.429,
+          "actual": 1.0,
+          "error": 0.429
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Ben Hammond",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 31.396,
+          "actual": 32.0,
+          "error": -0.604
+        },
+        "Points": {
+          "projection": 15.774,
+          "actual": 24.0,
+          "error": -8.226
+        },
+        "Rebounds": {
+          "projection": 2.635,
+          "actual": 5.0,
+          "error": -2.365
+        },
+        "Assists": {
+          "projection": 4.138,
+          "actual": 2.0,
+          "error": 2.138
+        },
+        "Threes": {
+          "projection": 1.856,
+          "actual": 4.0,
+          "error": -2.144
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Butta Johnson",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.076,
+          "actual": 12.0,
+          "error": 7.076
+        },
+        "Points": {
+          "projection": 5.424,
+          "actual": 3.0,
+          "error": 2.424
+        },
+        "Rebounds": {
+          "projection": 1.609,
+          "actual": 0.0,
+          "error": 1.609
+        },
+        "Assists": {
+          "projection": 0.812,
+          "actual": 0.0,
+          "error": 0.812
+        },
+        "Threes": {
+          "projection": 1.194,
+          "actual": 1.0,
+          "error": 0.194
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Isaiah Elohim",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 27.562,
+          "actual": 22.0,
+          "error": 5.562
+        },
+        "Points": {
+          "projection": 11.851,
+          "actual": 8.0,
+          "error": 3.851
+        },
+        "Rebounds": {
+          "projection": 3.976,
+          "actual": 2.0,
+          "error": 1.976
+        },
+        "Assists": {
+          "projection": 0.866,
+          "actual": 1.0,
+          "error": -0.134
+        },
+        "Threes": {
+          "projection": 1.244,
+          "actual": 2.0,
+          "error": -0.756
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Jaylen Curry",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 24.942,
+          "actual": 34.0,
+          "error": -9.058
+        },
+        "Points": {
+          "projection": 11.526,
+          "actual": 18.0,
+          "error": -6.474
+        },
+        "Rebounds": {
+          "projection": 3.021,
+          "actual": 1.0,
+          "error": 2.021
+        },
+        "Assists": {
+          "projection": 3.058,
+          "actual": 7.0,
+          "error": -3.942
+        },
+        "Threes": {
+          "projection": 0.998,
+          "actual": 2.0,
+          "error": -1.002
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Kuol Atak",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 10.056,
+          "actual": 12.0,
+          "error": -1.944
+        },
+        "Points": {
+          "projection": 4.655,
+          "actual": 5.0,
+          "error": -0.345
+        },
+        "Rebounds": {
+          "projection": 0.687,
+          "actual": 0.0,
+          "error": 0.687
+        },
+        "Assists": {
+          "projection": 0.09,
+          "actual": 1.0,
+          "error": -0.91
+        },
+        "Threes": {
+          "projection": 1.293,
+          "actual": 1.0,
+          "error": 0.293
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Miles Heide",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 18.042,
+          "actual": 16.0,
+          "error": 2.042
+        },
+        "Points": {
+          "projection": 5.038,
+          "actual": 5.0,
+          "error": 0.038
+        },
+        "Rebounds": {
+          "projection": 4.222,
+          "actual": 3.0,
+          "error": 1.222
+        },
+        "Assists": {
+          "projection": 0.625,
+          "actual": 2.0,
+          "error": -1.375
+        },
+        "Threes": {
+          "projection": 0.04,
+          "actual": 0.0,
+          "error": 0.04
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Musa Sagnia",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 12.275,
+          "actual": 11.0,
+          "error": 1.275
+        },
+        "Points": {
+          "projection": 2.015,
+          "actual": 0.0,
+          "error": 2.015
+        },
+        "Rebounds": {
+          "projection": 3.089,
+          "actual": 2.0,
+          "error": 1.089
+        },
+        "Assists": {
+          "projection": 0.325,
+          "actual": 0.0,
+          "error": 0.325
+        },
+        "Threes": {
+          "projection": 0.02,
+          "actual": 0.0,
+          "error": 0.02
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Sin'Cere Jones",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 6.97,
+          "actual": 6.0,
+          "error": 0.97
+        },
+        "Points": {
+          "projection": 0.738,
+          "actual": 2.0,
+          "error": -1.262
+        },
+        "Rebounds": {
+          "projection": 1.507,
+          "actual": 0.0,
+          "error": 1.507
+        },
+        "Assists": {
+          "projection": 0.072,
+          "actual": 0.0,
+          "error": 0.072
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "game_id": "espn_event_401920381",
+      "team": "Virginia Tech",
+      "player": "Tyler Johnson",
+      "snapshot_utc": "2026-11-22T13:51:59.480690+00:00",
+      "tipoff_utc": "2026-11-22T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 25.784,
+          "actual": 20.0,
+          "error": 5.784
+        },
+        "Points": {
+          "projection": 8.064,
+          "actual": 6.0,
+          "error": 2.064
+        },
+        "Rebounds": {
+          "projection": 5.529,
+          "actual": 6.0,
+          "error": -0.471
+        },
+        "Assists": {
+          "projection": 1.64,
+          "actual": 1.0,
+          "error": 0.64
+        },
+        "Threes": {
+          "projection": 0.751,
+          "actual": 1.0,
+          "error": -0.249
         }
       }
     }
