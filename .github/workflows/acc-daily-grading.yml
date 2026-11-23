@@ -8,8 +8,8 @@ on:
       - 'scripts/acc_evaluate_odds.py'
       - '.github/workflows/acc-daily-grading.yml'
   schedule:
-    - cron: '30 12 * * *'
-    - cron: '30 13 * * *'
+    # Fallback after the ESPN morning collection; ESPN also dispatches grading.
+    - cron: '30 14 * * *'
 permissions:
   contents: write
   actions: write
