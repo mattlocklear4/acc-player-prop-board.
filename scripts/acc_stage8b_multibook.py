@@ -12,6 +12,7 @@ import re
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import Counter
 
 SPORT = 'basketball_ncaab'
 MARKETS = ('player_points', 'player_rebounds', 'player_assists', 'player_threes')
@@ -43,6 +44,15 @@ def get(url, params):
     request = urllib.request.Request(url + '?' + urllib.parse.urlencode(params), headers={'User-Agent':'ACC-Prop-Preview/1.0'})
     with urllib.request.urlopen(request, timeout=25) as resp:
         return json.load(resp), {k.lower():v for k,v in resp.headers.items()}
+
+def prop_coverage(props):
+    """Summarize actual returned quotes, never inferred sportsbook availability."""
+    books=Counter(p['bookmaker'] for p in props)
+    markets=Counter(p['market'] for p in props)
+    return {'quotes':len(props), 'unique_players':len({p['player'] for p in props if p.get('player')}),
+            'quotes_by_bookmaker':dict(sorted(books.items())),
+            'quotes_by_market':dict(sorted(markets.items())),
+            'requested_books_with_no_returned_quotes':sorted(set(BOOKS)-set(books))}
 
 def main():
     p=argparse.ArgumentParser()
@@ -169,7 +179,8 @@ def main():
                                 'odds':outcome.get('price'),'last_update':market.get('last_update')})
                 out['events'].append({'event_id':event['id'],'schedule_game_id':game.get('game_id'),
                     'home_team':event['home_team'],'away_team':event['away_team'],
-                    'status':'ODDS_RETRIEVED' if props else 'NO_REQUESTED_BOOK_PROPS_RETURNED','props':props})
+                    'status':'ODDS_RETRIEVED' if props else 'NO_REQUESTED_BOOK_PROPS_RETURNED',
+                    'coverage':prop_coverage(props),'props':props})
             except (OSError,ValueError,urllib.error.HTTPError,urllib.error.URLError) as exc:
                 out['warnings'].append('Paid event request failed; stopping to prevent repeated charges: '+str(exc).split('?')[0][:120])
                 break
