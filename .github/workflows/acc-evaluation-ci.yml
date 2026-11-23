@@ -9,6 +9,7 @@ on:
       - 'scripts/acc_pipeline_health.py'
       - '.github/workflows/acc-pipeline-health.yml'
       - '.github/workflows/acc-daily-odds.yml'
+      - 'pregame-edges.js'
       - 'tests/**'
       - '.github/workflows/acc-evaluation-ci.yml'
   pull_request:
@@ -41,7 +42,10 @@ jobs:
       - name: Run no-network regression suite
         run: python -m unittest discover -s tests -v
       - name: Validate dashboard JavaScript
-        run: node --check daily-tab.js
+        run: |
+          node --check daily-tab.js
+          node --check pregame-edges.js
+          node tests/test_pregame_edges.cjs
       - name: Grade committed archives and historical odds without paid API calls
         run: |
           python scripts/acc_grade_daily.py
