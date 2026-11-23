@@ -78,6 +78,16 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
     else:
         add('espn', 'pass', f"ESPN collector OK {age:.1f}h ago; {espn.get('total_player_rows', 0)} player rows.")
 
+    # Supplemental Team Stats tab is not the ESPN grading source, but stale data must be visible.
+    team_summary = read_json(root, 'data/cbbd/acc_team_collection_summary_2027.json')
+    cbbd_status = read_json(root, 'data/cbbd/acc_collector_status.json') or {}
+    team_ts = timestamp((team_summary or {}).get('last_successful_run_utc'))
+    team_age = (now - team_ts).total_seconds() / 86400 if team_ts else None
+    if team_age is None or team_age > 7 or cbbd_status.get('status') == 'CBBD_MONTHLY_QUOTA_EXHAUSTED':
+        add('supplemental_team_stats', 'warn', f'Team Stats tab data age={round(team_age, 1) if team_age is not None else "unknown"} days; CBBD quota status={cbbd_status.get("status", "unknown")}. Existing saved data retained.')
+    else:
+        add('supplemental_team_stats', 'pass', f'Team Stats tab refreshed {team_age:.1f} days ago.')
+
     archives = sorted((root / 'data/archives/daily').glob('*.json'))
     invalid = []
     revisions = []
