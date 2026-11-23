@@ -42,3 +42,11 @@ This release adds a GitHub Actions workflow (`.github/workflows/acc-collector.ym
 **Run it:** Repository → Actions → ACC advanced stats source test → Run workflow. Then review the action log, `acc-source-test` artifact and the website status. GitHub Actions may ask you to enable workflows first. The workflow needs `Read and write permissions` for `GITHUB_TOKEN` under Settings → Actions → General to publish status. The test runs independently of the website's existing manually verified data; no player stats or projections are replaced.
 
 **Limitations:** The external source may block access or lag the current season. Successful downloads are *not* automatically accepted as verified; compare Duke–Army, NC State–Campbell and Miami–Florida against the screenshot-based baseline before wiring a full ACC ingestion pipeline. Data is published to a **public** repository; never put credentials or private betting records in the collector. GitHub Actions schedules can be delayed or skipped.
+
+## Daily pipeline health monitoring
+
+`.github/workflows/acc-pipeline-health.yml` runs a read-only operational audit every day at 19:30 UTC (2:30 p.m. Eastern in standard time; 3:30 p.m. during daylight time) and can also be dispatched manually. The audit checks recent GitHub Actions results, ESPN collector freshness, immutable pregame archive dates and git history, yesterday's grading coverage, today's board and missing team projections, saved sportsbook odds/ROI coverage, the 24-credit daily cap and 50-credit reserve, and whether the last Pages release is at least as new as today's board.
+
+It publishes `data/pipeline_health.json` to the existing **Daily ACC Projections** tab. Critical gaps fail the health workflow, adding GitHub Actions error annotations and an at-a-glance workflow summary; warnings (such as no qualifying settled sportsbook selections) remain visible without fabricating results. GitHub email notifications depend on each account's Actions notification settings. The report does **not** contact The Odds API, initiate projections, overwrite pregame archives, or change sportsbook quotas. The first real scheduled run and repeated unattended execution remain to be observed before declaring the automation reliable.
+
+Offline regression tests: `python -m unittest discover -s tests -p 'test_acc_pipeline_health.py' -v`.
