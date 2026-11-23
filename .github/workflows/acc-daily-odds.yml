@@ -17,15 +17,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Gate to 11 AM daily in America/New_York
+      - name: Gate near 11 AM daily in America/New_York (allow GitHub schedule jitter)
         id: gate
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import datetime
           from zoneinfo import ZoneInfo
           n=datetime.datetime.now(ZoneInfo('America/New_York'))
-          target=11
-          print('run='+str(target<=n.hour<target+2).lower())
+          # GitHub cron can start a few minutes before the intended hour.
+          # The snapshot script refuses a second paid request once today's file exists.
+          in_window=(n.hour==10 and n.minute>=45) or (11<=n.hour<13)
+          print('run='+str(in_window).lower())
           print('date='+n.date().isoformat())
           PY
       - name: Collect today schedule and one quota-capped odds snapshot
