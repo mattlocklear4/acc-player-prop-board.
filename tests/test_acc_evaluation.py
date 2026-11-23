@@ -46,6 +46,16 @@ class EvaluationTests(unittest.TestCase):
         self.row['stats']['Points']['actual']=15.5
         result=self.run_eval()
         self.assertEqual((result['pushes'],result['settled'],result['profit_units']),(1,0,0))
+    def test_opponent_only_odds_are_not_assigned_to_acc_projection(self):
+        # A valid game match is insufficient: sportsbook players must match archived players.
+        for quote in self.snapshot['events'][0]['props']:
+            quote['player']='Oklahoma State Opponent'
+        result=self.run_eval()
+        self.assertEqual(result['quotes_offered'],2)
+        self.assertEqual(result['selections'],0)
+        self.assertEqual(result['settled'],0)
+        self.assertIsNone(result['roi_percent'])
+
     def test_ambiguous_player_refused(self):
         result=evaluate({'rows':[self.row,self.row]},{'2026-11-21':self.snapshot})
         self.assertEqual(result['settled'],0)
