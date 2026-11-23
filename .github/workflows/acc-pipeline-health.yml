@@ -6,7 +6,7 @@ on:
     - cron: '30 19 * * *'
 permissions:
   contents: write
-  actions: read
+  actions: write
 concurrency:
   group: acc-pipeline-health
   cancel-in-progress: false
