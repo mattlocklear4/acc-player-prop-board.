@@ -180,6 +180,8 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
             add('workflow_' + name, 'fail', 'Unable to inspect GitHub Actions: ' + item['error'])
         elif item.get('conclusion') != 'success':
             add('workflow_' + name, 'fail', f"Last completed {name} run: {item.get('conclusion') or 'none'}.", url=item.get('url'))
+        elif name == 'pages' and board and board.get('date_eastern') == today.isoformat() and timestamp(item.get('completed_at')) and timestamp(board.get('generated_at_utc')) and timestamp(item['completed_at']) < timestamp(board['generated_at_utc']):
+            add('workflow_pages', 'fail', 'Latest successful Pages run predates the current projection board; publication is not verified.', url=item.get('url'))
         else:
             add('workflow_' + name, 'pass', 'Last completed run succeeded.', url=item.get('url'))
 
