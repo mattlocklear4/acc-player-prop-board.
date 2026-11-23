@@ -5,6 +5,7 @@ on:
     - cron: '40 11 * * *'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: acc-espn-boxscores
   cancel-in-progress: false
@@ -37,6 +38,10 @@ jobs:
             if [ "$attempt" -eq 3 ]; then exit 1; fi
             sleep 3
           done
+      - name: Grade archived projections after ESPN finals are published
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run acc-daily-grading.yml --ref main
       - uses: actions/upload-artifact@v4
         if: always()
         with:
