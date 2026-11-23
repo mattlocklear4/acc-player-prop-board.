@@ -1,8 +1,7 @@
 name: ACC advanced stats source test
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 11 * * *'
+  # Experimental hoopR/Torvik probe: run only when specifically investigating the source.
 permissions:
   contents: write
 jobs:
