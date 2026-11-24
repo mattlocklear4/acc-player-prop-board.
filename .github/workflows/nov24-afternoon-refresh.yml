@@ -1,0 +1,74 @@
+name: November 24 afternoon prop refresh (8-credit cap)
+on:
+  push:
+    paths:
+      - .github/workflows/nov24-afternoon-refresh.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: acc-daily-odds
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: One-event pregame quota-guarded request
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python - <<'PY'
+          import datetime as dt, json, os, pathlib, urllib.parse, urllib.request
+          root='https://api.the-odds-api.com/v4/sports/basketball_ncaab'
+          targets=[('e5806851c93f603da7c7942c81a49491','Georgia Tech Yellow Jackets','Samford Bulldogs','2026-11-25T00:00:00Z','georgia_tech'),('59e3968ce2b702ee8df02da575a47778','Washington Huskies','Clemson Tigers','2026-11-25T01:00:00Z','clemson')]
+          folder=pathlib.Path('data/odds_refreshes')
+          if list(folder.glob('2026-11-24_*.json')): raise SystemExit('Existing refresh; no retry')
+          morning=json.loads(pathlib.Path('data/odds_snapshots/2026-11-24.json').read_text())
+          spent=int(morning['quota']['credits_spent_reported'])
+          if spent+8>24: raise SystemExit('Daily cap')
+          key=os.environ['ODDS_API_KEY']
+          def request(url, params):
+              req=urllib.request.Request(url+'?'+urllib.parse.urlencode(params),headers={'x-api-key':key})
+              with urllib.request.urlopen(req,timeout=25) as resp:
+                  return json.load(resp),{k.lower():v for k,v in resp.headers.items()}
+          events,headers=request(root+'/events',{})
+          remaining=int(headers.get('x-requests-remaining','-1'))
+          if remaining<58 or remaining!=int(morning['quota']['remaining']): raise SystemExit('Quota changed or reserve insufficient; no paid call')
+          markets=['player_points','player_rebounds','player_assists','player_threes']
+          books=['draftkings','fanduel','williamhill_us','fanatics','betonlineag']
+          folder.mkdir(parents=True,exist_ok=True)
+          for event_id,home,away,tip,label in targets:
+              if spent+4>24 or remaining<54: break
+              if dt.datetime.now(dt.timezone.utc)>=dt.datetime.fromisoformat(tip.replace('Z','+00:00')): continue
+              if len([e for e in events if e.get('id')==event_id and e.get('home_team')==home and e.get('away_team')==away and e.get('commence_time')==tip])!=1: continue
+              data,meta=request(root+'/events/'+event_id+'/odds',{'bookmakers':','.join(books),'markets':','.join(markets),'oddsFormat':'american'})
+              charged=int(meta.get('x-requests-last','-1'))
+              after=int(meta.get('x-requests-remaining','-1'))
+              props=[{'bookmaker':b['key'],'market':m['key'],'player':o.get('description'),'side':o.get('name'),'line':o.get('point'),'odds':o.get('price'),'last_update':m.get('last_update')} for b in data.get('bookmakers',[]) if b['key'] in books for m in b.get('markets',[]) if m['key'] in markets for o in m.get('outcomes',[])]
+              result={'generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),'event_id':event_id,'home_team':home,'away_team':away,'commence_time':tip,'status':'ODDS_RETRIEVED' if props else 'NO_REQUESTED_BOOK_PROPS_RETURNED','props':props,'quota':{'preflight_remaining':remaining,'charged_reported':charged,'remaining_reported':after}}
+              (folder/('2026-11-24_'+label+'.json')).write_text(json.dumps(result,indent=2))
+              print(label,len(props),charged,after)
+              if not 0<=charged<=4 or after<50: break
+              spent+=charged
+              remaining=after
+          PY
+      - name: Archive refreshes
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/odds_refreshes/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Archive November 24 afternoon refresh'
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nov24-afternoon
+          path: data/odds_refreshes/2026-11-24_*.json
