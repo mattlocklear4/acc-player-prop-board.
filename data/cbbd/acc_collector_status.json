@@ -1,6 +1,6 @@
 {
   "status": "CBBD_MONTHLY_QUOTA_EXHAUSTED",
-  "checked_at_utc": "2026-11-23T12:16:45.351288+00:00",
+  "checked_at_utc": "2026-11-24T12:17:34.417646+00:00",
   "data_updated": false,
   "message": "Existing CSV preserved; no additional team requests attempted after quota response."
 }
