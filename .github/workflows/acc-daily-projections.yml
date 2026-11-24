@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/acc_publish_daily_board.py'
+      - 'scripts/research_engine.py'
       - 'scripts/supabase_kenpom.py'
       - '.github/workflows/acc-daily-projections.yml'
   schedule:
@@ -28,6 +29,8 @@ jobs:
           python-version: '3.12'
       - name: Test opponent name matching
         run: python -m unittest discover -s tests -p 'test_acc_daily_pipeline.py'
+      - name: Compare baseline models offline
+        run: python scripts/acc_validation_walkforward.py
       - name: Fetch next 24 hours ACC schedule
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
@@ -73,5 +76,6 @@ jobs:
           name: acc-daily-projections
           path: |
             data/daily_board.json
+            data/validation_summary.json
             research/acc_schedule_dry_run.json
             research/acc_projection_dry_run.json
