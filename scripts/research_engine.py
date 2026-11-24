@@ -39,7 +39,7 @@ def read_csv(path):
 def clamp(x, lo, hi):
     return max(lo, min(hi, x))
 
-def build_baselines(as_of, root=ROOT):
+def build_baselines(as_of, root=ROOT, legacy=False):
     """Only use current season games STRICTLY before as_of (YYYY-MM-DD)."""
     data = root / 'data' / 'cbbd'
     current = [r for r in read_csv(data/'acc_player_games_2027.csv') if r['game_date'] < as_of]
@@ -70,14 +70,20 @@ def build_baselines(as_of, root=ROOT):
         hm = avg(prior, 'minutes')
         if hm is None: hm = avg(older, 'minutes')
         cm, rm = avg(games, 'minutes'), avg(recent, 'minutes')
-        w = len(games)/(len(games)+8)
+        n = len(games)
+        w = n/(n+8)
+        mw = w if legacy else .75 if n<=2 else .90 if n<=4 else 1.0
+        rw = w if legacy else .60 if n<=2 else .80 if n<=4 else .90 if n<=6 else 1.0
+        if not legacy: rm = avg(games[:3], 'minutes')
         if cm is None: minutes = hm
         elif hm is None: minutes = cm
-        else: minutes = (1-w)*hm + w*(.65*cm + .35*rm)
+        else: minutes = (1-mw)*hm + mw*((.65 if legacy else .60)*cm + (.35 if legacy else .40)*rm)
         if minutes is None: continue
         minutes = clamp(minutes, 0, 40)
         obj = {'Player':r['player'], 'AthleteId':aid, 'Team':r['team'], 'Minutes':minutes,
                'CurrentGP':len(games), 'HistoryGP':len(h),
+               'ModelVersion':'legacy' if legacy else 'current-season-first-v1',
+               'CurrentMinutesWeight':mw, 'CurrentProductionWeight':rw,
                'Confidence':'Higher' if len(games)>=10 else 'Moderate' if len(h)>=12 else 'Limited'}
         for field, key in STATS.items():
             def rate(group):
@@ -96,7 +102,7 @@ def build_baselines(as_of, root=ROOT):
             if hr is None: hr = rate(older)
             if cr is None: blended = hr
             elif hr is None: blended = cr
-            else: blended = (1-w)*hr + w*(.65*cr + .35*(rr if rr is not None else cr))
+            else: blended = (1-rw)*hr + rw*((.65 if legacy else .75)*cr + (.35 if legacy else .25)*(rr if rr is not None else cr))
             obj['Baseline'+field] = max(0, minutes*blended) if blended is not None else None
         result.append(obj)
     return sorted(result, key=lambda x: (x['Team'], x['Player']))
