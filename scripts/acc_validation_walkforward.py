@@ -11,7 +11,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 from research_engine import ROOT,STATS,build_baselines,read_csv,numeric
 
-def evaluate(root=ROOT, min_prior=1):
+def evaluate(root=ROOT, min_prior=1, legacy=False):
     games=read_csv(root/'data/cbbd/acc_player_games_2027.csv')
     dates=sorted({r['game_date'] for r in games if r.get('game_date')})
     bydate=defaultdict(list)
@@ -19,7 +19,7 @@ def evaluate(root=ROOT, min_prior=1):
         if r.get('game_date'):bydate[r['game_date']].append(r)
     prior=defaultdict(int); observations=[]
     for day in dates:
-        baselines={str(p['AthleteId']):p for p in build_baselines(day,root)}
+        baselines={str(p['AthleteId']):p for p in build_baselines(day,root,legacy=legacy)}
         for r in bydate[day]:
             aid=str(r.get('athlete_id') or '')
             b=baselines.get(aid)
@@ -58,5 +58,6 @@ if __name__=='__main__':
     output=ROOT/'data'/'validation_summary.json'
     output.parent.mkdir(parents=True,exist_ok=True)
     result=evaluate()
+    result['legacy_comparison']=evaluate(legacy=True)['metrics']
     output.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'observations':result['player_game_observations'],'metrics':result['metrics']}))
