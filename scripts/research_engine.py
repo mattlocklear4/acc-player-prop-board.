@@ -72,19 +72,19 @@ def build_baselines(as_of, root=ROOT, legacy=False):
         cm, rm = avg(games, 'minutes'), avg(recent, 'minutes')
         n = len(games)
         w = n/(n+8)
-        mw = w if legacy else .75 if n<=2 else .90 if n<=4 else 1.0
-        rw = w if legacy else .60 if n<=2 else .80 if n<=4 else .90 if n<=6 else 1.0
+        mw = w if legacy else 1.0
+        rw = w if legacy else 1.0
         if not legacy: rm = avg(games[:3], 'minutes')
-        if cm is None: minutes = hm
+        if cm is None: minutes = hm if legacy else None
         elif hm is None: minutes = cm
         else: minutes = (1-mw)*hm + mw*((.65 if legacy else .60)*cm + (.35 if legacy else .40)*rm)
         if minutes is None: continue
         minutes = clamp(minutes, 0, 40)
         obj = {'Player':r['player'], 'AthleteId':aid, 'Team':r['team'], 'Minutes':minutes,
                'CurrentGP':len(games), 'HistoryGP':len(h),
-               'ModelVersion':'legacy' if legacy else 'current-season-first-v1',
+               'ModelVersion':'legacy' if legacy else 'current-season-only-v2',
                'CurrentMinutesWeight':mw, 'CurrentProductionWeight':rw,
-               'Confidence':'Higher' if len(games)>=10 else 'Moderate' if len(h)>=12 else 'Limited'}
+               'Confidence':'Higher' if len(games)>=10 else 'Moderate' if len(games)>=5 else 'Limited'}
         for field, key in STATS.items():
             def rate(group):
                 total = mins = 0
@@ -100,7 +100,7 @@ def build_baselines(as_of, root=ROOT, legacy=False):
                 return total/mins if mins else None
             cr, hr, rr = rate(games), rate(prior), rate(recent)
             if hr is None: hr = rate(older)
-            if cr is None: blended = hr
+            if cr is None: blended = hr if legacy else None
             elif hr is None: blended = cr
             else: blended = (1-rw)*hr + rw*((.65 if legacy else .75)*cr + (.35 if legacy else .25)*(rr if rr is not None else cr))
             obj['Baseline'+field] = max(0, minutes*blended) if blended is not None else None
