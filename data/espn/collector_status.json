@@ -1,9 +1,15 @@
 {
-  "checked_at_utc": "2026-11-23T12:39:56.803443+00:00",
+  "checked_at_utc": "2026-11-24T12:40:46.555681+00:00",
   "source": "ESPN unofficial public scoreboard/summary",
-  "completed_games_parsed": 194,
-  "new_player_rows": 909,
-  "total_player_rows": 5803,
-  "issues": [],
-  "status": "OK"
+  "completed_games_parsed": 203,
+  "new_player_rows": 1013,
+  "total_player_rows": 6816,
+  "issues": [
+    {
+      "game": "401921157",
+      "reason": "incomplete_or_unparseable_players",
+      "parsed": 0
+    }
+  ],
+  "status": "PARTIAL_REVIEW_REQUIRED"
 }
