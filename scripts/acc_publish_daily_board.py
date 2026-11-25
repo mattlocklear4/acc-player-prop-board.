@@ -18,11 +18,13 @@ for g in payload.get('games') or []:
     for t in g.get('teams') or []:
         teams.append({'team':t.get('team'),'opponent':t.get('opponent'),
                       'status':t.get('status'),'reason':t.get('reason'),
+                      'kenpom_snapshot_id':t.get('kenpom_snapshot_id'),
                       'player_count':len(t.get('players') or []),'players':t.get('players') or []})
     games.append({'game_id':g.get('game_id'),'tipoff_utc':g['tipoff_utc'],
                   'home_team':g.get('home_team'),'away_team':g.get('away_team'),'teams':teams})
 result={'date_eastern':day,'generated_at_utc':payload['generated_at_utc'],
         'schedule_status':payload.get('schedule_status'),
+        'kenpom_source':payload.get('kenpom_source'),
         'games':games,'game_count':len(games),
         'projection_player_rows':sum(len(t['players']) for g in games for t in g['teams']),
         'caution':'Research projections; injury and minutes assumptions unverified. No post-tipoff backfill.'}
