@@ -34,10 +34,15 @@ def team_match(schedule_name, api_name):
         'loyolamaryland': 'loyolamd',
         'texasamcorpuschristi': 'texasamcc',
         'northcarolina': 'northcarolina',
+        'ualbanygreatdanes': 'albanygreatdanes',
+        'ualbany': 'albany',
+        'uconnhuskies': 'connecticuthuskies',
+        'uconn': 'connecticut',
     }
     school = norm(schedule_name)
     provider = norm(api_name)
     school = aliases.get(school, school)
+    provider = aliases.get(provider, provider)
     return len(school) >= 5 and (provider.startswith(school) or school.startswith(provider) and len(provider)>=6)
 
 def get(url, params):
