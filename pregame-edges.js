@@ -84,26 +84,57 @@ root.ACCPregameEdges=api;
 if(!root.document)return;
 const doc=root.document;
 const host=doc.getElementById('sportsbookResults')||doc.getElementById('dailyResults');if(!host)return;
-const section=doc.createElement('section');section.id='pregameEdges';section.innerHTML='<div class="edge-toolbar"><label>Market<select id="edgeMarket"><option value="">All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option><option value="Threes">Made threes</option></select></label><label>Game<select id="edgeGame"><option value="">All games</option></select></label><label>Book<select id="edgeBook"><option value="">All books</option></select></label><label>Sort<select id="edgeSort"><option value="roi">Highest ROI</option><option value="time">Tipoff time</option><option value="player">Player A–Z</option><option value="projection">Projection</option></select></label><label class="edge-search">Search<input id="edgeSearch" type="search" placeholder="Player or team"></label><label class="check edge-check"><input type="checkbox" id="edgePositive">Positive ROI only</label><button id="edgeReload" class="secondary" type="button">Refresh board</button></div><p id="edgeStatus" class="note" role="status">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="edge-scroll" tabindex="0" aria-label="Scrollable sportsbook odds comparison"></div><div id="edgeMissing"></div><details class="edge-method"><summary>Pricing methodology</summary><p class="note">Experimental research estimates, not validated win probabilities. Points use normal SD 5.5; rebounds, assists and threes use Poisson. ROI is expected profit per $1 staked. Only timestamp-verified pregame quotes and matched projections are priced; saved odds are not live. Refresh board reloads existing files, not the paid odds API.</p></details>';
+const section=doc.createElement('section');section.id='pregameEdges';section.innerHTML='<div class="edge-toolbar"><label>Market<select id="edgeMarket"><option value="">All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option><option value="Threes">Made threes</option></select></label><label>Game<select id="edgeGame"><option value="">All games</option></select></label><div class="edge-book-filter"><span class="edge-book-label" id="edgeBookLabel">Book</span><details id="edgeBook"><summary aria-labelledby="edgeBookLabel edgeBookText"><span id="edgeBookText">All books</span></summary><div class="edge-book-menu"><div class="edge-book-actions"><button type="button" id="edgeBookAll">Select all</button><button type="button" id="edgeBookNone">Clear</button></div><div id="edgeBookChoices" role="group" aria-labelledby="edgeBookLabel"></div><button type="button" id="edgeBookDone">Done</button></div></details></div><label>Sort<select id="edgeSort"><option value="roi">Highest ROI</option><option value="time">Tipoff time</option><option value="player">Player A–Z</option><option value="projection">Projection</option></select></label><label class="edge-search">Search<input id="edgeSearch" type="search" placeholder="Player or team"></label><label class="check edge-check"><input type="checkbox" id="edgePositive">Positive ROI only</label><button id="edgeReload" class="secondary" type="button">Refresh board</button></div><p id="edgeStatus" class="note" role="status">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="edge-scroll" tabindex="0" aria-label="Scrollable sportsbook odds comparison"></div><div id="edgeMissing"></div><details class="edge-method"><summary>Pricing methodology</summary><p class="note">Experimental research estimates, not validated win probabilities. Points use normal SD 5.5; rebounds, assists and threes use Poisson. ROI is expected profit per $1 staked. Only timestamp-verified pregame quotes and matched projections are priced; saved odds are not live. Refresh board reloads existing files, not the paid odds API.</p></details>';
 if(host.id==='sportsbookResults')host.appendChild(section);else host.parentNode.insertBefore(section,host.nextSibling);
+const bookStyle=doc.createElement('style');
+bookStyle.textContent=`
+#pregameEdges .edge-book-filter{position:relative;flex:0 0 auto}
+#pregameEdges .edge-book-label{display:block;font-size:11px;font-weight:600;color:#a9bed8;margin-bottom:4px}
+#pregameEdges #edgeBook{margin:0;color:#edf4ff;position:relative}
+#pregameEdges #edgeBook summary{display:flex;justify-content:space-between;align-items:center;gap:10px;list-style:none;min-width:108px;border:1px solid #3b516d;background:#0d192c;border-radius:8px;padding:7px 9px;line-height:normal;font-size:12px;font-weight:600}
+#pregameEdges #edgeBook summary::-webkit-details-marker{display:none}
+#pregameEdges #edgeBook summary::after{content:'▾';color:#a9bed8}
+#pregameEdges .edge-book-menu{position:absolute;z-index:30;top:calc(100% + 5px);left:0;width:210px;max-width:85vw;padding:9px;background:#152338;border:1px solid #405977;border-radius:8px;box-shadow:0 10px 28px #0008}
+#pregameEdges .edge-book-actions{display:flex;justify-content:space-between;gap:5px;margin-bottom:7px}
+#pregameEdges .edge-book-menu button{padding:5px 8px;font-size:11px}
+#pregameEdges .edge-book-menu .edge-book-choice{display:flex;align-items:center;gap:9px;padding:7px 5px;cursor:pointer;color:#edf4ff;font-size:12px;margin:0}
+#pregameEdges .edge-book-choice:hover{background:#21354f;border-radius:4px}
+#pregameEdges .edge-book-choice input{width:auto;display:inline;margin:0;accent-color:#438cf8}
+#pregameEdges #edgeBookDone{width:100%;margin-top:6px}
+`;
+section.appendChild(bookStyle);
 const $=id=>doc.getElementById(id);
 const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=n=>n===null||n===undefined?'—':Number(n).toFixed(1);
 const odds=n=>n===null||n===undefined?'—':(n>0?'+':'')+n;
 const roi=n=>n===null||n===undefined?'—':(n>0?'+':'')+fmt(n)+'%';
 let current={rows:[],diagnostics:[]},requested=[],meta={};
+const BOOK_PREF='acc-edge-selected-books-v1';
+let selectedBooks=null; // null means all books, [] means none
+try{const pref=JSON.parse(root.localStorage.getItem(BOOK_PREF)||'null');if(Array.isArray(pref)&&pref.every(k=>typeof k==='string'))selectedBooks=new Set(pref);}catch(_e){}
+function visibleBooks(){return requested.filter(k=>selectedBooks===null||selectedBooks.has(k));}
+function updateBookChoices(){
+  const books=visibleBooks();
+  $('edgeBookText').textContent=selectedBooks===null?'All books':books.length===0?'No books':books.length===1?(names[books[0]]||books[0]):books.length+' of '+requested.length+' books';
+  $('edgeBookChoices').innerHTML=requested.map(k=>'<label class="edge-book-choice"><input type="checkbox" value="'+esc(k)+'" '+(books.includes(k)?'checked':'')+'><span>'+esc(names[k]||k)+'</span></label>').join('');
+}
+function saveBookChoices(){
+  try{root.localStorage.setItem(BOOK_PREF,JSON.stringify(selectedBooks===null?null:[...selectedBooks]));}catch(_e){}
+  updateBookChoices();render();
+}
+
 function optionList(id,items,first){
   const select=$(id),prev=select.value;
   select.innerHTML='<option value="">'+esc(first)+'</option>'+items.map(([v,l])=>'<option value="'+esc(v)+'">'+esc(l)+'</option>').join('');
   if(items.some(([v])=>v===prev))select.value=prev;
 }
 function render(){
-  const book=$('edgeBook').value,market=$('edgeMarket').value,game=$('edgeGame').value,positive=$('edgePositive').checked,search=$('edgeSearch').value.trim().toLowerCase(),sort=$('edgeSort').value;
-  const books=book?[book]:requested;
-  const rows=current.rows.filter(r=>(!book||r.book===book)&&(!market||r.market===market)&&(!game||(r.gameId||r.game)===game)&&(!search||[r.player,r.team,r.game].some(x=>String(x||'').toLowerCase().includes(search))));
+  const market=$('edgeMarket').value,game=$('edgeGame').value,positive=$('edgePositive').checked,search=$('edgeSearch').value.trim().toLowerCase(),sort=$('edgeSort').value;
+  const books=visibleBooks();
+  const rows=current.rows.filter(r=>books.includes(r.book)&&(!market||r.market===market)&&(!game||(r.gameId||r.game)===game)&&(!search||[r.player,r.team,r.game].some(x=>String(x||'').toLowerCase().includes(search))));
   const grouped=groupRows(rows).filter(g=>!positive||g.best?.roi>0);
   const cmp=(a,b)=>sort==='time'?(time(a.tipoffUtc)||0)-(time(b.tipoffUtc)||0)||a.player.localeCompare(b.player):sort==='player'?a.player.localeCompare(b.player):sort==='projection'?b.projection-a.projection:(b.best?.roi??-Infinity)-(a.best?.roi??-Infinity);
-  $('edgeStatus').textContent=(meta.date||'')+' · Odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines';
+  $('edgeStatus').textContent=(meta.date||'')+' · Odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines · '+books.length+' of '+requested.length+' books shown';
   function quote(r,side){
     const value=r[side],edge=side==='over'?r.roiOver:r.roiUnder,fair=side==='over'?r.fairOver:r.fairUnder;
     if(value==null)return '';
@@ -125,7 +156,7 @@ function render(){
     }
   }
   html+='</tbody></table>';
-  $('edgeTable').innerHTML=grouped.length?html:'<p class="edge-empty-note">No matched lines for these filters. Missing quotes are never treated as zero ROI.</p>';
+  $('edgeTable').innerHTML=grouped.length?html:'<p class="edge-empty-note">'+(books.length?'No matched lines for these filters. Missing quotes are never treated as zero ROI.':'Select at least one sportsbook to display the board.')+'</p>';
   $('edgeMissing').innerHTML='<details><summary>Coverage and matching diagnostics ('+current.diagnostics.length+')</summary><ul>'+current.diagnostics.slice(0,100).map(d=>'<li>'+esc(d.game||'')+' '+esc(d.player||'')+': '+esc(d.reason)+'</li>').join('')+'</ul></details>';
 }
 async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date.now(),{cache:'no-store'});
@@ -159,10 +190,27 @@ async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date
   for(const event of base.events||[])for(const q of event.props||[])counts[q.bookmaker]=(counts[q.bookmaker]||0)+1;
   const coverage=root.document.getElementById('edgeCoverage');
   coverage.innerHTML='<strong>Saved sportsbook coverage</strong> · individual over/under quotes returned in the daily snapshot; matched lines require a valid pregame ACC player projection.<br>'+requested.map(k=>{const n=counts[k]||0,m=current.rows.filter(r=>r.book===k).length;return esc(names[k]||k)+': '+n+' quotes / '+m+' matched lines'+(n===0?' (none returned in daily snapshot)':'')}).join(' · ');
-  optionList('edgeBook',requested.map(k=>[k,names[k]||k]),'All books');
+  updateBookChoices();
   optionList('edgeGame',[...new Map(current.rows.map(r=>[r.gameId||r.game,r.game])).entries()],'All games');render();
 }catch(e){current={rows:[],diagnostics:[]};$('edgeTable').innerHTML='';$('edgeCoverage').textContent='';$('edgeMissing').innerHTML='';$('edgeStatus').textContent=e.message+'; no edges shown.';}}
-for(const id of ['edgeBook','edgeMarket','edgeGame','edgeSort','edgePositive'])$(id).addEventListener('change',render);
+for(const id of ['edgeMarket','edgeGame','edgeSort','edgePositive'])$(id).addEventListener('change',render);
+$('edgeBookChoices').addEventListener('change',e=>{
+  if(e.target.type!=='checkbox')return;
+  if(selectedBooks===null)selectedBooks=new Set(requested);
+  if(e.target.checked)selectedBooks.add(e.target.value);else selectedBooks.delete(e.target.value);
+  if(requested.every(k=>selectedBooks.has(k)))selectedBooks=null;
+  // Do not rebuild the focused checkbox on each click; preserve keyboard focus.
+  try{root.localStorage.setItem(BOOK_PREF,JSON.stringify(selectedBooks===null?null:[...selectedBooks]));}catch(_e){}
+  const books=visibleBooks();
+  $('edgeBookText').textContent=selectedBooks===null?'All books':books.length===0?'No books':books.length===1?(names[books[0]]||books[0]):books.length+' of '+requested.length+' books';
+  render();
+});
+$('edgeBookAll').addEventListener('click',()=>{selectedBooks=null;saveBookChoices()});
+$('edgeBookNone').addEventListener('click',()=>{selectedBooks=new Set();saveBookChoices()});
+$('edgeBookDone').addEventListener('click',()=>{$('edgeBook').open=false;$('edgeBook').querySelector('summary').focus()});
+doc.addEventListener('click',e=>{if(!$('edgeBook').contains(e.target))$('edgeBook').open=false});
+$('edgeBook').addEventListener('keydown',e=>{if(e.key==='Escape'){$('edgeBook').open=false;$('edgeBook').querySelector('summary').focus()}});
+
 $('edgeSearch').addEventListener('input',render);
 $('edgeReload').addEventListener('click',load);
 doc.querySelector('[data-tab="sportsbook"]')?.addEventListener('click',load);
