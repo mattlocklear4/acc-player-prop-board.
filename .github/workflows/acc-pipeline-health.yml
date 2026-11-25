@@ -1,6 +1,13 @@
 name: ACC daily pipeline health
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_pipeline_health.py'
+      - 'tests/test_acc_pipeline_health.py'
+      - '.github/workflows/acc-pipeline-health.yml'
+      - 'data/cbbd/acc_team_collection_summary_2027.json'
   schedule:
     # 2:30 PM Eastern (standard time); safely after morning collectors.
     - cron: '30 19 * * *'
@@ -56,7 +63,10 @@ jobs:
           python - <<'PY'
           import json, os
           from pathlib import Path
-          report=json.loads(Path('data/pipeline_health.json').read_text())
+          path=Path('data/pipeline_health.json')
+          if not path.is_file():
+              raise SystemExit('Audit produced no report; inspect the audit step log.')
+          report=json.loads(path.read_text())
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
               f.write(f"## ACC pipeline health: {report['status'].upper()}\n\n")
               f.write(f"Date (ET): {report['date_eastern']} · {report['failures']} failures · {report['warnings']} warnings\n\n")

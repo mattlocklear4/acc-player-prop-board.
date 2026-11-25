@@ -69,5 +69,29 @@ class HealthTests(unittest.TestCase):
         checks = {c['code']: c for c in audit(self.root, NOW, runs)['checks']}
         self.assertEqual(checks['workflow_pages']['level'], 'fail')
 
+    def test_malformed_supplemental_json_warns_and_audit_continues(self):
+        path = 'data/cbbd/acc_team_collection_summary_2027.json'
+        self.put(path, {'last_successful_run_utc': '2026-11-15T12:14:15Z'})
+        with (self.root / path).open('a') as f:
+            f.write(r'\n')
+        report = audit(self.root, NOW, RUNS)
+        self.assertEqual(report['failures'], 0)
+        self.assertTrue(any(c['code']=='invalid_json' and c['level']=='warn' and c['path']==path for c in report['checks']))
+        self.assertEqual(self.checks()['projections']['level'], 'pass')
+        self.assertEqual(self.checks()['api_credits']['level'], 'pass')
+
+    def test_malformed_critical_json_fails_and_audit_continues(self):
+        path = 'data/daily_board.json'
+        (self.root / path).write_text('{"broken":')
+        report = audit(self.root, NOW, RUNS)
+        self.assertEqual(report['status'], 'fail')
+        self.assertTrue(any(c['code']=='invalid_json' and c['level']=='fail' and c['path']==path for c in report['checks']))
+        self.assertEqual(self.checks()['api_credits']['level'], 'pass')
+
+    def test_non_object_json_is_reported(self):
+        self.put('data/espn/collector_status.json', [])
+        self.assertEqual(self.checks()['espn']['level'], 'fail')
+        self.assertEqual(self.checks()['invalid_json']['level'], 'fail')
+
 if __name__ == '__main__':
     unittest.main()

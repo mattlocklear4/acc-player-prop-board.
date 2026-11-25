@@ -22,7 +22,12 @@ WORKFLOWS = {
 
 def read_json(root, relative):
     path = root / relative
-    return json.loads(path.read_text()) if path.is_file() else None
+    if not path.is_file():
+        return None
+    value = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(value, dict):
+        raise ValueError('expected JSON object')
+    return value
 
 
 def timestamp(value):
@@ -31,7 +36,7 @@ def timestamp(value):
     try:
         parsed = dt.datetime.fromisoformat(value.replace('Z', '+00:00'))
         return parsed if parsed.tzinfo else None
-    except (ValueError, TypeError):
+    except (ValueError, TypeError, AttributeError):
         return None
 
 
@@ -71,7 +76,14 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
     def add(code, level, detail, **extra):
         checks.append({'code': code, 'level': level, 'detail': detail, **extra})
 
-    espn = read_json(root, 'data/espn/collector_status.json')
+    def load(relative, severity='fail'):
+        try:
+            return read_json(root, relative)
+        except (OSError, ValueError) as exc:
+            add('invalid_json', severity, f'{relative}: {exc}', path=relative)
+            return None
+
+    espn = load('data/espn/collector_status.json')
     age = (now - timestamp(espn.get('checked_at_utc'))).total_seconds() / 3600 if espn and timestamp(espn.get('checked_at_utc')) else None
     if not espn or age is None or age > 36 or espn.get('status') != 'OK':
         add('espn', 'fail', f'ESPN status missing, unhealthy, or older than 36h (age={age}).')
@@ -79,8 +91,8 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
         add('espn', 'pass', f"ESPN collector OK {age:.1f}h ago; {espn.get('total_player_rows', 0)} player rows.")
 
     # Supplemental Team Stats tab is not the ESPN grading source, but stale data must be visible.
-    team_summary = read_json(root, 'data/cbbd/acc_team_collection_summary_2027.json')
-    cbbd_status = read_json(root, 'data/cbbd/acc_collector_status.json') or {}
+    team_summary = load('data/cbbd/acc_team_collection_summary_2027.json', 'warn')
+    cbbd_status = load('data/cbbd/acc_collector_status.json', 'warn') or {}
     team_ts = timestamp((team_summary or {}).get('last_successful_run_utc'))
     team_age = (now - team_ts).total_seconds() / 86400 if team_ts else None
     if team_age is None or team_age > 7 or cbbd_status.get('status') == 'CBBD_MONTHLY_QUOTA_EXHAUSTED':
@@ -94,7 +106,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
     archived_dates = []
     for archive in archives:
         try:
-            data = json.loads(archive.read_text())
+            data = read_json(root, archive.relative_to(root))
             date = dt.date.fromisoformat(archive.stem)
             archived_dates.append(date.isoformat())
             snapshot = timestamp(data.get('generated_at_utc'))
@@ -109,7 +121,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
                                         cwd=root, capture_output=True, text=True, check=True)
                 if len(result.stdout.splitlines()) > 1:
                     revisions.append(archive.name)
-        except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as exc:
+        except (OSError, ValueError, KeyError, TypeError, AttributeError, subprocess.CalledProcessError) as exc:
             invalid.append(archive.name + ': ' + str(exc))
     if invalid or revisions:
         add('archives', 'fail', f'Archive integrity failures: {invalid}; modified historical paths: {revisions}.')
@@ -118,7 +130,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
     else:
         add('archives', 'pass', f'{len(archives)} pregame archive dates checked; no post-tipoff timestamps or revisions detected.')
 
-    grading = read_json(root, 'data/daily_grading.json')
+    grading = load('data/daily_grading.json')
     grade_dates = {x.get('date') for x in (grading or {}).get('days', [])}
     if not grading or str(grading.get('status', '')).upper() not in ('OK', 'PARTIAL'):
         add('grading', 'fail', 'Daily grading report missing or not OK.')
@@ -129,7 +141,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
         add('grading', 'warn' if issues else 'pass',
             f"{grading.get('players_graded', 0)} players graded; {issues} unresolved matching issues.")
 
-    board = read_json(root, 'data/daily_board.json')
+    board = load('data/daily_board.json')
     if not board or board.get('date_eastern') != today.isoformat():
         add('projections', 'fail', f"Today's board missing/stale; found {(board or {}).get('date_eastern')} instead of {today}.")
     else:
@@ -141,12 +153,12 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
         if board.get('games') and today.isoformat() not in archived_dates:
             add('today_archive', 'fail', 'Today has projected games but no saved immutable pregame archive.')
         elif today.isoformat() in archived_dates:
-            archived_today = read_json(root, f'data/archives/daily/{today}.json')
+            archived_today = load(f'data/archives/daily/{today}.json')
             archived_players = sum(len(t.get('players') or []) for g in (archived_today or {}).get('games', []) for t in g.get('teams', []))
             if archived_players < board.get('projection_player_rows', 0):
                 add('today_archive_coverage', 'warn', f'Immutable first snapshot has {archived_players} players vs live board {board.get("projection_player_rows", 0)}; later additions cannot be graded retrospectively.')
 
-    odds = read_json(root, 'data/daily_odds_evaluation.json')
+    odds = load('data/daily_odds_evaluation.json')
     odds_dates = {x.get('date') for x in (odds or {}).get('days', [])}
     if not odds:
         add('roi', 'fail', 'Historical odds evaluation missing.')
@@ -163,7 +175,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
     quota_violations = []
     for path in snapshot_paths:
         try:
-            snapshot = json.loads(path.read_text())
+            snapshot = read_json(root, path.relative_to(root))
             quota = snapshot.get('quota') or {}
             if snapshot.get('daily_credit_cap') != 24 or snapshot.get('monthly_reserve_credits') != 50:
                 quota_violations.append(path.name + ': declared cap mismatch')
@@ -173,7 +185,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
                 quota_violations.append(path.name + ': spent above daily cap')
             if isinstance(remaining, (int, float)) and remaining < 50:
                 quota_violations.append(path.name + ': reserve below 50')
-        except (OSError, ValueError) as exc:
+        except (OSError, ValueError, TypeError, AttributeError) as exc:
             quota_violations.append(path.name + ': ' + str(exc))
     if quota_violations:
         add('api_credits', 'fail', '; '.join(quota_violations))
@@ -213,7 +225,15 @@ def main():
     if not args.offline and (not os.getenv('GITHUB_REPOSITORY') or not os.getenv('GITHUB_TOKEN')):
         raise SystemExit('GITHUB_REPOSITORY and GITHUB_TOKEN required for scheduled workflow audit')
     runs = {} if args.offline else run_history(os.getenv('GITHUB_REPOSITORY'), os.getenv('GITHUB_TOKEN'))
-    report = audit(workflow_runs=runs, check_git=not args.offline)
+    try:
+        report = audit(workflow_runs=runs, check_git=not args.offline)
+    except Exception as exc:
+        # Unexpected schema/runtime errors must never be mistaken for a clean audit.
+        now = dt.datetime.now(dt.timezone.utc)
+        report = {'generated_at_utc': now.isoformat(), 'date_eastern': now.astimezone(EASTERN).date().isoformat(),
+                  'status': 'fail', 'failures': 1, 'warnings': 0,
+                  'checks': [{'code': 'audit_exception', 'level': 'fail', 'detail': f'{type(exc).__name__}: {exc}'}],
+                  'note': 'Audit incomplete; remaining checks could not be verified.'}
     destination = ROOT / args.output
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(report, indent=2) + '\n')
