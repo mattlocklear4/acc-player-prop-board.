@@ -1,7 +1,14 @@
 {
   "date_eastern": "2026-11-25",
-  "generated_at_utc": "2026-11-25T14:55:44.065971+00:00",
+  "generated_at_utc": "2026-11-25T15:51:26.836796+00:00",
   "schedule_status": "FALLBACK_ESPN_PUBLIC",
+  "kenpom_source": {
+    "source": "supabase_snapshot",
+    "snapshot_id": "9452cd48-e3a3-4be6-864f-50f9c4aa356f",
+    "imported_at": "2026-11-13T15:04:37.33371+00:00",
+    "source_as_of": null,
+    "team_count": 365
+  },
   "games": [
     {
       "game_id": "espn_event_401920428",
@@ -14,6 +21,7 @@
           "opponent": "Marquette Golden Eagles",
           "status": "research_candidate_unverified",
           "reason": "browser_parity_and_manual_minutes_not_verified",
+          "kenpom_snapshot_id": "9452cd48-e3a3-4be6-864f-50f9c4aa356f",
           "player_count": 17,
           "players": [
             {
@@ -592,6 +600,7 @@
           "opponent": "UAlbany Great Danes",
           "status": "excluded",
           "reason": "projection_input_error:unresolved_opponent",
+          "kenpom_snapshot_id": null,
           "player_count": 0,
           "players": []
         }
@@ -608,6 +617,7 @@
           "opponent": "UConn Huskies",
           "status": "excluded",
           "reason": "projection_input_error:unresolved_opponent",
+          "kenpom_snapshot_id": null,
           "player_count": 0,
           "players": []
         }
@@ -624,6 +634,7 @@
           "opponent": "Utah State Aggies",
           "status": "research_candidate_unverified",
           "reason": "browser_parity_and_manual_minutes_not_verified",
+          "kenpom_snapshot_id": "9452cd48-e3a3-4be6-864f-50f9c4aa356f",
           "player_count": 15,
           "players": [
             {
@@ -1136,6 +1147,7 @@
           "opponent": "Norfolk State Spartans",
           "status": "research_candidate_unverified",
           "reason": "browser_parity_and_manual_minutes_not_verified",
+          "kenpom_snapshot_id": "9452cd48-e3a3-4be6-864f-50f9c4aa356f",
           "player_count": 14,
           "players": [
             {
@@ -1615,6 +1627,7 @@
           "opponent": "Mississippi State Bulldogs",
           "status": "research_candidate_unverified",
           "reason": "browser_parity_and_manual_minutes_not_verified",
+          "kenpom_snapshot_id": "9452cd48-e3a3-4be6-864f-50f9c4aa356f",
           "player_count": 14,
           "players": [
             {
@@ -2094,6 +2107,7 @@
           "opponent": "Saint Louis Billikens",
           "status": "research_candidate_unverified",
           "reason": "browser_parity_and_manual_minutes_not_verified",
+          "kenpom_snapshot_id": "9452cd48-e3a3-4be6-864f-50f9c4aa356f",
           "player_count": 12,
           "players": [
             {
