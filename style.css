@@ -41,3 +41,42 @@
 .team-compare-row strong{text-align:right}
 .team-compare-head{color:#9dbde2;font-size:13px}
 @media(max-width:620px){.team-compare-row{font-size:12px;gap:5px}.team-matchup-pace{flex-direction:column;align-items:flex-start}}
+
+/* Dedicated compact sportsbook comparison board */
+#sportsbook .heading{margin-bottom:12px}
+body:has(#sportsbook.active) main{max-width:1900px;padding-inline:16px}
+body:has(#sportsbook.active) #vegas-odds-panel{display:none}
+#pregameEdges .edge-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;padding:10px 0}
+#pregameEdges .edge-toolbar label{margin:0;font-size:11px;font-weight:600;color:#a9bed8}
+#pregameEdges .edge-toolbar select,#pregameEdges .edge-toolbar input[type=search]{margin-top:4px;padding:7px 9px;font-size:12px;max-width:245px}
+#pregameEdges .edge-toolbar .edge-check{padding:8px 3px;font-size:12px;white-space:nowrap}
+#pregameEdges .edge-toolbar .edge-check input{margin:0}
+#pregameEdges .edge-toolbar button{font-size:12px;padding:8px 10px}
+#edgeStatus{margin:4px 0;font-variant-numeric:tabular-nums}
+#edgeCoverage{margin:4px 0 12px;color:#9aacc5;font-size:11px}
+#pregameEdges .edge-scroll{overflow:auto;border:1px solid #34445b;border-radius:8px;max-height:72vh;min-height:70px;background:#111d2e}
+#pregameEdges .edge-matrix{border-collapse:separate;border-spacing:0;min-width:100%;width:max-content;font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#pregameEdges .edge-matrix th,#pregameEdges .edge-matrix td{padding:8px 10px;border-right:1px solid #304057;border-bottom:1px solid #304057;vertical-align:middle}
+#pregameEdges .edge-matrix thead th{position:sticky;top:0;z-index:3;background:#1d3049;color:#dce8f9;font-weight:700;cursor:default}
+#pregameEdges .edge-matrix .edge-player{position:sticky;left:0;z-index:2;background:#152338;width:200px;min-width:200px;max-width:200px}
+#pregameEdges .edge-matrix thead .edge-player{z-index:5;background:#1d3049}
+#pregameEdges .edge-matrix .edge-proj{width:65px;text-align:center;font-weight:700;color:#bdd7ff}
+#pregameEdges .edge-matrix .edge-best{width:105px;min-width:105px;text-align:right}
+#pregameEdges .edge-matrix .edge-bookhead{text-align:center;min-width:150px}
+#pregameEdges .edge-matrix .edge-bookcell{min-width:150px;text-align:center;background:#111d2e}
+#pregameEdges .edge-matrix tbody tr:hover td{background:#1b2d43}
+#pregameEdges .edge-matrix tbody tr:hover .edge-player{background:#21354f}
+#pregameEdges .edge-matrix small{display:block;font-size:10px;color:#91a8c5;font-weight:400;line-height:1.35}
+#pregameEdges .edge-game-label{overflow:hidden;text-overflow:ellipsis}
+#pregameEdges .edge-matrix .edge-marketband th,#pregameEdges .edge-matrix .edge-marketband td{background:#20283b;color:#e4ecfa;position:static;padding:6px 10px;text-align:left}
+#pregameEdges .edge-matrix .edge-marketband th{position:sticky;left:0;z-index:2;font-size:12px;letter-spacing:.025em}
+#pregameEdges .edge-marketband small{display:inline;margin-left:6px}
+#pregameEdges .edge-quote{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:130px;line-height:1.5;color:#f0f4fa}
+#pregameEdges .edge-quote+.edge-quote{margin-top:4px}
+#pregameEdges .edge-roi{color:#f0f4fa;font-weight:600;text-align:right}
+#pregameEdges .edge-win{color:#56df99!important;font-weight:750}
+#pregameEdges .edge-empty{color:#657891}
+#pregameEdges .edge-empty-note{color:#a5b8d0;padding:14px}
+#pregameEdges details{margin:10px 0;font-size:12px;color:#a8bad2}
+#pregameEdges summary{cursor:pointer}
+@media(max-width:700px){body:has(#sportsbook.active) main{padding-inline:8px}#pregameEdges .edge-matrix .edge-player{width:135px;min-width:135px;max-width:135px;white-space:normal}#pregameEdges .edge-matrix th,#pregameEdges .edge-matrix td{padding:6px 7px}#pregameEdges .edge-matrix .edge-bookhead,#pregameEdges .edge-matrix .edge-bookcell{min-width:135px}#pregameEdges .edge-quote{min-width:120px;gap:5px}#pregameEdges .edge-matrix .edge-game-label{white-space:nowrap}#pregameEdges .edge-scroll{max-height:65vh}#pregameEdges .edge-toolbar select,#pregameEdges .edge-toolbar input[type=search]{max-width:175px}}
