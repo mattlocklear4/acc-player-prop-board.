@@ -62,7 +62,7 @@ try{
 const roiRes=await fetch('data/daily_odds_evaluation.json?ts='+Date.now(),{cache:'no-store'});
 if(roiRes.ok){
 const roi=await roiRes.json();
-html+='<h3>Historical sportsbook evaluation</h3>';
+html+='<h3>Legacy sportsbook evaluation (projection vs line)</h3>';
 html+='<p class="note">'+esc(roi.snapshots??0)+' saved odds snapshots · '+esc(roi.quotes_offered??0)+' quoted props · '+esc(roi.settled??0)+' settled hypothetical selections.</p>';
 if(roi.roi_percent==null){html+='<p class="note">ROI unavailable: no qualifying pregame odds quotes matched to graded final results yet. No odds or results have been estimated.</p>';}
 else{html+='<p class="note">Flat $1 research simulation: '+esc(roi.wins)+' wins, '+esc(roi.losses)+' losses, '+esc(roi.pushes)+' pushes · net '+esc(roi.profit_units)+' units · ROI '+esc(roi.roi_percent)+'% (settled stakes only).</p>';}
@@ -75,6 +75,21 @@ html+='</tbody></table></div>';
 html+='<p class="note">'+esc(roi.caution||'Research only; no real bets placed.')+'</p>';
 }
 }catch(_e){/* odds evaluation is optional until first publish */}
+try{
+const exactRes=await fetch('data/pregame_edge_grading.json?ts='+Date.now(),{cache:'no-store'});
+if(exactRes.ok){
+const exact=await exactRes.json(),m=exact.positive_roi||{};
+html+='<h3>Archived Sportsbook Edges · positive expected ROI</h3><p class="note">Latest genuinely captured pregame snapshot per game. Separate from the legacy direction-only evaluation. '+esc(exact.players_graded??0)+' latest player projections graded · '+esc(exact.quotes_priced??0)+' priced sides · '+esc(m.selections??0)+' positive-ROI selections · '+esc(m.settled??0)+' settled.</p>';
+html+='<p class="note">Hypothetical flat 1-unit results: '+esc(m.wins??0)+' wins / '+esc(m.losses??0)+' losses / '+esc(m.pushes??0)+' pushes · '+val(m.profit_units)+' units · realized ROI '+(m.roi_percent==null?'—':val(m.roi_percent)+'%')+'.</p>';
+for(const [label,group] of [['Expected ROI tier',exact.by_tier],['Sportsbook',exact.by_bookmaker],['Stat',exact.by_market],['Model version',exact.by_model_version],['Date',exact.by_date]]){
+if(!Object.keys(group||{}).length)continue;
+html+='<h4>'+esc(label)+'</h4><div class="tablewrap"><table><thead><tr><th>Group</th><th>Settled</th><th>W–L–P</th><th>Mean expected ROI</th><th>Realized ROI</th><th>Units</th></tr></thead><tbody>';
+for(const [key,s] of Object.entries(group))html+='<tr><td>'+esc(key)+'</td><td>'+esc(s.settled)+'</td><td>'+esc(s.wins+'–'+s.losses+'–'+s.pushes)+'</td><td>'+val(s.mean_expected_roi_percent)+'</td><td>'+val(s.roi_percent)+'</td><td>'+val(s.profit_units)+'</td></tr>';
+html+='</tbody></table></div>';
+}
+html+='<p class="note">'+esc(exact.method)+'</p>';
+}
+}catch(_e){/* exact edge grading optional until published */}
 el.innerHTML=html;
 }catch(e){status.textContent='Daily board unavailable: '+e.message;el.innerHTML='<p class="note">The daily automation must successfully publish a board before projections appear here.</p>';}
 }

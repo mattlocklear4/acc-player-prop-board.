@@ -1,0 +1,67 @@
+name: Archive and grade exact ACC pregame edges
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_capture_pregame.cjs'
+      - 'scripts/acc_grade_pregame.py'
+      - 'tests/test_acc_pregame_archive.cjs'
+      - 'tests/test_acc_pregame_grade.py'
+      - '.github/workflows/acc-pregame-archive.yml'
+      - 'pregame-edges.js'
+  workflow_run:
+    workflows: ['ACC daily pregame projections', 'Daily ACC sportsbook snapshot (credit capped)', 'Grade daily ACC projections']
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '45 14 * * *'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: acc-pregame-archive
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test pricing and archive integrity
+        run: |
+          node tests/test_pregame_edges.cjs
+          node tests/test_acc_pregame_archive.cjs
+          python -m unittest discover -s tests -p 'test_acc_pregame_grade.py'
+      - name: Freeze pre-tipoff game projections and exact board quotes
+        run: node scripts/acc_capture_pregame.cjs
+      - name: Grade completed days (no postgame projection)
+        if: github.event_name != 'workflow_run' || github.event.workflow_run.name == 'Grade daily ACC projections'
+        run: python scripts/acc_grade_pregame.py
+      - name: Preserve append-only archives and publish grading
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ -d data/archives/pregame ]; then git add data/archives/pregame; fi
+          if [ -f data/pregame_edge_grading.json ]; then git add data/pregame_edge_grading.json; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Archive exact ACC pregame projections and edges'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+          done
+          exit 1
+      - name: Update published dashboard
+        if: github.event_name != 'workflow_run' || github.event.workflow_run.name == 'Grade daily ACC projections'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main

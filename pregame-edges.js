@@ -44,10 +44,10 @@ function evaluate(board,snapshot){
       const p=matches[0].p,fields=MARKETS[q.market],mean=number(p[fields[1]]??p[fields[2]]),line=number(q.line);
       if(mean===null||line===null){diagnostics.push({game:label,player:q.player,reason:'Missing projection or line'});continue;}
       if(Number.isInteger(line)){diagnostics.push({game:label,player:q.player,reason:'Whole-number line requires push-aware pricing; excluded'});continue;}
-      const sides={};let invalid=false;
+      const sides={},updates={};let invalid=false;
       for(const x of quotes){const updated=time(x.last_update),side=String(x.side||'').toLowerCase();
         if(!updated||updated>collected||updated>=tipoff||!['over','under'].includes(side)||profit(number(x.odds))===null||sides[side]){invalid=true;break;}
-        sides[side]=number(x.odds);
+        sides[side]=number(x.odds);updates[side]=x.last_update;
       }
       if(invalid){diagnostics.push({game:label,player:q.player,reason:'Invalid/duplicate or unverifiable quote'});continue;}
       const ps=probabilities(q.market,mean,line);
@@ -55,7 +55,7 @@ function evaluate(board,snapshot){
       const roi={};for(const side of ['over','under'])roi[side]=sides[side]===undefined?null:100*(ps[side]*profit(sides[side])-(1-ps[side]));
       const best=roi.over===null?'under':roi.under===null?'over':roi.over>=roi.under?'over':'under';
       rows.push({game:label,team:matches[0].team,player:q.player,book:q.bookmaker,market:fields[0],projection:mean,line,over:sides.over??null,under:sides.under??null,
-        fairOver:american(ps.over),fairUnder:american(ps.under),roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
+        fairOver:american(ps.over),fairUnder:american(ps.under),probOver:ps.over,probUnder:ps.under,quoteUpdatedOver:updates.over??null,quoteUpdatedUnder:updates.under??null,modelVersion:p.ModelVersion??'unknown',projectionUtc:board.generated_at_utc,roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
     }
   }
   rows.sort((a,b)=>b.bestRoi-a.bestRoi);
