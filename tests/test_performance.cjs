@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const {series,chart,exactPanel,latestPanel,healthPanel}=require('../performance.js');
+const {series,chart,pendingPanel,easternDate,exactPanel,latestPanel,healthPanel}=require('../performance.js');
 const dates={'2026-11-26':{settled:3,profit_units:-1},'2026-11-25':{settled:4,profit_units:2},'2026-11-27':{settled:0,profit_units:0}};
 assert.deepEqual(series(dates).map(d=>[d.date,d.cumulative]),[['2026-11-25',2],['2026-11-26',1]]);
 assert.ok(chart(dates).includes('polyline'));
@@ -17,3 +17,12 @@ assert.ok(html.includes('id="sportsbook" class="tab active"'));
 assert.ok(!html.includes('id="games" class="tab active"'));
 assert.ok(!fs.readFileSync(path.join(__dirname,'../daily-tab.js'),'utf8').includes('daily_grading.json'));
 console.log('Performance chart, empty state, and navigation regression checks passed');
+
+const pending={date_eastern:'2026-11-25',status:'OK',positive_selections:14,mean_expected_roi_percent:12.34,player_projections:83,quotes_priced:42,games:6,by_tier:{'10–20%':{selections:14,mean_expected_roi_percent:12.34}}};
+assert.ok(pendingPanel(pending,'2026-11-25').includes('12.3%'));
+assert.ok(pendingPanel(pending,'2026-11-25').includes('>14<'));
+assert.ok(!pendingPanel(pending,'2026-11-26').includes('>14<'));
+assert.ok(pendingPanel(null,'2026-11-25').includes('not been published'));
+assert.ok(pendingPanel({date_eastern:'2026-11-25',status:'NO_ARCHIVES'},'2026-11-25').includes('No pregame archive'));
+assert.equal(easternDate(new Date('2026-11-26T02:00:00Z')),'2026-11-25');
+console.log('Pending report, stale-date and no-data checks passed');

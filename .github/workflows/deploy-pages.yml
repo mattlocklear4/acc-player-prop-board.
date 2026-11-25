@@ -12,6 +12,7 @@ on:
       - 'data/daily_grading.json'
       - 'data/daily_odds_evaluation.json'
       - 'data/pregame_edge_grading.json'
+      - 'data/pregame_pending.json'
       - 'data/pipeline_health.json'
       - 'data/archives/daily/**'
       - 'data/odds_snapshots/**'

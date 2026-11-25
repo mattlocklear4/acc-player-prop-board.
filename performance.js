@@ -37,11 +37,32 @@ function groups(label,obj){
  const names={draftkings:'DraftKings',fanduel:'FanDuel',williamhill_us:'Caesars',fanatics:'Fanatics',betonlineag:'BetOnline'};
  return '<h4>'+esc(label)+'</h4>'+table(['Group','Settled','W–L–P','Avg expected ROI','Realized ROI','Net units'],entries.map(([key,s])=>[names[key]||key,s.settled,s.wins+'–'+s.losses+'–'+s.pushes,percent(s.mean_expected_roi_percent),percent(s.roi_percent),pnl(s.profit_units)]));
 }
+function easternDate(now=new Date()){
+ const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
+ const get=t=>parts.find(p=>p.type===t)?.value;
+ return get('year')+'-'+get('month')+'-'+get('day');
+}
+function pendingPanel(d,today=easternDate()){
+ const title="Today's saved selections · awaiting grading";
+ if(!d)return panel(title,note('Pending archive report has not been published yet. No zero count is inferred.'));
+ if(d.date_eastern!==today)return panel(title,note('Last published pending report is for '+d.date_eastern+'. Awaiting the '+today+' archive summary.'));
+ if(d.status==='NO_ARCHIVES')return panel(title,note('No pregame archive has been saved for '+today+' yet. This can mean no scheduled ACC games or that the next archive run is still pending.'));
+ let html=note(d.date_eastern+' · Saved pregame snapshots; no results included. These are hypothetical selections, not actual wagers.');
+ html+='<div class="perf-grid">'+kpi('Pending positive ROI',d.positive_selections??'—')+kpi('Average expected ROI',percent(d.mean_expected_roi_percent),cls(d.mean_expected_roi_percent))+kpi('Player projections saved',d.player_projections??'—')+kpi('Priced quote sides',d.quotes_priced??'—')+kpi('Games archived',d.games??'—')+'</div>';
+ if(d.positive_selections===0)html+=note('No positive-ROI selections in the saved quotes. This is not a settled loss or a missing-results error.');
+ const tiers=Object.entries(d.by_tier||{}).sort(([a],[b])=>parseFloat(a)-parseFloat(b));
+ if(tiers.length)html+='<h4>Pending by expected ROI tier</h4>'+table(['Tier','Selections','Average expected ROI'],tiers.map(([k,v])=>[k,v.selections,percent(v.mean_expected_roi_percent)]));
+ const versions=Object.entries(d.by_model_version||{});
+ if(versions.length)html+='<h4>Pending model versions</h4>'+table(['Model version','Selections','Average expected ROI'],versions.map(([k,v])=>[k,v.selections,percent(v.mean_expected_roi_percent)]));
+ html+=note('Latest capture: '+(d.latest_capture_utc?new Date(d.latest_capture_utc).toLocaleString():'—')+' · '+(d.games_with_priced_quotes??0)+' games with priced quotes · '+(d.issues||[]).length+' archive issues. Settled results are published after the next-day grading run.');
+ return panel(title,html);
+}
 function exactPanel(d){
  if(!d)return panel('Archived Sportsbook Edges',note('Exact-edge grading report is not available. Check the archive and grading workflows.'));
  const m=d.positive_roi||{};
  let html=note('Positive expected ROI only · latest archived pregame odds-backed snapshot per game · hypothetical flat 1-unit results, not actual bets.');
- html+='<div class="perf-grid">'+kpi('Settled selections',m.settled??0)+kpi('W–L–P',(m.wins??0)+'–'+(m.losses??0)+'–'+(m.pushes??0))+kpi('Net P/L',m.settled?pnl(m.profit_units):'—',cls(m.profit_units))+kpi('Expected ROI',percent(m.mean_expected_roi_percent))+kpi('Realized ROI',percent(m.roi_percent),cls(m.roi_percent))+'</div>';
+ if(!m.settled)html+=note('Awaiting first settled results; no wins, losses or realized ROI can be calculated yet.');
+ html+='<div class="perf-grid">'+kpi('Settled selections',m.settled??0)+kpi('W–L–P',m.settled?(m.wins??0)+'–'+(m.losses??0)+'–'+(m.pushes??0):'—')+kpi('Net P/L',m.settled?pnl(m.profit_units):'—',cls(m.profit_units))+kpi('Expected ROI',percent(m.mean_expected_roi_percent))+kpi('Realized ROI',percent(m.roi_percent),cls(m.roi_percent))+'</div>';
  html+=chart(d.by_date);
  for(const [label,obj] of [['Expected ROI tier',d.by_tier],['Stat category',d.by_market],['Sportsbook',d.by_bookmaker],['Model version',d.by_model_version],['Game date',d.by_date]])html+=groups(label,obj);
  html+=note((d.quotes_priced??0)+' priced sides · '+(m.selections??0)+' positive selections · '+((m.selections??0)-(m.settled??0))+' not settled. Report: '+(d.generated_at_utc||'unknown'));
@@ -75,16 +96,16 @@ function legacyPanel(d){
  if(!d)return '';
  return '<details class="panel performance-history"><summary>Legacy sportsbook evaluation · projection vs line</summary>'+note('Separate historical method; not the positive-ROI edge strategy.')+note((d.settled??0)+' settled · '+(d.wins??0)+' wins / '+(d.losses??0)+' losses / '+(d.pushes??0)+' pushes · '+(d.settled?pnl(d.profit_units):'—')+' · ROI '+percent(d.roi_percent))+table(['Date','Games checked','Quotes','Unmatched player/market','Selections'],(d.days||[]).slice(-14).reverse().map(x=>[x.date,x.events,x.quotes_offered,x.issues?.unmatched_player_or_market??0,x.hypothetical_selections]))+note(d.caution||'')+'</details>';
 }
-if(typeof module!=='undefined'&&module.exports)module.exports={series,chart,exactPanel,latestPanel,morningPanel,healthPanel,legacyPanel};
+if(typeof module!=='undefined'&&module.exports)module.exports={series,chart,pendingPanel,easternDate,exactPanel,latestPanel,morningPanel,healthPanel,legacyPanel};
 if(!root.document)return;
 const doc=root.document,el=doc.getElementById('performanceResults');if(!el)return;
 let sequence=0;
 async function load(){
  const token=++sequence;
  async function get(name){try{const r=await fetch('data/'+name+'.json?ts='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch{return null;}}
- const [exact,morning,health,legacy]=await Promise.all(['pregame_edge_grading','daily_grading','pipeline_health','daily_odds_evaluation'].map(get));
+ const [pending,exact,morning,health,legacy]=await Promise.all(['pregame_pending','pregame_edge_grading','daily_grading','pipeline_health','daily_odds_evaluation'].map(get));
  if(token!==sequence)return;
- el.innerHTML=exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
+ el.innerHTML=pendingPanel(pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
 }
 doc.querySelector('[data-tab="accuracy"]')?.addEventListener('click',load);
 doc.getElementById('refreshPerformance')?.addEventListener('click',load);
