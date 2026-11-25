@@ -12,6 +12,7 @@ on:
     - cron: '0 13 * * *'
     - cron: '0 14 * * *'
     - cron: '0 15 * * *'
+    - cron: '7,22,37,52 * * * *'
 permissions:
   contents: write
   actions: write
@@ -27,23 +28,51 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check for a new verified cloud snapshot
+        id: freshness
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          POLL_ONLY: ${{ github.event_name == 'schedule' && github.event.schedule == '7,22,37,52 * * * *' }}
+        run: |
+          python - <<'PY'
+          import os,json,sys
+          from datetime import datetime,timezone
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          refresh=True
+          if os.environ.get('POLL_ONLY','').lower()=='true':
+              from supabase_kenpom import fetch_latest_kenpom
+              _,meta=fetch_latest_kenpom(datetime.now(timezone.utc))
+              board=json.loads(Path('data/daily_board.json').read_text())
+              refresh=(board.get('kenpom_source') or {}).get('snapshot_id')!=meta['snapshot_id']
+          print('Projection refresh required:',refresh)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('refresh='+str(refresh).lower()+'\n')
+          PY
       - name: Test opponent name matching
+        if: steps.freshness.outputs.refresh == 'true'
         run: python -m unittest discover -s tests -p 'test_acc_daily_pipeline.py'
       - name: Compare baseline models offline
+        if: steps.freshness.outputs.refresh == 'true'
         run: python scripts/acc_validation_walkforward.py
       - name: Fetch next 24 hours ACC schedule
+        if: steps.freshness.outputs.refresh == 'true'
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python scripts/acc_schedule.py --season 2027 --horizon-hours 24
       - name: Generate player projections with available KenPom and historical inputs
+        if: steps.freshness.outputs.refresh == 'true'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python scripts/acc_projection_dry_run.py --schedule research/acc_schedule_dry_run.json
       - name: Build today's board
+        if: steps.freshness.outputs.refresh == 'true'
         run: python scripts/acc_publish_daily_board.py
       - name: Preserve pregame board and publish current board
+        if: steps.freshness.outputs.refresh == 'true'
         run: |
           cp data/daily_board.json /tmp/acc-daily-board.json
           python -c "import json,pathlib;d=json.loads(pathlib.Path('/tmp/acc-daily-board.json').read_text());p=pathlib.Path('/tmp/acc-daily-archive.json');p.write_text(json.dumps(d,indent=2)) if d.get('games') else None"
@@ -67,11 +96,12 @@ jobs:
             sleep 3
           done
       - name: Trigger Pages deployment for the published board
+        if: steps.freshness.outputs.refresh == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy-pages.yml --ref main
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && steps.freshness.outputs.refresh == 'true'
         with:
           name: acc-daily-projections
           path: |
