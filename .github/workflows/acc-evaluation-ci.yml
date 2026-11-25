@@ -49,6 +49,7 @@ jobs:
           node --check daily-tab.js
           node --check pregame-edges.js
           node tests/test_pregame_edges.cjs
+          node tests/test_daily_player_profile.cjs
       - name: Grade committed archives and historical odds without paid API calls
         run: |
           python scripts/acc_grade_daily.py

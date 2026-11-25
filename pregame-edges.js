@@ -78,7 +78,18 @@ function groupRows(rows){
   }
   return [...groups.values()];
 }
-const api={evaluate,probabilities,groupRows};
+const projectionFields=[['minutes','MIN','Minutes','minutes','MIN'],['points','PTS','KenPomPoints','BaselinePoints','points','PTS'],['reb','REB','KenPomRebounds','BaselineRebounds','rebounds','REB'],['assists','AST','KenPomAssists','BaselineAssists','assists','AST'],['three_pm','3PM','KenPomThrees','BaselineThrees','threes','3PM']];
+function projectionValue(p,field){
+  const spec=projectionFields.find(x=>x[0]===field);
+  if(!spec)return null;
+  for(const key of spec.slice(2)){const v=number(p?.[key]);if(v!==null)return v;}
+  return null;
+}
+function projectionProfileContext(game,team,p){
+  if(!game||!team||!p)return null;
+  return {gameId:game.game_id,team:team.team,player:p.Player??p.player??p.name??'Unknown player',game:game.away_team+' at '+game.home_team,tipoffUtc:game.tipoff_utc,athleteId:String(p.AthleteId??''),market:null,books:{},projectionOnly:true};
+}
+const api={evaluate,probabilities,groupRows,projectionValue,projectionProfileContext};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;
 root.ACCPregameEdges=api;
 if(!root.document)return;
@@ -168,8 +179,8 @@ profile.innerHTML='<div class="edge-profile-head"><div><h2 id="edgeProfileTitle"
 doc.body.appendChild(profile);
 const profileStyle=doc.createElement('style');
 profileStyle.textContent=`
-#pregameEdges .edge-player-link{padding:0;border:0;background:none;color:#9cc9ff;font-size:inherit;font-weight:750;text-align:left;white-space:normal;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-#pregameEdges .edge-player-link:hover{color:#d1e5ff;background:none}
+#pregameEdges .edge-player-link,#daily .daily-player-link{padding:0;border:0;background:none;color:#9cc9ff;font-size:inherit;font-weight:750;text-align:left;white-space:normal;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#pregameEdges .edge-player-link:hover,#daily .daily-player-link:hover{color:#d1e5ff;background:none}
 #edgePlayerProfile{color:#e8effb;background:#132239;border:1px solid #45658d;border-radius:13px;padding:20px;width:min(1150px,calc(100vw - 24px));max-height:90vh;overflow:auto;box-shadow:0 24px 80px #0009;font:inherit}
 #edgePlayerProfile::backdrop{background:#000a}
 #edgePlayerProfile .edge-profile-head{position:sticky;top:-20px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;background:#132239;z-index:5;padding:12px 0;border-bottom:1px solid #304057;margin-bottom:14px}
@@ -200,7 +211,7 @@ profileStyle.textContent=`
 @media(max-width:650px){#edgePlayerProfile{padding:12px}#edgePlayerProfile .edge-profile-head{top:-12px}#edgePlayerProfile th,#edgePlayerProfile td{padding:7px}#edgePlayerProfile .edge-profile-line select{max-width:270px}}
 `;
 doc.head.appendChild(profileStyle);
-const profileFields=[['minutes','MIN','Minutes'],['points','PTS','KenPomPoints'],['reb','REB','KenPomRebounds'],['assists','AST','KenPomAssists'],['three_pm','3PM','KenPomThrees']];
+const profileFields=projectionFields;
 const marketField={Points:'points',Rebounds:'reb',Assists:'assists',Threes:'three_pm'};
 const fieldTitle={points:'Points',reb:'Rebounds',assists:'Assists',three_pm:'Made threes'};
 const meanLog=(logs,k)=>{const a=logs.map(x=>number(x[k])).filter(x=>x!==null);return a.length?a.reduce((a,b)=>a+b,0)/a.length:null};
@@ -213,15 +224,21 @@ function renderProfile(g,p,choice=0){
   if(!logs){body.innerHTML='<p class="note">Game logs are not included in this saved projection yet. Reload the board after the next projection publication.</p>';return;}
   if(logs.length!==Number(p.CurrentGP)){body.innerHTML='<p class="note edge-profile-warn">The stored log count does not match the projection inputs. No game-log statistics shown until the source is reconciled.</p>';return;}
   const k=marketField[g.market];
-  const alternatives=Object.values(g.books).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
+  const alternatives=Object.values(g.books||{}).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
   const r=alternatives[choice]||alternatives[0];
   let html='<p class="note">'+esc(p.ModelVersion||'')+' · '+esc(p.CurrentGP)+' games used · CBBD '+esc(p.CBBDGP??'—')+' / ESPN '+esc(p.ESPNGP??'—')+' · Last game '+esc(p.LatestGameDate??'—')+'</p>';
   if(p.DataCoverageWarning)html+='<p class="note edge-profile-warn">'+esc(p.DataCoverageWarning)+'</p>';
   if(p.DataIssues?.length)html+='<details><summary>Team-level source reconciliation notes ('+p.DataIssues.length+')</summary><ul>'+p.DataIssues.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></details>';
   html+='<h3>Projection vs. recent form</h3><div class="edge-profile-summary"><table><thead><tr><th>Sample</th>'+profileFields.map(([f,l])=>'<th'+(f===k?' class="edge-profile-highlight"':'')+'>'+l+'</th>').join('')+'</tr></thead><tbody>';
-  const sets=[['Today’s projection',null],['Season ('+logs.length+')',logs],['Last '+Math.min(5,logs.length),logs.slice(0,5)],['Last '+Math.min(3,logs.length),logs.slice(0,3)]];
-  for(const [label,sample] of sets)html+='<tr><td>'+esc(label)+'</td>'+profileFields.map(([f,l,proj])=>'<td'+(f===k?' class="edge-profile-highlight"':'')+'>'+esc(fmt(sample?meanLog(sample,f):number(p[proj])))+'</td>').join('')+'</tr>';
+  const sets=[['Today’s projection',null],['Season ('+logs.length+')',logs],['Last '+Math.min(5,logs.length)+' games',logs.slice(0,5)],['Last '+Math.min(3,logs.length)+' games',logs.slice(0,3)]];
+  for(const [label,sample] of sets)html+='<tr><td>'+esc(label)+'</td>'+profileFields.map(([f,l,proj])=>'<td'+(f===k?' class="edge-profile-highlight"':'')+'>'+esc(fmt(sample?meanLog(sample,f):projectionValue(p,f)))+'</td>').join('')+'</tr>';
   html+='</tbody></table></div>';
+  if(g.projectionOnly){
+    const baselines=[['minutes','Minutes'],['points','BaselinePoints'],['reb','BaselineRebounds'],['assists','BaselineAssists'],['three_pm','BaselineThrees']];
+    const factors=[['Projected possessions',p.ProjectedPossessions,1],['Pace factor',p.PaceFactor,3],['Opponent defense factor',p.OpponentDefenseFactor,3]];
+    html+='<h3>Model inputs for this matchup</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>Baseline</td>'+baselines.map(([f,key])=>'<td>'+esc(fmt(number(p[key])))+'</td>').join('')+'</tr><tr><td>Published projection</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(p,f)))+'</td>').join('')+'</tr></tbody></table></div>';
+    html+='<p class="note">'+esc(factors.map(([label,v,d])=>label+': '+(number(v)===null?'—':number(v).toFixed(d))).join(' · '))+' · Confidence: '+esc(p.Confidence??'—')+'</p>';
+  }
   if(r&&k){
     const usable=logs.filter(x=>number(x[k])!==null);
     const counts=a=>({n:a.length,over:a.filter(x=>number(x[k])>r.line).length,under:a.filter(x=>number(x[k])<r.line).length,push:a.filter(x=>number(x[k])===r.line).length});
@@ -244,15 +261,24 @@ function openProfile(g,button){
   const game=activeBoard?.games?.find(x=>x.game_id===g.gameId);
   const candidates=(game?.teams||[]).filter(t=>t.team===g.team).flatMap(t=>t.players||[]).filter(p=>g.athleteId?String(p.AthleteId)===g.athleteId:norm(p.Player)===norm(g.player));
   const p=candidates.length===1?candidates[0]:null;
+  showProfile(g,p,button);
+}
+function showProfile(g,p,button){
   $('edgeProfileTitle').textContent=g.player;
-  $('edgeProfileSubtitle').textContent=g.team+' · '+g.game+' · '+(g.market==='Threes'?'Made threes':g.market);
-  const alternatives=Object.values(g.books).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
+  $('edgeProfileSubtitle').textContent=g.team+' · '+g.game+' · '+(g.projectionOnly?'Daily projection':g.market==='Threes'?'Made threes':g.market);
+  const alternatives=Object.values(g.books||{}).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
   const choice=Math.max(0,alternatives.findIndex(q=>q.book===g.best?.book&&q.line===g.best?.line));
   renderProfile(g,p,choice);
   profileFocus=button;
   if(!profile.open)profile.showModal();
   profile.scrollTop=0;
 }
+// Daily Projections passes the exact already-rendered player object, not a name lookup
+// or a sportsbook quote. Works even if odds loading failed or player has no line.
+root.ACCPlayerProfile={openProjection(game,team,p,button){
+  const g=projectionProfileContext(game,team,p);if(!g)return;
+  showProfile(g,p,button);
+}};
 $('edgeTable').addEventListener('click',e=>{const b=e.target.closest('button[data-profile]');if(b)openProfile(profileRows[Number(b.dataset.profile)],b)});
 $('edgeProfileClose').addEventListener('click',()=>profile.close());
 profile.addEventListener('click',e=>{if(e.target===profile){const r=profile.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)profile.close()}});
