@@ -55,7 +55,7 @@ function evaluate(board,snapshot){
       const roi={};for(const side of ['over','under'])roi[side]=sides[side]===undefined?null:100*(ps[side]*profit(sides[side])-(1-ps[side]));
       const best=roi.over===null?'under':roi.under===null?'over':roi.over>=roi.under?'over':'under';
       rows.push({game:label,team:matches[0].team,player:q.player,book:q.bookmaker,market:fields[0],projection:mean,line,over:sides.over??null,under:sides.under??null,
-        fairOver:american(ps.over),fairUnder:american(ps.under),roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id});
+        fairOver:american(ps.over),fairUnder:american(ps.under),roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
     }
   }
   rows.sort((a,b)=>b.bestRoi-a.bestRoi);
@@ -67,7 +67,7 @@ function groupRows(rows){
   const groups=new Map();
   for(const r of rows){
     const key=JSON.stringify([r.gameId||r.game,r.team,norm(r.player),r.market]);
-    if(!groups.has(key))groups.set(key,{game:r.game,gameId:r.gameId,team:r.team,player:r.player,market:r.market,projection:r.projection,tipoffUtc:r.tipoffUtc,books:{},best:null});
+    if(!groups.has(key))groups.set(key,{game:r.game,gameId:r.gameId,team:r.team,player:r.player,market:r.market,projection:r.projection,tipoffUtc:r.tipoffUtc,athleteId:r.athleteId,books:{},best:null});
     const g=groups.get(key);
     if(!g.books[r.book])g.books[r.book]=[];
     g.books[r.book].push(r);
@@ -108,7 +108,7 @@ const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>'
 const fmt=n=>n===null||n===undefined?'—':Number(n).toFixed(1);
 const odds=n=>n===null||n===undefined?'—':(n>0?'+':'')+n;
 const roi=n=>n===null||n===undefined?'—':(n>0?'+':'')+fmt(n)+'%';
-let current={rows:[],diagnostics:[]},requested=[],meta={};
+let current={rows:[],diagnostics:[]},requested=[],meta={},activeBoard=null,profileRows=[],profileFocus=null;
 const BOOK_PREF='acc-edge-selected-books-v1';
 let selectedBooks=null; // null means all books, [] means none
 try{const pref=JSON.parse(root.localStorage.getItem(BOOK_PREF)||'null');if(Array.isArray(pref)&&pref.every(k=>typeof k==='string'))selectedBooks=new Set(pref);}catch(_e){}
@@ -133,6 +133,7 @@ function render(){
   const books=visibleBooks();
   const rows=current.rows.filter(r=>books.includes(r.book)&&(!market||r.market===market)&&(!game||(r.gameId||r.game)===game)&&(!search||[r.player,r.team,r.game].some(x=>String(x||'').toLowerCase().includes(search))));
   const grouped=groupRows(rows).filter(g=>!positive||g.best?.roi>0);
+  profileRows=grouped;
   const cmp=(a,b)=>sort==='time'?(time(a.tipoffUtc)||0)-(time(b.tipoffUtc)||0)||a.player.localeCompare(b.player):sort==='player'?a.player.localeCompare(b.player):sort==='projection'?b.projection-a.projection:(b.best?.roi??-Infinity)-(a.best?.roi??-Infinity);
   $('edgeStatus').textContent=(meta.date||'')+' · Odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines · '+books.length+' of '+requested.length+' books shown';
   function quote(r,side){
@@ -147,7 +148,7 @@ function render(){
     html+='<tr class="edge-marketband"><th class="edge-player" scope="row">'+esc(m==='Threes'?'Made threes':m)+' <small>'+items.length+'</small></th><td colspan="'+(books.length+2)+'"></td></tr>';
     for(const g of items){
       const best=g.best,when=g.tipoffUtc?new Date(g.tipoffUtc).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):'';
-      html+='<tr><td class="edge-player"><strong>'+esc(g.player)+'</strong><small>'+esc(g.team)+' · '+esc(when)+'</small><small class="edge-game-label" title="'+esc(g.game)+'">'+esc(g.game)+'</small></td><td class="edge-proj">'+esc(fmt(g.projection))+'</td><td class="edge-best">'+(best?'<strong class="'+(best.roi>0?'edge-win':'')+'">'+esc(roi(best.roi))+'</strong><small>'+esc(names[best.book]||best.book)+' · '+(best.side==='over'?'O':'U')+esc(best.line)+'</small>':'—')+'</td>';
+      html+='<tr><td class="edge-player"><button class="edge-player-link" type="button" data-profile="'+profileRows.indexOf(g)+'" title="View season game log">'+esc(g.player)+'</button><small>'+esc(g.team)+' · '+esc(when)+'</small><small class="edge-game-label" title="'+esc(g.game)+'">'+esc(g.game)+'</small></td><td class="edge-proj">'+esc(fmt(g.projection))+'</td><td class="edge-best">'+(best?'<strong class="'+(best.roi>0?'edge-win':'')+'">'+esc(roi(best.roi))+'</strong><small>'+esc(names[best.book]||best.book)+' · '+(best.side==='over'?'O':'U')+esc(best.line)+'</small>':'—')+'</td>';
       for(const k of books){
         const lines=(g.books[k]||[]).slice().sort((a,b)=>a.line-b.line);
         html+='<td class="edge-bookcell">'+(lines.length?lines.map(r=>quote(r,'over')+quote(r,'under')).join(''):'<span class="edge-empty">—</span>')+'</td>';
@@ -159,9 +160,107 @@ function render(){
   $('edgeTable').innerHTML=grouped.length?html:'<p class="edge-empty-note">'+(books.length?'No matched lines for these filters. Missing quotes are never treated as zero ROI.':'Select at least one sportsbook to display the board.')+'</p>';
   $('edgeMissing').innerHTML='<details><summary>Coverage and matching diagnostics ('+current.diagnostics.length+')</summary><ul>'+current.diagnostics.slice(0,100).map(d=>'<li>'+esc(d.game||'')+' '+esc(d.player||'')+': '+esc(d.reason)+'</li>').join('')+'</ul></details>';
 }
+// Read-only player drilldown using exactly the games embedded in the projection.
+const profile=doc.createElement('dialog');
+profile.id='edgePlayerProfile';
+profile.setAttribute('aria-labelledby','edgeProfileTitle');
+profile.innerHTML='<div class="edge-profile-head"><div><h2 id="edgeProfileTitle">Player game log</h2><p id="edgeProfileSubtitle" class="note"></p></div><button type="button" id="edgeProfileClose" class="secondary">Close ×</button></div><div id="edgeProfileBody"></div>';
+doc.body.appendChild(profile);
+const profileStyle=doc.createElement('style');
+profileStyle.textContent=`
+#pregameEdges .edge-player-link{padding:0;border:0;background:none;color:#9cc9ff;font-size:inherit;font-weight:750;text-align:left;white-space:normal;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#pregameEdges .edge-player-link:hover{color:#d1e5ff;background:none}
+#edgePlayerProfile{color:#e8effb;background:#132239;border:1px solid #45658d;border-radius:13px;padding:20px;width:min(1150px,calc(100vw - 24px));max-height:90vh;overflow:auto;box-shadow:0 24px 80px #0009;font:inherit}
+#edgePlayerProfile::backdrop{background:#000a}
+#edgePlayerProfile .edge-profile-head{position:sticky;top:-20px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;background:#132239;z-index:5;padding:12px 0;border-bottom:1px solid #304057;margin-bottom:14px}
+#edgePlayerProfile h2{font-size:21px;margin:0}
+#edgePlayerProfile h3{font-size:15px;margin:18px 0 8px}
+#edgePlayerProfile .note{margin:5px 0}
+#edgePlayerProfile .edge-profile-head button{flex:none}
+#edgePlayerProfile .edge-profile-summary{overflow:auto;border:1px solid #304057;border-radius:8px}
+#edgePlayerProfile table{font-size:12px;font-variant-numeric:tabular-nums}
+#edgePlayerProfile th,#edgePlayerProfile td{padding:8px 10px;text-align:right}
+#edgePlayerProfile th:first-child,#edgePlayerProfile td:first-child{text-align:left}
+#edgePlayerProfile .edge-profile-highlight{background:#213c52;color:#e7f3ff;font-weight:750}
+#edgePlayerProfile .edge-profile-line{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:12px 0}
+#edgePlayerProfile .edge-profile-line label{margin:0;font-size:12px}
+#edgePlayerProfile .edge-profile-line select{margin:4px 0 0;max-width:100%;font-size:12px;padding:7px}
+#edgePlayerProfile .edge-profile-hit{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+#edgePlayerProfile .edge-profile-hit>div{flex:1;min-width:125px;border:1px solid #36516f;background:#0d192c;border-radius:8px;padding:10px}
+#edgePlayerProfile .edge-profile-hit b{font-size:19px;display:block;margin-top:4px}
+#edgePlayerProfile .edge-profile-chart{display:flex;gap:8px;align-items:flex-end;overflow-x:auto;padding:10px 6px 0;background:#101d32;border:1px solid #304057;border-radius:8px}
+#edgePlayerProfile .edge-profile-bar{min-width:34px;max-width:72px;flex:1;text-align:center;font-size:11px;color:#a9bed8}
+#edgePlayerProfile .edge-profile-bar>div{height:100px;display:flex;align-items:flex-end;position:relative}
+#edgePlayerProfile .edge-profile-bar i{width:100%;display:block;background:#4c85be;border-radius:3px 3px 0 0}
+#edgePlayerProfile .edge-profile-bar .edge-profile-over{background:#62ad9b}
+#edgePlayerProfile .edge-profile-bar .edge-profile-threshold{position:absolute;left:0;right:0;border-top:1px dashed #e4e9f2;z-index:1}
+#edgePlayerProfile .edge-profile-bar strong{display:block;color:#e8effb;margin-bottom:3px}
+#edgePlayerProfile .edge-profile-bar small{display:block;padding:5px 0}
+#edgePlayerProfile .edge-profile-warn{color:#efc27b}
+@media(max-width:650px){#edgePlayerProfile{padding:12px}#edgePlayerProfile .edge-profile-head{top:-12px}#edgePlayerProfile th,#edgePlayerProfile td{padding:7px}#edgePlayerProfile .edge-profile-line select{max-width:270px}}
+`;
+doc.head.appendChild(profileStyle);
+const profileFields=[['minutes','MIN','Minutes'],['points','PTS','KenPomPoints'],['reb','REB','KenPomRebounds'],['assists','AST','KenPomAssists'],['three_pm','3PM','KenPomThrees']];
+const marketField={Points:'points',Rebounds:'reb',Assists:'assists',Threes:'three_pm'};
+const fieldTitle={points:'Points',reb:'Rebounds',assists:'Assists',three_pm:'Made threes'};
+const meanLog=(logs,k)=>{const a=logs.map(x=>number(x[k])).filter(x=>x!==null);return a.length?a.reduce((a,b)=>a+b,0)/a.length:null};
+const plain=x=>number(x)===null?'—':String(number(x));
+const shooting=(x,m,a)=>number(x[m])===null||number(x[a])===null?'—':plain(x[m])+'–'+plain(x[a]);
+function renderProfile(g,p,choice=0){
+  const body=$('edgeProfileBody');
+  if(!p){body.innerHTML='<p class="note">The exact player projection could not be matched. No game log shown.</p>';return;}
+  const logs=Array.isArray(p.CurrentSeasonLog)?p.CurrentSeasonLog.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))):null;
+  if(!logs){body.innerHTML='<p class="note">Game logs are not included in this saved projection yet. Reload the board after the next projection publication.</p>';return;}
+  if(logs.length!==Number(p.CurrentGP)){body.innerHTML='<p class="note edge-profile-warn">The stored log count does not match the projection inputs. No game-log statistics shown until the source is reconciled.</p>';return;}
+  const k=marketField[g.market];
+  const alternatives=Object.values(g.books).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
+  const r=alternatives[choice]||alternatives[0];
+  let html='<p class="note">'+esc(p.ModelVersion||'')+' · '+esc(p.CurrentGP)+' games used · CBBD '+esc(p.CBBDGP??'—')+' / ESPN '+esc(p.ESPNGP??'—')+' · Last game '+esc(p.LatestGameDate??'—')+'</p>';
+  if(p.DataCoverageWarning)html+='<p class="note edge-profile-warn">'+esc(p.DataCoverageWarning)+'</p>';
+  if(p.DataIssues?.length)html+='<details><summary>Team-level source reconciliation notes ('+p.DataIssues.length+')</summary><ul>'+p.DataIssues.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></details>';
+  html+='<h3>Projection vs. recent form</h3><div class="edge-profile-summary"><table><thead><tr><th>Sample</th>'+profileFields.map(([f,l])=>'<th'+(f===k?' class="edge-profile-highlight"':'')+'>'+l+'</th>').join('')+'</tr></thead><tbody>';
+  const sets=[['Today’s projection',null],['Season ('+logs.length+')',logs],['Last '+Math.min(5,logs.length),logs.slice(0,5)],['Last '+Math.min(3,logs.length),logs.slice(0,3)]];
+  for(const [label,sample] of sets)html+='<tr><td>'+esc(label)+'</td>'+profileFields.map(([f,l,proj])=>'<td'+(f===k?' class="edge-profile-highlight"':'')+'>'+esc(fmt(sample?meanLog(sample,f):number(p[proj])))+'</td>').join('')+'</tr>';
+  html+='</tbody></table></div>';
+  if(r&&k){
+    const usable=logs.filter(x=>number(x[k])!==null);
+    const counts=a=>({n:a.length,over:a.filter(x=>number(x[k])>r.line).length,under:a.filter(x=>number(x[k])<r.line).length,push:a.filter(x=>number(x[k])===r.line).length});
+    const summary=a=>{const c=counts(a);return c.n?c.over+'/'+c.n+' over · '+c.under+'/'+c.n+' under'+(c.push?' · '+c.push+' push':''):'No results'};
+    html+='<div class="edge-profile-line"><label>Compare with saved '+esc(fieldTitle[k])+' line<select id="edgeProfileLine">'+alternatives.map((q,i)=>'<option value="'+i+'" '+(q===r?'selected':'')+'>'+esc((names[q.book]||q.book)+' '+q.line+' · O '+odds(q.over)+' / U '+odds(q.under))+'</option>').join('')+'</select></label><p class="note">Historical comparison only — not the modeled probability.</p></div>';
+    const all=counts(usable),last=counts(logs.slice(0,5).filter(x=>number(x[k])!==null));
+    html+='<div class="edge-profile-hit"><div><small>Season</small><b>'+esc(all.n?(100*all.over/all.n).toFixed(0)+'% over':'—')+'</b><small>'+esc(summary(usable))+'</small></div><div><small>Last 5 games</small><b>'+esc(last.n?(100*last.over/last.n).toFixed(0)+'% over':'—')+'</b><small>'+esc(summary(logs.slice(0,5).filter(x=>number(x[k])!==null)))+'</small></div><div><small>Current model</small><b>'+esc(fmt(g.projection))+'</b><small>Fair O '+esc(odds(r.fairOver))+' · Fair U '+esc(odds(r.fairUnder))+'</small></div></div>';
+    const max=Math.max(1,r.line,...usable.map(x=>number(x[k])))*1.12;
+    html+='<h3>'+esc(fieldTitle[k])+' by game · line '+esc(r.line)+'</h3><div class="edge-profile-chart" role="img" aria-label="'+esc('Game-by-game '+fieldTitle[k]+', dashed line '+r.line)+'">'+usable.slice().reverse().map(x=>{const v=number(x[k]);return '<div class="edge-profile-bar" title="'+esc(x.date+' '+x.opponent+': '+v)+'"><strong>'+esc(v)+'</strong><div><i class="'+(v>r.line?'edge-profile-over':'')+'" style="height:'+(100*v/max)+'%"></i><span class="edge-profile-threshold" style="bottom:'+(100*r.line/max)+'%"></span></div><small>'+esc(String(x.date).slice(5))+'</small></div>'}).join('')+'</div><p class="note">Dashed line: selected sportsbook threshold. Bars are chronological; teal indicates a result above that line.</p>';
+  }
+  html+='<h3>Current-season game log</h3><div class="edge-profile-summary"><table><thead><tr><th>Date</th><th>Opponent</th><th>H/A</th><th>Start</th>'+profileFields.map(([f,l])=>'<th'+(f===k?' class="edge-profile-highlight"':'')+'>'+l+'</th>').join('')+'<th>FG</th><th>3PT</th><th>FT</th><th>OREB</th><th>DREB</th><th>STL</th><th>BLK</th><th>TO</th><th>PF</th><th>Source</th></tr></thead><tbody>';
+  const yn=x=>/^(true|1|yes)$/i.test(String(x))?'Yes':/^(false|0|no)$/i.test(String(x))?'No':'—';
+  for(const x of logs)html+='<tr><td>'+esc(x.date)+'</td><td>'+esc(x.opponent)+'</td><td>'+esc(yn(x.home)==='Yes'?'H':yn(x.home)==='No'?'A':'—')+'</td><td>'+esc(yn(x.starter))+'</td>'+profileFields.map(([f])=>'<td'+(f===k?' class="edge-profile-highlight"':'')+'>'+esc(plain(x[f]))+'</td>').join('')+'<td>'+esc(shooting(x,'fgm','fga'))+'</td><td>'+esc(shooting(x,'three_pm','three_pa'))+'</td><td>'+esc(shooting(x,'ftm','fta'))+'</td>'+['oreb','dreb','steals','blocks','turnovers','fouls'].map(f=>'<td>'+esc(plain(x[f]))+'</td>').join('')+'<td>'+esc(x.source)+'</td></tr>';
+  html+='</tbody></table></div><p class="note">Exact completed games used by this pregame projection; provider game dates can differ by a day. H/A reflects provider designation. Missing stats are shown as —, not zero.</p>';
+  body.innerHTML=html;
+  $('edgeProfileLine')?.addEventListener('change',e=>{const pos=profile.scrollTop;renderProfile(g,p,Number(e.target.value));profile.scrollTop=pos;$('edgeProfileLine')?.focus({preventScroll:true})});
+}
+function openProfile(g,button){
+  if(!g)return;
+  const game=activeBoard?.games?.find(x=>x.game_id===g.gameId);
+  const candidates=(game?.teams||[]).filter(t=>t.team===g.team).flatMap(t=>t.players||[]).filter(p=>g.athleteId?String(p.AthleteId)===g.athleteId:norm(p.Player)===norm(g.player));
+  const p=candidates.length===1?candidates[0]:null;
+  $('edgeProfileTitle').textContent=g.player;
+  $('edgeProfileSubtitle').textContent=g.team+' · '+g.game+' · '+(g.market==='Threes'?'Made threes':g.market);
+  const alternatives=Object.values(g.books).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
+  const choice=Math.max(0,alternatives.findIndex(q=>q.book===g.best?.book&&q.line===g.best?.line));
+  renderProfile(g,p,choice);
+  profileFocus=button;
+  if(!profile.open)profile.showModal();
+  profile.scrollTop=0;
+}
+$('edgeTable').addEventListener('click',e=>{const b=e.target.closest('button[data-profile]');if(b)openProfile(profileRows[Number(b.dataset.profile)],b)});
+$('edgeProfileClose').addEventListener('click',()=>profile.close());
+profile.addEventListener('click',e=>{if(e.target===profile){const r=profile.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)profile.close()}});
+profile.addEventListener('close',()=>profileFocus?.focus());
 async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date.now(),{cache:'no-store'});
   if(!b.ok)throw Error('Published projection board unavailable');
   const board=await b.json();
+  activeBoard=board;
   if(!/^\d{4}-\d{2}-\d{2}$/.test(board.date_eastern||''))throw Error('Invalid projection date');
   const s=await fetch('data/odds_snapshots/'+board.date_eastern+'.json?edge='+Date.now(),{cache:'no-store'});
   if(!s.ok)throw Error('No saved odds snapshot for the published projection slate');
