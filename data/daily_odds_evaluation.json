@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-25T15:27:59.588424+00:00",
+  "generated_at_utc": "2026-11-25T16:54:54.104581+00:00",
   "status": "PARTIAL",
   "method": "Flat $1 hypothetical stake per distinct sportsbook quote, direction from immutable archived projection vs line; ties skipped; pushes refunded. All qualifying quotes are included, not an executable betting strategy.",
-  "snapshots": 4,
-  "quotes_offered": 238,
+  "snapshots": 5,
+  "quotes_offered": 366,
   "selections": 50,
   "settled": 50,
   "wins": 31,
@@ -47,6 +47,15 @@
         "not_selected_by_projection": 41,
         "unmatched_player_or_market": 98
       }
+    },
+    {
+      "date": "2026-11-25",
+      "events": 6,
+      "quotes_offered": 128,
+      "hypothetical_selections": 0,
+      "issues": {
+        "unmatched_player_or_market": 128
+      }
     }
   ],
   "issues": [
@@ -64,6 +73,11 @@
       "date": "2026-11-24",
       "reason": "unmatched_player_or_market",
       "count": 98
+    },
+    {
+      "date": "2026-11-25",
+      "reason": "unmatched_player_or_market",
+      "count": 128
     }
   ],
   "rows": [
