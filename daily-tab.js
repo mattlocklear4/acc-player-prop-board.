@@ -23,13 +23,16 @@ for(const t of g.teams||[]){
 html+='<h4>'+esc(t.team)+'</h4>';
 if(!t.players?.length){html+='<p class="note">'+esc(t.reason||'No player projections available')+'</p>';continue;}
 const sample=t.players[0];
+const teamMinutes=t.players.reduce((sum,p)=>sum+Number(pick(p,'Minutes','minutes','MIN')||0),0);
+const normalized=t.players.every(p=>p.MinutesNormalizationStatus==='normalized')&&Math.abs(teamMinutes-200)<1e-6;
+html+='<p class="note">Projected team minutes: <strong class="'+(normalized?'positive':'negative')+'">'+val(teamMinutes)+' / 200.0</strong>'+(normalized?' · Regulation rotation normalized':' · Rotation not yet normalized')+(sample.RawTeamMinutes!=null?' · Before normalization: '+val(sample.RawTeamMinutes):'')+'</p>';
 if(sample.CurrentTeamGames!=null){html+='<p class="note">Team game coverage: '+esc(sample.CurrentTeamGames)+' merged games · KenPom record: '+esc(sample.KenPomTeamGames??'unknown')+' games'+(sample.DataCoverageWarning?' · WARNING: '+esc(sample.DataCoverageWarning):'')+'</p>';if(sample.DataIssues?.length)html+='<details><summary>Source reconciliation warnings ('+sample.DataIssues.length+')</summary><ul>'+sample.DataIssues.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></details>';}
 html+='<div class="tablewrap"><table><thead><tr><th>Player</th><th>GP</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th></tr></thead><tbody>';
 for(const p of [...t.players].sort((a,b)=>{const am=Number(pick(a,'Minutes','minutes','MIN'));const bm=Number(pick(b,'Minutes','minutes','MIN'));return (Number.isFinite(bm)?bm:-1)-(Number.isFinite(am)?am:-1)})){
 const profileIndex=nextRows.push({game:g,team:t,player:p})-1;
-html+='<tr><td><button type="button" class="daily-player-link" data-daily-profile="'+profileIndex+'" title="View projection and season game log">'+esc(p.Player??p.player??p.name)+'</button></td><td title="'+esc('CBBD '+(p.CBBDGP??'—')+' / ESPN '+(p.ESPNGP??'—')+' · Last game '+(p.LatestGameDate??'—'))+'">'+esc(p.CurrentGP??'—')+'</td><td>'+val(pick(p,'Minutes','minutes','MIN'))+'</td><td>'+val(pick(p,'KenPomPoints','BaselinePoints','points','PTS'))+'</td><td>'+val(pick(p,'KenPomRebounds','BaselineRebounds','rebounds','REB'))+'</td><td>'+val(pick(p,'KenPomAssists','BaselineAssists','assists','AST'))+'</td><td>'+val(pick(p,'KenPomThrees','BaselineThrees','threes','3PM'))+'</td></tr>';
+html+='<tr><td><button type="button" class="daily-player-link" data-daily-profile="'+profileIndex+'" title="View projection and season game log">'+esc(p.Player??p.player??p.name)+'</button></td><td title="'+esc('CBBD '+(p.CBBDGP??'—')+' / ESPN '+(p.ESPNGP??'—')+' · Last game '+(p.LatestGameDate??'—'))+'">'+esc(p.CurrentGP??'—')+'</td><td title="'+esc(p.RawMinutes!=null?'Before normalization: '+val(p.RawMinutes)+' min':'Projected minutes')+'">'+val(pick(p,'Minutes','minutes','MIN'))+'</td><td>'+val(pick(p,'KenPomPoints','BaselinePoints','points','PTS'))+'</td><td>'+val(pick(p,'KenPomRebounds','BaselineRebounds','rebounds','REB'))+'</td><td>'+val(pick(p,'KenPomAssists','BaselineAssists','assists','AST'))+'</td><td>'+val(pick(p,'KenPomThrees','BaselineThrees','threes','3PM'))+'</td></tr>';
 }
-html+='</tbody></table></div>';
+html+='</tbody><tfoot><tr><td><strong>Team total</strong></td><td>—</td><td><strong class="'+(normalized?'positive':'negative')+'">'+val(teamMinutes)+'</strong></td><td colspan="4">Regulation target: 200.0 MIN</td></tr></tfoot></table></div>';
 }}
 profileRows=nextRows;
 el.innerHTML=html;

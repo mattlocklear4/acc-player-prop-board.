@@ -23,7 +23,7 @@ def evaluate(root=ROOT, min_prior=1, legacy=False):
         for r in bydate[day]:
             aid=str(r.get('athlete_id') or '')
             b=baselines.get(aid)
-            if not b or prior[aid]<min_prior:continue
+            if not b or b.get('MinutesNormalizationStatus')=='unavailable' or prior[aid]<min_prior:continue
             row={'date':day,'athlete_id':aid,'player':r.get('player'),
                  'team':r.get('team'),'prior_current_games':prior[aid]}
             for stat,col in [('Minutes','minutes')]+list(STATS.items()):
@@ -46,7 +46,7 @@ def evaluate(root=ROOT, min_prior=1, legacy=False):
                        'bias':round(statistics.mean(errors),3) if errors else None}
     return {'generated_at_utc':datetime.now(timezone.utc).isoformat(),
             'status':'DESCRIPTIVE_WALK_FORWARD_NOT_BETTING_VALIDATED',
-            'method':'Live baseline rebuilt per game date, strict earlier-game cutoff; no opponent or retroactive KenPom adjustments',
+            'method':'Live baseline rebuilt per game date, strict earlier-game cutoff; current model enforces 200 regulation minutes per team; no opponent or retroactive KenPom adjustments',
             'minimum_prior_current_games':min_prior,'dates_evaluated':len(dates),
             'player_game_observations':len(observations),'metrics':metrics,
             'limitations':['Only players with earlier current-season games and a model baseline qualify',

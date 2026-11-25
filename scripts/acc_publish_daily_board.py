@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Publish today's ACC pregame projections, never re-project completed games."""
-import datetime as dt,json
+import datetime as dt,json,math
 from pathlib import Path
 from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
@@ -16,10 +16,18 @@ for g in payload.get('games') or []:
     if tip<=now:continue
     teams=[]
     for t in g.get('teams') or []:
+        players=t.get('players') or []
+        if players:
+            minutes=[p.get('Minutes') for p in players]
+            if any(not isinstance(m,(int,float)) or not math.isfinite(m) or not 0<=m<=40 or abs(m*10-round(m*10))>1e-6 for m in minutes) or sum(round(m*10) for m in minutes)!=2000:
+                raise ValueError('Refusing non-200-minute rotation for '+str(t.get('team')))
+            if any(p.get('MinutesNormalizationStatus')!='normalized' for p in players):
+                raise ValueError('Refusing unverified rotation for '+str(t.get('team')))
         teams.append({'team':t.get('team'),'opponent':t.get('opponent'),
                       'status':t.get('status'),'reason':t.get('reason'),
                       'kenpom_snapshot_id':t.get('kenpom_snapshot_id'),
-                      'player_count':len(t.get('players') or []),'players':t.get('players') or []})
+                      'player_count':len(players),'players':players,
+                      'projected_team_minutes':200.0 if players else None})
     games.append({'game_id':g.get('game_id'),'tipoff_utc':g['tipoff_utc'],
                   'home_team':g.get('home_team'),'away_team':g.get('away_team'),'teams':teams})
 result={'date_eastern':day,'generated_at_utc':payload['generated_at_utc'],

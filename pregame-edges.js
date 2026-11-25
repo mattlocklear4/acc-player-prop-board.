@@ -227,6 +227,7 @@ function renderProfile(g,p,choice=0){
   const alternatives=Object.values(g.books||{}).flat().sort((a,b)=>a.book.localeCompare(b.book)||a.line-b.line);
   const r=alternatives[choice]||alternatives[0];
   let html='<p class="note">'+esc(p.ModelVersion||'')+' · '+esc(p.CurrentGP)+' games used · CBBD '+esc(p.CBBDGP??'—')+' / ESPN '+esc(p.ESPNGP??'—')+' · Last game '+esc(p.LatestGameDate??'—')+'</p>';
+  if(p.MinutesNormalizationStatus==='normalized')html+='<p class="note">Rotation normalization: '+esc(fmt(number(p.RawMinutes)))+' → '+esc(fmt(number(p.Minutes)))+' MIN · Team before adjustment '+esc(fmt(number(p.RawTeamMinutes)))+' → 200.0 MIN</p>';
   if(p.DataCoverageWarning)html+='<p class="note edge-profile-warn">'+esc(p.DataCoverageWarning)+'</p>';
   if(p.DataIssues?.length)html+='<details><summary>Team-level source reconciliation notes ('+p.DataIssues.length+')</summary><ul>'+p.DataIssues.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></details>';
   html+='<h3>Projection vs. recent form</h3><div class="edge-profile-summary"><table><thead><tr><th>Sample</th>'+profileFields.map(([f,l])=>'<th'+(f===k?' class="edge-profile-highlight"':'')+'>'+l+'</th>').join('')+'</tr></thead><tbody>';

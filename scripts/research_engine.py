@@ -2,6 +2,7 @@
 
 Mirrors app.js buildProjectionModel and matchup.js / vegas-matchup.js formulas.
 Historical cutoff is exclusive: a game on the target date is never a model input.
+Current-season projections enforce a 200-minute regulation rotation per team.
 """
 import argparse
 import csv
@@ -39,6 +40,70 @@ def read_csv(path):
 
 def clamp(x, lo, hi):
     return max(lo, min(hi, x))
+
+TEAM_MINUTES = 200
+PLAYER_MAX_MINUTES = 40
+MINUTE_PRECISION = 10
+CURRENT_MODEL_VERSION = 'current-season-hybrid-v4-200min'
+
+def allocate_team_minutes(raw):
+    """Proportional capped allocation, rounded to tenths with exact integer total.
+
+    Zero-minute players remain zero. If fewer than five positive candidates
+    exist, a regulation rotation is impossible; fail closed rather than invent
+    minutes or publish a partial team. No injury assumptions are introduced.
+    """
+    if any(v is None or not math.isfinite(v) or v < 0 for v in raw):
+        raise ValueError('invalid raw rotation minutes')
+    active = [i for i, v in enumerate(raw) if v > 0]
+    if len(active) * PLAYER_MAX_MINUTES < TEAM_MINUTES:
+        raise ValueError('insufficient positive-minute players for 200-minute rotation')
+    allocation = [0.0] * len(raw)
+    remaining = float(TEAM_MINUTES)
+    # Reallocate any overflow only among players who are not already capped.
+    while active:
+        total = sum(raw[i] for i in active)
+        capped = [i for i in active if remaining * raw[i] / total >= PLAYER_MAX_MINUTES]
+        if not capped:
+            for i in active:
+                allocation[i] = remaining * raw[i] / total
+            break
+        for i in capped:
+            allocation[i] = float(PLAYER_MAX_MINUTES)
+            remaining -= PLAYER_MAX_MINUTES
+        active = [i for i in active if i not in capped]
+        if not active and abs(remaining) > 1e-8:
+            raise ValueError('rotation capacity exhausted')
+    # Largest-remainder rounding: the visible tenths must also total 200.0.
+    units = [math.floor(v * MINUTE_PRECISION + 1e-9) for v in allocation]
+    remainder = TEAM_MINUTES * MINUTE_PRECISION - sum(units)
+    eligible = [i for i, v in enumerate(raw) if v > 0 and units[i] < PLAYER_MAX_MINUTES * MINUTE_PRECISION]
+    ranked = sorted(eligible, key=lambda i: (-(allocation[i] * MINUTE_PRECISION - units[i]), i))
+    if remainder < 0 or remainder > len(ranked):
+        raise ValueError('rotation rounding failed')
+    for i in ranked[:remainder]:
+        units[i] += 1
+    if sum(units) != TEAM_MINUTES * MINUTE_PRECISION or any(v < 0 or v > PLAYER_MAX_MINUTES * MINUTE_PRECISION for v in units):
+        raise ValueError('invalid normalized regulation rotation')
+    return [v / MINUTE_PRECISION for v in units]
+
+def normalize_team_baselines(rows):
+    """Keep original per-minute production, changing only allocated minutes."""
+    raw = [numeric(p.get('Minutes')) for p in rows]
+    allocated = allocate_team_minutes(raw)
+    total = sum(raw)
+    result = []
+    for p, old, new in zip(rows, raw, allocated):
+        item = dict(p)
+        item.update(Minutes=new, RawMinutes=old, MinutesNormalizationFactor=new/old if old>0 else None,
+                    RawTeamMinutes=total, TeamMinutesTarget=TEAM_MINUTES,
+                    MinutesNormalizationStatus='normalized', ModelVersion=CURRENT_MODEL_VERSION)
+        for field in STATS:
+            key = 'Baseline'+field
+            value = numeric(p.get(key))
+            item[key] = value * new / old if value is not None and old>0 else (0.0 if value is not None and new==0 else None)
+        result.append(item)
+    return result
 
 def current_game_inputs(as_of, root=ROOT):
     data = root / 'data' / 'cbbd'
@@ -127,6 +192,20 @@ def build_baselines(as_of, root=ROOT, legacy=False):
             else: blended = (1-rw)*hr + rw*((.65 if legacy else .75)*cr + (.35 if legacy else .25)*(rr if rr is not None else cr))
             obj['Baseline'+field] = max(0, minutes*blended) if blended is not None else None
         result.append(obj)
+    if not legacy:
+        by_team = defaultdict(list)
+        for row in sorted(result, key=lambda x: (x['Team'], x['Player'])):
+            by_team[canon(row['Team'])].append(row)
+        result = []
+        for rows in by_team.values():
+            try:
+                result.extend(normalize_team_baselines(rows))
+            except ValueError as exc:
+                # Keep explicit diagnostic metadata for apply_matchup; never
+                # publish these unallocated rows as valid player projections.
+                result.extend({**row, 'MinutesNormalizationStatus':'unavailable',
+                               'MinutesNormalizationReason':str(exc),
+                               'ModelVersion':CURRENT_MODEL_VERSION} for row in rows)
     return sorted(result, key=lambda x: (x['Team'], x['Player']))
 
 def load_kenpom(path):
@@ -152,6 +231,8 @@ def apply_matchup(baselines, team, opponent, kp, odds=None):
     output=[]
     for row in baselines:
         if canon(row['Team']) != canon(team): continue
+        if row.get('MinutesNormalizationStatus') == 'unavailable':
+            raise ValueError(row.get('MinutesNormalizationReason','200-minute rotation unavailable'))
         p=dict(row)
         expected_games=(numeric(t.get('Wins')) or 0)+(numeric(t.get('Losses')) or 0)
         p['KenPomTeamGames']=int(expected_games)
