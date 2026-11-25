@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-25T19:10:37.862121+00:00",
+  "generated_at_utc": "2026-11-25T19:32:14.323212+00:00",
   "method": "Latest actually captured pre-tipoff projection per game; latest odds-backed capture per game. Each distinct sportsbook/market/player/line/side priced quote is graded independently; positive expected ROI only in summaries. Flat 1-unit hypothetical stake; correlated quotes are not independent bets. No backfill or post-tipoff repricing.",
   "status": "OK",
   "games": 0,
