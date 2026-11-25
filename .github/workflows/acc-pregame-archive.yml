@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/acc_capture_pregame.cjs'
       - 'scripts/acc_grade_pregame.py'
+      - 'scripts/acc_model_comparison.py'
+      - 'scripts/acc_experimental_models.py'
       - 'tests/test_acc_pregame_archive.cjs'
       - 'tests/test_acc_pregame_grade.py'
       - '.github/workflows/acc-pregame-archive.yml'

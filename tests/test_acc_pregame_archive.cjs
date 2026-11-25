@@ -6,9 +6,13 @@ const board={date_eastern:'2026-11-25',generated_at_utc:'2026-11-25T15:00:00Z',g
 const odds={snapshot_date_eastern:board.date_eastern,generated_at_utc:'2026-11-25T16:00:00Z',events:[{schedule_game_id:'espn_event_1',props:['Over','Under'].map(side=>({bookmaker:'fanduel',market:'player_points',player:'Test Player',side,line:14.5,odds:-110,last_update:'2026-11-25T15:59:00Z'}))}]};
 try{
  const now='2026-11-25T17:00:00Z';
+ board.games[0].teams[0].players[0].ExperimentalModels={shadow:{ModelVersion:'shadow',KenPomPoints:13}};
  assert.equal(capture(board,odds,now,output).written,1);
  const dir=path.join(output,board.date_eastern),file=path.join(dir,fs.readdirSync(dir)[0]),original=fs.readFileSync(file,'utf8'),rec=JSON.parse(original);
  assert.equal(rec.quotes.length,2);
+ assert.equal(rec.experimental_quotes.shadow.length,2);
+ assert.equal(rec.experimental_quotes.shadow[0].projection,13);
+ assert.equal(rec.quotes[0].projection,17);
  assert.equal(rec.quotes[0].expected_roi_percent,evaluate(board,odds).rows[0].roiOver);
  assert.equal(rec.quotes[0].model_version,'v2');
  assert.equal(capture(board,odds,'2026-11-25T18:00:00Z',output).written,0);

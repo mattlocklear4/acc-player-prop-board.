@@ -28,3 +28,15 @@ class TestExperiments(unittest.TestCase):
         self.assertIsNotNone(shooting_rates(p['CurrentSeasonLog']))
         p['CurrentSeasonLog'][0]['points']=99
         self.assertIsNone(shooting_rates(p['CurrentSeasonLog']))
+
+    def test_paired_grade(self):
+        from acc_model_comparison import compare
+        date='2026-11-25';stamp=date+'T16:00:00Z';tip=date+'T20:00:00Z';gid='espn_event_1'
+        p=self.player(1,['2026-11-21']);p['ExperimentalModels']={ROTATION:{'ModelVersion':ROTATION,'Minutes':28,'KenPomPoints':18}}
+        r={'date_eastern':date,'captured_at_utc':stamp,'projection_utc':stamp,'odds_snapshot_utc':None,'game':{'game_id':gid,'tipoff_utc':tip,'teams':[{'team':'Duke','players':[p]}]},'quotes':[]}
+        logs={'espn_1':[{'game_date':date,'source':'ESPN_UNOFFICIAL','team':'Duke Blue Devils','player':'Player 1','points':'18','minutes':'28'}]}
+        result=compare([r],logs,'2026-11-26')['models'][ROTATION]
+        self.assertEqual(result['paired_players'],1)
+        self.assertEqual(result['projection_metrics']['Points']['control']['mae'],2)
+        self.assertEqual(result['projection_metrics']['Points']['experimental']['mae'],0)
+        self.assertEqual(compare([r],logs,date)['models'][ROTATION]['paired_players'],0)

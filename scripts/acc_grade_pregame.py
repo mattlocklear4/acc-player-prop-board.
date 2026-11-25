@@ -67,6 +67,22 @@ def pending_report(records, today):
         groups=defaultdict(list)
         for q in positive:groups[key(q)].append(q['expected_roi_percent'])
         return {str(k):{'selections':len(v),'mean_expected_roi_percent':round(statistics.mean(v),2)} for k,v in sorted(groups.items())}
+    experimental={}
+    for _,r in latest.values():
+        for t in r['game'].get('teams') or []:
+            for p in t.get('players') or []:
+                for v,x in (p.get('ExperimentalModels') or {}).items():
+                    m=experimental.setdefault(v,{'player_projections':0,'quotes_priced':0,'positive_selections':0,'shot_fallbacks':0,'edges':[]})
+                    m['player_projections']+=1
+                    m['shot_fallbacks']+=int(x.get('ShotStatus')=='fallback_rotation_only_missing_shots')
+    for (date,gid),(_,r) in latest_odds.items():
+        for v,qs in (r.get('experimental_quotes') or {}).items():
+            m=experimental.setdefault(v,{'player_projections':0,'quotes_priced':0,'positive_selections':0,'shot_fallbacks':0,'edges':[]})
+            for q in valid_quotes(date,gid,{**r,'quotes':qs},issues):
+                m['quotes_priced']+=1
+                if q['expected_roi_percent']>0:m['edges'].append(q['expected_roi_percent'])
+    for m in experimental.values():
+        edges=m.pop('edges');m['positive_selections']=len(edges);m['mean_expected_roi_percent']=round(statistics.mean(edges),2) if edges else None
     captures=[timestamp(r['captured_at_utc']) for _,r in list(latest.values())+list(latest_odds.values())]
     return {'date_eastern':today,'generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(),
             'status':'PARTIAL' if issues else 'OK' if latest else 'NO_ARCHIVES',
@@ -77,7 +93,7 @@ def pending_report(records, today):
             'mean_expected_roi_percent':round(statistics.mean(q['expected_roi_percent'] for q in positive),2) if positive else None,
             'by_tier':breakdown(lambda q:tier(q['expected_roi_percent'])),
             'by_model_version':breakdown(lambda q:q.get('model_version') or 'unknown'),
-            'issues':issues,
+            'issues':issues,'experimental_models':experimental,
             'method':'Latest valid archived pregame projection and latest odds-backed capture per game, same selection and validation as grading. Today is pending until the next-day grading run. Individual sportsbook quote sides are hypothetical opportunities, not placed bets.'}
 
 def grade(records, logs, today):
@@ -142,6 +158,8 @@ def main():
         with LOGS.open(newline='',encoding='utf-8') as f:
             for r in csv.DictReader(f):logs[r['game_id']].append(r)
     result=grade(records,logs,today)
+    from acc_model_comparison import compare
+    result['experimental_comparison']=compare(records,logs,today)
     OUT.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'games':result['games'],'players_graded':result['players_graded'],'positive_roi':result['positive_roi']}))
 if __name__=='__main__':main()

@@ -57,6 +57,18 @@ function pendingPanel(d,today=easternDate()){
  html+=note('Latest capture: '+(d.latest_capture_utc?new Date(d.latest_capture_utc).toLocaleString():'—')+' · '+(d.games_with_priced_quotes??0)+' games with priced quotes · '+(d.issues||[]).length+' archive issues. Settled results are published after the next-day grading run.');
  return panel(title,html);
 }
+function comparisonPanel(d,pending){
+ const m=d?.experimental_comparison?.models||{},p=pending?.date_eastern===easternDate()?pending.experimental_models||{}:{};
+ let html=note('Research-only shadow models. v4 remains the production projection and Sportsbook Edges model. Same archived inputs and outcomes; no extra API credits.');
+ if(Object.keys(p).length)html+='<h4>Today’s shadow projections awaiting grading</h4>'+table(['Model','Players saved','Priced sides','Positive ROI','Avg expected ROI','Shot fallbacks'],Object.entries(p).map(([k,v])=>[k,v.player_projections,v.quotes_priced,v.positive_selections,percent(v.mean_expected_roi_percent),v.shot_fallbacks]));
+ if(!Object.values(m).some(v=>v.paired_players||v.paired_settled_quote_sides))html+=note('Awaiting first matched completed games for the experimental models.');
+ for(const [version,v] of Object.entries(m)){
+ if(!v.paired_players&&!v.paired_settled_quote_sides)continue;
+ html+='<h4>'+esc(version)+'</h4>'+table(['Stat','Paired sample','v4 MAE','Experiment MAE','v4 RMSE','Experiment RMSE','v4 bias','Experiment bias'],Object.entries(v.projection_metrics||{}).map(([k,s])=>[k,s.control.n,val(s.control.mae),val(s.experimental.mae),val(s.control.rmse),val(s.experimental.rmse),val(s.control.bias),val(s.experimental.bias)]));
+ html+=table(['Model','Paired quote sides','Brier','Log loss','Positive selections settled','ROI','Net units'],[['v4 control',v.control_calibration.n,val(v.control_calibration.brier,4),val(v.control_calibration.log_loss,4),v.control_positive_roi.settled,percent(v.control_positive_roi.roi_percent),v.control_positive_roi.settled?pnl(v.control_positive_roi.profit_units):'—'],[version,v.experimental_calibration.n,val(v.experimental_calibration.brier,4),val(v.experimental_calibration.log_loss,4),v.experimental_positive_roi.settled,percent(v.experimental_positive_roi.roi_percent),v.experimental_positive_roi.settled?pnl(v.experimental_positive_roi.profit_units):'—']]);
+ }
+ return panel('Experimental model comparison',html+note(d?.experimental_comparison?.method||'Same-player prospective evaluation only; no backfilled predictions.'));
+}
 function exactPanel(d){
  if(!d)return panel('Archived Sportsbook Edges',note('Exact-edge grading report is not available. Check the archive and grading workflows.'));
  const m=d.positive_roi||{};
@@ -105,7 +117,7 @@ async function load(){
  async function get(name){try{const r=await fetch('data/'+name+'.json?ts='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch{return null;}}
  const [pending,exact,morning,health,legacy]=await Promise.all(['pregame_pending','pregame_edge_grading','daily_grading','pipeline_health','daily_odds_evaluation'].map(get));
  if(token!==sequence)return;
- el.innerHTML=pendingPanel(pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
+ el.innerHTML=pendingPanel(pending)+comparisonPanel(exact,pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
 }
 doc.querySelector('[data-tab="accuracy"]')?.addEventListener('click',load);
 doc.getElementById('refreshPerformance')?.addEventListener('click',load);
