@@ -18,9 +18,11 @@ html+='<h3>'+esc(g.away_team)+' at '+esc(g.home_team)+'</h3><p class="note">Tipo
 for(const t of g.teams||[]){
 html+='<h4>'+esc(t.team)+'</h4>';
 if(!t.players?.length){html+='<p class="note">'+esc(t.reason||'No player projections available')+'</p>';continue;}
-html+='<div class="tablewrap"><table><thead><tr><th>Player</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th></tr></thead><tbody>';
+const sample=t.players[0];
+if(sample.CurrentTeamGames!=null){html+='<p class="note">Team game coverage: '+esc(sample.CurrentTeamGames)+' merged games · KenPom record: '+esc(sample.KenPomTeamGames??'unknown')+' games'+(sample.DataCoverageWarning?' · WARNING: '+esc(sample.DataCoverageWarning):'')+'</p>';if(sample.DataIssues?.length)html+='<details><summary>Source reconciliation warnings ('+sample.DataIssues.length+')</summary><ul>'+sample.DataIssues.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></details>';}
+html+='<div class="tablewrap"><table><thead><tr><th>Player</th><th>GP</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th></tr></thead><tbody>';
 for(const p of [...t.players].sort((a,b)=>{const am=Number(pick(a,'Minutes','minutes','MIN'));const bm=Number(pick(b,'Minutes','minutes','MIN'));return (Number.isFinite(bm)?bm:-1)-(Number.isFinite(am)?am:-1)})){
-html+='<tr><td>'+esc(p.Player??p.player??p.name)+'</td><td>'+val(pick(p,'Minutes','minutes','MIN'))+'</td><td>'+val(pick(p,'KenPomPoints','BaselinePoints','points','PTS'))+'</td><td>'+val(pick(p,'KenPomRebounds','BaselineRebounds','rebounds','REB'))+'</td><td>'+val(pick(p,'KenPomAssists','BaselineAssists','assists','AST'))+'</td><td>'+val(pick(p,'KenPomThrees','BaselineThrees','threes','3PM'))+'</td></tr>';
+html+='<tr><td>'+esc(p.Player??p.player??p.name)+'</td><td title="'+esc('CBBD '+(p.CBBDGP??'—')+' / ESPN '+(p.ESPNGP??'—')+' · Last game '+(p.LatestGameDate??'—'))+'">'+esc(p.CurrentGP??'—')+'</td><td>'+val(pick(p,'Minutes','minutes','MIN'))+'</td><td>'+val(pick(p,'KenPomPoints','BaselinePoints','points','PTS'))+'</td><td>'+val(pick(p,'KenPomRebounds','BaselineRebounds','rebounds','REB'))+'</td><td>'+val(pick(p,'KenPomAssists','BaselineAssists','assists','AST'))+'</td><td>'+val(pick(p,'KenPomThrees','BaselineThrees','threes','3PM'))+'</td></tr>';
 }
 html+='</tbody></table></div>';
 }}
