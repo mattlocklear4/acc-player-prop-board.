@@ -43,6 +43,9 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Validate dashboard JavaScript
         run: |
+          node --check app.js
+          node --check performance.js
+          node tests/test_performance.cjs
           node --check daily-tab.js
           node --check pregame-edges.js
           node tests/test_pregame_edges.cjs

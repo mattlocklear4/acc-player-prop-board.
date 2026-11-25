@@ -6,6 +6,7 @@ on:
       - 'index.html'
       - 'daily.html'
       - 'daily-tab.js'
+      - 'performance.js'
       - 'pregame-edges.js'
       - 'data/daily_board.json'
       - 'data/daily_grading.json'

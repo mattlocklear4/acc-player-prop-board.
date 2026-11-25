@@ -80,3 +80,24 @@ body:has(#sportsbook.active) #vegas-odds-panel{display:none}
 #pregameEdges details{margin:10px 0;font-size:12px;color:#a8bad2}
 #pregameEdges summary{cursor:pointer}
 @media(max-width:700px){body:has(#sportsbook.active) main{padding-inline:8px}#pregameEdges .edge-matrix .edge-player{width:135px;min-width:135px;max-width:135px;white-space:normal}#pregameEdges .edge-matrix th,#pregameEdges .edge-matrix td{padding:6px 7px}#pregameEdges .edge-matrix .edge-bookhead,#pregameEdges .edge-matrix .edge-bookcell{min-width:135px}#pregameEdges .edge-quote{min-width:120px;gap:5px}#pregameEdges .edge-matrix .edge-game-label{white-space:nowrap}#pregameEdges .edge-scroll{max-height:65vh}#pregameEdges .edge-toolbar select,#pregameEdges .edge-toolbar input[type=search]{max-width:175px}}
+
+/* Compact primary navigation and on-demand legacy tools. */
+#nav{overflow:visible;flex-wrap:wrap;align-items:center;position:relative;z-index:8}
+#nav>button,#nav>.more-nav>summary{font-size:14px;line-height:1.2;white-space:nowrap}
+.more-nav{position:relative}
+.more-nav>summary{list-style:none;cursor:pointer;padding:11px 15px;border-radius:8px;color:#9aacc5;font-weight:650}
+.more-nav>summary::-webkit-details-marker{display:none}
+.more-nav>summary:hover,.more-nav[open]>summary,.more-nav.active>summary{background:#263e63;color:#fff}
+.more-nav-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:190px;display:grid;gap:3px;padding:7px;border:1px solid #3b516d;background:#132239;border-radius:10px;box-shadow:0 12px 30px #0007;z-index:20}
+.more-nav:not([open]) .more-nav-menu{display:none}
+.more-nav-menu button{text-align:left;width:100%}
+#nav button:focus-visible,.more-nav>summary:focus-visible{outline:2px solid #7ba9ff;outline-offset:2px}
+@media(max-width:700px){#nav{gap:4px;padding:7px 8px}#nav>button,#nav>.more-nav>summary{padding:9px 10px;font-size:12px}.more-nav-menu{left:auto;right:0;min-width:175px}.more-nav{position:static}.more-nav-menu{top:100%;right:8px}}
+.performance-history>summary{cursor:pointer;font-weight:650;color:#dbe9fb;padding:3px 0}
+.performance-history[open]>summary{margin-bottom:12px}
+.perf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:12px 0 18px}
+.perf-kpi{background:#0e1a2e;border:1px solid #2d4767;border-radius:10px;padding:13px}
+.perf-kpi small{display:block}.perf-kpi strong{display:block;font-size:23px;margin-top:6px;font-variant-numeric:tabular-nums}
+.perf-chart{margin:14px 0 20px}.perf-chart svg{display:block;width:100%;height:auto;max-height:290px}.perf-chart text{font-family:inherit;fill:#9aacc5;font-size:11px}.perf-chart .axis{stroke:#405673;stroke-width:1}.perf-chart .cumulative{fill:none;stroke:#7aa8ff;stroke-width:2.5;stroke-linejoin:round}.perf-chart .pos{fill:#60d1a1}.perf-chart .neg{fill:#f08491}.perf-chart .dot{fill:#7aa8ff}
+.perf-chart-key{display:flex;flex-wrap:wrap;gap:14px;color:#9aacc5;font-size:12px;margin:6px 0}
+#performanceResults h4{margin:18px 0 7px}#performanceResults .tablewrap{margin-bottom:10px}
