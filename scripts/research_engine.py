@@ -97,6 +97,15 @@ def build_baselines(as_of, root=ROOT, legacy=False):
                'DataIssues':issues.get(r['team'],[]),
                'CurrentMinutesWeight':mw, 'CurrentProductionWeight':rw,
                'Confidence':'Higher' if len(games)>=10 else 'Moderate' if len(games)>=5 else 'Limited'}
+        # Publish the exact pregame inputs with the projection, not a separately fetched log.
+        # Missing optional box-score fields remain null; never substitute zero.
+        log_fields=('minutes','points','reb','assists','three_pm','fgm','fga','three_pa','ftm','fta','oreb','dreb','steals','blocks','turnovers','fouls')
+        obj['CurrentSeasonLog']=[
+            {'date':x['game_date'],'opponent':x.get('opponent'),'team':x.get('team'),
+             'home':x.get('home'),'starter':x.get('starter'),'source':x.get('_source'),
+             **{k:(v if v is not None and math.isfinite(v) else None) for k in log_fields for v in [numeric(x.get(k))]}}
+            for x in games
+        ]
         for field, key in STATS.items():
             def rate(group):
                 total = mins = 0
