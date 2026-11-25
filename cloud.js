@@ -84,10 +84,14 @@ async function lock(){
   lockStatus('Saved '+rows.length+' immutable pregame projections for '+gameId+'.');
  }catch(e){lockStatus('Not saved: '+e.message)}
 }
+let initialized=false;
 async function init(){
+ if(initialized)return;initialized=true;
+ status('Restoring saved session (v2.1.2)…');
+ try{
  if(!window.supabase?.createClient){status('Supabase library unavailable. Check internet access and reload.');return}
  client=window.supabase.createClient(URL,KEY,{auth:{detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
- const update=async()=>{const {data:{user:u},error}=await client.auth.getUser();user=error?null:u;
+ const update=async(session)=>{user=session?.user||null;
   status(user?'Signed in as '+user.email+' · checking pending snapshots…':'Not signed in · imports remain saved locally.');
   if(user)await sync();
  };
@@ -95,18 +99,23 @@ async function init(){
   const email=$('accCloudEmail').value.trim();
   if(!email.includes('@')){status('Enter a valid email address');return}
   status('Sending sign-in link…');
-  const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:false}});
-  status(error?'Sign-in failed: '+error.message:'Check your email for the Supabase sign-in link.');
+  try{const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname,shouldCreateUser:false}});
+  status(error?'Sign-in failed: '+error.message:'Check your email for the Supabase sign-in link.');}catch(e){status('Sign-in failed: '+e.message)}
  };
  $('accCloudSignOut').onclick=async()=>{await client.auth.signOut();user=null;status('Signed out. Local snapshots are preserved.');if($('accCloudFreshness'))$('accCloudFreshness').textContent='Sign in to check cloud ratings.'};
- $('accCloudSync').onclick=sync;
+ $('accCloudSync').onclick=()=>user?sync():checkSession();
  if($('accCloudLock'))$('accCloudLock').onclick=lock;
  document.addEventListener('acc:kenpom-imported',()=>{if(user)sync();else status('Import saved locally. Sign in to archive it in Supabase.')});
- client.auth.onAuthStateChange(()=>{setTimeout(update,0)});
+ let sessionSeen=false;
+ client.auth.onAuthStateChange((event,session)=>{sessionSeen=true;setTimeout(()=>update(session),0)});
  document.addEventListener('acc:kenpom-ready',()=>{if(user)sync()});
- window.addEventListener('online',()=>{if(user)sync();else update()});
+ window.addEventListener('online',()=>{if(user)sync();else checkSession()});
  window.addEventListener('focus',()=>{if(user)sync()});
- await update();
+ document.addEventListener('acc:kenpom-updated',()=>{if(user&&!busy)sync()});
+ setInterval(()=>{if(user)sync()},60000);
+ async function checkSession(){status('Checking saved session…');try{const {data,error}=await Promise.race([client.auth.getSession(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Session check timed out')),12000))]);if(error)throw error;await update(data.session)}catch(e){status('Connection failed: '+e.message+' · Local ratings safe.')}}
+ setTimeout(()=>{if(!sessionSeen)status('Session restore timed out. Click Check / sync now or enter your email. Local ratings safe.')},12000);
+ }catch(e){status('Cloud initialization failed: '+e.message)}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
