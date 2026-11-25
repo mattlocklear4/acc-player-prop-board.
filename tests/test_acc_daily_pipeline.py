@@ -22,4 +22,14 @@ class OpponentTests(unittest.TestCase):
         self.assertEqual(resolve_opponent('Ole Miss Rebels',kp),'Mississippi')
         self.assertEqual(resolve_opponent('Mississippi Rebels',kp),'Mississippi')
 
+    def test_uconn_and_ualbany_aliases(self):
+        kp={canon('Connecticut'):{'Team':'Connecticut'},
+            canon('Central Connecticut'):{'Team':'Central Connecticut'},
+            canon('Albany'):{'Team':'Albany'}}
+        self.assertEqual(resolve_opponent('UConn Huskies',kp),'Connecticut')
+        self.assertEqual(resolve_opponent('UConn',kp),'Connecticut')
+        self.assertEqual(resolve_opponent('UAlbany Great Danes',kp),'Albany')
+        self.assertEqual(resolve_opponent('UAlbany',kp),'Albany')
+        self.assertIsNone(resolve_opponent('Other Huskies',kp))
+
 if __name__=='__main__':unittest.main()
