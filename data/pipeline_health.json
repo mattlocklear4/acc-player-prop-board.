@@ -1,0 +1,80 @@
+{
+  "generated_at_utc": "2026-11-25T20:32:15.201565+00:00",
+  "date_eastern": "2026-11-25",
+  "status": "warn",
+  "failures": 0,
+  "warnings": 3,
+  "checks": [
+    {
+      "code": "espn",
+      "level": "pass",
+      "detail": "ESPN collector OK 3.6h ago; 10653 player rows."
+    },
+    {
+      "code": "supplemental_team_stats",
+      "level": "warn",
+      "detail": "Team Stats tab data age=10.3 days; CBBD quota status=CBBD_MONTHLY_QUOTA_EXHAUSTED. Existing saved data retained."
+    },
+    {
+      "code": "archives",
+      "level": "pass",
+      "detail": "5 pregame archive dates checked; no post-tipoff timestamps or revisions detected."
+    },
+    {
+      "code": "grading",
+      "level": "warn",
+      "detail": "148 players graded; 36 unresolved matching issues."
+    },
+    {
+      "code": "projections",
+      "level": "pass",
+      "detail": "6 scheduled games; 83 player projections."
+    },
+    {
+      "code": "today_archive_coverage",
+      "level": "warn",
+      "detail": "Immutable first snapshot has 72 players vs live board 83; later additions cannot be graded retrospectively."
+    },
+    {
+      "code": "roi",
+      "level": "pass",
+      "detail": "366 actual saved quotes, 50 settled selections; ROI=11.76 (no inferred odds)."
+    },
+    {
+      "code": "api_credits",
+      "level": "pass",
+      "detail": "5 stored snapshots checked for 24/day cap and 50-credit reserve; no paid calls made by health check."
+    },
+    {
+      "code": "workflow_espn",
+      "level": "pass",
+      "detail": "Last completed run succeeded.",
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45658943052"
+    },
+    {
+      "code": "workflow_grading",
+      "level": "pass",
+      "detail": "Last completed run succeeded.",
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45659038789"
+    },
+    {
+      "code": "workflow_projections",
+      "level": "pass",
+      "detail": "Last completed run succeeded.",
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45695000903"
+    },
+    {
+      "code": "workflow_odds",
+      "level": "pass",
+      "detail": "Last completed run succeeded.",
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45659742429"
+    },
+    {
+      "code": "workflow_pages",
+      "level": "pass",
+      "detail": "Last completed run succeeded.",
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45687713810"
+    }
+  ],
+  "note": "Read-only diagnostic; workflow success alone does not prove ongoing unattended reliability."
+}
