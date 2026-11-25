@@ -9,10 +9,10 @@ import json,math,statistics
 from collections import defaultdict
 from datetime import datetime,timezone
 from pathlib import Path
-from research_engine import ROOT,STATS,build_baselines,read_csv,numeric
+from research_engine import ROOT,STATS,build_baselines,current_game_inputs,numeric
 
 def evaluate(root=ROOT, min_prior=1, legacy=False):
-    games=read_csv(root/'data/cbbd/acc_player_games_2027.csv')
+    games,_,_,_=current_game_inputs('2027-07-01',root)
     dates=sorted({r['game_date'] for r in games if r.get('game_date')})
     bydate=defaultdict(list)
     for r in games:
@@ -51,7 +51,7 @@ def evaluate(root=ROOT, min_prior=1, legacy=False):
             'player_game_observations':len(observations),'metrics':metrics,
             'limitations':['Only players with earlier current-season games and a model baseline qualify',
                            'No historical pregame sportsbook lines; ROI/CLV/Brier/log loss not measurable',
-                           'Same-date games excluded from inputs; historic prior seasons used by live baseline',
+                           'Same-date games excluded; production model uses only merged current-season games; legacy comparison may use prior seasons',
                            'Not a test of live KenPom or injury-adjusted projections'],
             'recent_observations':observations[-100:]}
 if __name__=='__main__':
