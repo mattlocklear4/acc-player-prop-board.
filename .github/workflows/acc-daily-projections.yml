@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/acc_publish_daily_board.py'
       - 'scripts/research_engine.py'
+      - 'scripts/acc_experimental_models.py'
+      - 'scripts/acc_projection_dry_run.py'
       - 'scripts/supabase_kenpom.py'
       - '.github/workflows/acc-daily-projections.yml'
   schedule:
@@ -52,7 +54,9 @@ jobs:
           PY
       - name: Test opponent name matching
         if: steps.freshness.outputs.refresh == 'true'
-        run: python -m unittest discover -s tests -p 'test_acc_daily_pipeline.py'
+        run: |
+          python -m unittest discover -s tests -p 'test_acc_daily_pipeline.py'
+          python -m unittest discover -s tests -p 'test_acc_experimental_models.py'
       - name: Compare baseline models offline
         if: steps.freshness.outputs.refresh == 'true'
         run: python scripts/acc_validation_walkforward.py

@@ -23,6 +23,12 @@ for g in payload.get('games') or []:
                 raise ValueError('Refusing non-200-minute rotation for '+str(t.get('team')))
             if any(p.get('MinutesNormalizationStatus')!='normalized' for p in players):
                 raise ValueError('Refusing unverified rotation for '+str(t.get('team')))
+        if players:
+            versions={v for p in players for v in (p.get('ExperimentalModels') or {})}
+            for version in versions:
+                variants=[(p.get('ExperimentalModels') or {}).get(version) for p in players]
+                if any(v is None for v in variants) or sum(round(v['Minutes']*10) for v in variants)!=2000 or any(not 0<=v['Minutes']<=40 for v in variants):
+                    raise ValueError('Invalid experimental rotation '+version+' for '+str(t.get('team')))
         teams.append({'team':t.get('team'),'opponent':t.get('opponent'),
                       'status':t.get('status'),'reason':t.get('reason'),
                       'kenpom_snapshot_id':t.get('kenpom_snapshot_id'),

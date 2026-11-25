@@ -11,6 +11,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from acc_schedule import TEAMS, discover, get_games, parse_time
 from research_engine import build_baselines, load_kenpom, apply_matchup, canon
+from acc_experimental_models import attach_experiments
 from pregame_prepare import consensus, team_id, timestamp
 from supabase_kenpom import fetch_latest_kenpom, resolve_opponent
 
@@ -71,6 +72,7 @@ def matchup(schedule, odds_feed, now, root, kp, source_meta, lock_lead_minutes=N
                             if not market:market_issue='no_complete_pregame_market'
                     players=apply_matchup(baselines_by_day[local_date],team,opponent_kp,kp,market)
                     if not players:raise ValueError('no_eligible_players')
+                    players=attach_experiments(players)
                     item.update(status='research_candidate_unverified',reason='browser_parity_and_manual_minutes_not_verified',players=players,odds=market,odds_status=market_issue or 'available',kenpom_source=source_meta['source'],kenpom_snapshot_id=source_meta['snapshot_id'])
                 except (KeyError,ValueError,FileNotFoundError,TypeError) as exc:item['reason']='projection_input_error:'+str(exc)
             base['teams'].append(item)

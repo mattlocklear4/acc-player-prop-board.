@@ -240,6 +240,16 @@ function renderProfile(g,p,choice=0){
     html+='<h3>Model inputs for this matchup</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>Baseline</td>'+baselines.map(([f,key])=>'<td>'+esc(fmt(number(p[key])))+'</td>').join('')+'</tr><tr><td>Published projection</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(p,f)))+'</td>').join('')+'</tr></tbody></table></div>';
     html+='<p class="note">'+esc(factors.map(([label,v,d])=>label+': '+(number(v)===null?'—':number(v).toFixed(d))).join(' · '))+' · Confidence: '+esc(p.Confidence??'—')+'</p>';
   }
+  const experiments=Object.entries(p.ExperimentalModels||{});
+  if(experiments.length){
+    html+='<h3>Experimental projections · research only</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>v4 control</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(p,f)))+'</td>').join('')+'</tr>'+experiments.map(([v,x])=>'<tr><td>'+esc(v)+'</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(x,f)))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+    for(const [v,x] of experiments){
+      if(x.RotationInputs&&v.includes('v5'))html+='<p class="note">Participation: '+esc(x.RotationInputs.appearances)+' of '+esc(x.RotationInputs.team_games)+' observed team games · '+esc(x.RotationInputs.starts)+' starts · Season minutes including nonappearances '+esc(fmt(x.RotationInputs.season_minutes_including_nonappearances))+'</p>';
+      if(x.ShotInputs)html+='<p class="note">Shot-volume inputs (before matchup adjustment): '+esc(Object.entries(x.ShotInputs.components).map(([k,c])=>k+' '+fmt(x.ShotInputs.projected_attempts[k])+' attempts × '+fmt(100*c.expected_pct)+'%').join(' · '))+'</p>';
+      else if(x.ShotStatus)html+='<p class="note edge-profile-warn">Insufficient complete shooting data: rotation-only fallback.</p>';
+    }
+    html+='<p class="note">Experimental estimates are archived for evaluation. Current sportsbook edges still use v4.</p>';
+  }
   if(r&&k){
     const usable=logs.filter(x=>number(x[k])!==null);
     const counts=a=>({n:a.length,over:a.filter(x=>number(x[k])>r.line).length,under:a.filter(x=>number(x[k])<r.line).length,push:a.filter(x=>number(x[k])===r.line).length});
