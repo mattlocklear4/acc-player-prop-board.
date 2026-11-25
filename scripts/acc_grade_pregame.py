@@ -126,7 +126,15 @@ def main():
     records=[json.loads(p.read_text()) for p in sorted(ARCHIVES.glob('*/*.json'))]
     today=dt.datetime.now(ZoneInfo('America/New_York')).date().isoformat()
     pending=pending_report(records,today)
-    PENDING.write_text(json.dumps(pending,indent=2)+'\n')
+    # A no-change 15-minute poll must not trigger a new deployment solely
+    # because the report generation timestamp advanced.
+    previous={}
+    if PENDING.exists():
+        try:previous=json.loads(PENDING.read_text())
+        except (ValueError,OSError):pass
+    comparable=lambda d:{k:v for k,v in d.items() if k!='generated_at_utc'}
+    if comparable(previous)!=comparable(pending):
+        PENDING.write_text(json.dumps(pending,indent=2)+'\n')
     print(json.dumps({k:pending[k] for k in ('date_eastern','games','player_projections','quotes_priced','positive_selections','mean_expected_roi_percent')}))
     if args.pending_only:return
     logs=defaultdict(list)
