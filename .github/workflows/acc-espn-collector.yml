@@ -1,6 +1,15 @@
 name: ACC ESPN daily boxscore fallback
 on:
   workflow_dispatch:
+    inputs:
+      from_date:
+        description: 'Optional season backfill start (YYYY-MM-DD)'
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/acc-espn-collector.yml'
   schedule:
     - cron: '40 11 * * *'
 permissions:
@@ -19,7 +28,12 @@ jobs:
         with:
           python-version: '3.12'
       - name: Collect recent final ACC ESPN box scores
-        run: python collector/collect_espn.py
+        env:
+          BACKFILL_START: ${{ inputs.from_date }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = push ]; then BACKFILL_START=2026-11-01; fi
+          if [ -n "$BACKFILL_START" ]; then python collector/collect_espn.py --from-date "$BACKFILL_START"; else python collector/collect_espn.py; fi
       - name: Publish player logs and freshness status
         run: |
           git config user.name 'github-actions[bot]'
@@ -42,6 +56,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run acc-daily-grading.yml --ref main
+      - name: Refresh daily projections after updated ESPN game logs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run acc-daily-projections.yml --ref main
       - uses: actions/upload-artifact@v4
         if: always()
         with:
