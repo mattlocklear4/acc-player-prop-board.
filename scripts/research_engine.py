@@ -10,6 +10,7 @@ import math
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
+from acc_merge_game_logs import merge_current_games
 
 ROOT = Path(__file__).resolve().parents[1]
 STATS = {'Points': 'points', 'Rebounds': 'reb', 'Assists': 'assists', 'Threes': 'three_pm'}
@@ -39,13 +40,18 @@ def read_csv(path):
 def clamp(x, lo, hi):
     return max(lo, min(hi, x))
 
+def current_game_inputs(as_of, root=ROOT):
+    data = root / 'data' / 'cbbd'
+    current = read_csv(data/'acc_player_games_2027.csv')
+    history = (read_csv(data/'acc_player_games_2026.csv') + read_csv(data/'acc_player_games_2025.csv') + read_csv(data/'acc_transfer_player_games_2025_2026.csv'))
+    espn_path = root/'data'/'espn'/'acc_player_games_2027.csv'
+    espn = read_csv(espn_path) if espn_path.exists() else []
+    rows,issues,coverage=merge_current_games(current,espn,as_of,history)
+    return rows,issues,coverage,history
+
 def build_baselines(as_of, root=ROOT, legacy=False):
     """Only use current season games STRICTLY before as_of (YYYY-MM-DD)."""
-    data = root / 'data' / 'cbbd'
-    current = [r for r in read_csv(data/'acc_player_games_2027.csv') if r['game_date'] < as_of]
-    history_raw = (read_csv(data/'acc_player_games_2026.csv') +
-                   read_csv(data/'acc_player_games_2025.csv') +
-                   read_csv(data/'acc_transfer_player_games_2025_2026.csv'))
+    current,issues,coverage,history_raw = current_game_inputs(as_of,root)
     seen, history = set(), defaultdict(list)
     for r in history_raw:
         aid = r.get('athlete_id', '')
@@ -76,13 +82,19 @@ def build_baselines(as_of, root=ROOT, legacy=False):
         rw = w if legacy else 1.0
         if not legacy: rm = avg(games[:3], 'minutes')
         if cm is None: minutes = hm if legacy else None
+        elif not legacy: minutes = .60*cm+.40*(rm if rm is not None else cm)
         elif hm is None: minutes = cm
         else: minutes = (1-mw)*hm + mw*((.65 if legacy else .60)*cm + (.35 if legacy else .40)*rm)
         if minutes is None: continue
         minutes = clamp(minutes, 0, 40)
         obj = {'Player':r['player'], 'AthleteId':aid, 'Team':r['team'], 'Minutes':minutes,
                'CurrentGP':len(games), 'HistoryGP':len(h),
-               'ModelVersion':'legacy' if legacy else 'current-season-only-v2',
+               'ModelVersion':'legacy-hybrid' if legacy else 'current-season-hybrid-v3',
+               'CBBDGP':sum(x.get('_source')=='CBBD' for x in games),
+               'ESPNGP':sum(x.get('_source')=='ESPN' for x in games),
+               'LatestGameDate':r['game_date'],
+               'CurrentTeamGames':coverage.get(r['team'],{}).get('merged_games',0),
+               'DataIssues':issues.get(r['team'],[]),
                'CurrentMinutesWeight':mw, 'CurrentProductionWeight':rw,
                'Confidence':'Higher' if len(games)>=10 else 'Moderate' if len(games)>=5 else 'Limited'}
         for field, key in STATS.items():
@@ -101,6 +113,7 @@ def build_baselines(as_of, root=ROOT, legacy=False):
             cr, hr, rr = rate(games), rate(prior), rate(recent)
             if hr is None: hr = rate(older)
             if cr is None: blended = hr if legacy else None
+            elif not legacy: blended = .75*cr+.25*(rr if rr is not None else cr)
             elif hr is None: blended = cr
             else: blended = (1-rw)*hr + rw*((.65 if legacy else .75)*cr + (.35 if legacy else .25)*(rr if rr is not None else cr))
             obj['Baseline'+field] = max(0, minutes*blended) if blended is not None else None
@@ -131,6 +144,9 @@ def apply_matchup(baselines, team, opponent, kp, odds=None):
     for row in baselines:
         if canon(row['Team']) != canon(team): continue
         p=dict(row)
+        expected_games=(numeric(t.get('Wins')) or 0)+(numeric(t.get('Losses')) or 0)
+        p['KenPomTeamGames']=int(expected_games)
+        p['DataCoverageWarning']=('Merged team-game count below KenPom W+L; verify missing games' if expected_games>p.get('CurrentTeamGames',0) else None)
         p.update({'Opponent':opponent, 'ProjectedPossessions':possessions, 'PaceFactor':pace,
                   'OpponentDefenseFactor':defpts, 'MarketFactor':factor})
         for k in STATS:
