@@ -27,6 +27,10 @@ OPPONENT_ALIASES = {
     'olemiss':'mississippi',
     'olemissrebels':'mississippi',
     'mississippirebels':'mississippi',
+    'uconn':'connecticut',
+    'uconnhuskies':'connecticut',
+    'ualbany':'albany',
+    'ualbanygreatdanes':'albany',
 }
 
 def resolve_opponent(name, kp):
