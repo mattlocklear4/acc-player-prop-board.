@@ -22,6 +22,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 concurrency:
@@ -46,12 +47,35 @@ jobs:
           mkdir -p /tmp/acc-pages
           tar --dereference --hard-dereference --directory=. -cvf /tmp/acc-pages/artifact.tar --exclude=.git --exclude=.github .
       - name: Upload named GitHub Pages artifact
+        id: pages_artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: /tmp/acc-pages/artifact.tar
           retention-days: 1
           if-no-files-found: error
+      - name: Wait for uploaded artifact metadata to become available
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+          ARTIFACT_ID: ${{ steps.pages_artifact.outputs.artifact-id }}
+        shell: bash
+        run: |
+          # The Pages metadata service can lag a successful artifact upload.
+          sleep 15
+          for attempt in {1..9}; do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=$ARTIFACT_NAME" > /tmp/acc-pages/artifacts.json; then
+              if jq -e --arg name "$ARTIFACT_NAME" --arg id "$ARTIFACT_ID" '[.artifacts[] | select(.name == $name and (.id|tostring) == $id and .expired == false)] | length == 1' /tmp/acc-pages/artifacts.json >/dev/null; then
+                echo "Verified deployment artifact $ARTIFACT_NAME ($ARTIFACT_ID)"
+                sleep 10
+                exit 0
+              fi
+            fi
+            echo "Artifact metadata not ready (check $attempt of 9)"
+            sleep 10
+          done
+          echo "::error::Uploaded artifact metadata did not become available; stopping before Pages deployment."
+          exit 1
       - id: deployment
         uses: actions/deploy-pages@v4
         with:
