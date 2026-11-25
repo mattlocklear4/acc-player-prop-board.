@@ -66,7 +66,7 @@ if(typeof module!=='undefined'&&module.exports)module.exports=api;
 root.ACCPregameEdges=api;
 if(!root.document)return;
 const host=root.document.getElementById('dailyResults');if(!host)return;
-const section=root.document.createElement('section');section.id='pregameEdges';section.innerHTML='<h3>Pregame sportsbook edges · experimental</h3><p class="note">Published pregame projections vs timestamped actual book quotes. Points: normal SD 5.5; rebounds, assists and threes: Poisson. These are uncalibrated distribution assumptions, not validated win probabilities. ROI is hypothetical per $1 stake, not historical performance.</p><div class="toolbar"><label>Book <select id="edgeBook"><option value="">All books</option></select></label><label class="check"><input type="checkbox" id="edgePositive">Positive estimated ROI only</label></div><p id="edgeStatus" class="note">Loading saved odds…</p><div id="edgeTable" class="tablewrap"></div><div id="edgeMissing"></div>';
+const section=root.document.createElement('section');section.id='pregameEdges';section.innerHTML='<h3>Pregame sportsbook edges · experimental</h3><p class="note">Published pregame projections vs timestamped actual book quotes. Points: normal SD 5.5; rebounds, assists and threes: Poisson. These are uncalibrated distribution assumptions, not validated win probabilities. ROI is hypothetical per $1 stake, not historical performance.</p><div class="toolbar"><label>Book <select id="edgeBook"><option value="">All books</option></select></label><label class="check"><input type="checkbox" id="edgePositive">Positive estimated ROI only</label></div><p id="edgeStatus" class="note">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="tablewrap"></div><div id="edgeMissing"></div>';
 host.parentNode.insertBefore(section,host.nextSibling);
 const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&quot;'}[c]));
 const fmt=n=>n===null||n===undefined?'—':Number(n).toFixed(1);
@@ -102,7 +102,13 @@ async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date
       }
     }catch(_e){current.diagnostics.push({game:'North Carolina / Monmouth',reason:'Supplemental odds refresh unavailable'});}
   }
-  const select=root.document.getElementById('edgeBook');select.innerHTML='<option value="">All books</option>'+[...new Set(current.rows.map(r=>r.book))].sort().map(k=>'<option>'+esc(k)+'</option>').join('');render();
+  const names={draftkings:'DraftKings',fanduel:'FanDuel',williamhill_us:'Caesars',fanatics:'Fanatics',betonlineag:'BetOnline'};
+  const requested=[...new Set([...(base.bookmakers||[]),...current.rows.map(r=>r.book)])];
+  const counts={};
+  for(const event of base.events||[])for(const q of event.props||[])counts[q.bookmaker]=(counts[q.bookmaker]||0)+1;
+  const coverage=root.document.getElementById('edgeCoverage');
+  coverage.innerHTML='<strong>Saved sportsbook coverage</strong> · individual over/under quotes returned in the daily snapshot; matched lines require a valid pregame ACC player projection.<br>'+requested.map(k=>{const n=counts[k]||0,m=current.rows.filter(r=>r.book===k).length;return esc(names[k]||k)+': '+n+' quotes / '+m+' matched lines'+(n===0?' (none returned in daily snapshot)':'')}).join(' · ');
+  const select=root.document.getElementById('edgeBook');select.innerHTML='<option value="">All books</option>'+requested.map(k=>'<option value="'+esc(k)+'">'+esc(names[k]||k)+'</option>').join('');render();
 }catch(e){root.document.getElementById('edgeStatus').textContent=e.message+'; no edges shown.';}}
 root.document.getElementById('edgeBook').addEventListener('change',render);
 root.document.getElementById('edgePositive').addEventListener('change',render);
