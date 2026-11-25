@@ -4,7 +4,9 @@
 Independent of CBBD quota. Keep ESPN records in a separate CSV: ESPN IDs are not
 CBBD IDs and advanced CBBD metrics cannot be reconstructed from basic box scores.
 """
+import argparse
 import csv
+import sys
 import datetime as dt
 import json
 import urllib.parse
@@ -13,6 +15,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
+from acc_merge_game_logs import ACC_DISPLAY
 OUT=ROOT/'data/espn/acc_player_games_2027.csv'
 STATUS=ROOT/'data/espn/collector_status.json'
 FIELDS=['source','season','game_id','game_date','team','team_id','opponent','home','athlete_id','player','starter','minutes','points','reb','assists','three_pm','fgm','fga','three_pa','ftm','fta','oreb','dreb','steals','blocks','turnovers','fouls']
@@ -37,7 +41,7 @@ def parse_team(group,game_id,date,opponent,home):
         for item in stats_group.get('athletes') or []:
             athlete=item.get('athlete') or {}
             values=item.get('stats') or []
-            if not athlete.get('displayName') or not values:continue
+            if not athlete.get('id') or not athlete.get('displayName') or not values or item.get('didNotPlay'):continue
             fields=dict(zip(keys,values));fields.update(dict(zip(labels,values)))
             def val(*names):
                 for n in names:
@@ -60,19 +64,24 @@ def parse_team(group,game_id,date,opponent,home):
                  'oreb':num(val('offensiveRebounds','oreb')),'dreb':num(val('defensiveRebounds','dreb')),
                  'steals':num(val('steals','stl')),'blocks':num(val('blocks','blk')),
                  'turnovers':num(val('turnovers','to')),'fouls':num(val('fouls','pf'))}
-            if row['points']=='' or row['reb']=='' or row['assists']=='':
+            if any(row[k]=='' for k in ('points','reb','assists','three_pm')):
                 continue
             result.append(row)
     return result
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--from-date',type=dt.date.fromisoformat,help='Backfill final ACC games from this date through yesterday')
+    args=parser.parse_args()
     today=dt.datetime.now(ZoneInfo('America/New_York')).date()
+    start=args.from_date or today-dt.timedelta(days=4)
+    if start<dt.date(2026,11,1) or start>=today:parser.error('Invalid current-season backfill window')
     existing={}
     if OUT.exists():
         with OUT.open(newline='',encoding='utf-8') as f:
             for r in csv.DictReader(f):
                 existing[(r['game_id'],str(r['team_id']),str(r['athlete_id']))]=r
     seen=set();problems=[];new=0;finals=0
-    for delta in range(1,5):
+    for delta in range(1,(today-start).days+1):
         day=today-dt.timedelta(days=delta)
         try:board=get('scoreboard',{'dates':day.strftime('%Y%m%d'),'groups':'50','limit':500})
         except Exception as exc:
@@ -83,6 +92,8 @@ def main():
             seen.add(eid)
             competitions=event.get('competitions') or []
             if not competitions or not (competitions[0].get('status') or {}).get('type',{}).get('completed'):continue
+            competitors=competitions[0].get('competitors') or []
+            if not any((v.get('team') or {}).get('displayName') in ACC_DISPLAY for v in competitors):continue
             try:box=get('summary',{'event':eid})
             except Exception as exc:
                 problems.append({'game':eid,'reason':'summary_unavailable','error':type(exc).__name__});continue
