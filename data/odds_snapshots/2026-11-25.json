@@ -1,0 +1,2019 @@
+{
+  "mode": "READ_ONLY",
+  "generated_at_utc": "2026-11-25T15:56:03.024880+00:00",
+  "bookmakers": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "paid_requests_enabled": true,
+  "events": [
+    {
+      "event_id": "35ad4fa01fad6add259b5e551ba7785b",
+      "schedule_game_id": "espn_event_401920428",
+      "home_team": "Marquette Golden Eagles",
+      "away_team": "Virginia Cavaliers",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 10,
+        "unique_players": 4,
+        "quotes_by_bookmaker": {
+          "betonlineag": 10
+        },
+        "quotes_by_market": {
+          "player_assists": 2,
+          "player_points": 8
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Nigel James Jr.",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -115,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Nigel James Jr.",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -112,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Royce Parham",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 106,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Royce Parham",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -137,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Nigel James Jr.",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -141,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Nigel James Jr.",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 108,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Adrien Stevens",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -105,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Adrien Stevens",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -123,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Sam Lewis",
+          "side": "Over",
+          "line": 16.5,
+          "odds": -114,
+          "last_update": "2026-11-25T15:55:38Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Sam Lewis",
+          "side": "Under",
+          "line": 16.5,
+          "odds": -114,
+          "last_update": "2026-11-25T15:55:38Z"
+        }
+      ]
+    },
+    {
+      "event_id": "482e1e1c8e5e977fcf7e2322241bb598",
+      "schedule_game_id": "espn_event_401909568",
+      "home_team": "UConn Huskies",
+      "away_team": "Duke Blue Devils",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 54,
+        "unique_players": 7,
+        "quotes_by_bookmaker": {
+          "betonlineag": 38,
+          "fanduel": 16
+        },
+        "quotes_by_market": {
+          "player_assists": 8,
+          "player_points": 24,
+          "player_rebounds": 14,
+          "player_threes": 8
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Silas Demary Jr.",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -116,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Silas Demary Jr.",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -111,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Braylon Mullins",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -154,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Braylon Mullins",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 118,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Colben Landrew",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Colben Landrew",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -108,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Patrick Ngongba II",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -125,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Patrick Ngongba II",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -103,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Braylon Mullins",
+          "side": "Over",
+          "line": 19.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Braylon Mullins",
+          "side": "Under",
+          "line": 19.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Silas Demary Jr.",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -115,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Silas Demary Jr.",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -112,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Dame Sarr",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -101,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Dame Sarr",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -128,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -115,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -108,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jayden Ross",
+          "side": "Over",
+          "line": 9.5,
+          "odds": 136,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jayden Ross",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -179,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Colben Landrew",
+          "side": "Over",
+          "line": 11.5,
+          "odds": 100,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Colben Landrew",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -130,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Patrick Ngongba II",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -122,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Patrick Ngongba II",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -106,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -141,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Under",
+          "line": 5.5,
+          "odds": 108,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Silas Demary Jr.",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -123,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Silas Demary Jr.",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -104,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jayden Ross",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 126,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jayden Ross",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -164,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Colben Landrew",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Colben Landrew",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jayden Ross",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 141,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jayden Ross",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -185,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Silas Demary Jr.",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 155,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Silas Demary Jr.",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -204,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Braylon Mullins",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 115,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Braylon Mullins",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -149,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Colben Landrew",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -169,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Colben Landrew",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 129,
+          "last_update": "2026-11-25T15:54:51Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Silas Demary Jr.",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -116,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Silas Demary Jr.",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Braylon Mullins",
+          "side": "Over",
+          "line": 19.5,
+          "odds": -125,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Braylon Mullins",
+          "side": "Under",
+          "line": 19.5,
+          "odds": -105,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Patrick Ngongba II",
+          "side": "Over",
+          "line": 13.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Patrick Ngongba II",
+          "side": "Under",
+          "line": 13.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Dame Sarr",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -105,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Dame Sarr",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -125,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Silas Demary Jr.",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Silas Demary Jr.",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -140,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Joaquim Boumtje Boumtje",
+          "side": "Under",
+          "line": 5.5,
+          "odds": 100,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Patrick Ngongba II",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -122,
+          "last_update": "2026-11-25T15:54:45Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Patrick Ngongba II",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -112,
+          "last_update": "2026-11-25T15:54:45Z"
+        }
+      ]
+    },
+    {
+      "event_id": "b78c222249ee2a4cd1dacf48adf9dc50",
+      "schedule_game_id": "espn_event_401918971",
+      "home_team": "SMU Mustangs",
+      "away_team": "Utah State Aggies",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 14,
+        "unique_players": 2,
+        "quotes_by_bookmaker": {
+          "betonlineag": 14
+        },
+        "quotes_by_market": {
+          "player_assists": 4,
+          "player_points": 4,
+          "player_rebounds": 4,
+          "player_threes": 2
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jaden Toombs",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -156,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jaden Toombs",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 121,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Mason Falslev",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -145,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Mason Falslev",
+          "side": "Under",
+          "line": 3.5,
+          "odds": 112,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jaden Toombs",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jaden Toombs",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Mason Falslev",
+          "side": "Over",
+          "line": 19.5,
+          "odds": -114,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Mason Falslev",
+          "side": "Under",
+          "line": 19.5,
+          "odds": -114,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Mason Falslev",
+          "side": "Over",
+          "line": 7.5,
+          "odds": 100,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Mason Falslev",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -130,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jaden Toombs",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -101,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jaden Toombs",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -128,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Mason Falslev",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 136,
+          "last_update": "2026-11-25T15:53:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Mason Falslev",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -179,
+          "last_update": "2026-11-25T15:53:51Z"
+        }
+      ]
+    },
+    {
+      "event_id": "e98cf133a49531595cd592e5804d2ebc",
+      "schedule_game_id": "espn_event_401918960",
+      "home_team": "NC State Wolfpack",
+      "away_team": "Norfolk St Spartans",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": []
+    },
+    {
+      "event_id": "a0ecce85720e6b272a86b2160699e242",
+      "schedule_game_id": "espn_event_401929287",
+      "home_team": "Mississippi St Bulldogs",
+      "away_team": "Wake Forest Demon Deacons",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 16,
+        "unique_players": 2,
+        "quotes_by_bookmaker": {
+          "betonlineag": 16
+        },
+        "quotes_by_market": {
+          "player_assists": 4,
+          "player_points": 4,
+          "player_rebounds": 4,
+          "player_threes": 4
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 161,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -213,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 115,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -149,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -108,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 16.5,
+          "odds": -103,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 16.5,
+          "odds": -125,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -109,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -119,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -116,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -111,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -156,
+          "last_update": "2026-11-25T15:55:37Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 120,
+          "last_update": "2026-11-25T15:55:37Z"
+        }
+      ]
+    },
+    {
+      "event_id": "87fec8c093d5b8f825bc61121105cc27",
+      "schedule_game_id": "espn_event_401921672",
+      "home_team": "Saint Louis Billikens",
+      "away_team": "Stanford Cardinal",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 34,
+        "unique_players": 5,
+        "quotes_by_bookmaker": {
+          "betonlineag": 34
+        },
+        "quotes_by_market": {
+          "player_assists": 8,
+          "player_points": 10,
+          "player_rebounds": 8,
+          "player_threes": 8
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Ishan Sharma",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Ishan Sharma",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Quentin Jones",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -105,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Quentin Jones",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -123,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Amari McCottry",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 115,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Amari McCottry",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -149,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Trey Green",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 161,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Trey Green",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -213,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kellen Thames",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kellen Thames",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Amari McCottry",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 106,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Amari McCottry",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -137,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ishan Sharma",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -115,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ishan Sharma",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -112,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Quentin Jones",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -105,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Quentin Jones",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -123,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Trey Green",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -141,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Trey Green",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 108,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kellen Thames",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -105,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kellen Thames",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -123,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Amari McCottry",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -120,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Amari McCottry",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -108,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ishan Sharma",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ishan Sharma",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Quentin Jones",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Quentin Jones",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Amari McCottry",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -141,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Amari McCottry",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 108,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ishan Sharma",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -149,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ishan Sharma",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 115,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Quentin Jones",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -208,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Quentin Jones",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 157,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Trey Green",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -110,
+          "last_update": "2026-11-25T15:54:43Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Trey Green",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -118,
+          "last_update": "2026-11-25T15:54:43Z"
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    "No exact Odds API event match: Syracuse Orange vs UAlbany Great Danes."
+  ],
+  "quota": {
+    "estimated_max_credits": 24,
+    "requests_sent": 6,
+    "credits_spent_reported": 18,
+    "remaining": 344
+  },
+  "discovered_ncaab_events": 66,
+  "discovery_diagnostic": {
+    "api_event_sample": [
+      {
+        "home_team": "Belmont Bruins",
+        "away_team": "St. Bonaventure Bonnies",
+        "commence_time": "2026-11-25T15:01:41Z"
+      },
+      {
+        "home_team": "Charlotte 49ers",
+        "away_team": "Northern Iowa Panthers",
+        "commence_time": "2026-11-25T16:00:00Z"
+      },
+      {
+        "home_team": "Ohio Bobcats",
+        "away_team": "Rice Owls",
+        "commence_time": "2026-11-25T16:00:00Z"
+      },
+      {
+        "home_team": "Marquette Golden Eagles",
+        "away_team": "Virginia Cavaliers",
+        "commence_time": "2026-11-25T17:00:00Z"
+      },
+      {
+        "home_team": "Detroit Mercy Titans",
+        "away_team": "N Colorado Bears",
+        "commence_time": "2026-11-25T17:30:00Z"
+      },
+      {
+        "home_team": "Wright St Raiders",
+        "away_team": "Yale Bulldogs",
+        "commence_time": "2026-11-25T17:30:00Z"
+      },
+      {
+        "home_team": "Miami (OH) RedHawks",
+        "away_team": "Eastern Kentucky Colonels",
+        "commence_time": "2026-11-25T18:00:00Z"
+      },
+      {
+        "home_team": "Stony Brook Seawolves",
+        "away_team": "Lindenwood Lions",
+        "commence_time": "2026-11-25T18:00:00Z"
+      },
+      {
+        "home_team": "Long Beach St 49ers",
+        "away_team": "Southern Utah Thunderbirds",
+        "commence_time": "2026-11-25T18:00:00Z"
+      },
+      {
+        "home_team": "Davidson Wildcats",
+        "away_team": "Tulane Green Wave",
+        "commence_time": "2026-11-25T18:30:00Z"
+      },
+      {
+        "home_team": "South Dakota St Jackrabbits",
+        "away_team": "Abilene Christian Wildcats",
+        "commence_time": "2026-11-25T19:00:00Z"
+      },
+      {
+        "home_team": "Arizona St Sun Devils",
+        "away_team": "LSU Tigers",
+        "commence_time": "2026-11-25T19:00:00Z"
+      },
+      {
+        "home_team": "South Dakota Coyotes",
+        "away_team": "Arkansas-Pine Bluff Golden Lions",
+        "commence_time": "2026-11-25T19:00:00Z"
+      },
+      {
+        "home_team": "Columbia Lions",
+        "away_team": "Saint Peter's Peacocks",
+        "commence_time": "2026-11-25T19:00:00Z"
+      },
+      {
+        "home_team": "NJIT Highlanders",
+        "away_team": "Manhattan Jaspers",
+        "commence_time": "2026-11-25T19:00:00Z"
+      },
+      {
+        "home_team": "Arizona Wildcats",
+        "away_team": "Ole Miss Rebels",
+        "commence_time": "2026-11-25T19:30:00Z"
+      },
+      {
+        "home_team": "Xavier Musketeers",
+        "away_team": "Texas A&M Aggies",
+        "commence_time": "2026-11-25T19:30:00Z"
+      },
+      {
+        "home_team": "Appalachian St Mountaineers",
+        "away_team": "Akron Zips",
+        "commence_time": "2026-11-25T20:00:00Z"
+      },
+      {
+        "home_team": "Oklahoma St Cowboys",
+        "away_team": "Jackson St Tigers",
+        "commence_time": "2026-11-25T20:00:00Z"
+      },
+      {
+        "home_team": "North Dakota Fighting Hawks",
+        "away_team": "SE Louisiana Lions",
+        "commence_time": "2026-11-25T20:00:00Z"
+      },
+      {
+        "home_team": "Florida Int'l Golden Panthers",
+        "away_team": "Arkansas St Red Wolves",
+        "commence_time": "2026-11-25T20:30:00Z"
+      },
+      {
+        "home_team": "Florida Gulf Coast Eagles",
+        "away_team": "Georgia St Panthers",
+        "commence_time": "2026-11-25T21:00:00Z"
+      },
+      {
+        "home_team": "New Orleans Privateers",
+        "away_team": "Grambling St Tigers",
+        "commence_time": "2026-11-25T21:00:00Z"
+      },
+      {
+        "home_team": "Liberty Flames",
+        "away_team": "Princeton Tigers",
+        "commence_time": "2026-11-25T21:00:00Z"
+      },
+      {
+        "home_team": "Marshall Thundering Herd",
+        "away_team": "Prairie View Panthers",
+        "commence_time": "2026-11-25T21:00:00Z"
+      },
+      {
+        "home_team": "USC Trojans",
+        "away_team": "South Carolina Gamecocks",
+        "commence_time": "2026-11-25T21:30:00Z"
+      },
+      {
+        "home_team": "Texas State Bobcats",
+        "away_team": "Alcorn St Braves",
+        "commence_time": "2026-11-25T22:00:00Z"
+      },
+      {
+        "home_team": "Dartmouth Big Green",
+        "away_team": "Holy Cross Crusaders",
+        "commence_time": "2026-11-25T22:00:00Z"
+      },
+      {
+        "home_team": "Penn State Nittany Lions",
+        "away_team": "Memphis Tigers",
+        "commence_time": "2026-11-25T22:00:00Z"
+      },
+      {
+        "home_team": "Nebraska Cornhuskers",
+        "away_team": "Southern Jaguars",
+        "commence_time": "2026-11-25T22:00:00Z"
+      },
+      {
+        "home_team": "UC Riverside Highlanders",
+        "away_team": "Portland St Vikings",
+        "commence_time": "2026-11-25T22:00:00Z"
+      },
+      {
+        "home_team": "Providence Friars",
+        "away_team": "BYU Cougars",
+        "commence_time": "2026-11-25T22:30:00Z"
+      },
+      {
+        "home_team": "Syracuse Orange",
+        "away_team": "Albany Great Danes",
+        "commence_time": "2026-11-25T23:00:00Z"
+      },
+      {
+        "home_team": "Richmond Spiders",
+        "away_team": "Bethune-Cookman Wildcats",
+        "commence_time": "2026-11-25T23:00:00Z"
+      },
+      {
+        "home_team": "Weber State Wildcats",
+        "away_team": "CSU Northridge Matadors",
+        "commence_time": "2026-11-25T23:00:00Z"
+      },
+      {
+        "home_team": "Charleston Cougars",
+        "away_team": "Kennesaw St Owls",
+        "commence_time": "2026-11-25T23:00:00Z"
+      },
+      {
+        "home_team": "Northwestern St Demons",
+        "away_team": "West Florida Argonauts",
+        "commence_time": "2026-11-25T23:00:00Z"
+      },
+      {
+        "home_team": "Northern Kentucky Norse",
+        "away_team": "Bellarmine Knights",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "UConn Huskies",
+        "away_team": "Duke Blue Devils",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "George Mason Patriots",
+        "away_team": "Longwood Lancers",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "NC State Wolfpack",
+        "away_team": "Norfolk St Spartans",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "Wisconsin Badgers",
+        "away_team": "Northeastern Huskies",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "SIU-Edwardsville Cougars",
+        "away_team": "Northern Illinois Huskies",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "SMU Mustangs",
+        "away_team": "Utah State Aggies",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "The Citadel Bulldogs",
+        "away_team": "South Carolina Upstate Spartans",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "UNC Wilmington Seahawks",
+        "away_team": "St. Thomas (MN) Tommies",
+        "commence_time": "2026-11-26T00:00:00Z"
+      },
+      {
+        "home_team": "Mississippi St Bulldogs",
+        "away_team": "Wake Forest Demon Deacons",
+        "commence_time": "2026-11-26T00:30:00Z"
+      },
+      {
+        "home_team": "Pepperdine Waves",
+        "away_team": "CSU Bakersfield Roadrunners",
+        "commence_time": "2026-11-26T01:00:00Z"
+      },
+      {
+        "home_team": "UC Davis Aggies",
+        "away_team": "Omaha Mavericks",
+        "commence_time": "2026-11-26T01:00:00Z"
+      },
+      {
+        "home_team": "UTEP Miners",
+        "away_team": "Eastern Michigan Eagles",
+        "commence_time": "2026-11-26T01:30:00Z"
+      },
+      {
+        "home_team": "Loyola Marymount Lions",
+        "away_team": "Eastern Washington Eagles",
+        "commence_time": "2026-11-26T02:00:00Z"
+      },
+      {
+        "home_team": "New Mexico Lobos",
+        "away_team": "Miss Valley St Delta Devils",
+        "commence_time": "2026-11-26T02:00:00Z"
+      },
+      {
+        "home_team": "Grand Canyon Antelopes",
+        "away_team": "Colorado Buffaloes",
+        "commence_time": "2026-11-26T02:30:00Z"
+      },
+      {
+        "home_team": "VCU Rams",
+        "away_team": "Washington Huskies",
+        "commence_time": "2026-11-26T03:00:00Z"
+      },
+      {
+        "home_team": "Pacific Tigers",
+        "away_team": "Jacksonville St Gamecocks",
+        "commence_time": "2026-11-26T03:30:00Z"
+      },
+      {
+        "home_team": "Hawai'i Rainbow Warriors",
+        "away_team": "Incarnate Word Cardinals",
+        "commence_time": "2026-11-26T04:59:00Z"
+      },
+      {
+        "home_team": "Saint Louis Billikens",
+        "away_team": "Stanford Cardinal",
+        "commence_time": "2026-11-26T04:59:00Z"
+      },
+      {
+        "home_team": "Colorado St Rams",
+        "away_team": "Clemson Tigers",
+        "commence_time": "2026-11-26T05:30:00Z"
+      },
+      {
+        "home_team": "San Diego St Aztecs",
+        "away_team": "Maryland Terrapins",
+        "commence_time": "2026-11-26T18:00:00Z"
+      },
+      {
+        "home_team": "Iowa State Cyclones",
+        "away_team": "Tennessee Volunteers",
+        "commence_time": "2026-11-26T20:30:00Z"
+      },
+      {
+        "home_team": "Michigan Wolverines",
+        "away_team": "Miami Hurricanes",
+        "commence_time": "2026-11-26T20:30:00Z"
+      },
+      {
+        "home_team": "Creighton Bluejays",
+        "away_team": "TCU Horned Frogs",
+        "commence_time": "2026-11-26T23:00:00Z"
+      },
+      {
+        "home_team": "Alabama Crimson Tide",
+        "away_team": "Kansas St Wildcats",
+        "commence_time": "2026-11-27T02:00:00Z"
+      },
+      {
+        "home_team": "Louisville Cardinals",
+        "away_team": "St. John's Red Storm",
+        "commence_time": "2026-11-27T02:00:00Z"
+      },
+      {
+        "home_team": "Gonzaga Bulldogs",
+        "away_team": "Baylor Bears",
+        "commence_time": "2026-11-27T04:30:00Z"
+      },
+      {
+        "home_team": "Oregon Ducks",
+        "away_team": "Texas Tech Red Raiders",
+        "commence_time": "2026-11-27T04:30:00Z"
+      }
+    ],
+    "schedule_comparisons": [
+      {
+        "schedule_home": "Marquette Golden Eagles",
+        "schedule_away": "Virginia Cavaliers",
+        "schedule_tipoff_utc": "2026-11-25T17:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Marquette Golden Eagles",
+            "away_team": "Virginia Cavaliers",
+            "commence_time": "2026-11-25T17:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "UTEP Miners",
+            "away_team": "Eastern Michigan Eagles",
+            "commence_time": "2026-11-26T01:30:00Z",
+            "name_similarity": 0.447,
+            "tipoff_difference_minutes": 510
+          },
+          {
+            "home_team": "Marshall Thundering Herd",
+            "away_team": "Prairie View Panthers",
+            "commence_time": "2026-11-25T21:00:00Z",
+            "name_similarity": 0.432,
+            "tipoff_difference_minutes": 240
+          },
+          {
+            "home_team": "Florida Gulf Coast Eagles",
+            "away_team": "Georgia St Panthers",
+            "commence_time": "2026-11-25T21:00:00Z",
+            "name_similarity": 0.421,
+            "tipoff_difference_minutes": 240
+          },
+          {
+            "home_team": "Hawai'i Rainbow Warriors",
+            "away_team": "Incarnate Word Cardinals",
+            "commence_time": "2026-11-26T04:59:00Z",
+            "name_similarity": 0.42,
+            "tipoff_difference_minutes": 719
+          }
+        ]
+      },
+      {
+        "schedule_home": "Syracuse Orange",
+        "schedule_away": "UAlbany Great Danes",
+        "schedule_tipoff_utc": "2026-11-25T23:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Syracuse Orange",
+            "away_team": "Albany Great Danes",
+            "commence_time": "2026-11-25T23:00:00Z",
+            "name_similarity": 0.985,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Wisconsin Badgers",
+            "away_team": "Northeastern Huskies",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 0.422,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "SMU Mustangs",
+            "away_team": "Utah State Aggies",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 0.412,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "VCU Rams",
+            "away_team": "Washington Huskies",
+            "commence_time": "2026-11-26T03:00:00Z",
+            "name_similarity": 0.396,
+            "tipoff_difference_minutes": 240
+          },
+          {
+            "home_team": "Creighton Bluejays",
+            "away_team": "TCU Horned Frogs",
+            "commence_time": "2026-11-26T23:00:00Z",
+            "name_similarity": 0.391,
+            "tipoff_difference_minutes": 1440
+          }
+        ]
+      },
+      {
+        "schedule_home": "Duke Blue Devils",
+        "schedule_away": "UConn Huskies",
+        "schedule_tipoff_utc": "2026-11-26T00:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "UConn Huskies",
+            "away_team": "Duke Blue Devils",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "SIU-Edwardsville Cougars",
+            "away_team": "Northern Illinois Huskies",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 0.452,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Richmond Spiders",
+            "away_team": "Bethune-Cookman Wildcats",
+            "commence_time": "2026-11-25T23:00:00Z",
+            "name_similarity": 0.426,
+            "tipoff_difference_minutes": -60
+          },
+          {
+            "home_team": "Arizona St Sun Devils",
+            "away_team": "LSU Tigers",
+            "commence_time": "2026-11-25T19:00:00Z",
+            "name_similarity": 0.409,
+            "tipoff_difference_minutes": -300
+          },
+          {
+            "home_team": "VCU Rams",
+            "away_team": "Washington Huskies",
+            "commence_time": "2026-11-26T03:00:00Z",
+            "name_similarity": 0.406,
+            "tipoff_difference_minutes": 180
+          }
+        ]
+      },
+      {
+        "schedule_home": "Utah State Aggies",
+        "schedule_away": "SMU Mustangs",
+        "schedule_tipoff_utc": "2026-11-26T00:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "SMU Mustangs",
+            "away_team": "Utah State Aggies",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Xavier Musketeers",
+            "away_team": "Texas A&M Aggies",
+            "commence_time": "2026-11-25T19:30:00Z",
+            "name_similarity": 0.545,
+            "tipoff_difference_minutes": -270
+          },
+          {
+            "home_team": "USC Trojans",
+            "away_team": "South Carolina Gamecocks",
+            "commence_time": "2026-11-25T21:30:00Z",
+            "name_similarity": 0.492,
+            "tipoff_difference_minutes": -150
+          },
+          {
+            "home_team": "UC Davis Aggies",
+            "away_team": "Omaha Mavericks",
+            "commence_time": "2026-11-26T01:00:00Z",
+            "name_similarity": 0.48,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "Texas State Bobcats",
+            "away_team": "Alcorn St Braves",
+            "commence_time": "2026-11-25T22:00:00Z",
+            "name_similarity": 0.431,
+            "tipoff_difference_minutes": -120
+          }
+        ]
+      },
+      {
+        "schedule_home": "NC State Wolfpack",
+        "schedule_away": "Norfolk State Spartans",
+        "schedule_tipoff_utc": "2026-11-26T00:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "NC State Wolfpack",
+            "away_team": "Norfolk St Spartans",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "USC Trojans",
+            "away_team": "South Carolina Gamecocks",
+            "commence_time": "2026-11-25T21:30:00Z",
+            "name_similarity": 0.428,
+            "tipoff_difference_minutes": -150
+          },
+          {
+            "home_team": "George Mason Patriots",
+            "away_team": "Longwood Lancers",
+            "commence_time": "2026-11-26T00:00:00Z",
+            "name_similarity": 0.417,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Weber State Wildcats",
+            "away_team": "CSU Northridge Matadors",
+            "commence_time": "2026-11-25T23:00:00Z",
+            "name_similarity": 0.396,
+            "tipoff_difference_minutes": -60
+          },
+          {
+            "home_team": "Florida Int'l Golden Panthers",
+            "away_team": "Arkansas St Red Wolves",
+            "commence_time": "2026-11-25T20:30:00Z",
+            "name_similarity": 0.384,
+            "tipoff_difference_minutes": -210
+          }
+        ]
+      },
+      {
+        "schedule_home": "Mississippi State Bulldogs",
+        "schedule_away": "Wake Forest Demon Deacons",
+        "schedule_tipoff_utc": "2026-11-26T00:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Mississippi St Bulldogs",
+            "away_team": "Wake Forest Demon Deacons",
+            "commence_time": "2026-11-26T00:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Wright St Raiders",
+            "away_team": "Yale Bulldogs",
+            "commence_time": "2026-11-25T17:30:00Z",
+            "name_similarity": 0.432,
+            "tipoff_difference_minutes": -420
+          },
+          {
+            "home_team": "Northwestern St Demons",
+            "away_team": "West Florida Argonauts",
+            "commence_time": "2026-11-25T23:00:00Z",
+            "name_similarity": 0.408,
+            "tipoff_difference_minutes": -90
+          },
+          {
+            "home_team": "Penn State Nittany Lions",
+            "away_team": "Memphis Tigers",
+            "commence_time": "2026-11-25T22:00:00Z",
+            "name_similarity": 0.406,
+            "tipoff_difference_minutes": -150
+          },
+          {
+            "home_team": "South Dakota Coyotes",
+            "away_team": "Arkansas-Pine Bluff Golden Lions",
+            "commence_time": "2026-11-25T19:00:00Z",
+            "name_similarity": 0.404,
+            "tipoff_difference_minutes": -330
+          }
+        ]
+      },
+      {
+        "schedule_home": "Saint Louis Billikens",
+        "schedule_away": "Stanford Cardinal",
+        "schedule_tipoff_utc": "2026-11-26T04:59:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Saint Louis Billikens",
+            "away_team": "Stanford Cardinal",
+            "commence_time": "2026-11-26T04:59:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "North Dakota Fighting Hawks",
+            "away_team": "SE Louisiana Lions",
+            "commence_time": "2026-11-25T20:00:00Z",
+            "name_similarity": 0.514,
+            "tipoff_difference_minutes": -539
+          },
+          {
+            "home_team": "Hawai'i Rainbow Warriors",
+            "away_team": "Incarnate Word Cardinals",
+            "commence_time": "2026-11-26T04:59:00Z",
+            "name_similarity": 0.466,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Louisville Cardinals",
+            "away_team": "St. John's Red Storm",
+            "commence_time": "2026-11-27T02:00:00Z",
+            "name_similarity": 0.451,
+            "tipoff_difference_minutes": 1261
+          },
+          {
+            "home_team": "Northwestern St Demons",
+            "away_team": "West Florida Argonauts",
+            "commence_time": "2026-11-25T23:00:00Z",
+            "name_similarity": 0.406,
+            "tipoff_difference_minutes": -359
+          }
+        ]
+      },
+      {
+        "schedule_home": "Colorado State Rams",
+        "schedule_away": "Clemson Tigers",
+        "schedule_tipoff_utc": "2026-11-26T05:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Colorado St Rams",
+            "away_team": "Clemson Tigers",
+            "commence_time": "2026-11-26T05:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Oklahoma St Cowboys",
+            "away_team": "Jackson St Tigers",
+            "commence_time": "2026-11-25T20:00:00Z",
+            "name_similarity": 0.583,
+            "tipoff_difference_minutes": -570
+          },
+          {
+            "home_team": "Liberty Flames",
+            "away_team": "Princeton Tigers",
+            "commence_time": "2026-11-25T21:00:00Z",
+            "name_similarity": 0.579,
+            "tipoff_difference_minutes": -510
+          },
+          {
+            "home_team": "Detroit Mercy Titans",
+            "away_team": "N Colorado Bears",
+            "commence_time": "2026-11-25T17:30:00Z",
+            "name_similarity": 0.551,
+            "tipoff_difference_minutes": -720
+          },
+          {
+            "home_team": "Arizona St Sun Devils",
+            "away_team": "LSU Tigers",
+            "commence_time": "2026-11-25T19:00:00Z",
+            "name_similarity": 0.52,
+            "tipoff_difference_minutes": -630
+          }
+        ]
+      }
+    ]
+  },
+  "matched_events": 7,
+  "target_date_eastern": "2026-11-25",
+  "snapshot_date_eastern": "2026-11-25",
+  "daily_credit_cap": 24,
+  "monthly_reserve_credits": 50,
+  "note": "Single pregame snapshot; games with no available player props may be missing."
+}
