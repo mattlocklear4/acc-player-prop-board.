@@ -1,6 +1,6 @@
 {
   "date_eastern": "2026-11-26",
-  "generated_at_utc": "2026-11-26T16:25:07.607210+00:00",
+  "generated_at_utc": "2026-11-26T16:37:12.054866+00:00",
   "schedule_status": "FALLBACK_ESPN_PUBLIC",
   "kenpom_source": {
     "source": "supabase_snapshot",
@@ -196,7 +196,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Andrija Bukumirovic",
@@ -418,7 +419,12 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Latest appearance materially above projected minutes",
+                "Recent return after a long gap; verify availability",
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Armoni Zeigler",
@@ -712,7 +718,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Brandon Benjamin",
@@ -1006,7 +1013,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Latest appearance materially above projected minutes"
+              ]
             },
             {
               "Player": "Colby Duggan",
@@ -1300,7 +1310,11 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Latest appearance materially above projected minutes",
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Ernest Shelton",
@@ -1594,7 +1608,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "JB Frankel",
@@ -1888,7 +1903,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jack Bailey",
@@ -2062,7 +2078,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jacob Furphy",
@@ -2284,7 +2301,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Jordan Ghee",
@@ -2458,7 +2478,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Luke Hunger",
@@ -2752,7 +2773,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Money Williams",
@@ -2974,7 +2996,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Regular starter with nonappearances; verify reason"
+              ]
             },
             {
               "Player": "Will Eggemeier",
@@ -3148,7 +3173,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Zak Smrekar",
@@ -3442,7 +3468,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             }
           ],
           "projected_team_minutes": 200.0
@@ -3777,8 +3804,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 29.2,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 31.0,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 9.495657670532625,
+                  "KenPomPoints": 9.405554871423183,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 3.995278403781674,
+                  "KenPomRebounds": 4.020353372843065,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 5.178574176881218,
+                  "KenPomAssists": 5.164424153716893,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.33604957950860215,
+                  "KenPomThrees": 0.3381586772879448,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Brent Bland",
@@ -4094,8 +4148,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 12.9,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 13.7,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 5.806071154828819,
+                  "KenPomPoints": 5.75097826068394,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 1.9696889371486968,
+                  "KenPomRebounds": 1.9820510016077888,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.5030307869187531,
+                  "KenPomAssists": 0.5016562971375609,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 1.5090923607562594,
+                  "KenPomThrees": 1.5185636517233487,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Caleb Gaskins",
@@ -4411,8 +4492,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 24.3,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 25.8,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 11.206273097999237,
+                  "KenPomPoints": 11.099938538693465,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 5.683264304829872,
+                  "KenPomRebounds": 5.718933327663532,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 1.7380368293615394,
+                  "KenPomAssists": 1.7332877883019928,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 1.5893940359373007,
+                  "KenPomThrees": 1.599369312313476,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Christopher Birden Jr.",
@@ -4632,8 +4740,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 1.8,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 1.9,
+                  "ProductionGamesUsed": 3,
+                  "BaselinePoints": 0.0,
+                  "KenPomPoints": 0.0,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 0.3,
+                  "KenPomRebounds": 0.3018828451882845,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.0,
+                  "KenPomAssists": 0.0,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.0,
+                  "KenPomThrees": 0.0,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Dante Allen",
@@ -4949,8 +5084,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 20.7,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 22.0,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 7.9716155660377375,
+                  "KenPomPoints": 7.8959741622671125,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 4.636344339622641,
+                  "KenPomRebounds": 4.665442735059603,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 3.4556957547169813,
+                  "KenPomAssists": 3.446253353525471,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.2815330188679245,
+                  "KenPomThrees": 0.28329996250098677,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "DeSean Goode",
@@ -5242,8 +5404,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 5.2,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 5.5,
+                  "ProductionGamesUsed": 6,
+                  "BaselinePoints": 0.594954954954955,
+                  "KenPomPoints": 0.5893095211529521,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 1.444054054054054,
+                  "KenPomRebounds": 1.4531171548117154,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.2974774774774775,
+                  "KenPomAssists": 0.29666464501560735,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.0,
+                  "KenPomThrees": 0.0,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Egor Ryzhov",
@@ -5535,8 +5724,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 5.5,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 5.9,
+                  "ProductionGamesUsed": 6,
+                  "BaselinePoints": 3.3169884169884174,
+                  "KenPomPoints": 3.285514036660689,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 1.5077220077220077,
+                  "KenPomRebounds": 1.5171846981470412,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.15077220077220077,
+                  "KenPomAssists": 0.15036022827541057,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.0,
+                  "KenPomThrees": 0.0,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Malik Reneau",
@@ -5804,8 +6020,55 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 29.0,
+                  "AvailabilityAdjustment": {
+                    "date": "2026-11-26",
+                    "game_id": "espn_event_401920537",
+                    "team": "Miami",
+                    "athlete_id": "7836",
+                    "player": "Malik Reneau",
+                    "status": "returning",
+                    "minutes": 29,
+                    "exclude_dates": [
+                      "2026-11-13"
+                    ],
+                    "injury_absence_dates": [
+                      "2026-11-17",
+                      "2026-11-20"
+                    ],
+                    "reason": "Provisional return-to-play scenario based on 29 minutes in his November 24 appearance; November 13 eight-minute appearance excluded as suspected injury-shortened. Availability and restriction not independently verified.",
+                    "recorded_at_utc": "2026-11-26T16:26:00Z"
+                  },
+                  "OriginalMinutes": 18.4,
+                  "ProductionGamesUsed": 4,
+                  "BaselinePoints": 13.720430107526882,
+                  "KenPomPoints": 13.590239108591652,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 6.548387096774193,
+                  "KenPomRebounds": 6.5894857605614785,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 1.5591397849462365,
+                  "KenPomAssists": 1.5548795651792005,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.9354838709677419,
+                  "KenPomThrees": 0.9413551086516397,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Latest appearance materially above projected minutes",
+                "Recent return after a long gap; verify availability",
+                "Regular starter with nonappearances; verify reason",
+                "Volatile recent playing time",
+                "Manual availability scenario: Provisional return-to-play scenario based on 29 minutes in his November 24 appearance; November 13 eight-minute appearance excluded as suspected injury-shortened. Availability and restriction not independently verified."
+              ]
             },
             {
               "Player": "Nick Dorn",
@@ -6121,8 +6384,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 14.6,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 15.5,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 7.952816205533596,
+                  "KenPomPoints": 7.8773531859319945,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 1.652598814229249,
+                  "KenPomRebounds": 1.6629707733143697,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.4100839920948616,
+                  "KenPomAssists": 0.40896347169884867,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 2.2408547430830037,
+                  "KenPomThrees": 2.2549186849851983,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Quin Berger",
@@ -6318,8 +6608,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 2.7,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 2.9,
+                  "ProductionGamesUsed": 2,
+                  "BaselinePoints": 0.0,
+                  "KenPomPoints": 0.0,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 0.0,
+                  "KenPomRebounds": 0.0,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.0,
+                  "KenPomAssists": 0.0,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.0,
+                  "KenPomThrees": 0.0,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Robert Miller III",
@@ -6635,8 +6952,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 12.8,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 13.6,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 6.193425742574258,
+                  "KenPomPoints": 6.134657301793777,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 2.9444224422442247,
+                  "KenPomRebounds": 2.9629020810030795,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.1377161716171617,
+                  "KenPomAssists": 0.13733987363398623,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.0,
+                  "KenPomThrees": 0.0,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Shelton Henderson",
@@ -6952,8 +7296,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 23.1,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 24.5,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 12.756531531531532,
+                  "KenPomPoints": 12.63548681427243,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 6.4240990990991005,
+                  "KenPomRebounds": 6.464417712691772,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 2.2815090090090093,
+                  "KenPomAssists": 2.2752749754267123,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.139481981981982,
+                  "KenPomThrees": 0.1403573919107392,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Somto Cyril",
@@ -7269,8 +7640,35 @@
                     }
                   },
                   "ShotStatus": "modeled"
+                },
+                "v7-manual-availability": {
+                  "ModelVersion": "v7-manual-availability",
+                  "Minutes": 18.2,
+                  "AvailabilityAdjustment": {
+                    "status": "redistributed",
+                    "reason": "Team minutes redistributed around manual availability assumptions"
+                  },
+                  "OriginalMinutes": 19.3,
+                  "ProductionGamesUsed": 7,
+                  "BaselinePoints": 7.834936350777935,
+                  "KenPomPoints": 7.760591874540112,
+                  "VegasPoints": null,
+                  "CombinedPoints": null,
+                  "BaselineRebounds": 5.248727015558698,
+                  "KenPomRebounds": 5.281668816911576,
+                  "VegasRebounds": null,
+                  "CombinedRebounds": null,
+                  "BaselineAssists": 0.18571428571428567,
+                  "KenPomAssists": 0.18520683687701017,
+                  "VegasAssists": null,
+                  "CombinedAssists": null,
+                  "BaselineThrees": 0.0,
+                  "KenPomThrees": 0.0,
+                  "VegasThrees": null,
+                  "CombinedThrees": null
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             }
           ],
           "projected_team_minutes": 200.0
@@ -7631,7 +8029,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Cameron Lomax",
@@ -7973,7 +8372,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "David Terrell Jr.",
@@ -8315,7 +8715,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Gehrig Normand",
@@ -8561,7 +8964,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jacob Patrick",
@@ -8855,7 +9259,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jaden Toombs",
@@ -9197,7 +9602,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jakub Szumert",
@@ -9539,7 +9945,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jaylin Stewart",
@@ -9785,7 +10192,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jermaine O'Neal Jr.",
@@ -10103,7 +10511,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Johan Munch",
@@ -10445,7 +10854,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Nic Codie",
@@ -10763,7 +11173,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Niccolo Kalischer-Stork",
@@ -10985,7 +11396,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Nigel Walls",
@@ -11231,7 +11643,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Oziyah Sellers",
@@ -11573,7 +11986,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Rowan Brumbaugh",
@@ -11867,7 +12281,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Regular starter with nonappearances; verify reason"
+              ]
             }
           ],
           "projected_team_minutes": 200.0
@@ -12204,7 +12621,11 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Latest appearance materially above projected minutes",
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Akir Souare",
@@ -12522,7 +12943,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Armani Mighty",
@@ -12840,7 +13262,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Baye Ndongo",
@@ -13158,7 +13581,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Benjamin Mayhew",
@@ -13332,7 +13756,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Chase Foster",
@@ -13650,7 +14075,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Colin Hawkins",
@@ -13824,7 +14250,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Dominique Diomande",
@@ -14022,7 +14449,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jalil Bethea",
@@ -14340,7 +14768,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Jermal Jones",
@@ -14538,7 +14969,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Jonathan Powell",
@@ -14856,7 +15288,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Kraig Gilbert",
@@ -15054,7 +15487,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Macari Moore",
@@ -15276,7 +15710,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Naithan George",
@@ -15594,7 +16029,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Timofei Rudovskii",
@@ -15768,7 +16204,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             }
           ],
           "projected_team_minutes": 200.0
@@ -16055,7 +16492,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Alvaro Folgueiras",
@@ -16323,7 +16761,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Boyuan Zhang",
@@ -16519,7 +16958,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Flory Bidunga",
@@ -16787,7 +17227,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Isaac Ellis",
@@ -17031,7 +17472,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Volatile recent playing time"
+              ]
             },
             {
               "Player": "Jackson Shelstad",
@@ -17299,7 +17743,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Karter Knox",
@@ -17567,7 +18012,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Latest appearance materially above projected minutes"
+              ]
             },
             {
               "Player": "LJ Wells",
@@ -17835,7 +18283,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Obinna Ekezie Jr.",
@@ -18103,7 +18552,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             },
             {
               "Player": "Seth Trimble",
@@ -18347,7 +18797,10 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": [
+                "Recent return after a long gap; verify availability"
+              ]
             },
             {
               "Player": "Will Hanke",
@@ -18519,7 +18972,8 @@
                   },
                   "ShotStatus": "modeled"
                 }
-              }
+              },
+              "MinutesRiskFlags": []
             }
           ],
           "projected_team_minutes": 200.0
