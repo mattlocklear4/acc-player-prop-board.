@@ -36,7 +36,7 @@ def budget(base,observations,remaining):
     spent=max(spent,morning+initial-remaining)
     return max(0,min(CAP-spent,remaining-RESERVE))
 
-def candidates(base,board,events,observations,now):
+def candidates(base,board,events,observations,now,target_game=None):
     """Use verified IDs, teams and times; only future games on today's board."""
     games={str(g.get('game_id')):g for g in board.get('games') or []}
     provider={str(e.get('id')):e for e in events}
@@ -45,12 +45,13 @@ def candidates(base,board,events,observations,now):
     for e in base.get('events') or []:
         eid=str(e.get('event_id') or '');gid=str(e.get('schedule_game_id') or '')
         g=games.get(gid);p=provider.get(eid)
+        if target_game and gid!=target_game:continue
         if not g or not p or not any(t.get('players') for t in g.get('teams') or []):continue
         tip=utc(g.get('tipoff_utc'));ptip=utc(p.get('commence_time'))
         if not tip or not ptip or tip!=ptip or p.get('home_team')!=e.get('home_team') or p.get('away_team')!=e.get('away_team'):continue
         mins=(tip-now).total_seconds()/60
-        if not 10<=mins<=180:continue
-        phase='close' if mins<=55 else 'midday' if mins>=90 else None
+        if mins<10 or (not target_game and mins>180):continue
+        phase='close' if mins<=55 else 'manual' if target_game else 'midday' if mins>=90 else None
         if phase and (eid,phase) not in seen:
             out.append({'event':e,'tip':tip,'minutes':mins,'phase':phase})
     # Most imminent first, with already populated markets preferred on ties.
@@ -90,13 +91,21 @@ def main():
     observations=manifest['observations']
     key=os.environ.get('ODDS_API_KEY','').strip()
     if not key:raise RuntimeError('Odds secret missing')
+    target_game=None
+    if os.environ.get('TARGETED_REQUEST','').lower()=='true':
+        request=json.loads((ROOT/'research/odds_refresh_request.json').read_text())
+        if request.get('date_eastern')!=today:print('Expired request.');return
+        target_game=request.get('schedule_game_id') or None
+        if target_game and not isinstance(target_game,str):raise RuntimeError('Invalid requested game ID')
     # Cheap local check before even making a free discovery request.
-    if not any(utc(g.get('tipoff_utc')) and 10<=(utc(g['tipoff_utc'])-now).total_seconds()/60<=180 for g in board.get('games') or []):
+    if not any(utc(g.get('tipoff_utc')) and (10<=(utc(g['tipoff_utc'])-now).total_seconds()/60) and ((str(g.get('game_id'))==target_game) if target_game else ((utc(g['tipoff_utc'])-now).total_seconds()/60<=180)) for g in board.get('games') or []):
         print('No imminent projected games.');return
     api_events,headers=get(API+'/events',{'apiKey':key})
     remaining=integer(headers.get('x-requests-remaining'))
     available=budget(base,observations,remaining)
-    targets=choose(candidates(base,board,api_events,observations,now),available,base,observations,now,board)
+    due=candidates(base,board,api_events,observations,now,target_game)
+    # Explicitly requested game may spend a remaining slot outside the automatic windows.
+    targets=due[:1] if target_game and available>=COST else [] if target_game else choose(due,available,base,observations,now,board)
     print('Conservative remaining daily budget:',available,'selected events:',len(targets))
     for target in targets:
         now=dt.datetime.now(dt.timezone.utc)
