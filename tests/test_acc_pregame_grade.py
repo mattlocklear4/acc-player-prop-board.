@@ -58,3 +58,33 @@ class GameIdentityTests(unittest.TestCase):
         self.assertEqual(issues,[])
         for g in ({**b['game'],'home_team':'Other school'},{**b['game'],'tipoff_utc':date+'T21:30:00Z'}):
             self.assertEqual(canonical_record({**b,'game':g},load_aliases())['game']['game_id'],'378713')
+
+
+class CommonCohortTests(unittest.TestCase):
+    def test_same_sample_duplicate_books_and_missing_models(self):
+        from acc_model_comparison import compare, COMMON_VERSIONS
+        date='2026-11-25';gid='espn_event_1';stamp=date+'T17:00:00Z';odds=date+'T16:00:00Z'
+        versions=COMMON_VERSIONS[1:]
+        def player(name,complete):
+            return {'Player':name,'KenPomPoints':10,'ExperimentalModels':{v:{'KenPomPoints':12} for v in (versions if complete else versions[:-1])}}
+        def quote(name,book,side,prob):
+            return {'game_id':gid,'team':'Duke','player':name,'market':'Points','bookmaker':book,'side':side,'line':11.5,'american_odds':-110,'win_probability':prob,'expected_roi_percent':10,'projection_utc':stamp,'odds_snapshot_utc':odds,'quote_updated_utc':odds}
+        base=[quote('Test Player',book,side,.6 if side=='over' else .4) for book in ('fanduel','draftkings') for side in ('over','under')]
+        base.append(quote('Missing Model','fanduel','over',.6))
+        exp={v:[{**q,'win_probability':.7 if q['side']=='over' else .3} for q in base if v!=versions[-1] or q['player']!='Missing Model'] for v in versions}
+        r={'date_eastern':date,'captured_at_utc':stamp,'projection_utc':stamp,'odds_snapshot_utc':odds,'game':{'game_id':gid,'tipoff_utc':date+'T20:00:00Z','teams':[{'team':'Duke','players':[player('Test Player',True),player('Missing Model',False)]}]},'quotes':base,'experimental_quotes':exp}
+        logs={'espn_1':[{'game_date':date,'source':'ESPN_UNOFFICIAL','team':'Duke Blue Devils','player':name,'points':'13'} for name in ('Test Player','Missing Model')]}
+        c=compare([r],logs,'2026-11-26')['common_cohort']
+        self.assertEqual(c['paired_players'],1)
+        self.assertEqual(c['paired_settled_quote_sides'],4)
+        self.assertEqual(c['unique_outcomes'],1)
+        self.assertEqual(c['projection_games'],1)
+        self.assertEqual(c['models']['v4']['projection_metrics']['Points']['mae'],3)
+        self.assertEqual(c['models'][versions[-1]]['projection_metrics']['Points']['mae'],1)
+        self.assertEqual(c['models']['v4']['calibration']['n'],1)
+        self.assertEqual(c['models']['v4']['calibration']['brier'],.16)
+        self.assertEqual(c['models'][versions[-1]]['calibration']['brier'],.09)
+        self.assertEqual(c['models']['v4']['positive_roi']['settled'],4)
+        self.assertEqual(sum(x['n'] for x in c['models']['v4']['reliability']),1)
+        self.assertEqual(compare([r],logs,date)['common_cohort']['paired_players'],0)
+        self.assertEqual(compare([],{},'2026-11-26')['common_cohort']['unique_outcomes'],0)
