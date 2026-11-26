@@ -33,6 +33,420 @@
       },
       "error_type": "HTTPError",
       "http_status": 404
+    },
+    {
+      "event_id": "958c447826e0cf914c566770b0f9bdab",
+      "schedule_game_id": "espn_event_401909506",
+      "home_team": "Pittsburgh Panthers",
+      "away_team": "DePaul Blue Demons",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "phase": "manual_repair",
+      "generated_at_utc": "2026-11-26T20:06:41.254443+00:00",
+      "status": "ODDS_RETRIEVED",
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Layden Blocker",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 100,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Layden Blocker",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -130,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -175,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 5.5,
+          "odds": 134,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 120,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -156,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Layden Blocker",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -110,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Layden Blocker",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -118,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -123,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -104,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jonathan Powell",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -120,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jonathan Powell",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -108,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kruz McClure",
+          "side": "Over",
+          "line": 9.5,
+          "odds": 130,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kruz McClure",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -169,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ade Popoola",
+          "side": "Over",
+          "line": 11.5,
+          "odds": 130,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ade Popoola",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -169,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Baye Ndongo",
+          "side": "Over",
+          "line": 17.5,
+          "odds": 115,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Baye Ndongo",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -149,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -123,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -104,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Baye Ndongo",
+          "side": "Over",
+          "line": 9.5,
+          "odds": 126,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Baye Ndongo",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -164,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 126,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -164,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ade Popoola",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 136,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ade Popoola",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -179,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -123,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -104,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jonathan Powell",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 152,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jonathan Powell",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -200,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kruz McClure",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 167,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kruz McClure",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -222,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jonathan Powell",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 141,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jonathan Powell",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -185,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 115,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -149,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Layden Blocker",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 130,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Layden Blocker",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -169,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ade Popoola",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -115,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ade Popoola",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -112,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -123,
+          "last_update": "2026-11-26T20:06:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -104,
+          "last_update": "2026-11-26T20:06:11Z"
+        }
+      ],
+      "quota": {
+        "charged": 4,
+        "remaining_before": 322,
+        "remaining_after": 318
+      },
+      "coverage": {
+        "quotes": 42,
+        "unique_players": 7,
+        "quotes_by_bookmaker": {
+          "betonlineag": 42
+        },
+        "quotes_by_market": {
+          "player_assists": 6,
+          "player_points": 14,
+          "player_rebounds": 10,
+          "player_threes": 12
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      }
     }
   ]
 }
