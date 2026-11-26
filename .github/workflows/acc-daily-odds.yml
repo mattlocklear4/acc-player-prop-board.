@@ -2,7 +2,7 @@ name: Daily ACC sportsbook snapshot (credit capped)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 15,16 * * *'
+    - cron: '7,37 * * * *'
 permissions:
   contents: write
 concurrency:
@@ -14,57 +14,82 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Gate near 11 AM daily in America/New_York (allow GitHub schedule jitter)
+          ref: main
+      - name: Check Eastern collection window
         id: gate
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
-          import datetime
+          import datetime,os
           from zoneinfo import ZoneInfo
           n=datetime.datetime.now(ZoneInfo('America/New_York'))
-          # GitHub cron can start a few minutes before the intended hour.
-          # The snapshot script refuses a second paid request once today's file exists.
-          in_window=(n.hour==10 and n.minute>=45) or (11<=n.hour<13)
-          print('run='+str(in_window).lower())
+          allowed=n.hour>=11 or os.environ.get('MANUAL','').lower()=='true'
+          print('run='+str(allowed).lower())
           print('date='+n.date().isoformat())
           PY
-      - name: Collect today schedule and one quota-capped odds snapshot
-        if: steps.gate.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'true'
+        with:
+          node-version: '22'
+      - name: Offline collection and archive safety checks
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          python -m unittest discover -s tests -p 'test_acc_intraday_odds.py'
+          node tests/test_acc_pregame_archive.cjs
+      - name: Collect initial odds or eligible intraday refresh
+        if: steps.gate.outputs.run == 'true'
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          TODAY: ${{ steps.gate.outputs.date }}
         run: |
-          python scripts/acc_daily_odds_snapshot.py
-      - name: Commit immutable odds snapshot
-        if: steps.gate.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
+          if [ -f "data/odds_snapshots/$TODAY.json" ]; then
+            python scripts/acc_intraday_odds.py
+          else
+            python scripts/acc_daily_odds_snapshot.py
+          fi
+      - name: Immediately capture new pregame quotes using saved projections
+        if: steps.gate.outputs.run == 'true'
         run: |
+          if [ -n "$(git status --porcelain -- data/odds_snapshots/)" ]; then
+            node scripts/acc_capture_pregame.cjs
+          fi
+      - name: Publish immutable morning odds, intraday observations and pre-tip captures
+        if: always() && steps.gate.outputs.run == 'true'
+        env:
+          TODAY: ${{ steps.gate.outputs.date }}
+        run: |
+          if [ -z "$(git status --porcelain -- data/odds_snapshots/ data/archives/pregame/)" ]; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if [ -d data/odds_snapshots ]; then
-            cp -r data/odds_snapshots /tmp/acc-odds-snapshots
-            for attempt in 1 2 3; do
-              git fetch origin main
-              git reset --hard HEAD
-              git checkout -B daily-odds-publish origin/main
-              mkdir -p data/odds_snapshots
-              # Preserve all previously committed snapshots without overwriting them.
-              for source in /tmp/acc-odds-snapshots/*.json; do
-                [ -f "$source" ] || continue
-                target="data/odds_snapshots/$(basename "$source")"
-                if [ ! -e "$target" ]; then cp "$source" "$target"; fi
-              done
-              git add data/odds_snapshots/
-              if git diff --cached --quiet; then break; fi
-              git commit -m 'Archive daily ACC sportsbook lines'
-              if git push origin HEAD:main; then break; fi
-              if [ "$attempt" -eq 3 ]; then exit 1; fi
-              sleep 3
-            done
-          fi
+          tmp=$(mktemp -d)
+          mkdir -p "$tmp/archives" "$tmp/intraday"
+          if [ -f "data/odds_snapshots/$TODAY.json" ]; then cp "data/odds_snapshots/$TODAY.json" "$tmp/"; fi
+          if [ -f "data/odds_snapshots/intraday/$TODAY.json" ]; then cp "data/odds_snapshots/intraday/$TODAY.json" "$tmp/intraday/"; fi
+          if [ -d "data/archives/pregame/$TODAY" ]; then cp -r "data/archives/pregame/$TODAY" "$tmp/archives/"; fi
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard HEAD
+            git checkout -B daily-odds-publish origin/main
+            mkdir -p data/odds_snapshots/intraday data/archives/pregame
+            if [ -f "$tmp/$TODAY.json" ] && [ ! -e "data/odds_snapshots/$TODAY.json" ]; then cp "$tmp/$TODAY.json" "data/odds_snapshots/$TODAY.json"; fi
+            if [ -f "$tmp/intraday/$TODAY.json" ]; then cp "$tmp/intraday/$TODAY.json" "data/odds_snapshots/intraday/$TODAY.json"; fi
+            if [ -d "$tmp/archives/$TODAY" ]; then cp -an "$tmp/archives/$TODAY" data/archives/pregame/; fi
+            git add data/odds_snapshots/ data/archives/pregame/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Archive ACC intraday sportsbook observations and exact pregame quotes'
+            if git push origin HEAD:main; then exit 0; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 3
+          done
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && steps.gate.outputs.run == 'true'
         with:
           name: acc-daily-odds
           path: |
