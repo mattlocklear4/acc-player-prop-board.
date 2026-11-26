@@ -1,0 +1,2576 @@
+{
+  "mode": "READ_ONLY",
+  "generated_at_utc": "2026-11-26T15:54:38.934691+00:00",
+  "bookmakers": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "paid_requests_enabled": true,
+  "events": [
+    {
+      "event_id": "a0efacdfc613932ff56223ca6412613e",
+      "schedule_game_id": "espn_event_401929282",
+      "home_team": "UCF Knights",
+      "away_team": "Boston College Eagles",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 22,
+        "unique_players": 4,
+        "quotes_by_bookmaker": {
+          "betonlineag": 22
+        },
+        "quotes_by_market": {
+          "player_assists": 4,
+          "player_points": 6,
+          "player_rebounds": 8,
+          "player_threes": 4
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Dior Johnson",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 141,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Dior Johnson",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -185,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Arturo Dean",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 124,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Arturo Dean",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -161,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Isaiah Malone",
+          "side": "Over",
+          "line": 8.5,
+          "odds": 103,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Isaiah Malone",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -133,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Dior Johnson",
+          "side": "Over",
+          "line": 23.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Dior Johnson",
+          "side": "Under",
+          "line": 23.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Arturo Dean",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Arturo Dean",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -112,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "John Bol",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "John Bol",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Isaiah Malone",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 107,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Isaiah Malone",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -139,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Dior Johnson",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 118,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Dior Johnson",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -154,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Arturo Dean",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Arturo Dean",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Dior Johnson",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 117,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Dior Johnson",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -152,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Arturo Dean",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -137,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Arturo Dean",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 106,
+          "last_update": "2026-11-26T15:54:09Z"
+        }
+      ]
+    },
+    {
+      "event_id": "c388303afe97dac3042dcbfd2cd644a5",
+      "schedule_game_id": "espn_event_401920537",
+      "home_team": "Michigan Wolverines",
+      "away_team": "Miami Hurricanes",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 86,
+        "unique_players": 10,
+        "quotes_by_bookmaker": {
+          "betonlineag": 64,
+          "fanduel": 22
+        },
+        "quotes_by_market": {
+          "player_assists": 16,
+          "player_points": 34,
+          "player_rebounds": 24,
+          "player_threes": 12
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Elliot Cadeau",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Elliot Cadeau",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Shelton Henderson",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -135,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Shelton Henderson",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 104,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Trey McKenney",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Trey McKenney",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Roddy Gayle Jr.",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Roddy Gayle Jr.",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "J.P. Estrella",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 141,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "J.P. Estrella",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -185,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Acaden Lewis",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 109,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Acaden Lewis",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -141,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Roddy Gayle Jr.",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -109,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Roddy Gayle Jr.",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -119,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Trey McKenney",
+          "side": "Over",
+          "line": 17.5,
+          "odds": -111,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Trey McKenney",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -116,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Shelton Henderson",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -119,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Shelton Henderson",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -109,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Moustapha Thiam",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Moustapha Thiam",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Caleb Gaskins",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Caleb Gaskins",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Malik Reneau",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 126,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Malik Reneau",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -164,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "J.P. Estrella",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -103,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "J.P. Estrella",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -125,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Elliot Cadeau",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 110,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Elliot Cadeau",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -143,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Somto Cyril",
+          "side": "Over",
+          "line": 9.5,
+          "odds": 146,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Somto Cyril",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -192,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Acaden Lewis",
+          "side": "Over",
+          "line": 13.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Acaden Lewis",
+          "side": "Under",
+          "line": 13.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Elliot Cadeau",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Elliot Cadeau",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "J.P. Estrella",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "J.P. Estrella",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Malik Reneau",
+          "side": "Over",
+          "line": 7.5,
+          "odds": 139,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Malik Reneau",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -182,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Trey McKenney",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 128,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Trey McKenney",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -167,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Roddy Gayle Jr.",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 106,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Roddy Gayle Jr.",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -137,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Shelton Henderson",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Shelton Henderson",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Moustapha Thiam",
+          "side": "Over",
+          "line": 8.5,
+          "odds": 122,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Moustapha Thiam",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -159,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Acaden Lewis",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 130,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Acaden Lewis",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -169,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Caleb Gaskins",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Caleb Gaskins",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Somto Cyril",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -156,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Somto Cyril",
+          "side": "Under",
+          "line": 4.5,
+          "odds": 121,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Roddy Gayle Jr.",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -120,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Roddy Gayle Jr.",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -108,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "J.P. Estrella",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -111,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "J.P. Estrella",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -116,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Elliot Cadeau",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Elliot Cadeau",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Caleb Gaskins",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Caleb Gaskins",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -112,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Moustapha Thiam",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -125,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Moustapha Thiam",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -103,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Trey McKenney",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 146,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Trey McKenney",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -192,
+          "last_update": "2026-11-26T15:54:11Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Elliot Cadeau",
+          "side": "Over",
+          "line": 6.5,
+          "odds": 105,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Elliot Cadeau",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -140,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Acaden Lewis",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 115,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_assists",
+          "player": "Acaden Lewis",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -155,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Malik Reneau",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -125,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Malik Reneau",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Roddy Gayle Jr.",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -108,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Roddy Gayle Jr.",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -120,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Acaden Lewis",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Acaden Lewis",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Trey McKenney",
+          "side": "Over",
+          "line": 17.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Trey McKenney",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Elliot Cadeau",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Elliot Cadeau",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Shelton Henderson",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Shelton Henderson",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -114,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "J.P. Estrella",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "J.P. Estrella",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -125,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "J.P. Estrella",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "J.P. Estrella",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Malik Reneau",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -145,
+          "last_update": "2026-11-26T15:54:09Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Malik Reneau",
+          "side": "Under",
+          "line": 6.5,
+          "odds": 110,
+          "last_update": "2026-11-26T15:54:09Z"
+        }
+      ]
+    },
+    {
+      "event_id": "8cdf0f9df5b4480c117a9455b60b067b",
+      "schedule_game_id": "espn_event_401918972",
+      "home_team": "LSU Tigers",
+      "away_team": "SMU Mustangs",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": []
+    },
+    {
+      "event_id": "958c447826e0cf914c566770b0f9bdab",
+      "schedule_game_id": "espn_event_401909506",
+      "home_team": "Pittsburgh Panthers",
+      "away_team": "DePaul Blue Demons",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 42,
+        "unique_players": 7,
+        "quotes_by_bookmaker": {
+          "betonlineag": 42
+        },
+        "quotes_by_market": {
+          "player_assists": 6,
+          "player_points": 14,
+          "player_rebounds": 10,
+          "player_threes": 12
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Layden Blocker",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Layden Blocker",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -112,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 120,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -156,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Layden Blocker",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Layden Blocker",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -112,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Baye Ndongo",
+          "side": "Over",
+          "line": 16.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Baye Ndongo",
+          "side": "Under",
+          "line": 16.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jonathan Powell",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jonathan Powell",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -112,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kruz McClure",
+          "side": "Over",
+          "line": 9.5,
+          "odds": 126,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kruz McClure",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -164,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ade Popoola",
+          "side": "Over",
+          "line": 11.5,
+          "odds": 126,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ade Popoola",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -164,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 136,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -179,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Baye Ndongo",
+          "side": "Over",
+          "line": 9.5,
+          "odds": 126,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Baye Ndongo",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -164,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 126,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -164,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ade Popoola",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 130,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ade Popoola",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -169,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jonathan Powell",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 152,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jonathan Powell",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -200,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kruz McClure",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 171,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kruz McClure",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -227,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jonathan Powell",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 141,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jonathan Powell",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -185,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Naithan George",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 146,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Naithan George",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -192,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Layden Blocker",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 126,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Layden Blocker",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -164,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ade Popoola",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -120,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ade Popoola",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -108,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Koree Cotton",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:10Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Koree Cotton",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:10Z"
+        }
+      ]
+    },
+    {
+      "event_id": "3cb03cfb4f93a60fd1ce506ee8555130",
+      "schedule_game_id": "espn_event_401920530",
+      "home_team": "Louisville Cardinals",
+      "away_team": "St. John's Red Storm",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 82,
+        "unique_players": 10,
+        "quotes_by_bookmaker": {
+          "betonlineag": 68,
+          "fanduel": 14
+        },
+        "quotes_by_market": {
+          "player_assists": 16,
+          "player_points": 28,
+          "player_rebounds": 24,
+          "player_threes": 14
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Ruben Prey",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -149,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Ruben Prey",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 115,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Ian Jackson",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -135,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Ian Jackson",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 104,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Adrian Wooley",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 120,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Adrian Wooley",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -156,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Alvaro Folgueiras",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -154,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Alvaro Folgueiras",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 118,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Tounde Yessoufou",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 146,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Tounde Yessoufou",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -192,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Quinn Ellis",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Quinn Ellis",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Keyshawn Hall",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -145,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Keyshawn Hall",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 111,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jackson Shelstad",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -154,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jackson Shelstad",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 118,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ruben Prey",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ruben Prey",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jackson Shelstad",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -135,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jackson Shelstad",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 104,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ian Jackson",
+          "side": "Over",
+          "line": 17.5,
+          "odds": 110,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Ian Jackson",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -143,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Adrian Wooley",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 136,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Adrian Wooley",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -179,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Flory Bidunga",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Flory Bidunga",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Tounde Yessoufou",
+          "side": "Over",
+          "line": 14.5,
+          "odds": 107,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Tounde Yessoufou",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -139,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Alvaro Folgueiras",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Alvaro Folgueiras",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Keyshawn Hall",
+          "side": "Over",
+          "line": 17.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Keyshawn Hall",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Seth Trimble",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -111,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Seth Trimble",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -116,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Quinn Ellis",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Quinn Ellis",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ruben Prey",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -122,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ruben Prey",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -106,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Flory Bidunga",
+          "side": "Over",
+          "line": 8.5,
+          "odds": -116,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Flory Bidunga",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -111,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jackson Shelstad",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jackson Shelstad",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Adrian Wooley",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 136,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Adrian Wooley",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -179,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ian Jackson",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Ian Jackson",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Tounde Yessoufou",
+          "side": "Over",
+          "line": 6.5,
+          "odds": 102,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Tounde Yessoufou",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -132,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Alvaro Folgueiras",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Alvaro Folgueiras",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Keyshawn Hall",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -102,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Keyshawn Hall",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -127,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Quinn Ellis",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -110,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Quinn Ellis",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -118,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ian Jackson",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 139,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Ian Jackson",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -182,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Adrian Wooley",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 103,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Adrian Wooley",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -133,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jackson Shelstad",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 103,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jackson Shelstad",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -133,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Tounde Yessoufou",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -120,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Tounde Yessoufou",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -108,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Alvaro Folgueiras",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 134,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Alvaro Folgueiras",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -175,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Quinn Ellis",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -149,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Quinn Ellis",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 115,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Keyshawn Hall",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -123,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Keyshawn Hall",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:54:13Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Seth Trimble",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Seth Trimble",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -115,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Flory Bidunga",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -130,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Flory Bidunga",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 100,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Tounde Yessoufou",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Tounde Yessoufou",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -125,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Keyshawn Hall",
+          "side": "Over",
+          "line": 17.5,
+          "odds": -125,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_points",
+          "player": "Keyshawn Hall",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -105,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Flory Bidunga",
+          "side": "Over",
+          "line": 8.5,
+          "odds": -120,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Flory Bidunga",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -116,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Tounde Yessoufou",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -104,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Tounde Yessoufou",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -136,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Keyshawn Hall",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 104,
+          "last_update": "2026-11-26T15:53:38Z"
+        },
+        {
+          "bookmaker": "fanduel",
+          "market": "player_rebounds",
+          "player": "Keyshawn Hall",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -144,
+          "last_update": "2026-11-26T15:53:38Z"
+        }
+      ]
+    }
+  ],
+  "warnings": [],
+  "quota": {
+    "estimated_max_credits": 20,
+    "requests_sent": 5,
+    "credits_spent_reported": 16,
+    "remaining": 324
+  },
+  "discovered_ncaab_events": 21,
+  "discovery_diagnostic": {
+    "api_event_sample": [
+      {
+        "home_team": "Cincinnati Bearcats",
+        "away_team": "Georgia Bulldogs",
+        "commence_time": "2026-11-26T16:00:00Z"
+      },
+      {
+        "home_team": "UTSA Roadrunners",
+        "away_team": "Army Knights",
+        "commence_time": "2026-11-26T17:00:00Z"
+      },
+      {
+        "home_team": "Purdue Boilermakers",
+        "away_team": "Oklahoma Sooners",
+        "commence_time": "2026-11-26T17:00:00Z"
+      },
+      {
+        "home_team": "San Diego St Aztecs",
+        "away_team": "Maryland Terrapins",
+        "commence_time": "2026-11-26T18:00:00Z"
+      },
+      {
+        "home_team": "UCF Knights",
+        "away_team": "Boston College Eagles",
+        "commence_time": "2026-11-26T18:30:00Z"
+      },
+      {
+        "home_team": "Arizona St Sun Devils",
+        "away_team": "South Carolina Gamecocks",
+        "commence_time": "2026-11-26T19:00:00Z"
+      },
+      {
+        "home_team": "Texas Longhorns",
+        "away_team": "Georgetown Hoyas",
+        "commence_time": "2026-11-26T19:30:00Z"
+      },
+      {
+        "home_team": "Iowa State Cyclones",
+        "away_team": "Tennessee Volunteers",
+        "commence_time": "2026-11-26T20:30:00Z"
+      },
+      {
+        "home_team": "Michigan Wolverines",
+        "away_team": "Miami Hurricanes",
+        "commence_time": "2026-11-26T20:30:00Z"
+      },
+      {
+        "home_team": "Michigan St Spartans",
+        "away_team": "Arkansas Razorbacks",
+        "commence_time": "2026-11-26T21:30:00Z"
+      },
+      {
+        "home_team": "USC Trojans",
+        "away_team": "Utah State Aggies",
+        "commence_time": "2026-11-26T21:30:00Z"
+      },
+      {
+        "home_team": "UCLA Bruins",
+        "away_team": "Saint Mary's Gaels",
+        "commence_time": "2026-11-26T22:00:00Z"
+      },
+      {
+        "home_team": "Creighton Bluejays",
+        "away_team": "TCU Horned Frogs",
+        "commence_time": "2026-11-26T23:00:00Z"
+      },
+      {
+        "home_team": "Pittsburgh Panthers",
+        "away_team": "DePaul Blue Demons",
+        "commence_time": "2026-11-27T00:00:00Z"
+      },
+      {
+        "home_team": "LSU Tigers",
+        "away_team": "SMU Mustangs",
+        "commence_time": "2026-11-27T00:00:00Z"
+      },
+      {
+        "home_team": "UC Davis Aggies",
+        "away_team": "Jacksonville St Gamecocks",
+        "commence_time": "2026-11-27T01:00:00Z"
+      },
+      {
+        "home_team": "Alabama Crimson Tide",
+        "away_team": "Kansas St Wildcats",
+        "commence_time": "2026-11-27T02:00:00Z"
+      },
+      {
+        "home_team": "Louisville Cardinals",
+        "away_team": "St. John's Red Storm",
+        "commence_time": "2026-11-27T02:00:00Z"
+      },
+      {
+        "home_team": "Pacific Tigers",
+        "away_team": "Omaha Mavericks",
+        "commence_time": "2026-11-27T03:30:00Z"
+      },
+      {
+        "home_team": "Gonzaga Bulldogs",
+        "away_team": "Baylor Bears",
+        "commence_time": "2026-11-27T04:30:00Z"
+      },
+      {
+        "home_team": "Oregon Ducks",
+        "away_team": "Texas Tech Red Raiders",
+        "commence_time": "2026-11-27T04:30:00Z"
+      }
+    ],
+    "schedule_comparisons": [
+      {
+        "schedule_home": "UCF Knights",
+        "schedule_away": "Boston College Eagles",
+        "schedule_tipoff_utc": "2026-11-26T18:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "UCF Knights",
+            "away_team": "Boston College Eagles",
+            "commence_time": "2026-11-26T18:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "UTSA Roadrunners",
+            "away_team": "Army Knights",
+            "commence_time": "2026-11-26T17:00:00Z",
+            "name_similarity": 0.519,
+            "tipoff_difference_minutes": -90
+          },
+          {
+            "home_team": "Creighton Bluejays",
+            "away_team": "TCU Horned Frogs",
+            "commence_time": "2026-11-26T23:00:00Z",
+            "name_similarity": 0.453,
+            "tipoff_difference_minutes": 270
+          },
+          {
+            "home_team": "LSU Tigers",
+            "away_team": "SMU Mustangs",
+            "commence_time": "2026-11-27T00:00:00Z",
+            "name_similarity": 0.428,
+            "tipoff_difference_minutes": 330
+          },
+          {
+            "home_team": "Texas Longhorns",
+            "away_team": "Georgetown Hoyas",
+            "commence_time": "2026-11-26T19:30:00Z",
+            "name_similarity": 0.389,
+            "tipoff_difference_minutes": 60
+          }
+        ]
+      },
+      {
+        "schedule_home": "Michigan Wolverines",
+        "schedule_away": "Miami Hurricanes",
+        "schedule_tipoff_utc": "2026-11-26T20:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Michigan Wolverines",
+            "away_team": "Miami Hurricanes",
+            "commence_time": "2026-11-26T20:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Pacific Tigers",
+            "away_team": "Omaha Mavericks",
+            "commence_time": "2026-11-27T03:30:00Z",
+            "name_similarity": 0.467,
+            "tipoff_difference_minutes": 420
+          },
+          {
+            "home_team": "Michigan St Spartans",
+            "away_team": "Arkansas Razorbacks",
+            "commence_time": "2026-11-26T21:30:00Z",
+            "name_similarity": 0.402,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "LSU Tigers",
+            "away_team": "SMU Mustangs",
+            "commence_time": "2026-11-27T00:00:00Z",
+            "name_similarity": 0.377,
+            "tipoff_difference_minutes": 210
+          },
+          {
+            "home_team": "Purdue Boilermakers",
+            "away_team": "Oklahoma Sooners",
+            "commence_time": "2026-11-26T17:00:00Z",
+            "name_similarity": 0.367,
+            "tipoff_difference_minutes": -210
+          }
+        ]
+      },
+      {
+        "schedule_home": "LSU Tigers",
+        "schedule_away": "SMU Mustangs",
+        "schedule_tipoff_utc": "2026-11-27T00:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "LSU Tigers",
+            "away_team": "SMU Mustangs",
+            "commence_time": "2026-11-27T00:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "USC Trojans",
+            "away_team": "Utah State Aggies",
+            "commence_time": "2026-11-26T21:30:00Z",
+            "name_similarity": 0.429,
+            "tipoff_difference_minutes": -150
+          },
+          {
+            "home_team": "UCF Knights",
+            "away_team": "Boston College Eagles",
+            "commence_time": "2026-11-26T18:30:00Z",
+            "name_similarity": 0.428,
+            "tipoff_difference_minutes": -330
+          },
+          {
+            "home_team": "Michigan Wolverines",
+            "away_team": "Miami Hurricanes",
+            "commence_time": "2026-11-26T20:30:00Z",
+            "name_similarity": 0.416,
+            "tipoff_difference_minutes": -210
+          },
+          {
+            "home_team": "Pacific Tigers",
+            "away_team": "Omaha Mavericks",
+            "commence_time": "2026-11-27T03:30:00Z",
+            "name_similarity": 0.393,
+            "tipoff_difference_minutes": 210
+          }
+        ]
+      },
+      {
+        "schedule_home": "Pittsburgh Panthers",
+        "schedule_away": "DePaul Blue Demons",
+        "schedule_tipoff_utc": "2026-11-27T00:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Pittsburgh Panthers",
+            "away_team": "DePaul Blue Demons",
+            "commence_time": "2026-11-27T00:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "UCLA Bruins",
+            "away_team": "Saint Mary's Gaels",
+            "commence_time": "2026-11-26T22:00:00Z",
+            "name_similarity": 0.413,
+            "tipoff_difference_minutes": -120
+          },
+          {
+            "home_team": "Iowa State Cyclones",
+            "away_team": "Tennessee Volunteers",
+            "commence_time": "2026-11-26T20:30:00Z",
+            "name_similarity": 0.383,
+            "tipoff_difference_minutes": -210
+          },
+          {
+            "home_team": "Cincinnati Bearcats",
+            "away_team": "Georgia Bulldogs",
+            "commence_time": "2026-11-26T16:00:00Z",
+            "name_similarity": 0.369,
+            "tipoff_difference_minutes": -480
+          },
+          {
+            "home_team": "UTSA Roadrunners",
+            "away_team": "Army Knights",
+            "commence_time": "2026-11-26T17:00:00Z",
+            "name_similarity": 0.36,
+            "tipoff_difference_minutes": -420
+          }
+        ]
+      },
+      {
+        "schedule_home": "St. John's Red Storm",
+        "schedule_away": "Louisville Cardinals",
+        "schedule_tipoff_utc": "2026-11-27T02:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Louisville Cardinals",
+            "away_team": "St. John's Red Storm",
+            "commence_time": "2026-11-27T02:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Arizona St Sun Devils",
+            "away_team": "South Carolina Gamecocks",
+            "commence_time": "2026-11-26T19:00:00Z",
+            "name_similarity": 0.371,
+            "tipoff_difference_minutes": -420
+          },
+          {
+            "home_team": "USC Trojans",
+            "away_team": "Utah State Aggies",
+            "commence_time": "2026-11-26T21:30:00Z",
+            "name_similarity": 0.355,
+            "tipoff_difference_minutes": -270
+          },
+          {
+            "home_team": "Oregon Ducks",
+            "away_team": "Texas Tech Red Raiders",
+            "commence_time": "2026-11-27T04:30:00Z",
+            "name_similarity": 0.339,
+            "tipoff_difference_minutes": 150
+          },
+          {
+            "home_team": "Gonzaga Bulldogs",
+            "away_team": "Baylor Bears",
+            "commence_time": "2026-11-27T04:30:00Z",
+            "name_similarity": 0.333,
+            "tipoff_difference_minutes": 150
+          }
+        ]
+      }
+    ]
+  },
+  "matched_events": 5,
+  "target_date_eastern": "2026-11-26",
+  "snapshot_date_eastern": "2026-11-26",
+  "daily_credit_cap": 24,
+  "monthly_reserve_credits": 50,
+  "note": "Single pregame snapshot; games with no available player props may be missing."
+}
