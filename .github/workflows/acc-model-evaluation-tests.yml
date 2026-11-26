@@ -1,0 +1,26 @@
+name: ACC model evaluation tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/acc_model_comparison.py'
+      - 'scripts/acc_grade_pregame.py'
+      - 'tests/test_acc_pregame_grade.py'
+      - 'performance.js'
+      - '.github/workflows/acc-model-evaluation-tests.yml'
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify prospective grading and common-cohort matching
+        run: python -m unittest discover -s tests -p 'test_acc_pregame_grade.py' -v
+      - name: Verify frontend syntax
+        run: node --check performance.js
