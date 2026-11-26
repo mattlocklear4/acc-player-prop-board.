@@ -13,7 +13,7 @@ on:
       - '.github/workflows/acc-pregame-archive.yml'
       - 'pregame-edges.js'
   workflow_run:
-    workflows: ['ACC daily pregame projections', 'Daily ACC sportsbook snapshot (credit capped)', 'Grade daily ACC projections']
+    workflows: ['ACC daily pregame projections', 'Daily ACC sportsbook snapshot (credit capped)']
     types: [completed]
     branches: [main]
   schedule:
@@ -49,7 +49,9 @@ jobs:
       - name: Publish today's pending archive summary (no odds requests)
         run: python scripts/acc_grade_pregame.py --pending-only
       - name: Grade completed days (no postgame projection)
-        if: github.event_name != 'workflow_run' || github.event.workflow_run.name == 'Grade daily ACC projections'
+        # Morning grading dispatches this explicitly; scheduled fallback and
+        # manual dispatch also grade completed days. Projection/odds events only capture.
+        if: github.event_name != 'workflow_run'
         run: python scripts/acc_grade_pregame.py
       - name: Preserve append-only archives and publish grading
         id: publish

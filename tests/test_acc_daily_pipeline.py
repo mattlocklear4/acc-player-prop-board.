@@ -33,6 +33,17 @@ class OpponentTests(unittest.TestCase):
         self.assertEqual(resolve_opponent('UAlbany',kp),'Albany')
         self.assertIsNone(resolve_opponent('Other Huskies',kp))
 
+    def test_ucf_lsu_short_names_and_expanded_kenpom_labels(self):
+        for ucf,lsu in (('UCF','LSU'),('Central Florida','Louisiana State')):
+            kp={canon(x):{'Team':x} for x in (ucf,lsu,'Florida','Florida State','Louisiana','Louisiana Tech','Louisville')}
+            for name in ('UCF Knights','UCF','Central Florida Knights','Central Florida'):
+                self.assertEqual(resolve_opponent(name,kp),ucf)
+            for name in ('LSU Tigers','LSU','Louisiana State Tigers','Louisiana State'):
+                self.assertEqual(resolve_opponent(name,kp),lsu)
+            self.assertIsNone(resolve_opponent('Unknown Tigers',kp))
+        kp={canon(x):{'Team':x} for x in ('UCF','Central Florida')}
+        self.assertIsNone(resolve_opponent('UCF Knights',kp))
+
 class HybridTests(unittest.TestCase):
     def test_dedup_id_mapping_and_date_cutoff(self):
         common=dict(season='2027',team='Wake Forest',opponent='Vanderbilt',player='Kevair Kennedy',

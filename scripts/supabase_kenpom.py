@@ -31,6 +31,15 @@ OPPONENT_ALIASES = {
     'uconnhuskies':'connecticut',
     'ualbany':'albany',
     'ualbanygreatdanes':'albany',
+    # ESPN school abbreviations and mascot names versus KenPom labels.
+    'ucf':'ucf',
+    'ucfknights':'ucf',
+    'centralflorida':'ucf',
+    'centralfloridaknights':'ucf',
+    'lsu':'lsu',
+    'lsutigers':'lsu',
+    'louisianastate':'lsu',
+    'louisianastatetigers':'lsu',
 }
 
 def resolve_opponent(name, kp):
@@ -38,6 +47,7 @@ def resolve_opponent(name, kp):
     key = OPPONENT_ALIASES.get(key,key)
     matches=[r['Team'] for k,r in kp.items() if OPPONENT_ALIASES.get(k,k)==key]
     if len(matches)==1:return matches[0]
+    if len(matches)>1:return None
     # Free event discovery appends mascots; accept a unique KenPom school prefix only.
     # Refuse short or ambiguous prefixes, and never silently guess an opponent.
     prefixes=[(len(k),r['Team']) for k,r in kp.items() if len(k)>=5 and key.startswith(k)]

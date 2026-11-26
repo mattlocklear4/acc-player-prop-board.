@@ -49,6 +49,12 @@ jobs:
             if [ "$attempt" -eq 3 ]; then exit 1; fi
             sleep 3
           done
+      # Explicit dispatch avoids missing a workflow_run event when grading itself
+      # was dispatched by the ESPN collector. Run only after results are committed.
+      - name: Trigger exact pregame and experimental model grading
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run acc-pregame-archive.yml --ref main
       - name: Update published dashboard
         env:
           GH_TOKEN: ${{ github.token }}
