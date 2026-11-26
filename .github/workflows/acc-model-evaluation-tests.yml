@@ -8,6 +8,13 @@ on:
       - 'scripts/acc_grade_pregame.py'
       - 'tests/test_acc_pregame_grade.py'
       - 'performance.js'
+      - 'pregame-edges.js'
+      - 'scripts/acc_capture_pregame.cjs'
+      - 'scripts/acc_intraday_odds.py'
+      - 'scripts/acc_daily_odds_snapshot.py'
+      - 'tests/test_acc_intraday_odds.py'
+      - 'tests/test_acc_pregame_archive.cjs'
+      - '.github/workflows/acc-daily-odds.yml'
       - '.github/workflows/acc-model-evaluation-tests.yml'
 permissions:
   contents: read
@@ -22,5 +29,10 @@ jobs:
           python-version: '3.12'
       - name: Verify prospective grading and common-cohort matching
         run: python -m unittest discover -s tests -p 'test_acc_pregame_grade.py' -v
+      - name: Test budget-aware collection and immutable archives
+        run: |
+          python -m unittest discover -s tests -p 'test_acc_intraday_odds.py' -v
+          node tests/test_acc_pregame_archive.cjs
+          node tests/test_pregame_edges.cjs
       - name: Verify frontend syntax
         run: node --check performance.js
