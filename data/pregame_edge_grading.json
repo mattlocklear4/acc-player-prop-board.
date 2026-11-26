@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T19:18:15.868627+00:00",
+  "generated_at_utc": "2026-11-26T19:21:43.424415+00:00",
   "method": "Latest actually captured pre-tipoff projection per game; latest odds-backed capture per game. Each distinct sportsbook/market/player/line/side priced quote is graded independently; positive expected ROI only in summaries. Flat 1-unit hypothetical stake; correlated quotes are not independent bets. No backfill or post-tipoff repricing.",
   "status": "PARTIAL",
   "games": 6,
@@ -3364,6 +3364,56 @@
           "brier": 0.22744,
           "log_loss": 0.6499
         },
+        "calibration_by_market": {
+          "Assists": {
+            "control": {
+              "n": 4,
+              "brier": 0.33772,
+              "log_loss": 0.90441
+            },
+            "experimental": {
+              "n": 4,
+              "brier": 0.3236,
+              "log_loss": 0.86428
+            }
+          },
+          "Points": {
+            "control": {
+              "n": 16,
+              "brier": 0.20114,
+              "log_loss": 0.59391
+            },
+            "experimental": {
+              "n": 16,
+              "brier": 0.1859,
+              "log_loss": 0.56356
+            }
+          },
+          "Rebounds": {
+            "control": {
+              "n": 12,
+              "brier": 0.25678,
+              "log_loss": 0.70643
+            },
+            "experimental": {
+              "n": 12,
+              "brier": 0.24684,
+              "log_loss": 0.687
+            }
+          },
+          "Threes": {
+            "control": {
+              "n": 4,
+              "brier": 0.25262,
+              "log_loss": 0.69785
+            },
+            "experimental": {
+              "n": 4,
+              "brier": 0.23931,
+              "log_loss": 0.66963
+            }
+          }
+        },
         "control_positive_roi": {
           "selections": 13,
           "settled": 13,
@@ -3470,6 +3520,56 @@
           "n": 36,
           "brier": 0.24192,
           "log_loss": 0.68216
+        },
+        "calibration_by_market": {
+          "Assists": {
+            "control": {
+              "n": 4,
+              "brier": 0.33772,
+              "log_loss": 0.90441
+            },
+            "experimental": {
+              "n": 4,
+              "brier": 0.3236,
+              "log_loss": 0.86428
+            }
+          },
+          "Points": {
+            "control": {
+              "n": 16,
+              "brier": 0.20114,
+              "log_loss": 0.59391
+            },
+            "experimental": {
+              "n": 16,
+              "brier": 0.18955,
+              "log_loss": 0.57068
+            }
+          },
+          "Rebounds": {
+            "control": {
+              "n": 12,
+              "brier": 0.25678,
+              "log_loss": 0.70643
+            },
+            "experimental": {
+              "n": 12,
+              "brier": 0.24684,
+              "log_loss": 0.687
+            }
+          },
+          "Threes": {
+            "control": {
+              "n": 4,
+              "brier": 0.25262,
+              "log_loss": 0.69785
+            },
+            "experimental": {
+              "n": 4,
+              "brier": 0.35497,
+              "log_loss": 0.93143
+            }
+          }
         },
         "control_positive_roi": {
           "selections": 13,
@@ -3578,6 +3678,7 @@
           "brier": null,
           "log_loss": null
         },
+        "calibration_by_market": {},
         "control_positive_roi": {
           "selections": 0,
           "settled": 0,
@@ -3685,6 +3786,7 @@
           "brier": null,
           "log_loss": null
         },
+        "calibration_by_market": {},
         "control_positive_roi": {
           "selections": 0,
           "settled": 0,
@@ -3792,6 +3894,115 @@
           "brier": null,
           "log_loss": null
         },
+        "calibration_by_market": {},
+        "control_positive_roi": {
+          "selections": 0,
+          "settled": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "profit_units": 0,
+          "roi_percent": null,
+          "mean_expected_roi_percent": null
+        },
+        "experimental_positive_roi": {
+          "selections": 0,
+          "settled": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "profit_units": 0,
+          "roi_percent": null,
+          "mean_expected_roi_percent": null
+        }
+      },
+      "v10-player-distributions": {
+        "control_model": "v6-rotation-shot-volume",
+        "paired_players": 0,
+        "projection_metrics": {
+          "Minutes": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Points": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Rebounds": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Assists": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Threes": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          }
+        },
+        "paired_settled_quote_sides": 0,
+        "control_calibration": {
+          "n": 0,
+          "brier": null,
+          "log_loss": null
+        },
+        "experimental_calibration": {
+          "n": 0,
+          "brier": null,
+          "log_loss": null
+        },
+        "calibration_by_market": {},
         "control_positive_roi": {
           "selections": 0,
           "settled": 0,
@@ -3814,6 +4025,6 @@
         }
       }
     },
-    "method": "Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8 and V9 are paired against V6 to isolate opponent and rotation adjustments; other experiments compare with V4. V4 remains the control for production."
+    "method": "Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8, V9 and V10 are paired against V6 to isolate opponent, rotation and probability-distribution adjustments; other experiments compare with V4. V4 remains the control for production."
   }
 }
