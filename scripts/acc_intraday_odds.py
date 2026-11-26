@@ -134,8 +134,9 @@ def main():
         except Exception as exc:
             # Do not log provider URLs or credentials. Unknown charges count at maximum cost.
             row['status']='REQUEST_FAILED';row['error_type']=type(exc).__name__
+            if isinstance(getattr(exc,'code',None),int):row['http_status']=exc.code
             atomic_json(manifest_path,manifest)
-            print('Request failed; stopped without retry:',type(exc).__name__)
+            print('Request failed; stopped without retry:',type(exc).__name__,row.get('http_status',''))
             break
 
 if __name__=='__main__':main()
