@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-26T19:07:12.250207+00:00",
+  "checked_at_utc": "2026-11-26T19:13:53.607807+00:00",
   "status": "OK",
   "data_updated": true,
   "datasets": {
@@ -84,17 +84,18 @@
       "reused_verified_today": true
     },
     "teams_2027": {
-      "last_successful_run_utc": "2026-11-26T19:07:11.784457+00:00",
+      "last_successful_run_utc": "2026-11-26T19:13:52.348010+00:00",
       "api_requests": 1,
-      "team_count": 18
+      "team_count": 18,
+      "national_team_count": 365
     }
   },
   "quota_before": {
     "patronLevel": 3,
     "tierName": "Tier 3",
     "monthlyLimit": 75000,
-    "remainingCalls": 74717,
-    "usedCalls": 283,
+    "remainingCalls": 74699,
+    "usedCalls": 301,
     "resetAt": "2026-12-01T00:00:00.000Z",
     "sharedPool": true
   },
@@ -102,8 +103,8 @@
     "patronLevel": 3,
     "tierName": "Tier 3",
     "monthlyLimit": 75000,
-    "remainingCalls": 74716,
-    "usedCalls": 284,
+    "remainingCalls": 74698,
+    "usedCalls": 302,
     "resetAt": "2026-12-01T00:00:00.000Z",
     "sharedPool": true
   }
