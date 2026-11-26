@@ -1,6 +1,10 @@
 name: Daily ACC sportsbook snapshot (credit capped)
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/odds_refresh_request.json'
   schedule:
     - cron: '7,37 * * * *'
 permissions:
@@ -20,12 +24,16 @@ jobs:
         id: gate
         env:
           MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+          REQUEST_PUSH: ${{ github.event_name == 'push' }}
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
-          import datetime,os
+          import datetime,os,json,pathlib
           from zoneinfo import ZoneInfo
           n=datetime.datetime.now(ZoneInfo('America/New_York'))
           allowed=n.hour>=11 or os.environ.get('MANUAL','').lower()=='true'
+          if os.environ.get('REQUEST_PUSH','').lower()=='true':
+              request=json.loads(pathlib.Path('research/odds_refresh_request.json').read_text())
+              allowed=allowed and request.get('date_eastern')==n.date().isoformat()
           print('run='+str(allowed).lower())
           print('date='+n.date().isoformat())
           PY
