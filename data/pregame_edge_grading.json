@@ -1,267 +1,3493 @@
 {
-  "generated_at_utc": "2026-11-25T19:41:39.798005+00:00",
+  "generated_at_utc": "2026-11-26T15:26:41.355053+00:00",
   "method": "Latest actually captured pre-tipoff projection per game; latest odds-backed capture per game. Each distinct sportsbook/market/player/line/side priced quote is graded independently; positive expected ROI only in summaries. Flat 1-unit hypothetical stake; correlated quotes are not independent bets. No backfill or post-tipoff repricing.",
-  "status": "OK",
-  "games": 0,
-  "players_graded": 0,
+  "status": "PARTIAL",
+  "games": 6,
+  "players_graded": 52,
   "projection_metrics": {
     "Minutes": {
-      "n": 0,
-      "mae": null,
-      "bias": null
+      "n": 52,
+      "mae": 6.169,
+      "bias": -1.615
     },
     "Points": {
-      "n": 0,
-      "mae": null,
-      "bias": null
+      "n": 52,
+      "mae": 3.768,
+      "bias": 0.072
     },
     "Rebounds": {
-      "n": 0,
-      "mae": null,
-      "bias": null
+      "n": 52,
+      "mae": 2.039,
+      "bias": -0.572
     },
     "Assists": {
-      "n": 0,
-      "mae": null,
-      "bias": null
+      "n": 52,
+      "mae": 1.136,
+      "bias": -0.097
     },
     "Threes": {
-      "n": 0,
-      "mae": null,
-      "bias": null
+      "n": 52,
+      "mae": 0.643,
+      "bias": -0.126
     }
   },
-  "quotes_priced": 0,
+  "quotes_priced": 42,
   "positive_roi": {
-    "selections": 0,
-    "settled": 0,
-    "wins": 0,
-    "losses": 0,
+    "selections": 14,
+    "settled": 13,
+    "wins": 9,
+    "losses": 4,
     "pushes": 0,
-    "profit_units": 0,
-    "roi_percent": null,
-    "mean_expected_roi_percent": null
+    "profit_units": 2.9849,
+    "roi_percent": 22.96,
+    "mean_expected_roi_percent": 8.7
   },
-  "by_tier": {},
-  "by_bookmaker": {},
-  "by_market": {},
-  "by_model_version": {},
-  "by_date": {},
-  "issues": [],
-  "projection_rows": [],
-  "rows": [],
+  "by_tier": {
+    "0\u20135%": {
+      "selections": 8,
+      "settled": 8,
+      "wins": 6,
+      "losses": 2,
+      "pushes": 0,
+      "profit_units": 2.798,
+      "roi_percent": 34.98,
+      "mean_expected_roi_percent": 3.15
+    },
+    "10\u201320%": {
+      "selections": 2,
+      "settled": 2,
+      "wins": 1,
+      "losses": 1,
+      "pushes": 0,
+      "profit_units": -0.2,
+      "roi_percent": -10.0,
+      "mean_expected_roi_percent": 16.96
+    },
+    "20%+": {
+      "selections": 3,
+      "settled": 2,
+      "wins": 1,
+      "losses": 1,
+      "pushes": 0,
+      "profit_units": -0.0826,
+      "roi_percent": -4.13,
+      "mean_expected_roi_percent": 24.45
+    },
+    "5\u201310%": {
+      "selections": 1,
+      "settled": 1,
+      "wins": 1,
+      "losses": 0,
+      "pushes": 0,
+      "profit_units": 0.4695,
+      "roi_percent": 46.95,
+      "mean_expected_roi_percent": 5.03
+    }
+  },
+  "by_bookmaker": {
+    "betonlineag": {
+      "selections": 11,
+      "settled": 10,
+      "wins": 6,
+      "losses": 4,
+      "pushes": 0,
+      "profit_units": 0.4425,
+      "roi_percent": 4.43,
+      "mean_expected_roi_percent": 10.18
+    },
+    "fanduel": {
+      "selections": 3,
+      "settled": 3,
+      "wins": 3,
+      "losses": 0,
+      "pushes": 0,
+      "profit_units": 2.5424,
+      "roi_percent": 84.75,
+      "mean_expected_roi_percent": 3.76
+    }
+  },
+  "by_market": {
+    "Assists": {
+      "selections": 3,
+      "settled": 2,
+      "wins": 1,
+      "losses": 1,
+      "pushes": 0,
+      "profit_units": -0.5305,
+      "roi_percent": -26.53,
+      "mean_expected_roi_percent": 16.92
+    },
+    "Points": {
+      "selections": 7,
+      "settled": 7,
+      "wins": 6,
+      "losses": 1,
+      "pushes": 0,
+      "profit_units": 3.957,
+      "roi_percent": 56.53,
+      "mean_expected_roi_percent": 5.53
+    },
+    "Rebounds": {
+      "selections": 2,
+      "settled": 2,
+      "wins": 1,
+      "losses": 1,
+      "pushes": 0,
+      "profit_units": -0.0826,
+      "roi_percent": -4.13,
+      "mean_expected_roi_percent": 10.63
+    },
+    "Threes": {
+      "selections": 2,
+      "settled": 2,
+      "wins": 1,
+      "losses": 1,
+      "pushes": 0,
+      "profit_units": -0.359,
+      "roi_percent": -17.95,
+      "mean_expected_roi_percent": 9.6
+    }
+  },
+  "by_model_version": {
+    "current-season-hybrid-v4-200min": {
+      "selections": 14,
+      "settled": 13,
+      "wins": 9,
+      "losses": 4,
+      "pushes": 0,
+      "profit_units": 2.9849,
+      "roi_percent": 22.96,
+      "mean_expected_roi_percent": 8.7
+    }
+  },
+  "by_date": {
+    "2026-11-25": {
+      "selections": 14,
+      "settled": 13,
+      "wins": 9,
+      "losses": 4,
+      "pushes": 0,
+      "profit_units": 2.9849,
+      "roi_percent": 22.96,
+      "mean_expected_roi_percent": 8.7
+    }
+  },
+  "issues": [
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Bryson Howard",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Cameron Williams",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Jacob Theodosiou",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Maxime Meyer",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Nick Arnold",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Ethan Butler",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Francis Folefac",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Garwey Dual",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Robert Jurkovic",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Shah Hall",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Billy White III",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Cameron Lomax",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "David Terrell Jr.",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Gehrig Normand",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Jacob Patrick",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Jaden Toombs",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Jakub Szumert",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Jaylin Stewart",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Jermaine O'Neal Jr.",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Johan Munch",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Nic Codie",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Niccolo Kalischer-Stork",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Nigel Walls",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Oziyah Sellers",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918971",
+      "player": "Rowan Brumbaugh",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Anthony Batson Jr.",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Anson Beard Jr.",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Maddox Watson",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Ring Nyeri",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Vincent Chaudhri",
+      "reason": "missing_or_ambiguous_final_player"
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Vincent Ricchiuti",
+      "reason": "missing_or_ambiguous_final_player"
+    }
+  ],
+  "projection_rows": [
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Caleb Foster",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.7,
+          "actual": 19.0,
+          "error": 3.6999999999999993
+        },
+        "Points": {
+          "projection": 9.324696871417421,
+          "actual": 5.0,
+          "error": 4.324696871417421
+        },
+        "Rebounds": {
+          "projection": 4.0338691782486515,
+          "actual": 3.0,
+          "error": 1.0338691782486515
+        },
+        "Assists": {
+          "projection": 2.4985305260111392,
+          "actual": 2.0,
+          "error": 0.49853052601113923
+        },
+        "Threes": {
+          "projection": 2.040806730697547,
+          "actual": 1.0,
+          "error": 1.0408067306975468
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Cayden Boozer",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 16.8,
+          "actual": 28.0,
+          "error": -11.2
+        },
+        "Points": {
+          "projection": 5.1627137406140235,
+          "actual": 10.0,
+          "error": -4.8372862593859765
+        },
+        "Rebounds": {
+          "projection": 3.1343468042267166,
+          "actual": 5.0,
+          "error": -1.8656531957732834
+        },
+        "Assists": {
+          "projection": 3.8322274273776364,
+          "actual": 2.0,
+          "error": 1.8322274273776364
+        },
+        "Threes": {
+          "projection": 0.26641145391788784,
+          "actual": 0.0,
+          "error": 0.26641145391788784
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Dame Sarr",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.4,
+          "actual": 33.0,
+          "error": -10.600000000000001
+        },
+        "Points": {
+          "projection": 9.361359265098086,
+          "actual": 6.0,
+          "error": 3.361359265098086
+        },
+        "Rebounds": {
+          "projection": 2.7541734329006893,
+          "actual": 8.0,
+          "error": -5.245826567099311
+        },
+        "Assists": {
+          "projection": 2.2629269626029753,
+          "actual": 2.0,
+          "error": 0.2629269626029753
+        },
+        "Threes": {
+          "projection": 0.6528700685513344,
+          "actual": 0.0,
+          "error": 0.6528700685513344
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Deron Rippey Jr.",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 14.2,
+          "actual": 2.0,
+          "error": 12.2
+        },
+        "Points": {
+          "projection": 2.3352227636819936,
+          "actual": 0.0,
+          "error": 2.3352227636819936
+        },
+        "Rebounds": {
+          "projection": 1.0402945249317077,
+          "actual": 0.0,
+          "error": 1.0402945249317077
+        },
+        "Assists": {
+          "projection": 1.9261853471609467,
+          "actual": 0.0,
+          "error": 1.9261853471609467
+        },
+        "Threes": {
+          "projection": 0.27642714557008863,
+          "actual": 0.0,
+          "error": 0.27642714557008863
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Drew Scharnowski",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 9.4,
+          "actual": 3.0,
+          "error": 6.4
+        },
+        "Points": {
+          "projection": 4.372361816592932,
+          "actual": 0.0,
+          "error": 4.372361816592932
+        },
+        "Rebounds": {
+          "projection": 2.902812824294063,
+          "actual": 0.0,
+          "error": 2.902812824294063
+        },
+        "Assists": {
+          "projection": 0.8884680680071472,
+          "actual": 0.0,
+          "error": 0.8884680680071472
+        },
+        "Threes": {
+          "projection": 0.18142580151837895,
+          "actual": 0.0,
+          "error": 0.18142580151837895
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Joaquim Boumtje Boumtje",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.3,
+          "actual": 33.0,
+          "error": -10.7
+        },
+        "Points": {
+          "projection": 11.313795170124763,
+          "actual": 12.0,
+          "error": -0.686204829875237
+        },
+        "Rebounds": {
+          "projection": 6.147875063943936,
+          "actual": 4.0,
+          "error": 2.1478750639439363
+        },
+        "Assists": {
+          "projection": 0.3341349341154743,
+          "actual": 0.0,
+          "error": 0.3341349341154743
+        },
+        "Threes": {
+          "projection": 0.8051636654064666,
+          "actual": 1.0,
+          "error": -0.19483633459353344
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "John Blackwell",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 25.1,
+          "actual": 39.0,
+          "error": -13.899999999999999
+        },
+        "Points": {
+          "projection": 8.686241881229979,
+          "actual": 25.0,
+          "error": -16.31375811877002
+        },
+        "Rebounds": {
+          "projection": 2.5678791556107377,
+          "actual": 5.0,
+          "error": -2.4321208443892623
+        },
+        "Assists": {
+          "projection": 0.7549162952392506,
+          "actual": 2.0,
+          "error": -1.2450837047607495
+        },
+        "Threes": {
+          "projection": 1.7510123485543791,
+          "actual": 5.0,
+          "error": -3.2489876514456206
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Patrick Ngongba II",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 24.3,
+          "actual": 32.0,
+          "error": -7.699999999999999
+        },
+        "Points": {
+          "projection": 14.123987857984634,
+          "actual": 17.0,
+          "error": -2.876012142015366
+        },
+        "Rebounds": {
+          "projection": 6.827501597462426,
+          "actual": 11.0,
+          "error": -4.172498402537574
+        },
+        "Assists": {
+          "projection": 2.5012808934748105,
+          "actual": 5.0,
+          "error": -2.4987191065251895
+        },
+        "Threes": {
+          "projection": 0.3249768894058588,
+          "actual": 1.0,
+          "error": -0.6750231105941412
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909568",
+      "player": "Sebastian Wilkins",
+      "team": "Duke",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 16.3,
+          "actual": 11.0,
+          "error": 5.300000000000001
+        },
+        "Points": {
+          "projection": 6.678711248104737,
+          "actual": 2.0,
+          "error": 4.678711248104737
+        },
+        "Rebounds": {
+          "projection": 3.509130960407256,
+          "actual": 3.0,
+          "error": 0.5091309604072558
+        },
+        "Assists": {
+          "projection": 0.8754824795520224,
+          "actual": 0.0,
+          "error": 0.8754824795520224
+        },
+        "Threes": {
+          "projection": 0.3129799286842005,
+          "actual": 0.0,
+          "error": 0.3129799286842005
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Abdramane Siby",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 9.6,
+          "actual": 22.0,
+          "error": -12.4
+        },
+        "Points": {
+          "projection": 2.250127325124443,
+          "actual": 17.0,
+          "error": -14.749872674875558
+        },
+        "Rebounds": {
+          "projection": 1.365326172386691,
+          "actual": 3.0,
+          "error": -1.634673827613309
+        },
+        "Assists": {
+          "projection": 0.1606236760357798,
+          "actual": 0.0,
+          "error": 0.1606236760357798
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Amarri Monroe",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 17.4,
+          "actual": 26.0,
+          "error": -8.600000000000001
+        },
+        "Points": {
+          "projection": 9.0198924454508,
+          "actual": 8.0,
+          "error": 1.0198924454508003
+        },
+        "Rebounds": {
+          "projection": 2.756237530481046,
+          "actual": 5.0,
+          "error": -2.243762469518954
+        },
+        "Assists": {
+          "projection": 0.9115598929939964,
+          "actual": 5.0,
+          "error": -4.0884401070060035
+        },
+        "Threes": {
+          "projection": 1.0216428294328146,
+          "actual": 0.0,
+          "error": 1.0216428294328146
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Gavin Doty",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 24.1,
+          "actual": 32.0,
+          "error": -7.899999999999999
+        },
+        "Points": {
+          "projection": 8.9512183945132,
+          "actual": 7.0,
+          "error": 1.9512183945131998
+        },
+        "Rebounds": {
+          "projection": 5.071079892928126,
+          "actual": 4.0,
+          "error": 1.0710798929281262
+        },
+        "Assists": {
+          "projection": 1.184178311951417,
+          "actual": 3.0,
+          "error": -1.815821688048583
+        },
+        "Threes": {
+          "projection": 0.929001178251018,
+          "actual": 1.0,
+          "error": -0.07099882174898198
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Iker Martinez",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 1.0,
+          "actual": 1.0,
+          "error": 0.0
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.49981988472622474,
+          "actual": 0.0,
+          "error": 0.49981988472622474
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Kiyan Anthony",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 21.6,
+          "actual": 22.0,
+          "error": -0.3999999999999986
+        },
+        "Points": {
+          "projection": 13.267743473470079,
+          "actual": 6.0,
+          "error": 7.2677434734700785
+        },
+        "Rebounds": {
+          "projection": 1.8665769621969825,
+          "actual": 5.0,
+          "error": -3.1334230378030172
+        },
+        "Assists": {
+          "projection": 2.08078071646526,
+          "actual": 0.0,
+          "error": 2.08078071646526
+        },
+        "Threes": {
+          "projection": 1.0766787803017461,
+          "actual": 0.0,
+          "error": 1.0766787803017461
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Luke Wilson",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 25.5,
+          "actual": 7.0,
+          "error": 18.5
+        },
+        "Points": {
+          "projection": 10.109356988472621,
+          "actual": 5.0,
+          "error": 5.109356988472621
+        },
+        "Rebounds": {
+          "projection": 4.452241742407448,
+          "actual": 2.0,
+          "error": 2.4522417424074483
+        },
+        "Assists": {
+          "projection": 0.8897617827057669,
+          "actual": 0.0,
+          "error": 0.8897617827057669
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Mark Morano",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 15.5,
+          "actual": 21.0,
+          "error": -5.5
+        },
+        "Points": {
+          "projection": 7.202555999476027,
+          "actual": 6.0,
+          "error": 1.2025559994760266
+        },
+        "Rebounds": {
+          "projection": 1.4588898583405068,
+          "actual": 0.0,
+          "error": 1.4588898583405068
+        },
+        "Assists": {
+          "projection": 1.1491931737982064,
+          "actual": 1.0,
+          "error": 0.1491931737982064
+        },
+        "Threes": {
+          "projection": 1.525965254126277,
+          "actual": 2.0,
+          "error": -0.4740347458737231
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Ryan Moesch",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 24.6,
+          "actual": 38.0,
+          "error": -13.399999999999999
+        },
+        "Points": {
+          "projection": 9.325181529110962,
+          "actual": 13.0,
+          "error": -3.674818470889038
+        },
+        "Rebounds": {
+          "projection": 2.199335266299755,
+          "actual": 9.0,
+          "error": -6.800664733700245
+        },
+        "Assists": {
+          "projection": 5.301088709577566,
+          "actual": 8.0,
+          "error": -2.6989112904224344
+        },
+        "Threes": {
+          "projection": 0.6767185434768478,
+          "actual": 3.0,
+          "error": -2.3232814565231523
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Sadiq White Jr.",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.5,
+          "actual": 22.0,
+          "error": 4.5
+        },
+        "Points": {
+          "projection": 12.454881854313765,
+          "actual": 10.0,
+          "error": 2.454881854313765
+        },
+        "Rebounds": {
+          "projection": 7.723696815597017,
+          "actual": 11.0,
+          "error": -3.276303184402983
+        },
+        "Assists": {
+          "projection": 0.30033358993134124,
+          "actual": 3.0,
+          "error": -2.6996664100686587
+        },
+        "Threes": {
+          "projection": 0.17098123455946104,
+          "actual": 0.0,
+          "error": 0.17098123455946104
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401909720",
+      "player": "Tasman Goodrick",
+      "team": "Syracuse",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 5.6,
+          "actual": 9.0,
+          "error": -3.4000000000000004
+        },
+        "Points": {
+          "projection": 2.531261746648289,
+          "actual": 2.0,
+          "error": 0.5312617466482892
+        },
+        "Rebounds": {
+          "projection": 0.48678110512467093,
+          "actual": 4.0,
+          "error": -3.513218894875329
+        },
+        "Assists": {
+          "projection": 0.2489537651923317,
+          "actual": 0.0,
+          "error": 0.2489537651923317
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Christian Hammond",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.2,
+          "actual": 21.0,
+          "error": 5.199999999999999
+        },
+        "Points": {
+          "projection": 10.728183665612098,
+          "actual": 13.0,
+          "error": -2.2718163343879016
+        },
+        "Rebounds": {
+          "projection": 3.519814232455714,
+          "actual": 5.0,
+          "error": -1.480185767544286
+        },
+        "Assists": {
+          "projection": 2.391006703050949,
+          "actual": 2.0,
+          "error": 0.391006703050949
+        },
+        "Threes": {
+          "projection": 1.538338054109823,
+          "actual": 0.0,
+          "error": 1.538338054109823
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Comeh Emuobor",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 0.9,
+          "actual": 0.0,
+          "error": 0.9
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Darius Adams",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 20.4,
+          "actual": 13.0,
+          "error": 7.399999999999999
+        },
+        "Points": {
+          "projection": 7.280643476863271,
+          "actual": 4.0,
+          "error": 3.280643476863271
+        },
+        "Rebounds": {
+          "projection": 2.7136211874859826,
+          "actual": 1.0,
+          "error": 1.7136211874859826
+        },
+        "Assists": {
+          "projection": 3.4438721327206965,
+          "actual": 0.0,
+          "error": 3.4438721327206965
+        },
+        "Threes": {
+          "projection": 0.9208091079838526,
+          "actual": 0.0,
+          "error": 0.9208091079838526
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Eemeli Yalaho",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.5,
+          "actual": 3.0,
+          "error": 16.5
+        },
+        "Points": {
+          "projection": 4.935743227401809,
+          "actual": 0.0,
+          "error": 4.935743227401809
+        },
+        "Rebounds": {
+          "projection": 2.6203944248858573,
+          "actual": 0.0,
+          "error": 2.6203944248858573
+        },
+        "Assists": {
+          "projection": 0.9975966914218131,
+          "actual": 0.0,
+          "error": 0.9975966914218131
+        },
+        "Threes": {
+          "projection": 0.9275376017657736,
+          "actual": 0.0,
+          "error": 0.9275376017657736
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Kingston Whitty",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 4.0,
+          "actual": 12.0,
+          "error": -8.0
+        },
+        "Points": {
+          "projection": 3.061496956677407,
+          "actual": 0.0,
+          "error": 3.061496956677407
+        },
+        "Rebounds": {
+          "projection": 0.4190578487033911,
+          "actual": 0.0,
+          "error": 0.4190578487033911
+        },
+        "Assists": {
+          "projection": 0.21475716989266164,
+          "actual": 2.0,
+          "error": -1.7852428301073384
+        },
+        "Threes": {
+          "projection": 0.4190578487033911,
+          "actual": 0.0,
+          "error": 0.4190578487033911
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Kyle Evans",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 17.7,
+          "actual": 14.0,
+          "error": 3.6999999999999993
+        },
+        "Points": {
+          "projection": 5.509056878056071,
+          "actual": 2.0,
+          "error": 3.5090568780560707
+        },
+        "Rebounds": {
+          "projection": 4.073554411621843,
+          "actual": 0.0,
+          "error": 4.073554411621843
+        },
+        "Assists": {
+          "projection": 0.9493350730939983,
+          "actual": 1.0,
+          "error": -0.05066492690600166
+        },
+        "Threes": {
+          "projection": 0.11692131182435046,
+          "actual": 0.0,
+          "error": 0.11692131182435046
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Paul McNeil Jr.",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 30.9,
+          "actual": 32.0,
+          "error": -1.1000000000000014
+        },
+        "Points": {
+          "projection": 16.20795067772492,
+          "actual": 20.0,
+          "error": -3.79204932227508
+        },
+        "Rebounds": {
+          "projection": 6.070990716870504,
+          "actual": 4.0,
+          "error": 2.0709907168705044
+        },
+        "Assists": {
+          "projection": 2.0549382805755223,
+          "actual": 4.0,
+          "error": -1.9450617194244777
+        },
+        "Threes": {
+          "projection": 3.7964303668047847,
+          "actual": 5.0,
+          "error": -1.2035696331952153
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Preston Edmead",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 29.7,
+          "actual": 30.0,
+          "error": -0.3000000000000007
+        },
+        "Points": {
+          "projection": 12.865242589778678,
+          "actual": 10.0,
+          "error": 2.8652425897786777
+        },
+        "Rebounds": {
+          "projection": 2.057577231172132,
+          "actual": 7.0,
+          "error": -4.942422768827868
+        },
+        "Assists": {
+          "projection": 5.497870303291806,
+          "actual": 3.0,
+          "error": 2.4978703032918057
+        },
+        "Threes": {
+          "projection": 1.850776015683185,
+          "actual": 0.0,
+          "error": 1.850776015683185
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "R.J. Keene II",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 5.3,
+          "actual": 16.0,
+          "error": -10.7
+        },
+        "Points": {
+          "projection": 0.6362052356317309,
+          "actual": 3.0,
+          "error": -2.363794764368269
+        },
+        "Rebounds": {
+          "projection": 0.8689067344085816,
+          "actual": 6.0,
+          "error": -5.131093265591418
+        },
+        "Assists": {
+          "projection": 0.26579076879824715,
+          "actual": 1.0,
+          "error": -0.7342092312017529
+        },
+        "Threes": {
+          "projection": 0.15239665497406524,
+          "actual": 1.0,
+          "error": -0.8476033450259348
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Ven-Allen Lubin",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.3,
+          "actual": 33.0,
+          "error": -6.699999999999999
+        },
+        "Points": {
+          "projection": 15.308305721092884,
+          "actual": 13.0,
+          "error": 2.308305721092884
+        },
+        "Rebounds": {
+          "projection": 7.666019955305302,
+          "actual": 10.0,
+          "error": -2.333980044694698
+        },
+        "Assists": {
+          "projection": 2.019597704749229,
+          "actual": 0.0,
+          "error": 2.019597704749229
+        },
+        "Threes": {
+          "projection": 0.5229944386658708,
+          "actual": 1.0,
+          "error": -0.4770055613341292
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401918960",
+      "player": "Zymicah Wilkins",
+      "team": "NC State",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 11.3,
+          "actual": 26.0,
+          "error": -14.7
+        },
+        "Points": {
+          "projection": 6.875401892210774,
+          "actual": 15.0,
+          "error": -8.124598107789225
+        },
+        "Rebounds": {
+          "projection": 3.7219734662470114,
+          "actual": 8.0,
+          "error": -4.278026533752989
+        },
+        "Assists": {
+          "projection": 0.35102961564505525,
+          "actual": 2.0,
+          "error": -1.6489703843549448
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Aidan Cammann",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 14.0,
+          "actual": 17.0,
+          "error": -3.0
+        },
+        "Points": {
+          "projection": 4.579909249566315,
+          "actual": 3.0,
+          "error": 1.579909249566315
+        },
+        "Rebounds": {
+          "projection": 1.7952149585102046,
+          "actual": 4.0,
+          "error": -2.2047850414897954
+        },
+        "Assists": {
+          "projection": 0.7026872531796851,
+          "actual": 1.0,
+          "error": -0.29731274682031494
+        },
+        "Threes": {
+          "projection": 0.45815908518598464,
+          "actual": 0.0,
+          "error": 0.45815908518598464
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Austin Maurer",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 21.3,
+          "actual": 22.0,
+          "error": -0.6999999999999993
+        },
+        "Points": {
+          "projection": 9.600784765535488,
+          "actual": 0.0,
+          "error": 9.600784765535488
+        },
+        "Rebounds": {
+          "projection": 4.94089829008484,
+          "actual": 1.0,
+          "error": 3.9408982900848404
+        },
+        "Assists": {
+          "projection": 0.5438391938365582,
+          "actual": 0.0,
+          "error": 0.5438391938365582
+        },
+        "Threes": {
+          "projection": 0.4414244363314202,
+          "actual": 0.0,
+          "error": 0.4414244363314202
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Aziz Olajuwon",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 21.7,
+          "actual": 34.0,
+          "error": -12.3
+        },
+        "Points": {
+          "projection": 7.14530293751637,
+          "actual": 14.0,
+          "error": -6.85469706248363
+        },
+        "Rebounds": {
+          "projection": 4.218979573070508,
+          "actual": 8.0,
+          "error": -3.7810204269294916
+        },
+        "Assists": {
+          "projection": 0.6823838706115734,
+          "actual": 0.0,
+          "error": 0.6823838706115734
+        },
+        "Threes": {
+          "projection": 1.276699905590032,
+          "actual": 1.0,
+          "error": 0.2766999055900321
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Christian Bliss",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.6,
+          "actual": 12.0,
+          "error": 7.600000000000001
+        },
+        "Points": {
+          "projection": 8.1867808851568,
+          "actual": 3.0,
+          "error": 5.1867808851568
+        },
+        "Rebounds": {
+          "projection": 3.148156464201807,
+          "actual": 3.0,
+          "error": 0.14815646420180695
+        },
+        "Assists": {
+          "projection": 2.8301776462627464,
+          "actual": 3.0,
+          "error": -0.16982235373725363
+        },
+        "Threes": {
+          "projection": 1.4270558217099207,
+          "actual": 1.0,
+          "error": 0.42705582170992074
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Donavin Young",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 7.4,
+          "actual": 1.0,
+          "error": 6.4
+        },
+        "Points": {
+          "projection": 1.5423685351995566,
+          "actual": 0.0,
+          "error": 1.5423685351995566
+        },
+        "Rebounds": {
+          "projection": 1.5568995981152995,
+          "actual": 0.0,
+          "error": 1.5568995981152995
+        },
+        "Assists": {
+          "projection": 0.34413247413155956,
+          "actual": 0.0,
+          "error": 0.34413247413155956
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Drew Anderson",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 3.7,
+          "actual": 0.0,
+          "error": 3.7
+        },
+        "Points": {
+          "projection": 1.8851170985772356,
+          "actual": 0.0,
+          "error": 1.8851170985772356
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Elias Obenyah",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 9.7,
+          "actual": 13.0,
+          "error": -3.3000000000000007
+        },
+        "Points": {
+          "projection": 3.814926399586364,
+          "actual": 0.0,
+          "error": 3.814926399586364
+        },
+        "Rebounds": {
+          "projection": 1.2252761285836542,
+          "actual": 2.0,
+          "error": -0.7747238714163458
+        },
+        "Assists": {
+          "projection": 0.5223177096705177,
+          "actual": 1.0,
+          "error": -0.4776822903294823
+        },
+        "Threes": {
+          "projection": 0.35007889388104396,
+          "actual": 0.0,
+          "error": 0.35007889388104396
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Evan Stinson",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.5,
+          "actual": 18.0,
+          "error": 1.5
+        },
+        "Points": {
+          "projection": 5.689741945503047,
+          "actual": 4.0,
+          "error": 1.6897419455030471
+        },
+        "Rebounds": {
+          "projection": 2.142665539253048,
+          "actual": 1.0,
+          "error": 1.142665539253048
+        },
+        "Assists": {
+          "projection": 1.1624934489329268,
+          "actual": 1.0,
+          "error": 0.16249344893292683
+        },
+        "Threes": {
+          "projection": 0.38957555259146337,
+          "actual": 1.0,
+          "error": -0.6104244474085366
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Isaiah Rogers",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 14.0,
+          "actual": 10.0,
+          "error": 4.0
+        },
+        "Points": {
+          "projection": 3.5359636487475177,
+          "actual": 2.0,
+          "error": 1.5359636487475177
+        },
+        "Rebounds": {
+          "projection": 0.8964695469296344,
+          "actual": 1.0,
+          "error": -0.10353045307036557
+        },
+        "Assists": {
+          "projection": 0.7362742799756086,
+          "actual": 0.0,
+          "error": 0.7362742799756086
+        },
+        "Threes": {
+          "projection": 0.5263584812582495,
+          "actual": 0.0,
+          "error": 0.5263584812582495
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Julius Price",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 31.4,
+          "actual": 35.0,
+          "error": -3.6000000000000014
+        },
+        "Points": {
+          "projection": 14.253912439597324,
+          "actual": 31.0,
+          "error": -16.746087560402678
+        },
+        "Rebounds": {
+          "projection": 3.2957918735375644,
+          "actual": 5.0,
+          "error": -1.7042081264624356
+        },
+        "Assists": {
+          "projection": 2.0251706648249947,
+          "actual": 0.0,
+          "error": 2.0251706648249947
+        },
+        "Threes": {
+          "projection": 1.0116367215296962,
+          "actual": 5.0,
+          "error": -3.988363278470304
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Nick Townsend",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 32.0,
+          "actual": 37.0,
+          "error": -5.0
+        },
+        "Points": {
+          "projection": 13.844457528865204,
+          "actual": 7.0,
+          "error": 6.844457528865204
+        },
+        "Rebounds": {
+          "projection": 6.827879766097126,
+          "actual": 7.0,
+          "error": -0.17212023390287357
+        },
+        "Assists": {
+          "projection": 4.136780284087027,
+          "actual": 7.0,
+          "error": -2.8632197159129733
+        },
+        "Threes": {
+          "projection": 0.5645023197749166,
+          "actual": 1.0,
+          "error": -0.4354976802250834
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401921672",
+      "player": "Tallis Toure",
+      "team": "Stanford",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 0.9,
+          "actual": 1.0,
+          "error": -0.09999999999999998
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Antonio Dorn",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 9.6,
+          "actual": 8.0,
+          "error": 1.5999999999999996
+        },
+        "Points": {
+          "projection": 2.0224076649958227,
+          "actual": 4.0,
+          "error": -1.9775923350041773
+        },
+        "Rebounds": {
+          "projection": 1.8724624060150374,
+          "actual": 0.0,
+          "error": 1.8724624060150374
+        },
+        "Assists": {
+          "projection": 0.5336569101324738,
+          "actual": 0.0,
+          "error": 0.5336569101324738
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Gallagher Placide",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.1,
+          "actual": 24.0,
+          "error": -4.899999999999999
+        },
+        "Points": {
+          "projection": 9.962261462142092,
+          "actual": 10.0,
+          "error": -0.03773853785790848
+        },
+        "Rebounds": {
+          "projection": 5.197286504597163,
+          "actual": 3.0,
+          "error": 2.1972865045971632
+        },
+        "Assists": {
+          "projection": 0.35046747053858746,
+          "actual": 0.0,
+          "error": 0.35046747053858746
+        },
+        "Threes": {
+          "projection": 0.6551540624000395,
+          "actual": 1.0,
+          "error": -0.3448459375999605
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Gavin Placide",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 27.6,
+          "actual": 33.0,
+          "error": -5.399999999999999
+        },
+        "Points": {
+          "projection": 14.26759518260532,
+          "actual": 13.0,
+          "error": 1.2675951826053193
+        },
+        "Rebounds": {
+          "projection": 7.463882558571191,
+          "actual": 11.0,
+          "error": -3.536117441428809
+        },
+        "Assists": {
+          "projection": 1.0571509182929897,
+          "actual": 1.0,
+          "error": 0.05715091829298968
+        },
+        "Threes": {
+          "projection": 0.49777321192872465,
+          "actual": 1.0,
+          "error": -0.5022267880712754
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Isaac Carr",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 24.8,
+          "actual": 30.0,
+          "error": -5.199999999999999
+        },
+        "Points": {
+          "projection": 10.121809349547279,
+          "actual": 8.0,
+          "error": 2.121809349547279
+        },
+        "Rebounds": {
+          "projection": 1.9395773900580195,
+          "actual": 3.0,
+          "error": -1.0604226099419805
+        },
+        "Assists": {
+          "projection": 1.1759260669184086,
+          "actual": 4.0,
+          "error": -2.8240739330815914
+        },
+        "Threes": {
+          "projection": 1.139165409104064,
+          "actual": 2.0,
+          "error": -0.8608345908959361
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Jamari McDowell",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 20.5,
+          "actual": 17.0,
+          "error": 3.5
+        },
+        "Points": {
+          "projection": 5.391598400240365,
+          "actual": 4.0,
+          "error": 1.3915984002403654
+        },
+        "Rebounds": {
+          "projection": 1.6126184430374177,
+          "actual": 2.0,
+          "error": -0.38738155696258225
+        },
+        "Assists": {
+          "projection": 1.4394692970678573,
+          "actual": 1.0,
+          "error": 0.4394692970678573
+        },
+        "Threes": {
+          "projection": 0.5547407444048718,
+          "actual": 1.0,
+          "error": -0.44525925559512824
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Justin Abson",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 6.8,
+          "actual": 1.0,
+          "error": 5.8
+        },
+        "Points": {
+          "projection": 0.407995782385256,
+          "actual": 0.0,
+          "error": 0.407995782385256
+        },
+        "Rebounds": {
+          "projection": 2.069643806485912,
+          "actual": 0.0,
+          "error": 2.069643806485912
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Justin Ray",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 23.4,
+          "actual": 31.0,
+          "error": -7.600000000000001
+        },
+        "Points": {
+          "projection": 8.974235893545824,
+          "actual": 19.0,
+          "error": -10.025764106454176
+        },
+        "Rebounds": {
+          "projection": 2.768988203266787,
+          "actual": 3.0,
+          "error": -0.23101179673321282
+        },
+        "Assists": {
+          "projection": 2.1811386005423037,
+          "actual": 2.0,
+          "error": 0.18113860054230368
+        },
+        "Threes": {
+          "projection": 1.2831896551724133,
+          "actual": 4.0,
+          "error": -2.7168103448275867
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Kevair Kennedy",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 30.8,
+          "actual": 34.0,
+          "error": -3.1999999999999993
+        },
+        "Points": {
+          "projection": 16.241606714714266,
+          "actual": 17.0,
+          "error": -0.7583932852857345
+        },
+        "Rebounds": {
+          "projection": 5.397946523931346,
+          "actual": 5.0,
+          "error": 0.39794652393134644
+        },
+        "Assists": {
+          "projection": 3.254954906347196,
+          "actual": 7.0,
+          "error": -3.745045093652804
+        },
+        "Threes": {
+          "projection": 0.9985653610193488,
+          "actual": 1.0,
+          "error": -0.001434638980651215
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Lukas Bojovic",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 8.4,
+          "actual": 9.0,
+          "error": -0.5999999999999996
+        },
+        "Points": {
+          "projection": 2.2650965847953217,
+          "actual": 0.0,
+          "error": 2.2650965847953217
+        },
+        "Rebounds": {
+          "projection": 0.7834210526315789,
+          "actual": 0.0,
+          "error": 0.7834210526315789
+        },
+        "Assists": {
+          "projection": 1.4783007953216374,
+          "actual": 0.0,
+          "error": 1.4783007953216374
+        },
+        "Threes": {
+          "projection": 0.17677192982456139,
+          "actual": 0.0,
+          "error": 0.17677192982456139
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "game_id": "espn_event_401929287",
+      "player": "Xander Pintelon",
+      "team": "Wake Forest",
+      "model_version": "current-season-hybrid-v4-200min",
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 12.7,
+          "actual": 13.0,
+          "error": -0.3000000000000007
+        },
+        "Points": {
+          "projection": 3.1287326340043657,
+          "actual": 3.0,
+          "error": 0.12873263400436574
+        },
+        "Rebounds": {
+          "projection": 2.5556825990930396,
+          "actual": 4.0,
+          "error": -1.4443174009069604
+        },
+        "Assists": {
+          "projection": 0.5313303120687489,
+          "actual": 1.0,
+          "error": -0.4686696879312511
+        },
+        "Threes": {
+          "projection": 0.4328495358631181,
+          "actual": 1.0,
+          "error": -0.5671504641368819
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Dame Sarr",
+      "athlete_id": "198985",
+      "market": "Points",
+      "bookmaker": "fanduel",
+      "side": "over",
+      "line": 10.5,
+      "american_odds": -105,
+      "projection": 9.361359265098086,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4179949674212353,
+      "fair_odds": 139,
+      "expected_roi_percent": -18.391458741568346,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 6.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Dame Sarr",
+      "athlete_id": "198985",
+      "market": "Points",
+      "bookmaker": "fanduel",
+      "side": "under",
+      "line": 10.5,
+      "american_odds": -125,
+      "projection": 9.361359265098086,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5820050325787647,
+      "fair_odds": -139,
+      "expected_roi_percent": 4.760905864177644,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 6.0,
+      "result": "win",
+      "profit_units": 0.8
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Points",
+      "bookmaker": "fanduel",
+      "side": "over",
+      "line": 13.5,
+      "american_odds": -110,
+      "projection": 14.123987857984634,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5451640739018127,
+      "fair_odds": -120,
+      "expected_roi_percent": 4.076777744891502,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 17.0,
+      "result": "win",
+      "profit_units": 0.909091
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Points",
+      "bookmaker": "fanduel",
+      "side": "under",
+      "line": 13.5,
+      "american_odds": -120,
+      "projection": 14.123987857984634,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4548359260981874,
+      "fair_odds": 120,
+      "expected_roi_percent": -16.613413548665644,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 17.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 14.5,
+      "american_odds": -125,
+      "projection": 14.123987857984634,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4727471359144053,
+      "fair_odds": 112,
+      "expected_roi_percent": -14.905515535407044,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 17.0,
+      "result": "win",
+      "profit_units": 0.8
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 14.5,
+      "american_odds": -103,
+      "projection": 14.123987857984634,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5272528640855947,
+      "fair_odds": -112,
+      "expected_roi_percent": 3.9148848634715794,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 17.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Dame Sarr",
+      "athlete_id": "198985",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 10.5,
+      "american_odds": -101,
+      "projection": 9.361359265098086,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4179949674212353,
+      "fair_odds": 139,
+      "expected_roi_percent": -16.8148629191403,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 6.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Dame Sarr",
+      "athlete_id": "198985",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 10.5,
+      "american_odds": -128,
+      "projection": 9.361359265098086,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5820050325787647,
+      "fair_odds": -139,
+      "expected_roi_percent": 3.6696464280924603,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 6.0,
+      "result": "win",
+      "profit_units": 0.78125
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Points",
+      "bookmaker": "fanduel",
+      "side": "over",
+      "line": 10.5,
+      "american_odds": -120,
+      "projection": 11.313795170124763,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5588139393834086,
+      "fair_odds": -127,
+      "expected_roi_percent": 2.4492222202915803,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 12.0,
+      "result": "win",
+      "profit_units": 0.833333
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Points",
+      "bookmaker": "fanduel",
+      "side": "under",
+      "line": 10.5,
+      "american_odds": -110,
+      "projection": 11.313795170124763,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4411860606165913,
+      "fair_odds": 127,
+      "expected_roi_percent": -15.773570245923468,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 12.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Rebounds",
+      "bookmaker": "fanduel",
+      "side": "over",
+      "line": 5.5,
+      "american_odds": -140,
+      "projection": 6.147875063943936,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5777705552798958,
+      "fair_odds": -137,
+      "expected_roi_percent": -0.9536190948749967,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 4.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Rebounds",
+      "bookmaker": "fanduel",
+      "side": "under",
+      "line": 5.5,
+      "american_odds": 100,
+      "projection": 6.147875063943936,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.42222944472010415,
+      "fair_odds": 137,
+      "expected_roi_percent": -15.55411105597917,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 4.0,
+      "result": "win",
+      "profit_units": 1.0
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 11.5,
+      "american_odds": -115,
+      "projection": 11.313795170124763,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.48649616277731167,
+      "fair_odds": 106,
+      "expected_roi_percent": -9.046369567719992,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 12.0,
+      "result": "win",
+      "profit_units": 0.869565
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 11.5,
+      "american_odds": -108,
+      "projection": 11.313795170124763,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5135038372226883,
+      "fair_odds": -106,
+      "expected_roi_percent": -1.1029646830378048,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 12.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 5.5,
+      "american_odds": -141,
+      "projection": 6.147875063943936,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5777705552798958,
+      "fair_odds": -137,
+      "expected_roi_percent": -1.2463093457766639,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 4.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Joaquim Boumtje Boumtje",
+      "athlete_id": "224079",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 5.5,
+      "american_odds": 108,
+      "projection": 6.147875063943936,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.42222944472010415,
+      "fair_odds": 137,
+      "expected_roi_percent": -12.176275498218331,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 4.0,
+      "result": "win",
+      "profit_units": 1.08
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 6.5,
+      "american_odds": -122,
+      "projection": 6.827501597462426,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5242829833539865,
+      "fair_odds": -110,
+      "expected_roi_percent": -4.597686635586062,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 11.0,
+      "result": "win",
+      "profit_units": 0.819672
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 6.5,
+      "american_odds": -106,
+      "projection": 6.827501597462426,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4757170166460135,
+      "fair_odds": 110,
+      "expected_roi_percent": -7.549334500869071,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 11.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Rebounds",
+      "bookmaker": "fanduel",
+      "side": "over",
+      "line": 6.5,
+      "american_odds": -122,
+      "projection": 6.827501597462426,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5242829833539865,
+      "fair_odds": -110,
+      "expected_roi_percent": -4.597686635586062,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 11.0,
+      "result": "win",
+      "profit_units": 0.819672
+    },
+    {
+      "game_id": "espn_event_401909568",
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "athlete_id": "216",
+      "market": "Rebounds",
+      "bookmaker": "fanduel",
+      "side": "under",
+      "line": 6.5,
+      "american_odds": -112,
+      "projection": 6.827501597462426,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4757170166460135,
+      "fair_odds": 110,
+      "expected_roi_percent": -9.953564706290297,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:54:45Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 11.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401918971",
+      "team": "SMU",
+      "player": "Jaden Toombs",
+      "athlete_id": "202026",
+      "market": "Assists",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 1.5,
+      "american_odds": -156,
+      "projection": 2.603811308410163,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.7333502624517811,
+      "fair_odds": -275,
+      "expected_roi_percent": 20.344658453625623,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:53:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": null,
+      "result": "ungraded",
+      "profit_units": null
+    },
+    {
+      "game_id": "espn_event_401918971",
+      "team": "SMU",
+      "player": "Jaden Toombs",
+      "athlete_id": "202026",
+      "market": "Assists",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 1.5,
+      "american_odds": 121,
+      "projection": 2.603811308410163,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.26664973754821886,
+      "fair_odds": 275,
+      "expected_roi_percent": -41.07040800184363,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:53:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": null,
+      "result": "ungraded",
+      "profit_units": null
+    },
+    {
+      "game_id": "espn_event_401918971",
+      "team": "SMU",
+      "player": "Jaden Toombs",
+      "athlete_id": "202026",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 5.5,
+      "american_odds": -101,
+      "projection": 5.617775884364093,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.4911529270998153,
+      "fair_odds": 104,
+      "expected_roi_percent": -2.2557046068684414,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:53:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": null,
+      "result": "ungraded",
+      "profit_units": null
+    },
+    {
+      "game_id": "espn_event_401918971",
+      "team": "SMU",
+      "player": "Jaden Toombs",
+      "athlete_id": "202026",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 5.5,
+      "american_odds": -128,
+      "projection": 5.617775884364093,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5088470729001847,
+      "fair_odds": -104,
+      "expected_roi_percent": -9.3616151396546,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:53:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": null,
+      "result": "ungraded",
+      "profit_units": null
+    },
+    {
+      "game_id": "espn_event_401918971",
+      "team": "SMU",
+      "player": "Jaden Toombs",
+      "athlete_id": "202026",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 9.5,
+      "american_odds": -110,
+      "projection": 9.65638546045293,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5113419363176884,
+      "fair_odds": -105,
+      "expected_roi_percent": -2.3801757938958445,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:53:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": null,
+      "result": "ungraded",
+      "profit_units": null
+    },
+    {
+      "game_id": "espn_event_401918971",
+      "team": "SMU",
+      "player": "Jaden Toombs",
+      "athlete_id": "202026",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 9.5,
+      "american_odds": -118,
+      "projection": 9.65638546045293,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.48865806368231157,
+      "fair_odds": 105,
+      "expected_roi_percent": -9.722493319708542,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:53:51Z",
+      "tipoff_utc": "2026-11-26T00:00:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": null,
+      "result": "ungraded",
+      "profit_units": null
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Assists",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 4.5,
+      "american_odds": 115,
+      "projection": 3.254954906347196,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.22924017387890805,
+      "fair_odds": 336,
+      "expected_roi_percent": -50.71336261603477,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 7.0,
+      "result": "win",
+      "profit_units": 1.15
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Assists",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 4.5,
+      "american_odds": -149,
+      "projection": 3.254954906347196,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.770759826121092,
+      "fair_odds": -336,
+      "expected_roi_percent": 28.80483000278651,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 7.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 4.5,
+      "american_odds": -109,
+      "projection": 5.397946523931346,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.6263605445314396,
+      "fair_odds": -168,
+      "expected_roi_percent": 20.100324593643016,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 5.0,
+      "result": "win",
+      "profit_units": 0.917431
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 4.5,
+      "american_odds": -119,
+      "projection": 5.397946523931346,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.37363945546856037,
+      "fair_odds": 168,
+      "expected_roi_percent": -31.23778088435738,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 5.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 16.5,
+      "american_odds": -103,
+      "projection": 14.26759518260532,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.3424111039596911,
+      "fair_odds": 192,
+      "expected_roi_percent": -32.51509310309,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 13.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 16.5,
+      "american_odds": -125,
+      "projection": 14.26759518260532,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.6575888960403089,
+      "fair_odds": -192,
+      "expected_roi_percent": 18.366001287255607,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 13.0,
+      "result": "win",
+      "profit_units": 0.8
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Threes",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 0.5,
+      "american_odds": -116,
+      "projection": 0.49777321192872465,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.3921172201656936,
+      "fair_odds": 155,
+      "expected_roi_percent": -26.985069348457053,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 1.0,
+      "result": "win",
+      "profit_units": 0.862069
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Threes",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 0.5,
+      "american_odds": -111,
+      "projection": 0.49777321192872465,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.6078827798343064,
+      "fair_odds": -155,
+      "expected_roi_percent": 15.552492382917704,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 1.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Assists",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 1.5,
+      "american_odds": 161,
+      "projection": 1.0571509182929897,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.2852546418427906,
+      "fair_odds": 251,
+      "expected_roi_percent": -25.548538479031652,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 1.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Assists",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 1.5,
+      "american_odds": -213,
+      "projection": 1.0571509182929897,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.7147453581572094,
+      "fair_odds": -251,
+      "expected_roi_percent": 5.030655916998378,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 1.0,
+      "result": "win",
+      "profit_units": 0.469484
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Threes",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 0.5,
+      "american_odds": -156,
+      "projection": 0.9985653610193488,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.6315924058782544,
+      "fair_odds": -171,
+      "expected_roi_percent": 3.6459332723289273,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 1.0,
+      "result": "win",
+      "profit_units": 0.641026
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Threes",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 0.5,
+      "american_odds": 120,
+      "projection": 0.9985653610193488,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.3684075941217456,
+      "fair_odds": 171,
+      "expected_roi_percent": -18.95032929321597,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 1.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 15.5,
+      "american_odds": -120,
+      "projection": 16.241606714714266,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.5536298859941505,
+      "fair_odds": -124,
+      "expected_roi_percent": 1.498812432260932,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 17.0,
+      "result": "win",
+      "profit_units": 0.833333
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Kevair Kennedy",
+      "athlete_id": "200461",
+      "market": "Points",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 15.5,
+      "american_odds": -108,
+      "projection": 16.241606714714266,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.44637011400584947,
+      "fair_odds": 124,
+      "expected_roi_percent": -14.032422487762325,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 17.0,
+      "result": "loss",
+      "profit_units": -1
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "over",
+      "line": 7.5,
+      "american_odds": -118,
+      "projection": 7.463882558571191,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.470064621454762,
+      "fair_odds": 113,
+      "expected_roi_percent": -13.157552985476173,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 11.0,
+      "result": "win",
+      "profit_units": 0.847458
+    },
+    {
+      "game_id": "espn_event_401929287",
+      "team": "Wake Forest",
+      "player": "Gavin Placide",
+      "athlete_id": "233547",
+      "market": "Rebounds",
+      "bookmaker": "betonlineag",
+      "side": "under",
+      "line": 7.5,
+      "american_odds": -110,
+      "projection": 7.463882558571191,
+      "model_version": "current-season-hybrid-v4-200min",
+      "win_probability": 0.529935378545238,
+      "fair_odds": -113,
+      "expected_roi_percent": 1.1694813586363373,
+      "projection_utc": "2026-11-25T19:41:29.348455+00:00",
+      "odds_snapshot_utc": "2026-11-25T15:56:03.024880+00:00",
+      "quote_updated_utc": "2026-11-25T15:55:37Z",
+      "tipoff_utc": "2026-11-26T00:30:00+00:00",
+      "date": "2026-11-25",
+      "captured_at_utc": "2026-11-25T19:41:39.571Z",
+      "pricing_version": "board-normal55-poisson-v1",
+      "actual": 11.0,
+      "result": "loss",
+      "profit_units": -1
+    }
+  ],
   "experimental_comparison": {
     "models": {
       "v5-rotation-participation": {
-        "paired_players": 0,
+        "paired_players": 52,
         "projection_metrics": {
           "Minutes": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 6.169,
+              "rmse": 7.668,
+              "bias": -1.615
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 5.871,
+              "rmse": 7.458,
+              "bias": -1.087
             }
           },
           "Points": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 3.768,
+              "rmse": 5.369,
+              "bias": 0.072
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 3.765,
+              "rmse": 5.338,
+              "bias": 0.313
             }
           },
           "Rebounds": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 2.039,
+              "rmse": 2.576,
+              "bias": -0.572
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 2.017,
+              "rmse": 2.538,
+              "bias": -0.464
             }
           },
           "Assists": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 1.136,
+              "rmse": 1.577,
+              "bias": -0.097
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 1.144,
+              "rmse": 1.575,
+              "bias": -0.039
             }
           },
           "Threes": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 0.643,
+              "rmse": 1.05,
+              "bias": -0.126
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 0.639,
+              "rmse": 1.04,
+              "bias": -0.099
             }
           }
         },
-        "paired_settled_quote_sides": 0,
+        "paired_settled_quote_sides": 36,
         "control_calibration": {
-          "n": 0,
-          "brier": null,
-          "log_loss": null
+          "n": 36,
+          "brier": 0.24058,
+          "log_loss": 0.67747
         },
         "experimental_calibration": {
-          "n": 0,
-          "brier": null,
-          "log_loss": null
+          "n": 36,
+          "brier": 0.22744,
+          "log_loss": 0.6499
         },
         "control_positive_roi": {
-          "selections": 0,
-          "settled": 0,
-          "wins": 0,
-          "losses": 0,
+          "selections": 13,
+          "settled": 13,
+          "wins": 9,
+          "losses": 4,
           "pushes": 0,
-          "profit_units": 0,
-          "roi_percent": null,
-          "mean_expected_roi_percent": null
+          "profit_units": 2.9849,
+          "roi_percent": 22.96,
+          "mean_expected_roi_percent": 8.7
         },
         "experimental_positive_roi": {
-          "selections": 0,
-          "settled": 0,
-          "wins": 0,
-          "losses": 0,
+          "selections": 13,
+          "settled": 13,
+          "wins": 9,
+          "losses": 4,
           "pushes": 0,
-          "profit_units": 0,
-          "roi_percent": null,
-          "mean_expected_roi_percent": null
+          "profit_units": 3.043,
+          "roi_percent": 23.41,
+          "mean_expected_roi_percent": 10.97
         }
       },
       "v6-rotation-shot-volume": {
-        "paired_players": 0,
+        "paired_players": 52,
         "projection_metrics": {
           "Minutes": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 6.169,
+              "rmse": 7.668,
+              "bias": -1.615
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 5.871,
+              "rmse": 7.458,
+              "bias": -1.087
             }
           },
           "Points": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 3.768,
+              "rmse": 5.369,
+              "bias": 0.072
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 3.706,
+              "rmse": 5.24,
+              "bias": 0.177
             }
           },
           "Rebounds": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 2.039,
+              "rmse": 2.576,
+              "bias": -0.572
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 2.017,
+              "rmse": 2.538,
+              "bias": -0.464
             }
           },
           "Assists": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 1.136,
+              "rmse": 1.577,
+              "bias": -0.097
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 1.144,
+              "rmse": 1.575,
+              "bias": -0.039
             }
           },
           "Threes": {
             "control": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 0.643,
+              "rmse": 1.05,
+              "bias": -0.126
             },
             "experimental": {
-              "n": 0,
-              "mae": null,
-              "rmse": null,
-              "bias": null
+              "n": 52,
+              "mae": 0.631,
+              "rmse": 1.013,
+              "bias": -0.058
             }
           }
         },
-        "paired_settled_quote_sides": 0,
+        "paired_settled_quote_sides": 36,
         "control_calibration": {
-          "n": 0,
-          "brier": null,
-          "log_loss": null
+          "n": 36,
+          "brier": 0.24058,
+          "log_loss": 0.67747
         },
         "experimental_calibration": {
-          "n": 0,
-          "brier": null,
-          "log_loss": null
+          "n": 36,
+          "brier": 0.24192,
+          "log_loss": 0.68216
         },
         "control_positive_roi": {
-          "selections": 0,
-          "settled": 0,
-          "wins": 0,
-          "losses": 0,
+          "selections": 13,
+          "settled": 13,
+          "wins": 9,
+          "losses": 4,
           "pushes": 0,
-          "profit_units": 0,
-          "roi_percent": null,
-          "mean_expected_roi_percent": null
+          "profit_units": 2.9849,
+          "roi_percent": 22.96,
+          "mean_expected_roi_percent": 8.7
         },
         "experimental_positive_roi": {
-          "selections": 0,
-          "settled": 0,
-          "wins": 0,
-          "losses": 0,
+          "selections": 14,
+          "settled": 14,
+          "wins": 9,
+          "losses": 5,
           "pushes": 0,
-          "profit_units": 0,
-          "roi_percent": null,
-          "mean_expected_roi_percent": null
+          "profit_units": 2.1499,
+          "roi_percent": 15.36,
+          "mean_expected_roi_percent": 11.74
         }
       }
     },
