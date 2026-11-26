@@ -70,7 +70,7 @@ def main():
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
         writer.writerows(flat)
-    tmpjson.write_text(json.dumps(data,indent=2)+"\\n",encoding="utf-8")
+    tmpjson.write_text(json.dumps(data,indent=2)+"\n",encoding="utf-8")
     tmpcsv.replace(csvpath)
     tmpjson.replace(jsonpath)
     summary = {
@@ -84,7 +84,7 @@ def main():
         "notes":"Season-to-date raw team and opponent ratings; not opponent-adjusted."
     }
     (output / f"acc_team_collection_summary_{args.season}.json").write_text(
-        json.dumps(summary,indent=2)+"\\n",encoding="utf-8")
+        json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     print(f"SUCCESS: {len(data)} ACC teams for season {args.season}; one CBBD request")
 
 if __name__ == "__main__":

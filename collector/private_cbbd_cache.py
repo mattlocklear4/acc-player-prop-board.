@@ -73,6 +73,7 @@ def main():
     p.add_argument('mode',choices=['refresh','restore'])
     p.add_argument('--dest',default='data/cbbd')
     p.add_argument('--scope',choices=['both','players','teams'],default='both')
+    p.add_argument('--reuse-today-players-if-push',action='store_true')
     a=p.parse_args();dest=Path(a.dest)
     datasets=[d for d in FILES if a.scope=='both' or d.startswith(a.scope+'_')]
     if a.mode=='restore':
@@ -83,7 +84,20 @@ def main():
     try:
         status['quota_before']=info()
         print('CBBD entitlement: '+json.dumps(status['quota_before']))
-        required=19 if a.scope=='both' else 18 if a.scope=='players' else 1
+        reuse=False
+        if a.reuse_today_players_if_push and os.environ.get('EVENT_NAME')=='push' and 'players_2027' in datasets:
+            with tempfile.TemporaryDirectory() as tmp:
+                folder=Path(tmp)
+                if read_cache('players_2027',folder):
+                    saved=json.loads((folder/FILES['players_2027'][-1]).read_text())
+                    ts=dt.datetime.fromisoformat(saved['last_successful_run_utc'])
+                    if ts.date()==dt.datetime.now(dt.timezone.utc).date() and len(saved.get('team_counts',{}))==18:
+                        status['datasets']['players_2027']={k:saved[k] for k in ('last_successful_run_utc','api_requests','total_player_games','team_counts') if k in saved}
+                        status['datasets']['players_2027']['reused_verified_today']=True
+                        reuse=True
+                        datasets.remove('players_2027')
+                        print('Reusing verified current-day private player data; no duplicate calls')
+        required=sum(18 if d=='players_2027' else 1 for d in datasets)
         balance=status['quota_before'].get('remainingCalls')
         if balance is not None and balance<required:raise RuntimeError('Insufficient CBBD quota for full refresh')
         for dataset in datasets:

@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'collector/private_cbbd_cache.py'
+      - 'collector/collect_team_stats.py'
       - '.github/workflows/acc-cbbd-collector.yml'
   schedule:
     - cron: '20 11 * * *'
@@ -29,7 +30,11 @@ jobs:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: python collector/private_cbbd_cache.py refresh
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          # The manual and scheduled refreshes always collect both datasets.
+          # On this push, a verified player cache from the same day can be reused.
+          python collector/private_cbbd_cache.py refresh --reuse-today-players-if-push
       - name: Publish aggregate collection status only
         if: always()
         run: |
