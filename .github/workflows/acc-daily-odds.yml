@@ -76,6 +76,8 @@ jobs:
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard HEAD
+            # All new local observations were copied to the temporary backup above.
+            git clean -fd -- data/odds_snapshots/ data/archives/pregame/
             git checkout -B daily-odds-publish origin/main
             mkdir -p data/odds_snapshots/intraday data/archives/pregame
             if [ -f "$tmp/$TODAY.json" ] && [ ! -e "data/odds_snapshots/$TODAY.json" ]; then cp "$tmp/$TODAY.json" "data/odds_snapshots/$TODAY.json"; fi
