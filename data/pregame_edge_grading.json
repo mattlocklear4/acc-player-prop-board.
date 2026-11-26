@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T19:35:24.286557+00:00",
+  "generated_at_utc": "2026-11-26T19:45:00.385813+00:00",
   "method": "Latest actually captured pre-tipoff projection per game; latest odds-backed capture per game. Each distinct sportsbook/market/player/line/side priced quote is graded independently; positive expected ROI only in summaries. Flat 1-unit hypothetical stake; correlated quotes are not independent bets. No backfill or post-tipoff repricing.",
   "status": "PARTIAL",
   "games": 6,
@@ -4132,6 +4132,977 @@
           "mean_expected_roi_percent": null
         }
       }
+    },
+    "common_cohort": {
+      "versions": [
+        "v4",
+        "v5-rotation-participation",
+        "v6-rotation-shot-volume",
+        "v8-opponent-specific",
+        "v9-intelligent-rotation",
+        "v10-player-distributions",
+        "v11-combined"
+      ],
+      "paired_players": 0,
+      "projection_games": 0,
+      "paired_settled_quote_sides": 0,
+      "unique_outcomes": 0,
+      "quote_games": 0,
+      "models": {
+        "v4": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        },
+        "v5-rotation-participation": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        },
+        "v6-rotation-shot-volume": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        },
+        "v8-opponent-specific": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        },
+        "v9-intelligent-rotation": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        },
+        "v10-player-distributions": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        },
+        "v11-combined": {
+          "projection_metrics": {
+            "Minutes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Points": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Rebounds": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Assists": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "Threes": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "calibration": {
+            "n": 0,
+            "brier": null,
+            "log_loss": null
+          },
+          "calibration_by_market": {},
+          "reliability": [
+            {
+              "range": "0%\u201320%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "20%\u201340%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "40%\u201350%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "50%\u201360%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "60%\u201370%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "70%\u201380%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            },
+            {
+              "range": "80%\u2013100%",
+              "n": 0,
+              "mean_probability": null,
+              "observed_win_rate": null
+            }
+          ],
+          "positive_roi": {
+            "selections": 0,
+            "settled": 0,
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "profit_units": 0,
+            "roi_percent": null,
+            "mean_expected_roi_percent": null
+          },
+          "roi_by_tier": {
+            "0\u20135%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "5\u201310%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "10\u201320%": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            },
+            "20%+": {
+              "selections": 0,
+              "settled": 0,
+              "wins": 0,
+              "losses": 0,
+              "pushes": 0,
+              "profit_units": 0,
+              "roi_percent": null,
+              "mean_expected_roi_percent": null
+            }
+          }
+        }
+      },
+      "method": "All seven models must exist on the same archived forecast or quote. Calibration uses one side per player/market/line (prefer over), excluding pushes. ROI retains all common sportsbook quote sides; correlated lines and books are not independent. V7 is excluded from the common cohort because manual overrides are selective. No historical backfill."
     },
     "method": "Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8, V9 and V10 are paired against V6 to isolate opponent, rotation and probability-distribution adjustments; V11 combines the components and compares against V4, along with the earlier availability/rotation experiments. V4 remains the production control."
   }
