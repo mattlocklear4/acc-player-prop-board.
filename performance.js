@@ -57,6 +57,20 @@ function pendingPanel(d,today=easternDate()){
  html+=note('Latest capture: '+(d.latest_capture_utc?new Date(d.latest_capture_utc).toLocaleString():'—')+' · '+(d.games_with_priced_quotes??0)+' games with priced quotes · '+(d.issues||[]).length+' archive issues. Settled results are published after the next-day grading run.');
  return panel(title,html);
 }
+function clvPanel(d){
+ const c=d?.closing_line_value;
+ if(!c)return panel('Observed closing-line movement',note('Awaiting the next grading report with pregame quote movement.'));
+ const o=c.overall||{}, models=Object.entries(c.models||{});
+ let html=note(c.method||'Same-book pregame observations only.')+'<div class="perf-grid">'+kpi('First positive signals',o.signals??0)+kpi('Fresh later matches',o.matched??0)+kpi('Same-line matches',o.same_line??0)+kpi('Mean price movement',numeric(o.mean_price_clv_pp)?val(o.mean_price_clv_pp,2)+' pp':'—',cls(o.mean_price_clv_pp))+kpi('Mean minutes before tip',val(o.mean_minutes_before_tip,1))+'</div>';
+ if(!o.matched)html+=note('No qualifying later quotes yet. Missing or stale closing observations are not zero CLV.');
+ const head=['Model','Signals','Matched','Same line','Mean price Δ (pp)','Price + / − / flat','Line favorable / unfavorable'];
+ const row=(k,m)=>[k,m.signals,m.matched,m.same_line,val(m.mean_price_clv_pp),[m.price_positive,m.price_negative,m.price_unchanged].join(' / '),[m.line_favorable,m.line_unfavorable].join(' / ')];
+ if(models.length)html+='<h4>By model</h4>'+table(head,models.map(([k,m])=>row(k==='v4'?'V4 control':k,m)));
+ if(Object.keys(c.v11_by_market||{}).length)html+='<h4>V11 by market</h4>'+table(['Market',...head.slice(1)],Object.entries(c.v11_by_market).map(([k,m])=>row(k,m)));
+ const coverage=Object.entries(o.coverage_reasons||{});
+ if(coverage.length)html+='<h4>Coverage and exclusions</h4>'+table(['Status','Signals'],coverage.map(([k,n])=>[k.replaceAll('_',' '),n]));
+ return panel('Observed closing-line movement',html);
+}
 function commonCohortPanel(d){
  const c=d?.experimental_comparison?.common_cohort;
  if(!c)return panel('All-model common-sample leaderboard',note('Awaiting the next grading report with common-cohort diagnostics.'));
@@ -137,7 +151,7 @@ async function load(){
  async function get(name){try{const r=await fetch('data/'+name+'.json?ts='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch{return null;}}
  const [pending,exact,morning,health,legacy]=await Promise.all(['pregame_pending','pregame_edge_grading','daily_grading','pipeline_health','daily_odds_evaluation'].map(get));
  if(token!==sequence)return;
- el.innerHTML=pendingPanel(pending)+commonCohortPanel(exact)+comparisonPanel(exact,pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
+ el.innerHTML=pendingPanel(pending)+commonCohortPanel(exact)+clvPanel(exact)+comparisonPanel(exact,pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
 }
 doc.querySelector('[data-tab="accuracy"]')?.addEventListener('click',load);
 doc.getElementById('refreshPerformance')?.addEventListener('click',load);
