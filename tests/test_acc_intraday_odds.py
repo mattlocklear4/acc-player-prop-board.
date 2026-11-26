@@ -32,6 +32,10 @@ class IntradayTests(unittest.TestCase):
         self.assertEqual([x['event']['event_id'] for x in choose(due,8,base,[],now,board)],['0'])
         self.assertEqual([x['event']['event_id'] for x in choose(due,16,base,[],now,board)],['0','1'])
         self.assertEqual(candidates(base,board,api,[{'event_id':'0','phase':'close'},{'event_id':'1','phase':'midday'}],now),[])
+        manual=candidates(base,board,api,[],now,'2')
+        self.assertEqual([(x['event']['event_id'],x['phase']) for x in manual],[('2','manual')])
+        self.assertEqual(candidates(base,board,api,[{'event_id':'2','phase':'manual'}],now,'2'),[])
+        self.assertEqual(candidates(base,board,api,[],now,'3'),[])
         wrong=[{**a[1],'commence_time':b[1]['commence_time']}]
         self.assertEqual(candidates(base,board,wrong,[],now),[])
 
