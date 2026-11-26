@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""Quota-safe intraday ACC odds observations; immutable morning files are untouched."""
+import datetime as dt
+import json
+import os
+from pathlib import Path
+import re
+import urllib.parse
+from zoneinfo import ZoneInfo
+from acc_stage8b_multibook import get,ROOT as API,MARKETS,BOOKS,utc,prop_coverage
+
+ROOT=Path(__file__).resolve().parents[1]
+CAP=24
+RESERVE=50
+COST=len(MARKETS)
+
+def integer(x):
+    try:
+        v=int(x)
+        return v if v>=0 and str(v)==str(x) else None
+    except (ValueError,TypeError):return None
+
+def budget(base,observations,remaining):
+    """Count actual debits plus unknown requests conservatively.
+    Global remaining delta also covers failed/unpublished requests and other consumers.
+    Refuse inconsistent/reset quota headers; never spend against an unknown balance.
+    """
+    q=base.get('quota') or {}
+    morning=integer(q.get('credits_spent_reported'))
+    initial=integer(q.get('remaining'))
+    if None in (morning,initial,remaining) or remaining>initial:return 0
+    spent=morning
+    for row in observations:
+        charged=integer((row.get('quota') or {}).get('charged'))
+        spent+=charged if charged is not None and charged<=COST else COST
+    spent=max(spent,morning+initial-remaining)
+    return max(0,min(CAP-spent,remaining-RESERVE))
+
+def candidates(base,board,events,observations,now):
+    """Use verified IDs, teams and times; only future games on today's board."""
+    games={str(g.get('game_id')):g for g in board.get('games') or []}
+    provider={str(e.get('id')):e for e in events}
+    seen={(o.get('event_id'),o.get('phase')) for o in observations}
+    out=[]
+    for e in base.get('events') or []:
+        eid=str(e.get('event_id') or '');gid=str(e.get('schedule_game_id') or '')
+        g=games.get(gid);p=provider.get(eid)
+        if not g or not p or not any(t.get('players') for t in g.get('teams') or []):continue
+        tip=utc(g.get('tipoff_utc'));ptip=utc(p.get('commence_time'))
+        if not tip or not ptip or tip!=ptip or p.get('home_team')!=e.get('home_team') or p.get('away_team')!=e.get('away_team'):continue
+        mins=(tip-now).total_seconds()/60
+        if not 10<=mins<=180:continue
+        phase='close' if mins<=55 else 'midday' if mins>=90 else None
+        if phase and (eid,phase) not in seen:
+            out.append({'event':e,'tip':tip,'minutes':mins,'phase':phase})
+    # Most imminent first, with already populated markets preferred on ties.
+    return sorted(out,key=lambda x:(x['phase']!='close',x['minutes'],not bool(x['event'].get('props')),str(x['event']['event_id'])))
+
+def choose(targets,available,base,observations,now,board):
+    """Preserve room for as many remaining close observations as possible."""
+    slots=available//COST
+    if slots<=0:return []
+    closes=[x for x in targets if x['phase']=='close']
+    chosen=closes[:slots]
+    if len(chosen)==slots:return chosen
+    completed={o.get('event_id') for o in observations if o.get('phase')=='close'}
+    completed.update(x['event']['event_id'] for x in chosen)
+    future={str(g.get('game_id')) for g in board.get('games') or [] if utc(g.get('tipoff_utc')) and (utc(g['tipoff_utc'])-now).total_seconds()>55*60}
+    reserve=sum(e.get('event_id') not in completed and str(e.get('schedule_game_id')) in future for e in base.get('events') or [])
+    extra=max(0,slots-len(chosen)-reserve)
+    return chosen+[x for x in targets if x['phase']=='midday'][:extra]
+
+def atomic_json(path,data):
+    path.parent.mkdir(parents=True,exist_ok=True)
+    tmp=path.with_suffix('.tmp')
+    tmp.write_text(json.dumps(data,indent=2)+'\n')
+    tmp.replace(path)
+
+def main():
+    now=dt.datetime.now(dt.timezone.utc)
+    today=now.astimezone(ZoneInfo('America/New_York')).date().isoformat()
+    base_path=ROOT/'data/odds_snapshots'/f'{today}.json'
+    manifest_path=ROOT/'data/odds_snapshots/intraday'/f'{today}.json'
+    if not base_path.exists():print('Morning snapshot missing; no refresh.');return
+    base=json.loads(base_path.read_text())
+    board=json.loads((ROOT/'data/daily_board.json').read_text())
+    if board.get('date_eastern')!=today:print('Current-date projections not published; no refresh.');return
+    manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {'date_eastern':today,'observations':[]}
+    if manifest.get('date_eastern')!=today:raise RuntimeError('Intraday manifest date mismatch')
+    observations=manifest['observations']
+    key=os.environ.get('ODDS_API_KEY','').strip()
+    if not key:raise RuntimeError('Odds secret missing')
+    # Cheap local check before even making a free discovery request.
+    if not any(utc(g.get('tipoff_utc')) and 10<=(utc(g['tipoff_utc'])-now).total_seconds()/60<=180 for g in board.get('games') or []):
+        print('No imminent projected games.');return
+    api_events,headers=get(API+'/events',{'apiKey':key})
+    remaining=integer(headers.get('x-requests-remaining'))
+    available=budget(base,observations,remaining)
+    targets=choose(candidates(base,board,api_events,observations,now),available,base,observations,now,board)
+    print('Conservative remaining daily budget:',available,'selected events:',len(targets))
+    for target in targets:
+        now=dt.datetime.now(dt.timezone.utc)
+        if target['tip']-now<dt.timedelta(minutes=5) or budget(base,observations,remaining)<COST:continue
+        e=target['event'];eid=str(e['event_id'])
+        row={'event_id':eid,'schedule_game_id':e['schedule_game_id'],'home_team':e['home_team'],'away_team':e['away_team'],
+             'tipoff_utc':target['tip'].isoformat(),'phase':target['phase'],'generated_at_utc':now.isoformat(),
+             'status':'REQUEST_STARTED','props':[],'quota':{'charged':None,'remaining_before':remaining}}
+        observations.append(row)
+        atomic_json(manifest_path,manifest)
+        try:
+            data,meta=get(API+'/events/'+urllib.parse.quote(eid,safe=''),
+                          {'apiKey':key,'bookmakers':','.join(BOOKS),'markets':','.join(MARKETS),'oddsFormat':'american'})
+            captured=dt.datetime.now(dt.timezone.utc)
+            charged=integer(meta.get('x-requests-last'));after=integer(meta.get('x-requests-remaining'))
+            row['generated_at_utc']=captured.isoformat()
+            row['quota'].update(charged=charged,remaining_after=after)
+            valid=(charged is not None and charged<=COST and after is not None and remaining-after==charged)
+            if not valid or captured>=target['tip'] or data.get('id')!=eid or data.get('home_team')!=e['home_team'] or data.get('away_team')!=e['away_team'] or utc(data.get('commence_time'))!=target['tip']:
+                row['status']='UNVERIFIED_RESPONSE';atomic_json(manifest_path,manifest);break
+            props=[{'bookmaker':b['key'],'market':m['key'],'player':o.get('description'),'side':o.get('name'),'line':o.get('point'),'odds':o.get('price'),'last_update':m.get('last_update')} for b in data.get('bookmakers') or [] if b.get('key') in BOOKS for m in b.get('markets') or [] if m.get('key') in MARKETS for o in m.get('outcomes') or []]
+            row.update(status='ODDS_RETRIEVED' if props else 'NO_REQUESTED_BOOK_PROPS_RETURNED',props=props,coverage=prop_coverage(props))
+            remaining=after
+            atomic_json(manifest_path,manifest)
+            print('Archived',eid,target['phase'],'quotes',len(props),'credits',charged)
+        except Exception as exc:
+            # Do not log provider URLs or credentials. Unknown charges count at maximum cost.
+            row['status']='REQUEST_FAILED';row['error_type']=type(exc).__name__
+            atomic_json(manifest_path,manifest)
+            print('Request failed; stopped without retry:',type(exc).__name__)
+            break
+
+if __name__=='__main__':main()
