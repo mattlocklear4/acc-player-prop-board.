@@ -1,11 +1,11 @@
 {
   "date_eastern": "2026-11-26",
-  "generated_at_utc": "2026-11-26T19:22:18.151228+00:00",
+  "generated_at_utc": "2026-11-26T19:24:44.721433+00:00",
   "status": "OK",
   "latest_capture_utc": "2026-11-26T19:22:17.949000+00:00",
-  "games": 9,
+  "games": 5,
   "games_with_priced_quotes": 3,
-  "player_projections": 122,
+  "player_projections": 68,
   "quotes_priced": 90,
   "positive_selections": 37,
   "mean_expected_roi_percent": 19.58,
@@ -36,14 +36,14 @@
   "issues": [],
   "experimental_models": {
     "v5-rotation-participation": {
-      "player_projections": 122,
+      "player_projections": 68,
       "quotes_priced": 90,
       "positive_selections": 40,
       "shot_fallbacks": 0,
       "mean_expected_roi_percent": 25.25
     },
     "v6-rotation-shot-volume": {
-      "player_projections": 122,
+      "player_projections": 68,
       "quotes_priced": 90,
       "positive_selections": 37,
       "shot_fallbacks": 0,
@@ -71,7 +71,7 @@
       "mean_expected_roi_percent": null
     },
     "v7-manual-availability": {
-      "player_projections": 13,
+      "player_projections": 0,
       "quotes_priced": 36,
       "positive_selections": 12,
       "shot_fallbacks": 0,
