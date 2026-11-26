@@ -17,6 +17,7 @@ from acc_availability import load_overrides, attach_availability
 from acc_opponent_model import load_context, attach_matchup
 from acc_rotation_model import load_rotation, attach_rotation
 from acc_distribution_model import attach_distributions
+from acc_combined_model import attach_combined
 from pregame_prepare import consensus, team_id, timestamp
 from supabase_kenpom import fetch_latest_kenpom, resolve_opponent
 
@@ -87,6 +88,7 @@ def matchup(schedule, odds_feed, now, root, kp, source_meta, lock_lead_minutes=N
                     if local_date not in rotations_by_day:rotations_by_day[local_date]=load_rotation(root,now,local_date)
                     players=attach_rotation(players,team,rotations_by_day[local_date],market)
                     players=attach_distributions(players)
+                    players=attach_combined(players,opponent_kp,opponent_context)
                     item.update(status='research_candidate_unverified',reason='browser_parity_and_manual_minutes_not_verified',players=players,odds=market,odds_status=market_issue or 'available',kenpom_source=source_meta['source'],kenpom_snapshot_id=source_meta['snapshot_id'])
                 except (KeyError,ValueError,FileNotFoundError,TypeError) as exc:item['reason']='projection_input_error:'+str(exc)
             base['teams'].append(item)

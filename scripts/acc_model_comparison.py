@@ -6,6 +6,7 @@ from acc_experimental_models import VERSIONS, SHOOTING
 from acc_opponent_model import VERSION as OPPONENT_VERSION
 from acc_rotation_model import VERSION as ROTATION_VERSION
 from acc_distribution_model import VERSION as DISTRIBUTION_VERSION
+from acc_combined_model import VERSION as COMBINED_VERSION
 from acc_availability import VERSION as AVAILABILITY_VERSION
 
 def error_metrics(errors):
@@ -24,7 +25,7 @@ def calibration(rows):
 def compare(records,logs,today):
     latest, odds, _=select_snapshots(records,lambda date:date<today)
     output={}
-    for version in (*VERSIONS,AVAILABILITY_VERSION,OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION):
+    for version in (*VERSIONS,AVAILABILITY_VERSION,OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION,COMBINED_VERSION):
         control_version=SHOOTING if version in (OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION) else None
         pc=[];pe=[];qc=[];qe=[]
         for _,r in latest.values():
@@ -59,4 +60,4 @@ def compare(records,logs,today):
             'calibration_by_market':{market:{'control':calibration([q for q in cs if q['market']==market]),'experimental':calibration([q for q in es if q['market']==market])} for market in sorted({q['market'] for q in cs})},
             'control_positive_roi':summary([q for q in cs if q['expected_roi_percent']>0]),
             'experimental_positive_roi':summary([q for q in es if q['expected_roi_percent']>0])}
-    return {'models':output,'method':'Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8, V9 and V10 are paired against V6 to isolate opponent, rotation and probability-distribution adjustments; other experiments compare with V4. V4 remains the control for production.'}
+    return {'models':output,'method':'Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8, V9 and V10 are paired against V6 to isolate opponent, rotation and probability-distribution adjustments; V11 combines the components and compares against V4, along with the earlier availability/rotation experiments. V4 remains the production control.'}

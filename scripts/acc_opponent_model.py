@@ -88,17 +88,17 @@ def factors(m,league):
             'OREB':clamp(f('off_miss_rate')*share('opp_orb_share'),.85,1.15),
             'DREB':clamp(f('def_miss_rate')*share('team_orb_share',True),.85,1.15)}
 
-def attach_matchup(players,opponent,context):
+def attach_matchup(players,opponent,context,base_version=SHOOTING,output_version=VERSION,exclude_manual=False):
     def absent(reason):return [{**p,'OpponentModelStatus':reason} for p in players]
     if not context:return absent('national_snapshot_unavailable_or_stale')
     m=context['teams'].get(key(opponent))
     if not m:return absent('opponent_missing_or_insufficient_current_season_sample')
-    if not players or any(not (p.get('ExperimentalModels') or {}).get(SHOOTING) for p in players):
+    if not players or any(not (p.get('ExperimentalModels') or {}).get(base_version) for p in players):
         return absent('v6_rotation_unavailable')
     f=factors(m,context['league']);out=[]
     for p in players:
-        v=p['ExperimentalModels'][SHOOTING]
-        x={**v,'ModelVersion':VERSION}
+        v=p['ExperimentalModels'][base_version]
+        x={**v,'ModelVersion':output_version}
         pace=finite(p.get('PaceFactor'));market=finite(p.get('MarketFactor'))
         if pace is None:return absent('pace_missing')
         # Replace generic defensive factor for points/assists; do not stack it.
@@ -112,6 +112,9 @@ def attach_matchup(players,opponent,context):
             x['KenPomThrees']=threes*pace
         else:fallback+=['Points','Threes']
         logs=p.get('CurrentSeasonLog') or []
+        if exclude_manual:
+            excluded=set((v.get('IntelligentRotation') or {}).get('manual_excluded_games') or [])
+            logs=[g for g in logs if g.get('date') not in excluded]
         pairs=[(finite(g.get('oreb')),finite(g.get('dreb'))) for g in logs]
         valid=[(a,b) for a,b in pairs if a is not None and b is not None and a>=0 and b>=0]
         total=sum(a+b for a,b in valid)
@@ -126,8 +129,8 @@ def attach_matchup(players,opponent,context):
             val=finite(x.get('KenPom'+stat))
             mult=market if stat=='Points' else 1+.5*(market-1) if stat in ('Assists','Threes') and market is not None else 1
             x['Combined'+stat]=val*mult if val is not None and market is not None else None
-        x['OpponentAdjustment']={'base_model':SHOOTING,'snapshot_utc':context['timestamp'],'opponent_games':m['games'],
+        x['OpponentAdjustment']={'base_model':base_version,'snapshot_utc':context['timestamp'],'opponent_games':m['games'],
                                  'national_teams':context['coverage'],'factors':{k:round(a,4) for k,a in f.items()},
                                  'offensive_rebound_share':share,'fallback_stats':fallback}
-        out.append({**p,'OpponentModelStatus':'available','ExperimentalModels':{**p['ExperimentalModels'],VERSION:x}})
+        out.append({**p,'OpponentModelStatus':'available','ExperimentalModels':{**p['ExperimentalModels'],output_version:x}})
     return out

@@ -51,3 +51,16 @@ assert.equal(v10Rows[0].probOver,custom.over);
 assert.equal(v10Rows[0].pricingModel,'player-count-dispersion-v1');
 assert.equal(evaluate(board,snapshot).rows[0].probOver,probabilities('player_points',17,14.5).over);
 console.log('V10 count distribution and control pricing tests passed');
+
+// V11 uses its combined mean, its own dispersion and never prices an out player.
+const p11=board.games[0].teams[0].players[0];
+const v11dist={family:'negative_binomial',mean:13.2,dispersion:.08};
+p11.ExperimentalModels['v11-combined']={ModelVersion:'v11-combined',Minutes:29,ProbabilityModel:'player-count-dispersion-v1',KenPomPoints:13.2,Distributions:{Points:v11dist},CombinedModelInputs:{pricing_status:'available'}};
+let v11rows=evaluate(experimentalBoard(board,'v11-combined'),snapshot).rows;
+assert.equal(v11rows.length,1);assert.equal(v11rows[0].projection,13.2);
+assert.equal(v11rows[0].probOver,probabilities('player_points',13.2,14.5,v11dist).over);
+assert.equal(v11rows[0].pricingModel,'player-count-dispersion-v1');
+p11.ExperimentalModels['v11-combined'].Minutes=0;
+assert.equal(evaluate(experimentalBoard(board,'v11-combined'),snapshot).rows.length,0);
+assert.equal(evaluate(board,snapshot).rows[0].projection,17);
+console.log('V11 combined mean and pricing safeguards passed');
