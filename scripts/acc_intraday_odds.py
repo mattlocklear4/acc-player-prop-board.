@@ -31,13 +31,18 @@ def budget(base,observations,remaining):
     initial=integer(q.get('remaining'))
     if None in (morning,initial,remaining) or remaining>initial:return 0
     spent=morning
-    for row in observations:
+    for i,row in enumerate(observations):
         charged=integer((row.get('quota') or {}).get('charged'))
-        spent+=charged if charged is not None and charged<=COST else COST
+        before=integer((row.get('quota') or {}).get('remaining_before'))
+        # An unchanged verified balance at the next preflight proves a failed
+        # request did not consume credits. Preserve the original failure record.
+        after=integer((observations[i+1].get('quota') or {}).get('remaining_before')) if i+1<len(observations) else remaining
+        no_debit=(row.get('status')=='REQUEST_FAILED' and before is not None and after==before and initial>=before>=remaining)
+        spent+=charged if charged is not None and charged<=COST else 0 if no_debit else COST
     spent=max(spent,morning+initial-remaining)
     return max(0,min(CAP-spent,remaining-RESERVE))
 
-def candidates(base,board,events,observations,now,target_game=None,retry_failed=False):
+def candidates(base,board,events,observations,now,target_game=None,retry_failed=False,repair_failed=False):
     """Use verified IDs, teams and times; only future games on today's board."""
     games={str(g.get('game_id')):g for g in board.get('games') or []}
     provider={str(e.get('id')):e for e in events}
@@ -53,6 +58,10 @@ def candidates(base,board,events,observations,now,target_game=None,retry_failed=
         mins=(tip-now).total_seconds()/60
         if mins<10 or (not target_game and mins>180):continue
         phase='close' if mins<=55 else 'manual' if target_game else 'midday' if mins>=90 else None
+        if phase and (eid,phase) in seen and repair_failed and target_game:
+            attempts=[o for o in observations if o.get('event_id')==eid and o.get('phase') in (phase,phase+'_retry')]
+            if attempts and all(o.get('status')=='REQUEST_FAILED' for o in attempts) and any(o.get('http_status')==404 for o in attempts) and (eid,phase+'_repair') not in seen:
+                phase+='_repair'
         if phase and (eid,phase) in seen and retry_failed and target_game:
             attempts=[o for o in observations if o.get('event_id')==eid and o.get('phase')==phase]
             if len(attempts)==1 and attempts[0].get('status')=='REQUEST_FAILED' and (eid,phase+'_retry') not in seen:
@@ -98,11 +107,13 @@ def main():
     if not key:raise RuntimeError('Odds secret missing')
     target_game=None
     retry_failed=False
+    repair_failed=False
     if os.environ.get('TARGETED_REQUEST','').lower()=='true':
         request=json.loads((ROOT/'research/odds_refresh_request.json').read_text())
         if request.get('date_eastern')!=today:print('Expired request.');return
         target_game=request.get('schedule_game_id') or None
         retry_failed=request.get('retry_failed') is True
+        repair_failed=request.get('repair_failed') is True
         if target_game and not isinstance(target_game,str):raise RuntimeError('Invalid requested game ID')
     # Cheap local check before even making a free discovery request.
     if not any(utc(g.get('tipoff_utc')) and (10<=(utc(g['tipoff_utc'])-now).total_seconds()/60) and ((str(g.get('game_id'))==target_game) if target_game else ((utc(g['tipoff_utc'])-now).total_seconds()/60<=180)) for g in board.get('games') or []):
@@ -110,7 +121,7 @@ def main():
     api_events,headers=get(API+'/events',{'apiKey':key})
     remaining=integer(headers.get('x-requests-remaining'))
     available=budget(base,observations,remaining)
-    due=candidates(base,board,api_events,observations,now,target_game,retry_failed)
+    due=candidates(base,board,api_events,observations,now,target_game,retry_failed,repair_failed)
     # Explicitly requested game may spend a remaining slot outside the automatic windows.
     targets=due[:1] if target_game and available>=COST else [] if target_game else choose(due,available,base,observations,now,board)
     print('Conservative remaining daily budget:',available,'selected events:',len(targets))
@@ -126,7 +137,7 @@ def main():
         observations.append(row)
         atomic_json(manifest_path,manifest)
         try:
-            data,meta=get(API+'/events/'+urllib.parse.quote(eid,safe=''),
+            data,meta=get(API+'/events/'+urllib.parse.quote(eid,safe='')+'/odds',
                           {'apiKey':key,'bookmakers':','.join(BOOKS),'markets':','.join(MARKETS),'oddsFormat':'american'})
             captured=dt.datetime.now(dt.timezone.utc)
             charged=integer(meta.get('x-requests-last'));after=integer(meta.get('x-requests-remaining'))
