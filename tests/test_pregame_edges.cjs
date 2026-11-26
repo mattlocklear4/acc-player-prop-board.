@@ -25,3 +25,29 @@ snapshot.generated_at_utc='2026-11-23T16:55:29Z';
 board.generated_at_utc='2026-11-23T20:00:00Z';
 assert.equal(evaluate(board,snapshot).rows.length,0);
 console.log('Pregame edge matching and distribution tests passed');
+
+// V10 uses the identical mean and a proper nonnegative count distribution.
+const {negativeBinomialCdf,experimentalBoard}=require('../pregame-edges.js');
+assert.ok(Math.abs(negativeBinomialCdf(2,1,1)-.875)<1e-10); // geometric mean 1
+assert.equal(negativeBinomialCdf(0,0,1),1);
+let last=0;
+for(let k=0;k<60;k++){
+ const u=negativeBinomialCdf(k,14,.1);
+ assert.ok(u>=last&&u<=1);last=u;
+}
+assert.ok(last>.999);
+const v10={family:'negative_binomial',mean:17,dispersion:.1};
+const custom=probabilities('player_points',17,14.5,v10);
+assert.ok(custom&&Math.abs(custom.over+custom.under-1)<1e-12);
+assert.notEqual(custom.over,probabilities('player_points',17,14.5).over);
+assert.equal(probabilities('player_points',17,14.5,{...v10,mean:18}),null);
+assert.equal(probabilities('player_points',17,14.5,null),null);
+board.generated_at_utc='2026-11-23T18:58:09Z';
+board.games[0].teams[0].players[0].ExperimentalModels={'v10-player-distributions':{ModelVersion:'v10-player-distributions',ProbabilityModel:'player-count-dispersion-v1',KenPomPoints:17,Distributions:{Points:v10}}};
+const v10Rows=evaluate(experimentalBoard(board,'v10-player-distributions'),snapshot).rows;
+assert.equal(v10Rows.length,1);
+assert.equal(v10Rows[0].projection,17);
+assert.equal(v10Rows[0].probOver,custom.over);
+assert.equal(v10Rows[0].pricingModel,'player-count-dispersion-v1');
+assert.equal(evaluate(board,snapshot).rows[0].probOver,probabilities('player_points',17,14.5).over);
+console.log('V10 count distribution and control pricing tests passed');

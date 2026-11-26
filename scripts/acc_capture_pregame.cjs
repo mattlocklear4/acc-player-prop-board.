@@ -21,7 +21,7 @@ function capture(board,odds,now,output,pricingHash='test'){
     const result=withOdds?evaluate({...board,games:[game]},{...odds,events:(odds.events||[]).filter(e=>e.schedule_game_id===game.game_id)}):{rows:[],diagnostics:[]};
     const flatten=result=>result.rows.flatMap(r=>['over','under'].filter(side=>r[side]!=null).map(side=>{
       const suffix=side==='over'?'Over':'Under';
-      return {game_id:r.gameId,team:r.team,player:r.player,athlete_id:r.athleteId,market:r.market,bookmaker:r.book,side,line:r.line,american_odds:r[side],projection:r.projection,model_version:r.modelVersion,win_probability:r['prob'+suffix],fair_odds:r['fair'+suffix],expected_roi_percent:r['roi'+suffix],projection_utc:r.projectionUtc,odds_snapshot_utc:r.snapshotUtc,quote_updated_utc:r['quoteUpdated'+suffix],tipoff_utc:r.tipoffUtc};
+      return {game_id:r.gameId,team:r.team,player:r.player,athlete_id:r.athleteId,market:r.market,bookmaker:r.book,side,line:r.line,american_odds:r[side],projection:r.projection,model_version:r.modelVersion,probability_model:r.pricingModel,distribution:r.distribution,win_probability:r['prob'+suffix],fair_odds:r['fair'+suffix],expected_roi_percent:r['roi'+suffix],projection_utc:r.projectionUtc,odds_snapshot_utc:r.snapshotUtc,quote_updated_utc:r['quoteUpdated'+suffix],tipoff_utc:r.tipoffUtc};
     }));
     const rows=flatten(result);
     const experimental_quotes={};
