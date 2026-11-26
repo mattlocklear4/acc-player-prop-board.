@@ -7,6 +7,9 @@ class IntradayTests(unittest.TestCase):
     def test_credit_cap_reserve_and_unknowns(self):
         b={'quota':{'credits_spent_reported':16,'remaining':100}}
         self.assertEqual(budget(b,[],100),8)
+        failed=[{'status':'REQUEST_FAILED','quota':{'charged':None,'remaining_before':98}},{'status':'REQUEST_FAILED','quota':{'charged':None,'remaining_before':98}}]
+        self.assertEqual(budget(b,failed,98),6)
+        self.assertEqual(budget(b,failed,94),2)
         self.assertEqual(budget({'quota':{'credits_spent_reported':12,'credits_spent_conservative':16,'remaining':100}},[],100),8)
         self.assertEqual(budget(b,[],96),4)
         self.assertEqual(budget(b,[{'quota':{'charged':None}}],100),4)
@@ -41,6 +44,10 @@ class IntradayTests(unittest.TestCase):
         self.assertEqual([(x['event']['event_id'],x['phase']) for x in retry],[('2','manual_retry')])
         self.assertEqual(candidates(base,board,api,failed+[{'event_id':'2','phase':'manual_retry','status':'REQUEST_FAILED'}],now,'2',True),[])
         self.assertEqual(candidates(base,board,api,[{'event_id':'2','phase':'manual','status':'ODDS_RETRIEVED'}],now,'2',True),[])
+        failures=failed+[{'event_id':'2','phase':'manual_retry','status':'REQUEST_FAILED','http_status':404}]
+        repaired=candidates(base,board,api,failures,now,'2',False,True)
+        self.assertEqual([(x['event']['event_id'],x['phase']) for x in repaired],[('2','manual_repair')])
+        self.assertEqual(candidates(base,board,api,failures+[{'event_id':'2','phase':'manual_repair','status':'ODDS_RETRIEVED'}],now,'2',False,True),[])
         wrong=[{**a[1],'commence_time':b[1]['commence_time']}]
         self.assertEqual(candidates(base,board,wrong,[],now),[])
 
