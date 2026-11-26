@@ -1,0 +1,96 @@
+{
+  "checked_at_utc": "2026-11-26T19:06:39.124093+00:00",
+  "status": "FAILED",
+  "data_updated": false,
+  "datasets": {
+    "players_2027": {
+      "last_successful_run_utc": "2026-11-26T19:06:38.230837+00:00",
+      "api_requests": 18,
+      "total_player_games": 1410,
+      "team_counts": {
+        "Boston College": {
+          "games": 6,
+          "players": 61
+        },
+        "California": {
+          "games": 7,
+          "players": 86
+        },
+        "Clemson": {
+          "games": 8,
+          "players": 69
+        },
+        "Duke": {
+          "games": 7,
+          "players": 77
+        },
+        "Florida State": {
+          "games": 7,
+          "players": 76
+        },
+        "Georgia Tech": {
+          "games": 7,
+          "players": 85
+        },
+        "Louisville": {
+          "games": 5,
+          "players": 47
+        },
+        "Miami": {
+          "games": 7,
+          "players": 78
+        },
+        "NC State": {
+          "games": 7,
+          "players": 77
+        },
+        "North Carolina": {
+          "games": 6,
+          "players": 67
+        },
+        "Notre Dame": {
+          "games": 8,
+          "players": 97
+        },
+        "Pittsburgh": {
+          "games": 7,
+          "players": 73
+        },
+        "SMU": {
+          "games": 7,
+          "players": 83
+        },
+        "Stanford": {
+          "games": 8,
+          "players": 82
+        },
+        "Syracuse": {
+          "games": 7,
+          "players": 73
+        },
+        "Virginia": {
+          "games": 8,
+          "players": 108
+        },
+        "Virginia Tech": {
+          "games": 7,
+          "players": 90
+        },
+        "Wake Forest": {
+          "games": 7,
+          "players": 81
+        }
+      }
+    }
+  },
+  "quota_before": {
+    "patronLevel": 3,
+    "tierName": "Tier 3",
+    "monthlyLimit": 75000,
+    "remainingCalls": 74740,
+    "usedCalls": 260,
+    "resetAt": "2026-12-01T00:00:00.000Z",
+    "sharedPool": true
+  },
+  "message": "Extra data: line 29 column 2 (char 656)"
+}
