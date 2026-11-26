@@ -20,7 +20,7 @@ def flatten(obj, prefix=""):
     return result
 
 def collect(season, key):
-    url = BASE + "?" + parse.urlencode({"season":season, "conference":"ACC"})
+    url = BASE + "?" + parse.urlencode({"season":season})
     req = request.Request(url, headers={"Authorization":"Bearer "+key,
        "Accept":"application/json","User-Agent":"acc-player-prop-board/1.7"})
     for attempt in range(3):
@@ -49,6 +49,10 @@ def main():
     data = collect(args.season, key)
     if not isinstance(data,list) or any(not isinstance(item,dict) for item in data):
         raise SystemExit("Unexpected CBBD response; existing files untouched")
+    national=[x for x in data if x.get('season')==args.season and x.get('conference') and isinstance(x.get('teamStats'),dict) and isinstance(x.get('opponentStats'),dict)]
+    if not 300 <= len(national) <= 400 or len({x.get('teamId') for x in national})!=len(national):
+        raise SystemExit("Incomplete or ambiguous national team statistics; cache retained")
+    data=[x for x in national if x.get('team') in TEAMS and x.get('conference')=='ACC']
     names = [x.get("team") for x in data]
     if len(data) != len(TEAMS) or set(names) != TEAMS:
         raise SystemExit("Expected 18 unique ACC teams; got "+str(len(data))+
@@ -73,7 +77,10 @@ def main():
     tmpjson.write_text(json.dumps(data,indent=2)+"\n",encoding="utf-8")
     tmpcsv.replace(csvpath)
     tmpjson.replace(jsonpath)
+    national_path=output / f"d1_team_stats_{args.season}.json"
+    national_path.write_text(json.dumps(sorted(national,key=lambda x:x['team']))+"\n",encoding="utf-8")
     summary = {
+        "national_team_count":len(national),
         "season":args.season,
         "last_successful_run_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
         "api_requests":1,

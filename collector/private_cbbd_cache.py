@@ -12,7 +12,7 @@ from urllib.error import HTTPError, URLError
 ROOT=Path(__file__).resolve().parents[1]
 CACHE='acc_cbbd_private_cache'
 FILES={'players_2027':('acc_player_games_2027.csv','acc_collection_summary_2027.json'),
-       'teams_2027':('acc_team_stats_2027.csv','acc_team_stats_2027.json','acc_team_collection_summary_2027.json')}
+       'teams_2027':('acc_team_stats_2027.csv','acc_team_stats_2027.json','d1_team_stats_2027.json','acc_team_collection_summary_2027.json')}
 def now():return dt.datetime.now(dt.timezone.utc).isoformat()
 def request(url,key,method='GET',payload=None,headers=None):
     h={'apikey':key,'Authorization':'Bearer '+key,'Accept':'application/json'}
@@ -39,7 +39,9 @@ def read_cache(dataset,dest,required=False):
         if required:raise RuntimeError('No private CBBD cache for '+dataset)
         print('No private CBBD cache yet for '+dataset)
         return False
-    if len(data)!=1 or set(data[0]['files'])!=set(FILES[dataset]):raise ValueError('Unexpected cache contents')
+    if len(data)!=1:raise ValueError('Unexpected cache contents')
+    allowed=set(FILES[dataset]); actual=set(data[0]['files'])
+    if actual!=allowed and not (dataset=='teams_2027' and actual==allowed-{'d1_team_stats_2027.json'}):raise ValueError('Unexpected cache contents')
     dest.mkdir(parents=True,exist_ok=True)
     for name,content in data[0]['files'].items():
         if not isinstance(content,str) or not content:raise ValueError('Invalid cached file')
@@ -113,7 +115,7 @@ def main():
                 summary=json.loads((folder/FILES[dataset][-1]).read_text())
                 if dataset=='players_2027' and (len(summary.get('team_counts',{}))!=18 or not all(v.get('games',0)>0 for v in summary['team_counts'].values())):raise ValueError('Player collection does not cover all 18 teams')
                 store_cache(dataset,folder)
-                safe={k:summary[k] for k in ('last_successful_run_utc','api_requests','team_count','total_player_games','team_counts') if k in summary}
+                safe={k:summary[k] for k in ('last_successful_run_utc','api_requests','team_count','national_team_count','total_player_games','team_counts') if k in summary}
                 status['datasets'][dataset]=safe
                 print(dataset+': '+json.dumps(safe))
         status['quota_after']=info()

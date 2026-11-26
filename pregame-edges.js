@@ -243,11 +243,13 @@ function renderProfile(g,p,choice=0){
   }
   const control=p.ControlProjection||p;
   const experiments=Object.entries(control.ExperimentalModels||{});
+  if(control.OpponentModelStatus&&control.OpponentModelStatus!=='available')html+='<p class="note">V8 unavailable: '+esc(control.OpponentModelStatus.replaceAll('_',' '))+'</p>';
   if(experiments.length){
     html+='<h3>Experimental projections · research only</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>v4 control</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(control,f)))+'</td>').join('')+'</tr>'+experiments.map(([v,x])=>'<tr><td>'+esc(v)+'</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(x,f)))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
     for(const [v,x] of experiments){
       if(x.RotationInputs&&v.includes('v5'))html+='<p class="note">Participation: '+esc(x.RotationInputs.appearances)+' of '+esc(x.RotationInputs.team_games)+' observed team games · '+esc(x.RotationInputs.starts)+' starts · Season minutes including nonappearances '+esc(fmt(x.RotationInputs.season_minutes_including_nonappearances))+'</p>';
-      if(x.ShotInputs)html+='<p class="note">Shot-volume inputs (before matchup adjustment): '+esc(Object.entries(x.ShotInputs.components).map(([k,c])=>k+' '+fmt(x.ShotInputs.projected_attempts[k])+' attempts × '+fmt(100*c.expected_pct)+'%').join(' · '))+'</p>';
+      if(x.OpponentAdjustment){const a=x.OpponentAdjustment;html+='<p class="note">V8 opponent adjustments · '+esc(a.opponent_games)+' games · '+esc(a.national_teams)+' national teams · '+esc(Object.entries(a.factors).map(([k,v])=>k+' ×'+Number(v).toFixed(3)).join(' · '))+(a.fallback_stats?.length?' · V6 fallback: '+esc(a.fallback_stats.join(', ')):'')+'</p>';}
+      if(x.ShotInputs&&!x.OpponentAdjustment)html+='<p class="note">Shot-volume inputs (before matchup adjustment): '+esc(Object.entries(x.ShotInputs.components).map(([k,c])=>k+' '+fmt(x.ShotInputs.projected_attempts[k])+' attempts × '+fmt(100*c.expected_pct)+'%').join(' · '))+'</p>';
       else if(x.ShotStatus)html+='<p class="note edge-profile-warn">Insufficient complete shooting data: rotation-only fallback.</p>';
     }
     html+='<p class="note">Experimental estimates are archived for evaluation. V4 is retained as the archived control. Availability scenarios are separately labeled; local previews are not archived.</p>';
