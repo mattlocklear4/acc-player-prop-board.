@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {capture}=require('../scripts/acc_capture_pregame.cjs');
-const {evaluate}=require('../pregame-edges.js');
+const {evaluate,latestSnapshots}=require('../pregame-edges.js');
 const output=fs.mkdtempSync(path.join(os.tmpdir(),'acc-archive-'));
 const board={date_eastern:'2026-11-25',generated_at_utc:'2026-11-25T15:00:00Z',games:[{game_id:'espn_event_1',tipoff_utc:'2026-11-25T20:00:00Z',home_team:'Duke',away_team:'Other',teams:[{team:'Duke',players:[{Player:'Test Player',KenPomPoints:17,ModelVersion:'v2'}]}]}]};
 const odds={snapshot_date_eastern:board.date_eastern,generated_at_utc:'2026-11-25T16:00:00Z',events:[{schedule_game_id:'espn_event_1',props:['Over','Under'].map(side=>({bookmaker:'fanduel',market:'player_points',player:'Test Player',side,line:14.5,odds:-110,last_update:'2026-11-25T15:59:00Z'}))}]};
@@ -21,5 +21,14 @@ try{
  board.generated_at_utc='2026-11-25T18:00:00Z';
  assert.equal(capture(board,odds,'2026-11-25T19:00:00Z',output).written,1);
  assert.equal(fs.readdirSync(dir).length,2);
+ const base={...odds,events:[{...odds.events[0],event_id:'api1',home_team:'Duke',away_team:'Other'}]};
+ const fresh={event_id:'api1',schedule_game_id:'espn_event_1',home_team:'Duke',away_team:'Other',tipoff_utc:board.games[0].tipoff_utc,status:'ODDS_RETRIEVED',generated_at_utc:'2026-11-25T19:30:00Z',props:base.events[0].props.map(q=>({...q,odds:-125,last_update:'2026-11-25T19:29:00Z'}))};
+ const selected=latestSnapshots(board,base,{date_eastern:board.date_eastern,observations:[fresh]});
+ assert.equal(selected.length,1);
+ assert.equal(selected[0].generated_at_utc,fresh.generated_at_utc);
+ assert.equal(evaluate(board,selected[0]).rows[0].over,-125);
+ const invalid={...fresh,generated_at_utc:'2026-11-25T20:01:00Z'};
+ assert.equal(latestSnapshots(board,base,{date_eastern:board.date_eastern,observations:[invalid]})[0].generated_at_utc,base.generated_at_utc);
+ assert.equal(latestSnapshots(board,base,{date_eastern:board.date_eastern,observations:[{...fresh,home_team:'Wrong'}]})[0].generated_at_utc,base.generated_at_utc);
  console.log('Immutable archive and browser pricing parity tests passed');
 }finally{fs.rmSync(output,{recursive:true,force:true});}
