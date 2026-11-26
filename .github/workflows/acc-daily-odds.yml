@@ -56,6 +56,7 @@ jobs:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           TODAY: ${{ steps.gate.outputs.date }}
+          TARGETED_REQUEST: ${{ github.event_name == 'push' }}
         run: |
           if [ -f "data/odds_snapshots/$TODAY.json" ]; then
             python scripts/acc_intraday_odds.py
