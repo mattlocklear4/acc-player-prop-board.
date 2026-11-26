@@ -67,7 +67,7 @@ console.log('V11 combined mean and pricing safeguards passed');
 
 
 // Live freshness checks are UI-only; archival pricing remains unchanged.
-const {quoteFresh,groupRows}=require('../pregame-edges.js');
+const {quoteFresh,quotePregame,quoteEligible,groupRows}=require('../pregame-edges.js');
 const row={...result.rows[0],snapshotUtc:'2026-11-23T18:50:00Z',quoteUpdatedOver:'2026-11-23T18:49:00Z',quoteUpdatedUnder:'2026-11-23T16:50:00Z',tipoffUtc:'2026-11-23T19:30:00Z'};
 const now=Date.parse('2026-11-23T19:00:00Z');
 assert.equal(quoteFresh(row,'over',now),true);
@@ -77,4 +77,11 @@ assert.equal(quoteFresh(row,'over',Date.parse(row.tipoffUtc)),false);
 assert.equal(groupRows([row],()=>false)[0].best,null);
 assert.equal(groupRows([row],(r,side)=>quoteFresh(r,side,now))[0].best.side,'over');
 assert.ok(groupRows([row])[0].best); // historical pricing still available
+assert.equal(quotePregame(row,'under',now),true);
+assert.equal(quoteEligible(row,'under',now),true); // older saved quote is ranked by default
+assert.equal(quoteEligible(row,'under',now,true),false);
+assert.equal(quoteEligible(row,'over',now,true),true);
+assert.equal(quoteEligible(row,'over',Date.parse(row.tipoffUtc)),false);
+assert.equal(groupRows([row],(r,side)=>quoteEligible(r,side,Date.parse(row.tipoffUtc)))[0].best,null);
+assert.ok(groupRows([row],(r,side)=>quoteEligible(r,side,now))[0].best);
 console.log('Stale quote and active-edge ranking safeguards passed');
