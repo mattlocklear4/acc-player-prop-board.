@@ -1,7 +1,7 @@
 {
   "date_eastern": "2026-11-26",
-  "request_id": "2026-11-26-pittsburgh-controlled-retry",
+  "request_id": "2026-11-26-pittsburgh-endpoint-repair",
   "schedule_game_id": "espn_event_401909506",
-  "retry_failed": true,
-  "reason": "One bounded retry of failed pregame request with provider diagnostics; existing quota guards remain"
+  "repair_failed": true,
+  "reason": "Corrected missing /odds endpoint suffix; one repair attempt only after verified budget preflight"
 }
