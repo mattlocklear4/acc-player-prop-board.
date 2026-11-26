@@ -57,6 +57,23 @@ function pendingPanel(d,today=easternDate()){
  html+=note('Latest capture: '+(d.latest_capture_utc?new Date(d.latest_capture_utc).toLocaleString():'—')+' · '+(d.games_with_priced_quotes??0)+' games with priced quotes · '+(d.issues||[]).length+' archive issues. Settled results are published after the next-day grading run.');
  return panel(title,html);
 }
+function commonCohortPanel(d){
+ const c=d?.experimental_comparison?.common_cohort;
+ if(!c)return panel('All-model common-sample leaderboard',note('Awaiting the next grading report with common-cohort diagnostics.'));
+ const models=Object.entries(c.models||{}),label=v=>v==='v4'?'V4 control':v.split('-')[0].toUpperCase();
+ let html=note(c.method||'Identical archived inputs only.')+'<div class="perf-grid">'+kpi('Matched player-games',c.paired_players??0)+kpi('Projection games',c.projection_games??0)+kpi('Common settled quote sides',c.paired_settled_quote_sides??0)+kpi('Distinct priced outcomes',c.unique_outcomes??0)+kpi('Quote games',c.quote_games??0)+'</div>';
+ if(!c.paired_players&&!c.paired_settled_quote_sides)return panel('All-model common-sample leaderboard',html+note('No completed common-cohort observations yet. Empty samples are not zero errors.'));
+ html+='<h4>Projection accuracy · MAE (lower is better)</h4>'+table(['Model',...stats],models.map(([v,m])=>[label(v),...stats.map(s=>val(m.projection_metrics?.[s]?.mae))]));
+ html+=note('Matched sample by stat: '+stats.map(s=>s+' '+(models[0]?.[1]?.projection_metrics?.[s]?.n??0)).join(' · '));
+ html+='<h4>Calibration and hypothetical returns</h4>'+table(['Model','Calibration N','Brier','Log loss','Positive sides','Expected ROI','Realized ROI','Net units'],models.map(([v,m])=>[label(v),m.calibration?.n??0,val(m.calibration?.brier,4),val(m.calibration?.log_loss,4),m.positive_roi?.settled??0,percent(m.positive_roi?.mean_expected_roi_percent),percent(m.positive_roi?.roi_percent),m.positive_roi?.settled?pnl(m.positive_roi?.profit_units):'—']));
+ const v11=c.models?.['v11-combined'];
+ if(v11){
+  html+='<h4>V11 calibration by market</h4>'+table(['Market','N','Brier','Log loss'],Object.entries(v11.calibration_by_market||{}).map(([k,m])=>[k,m.n,val(m.brier,4),val(m.log_loss,4)]));
+  html+='<h4>V11 predicted versus observed win frequency</h4>'+table(['Probability range','N','Mean predicted','Observed wins'],(v11.reliability||[]).map(b=>[b.range,b.n,percent(numeric(b.mean_probability)?100*b.mean_probability:null),percent(numeric(b.observed_win_rate)?100*b.observed_win_rate:null)]));
+  html+=groups('V11 expected ROI tiers',v11.roi_by_tier);
+ }
+ return panel('All-model common-sample leaderboard',html+note('Small and correlated samples are descriptive only. No automatic model promotion or selection threshold tuning.'));
+}
 function comparisonPanel(d,pending){
  const m=d?.experimental_comparison?.models||{},p=pending?.date_eastern===easternDate()?pending.experimental_models||{}:{};
  let html=note('Research-only shadow models. v4 remains the production projection and Sportsbook Edges model. Same archived inputs and outcomes; no extra API credits.');
@@ -120,7 +137,7 @@ async function load(){
  async function get(name){try{const r=await fetch('data/'+name+'.json?ts='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null;}catch{return null;}}
  const [pending,exact,morning,health,legacy]=await Promise.all(['pregame_pending','pregame_edge_grading','daily_grading','pipeline_health','daily_odds_evaluation'].map(get));
  if(token!==sequence)return;
- el.innerHTML=pendingPanel(pending)+comparisonPanel(exact,pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
+ el.innerHTML=pendingPanel(pending)+commonCohortPanel(exact)+comparisonPanel(exact,pending)+exactPanel(exact)+latestPanel(exact)+morningPanel(morning)+healthPanel(health)+legacyPanel(legacy);
 }
 doc.querySelector('[data-tab="accuracy"]')?.addEventListener('click',load);
 doc.getElementById('refreshPerformance')?.addEventListener('click',load);
