@@ -1,54 +1,17 @@
 {
-  "date_eastern": "2026-11-25",
-  "generated_at_utc": "2026-11-25T19:41:39.659075+00:00",
-  "status": "OK",
-  "latest_capture_utc": "2026-11-25T19:41:39.571000+00:00",
-  "games": 6,
-  "games_with_priced_quotes": 3,
-  "player_projections": 83,
-  "quotes_priced": 42,
-  "positive_selections": 14,
-  "mean_expected_roi_percent": 9.53,
-  "by_tier": {
-    "0\u20135%": {
-      "selections": 8,
-      "mean_expected_roi_percent": 3.15
-    },
-    "10\u201320%": {
-      "selections": 2,
-      "mean_expected_roi_percent": 16.96
-    },
-    "20%+": {
-      "selections": 3,
-      "mean_expected_roi_percent": 23.08
-    },
-    "5\u201310%": {
-      "selections": 1,
-      "mean_expected_roi_percent": 5.03
-    }
-  },
-  "by_model_version": {
-    "current-season-hybrid-v4-200min": {
-      "selections": 14,
-      "mean_expected_roi_percent": 9.53
-    }
-  },
+  "date_eastern": "2026-11-26",
+  "generated_at_utc": "2026-11-26T05:06:55.244031+00:00",
+  "status": "NO_ARCHIVES",
+  "latest_capture_utc": null,
+  "games": 0,
+  "games_with_priced_quotes": 0,
+  "player_projections": 0,
+  "quotes_priced": 0,
+  "positive_selections": 0,
+  "mean_expected_roi_percent": null,
+  "by_tier": {},
+  "by_model_version": {},
   "issues": [],
-  "experimental_models": {
-    "v5-rotation-participation": {
-      "player_projections": 83,
-      "quotes_priced": 42,
-      "positive_selections": 16,
-      "shot_fallbacks": 0,
-      "mean_expected_roi_percent": 12.62
-    },
-    "v6-rotation-shot-volume": {
-      "player_projections": 83,
-      "quotes_priced": 42,
-      "positive_selections": 17,
-      "shot_fallbacks": 0,
-      "mean_expected_roi_percent": 12.62
-    }
-  },
+  "experimental_models": {},
   "method": "Latest valid archived pregame projection and latest odds-backed capture per game, same selection and validation as grading. Today is pending until the next-day grading run. Individual sportsbook quote sides are hypothetical opportunities, not placed bets."
 }
