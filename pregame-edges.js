@@ -114,7 +114,22 @@ function projectionProfileContext(game,team,p){
 function experimentalBoard(board,version){
   return {...board,games:(board.games||[]).map(g=>({...g,teams:(g.teams||[]).map(t=>({...t,players:(t.players||[]).filter(p=>p.ExperimentalModels?.[version]).map(p=>({...p,...p.ExperimentalModels[version],ControlProjection:p}))}))}))};
 }
-const api={evaluate,probabilities,negativeBinomialCdf,experimentalBoard,groupRows,projectionValue,projectionProfileContext};
+// Keep per-event observation timestamps; never relabel old lines as newly collected.
+function latestSnapshots(board,base,manifest){
+  const chosen=new Map(),games=new Map((board.games||[]).map(g=>[String(g.game_id),g]));
+  if(base?.snapshot_date_eastern===board.date_eastern&&time(base.generated_at_utc)){
+    for(const e of base.events||[])chosen.set(String(e.schedule_game_id),{...base,events:[e]});
+  }
+  if(manifest?.date_eastern===board.date_eastern)for(const o of manifest.observations||[]){
+    if(!['ODDS_RETRIEVED','NO_REQUESTED_BOOK_PROPS_RETURNED'].includes(o.status))continue;
+    const id=String(o.schedule_game_id),g=games.get(id),old=chosen.get(id),e=old?.events?.[0];
+    const collected=time(o.generated_at_utc),tip=time(g?.tipoff_utc);
+    if(!g||!e||e.event_id!==o.event_id||e.home_team!==o.home_team||e.away_team!==o.away_team||!collected||!tip||time(o.tipoff_utc)!==tip||collected>=tip||collected<=time(old.generated_at_utc))continue;
+    chosen.set(id,{...base,generated_at_utc:o.generated_at_utc,events:[{...e,props:o.props||[]}]});
+  }
+  return [...chosen.values()];
+}
+const api={latestSnapshots,evaluate,probabilities,negativeBinomialCdf,experimentalBoard,groupRows,projectionValue,projectionProfileContext};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;
 root.ACCPregameEdges=api;
 if(!root.document)return;
@@ -172,7 +187,7 @@ function render(){
   const grouped=groupRows(rows).filter(g=>!positive||g.best?.roi>0);
   profileRows=grouped;
   const cmp=(a,b)=>sort==='time'?(time(a.tipoffUtc)||0)-(time(b.tipoffUtc)||0)||a.player.localeCompare(b.player):sort==='player'?a.player.localeCompare(b.player):sort==='projection'?b.projection-a.projection:(b.best?.roi??-Infinity)-(a.best?.roi??-Infinity);
-  $('edgeStatus').textContent=(showV11?'V11 combined research pricing · ':showV10?'V10 research pricing · ':'')+(meta.date||'')+' · Odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines · '+books.length+' of '+requested.length+' books shown';
+  $('edgeStatus').textContent=(showV11?'V11 combined research pricing · ':showV10?'V10 research pricing · ':'')+(meta.date||'')+' · Latest odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines · '+books.length+' of '+requested.length+' books shown';
   function quote(r,side){
     const value=r[side],edge=side==='over'?r.roiOver:r.roiUnder,fair=side==='over'?r.fairOver:r.fairUnder;
     if(value==null)return '';
@@ -365,7 +380,12 @@ async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date
   const s=await fetch('data/odds_snapshots/'+board.date_eastern+'.json?edge='+Date.now(),{cache:'no-store'});
   if(!s.ok)throw Error('No saved odds snapshot for the published projection slate');
   const base=await s.json();
-  current=evaluate(board,base);
+  let manifest=null;
+  try{const rr=await fetch('data/odds_snapshots/intraday/'+board.date_eastern+'.json?edge='+Date.now(),{cache:'no-store'});if(rr.ok)manifest=await rr.json();}catch(_e){}
+  const snapshots=latestSnapshots(board,base,manifest);
+  current={rows:[],diagnostics:[]};
+  for(const snap of snapshots){const result=evaluate(board,snap);current.rows.push(...result.rows);current.diagnostics.push(...result.diagnostics);}
+  current.rows.sort((a,b)=>b.bestRoi-a.bestRoi);
   // Optional separately archived pregame refreshes; never rewrite the immutable morning snapshot.
   if(board.date_eastern==='2026-11-23'){
     try{
@@ -384,11 +404,11 @@ async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date
     }catch(_e){current.diagnostics.push({game:'North Carolina / Monmouth',reason:'Supplemental odds refresh unavailable'});}
   }
   requested=[...new Set([...(base.bookmakers||Object.keys(names)),...current.rows.map(r=>r.book)])];
-  meta={date:board.date_eastern,oddsAt:base.generated_at_utc,projectionAt:board.generated_at_utc};
+  meta={date:board.date_eastern,oddsAt:snapshots.reduce((t,x)=>time(x.generated_at_utc)>time(t)?x.generated_at_utc:t,base.generated_at_utc),projectionAt:board.generated_at_utc};
   const counts={};
-  for(const event of base.events||[])for(const q of event.props||[])counts[q.bookmaker]=(counts[q.bookmaker]||0)+1;
+  for(const snapshot of snapshots)for(const event of snapshot.events||[])for(const q of event.props||[])counts[q.bookmaker]=(counts[q.bookmaker]||0)+1;
   const coverage=root.document.getElementById('edgeCoverage');
-  coverage.innerHTML='<strong>Saved sportsbook coverage</strong> · individual over/under quotes returned in the daily snapshot; matched lines require a valid pregame ACC player projection.<br>'+requested.map(k=>{const n=counts[k]||0,m=current.rows.filter(r=>r.book===k).length;return esc(names[k]||k)+': '+n+' quotes / '+m+' matched lines'+(n===0?' (none returned in daily snapshot)':'')}).join(' · ');
+  coverage.innerHTML='<strong>Saved sportsbook coverage</strong> · latest saved per-game quotes; collection times vary by game; matched lines require a valid pregame ACC player projection.<br>'+requested.map(k=>{const n=counts[k]||0,m=current.rows.filter(r=>r.book===k).length;return esc(names[k]||k)+': '+n+' quotes / '+m+' matched lines'+(n===0?' (none returned in latest snapshots)':'')}).join(' · ');
   updateBookChoices();
   optionList('edgeGame',[...new Map(current.rows.map(r=>[r.gameId||r.game,r.game])).entries()],'All games');render();
 }catch(e){current={rows:[],diagnostics:[]};$('edgeTable').innerHTML='';$('edgeCoverage').textContent='';$('edgeMissing').innerHTML='';$('edgeStatus').textContent=e.message+'; no edges shown.';}}
