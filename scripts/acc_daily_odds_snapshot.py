@@ -2,7 +2,7 @@
 """One daily ACC odds snapshot, with no paid retry after a dated snapshot exists.
 
 The Odds API free plan's 500-credit cycle is protected by a 50-credit reserve.
-Requests are restricted to 4 markets, <=6 games, and <=24 estimated credits.
+Requests are restricted to 4 markets, <=4 games and <=16 estimated morning credits; reserve 8 for refreshes.
 """
 import datetime as dt
 import json
@@ -26,16 +26,17 @@ def main():
                     '--horizon-hours','24'],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'scripts/acc_stage8b_multibook.py',
                     '--schedule','research/acc_schedule_dry_run.json',
-                    '--daily','--fetch-odds','--max-events','6',
-                    '--max-credits','24','--min-credits-remaining','50'],
+                    '--daily','--fetch-odds','--max-events','4',
+                    '--max-credits','16','--min-credits-remaining','50'],
                    cwd=ROOT,check=True)
     result=json.loads((ROOT/'research/acc_stage8b_multibook_preview.json').read_text())
     # A provider/network failure must not silently consume the day's only attempt.
     quota=result.get('quota') or {}
     result['snapshot_date_eastern']=TODAY
     result['daily_credit_cap']=24
+    result['morning_credit_cap']=16
     result['monthly_reserve_credits']=50
-    result['note']='Single pregame snapshot; games with no available player props may be missing.'
+    result['note']='Initial immutable pregame snapshot; later intraday observations are archived separately.'
     DEST.parent.mkdir(parents=True,exist_ok=True)
     DEST.write_text(json.dumps(result,indent=2)+'\n')
     print('Saved',DEST,'paid requests:',quota.get('requests_sent',0),
