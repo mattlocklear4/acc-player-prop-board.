@@ -1,0 +1,21 @@
+{
+  "date_eastern": "2026-11-26",
+  "observations": [
+    {
+      "event_id": "958c447826e0cf914c566770b0f9bdab",
+      "schedule_game_id": "espn_event_401909506",
+      "home_team": "Pittsburgh Panthers",
+      "away_team": "DePaul Blue Demons",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "phase": "manual",
+      "generated_at_utc": "2026-11-26T19:58:56.380762+00:00",
+      "status": "REQUEST_FAILED",
+      "props": [],
+      "quota": {
+        "charged": null,
+        "remaining_before": 322
+      },
+      "error_type": "HTTPError"
+    }
+  ]
+}
