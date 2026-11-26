@@ -14,6 +14,7 @@ from research_engine import build_baselines, load_kenpom, apply_matchup, canon
 from acc_experimental_models import attach_experiments
 from acc_availability import load_overrides, attach_availability
 from acc_opponent_model import load_context, attach_matchup
+from acc_rotation_model import load_rotation, attach_rotation
 from pregame_prepare import consensus, team_id, timestamp
 from supabase_kenpom import fetch_latest_kenpom, resolve_opponent
 
@@ -43,6 +44,7 @@ def matchup(schedule, odds_feed, now, root, kp, source_meta, lock_lead_minutes=N
     collected=timestamp(odds_feed.get('collected_at'))
     feed_games=odds_feed.get('games') or []
     baselines_by_day={}
+    rotations_by_day={}
     opponent_context=load_context(root,now,kp)
     for g in schedule:
         tip=parse_time(g.get('tipoff_utc'))
@@ -78,6 +80,8 @@ def matchup(schedule, odds_feed, now, root, kp, source_meta, lock_lead_minutes=N
                     players=attach_experiments(players)
                     players=attach_availability(players,load_overrides(root,local_date,now),g['game_id'],team)
                     players=attach_matchup(players,opponent_kp,opponent_context)
+                    if local_date not in rotations_by_day:rotations_by_day[local_date]=load_rotation(root,now,local_date)
+                    players=attach_rotation(players,team,rotations_by_day[local_date],market)
                     item.update(status='research_candidate_unverified',reason='browser_parity_and_manual_minutes_not_verified',players=players,odds=market,odds_status=market_issue or 'available',kenpom_source=source_meta['source'],kenpom_snapshot_id=source_meta['snapshot_id'])
                 except (KeyError,ValueError,FileNotFoundError,TypeError) as exc:item['reason']='projection_input_error:'+str(exc)
             base['teams'].append(item)

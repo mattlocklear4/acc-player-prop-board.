@@ -243,11 +243,13 @@ function renderProfile(g,p,choice=0){
   }
   const control=p.ControlProjection||p;
   const experiments=Object.entries(control.ExperimentalModels||{});
+  if(control.RotationModelStatus&&control.RotationModelStatus!=='available')html+='<p class="note">V9 unavailable: '+esc(control.RotationModelStatus.replaceAll('_',' '))+'</p>';
   if(control.OpponentModelStatus&&control.OpponentModelStatus!=='available')html+='<p class="note">V8 unavailable: '+esc(control.OpponentModelStatus.replaceAll('_',' '))+'</p>';
   if(experiments.length){
     html+='<h3>Experimental projections · research only</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>v4 control</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(control,f)))+'</td>').join('')+'</tr>'+experiments.map(([v,x])=>'<tr><td>'+esc(v)+'</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(x,f)))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
     for(const [v,x] of experiments){
       if(x.RotationInputs&&v.includes('v5'))html+='<p class="note">Participation: '+esc(x.RotationInputs.appearances)+' of '+esc(x.RotationInputs.team_games)+' observed team games · '+esc(x.RotationInputs.starts)+' starts · Season minutes including nonappearances '+esc(fmt(x.RotationInputs.season_minutes_including_nonappearances))+'</p>';
+      if(x.IntelligentRotation){const a=x.IntelligentRotation;html+='<p class="note">V9 rotation · '+esc(a.role||'Unknown role')+' · '+esc(a.reconciled_games)+'/'+esc(a.candidate_games)+' reconciled games · V6 '+esc(fmt(a.v6_minutes))+' → '+esc(fmt(x.Minutes))+' MIN · '+esc(a.direct_swap_pairs)+' substitution partners · 4+ fouls '+esc(a.high_foul_games)+'/'+esc(a.foul_sample)+(a.manual_minutes!=null?' · Manual minutes locked':'')+(a.spread_available?' · Spread adjustment '+esc(fmt(a.spread_adjustment_minutes))+' MIN':' · No verified spread adjustment')+'</p>';}
       if(x.OpponentAdjustment){const a=x.OpponentAdjustment;html+='<p class="note">V8 opponent adjustments · '+esc(a.opponent_games)+' games · '+esc(a.national_teams)+' national teams · '+esc(Object.entries(a.factors).map(([k,v])=>k+' ×'+Number(v).toFixed(3)).join(' · '))+(a.fallback_stats?.length?' · V6 fallback: '+esc(a.fallback_stats.join(', ')):'')+'</p>';}
       if(x.ShotInputs&&!x.OpponentAdjustment)html+='<p class="note">Shot-volume inputs (before matchup adjustment): '+esc(Object.entries(x.ShotInputs.components).map(([k,c])=>k+' '+fmt(x.ShotInputs.projected_attempts[k])+' attempts × '+fmt(100*c.expected_pct)+'%').join(' · '))+'</p>';
       else if(x.ShotStatus)html+='<p class="note edge-profile-warn">Insufficient complete shooting data: rotation-only fallback.</p>';

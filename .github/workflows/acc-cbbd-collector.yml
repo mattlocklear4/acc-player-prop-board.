@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'collector/private_cbbd_cache.py'
+      - 'collector/collect_substitutions.py'
       - 'collector/collect_team_stats.py'
       - '.github/workflows/acc-cbbd-collector.yml'
   schedule:

@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CACHE='acc_cbbd_private_cache'
 FILES={'players_2027':('acc_player_games_2027.csv','acc_collection_summary_2027.json'),
        'teams_2027':('acc_team_stats_2027.csv','acc_team_stats_2027.json','d1_team_stats_2027.json','acc_team_collection_summary_2027.json')}
+ROTATION_FILES={'acc_substitutions_2027.json','acc_substitution_summary_2027.json'}
 def now():return dt.datetime.now(dt.timezone.utc).isoformat()
 def request(url,key,method='GET',payload=None,headers=None):
     h={'apikey':key,'Authorization':'Bearer '+key,'Accept':'application/json'}
@@ -41,7 +42,7 @@ def read_cache(dataset,dest,required=False):
         return False
     if len(data)!=1:raise ValueError('Unexpected cache contents')
     allowed=set(FILES[dataset]); actual=set(data[0]['files'])
-    if actual!=allowed and not (dataset=='teams_2027' and actual==allowed-{'d1_team_stats_2027.json'}):raise ValueError('Unexpected cache contents')
+    if actual!=allowed and not (dataset=='teams_2027' and actual==allowed-{'d1_team_stats_2027.json'}) and not (dataset=='players_2027' and actual==allowed|ROTATION_FILES):raise ValueError('Unexpected cache contents')
     dest.mkdir(parents=True,exist_ok=True)
     for name,content in data[0]['files'].items():
         if not isinstance(content,str) or not content:raise ValueError('Invalid cached file')
@@ -51,7 +52,9 @@ def read_cache(dataset,dest,required=False):
 
 def store_cache(dataset,folder):
     url,key=db()
-    files={n:(folder/n).read_text(encoding='utf-8') for n in FILES[dataset]}
+    names=set(FILES[dataset])
+    if dataset=='players_2027' and all((folder/n).exists() for n in ROTATION_FILES):names|=ROTATION_FILES
+    files={n:(folder/n).read_text(encoding='utf-8') for n in names}
     if any(not v for v in files.values()):raise ValueError('Empty dataset')
     payload={'dataset':dataset,'refreshed_at':now(),'files':files}
     request(url+'?on_conflict=dataset',key,'POST',payload,{'Prefer':'resolution=merge-duplicates,return=minimal'})
@@ -99,7 +102,8 @@ def main():
                         reuse=True
                         datasets.remove('players_2027')
                         print('Reusing verified current-day private player data; no duplicate calls')
-        required=sum(18 if d=='players_2027' else 1 for d in datasets)
+        collect_rotation=a.scope in ('both','players')
+        required=sum(18 if d=='players_2027' else 1 for d in datasets)+(18 if collect_rotation else 0)
         balance=status['quota_before'].get('remainingCalls')
         if balance is not None and balance<required:raise RuntimeError('Insufficient CBBD quota for full refresh')
         for dataset in datasets:
@@ -118,6 +122,20 @@ def main():
                 safe={k:summary[k] for k in ('last_successful_run_utc','api_requests','team_count','national_team_count','total_player_games','team_counts') if k in summary}
                 status['datasets'][dataset]=safe
                 print(dataset+': '+json.dumps(safe))
+        if collect_rotation:
+            from collect_substitutions import collect
+            try:
+                with tempfile.TemporaryDirectory() as tmp:
+                    folder=Path(tmp)
+                    read_cache('players_2027',folder,required=True)
+                    rotation=collect(folder,os.environ['CBBD_API_KEY'])
+                    store_cache('players_2027',folder)
+                    status['datasets']['substitutions_2027']=rotation
+                    print('Private substitution collection: '+json.dumps(rotation))
+            except Exception as e:
+                # Keep existing player/team caches valid; explicitly mark V9 feed failure.
+                status['rotation_warning']=str(e)
+                print('V9 substitution refresh unavailable: '+str(e),file=sys.stderr)
         status['quota_after']=info()
         status.update(status='OK',data_updated=True)
         print('CBBD remaining balance: '+str(status['quota_after']['remainingCalls']))

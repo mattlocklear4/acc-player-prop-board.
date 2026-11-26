@@ -4,6 +4,7 @@ from acc_grade_daily import norm
 from acc_grade_pregame import select_snapshots, grade, summary
 from acc_experimental_models import VERSIONS, SHOOTING
 from acc_opponent_model import VERSION as OPPONENT_VERSION
+from acc_rotation_model import VERSION as ROTATION_VERSION
 from acc_availability import VERSION as AVAILABILITY_VERSION
 
 def error_metrics(errors):
@@ -22,8 +23,8 @@ def calibration(rows):
 def compare(records,logs,today):
     latest, odds, _=select_snapshots(records,lambda date:date<today)
     output={}
-    for version in (*VERSIONS,AVAILABILITY_VERSION,OPPONENT_VERSION):
-        control_version=SHOOTING if version==OPPONENT_VERSION else None
+    for version in (*VERSIONS,AVAILABILITY_VERSION,OPPONENT_VERSION,ROTATION_VERSION):
+        control_version=SHOOTING if version in (OPPONENT_VERSION,ROTATION_VERSION) else None
         pc=[];pe=[];qc=[];qe=[]
         for _,r in latest.values():
             teams=[]
@@ -56,4 +57,4 @@ def compare(records,logs,today):
             'control_calibration':calibration(cs),'experimental_calibration':calibration(es),
             'control_positive_roi':summary([q for q in cs if q['expected_roi_percent']>0]),
             'experimental_positive_roi':summary([q for q in es if q['expected_roi_percent']>0])}
-    return {'models':output,'method':'Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8 is paired against V6 to isolate opponent adjustments; other experiments compare with V4. V4 remains the control for production.'}
+    return {'models':output,'method':'Prospective same-game, same-player and same archived quote comparisons. Lower MAE/RMSE/Brier/log loss is better. Each model selects its own positive ROI sides from the common quote pool; flat one-unit hypothetical results, correlated quotes not independent. No hindsight or backfilled forecasts. V8 and V9 are paired against V6 to isolate opponent and rotation adjustments; other experiments compare with V4. V4 remains the control for production.'}
