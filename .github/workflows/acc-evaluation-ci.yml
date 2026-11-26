@@ -47,6 +47,8 @@ jobs:
           node --check performance.js
           node tests/test_performance.cjs
           node --check daily-tab.js
+          node --check availability.js
+          node tests/test_availability.cjs
           node --check pregame-edges.js
           node tests/test_pregame_edges.cjs
           node tests/test_daily_player_profile.cjs

@@ -55,7 +55,7 @@ function evaluate(board,snapshot){
       const roi={};for(const side of ['over','under'])roi[side]=sides[side]===undefined?null:100*(ps[side]*profit(sides[side])-(1-ps[side]));
       const best=roi.over===null?'under':roi.under===null?'over':roi.over>=roi.under?'over':'under';
       rows.push({game:label,team:matches[0].team,player:q.player,book:q.bookmaker,market:fields[0],projection:mean,line,over:sides.over??null,under:sides.under??null,
-        fairOver:american(ps.over),fairUnder:american(ps.under),probOver:ps.over,probUnder:ps.under,quoteUpdatedOver:updates.over??null,quoteUpdatedUnder:updates.under??null,modelVersion:p.ModelVersion??'unknown',projectionUtc:board.generated_at_utc,roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
+        fairOver:american(ps.over),fairUnder:american(ps.under),probOver:ps.over,probUnder:ps.under,quoteUpdatedOver:updates.over??null,quoteUpdatedUnder:updates.under??null,modelVersion:p.ModelVersion??'unknown',minutesRisk:p.MinutesRiskFlags||[],scenarioType:p.ScenarioType||null,projectionUtc:board.generated_at_utc,roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
     }
   }
   rows.sort((a,b)=>b.bestRoi-a.bestRoi);
@@ -67,7 +67,7 @@ function groupRows(rows){
   const groups=new Map();
   for(const r of rows){
     const key=JSON.stringify([r.gameId||r.game,r.team,norm(r.player),r.market]);
-    if(!groups.has(key))groups.set(key,{game:r.game,gameId:r.gameId,team:r.team,player:r.player,market:r.market,projection:r.projection,tipoffUtc:r.tipoffUtc,athleteId:r.athleteId,books:{},best:null});
+    if(!groups.has(key))groups.set(key,{game:r.game,gameId:r.gameId,team:r.team,player:r.player,market:r.market,projection:r.projection,tipoffUtc:r.tipoffUtc,athleteId:r.athleteId,minutesRisk:r.minutesRisk||[],scenarioType:r.scenarioType,books:{},best:null});
     const g=groups.get(key);
     if(!g.books[r.book])g.books[r.book]=[];
     g.books[r.book].push(r);
@@ -95,7 +95,7 @@ root.ACCPregameEdges=api;
 if(!root.document)return;
 const doc=root.document;
 const host=doc.getElementById('sportsbookResults')||doc.getElementById('dailyResults');if(!host)return;
-const section=doc.createElement('section');section.id='pregameEdges';section.innerHTML='<div class="edge-toolbar"><label>Market<select id="edgeMarket"><option value="">All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option><option value="Threes">Made threes</option></select></label><label>Game<select id="edgeGame"><option value="">All games</option></select></label><div class="edge-book-filter"><span class="edge-book-label" id="edgeBookLabel">Book</span><details id="edgeBook"><summary aria-labelledby="edgeBookLabel edgeBookText"><span id="edgeBookText">All books</span></summary><div class="edge-book-menu"><div class="edge-book-actions"><button type="button" id="edgeBookAll">Select all</button><button type="button" id="edgeBookNone">Clear</button></div><div id="edgeBookChoices" role="group" aria-labelledby="edgeBookLabel"></div><button type="button" id="edgeBookDone">Done</button></div></details></div><label>Sort<select id="edgeSort"><option value="roi">Highest ROI</option><option value="time">Tipoff time</option><option value="player">Player A–Z</option><option value="projection">Projection</option></select></label><label class="edge-search">Search<input id="edgeSearch" type="search" placeholder="Player or team"></label><label class="check edge-check"><input type="checkbox" id="edgePositive">Positive ROI only</label><button id="edgeReload" class="secondary" type="button">Refresh board</button></div><p id="edgeStatus" class="note" role="status">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="edge-scroll" tabindex="0" aria-label="Scrollable sportsbook odds comparison"></div><div id="edgeMissing"></div><details class="edge-method"><summary>Pricing methodology</summary><p class="note">Experimental research estimates, not validated win probabilities. Points use normal SD 5.5; rebounds, assists and threes use Poisson. ROI is expected profit per $1 staked. Only timestamp-verified pregame quotes and matched projections are priced; saved odds are not live. Refresh board reloads existing files, not the paid odds API.</p></details>';
+const section=doc.createElement('section');section.id='pregameEdges';section.innerHTML='<div class="edge-toolbar"><label>Market<select id="edgeMarket"><option value="">All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option><option value="Threes">Made threes</option></select></label><label>Game<select id="edgeGame"><option value="">All games</option></select></label><div class="edge-book-filter"><span class="edge-book-label" id="edgeBookLabel">Book</span><details id="edgeBook"><summary aria-labelledby="edgeBookLabel edgeBookText"><span id="edgeBookText">All books</span></summary><div class="edge-book-menu"><div class="edge-book-actions"><button type="button" id="edgeBookAll">Select all</button><button type="button" id="edgeBookNone">Clear</button></div><div id="edgeBookChoices" role="group" aria-labelledby="edgeBookLabel"></div><button type="button" id="edgeBookDone">Done</button></div></details></div><label>Projection view<select id="edgeAvailability"><option value="adjusted">Availability-adjusted (where available)</option><option value="control">V4 control</option></select></label><label>Sort<select id="edgeSort"><option value="roi">Highest ROI</option><option value="time">Tipoff time</option><option value="player">Player A–Z</option><option value="projection">Projection</option></select></label><label class="edge-search">Search<input id="edgeSearch" type="search" placeholder="Player or team"></label><label class="check edge-check"><input type="checkbox" id="edgePositive">Positive ROI only</label><button id="edgeReload" class="secondary" type="button">Refresh board</button></div><p id="edgeStatus" class="note" role="status">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="edge-scroll" tabindex="0" aria-label="Scrollable sportsbook odds comparison"></div><div id="edgeMissing"></div><details class="edge-method"><summary>Pricing methodology</summary><p class="note">Experimental research estimates, not validated win probabilities. Points use normal SD 5.5; rebounds, assists and threes use Poisson. ROI is expected profit per $1 staked. Only timestamp-verified pregame quotes and matched projections are priced; saved odds are not live. Refresh board reloads existing files, not the paid odds API.</p></details>';
 if(host.id==='sportsbookResults')host.appendChild(section);else host.parentNode.insertBefore(section,host.nextSibling);
 const bookStyle=doc.createElement('style');
 bookStyle.textContent=`
@@ -119,7 +119,8 @@ const esc=s=>String(s??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>'
 const fmt=n=>n===null||n===undefined?'—':Number(n).toFixed(1);
 const odds=n=>n===null||n===undefined?'—':(n>0?'+':'')+n;
 const roi=n=>n===null||n===undefined?'—':(n>0?'+':'')+fmt(n)+'%';
-let current={rows:[],diagnostics:[]},requested=[],meta={},activeBoard=null,profileRows=[],profileFocus=null;
+let current={rows:[],diagnostics:[]},requested=[],meta={},activeBoard=null,rawBoard=null,profileRows=[],profileFocus=null;
+let showAvailability=true;
 const BOOK_PREF='acc-edge-selected-books-v1';
 let selectedBooks=null; // null means all books, [] means none
 try{const pref=JSON.parse(root.localStorage.getItem(BOOK_PREF)||'null');if(Array.isArray(pref)&&pref.every(k=>typeof k==='string'))selectedBooks=new Set(pref);}catch(_e){}
@@ -159,7 +160,7 @@ function render(){
     html+='<tr class="edge-marketband"><th class="edge-player" scope="row">'+esc(m==='Threes'?'Made threes':m)+' <small>'+items.length+'</small></th><td colspan="'+(books.length+2)+'"></td></tr>';
     for(const g of items){
       const best=g.best,when=g.tipoffUtc?new Date(g.tipoffUtc).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):'';
-      html+='<tr><td class="edge-player"><button class="edge-player-link" type="button" data-profile="'+profileRows.indexOf(g)+'" title="View season game log">'+esc(g.player)+'</button><small>'+esc(g.team)+' · '+esc(when)+'</small><small class="edge-game-label" title="'+esc(g.game)+'">'+esc(g.game)+'</small></td><td class="edge-proj">'+esc(fmt(g.projection))+'</td><td class="edge-best">'+(best?'<strong class="'+(best.roi>0?'edge-win':'')+'">'+esc(roi(best.roi))+'</strong><small>'+esc(names[best.book]||best.book)+' · '+(best.side==='over'?'O':'U')+esc(best.line)+'</small>':'—')+'</td>';
+      html+='<tr><td class="edge-player"><button class="edge-player-link" type="button" data-profile="'+profileRows.indexOf(g)+'" title="View season game log">'+esc(g.player)+'</button>'+(g.scenarioType?'<small class="edge-profile-warn">'+esc(g.scenarioType==='local'?'LOCAL PREVIEW':'AVAILABILITY SCENARIO')+'</small>':'')+((g.minutesRisk?.length&&(best?.roi>=20||g.scenarioType))?'<small class="edge-profile-warn" title="'+esc(g.minutesRisk.join(' · '))+'">⚠ Verify minutes</small>':'')+'<small>'+esc(g.team)+' · '+esc(when)+'</small><small class="edge-game-label" title="'+esc(g.game)+'">'+esc(g.game)+'</small></td><td class="edge-proj">'+esc(fmt(g.projection))+'</td><td class="edge-best">'+(best?'<strong class="'+(best.roi>0?'edge-win':'')+'">'+esc(roi(best.roi))+'</strong><small>'+esc(names[best.book]||best.book)+' · '+(best.side==='over'?'O':'U')+esc(best.line)+'</small>':'—')+'</td>';
       for(const k of books){
         const lines=(g.books[k]||[]).slice().sort((a,b)=>a.line-b.line);
         html+='<td class="edge-bookcell">'+(lines.length?lines.map(r=>quote(r,'over')+quote(r,'under')).join(''):'<span class="edge-empty">—</span>')+'</td>';
@@ -240,15 +241,23 @@ function renderProfile(g,p,choice=0){
     html+='<h3>Model inputs for this matchup</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>Baseline</td>'+baselines.map(([f,key])=>'<td>'+esc(fmt(number(p[key])))+'</td>').join('')+'</tr><tr><td>Published projection</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(p,f)))+'</td>').join('')+'</tr></tbody></table></div>';
     html+='<p class="note">'+esc(factors.map(([label,v,d])=>label+': '+(number(v)===null?'—':number(v).toFixed(d))).join(' · '))+' · Confidence: '+esc(p.Confidence??'—')+'</p>';
   }
-  const experiments=Object.entries(p.ExperimentalModels||{});
+  const control=p.ControlProjection||p;
+  const experiments=Object.entries(control.ExperimentalModels||{});
   if(experiments.length){
-    html+='<h3>Experimental projections · research only</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>v4 control</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(p,f)))+'</td>').join('')+'</tr>'+experiments.map(([v,x])=>'<tr><td>'+esc(v)+'</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(x,f)))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+    html+='<h3>Experimental projections · research only</h3><div class="edge-profile-summary"><table><thead><tr><th>Model</th>'+profileFields.map(([f,l])=>'<th>'+l+'</th>').join('')+'</tr></thead><tbody><tr><td>v4 control</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(control,f)))+'</td>').join('')+'</tr>'+experiments.map(([v,x])=>'<tr><td>'+esc(v)+'</td>'+profileFields.map(([f])=>'<td>'+esc(fmt(projectionValue(x,f)))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
     for(const [v,x] of experiments){
       if(x.RotationInputs&&v.includes('v5'))html+='<p class="note">Participation: '+esc(x.RotationInputs.appearances)+' of '+esc(x.RotationInputs.team_games)+' observed team games · '+esc(x.RotationInputs.starts)+' starts · Season minutes including nonappearances '+esc(fmt(x.RotationInputs.season_minutes_including_nonappearances))+'</p>';
       if(x.ShotInputs)html+='<p class="note">Shot-volume inputs (before matchup adjustment): '+esc(Object.entries(x.ShotInputs.components).map(([k,c])=>k+' '+fmt(x.ShotInputs.projected_attempts[k])+' attempts × '+fmt(100*c.expected_pct)+'%').join(' · '))+'</p>';
       else if(x.ShotStatus)html+='<p class="note edge-profile-warn">Insufficient complete shooting data: rotation-only fallback.</p>';
     }
-    html+='<p class="note">Experimental estimates are archived for evaluation. Current sportsbook edges still use v4.</p>';
+    html+='<p class="note">Experimental estimates are archived for evaluation. V4 is retained as the archived control. Availability scenarios are separately labeled; local previews are not archived.</p>';
+  }
+  if(p.MinutesRiskFlags?.length)html+='<p class="note edge-profile-warn">Minutes review: '+esc(p.MinutesRiskFlags.join(' · '))+'</p>';
+  if(p.AvailabilityAdjustment)html+='<p class="note edge-profile-warn">'+esc(p.AvailabilityAdjustment.reason)+' · Original minutes '+esc(fmt(p.OriginalMinutes))+' · Production games '+esc(p.ProductionGamesUsed)+'</p>';
+  const canEdit=Date.now()<Date.parse(g.tipoffUtc)&&root.ACCAvailability;
+  if(canEdit){
+    const own=p.AvailabilityAdjustment?.status!=='redistributed'?p.AvailabilityAdjustment:null;
+    html+='<h3>Manual availability preview</h3><p class="note">Saved on this browser only. Applies to this game before tipoff; redistributes the rest of the team to 200 minutes. Does not change official archives.</p><div class="toolbar"><label>Minutes<input id="manualAvailMinutes" type="number" min="0" max="40" step="0.1" value="'+esc(own?.minutes??p.Minutes)+'"></label><label>Status<select id="manualAvailStatus">'+['manual','returning','limited','out'].map(s=>'<option '+(s===own?.status?'selected':'')+'>'+s+'</option>').join('')+'</select></label><label>Reason<input id="manualAvailReason" value="'+esc(own?.reason||'')+'" placeholder="Reason for adjustment"></label></div><details><summary>Exclude injury-shortened games from production rates</summary>'+logs.map(x=>'<label class="check"><input type="checkbox" class="manualAvailExclude" value="'+esc(x.date)+'" '+(own?.exclude_dates?.includes(x.date)?'checked':'')+'>'+esc(x.date+' · '+x.opponent+' · '+x.minutes+' MIN')+'</label>').join('')+'</details><div class="toolbar"><button type="button" id="manualAvailSave">Apply preview</button><button type="button" id="manualAvailClear" class="secondary">Clear local preview</button></div><p id="manualAvailMessage" class="note" role="status"></p>';
   }
   if(r&&k){
     const usable=logs.filter(x=>number(x[k])!==null);
@@ -265,6 +274,25 @@ function renderProfile(g,p,choice=0){
   for(const x of logs)html+='<tr><td>'+esc(x.date)+'</td><td>'+esc(x.opponent)+'</td><td>'+esc(yn(x.home)==='Yes'?'H':yn(x.home)==='No'?'A':'—')+'</td><td>'+esc(yn(x.starter))+'</td>'+profileFields.map(([f])=>'<td'+(f===k?' class="edge-profile-highlight"':'')+'>'+esc(plain(x[f]))+'</td>').join('')+'<td>'+esc(shooting(x,'fgm','fga'))+'</td><td>'+esc(shooting(x,'three_pm','three_pa'))+'</td><td>'+esc(shooting(x,'ftm','fta'))+'</td>'+['oreb','dreb','steals','blocks','turnovers','fouls'].map(f=>'<td>'+esc(plain(x[f]))+'</td>').join('')+'<td>'+esc(x.source)+'</td></tr>';
   html+='</tbody></table></div><p class="note">Exact completed games used by this pregame projection; provider game dates can differ by a day. H/A reflects provider designation. Missing stats are shown as —, not zero.</p>';
   body.innerHTML=html;
+  function changeAvailability(clear){
+    try{
+      const board=rawBoard||{date_eastern:new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()),games:[]};
+      const game=board.games.find(x=>x.game_id===g.gameId);
+      if(!game||Date.now()>=Date.parse(game.tipoff_utc))throw Error('Published pregame game unavailable; refresh Sportsbook Edges');
+      const team=game.teams.find(t=>t.team===g.team),player=team?.players.find(x=>String(x.AthleteId)===g.athleteId);
+      if(!player)throw Error('Player ID not found');
+      const status=$('manualAvailStatus').value,minutes=status==='out'?0:Number($('manualAvailMinutes').value),reason=$('manualAvailReason').value.trim(),exclude_dates=[...body.querySelectorAll('.manualAvailExclude:checked')].map(x=>x.value);
+      if(!clear&&(!$('manualAvailMinutes').value||!reason||!Number.isFinite(minutes)||minutes<0||minutes>40||Math.abs(minutes*10-Math.round(minutes*10))>1e-6||exclude_dates.length>=logs.length))throw Error('Enter valid minutes, reason, and retain at least one game');
+      const settings=root.ACCAvailability.read(),key=root.ACCAvailability.id(board,game,team,player),value=clear?null:{minutes,status,reason,exclude_dates};
+      if(clear)delete settings[key];else settings[key]=value;
+      root.ACCAvailability.scenario(board,settings,true);
+      root.ACCAvailability.save(board,game,team,player,value);
+      showAvailability=true;$('edgeAvailability').value='adjusted';
+      root.dispatchEvent(new Event('acc-availability-changed'));load();profile.close();
+    }catch(e){$('manualAvailMessage').textContent=e.message;}
+  }
+  $('manualAvailSave')?.addEventListener('click',()=>changeAvailability(false));
+  $('manualAvailClear')?.addEventListener('click',()=>changeAvailability(true));
   $('edgeProfileLine')?.addEventListener('change',e=>{const pos=profile.scrollTop;renderProfile(g,p,Number(e.target.value));profile.scrollTop=pos;$('edgeProfileLine')?.focus({preventScroll:true})});
 }
 function openProfile(g,button){
@@ -296,7 +324,9 @@ profile.addEventListener('click',e=>{if(e.target===profile){const r=profile.getB
 profile.addEventListener('close',()=>profileFocus?.focus());
 async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date.now(),{cache:'no-store'});
   if(!b.ok)throw Error('Published projection board unavailable');
-  const board=await b.json();
+  rawBoard=await b.json();
+  let board;
+  try{board=root.ACCAvailability?.scenario(rawBoard,undefined,showAvailability)||rawBoard;}catch(e){throw Error('Invalid local availability scenario: '+e.message+'; switch to V4 control or edit override');}
   activeBoard=board;
   if(!/^\d{4}-\d{2}-\d{2}$/.test(board.date_eastern||''))throw Error('Invalid projection date');
   const s=await fetch('data/odds_snapshots/'+board.date_eastern+'.json?edge='+Date.now(),{cache:'no-store'});
@@ -349,6 +379,7 @@ $('edgeBook').addEventListener('keydown',e=>{if(e.key==='Escape'){$('edgeBook').
 
 $('edgeSearch').addEventListener('input',render);
 $('edgeReload').addEventListener('click',load);
+$('edgeAvailability').addEventListener('change',e=>{showAvailability=e.target.value==='adjusted';load();});
 doc.querySelector('[data-tab="sportsbook"]')?.addEventListener('click',load);
 load();
 })(typeof window!=='undefined'?window:globalThis);

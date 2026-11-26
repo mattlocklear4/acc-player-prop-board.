@@ -7,6 +7,8 @@ on:
       - 'scripts/acc_publish_daily_board.py'
       - 'scripts/research_engine.py'
       - 'scripts/acc_experimental_models.py'
+      - 'scripts/acc_availability.py'
+      - 'data/player_availability_overrides.json'
       - 'scripts/acc_projection_dry_run.py'
       - 'scripts/supabase_kenpom.py'
       - 'research/projection_refresh_request.json'
@@ -58,6 +60,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_acc_daily_pipeline.py'
           python -m unittest discover -s tests -p 'test_acc_experimental_models.py'
+          python -m unittest discover -s tests -p 'test_acc_availability.py'
       - name: Compare baseline models offline
         if: steps.freshness.outputs.refresh == 'true'
         run: python scripts/acc_validation_walkforward.py

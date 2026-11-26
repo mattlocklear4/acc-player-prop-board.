@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict'),{allocation,scenario,id,VERSION}=require('../availability.js');
+assert.equal(allocation([20,35,35,30,30,25,25],new Map([[0,29]]))[0],29);
+assert.equal(allocation([20,35,35,30,30,25,25],new Map([[0,29]])).reduce((s,m)=>s+Math.round(m*10),0),2000);
+assert.throws(()=>allocation([20,20,20,20,20],new Map([[0,0]])));
+const p={AthleteId:'1',Minutes:20,BaselinePoints:10,KenPomPoints:10,PaceFactor:1,OpponentDefenseFactor:1,CurrentSeasonLog:[{date:'2026-11-13',minutes:8,points:0},{date:'2026-11-24',minutes:30,points:15}]};
+const t={team:'Miami',players:[p,...Array.from({length:6},(_,i)=>({...p,AthleteId:String(i+2),Minutes:30}))]},g={game_id:'g',tipoff_utc:'2026-11-26T20:30:00Z',teams:[t]},b={date_eastern:'2026-11-26',games:[g]};
+const s={[id(b,g,t,p)]:{minutes:29,status:'returning',reason:'test',exclude_dates:['2026-11-13']}};
+const out=scenario(b,s,true,Date.parse('2026-11-26T16:00:00Z')).games[0].teams[0].players;
+assert.equal(out[0].Minutes,29);assert.equal(out[0].KenPomPoints,14.5);assert.equal(p.Minutes,20);assert.equal(out.reduce((a,x)=>a+Math.round(x.Minutes*10),0),2000);
+assert.equal(scenario(b,s,true,Date.parse(g.tipoff_utc)).games[0].teams[0].players[0].Minutes,20);
+console.log('Availability preview tests passed');

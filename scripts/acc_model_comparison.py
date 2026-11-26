@@ -3,6 +3,7 @@ import math, statistics
 from acc_grade_daily import norm
 from acc_grade_pregame import select_snapshots, grade, summary
 from acc_experimental_models import VERSIONS
+from acc_availability import VERSION as AVAILABILITY_VERSION
 
 def error_metrics(errors):
     return {'n':len(errors),'mae':round(statistics.mean(map(abs,errors)),3) if errors else None,
@@ -20,7 +21,7 @@ def calibration(rows):
 def compare(records,logs,today):
     latest, odds, _=select_snapshots(records,lambda date:date<today)
     output={}
-    for version in VERSIONS:
+    for version in (*VERSIONS,AVAILABILITY_VERSION):
         pc=[];pe=[];qc=[];qe=[]
         for _,r in latest.values():
             teams=[]

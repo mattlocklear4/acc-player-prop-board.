@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-11-26",
+    "game_id": "espn_event_401920537",
+    "team": "Miami",
+    "athlete_id": "7836",
+    "player": "Malik Reneau",
+    "status": "returning",
+    "minutes": 29,
+    "exclude_dates": [
+      "2026-11-13"
+    ],
+    "injury_absence_dates": [
+      "2026-11-17",
+      "2026-11-20"
+    ],
+    "reason": "Provisional return-to-play scenario based on 29 minutes in his November 24 appearance; November 13 eight-minute appearance excluded as suspected injury-shortened. Availability and restriction not independently verified.",
+    "recorded_at_utc": "2026-11-26T16:26:00Z"
+  }
+]

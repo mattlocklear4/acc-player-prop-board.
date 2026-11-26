@@ -11,7 +11,8 @@ const token=++loadSequence;
 try{
 const res=await fetch('data/daily_board.json?ts='+Date.now(),{cache:'no-store'});
 if(!res.ok)throw Error('Daily projection data has not been published yet.');
-const d=await res.json();
+const raw=await res.json();
+const d=window.ACCAvailability?.scenario(raw)||raw;
 if(token!==loadSequence)return;
 const nextRows=[];
 status.textContent='Slate '+(d.date_eastern||'unknown')+' · '+(d.game_count||0)+' upcoming games · '+(d.projection_player_rows||0)+' player projections · Updated '+new Date(d.generated_at_utc).toLocaleString();
@@ -30,7 +31,7 @@ if(sample.CurrentTeamGames!=null){html+='<p class="note">Team game coverage: '+e
 html+='<div class="tablewrap"><table><thead><tr><th>Player</th><th>GP</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th></tr></thead><tbody>';
 for(const p of [...t.players].sort((a,b)=>{const am=Number(pick(a,'Minutes','minutes','MIN'));const bm=Number(pick(b,'Minutes','minutes','MIN'));return (Number.isFinite(bm)?bm:-1)-(Number.isFinite(am)?am:-1)})){
 const profileIndex=nextRows.push({game:g,team:t,player:p})-1;
-html+='<tr><td><button type="button" class="daily-player-link" data-daily-profile="'+profileIndex+'" title="View projection and season game log">'+esc(p.Player??p.player??p.name)+'</button></td><td title="'+esc('CBBD '+(p.CBBDGP??'—')+' / ESPN '+(p.ESPNGP??'—')+' · Last game '+(p.LatestGameDate??'—'))+'">'+esc(p.CurrentGP??'—')+'</td><td title="'+esc(p.RawMinutes!=null?'Before normalization: '+val(p.RawMinutes)+' min':'Projected minutes')+'">'+val(pick(p,'Minutes','minutes','MIN'))+'</td><td>'+val(pick(p,'KenPomPoints','BaselinePoints','points','PTS'))+'</td><td>'+val(pick(p,'KenPomRebounds','BaselineRebounds','rebounds','REB'))+'</td><td>'+val(pick(p,'KenPomAssists','BaselineAssists','assists','AST'))+'</td><td>'+val(pick(p,'KenPomThrees','BaselineThrees','threes','3PM'))+'</td></tr>';
+html+='<tr><td><button type="button" class="daily-player-link" data-daily-profile="'+profileIndex+'" title="View projection and season game log">'+esc(p.Player??p.player??p.name)+'</button>'+(p.ScenarioType?'<small> '+esc(p.ScenarioType==='local'?'Local preview':'Availability scenario')+'</small>':'')+(p.MinutesRiskFlags?.length?'<small title="'+esc(p.MinutesRiskFlags.join(' · '))+'"> ⚠ Minutes review</small>':'')+'</td><td title="'+esc('CBBD '+(p.CBBDGP??'—')+' / ESPN '+(p.ESPNGP??'—')+' · Last game '+(p.LatestGameDate??'—'))+'">'+esc(p.CurrentGP??'—')+'</td><td title="'+esc(p.RawMinutes!=null?'Before normalization: '+val(p.RawMinutes)+' min':'Projected minutes')+'">'+val(pick(p,'Minutes','minutes','MIN'))+'</td><td>'+val(pick(p,'KenPomPoints','BaselinePoints','points','PTS'))+'</td><td>'+val(pick(p,'KenPomRebounds','BaselineRebounds','rebounds','REB'))+'</td><td>'+val(pick(p,'KenPomAssists','BaselineAssists','assists','AST'))+'</td><td>'+val(pick(p,'KenPomThrees','BaselineThrees','threes','3PM'))+'</td></tr>';
 }
 html+='</tbody><tfoot><tr><td><strong>Team total</strong></td><td>—</td><td><strong class="'+(normalized?'positive':'negative')+'">'+val(teamMinutes)+'</strong></td><td colspan="4">Regulation target: 200.0 MIN</td></tr></tfoot></table></div>';
 }}
@@ -45,5 +46,6 @@ el.addEventListener('click',e=>{
   else status.textContent='Player profile unavailable. Refresh the page to reload the board scripts.';
 });
 document.querySelector('[data-tab="daily"]')?.addEventListener('click',load);
+window.addEventListener('acc-availability-changed',load);
 load();
 })();
