@@ -1,6 +1,6 @@
 {
   "date_eastern": "2026-11-26",
-  "generated_at_utc": "2026-11-26T19:14:24.526123+00:00",
+  "generated_at_utc": "2026-11-26T19:18:30.499266+00:00",
   "schedule_status": "OK",
   "kenpom_source": {
     "source": "supabase_snapshot",
@@ -410,7 +410,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -429,7 +429,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Brent Bland",
@@ -817,7 +818,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -836,7 +837,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Caleb Gaskins",
@@ -1224,7 +1226,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -1243,7 +1245,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Christopher Birden Jr.",
@@ -1535,7 +1538,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -1554,7 +1557,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Dante Allen",
@@ -1942,7 +1946,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -1961,7 +1965,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "DeSean Goode",
@@ -2325,7 +2330,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -2344,7 +2349,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Egor Ryzhov",
@@ -2708,7 +2714,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -2727,7 +2733,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Malik Reneau",
@@ -3067,7 +3074,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -3091,7 +3098,8 @@
                 "Regular starter with nonappearances; verify reason",
                 "Volatile recent playing time"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Nick Dorn",
@@ -3479,7 +3487,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -3498,7 +3506,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Quin Berger",
@@ -3766,7 +3775,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -3787,7 +3796,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Robert Miller III",
@@ -4175,7 +4185,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -4194,7 +4204,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Shelton Henderson",
@@ -4582,7 +4593,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -4601,7 +4612,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Somto Cyril",
@@ -4989,7 +5001,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -5008,7 +5020,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             }
           ],
           "projected_team_minutes": 200.0
@@ -5416,7 +5429,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -5438,7 +5451,8 @@
                 "Latest appearance materially above projected minutes",
                 "Volatile recent playing time"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Akir Souare",
@@ -5827,7 +5841,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -5846,7 +5860,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Armani Mighty",
@@ -6235,7 +6250,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -6254,7 +6269,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Baye Ndongo",
@@ -6643,7 +6659,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -6662,7 +6678,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Benjamin Mayhew",
@@ -6907,7 +6924,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -6928,7 +6945,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Chase Foster",
@@ -7317,7 +7335,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -7336,7 +7354,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Colin Hawkins",
@@ -7581,7 +7600,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -7602,7 +7621,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Dominique Diomande",
@@ -7871,7 +7891,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -7890,7 +7910,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jalil Bethea",
@@ -8279,7 +8300,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -8300,7 +8321,8 @@
               "MinutesRiskFlags": [
                 "Volatile recent playing time"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jermal Jones",
@@ -8569,7 +8591,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -8590,7 +8612,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jonathan Powell",
@@ -8979,7 +9002,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -8998,7 +9021,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Kraig Gilbert",
@@ -9267,7 +9291,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -9286,7 +9310,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Macari Moore",
@@ -9579,7 +9604,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -9598,7 +9623,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Naithan George",
@@ -9987,7 +10013,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -10006,7 +10032,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Timofei Rudovskii",
@@ -10251,7 +10278,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -10270,7 +10297,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             }
           ],
           "projected_team_minutes": 200.0
@@ -10702,7 +10730,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -10721,7 +10749,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Cameron Lomax",
@@ -11134,7 +11163,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -11153,7 +11182,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "David Terrell Jr.",
@@ -11566,7 +11596,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -11587,7 +11617,8 @@
               "MinutesRiskFlags": [
                 "Volatile recent playing time"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Gehrig Normand",
@@ -11904,7 +11935,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -11923,7 +11954,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jacob Patrick",
@@ -12288,7 +12320,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -12307,7 +12339,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jaden Toombs",
@@ -12720,7 +12753,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -12739,7 +12772,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jakub Szumert",
@@ -13152,7 +13186,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -13171,7 +13205,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jaylin Stewart",
@@ -13488,7 +13523,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -13507,7 +13542,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jermaine O'Neal Jr.",
@@ -13896,7 +13932,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -13915,7 +13951,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Johan Munch",
@@ -14328,7 +14365,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -14347,7 +14384,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Nic Codie",
@@ -14736,7 +14774,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -14755,7 +14793,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Niccolo Kalischer-Stork",
@@ -15048,7 +15087,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -15069,7 +15108,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Nigel Walls",
@@ -15386,7 +15426,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -15405,7 +15445,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Oziyah Sellers",
@@ -15818,7 +15859,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -15837,7 +15878,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Rowan Brumbaugh",
@@ -16202,7 +16244,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 7,
                     "national_teams": 285,
                     "factors": {
@@ -16223,7 +16265,8 @@
               "MinutesRiskFlags": [
                 "Regular starter with nonappearances; verify reason"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             }
           ],
           "projected_team_minutes": 200.0
@@ -16581,7 +16624,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -16600,7 +16643,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Alvaro Folgueiras",
@@ -16939,7 +16983,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -16958,7 +17002,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Boyuan Zhang",
@@ -17225,7 +17270,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -17244,7 +17289,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Flory Bidunga",
@@ -17583,7 +17629,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -17602,7 +17648,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Isaac Ellis",
@@ -17917,7 +17964,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -17938,7 +17985,8 @@
               "MinutesRiskFlags": [
                 "Volatile recent playing time"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Jackson Shelstad",
@@ -18277,7 +18325,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -18296,7 +18344,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Karter Knox",
@@ -18635,7 +18684,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -18656,7 +18705,8 @@
               "MinutesRiskFlags": [
                 "Latest appearance materially above projected minutes"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "LJ Wells",
@@ -18995,7 +19045,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -19014,7 +19064,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Obinna Ekezie Jr.",
@@ -19353,7 +19404,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -19372,7 +19423,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Seth Trimble",
@@ -19687,7 +19739,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -19708,7 +19760,8 @@
               "MinutesRiskFlags": [
                 "Recent return after a long gap; verify availability"
               ],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             },
             {
               "Player": "Will Hanke",
@@ -19951,7 +20004,7 @@
                   "ShotStatus": "modeled",
                   "OpponentAdjustment": {
                     "base_model": "v6-rotation-shot-volume",
-                    "snapshot_utc": "2026-11-26T19:13:52.348010+00:00",
+                    "snapshot_utc": "2026-11-26T19:18:16.277877+00:00",
                     "opponent_games": 6,
                     "national_teams": 285,
                     "factors": {
@@ -19970,7 +20023,8 @@
                 }
               },
               "MinutesRiskFlags": [],
-              "OpponentModelStatus": "available"
+              "OpponentModelStatus": "available",
+              "RotationModelStatus": "insufficient_reconciled_substitution_games"
             }
           ],
           "projected_team_minutes": 200.0
