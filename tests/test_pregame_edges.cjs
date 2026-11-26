@@ -64,3 +64,17 @@ p11.ExperimentalModels['v11-combined'].Minutes=0;
 assert.equal(evaluate(experimentalBoard(board,'v11-combined'),snapshot).rows.length,0);
 assert.equal(evaluate(board,snapshot).rows[0].projection,17);
 console.log('V11 combined mean and pricing safeguards passed');
+
+
+// Live freshness checks are UI-only; archival pricing remains unchanged.
+const {quoteFresh,groupRows}=require('../pregame-edges.js');
+const row={...result.rows[0],snapshotUtc:'2026-11-23T18:50:00Z',quoteUpdatedOver:'2026-11-23T18:49:00Z',quoteUpdatedUnder:'2026-11-23T16:50:00Z',tipoffUtc:'2026-11-23T19:30:00Z'};
+const now=Date.parse('2026-11-23T19:00:00Z');
+assert.equal(quoteFresh(row,'over',now),true);
+assert.equal(quoteFresh(row,'under',now),false);
+assert.equal(quoteFresh({...row,snapshotUtc:'2026-11-23T19:01:00Z'},'over',now),false);
+assert.equal(quoteFresh(row,'over',Date.parse(row.tipoffUtc)),false);
+assert.equal(groupRows([row],()=>false)[0].best,null);
+assert.equal(groupRows([row],(r,side)=>quoteFresh(r,side,now))[0].best.side,'over');
+assert.ok(groupRows([row])[0].best); // historical pricing still available
+console.log('Stale quote and active-edge ranking safeguards passed');
