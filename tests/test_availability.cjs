@@ -1,4 +1,4 @@
-const assert=require('node:assert/strict'),{allocation,scenario,id,VERSION}=require('../availability.js');
+const assert=require('node:assert/strict'),{allocation,scenario,id,VERSION,adjustmentLabel}=require('../availability.js');
 assert.equal(allocation([20,35,35,30,30,25,25],new Map([[0,29]]))[0],29);
 assert.equal(allocation([20,35,35,30,30,25,25],new Map([[0,29]])).reduce((s,m)=>s+Math.round(m*10),0),2000);
 assert.throws(()=>allocation([20,20,20,20,20],new Map([[0,0]])));
@@ -8,4 +8,10 @@ const s={[id(b,g,t,p)]:{minutes:29,status:'returning',reason:'test',exclude_date
 const out=scenario(b,s,true,Date.parse('2026-11-26T16:00:00Z')).games[0].teams[0].players;
 assert.equal(out[0].Minutes,29);assert.equal(out[0].KenPomPoints,14.5);assert.equal(p.Minutes,20);assert.equal(out.reduce((a,x)=>a+Math.round(x.Minutes*10),0),2000);
 assert.equal(scenario(b,s,true,Date.parse(g.tipoff_utc)).games[0].teams[0].players[0].Minutes,20);
+assert.equal(adjustmentLabel(out[0]),'Manual Override');
+assert.equal(adjustmentLabel(out[1]),'Rotation Adjusted');
+assert.equal(adjustmentLabel(p),'');
+assert.equal(adjustmentLabel({...p,ScenarioType:'published',OriginalMinutes:20,AvailabilityAdjustment:{status:'redistributed'}}),'');
+assert.equal(adjustmentLabel({...p,ScenarioType:'published',OriginalMinutes:21,AvailabilityAdjustment:{status:'redistributed'}}),'Rotation Adjusted');
+assert.equal(adjustmentLabel({...p,ScenarioType:'published',AvailabilityAdjustment:{status:'returning'}}),'Manual Override');
 console.log('Availability preview tests passed');

@@ -41,5 +41,13 @@ function scenario(board,settings=read(),enabled=true,now=Date.now()){
  }return x;})};
  })}))};
 }
-const api={VERSION,id,read,save,allocation,scenario};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ACCAvailability=api;
+// Classify the reason for a changed projection independently from where it was saved.
+function adjustmentLabel(p){
+ const a=p?.AvailabilityAdjustment;
+ if(!p?.ScenarioType||!a)return '';
+ if(a.status!=='redistributed')return 'Manual Override';
+ if(num(p.Minutes)!==num(p.OriginalMinutes))return 'Rotation Adjusted';
+ return '';
+}
+const api={VERSION,id,read,save,allocation,scenario,adjustmentLabel};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ACCAvailability=api;
 })(typeof window!=='undefined'?window:globalThis);

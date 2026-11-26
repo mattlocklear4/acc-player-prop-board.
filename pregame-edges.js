@@ -55,7 +55,7 @@ function evaluate(board,snapshot){
       const roi={};for(const side of ['over','under'])roi[side]=sides[side]===undefined?null:100*(ps[side]*profit(sides[side])-(1-ps[side]));
       const best=roi.over===null?'under':roi.under===null?'over':roi.over>=roi.under?'over':'under';
       rows.push({game:label,team:matches[0].team,player:q.player,book:q.bookmaker,market:fields[0],projection:mean,line,over:sides.over??null,under:sides.under??null,
-        fairOver:american(ps.over),fairUnder:american(ps.under),probOver:ps.over,probUnder:ps.under,quoteUpdatedOver:updates.over??null,quoteUpdatedUnder:updates.under??null,modelVersion:p.ModelVersion??'unknown',minutesRisk:p.MinutesRiskFlags||[],scenarioType:p.ScenarioType||null,projectionUtc:board.generated_at_utc,roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
+        fairOver:american(ps.over),fairUnder:american(ps.under),probOver:ps.over,probUnder:ps.under,quoteUpdatedOver:updates.over??null,quoteUpdatedUnder:updates.under??null,modelVersion:p.ModelVersion??'unknown',minutesRisk:p.MinutesRiskFlags||[],scenarioType:p.ScenarioType||null,adjustmentLabel:root.ACCAvailability?.adjustmentLabel(p)||'',projectionUtc:board.generated_at_utc,roiOver:roi.over,roiUnder:roi.under,bestSide:best,bestRoi:roi[best],snapshotUtc:snapshot.generated_at_utc,tipoffUtc:game.tipoff_utc,gameId:game.game_id,athleteId:String(p.AthleteId??'')});
     }
   }
   rows.sort((a,b)=>b.bestRoi-a.bestRoi);
@@ -67,7 +67,7 @@ function groupRows(rows){
   const groups=new Map();
   for(const r of rows){
     const key=JSON.stringify([r.gameId||r.game,r.team,norm(r.player),r.market]);
-    if(!groups.has(key))groups.set(key,{game:r.game,gameId:r.gameId,team:r.team,player:r.player,market:r.market,projection:r.projection,tipoffUtc:r.tipoffUtc,athleteId:r.athleteId,minutesRisk:r.minutesRisk||[],scenarioType:r.scenarioType,books:{},best:null});
+    if(!groups.has(key))groups.set(key,{game:r.game,gameId:r.gameId,team:r.team,player:r.player,market:r.market,projection:r.projection,tipoffUtc:r.tipoffUtc,athleteId:r.athleteId,minutesRisk:r.minutesRisk||[],scenarioType:r.scenarioType,adjustmentLabel:r.adjustmentLabel,books:{},best:null});
     const g=groups.get(key);
     if(!g.books[r.book])g.books[r.book]=[];
     g.books[r.book].push(r);
@@ -160,7 +160,7 @@ function render(){
     html+='<tr class="edge-marketband"><th class="edge-player" scope="row">'+esc(m==='Threes'?'Made threes':m)+' <small>'+items.length+'</small></th><td colspan="'+(books.length+2)+'"></td></tr>';
     for(const g of items){
       const best=g.best,when=g.tipoffUtc?new Date(g.tipoffUtc).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):'';
-      html+='<tr><td class="edge-player"><button class="edge-player-link" type="button" data-profile="'+profileRows.indexOf(g)+'" title="View season game log">'+esc(g.player)+'</button>'+(g.scenarioType?'<small class="edge-profile-warn">'+esc(g.scenarioType==='local'?'LOCAL PREVIEW':'AVAILABILITY SCENARIO')+'</small>':'')+((g.minutesRisk?.length&&(best?.roi>=20||g.scenarioType))?'<small class="edge-profile-warn" title="'+esc(g.minutesRisk.join(' · '))+'">⚠ Verify minutes</small>':'')+'<small>'+esc(g.team)+' · '+esc(when)+'</small><small class="edge-game-label" title="'+esc(g.game)+'">'+esc(g.game)+'</small></td><td class="edge-proj">'+esc(fmt(g.projection))+'</td><td class="edge-best">'+(best?'<strong class="'+(best.roi>0?'edge-win':'')+'">'+esc(roi(best.roi))+'</strong><small>'+esc(names[best.book]||best.book)+' · '+(best.side==='over'?'O':'U')+esc(best.line)+'</small>':'—')+'</td>';
+      html+='<tr><td class="edge-player"><button class="edge-player-link" type="button" data-profile="'+profileRows.indexOf(g)+'" title="View season game log">'+esc(g.player)+'</button>'+(g.adjustmentLabel?'<small title="'+esc(g.scenarioType==='local'?'Local preview — not archived':g.adjustmentLabel==='Manual Override'?'Direct manual playing-time adjustment':'Team minutes redistributed; not an injury designation')+'">'+esc(g.adjustmentLabel)+(g.scenarioType==='local'?' · Local':'')+'</small>':'')+((g.minutesRisk?.length&&(best?.roi>=20||g.scenarioType))?'<small class="edge-profile-warn" title="'+esc(g.minutesRisk.join(' · '))+'">⚠ Verify minutes</small>':'')+'<small>'+esc(g.team)+' · '+esc(when)+'</small><small class="edge-game-label" title="'+esc(g.game)+'">'+esc(g.game)+'</small></td><td class="edge-proj">'+esc(fmt(g.projection))+'</td><td class="edge-best">'+(best?'<strong class="'+(best.roi>0?'edge-win':'')+'">'+esc(roi(best.roi))+'</strong><small>'+esc(names[best.book]||best.book)+' · '+(best.side==='over'?'O':'U')+esc(best.line)+'</small>':'—')+'</td>';
       for(const k of books){
         const lines=(g.books[k]||[]).slice().sort((a,b)=>a.line-b.line);
         html+='<td class="edge-bookcell">'+(lines.length?lines.map(r=>quote(r,'over')+quote(r,'under')).join(''):'<span class="edge-empty">—</span>')+'</td>';
@@ -253,7 +253,8 @@ function renderProfile(g,p,choice=0){
     html+='<p class="note">Experimental estimates are archived for evaluation. V4 is retained as the archived control. Availability scenarios are separately labeled; local previews are not archived.</p>';
   }
   if(p.MinutesRiskFlags?.length)html+='<p class="note edge-profile-warn">Minutes review: '+esc(p.MinutesRiskFlags.join(' · '))+'</p>';
-  if(p.AvailabilityAdjustment)html+='<p class="note edge-profile-warn">'+esc(p.AvailabilityAdjustment.reason)+' · Original minutes '+esc(fmt(p.OriginalMinutes))+' · Production games '+esc(p.ProductionGamesUsed)+'</p>';
+  const adjustmentLabel=root.ACCAvailability?.adjustmentLabel(p);
+  if(adjustmentLabel)html+='<p class="note"><strong>'+esc(adjustmentLabel)+'</strong> · '+esc(p.AvailabilityAdjustment.reason)+' · Minutes '+esc(fmt(p.OriginalMinutes))+' → '+esc(fmt(p.Minutes))+' · Production games '+esc(p.ProductionGamesUsed)+(p.ScenarioType==='local'?' · Local preview, not archived':'')+'</p>';
   const canEdit=Date.now()<Date.parse(g.tipoffUtc)&&root.ACCAvailability;
   if(canEdit){
     const own=p.AvailabilityAdjustment?.status!=='redistributed'?p.AvailabilityAdjustment:null;
