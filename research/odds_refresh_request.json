@@ -1,6 +1,7 @@
 {
   "date_eastern": "2026-11-26",
-  "request_id": "2026-11-26-pittsburgh-george-refresh",
+  "request_id": "2026-11-26-pittsburgh-controlled-retry",
   "schedule_game_id": "espn_event_401909506",
-  "reason": "User reported outdated Naithan George BetOnline assists price; refresh this specific pregame game within existing quota"
+  "retry_failed": true,
+  "reason": "One bounded retry of failed pregame request with provider diagnostics; existing quota guards remain"
 }
