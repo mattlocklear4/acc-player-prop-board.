@@ -6,6 +6,7 @@ import argparse, csv, datetime as dt, json, statistics
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 from acc_grade_daily import ROOT, LOGS, norm, num, timestamp, team_matches, FIELDS
+from acc_game_identity import canonical_record, load_aliases
 
 ARCHIVES=ROOT/'data/archives/pregame'
 OUT=ROOT/'data/pregame_edge_grading.json'
@@ -25,7 +26,9 @@ def tier(x):
 
 def select_snapshots(records, include_date):
     latest={}; latest_odds={}; issues=[]
-    for r in records:
+    aliases=load_aliases()
+    for raw in records:
+        r=canonical_record(raw,aliases)
         date=r.get('date_eastern','')
         if not include_date(date):continue
         game=r.get('game') or {}; gid=game.get('game_id')
@@ -36,7 +39,7 @@ def select_snapshots(records, include_date):
         rank=(projected,captured)
         if key not in latest or rank>latest[key][0]:latest[key]=(rank,r)
         odds=timestamp(r.get('odds_snapshot_utc'))
-        if odds and odds<=captured and odds<tip:
+        if odds and odds<=captured and odds<tip and (r.get('quotes') or any((r.get('experimental_quotes') or {}).values())):
             rank=(projected,odds,captured)
             if key not in latest_odds or rank>latest_odds[key][0]:latest_odds[key]=(rank,r)
     return latest, latest_odds, issues

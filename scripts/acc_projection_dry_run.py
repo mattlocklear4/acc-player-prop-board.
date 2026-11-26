@@ -10,6 +10,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from acc_schedule import TEAMS, discover, get_games, parse_time
+from acc_game_identity import canonical_game, load_aliases
 from research_engine import build_baselines, load_kenpom, apply_matchup, canon
 from acc_experimental_models import attach_experiments
 from acc_availability import load_overrides, attach_availability
@@ -47,12 +48,14 @@ def matchup(schedule, odds_feed, now, root, kp, source_meta, lock_lead_minutes=N
     baselines_by_day={}
     rotations_by_day={}
     opponent_context=load_context(root,now,kp)
-    for g in schedule:
+    aliases=load_aliases(root)
+    for original in schedule:
+        g=canonical_game(original,aliases)
         tip=parse_time(g.get('tipoff_utc'))
         if not tip:continue
         acc=[x for x in (game_team(g['home_team']),game_team(g['away_team'])) if x]
         if not acc:continue
-        base={'game_id':g['game_id'],'tipoff_utc':g['tipoff_utc'],'home_team':g['home_team'],'away_team':g['away_team'],'teams':[]}
+        base={'game_id':g['game_id'],'tipoff_utc':g['tipoff_utc'],'home_team':g['home_team'],'away_team':g['away_team'],'provider_game_id':g.get('provider_game_id'),'schedule_source':g.get('schedule_source'),'teams':[]}
         for team in sorted(set(acc)):
             opponent=g['away_team'] if game_team(g['home_team'])==team else g['home_team']
             item={'team':team,'opponent':opponent,'status':'excluded','reason':None,'players':[]}

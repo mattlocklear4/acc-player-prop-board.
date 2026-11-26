@@ -173,6 +173,20 @@ def main():
     p.add_argument('--fixture',help='Optional local JSON mapping team names to CBBD response arrays (testing only)')
     args=p.parse_args()
     now=dt.datetime.now(dt.timezone.utc)
+    # ESPN IDs are the canonical settlement identifiers. A CBBD entitlement
+    # upgrade must never switch an existing day's identity namespace.
+    # Keep ESPN as the normal schedule source, regardless of CBBD quota.
+    if not args.fixture:
+        try:
+            games=espn_public_schedule(now,args.horizon_hours)
+            if games:
+                result={'mode':'DRY_RUN_NO_WRITES','schedule_status':'OK_ESPN_CANONICAL','generated_at_utc':now.isoformat(),'season':args.season,'horizon_hours':args.horizon_hours,'games':games,'warnings':[],'queried_teams':0}
+                dest=Path(args.output);dest.parent.mkdir(parents=True,exist_ok=True)
+                dest.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+                print(f'DRY RUN: {len(games)} upcoming ACC games with stable ESPN IDs; output {dest}')
+                return
+        except (OSError,ValueError,RuntimeError) as exc:
+            print('ESPN schedule unavailable; attempting CBBD fallback:',type(exc).__name__)
     if args.fixture: records=json.loads(Path(args.fixture).read_text(encoding='utf-8'))
     else:
         key=os.getenv('CBBD_API_KEY','').strip()
@@ -205,7 +219,12 @@ def main():
                 schedule_status='UNAVAILABLE'
     else:
         games,problems=discover(records,now,args.horizon_hours)
-        schedule_status='OK'
+        schedule_status='OK' if args.fixture else 'FALLBACK_CBBD'
+        if not args.fixture:
+            from acc_game_identity import canonical_game,load_aliases
+            aliases=load_aliases()
+            games=[canonical_game(g,aliases) for g in games]
+            problems.append({'reason':'canonical_espn_schedule_unavailable','note':'Unmapped provider IDs cannot be assumed equivalent to saved sportsbook IDs.'})
     result={'mode':'DRY_RUN_NO_WRITES','schedule_status':schedule_status,'generated_at_utc':now.isoformat(),'season':args.season,'horizon_hours':args.horizon_hours,'games':games,'warnings':problems,'queried_teams':len(records)}
     dest=Path(args.output);dest.parent.mkdir(parents=True,exist_ok=True)
     dest.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')

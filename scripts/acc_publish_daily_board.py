@@ -35,7 +35,7 @@ for g in payload.get('games') or []:
                       'player_count':len(players),'players':players,
                       'projected_team_minutes':200.0 if players else None})
     games.append({'game_id':g.get('game_id'),'tipoff_utc':g['tipoff_utc'],
-                  'home_team':g.get('home_team'),'away_team':g.get('away_team'),'teams':teams})
+                  'home_team':g.get('home_team'),'away_team':g.get('away_team'),'provider_game_id':g.get('provider_game_id'),'schedule_source':g.get('schedule_source'),'teams':teams})
 result={'date_eastern':day,'generated_at_utc':payload['generated_at_utc'],
         'schedule_status':payload.get('schedule_status'),
         'kenpom_source':payload.get('kenpom_source'),

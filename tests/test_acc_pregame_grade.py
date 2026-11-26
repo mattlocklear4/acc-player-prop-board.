@@ -41,3 +41,20 @@ class TestGrade(unittest.TestCase):
         self.assertEqual(grade(records,{},date)['positive_roi']['selections'],0)
         self.assertEqual(pending_report(records,'2026-11-26')['status'],'NO_ARCHIVES')
         self.assertIsNone(pending_report([old],date)['mean_expected_roi_percent'])
+
+class GameIdentityTests(unittest.TestCase):
+    def test_verified_alias_deduplicates_and_keeps_priced_capture(self):
+        from acc_game_identity import load_aliases,canonical_record
+        from acc_grade_pregame import select_snapshots
+        date='2026-11-26';tip='2026-11-26T20:30:00Z'
+        a={'date_eastern':date,'game':{'game_id':'espn_event_401920537','home_team':'Michigan Wolverines','away_team':'Miami Hurricanes','tipoff_utc':tip},'captured_at_utc':date+'T17:01:00Z','projection_utc':date+'T17:00:00Z','odds_snapshot_utc':date+'T15:54:00Z','quotes':[{'game_id':'espn_event_401920537'}]}
+        b={**a,'game':{'game_id':'378713','home_team':'Michigan','away_team':'Miami','tipoff_utc':tip},'captured_at_utc':date+'T19:01:00Z','projection_utc':date+'T19:00:00Z','quotes':[]}
+        latest,priced,issues=select_snapshots([a,b],lambda d:d==date)
+        key=(date,'espn_event_401920537')
+        self.assertEqual(len(latest),1)
+        self.assertEqual(latest[key][1]['game']['provider_game_id'],'378713')
+        self.assertEqual(priced[key][1]['projection_utc'],a['projection_utc'])
+        self.assertEqual(b['game']['game_id'],'378713')
+        self.assertEqual(issues,[])
+        for g in ({**b['game'],'home_team':'Other school'},{**b['game'],'tipoff_utc':date+'T21:30:00Z'}):
+            self.assertEqual(canonical_record({**b,'game':g},load_aliases())['game']['game_id'],'378713')
