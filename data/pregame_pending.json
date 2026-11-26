@@ -1,31 +1,53 @@
 {
   "date_eastern": "2026-11-26",
-  "generated_at_utc": "2026-11-26T15:52:46.612242+00:00",
+  "generated_at_utc": "2026-11-26T15:54:55.793526+00:00",
   "status": "OK",
-  "latest_capture_utc": "2026-11-26T15:52:46.506000+00:00",
+  "latest_capture_utc": "2026-11-26T15:54:55.718000+00:00",
   "games": 3,
-  "games_with_priced_quotes": 0,
+  "games_with_priced_quotes": 3,
   "player_projections": 39,
-  "quotes_priced": 0,
-  "positive_selections": 0,
-  "mean_expected_roi_percent": null,
-  "by_tier": {},
-  "by_model_version": {},
+  "quotes_priced": 90,
+  "positive_selections": 34,
+  "mean_expected_roi_percent": 21.33,
+  "by_tier": {
+    "0\u20135%": {
+      "selections": 6,
+      "mean_expected_roi_percent": 0.85
+    },
+    "10\u201320%": {
+      "selections": 10,
+      "mean_expected_roi_percent": 14.21
+    },
+    "20%+": {
+      "selections": 16,
+      "mean_expected_roi_percent": 35.18
+    },
+    "5\u201310%": {
+      "selections": 2,
+      "mean_expected_roi_percent": 7.6
+    }
+  },
+  "by_model_version": {
+    "current-season-hybrid-v4-200min": {
+      "selections": 34,
+      "mean_expected_roi_percent": 21.33
+    }
+  },
   "issues": [],
   "experimental_models": {
     "v5-rotation-participation": {
       "player_projections": 39,
-      "quotes_priced": 0,
-      "positive_selections": 0,
+      "quotes_priced": 90,
+      "positive_selections": 40,
       "shot_fallbacks": 0,
-      "mean_expected_roi_percent": null
+      "mean_expected_roi_percent": 25.24
     },
     "v6-rotation-shot-volume": {
       "player_projections": 39,
-      "quotes_priced": 0,
-      "positive_selections": 0,
+      "quotes_priced": 90,
+      "positive_selections": 38,
       "shot_fallbacks": 0,
-      "mean_expected_roi_percent": null
+      "mean_expected_roi_percent": 22.44
     }
   },
   "method": "Latest valid archived pregame projection and latest odds-backed capture per game, same selection and validation as grading. Today is pending until the next-day grading run. Individual sportsbook quote sides are hypothetical opportunities, not placed bets."
