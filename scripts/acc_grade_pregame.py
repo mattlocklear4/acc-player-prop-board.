@@ -58,6 +58,94 @@ def valid_quotes(date,gid,r,issues):
             issues.append({'date':date,'game_id':gid,'reason':'invalid_archived_quote'});continue
         yield q
 
+def closing_line_report(records,today,window_minutes=60):
+    """First positive signal vs last observed same-book pregame market.
+    No settlement or repricing needed; report only prior Eastern game dates.
+    Repeated captures of old odds never become new market observations.
+    """
+    from math import isfinite
+    aliases=load_aliases()
+    entries={}; markets={}
+    def identity(date,gid,q):
+        return (date,gid,q.get('team'),norm(q.get('player')),q.get('market'),q.get('bookmaker'),q.get('side'))
+    def implied(price):
+        return -price/(100-price) if price<0 else 100/(100+price)
+    def mean(vals):
+        return round(statistics.mean(vals),4) if vals else None
+    for raw in records:
+        r=canonical_record(raw,aliases)
+        date=r.get('date_eastern','')
+        game=r.get('game') or {};gid=game.get('game_id')
+        cap=timestamp(r.get('captured_at_utc'));proj=timestamp(r.get('projection_utc'))
+        snap=timestamp(r.get('odds_snapshot_utc'));tip=timestamp(game.get('tipoff_utc'))
+        if not date or date>=today or not gid or not all((cap,proj,snap,tip)) or not (proj<=cap<tip and snap<=cap):continue
+        pools={'v4':r.get('quotes') or [],**(r.get('experimental_quotes') or {})}
+        for version,quotes in pools.items():
+            for q in valid_quotes(date,gid,{**r,'quotes':quotes},[]):
+                line=num(q['line']);price=num(q['american_odds']);edge=num(q['expected_roi_percent'])
+                if not all(isfinite(v) for v in (line,price,edge)):continue
+                updated=timestamp(q['quote_updated_utc'])
+                k=identity(date,gid,q)
+                if not all(k):continue
+                # Rank by odds observation, not forecast regeneration time.
+                rank=(snap,updated)
+                prev=markets.get(k)
+                if prev is None or rank>prev[0]:
+                    markets[k]=(rank,{(line,price)},tip)
+                elif rank==prev[0]:
+                    prev[1].add((line,price))
+                if edge>0:
+                    ek=(version,*k);erank=(cap,snap,updated)
+                    prev=entries.get(ek)
+                    if prev is None or erank<prev[0]:
+                        entries[ek]=(erank,line,price,edge,tip)
+    rows=[]
+    for (version,*k),entry in sorted(entries.items(),key=lambda item:str(item[0])):
+        rank,line,price,edge,tip=entry
+        date,gid,team,player,market,book,side=k
+        (snap,updated),prices,close_tip=markets[tuple(k)]
+        age=(close_tip-snap).total_seconds()/60
+        quote_age=(close_tip-updated).total_seconds()/60
+        row={'date':date,'game_id':gid,'team':team,'player':player,'market':market,'bookmaker':book,'side':side,'model':version,
+             'entry_line':line,'entry_odds':price,'entry_roi_percent':edge,'entry_capture_utc':rank[0].isoformat(),
+             'last_snapshot_utc':snap.isoformat(),'minutes_before_tip':round(age,1),'quote_age_minutes':round(quote_age,1)}
+        if close_tip!=tip:status='tipoff_mismatch'
+        elif snap<=rank[0]:status='no_later_observation'
+        elif age>window_minutes or quote_age>window_minutes:status='stale_last_quote'
+        elif len(prices)!=1:status='ambiguous_last_market'
+        else:
+            cl,cp=next(iter(prices));movement=(cl-line)*(1 if side=='over' else -1)
+            row.update(last_line=cl,last_odds=cp,line_movement=round(movement,4))
+            if movement==0:
+                # Raw implied probability movement, not no-vig market EV.
+                delta=100*(implied(cp)-implied(price))
+                row.update(price_clv_pp=round(delta,4),direction='positive' if delta>1e-9 else 'negative' if delta< -1e-9 else 'unchanged')
+            else:
+                # Different lines have different payoff events. Never convert
+                # raw prices into a common probability or monetary CLV.
+                row.update(price_clv_pp=None,direction='line_favorable' if movement>0 else 'line_unfavorable')
+            status='matched'
+        row['status']=status
+        rows.append(row)
+    def metrics(rs):
+        matched=[x for x in rs if x['status']=='matched']
+        same=[x for x in matched if x.get('price_clv_pp') is not None]
+        changed=[x for x in matched if x['line_movement']!=0]
+        return {'signals':len(rs),'matched':len(matched),'same_line':len(same),'changed_line':len(changed),
+                'mean_price_clv_pp':mean([x['price_clv_pp'] for x in same]),
+                'price_positive':sum(x['direction']=='positive' for x in same),
+                'price_negative':sum(x['direction']=='negative' for x in same),
+                'price_unchanged':sum(x['direction']=='unchanged' for x in same),
+                'line_favorable':sum(x['direction']=='line_favorable' for x in changed),
+                'line_unfavorable':sum(x['direction']=='line_unfavorable' for x in changed),
+                'mean_minutes_before_tip':mean([x['minutes_before_tip'] for x in matched]),
+                'coverage_reasons':{s:sum(x['status']==s for x in rs) for s in sorted({x['status'] for x in rs})}}
+    return {'window_minutes':window_minutes,'overall':metrics(rows),
+            'models':{v:metrics([x for x in rows if x['model']==v]) for v in sorted({x['model'] for x in rows})},
+            'v11_by_market':{m:metrics([x for x in rows if x['model']=='v11-combined' and x['market']==m]) for m in sorted({x['market'] for x in rows if x['model']=='v11-combined'})},
+            'rows':rows,
+            'method':'First archived positive signal per model, game, player, market, book and side versus the last observed same-book quote. A later snapshot and quote update within 60 minutes of tipoff are required. Same-line CLV is raw implied probability movement in percentage points, not de-vigged EV. Changed-line direction is reported separately and does not account for juice changes. Not verified official closes; missing or stale quotes are excluded from CLV averages. Model signals and books are correlated.'}
+
 def pending_report(records, today):
     """Only today's genuine immutable captures; no results or repricing."""
     latest, latest_odds, issues=select_snapshots(records, lambda date: date==today)
@@ -163,6 +251,7 @@ def main():
     result=grade(records,logs,today)
     from acc_model_comparison import compare
     result['experimental_comparison']=compare(records,logs,today)
+    result['closing_line_value']=closing_line_report(records,today)
     OUT.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({'games':result['games'],'players_graded':result['players_graded'],'positive_roi':result['positive_roi']}))
 if __name__=='__main__':main()
