@@ -9,6 +9,7 @@ on:
       - 'scripts/acc_experimental_models.py'
       - 'scripts/acc_projection_dry_run.py'
       - 'scripts/supabase_kenpom.py'
+      - 'research/projection_refresh_request.json'
       - '.github/workflows/acc-daily-projections.yml'
   schedule:
     - cron: '0 13 * * *'
