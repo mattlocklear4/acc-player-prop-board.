@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import re
+import time
 import urllib.parse
 from zoneinfo import ZoneInfo
 from acc_stage8b_multibook import get,ROOT as API,MARKETS,BOOKS,utc,prop_coverage
@@ -36,7 +37,7 @@ def budget(base,observations,remaining):
     spent=max(spent,morning+initial-remaining)
     return max(0,min(CAP-spent,remaining-RESERVE))
 
-def candidates(base,board,events,observations,now,target_game=None):
+def candidates(base,board,events,observations,now,target_game=None,retry_failed=False):
     """Use verified IDs, teams and times; only future games on today's board."""
     games={str(g.get('game_id')):g for g in board.get('games') or []}
     provider={str(e.get('id')):e for e in events}
@@ -52,6 +53,10 @@ def candidates(base,board,events,observations,now,target_game=None):
         mins=(tip-now).total_seconds()/60
         if mins<10 or (not target_game and mins>180):continue
         phase='close' if mins<=55 else 'manual' if target_game else 'midday' if mins>=90 else None
+        if phase and (eid,phase) in seen and retry_failed and target_game:
+            attempts=[o for o in observations if o.get('event_id')==eid and o.get('phase')==phase]
+            if len(attempts)==1 and attempts[0].get('status')=='REQUEST_FAILED' and (eid,phase+'_retry') not in seen:
+                phase+='_retry'
         if phase and (eid,phase) not in seen:
             out.append({'event':e,'tip':tip,'minutes':mins,'phase':phase})
     # Most imminent first, with already populated markets preferred on ties.
@@ -92,10 +97,12 @@ def main():
     key=os.environ.get('ODDS_API_KEY','').strip()
     if not key:raise RuntimeError('Odds secret missing')
     target_game=None
+    retry_failed=False
     if os.environ.get('TARGETED_REQUEST','').lower()=='true':
         request=json.loads((ROOT/'research/odds_refresh_request.json').read_text())
         if request.get('date_eastern')!=today:print('Expired request.');return
         target_game=request.get('schedule_game_id') or None
+        retry_failed=request.get('retry_failed') is True
         if target_game and not isinstance(target_game,str):raise RuntimeError('Invalid requested game ID')
     # Cheap local check before even making a free discovery request.
     if not any(utc(g.get('tipoff_utc')) and (10<=(utc(g['tipoff_utc'])-now).total_seconds()/60) and ((str(g.get('game_id'))==target_game) if target_game else ((utc(g['tipoff_utc'])-now).total_seconds()/60<=180)) for g in board.get('games') or []):
@@ -103,11 +110,13 @@ def main():
     api_events,headers=get(API+'/events',{'apiKey':key})
     remaining=integer(headers.get('x-requests-remaining'))
     available=budget(base,observations,remaining)
-    due=candidates(base,board,api_events,observations,now,target_game)
+    due=candidates(base,board,api_events,observations,now,target_game,retry_failed)
     # Explicitly requested game may spend a remaining slot outside the automatic windows.
     targets=due[:1] if target_game and available>=COST else [] if target_game else choose(due,available,base,observations,now,board)
     print('Conservative remaining daily budget:',available,'selected events:',len(targets))
     for target in targets:
+        # Space discovery and odds calls apart; avoid immediate retries on 429.
+        time.sleep(3)
         now=dt.datetime.now(dt.timezone.utc)
         if target['tip']-now<dt.timedelta(minutes=5) or budget(base,observations,remaining)<COST:continue
         e=target['event'];eid=str(e['event_id'])
@@ -135,8 +144,14 @@ def main():
             # Do not log provider URLs or credentials. Unknown charges count at maximum cost.
             row['status']='REQUEST_FAILED';row['error_type']=type(exc).__name__
             if isinstance(getattr(exc,'code',None),int):row['http_status']=exc.code
+            # Only persist a structured provider error code, never the body or URL.
+            try:
+                payload=json.loads(exc.read(16384))
+                code=payload.get('error_code') or payload.get('code')
+                if isinstance(code,str) and re.fullmatch(r'[A-Z][A-Z_0-9]{1,79}',code):row['provider_error_code']=code
+            except Exception:pass
             atomic_json(manifest_path,manifest)
-            print('Request failed; stopped without retry:',type(exc).__name__,row.get('http_status',''))
+            print('Request failed; stopped without retry:',type(exc).__name__,row.get('http_status',''),row.get('provider_error_code',''))
             break
 
 if __name__=='__main__':main()
