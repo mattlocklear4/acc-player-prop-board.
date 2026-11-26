@@ -26,7 +26,7 @@ def budget(base,observations,remaining):
     Refuse inconsistent/reset quota headers; never spend against an unknown balance.
     """
     q=base.get('quota') or {}
-    morning=integer(q.get('credits_spent_reported'))
+    morning=integer(q.get('credits_spent_conservative',q.get('credits_spent_reported')))
     initial=integer(q.get('remaining'))
     if None in (morning,initial,remaining) or remaining>initial:return 0
     spent=morning
