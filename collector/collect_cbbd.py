@@ -58,7 +58,7 @@ def main():
             for r in csv.DictReader(f):
                 if r.get('game_id') and (r.get('athlete_id') or r.get('player')):
                     rows[(r['game_id'],r.get('team_id') or r.get('team'),r.get('athlete_id') or r.get('player'))]=r
-    counts={};failures=[]
+    counts={};failures=[];quota_exhausted=False
     for team in TEAMS:
         try:
             games=fetch(team,args.season,key)

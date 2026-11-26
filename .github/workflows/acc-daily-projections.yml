@@ -61,6 +61,12 @@ jobs:
           python -m unittest discover -s tests -p 'test_acc_daily_pipeline.py'
           python -m unittest discover -s tests -p 'test_acc_experimental_models.py'
           python -m unittest discover -s tests -p 'test_acc_availability.py'
+      - name: Restore private current-season CBBD cache
+        if: steps.freshness.outputs.refresh == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python collector/private_cbbd_cache.py restore
       - name: Compare baseline models offline
         if: steps.freshness.outputs.refresh == 'true'
         run: python scripts/acc_validation_walkforward.py

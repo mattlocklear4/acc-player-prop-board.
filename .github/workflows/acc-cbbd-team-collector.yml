@@ -1,60 +1,25 @@
 name: ACC CBBD nightly team statistics
+# The combined private collector refreshes both datasets each morning.
+# Retain a manual workflow for a standalone team-only refresh.
 on:
   workflow_dispatch:
-    inputs:
-      season:
-        description: "CBBD season ending year"
-        required: true
-        default: "2027"
-        type: string
-  # Supplemental Team Stats tab; reduce API load while CBBD monthly quota is constrained.
-  schedule:
-    - cron: '40 11 * * 0'
-
 permissions:
-  contents: write
-
+  contents: read
 concurrency:
-  group: acc-cbbd-team-statistics
+  group: acc-cbbd-collector
   cancel-in-progress: false
-
 jobs:
   collect:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Collect ACC team statistics
+      - name: Refresh team statistics privately
         env:
           CBBD_API_KEY: ${{ secrets.CBBD_API_KEY }}
-          SEASON_INPUT: ${{ inputs.season }}
-        run: |
-          python collector/collect_team_stats.py --season "${SEASON_INPUT:-2027}"
-      - name: Commit updated team statistics
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/cbbd/acc_team_stats_*.csv data/cbbd/acc_team_stats_*.json data/cbbd/acc_team_collection_summary_*.json
-          if git diff --cached --quiet; then
-            echo 'No team statistics changed'
-          else
-            git commit -m 'Update ACC CBBD team statistics'
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
-      - name: Upload team statistics backup
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: acc-cbbd-team-statistics
-          path: |
-            data/cbbd/acc_team_stats_*.csv
-            data/cbbd/acc_team_stats_*.json
-            data/cbbd/acc_team_collection_summary_*.json
-          if-no-files-found: warn
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python collector/private_cbbd_cache.py refresh --scope teams
