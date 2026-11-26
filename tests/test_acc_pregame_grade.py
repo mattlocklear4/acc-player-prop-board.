@@ -88,3 +88,30 @@ class CommonCohortTests(unittest.TestCase):
         self.assertEqual(sum(x['n'] for x in c['models']['v4']['reliability']),1)
         self.assertEqual(compare([r],logs,date)['common_cohort']['paired_players'],0)
         self.assertEqual(compare([],{},'2026-11-26')['common_cohort']['unique_outcomes'],0)
+
+
+class ClosingLineTests(unittest.TestCase):
+    def test_fresh_same_line_price_and_changed_line(self):
+        from acc_grade_pregame import closing_line_report
+        date='2026-11-25';gid='espn_event_1';tip=date+'T20:00:00Z'
+        def rec(time,price,line=5.5,edge=10,side='over',updated=None):
+            stamp=date+'T'+time+':00Z';update=date+'T'+(updated or time)+':00Z'
+            q={'game_id':gid,'team':'Duke','player':'Test Player','market':'Assists','bookmaker':'fanduel','side':side,'line':line,'american_odds':price,'expected_roi_percent':edge,'win_probability':.6,'projection_utc':stamp,'odds_snapshot_utc':stamp,'quote_updated_utc':update}
+            return {'date_eastern':date,'captured_at_utc':stamp,'projection_utc':stamp,'odds_snapshot_utc':stamp,'game':{'game_id':gid,'tipoff_utc':tip},'quotes':[q]}
+        early=rec('16:00',-115)
+        close=rec('19:45',-176,edge=-1)
+        report=closing_line_report([close,early,early], '2026-11-26')
+        self.assertEqual(report['models']['v4']['signals'],1)
+        self.assertEqual(report['overall']['matched'],1)
+        self.assertAlmostEqual(report['rows'][0]['price_clv_pp'],10.2791,places=3)
+        self.assertEqual(report['rows'][0]['direction'],'positive')
+        self.assertEqual(report['rows'][0]['minutes_before_tip'],15)
+        row=closing_line_report([early,rec('19:45',100,6.5,-1)],'2026-11-26')['rows'][0]
+        self.assertEqual(row['direction'],'line_favorable')
+        self.assertIsNone(row['price_clv_pp'])
+        row=closing_line_report([rec('16:00',-110,6.5,10,'under'),rec('19:45',-110,5.5,-1,'under')],'2026-11-26')['rows'][0]
+        self.assertEqual(row['line_movement'],1)
+        self.assertEqual(row['direction'],'line_favorable')
+        for records,status in [([early],'no_later_observation'),([early,rec('18:00',-176)],'stale_last_quote'),([early,rec('19:45',-176,updated='16:00')],'stale_last_quote'),([early,rec('20:01',-176)],'no_later_observation')]:
+            self.assertEqual(closing_line_report(records,'2026-11-26')['rows'][0]['status'],status)
+        self.assertEqual(closing_line_report([early,close],date)['overall']['signals'],0)
