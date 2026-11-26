@@ -75,7 +75,7 @@ def main():
         p.error('min-credits-remaining must be nonnegative')
     out={'mode':'READ_ONLY','generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(), 'bookmakers':list(BOOKS),
          'markets':list(MARKETS),'paid_requests_enabled':a.fetch_odds,'events':[], 'warnings':[],
-         'quota':{'estimated_max_credits':a.max_events*len(MARKETS),'requests_sent':0,'credits_spent_reported':0}}
+         'quota':{'estimated_max_credits':a.max_events*len(MARKETS),'requests_sent':0,'credits_spent_reported':0,'credits_spent_conservative':0}}
     def save():
         path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
@@ -159,20 +159,28 @@ def main():
         out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches),a.max_credits//len(MARKETS))*len(MARKETS)
         if not friday_matches:
             out['warnings'].append('No matched eligible events on target date; zero paid requests.');save();return
-        for game,event in friday_matches[:a.max_events]:
-            if out['quota']['credits_spent_reported']+len(MARKETS)>a.max_credits:
+        for game,event in sorted(friday_matches,key=lambda ge:utc(ge[1]['commence_time']))[:a.max_events]:
+            if out['quota']['credits_spent_conservative']+len(MARKETS)>a.max_credits:
                 out['warnings'].append('Daily credit cap reached; remaining events skipped.');break
             if out['quota']['requests_sent']>=a.max_events:break
             if out['quota'].get('remaining') is not None and out['quota']['remaining']<a.min_credits_remaining+len(MARKETS):
                 out['warnings'].append('Stopped: remaining credits below reserve plus worst-case request cost.');break
             try:
+                # Reserve worst-case credits before each paid request, even on failure.
+                out['quota']['requests_sent']+=1
+                out['quota']['credits_spent_conservative']+=len(MARKETS)
+                before=out['quota']['remaining']
                 data,meta=get(ROOT+'/events/'+urllib.parse.quote(str(event['id']),safe='')+'/odds',
                     {'apiKey':key,'bookmakers':','.join(BOOKS),'markets':','.join(MARKETS),'oddsFormat':'american'})
-                out['quota']['requests_sent']+=1
-                last=int(meta.get('x-requests-last') or 0)
+                last=int(meta.get('x-requests-last','-1'))
+                remaining=int(meta.get('x-requests-remaining','-1'))
+                if not 0<=last<=len(MARKETS) or remaining<0 or before-remaining!=last:
+                    out['warnings'].append('Unverified quota headers; conservative charge retained; stopping paid requests.')
+                    if remaining>=0:out['quota']['remaining']=remaining
+                    break
                 out['quota']['credits_spent_reported']+=last
-                remaining=meta.get('x-requests-remaining')
-                if remaining is not None:out['quota']['remaining']=int(remaining)
+                out['quota']['credits_spent_conservative']+=last-len(MARKETS)
+                out['quota']['remaining']=remaining
                 props=[]
                 for bookmaker in data.get('bookmakers') or []:
                     if bookmaker.get('key') not in BOOKS:continue
