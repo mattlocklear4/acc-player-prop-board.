@@ -1,8 +1,8 @@
 {
   "date_eastern": "2026-11-26",
-  "generated_at_utc": "2026-11-26T19:35:23.971807+00:00",
+  "generated_at_utc": "2026-11-26T19:35:58.089263+00:00",
   "status": "OK",
-  "latest_capture_utc": "2026-11-26T19:35:23.727000+00:00",
+  "latest_capture_utc": "2026-11-26T19:35:57.883000+00:00",
   "games": 5,
   "games_with_priced_quotes": 3,
   "player_projections": 68,
@@ -69,6 +69,13 @@
       "positive_selections": 34,
       "shot_fallbacks": 0,
       "mean_expected_roi_percent": 24.3
+    },
+    "v11-combined": {
+      "player_projections": 54,
+      "quotes_priced": 90,
+      "positive_selections": 34,
+      "shot_fallbacks": 0,
+      "mean_expected_roi_percent": 15.43
     },
     "v7-manual-availability": {
       "player_projections": 13,
