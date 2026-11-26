@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-25T20:32:15.201565+00:00",
-  "date_eastern": "2026-11-25",
+  "generated_at_utc": "2026-11-26T20:23:34.989985+00:00",
+  "date_eastern": "2026-11-26",
   "status": "warn",
   "failures": 0,
   "warnings": 3,
@@ -8,72 +8,72 @@
     {
       "code": "espn",
       "level": "pass",
-      "detail": "ESPN collector OK 3.6h ago; 10653 player rows."
+      "detail": "ESPN collector OK 7.7h ago; 10813 player rows."
     },
     {
       "code": "supplemental_team_stats",
       "level": "warn",
-      "detail": "Team Stats tab data age=10.3 days; CBBD quota status=CBBD_MONTHLY_QUOTA_EXHAUSTED. Existing saved data retained."
+      "detail": "Team Stats tab data age=11.3 days; CBBD quota status=CBBD_MONTHLY_QUOTA_EXHAUSTED. Existing saved data retained."
     },
     {
       "code": "archives",
       "level": "pass",
-      "detail": "5 pregame archive dates checked; no post-tipoff timestamps or revisions detected."
+      "detail": "6 pregame archive dates checked; no post-tipoff timestamps or revisions detected."
     },
     {
       "code": "grading",
       "level": "warn",
-      "detail": "148 players graded; 36 unresolved matching issues."
+      "detail": "190 players graded; 52 unresolved matching issues."
     },
     {
       "code": "projections",
       "level": "pass",
-      "detail": "6 scheduled games; 83 player projections."
+      "detail": "4 scheduled games; 54 player projections."
     },
     {
       "code": "today_archive_coverage",
       "level": "warn",
-      "detail": "Immutable first snapshot has 72 players vs live board 83; later additions cannot be graded retrospectively."
+      "detail": "Immutable first snapshot has 39 players vs live board 54; later additions cannot be graded retrospectively."
     },
     {
       "code": "roi",
       "level": "pass",
-      "detail": "366 actual saved quotes, 50 settled selections; ROI=11.76 (no inferred odds)."
+      "detail": "598 actual saved quotes, 59 settled selections; ROI=15.68 (no inferred odds)."
     },
     {
       "code": "api_credits",
       "level": "pass",
-      "detail": "5 stored snapshots checked for 24/day cap and 50-credit reserve; no paid calls made by health check."
+      "detail": "6 stored snapshots checked for 24/day cap and 50-credit reserve; no paid calls made by health check."
     },
     {
       "code": "workflow_espn",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45658943052"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45822052236"
     },
     {
       "code": "workflow_grading",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45659038789"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45854607182"
     },
     {
       "code": "workflow_projections",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45695000903"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45884750926"
     },
     {
       "code": "workflow_odds",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45659742429"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45888580285"
     },
     {
       "code": "workflow_pages",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45687713810"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45888647339"
     }
   ],
   "note": "Read-only diagnostic; workflow success alone does not prove ongoing unattended reliability."
