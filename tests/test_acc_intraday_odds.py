@@ -36,6 +36,11 @@ class IntradayTests(unittest.TestCase):
         self.assertEqual([(x['event']['event_id'],x['phase']) for x in manual],[('2','manual')])
         self.assertEqual(candidates(base,board,api,[{'event_id':'2','phase':'manual'}],now,'2'),[])
         self.assertEqual(candidates(base,board,api,[],now,'3'),[])
+        failed=[{'event_id':'2','phase':'manual','status':'REQUEST_FAILED'}]
+        retry=candidates(base,board,api,failed,now,'2',True)
+        self.assertEqual([(x['event']['event_id'],x['phase']) for x in retry],[('2','manual_retry')])
+        self.assertEqual(candidates(base,board,api,failed+[{'event_id':'2','phase':'manual_retry','status':'REQUEST_FAILED'}],now,'2',True),[])
+        self.assertEqual(candidates(base,board,api,[{'event_id':'2','phase':'manual','status':'ODDS_RETRIEVED'}],now,'2',True),[])
         wrong=[{**a[1],'commence_time':b[1]['commence_time']}]
         self.assertEqual(candidates(base,board,wrong,[],now),[])
 
