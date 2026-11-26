@@ -1,6 +1,6 @@
 {
   "date_eastern": "2026-11-26",
-  "generated_at_utc": "2026-11-26T19:07:39.716739+00:00",
+  "generated_at_utc": "2026-11-26T19:13:59.690751+00:00",
   "schedule_status": "OK",
   "kenpom_source": {
     "source": "supabase_snapshot",
@@ -342,7 +342,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Brent Bland",
@@ -662,7 +663,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Caleb Gaskins",
@@ -982,7 +984,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Christopher Birden Jr.",
@@ -1206,7 +1209,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Dante Allen",
@@ -1526,7 +1530,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "DeSean Goode",
@@ -1822,7 +1827,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Egor Ryzhov",
@@ -2118,7 +2124,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Malik Reneau",
@@ -2395,7 +2402,8 @@
                 "Recent return after a long gap; verify availability",
                 "Regular starter with nonappearances; verify reason",
                 "Volatile recent playing time"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Nick Dorn",
@@ -2715,7 +2723,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Quin Berger",
@@ -2915,7 +2924,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Robert Miller III",
@@ -3235,7 +3245,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Shelton Henderson",
@@ -3555,7 +3566,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Somto Cyril",
@@ -3875,7 +3887,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             }
           ],
           "projected_team_minutes": 200.0
@@ -4218,7 +4231,8 @@
               "MinutesRiskFlags": [
                 "Latest appearance materially above projected minutes",
                 "Volatile recent playing time"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Akir Souare",
@@ -4539,7 +4553,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Armani Mighty",
@@ -4860,7 +4875,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Baye Ndongo",
@@ -5181,7 +5197,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Benjamin Mayhew",
@@ -5358,7 +5375,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Chase Foster",
@@ -5679,7 +5697,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Colin Hawkins",
@@ -5856,7 +5875,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Dominique Diomande",
@@ -6057,7 +6077,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jalil Bethea",
@@ -6380,7 +6401,8 @@
               },
               "MinutesRiskFlags": [
                 "Volatile recent playing time"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jermal Jones",
@@ -6581,7 +6603,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jonathan Powell",
@@ -6902,7 +6925,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Kraig Gilbert",
@@ -7103,7 +7127,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Macari Moore",
@@ -7328,7 +7353,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Naithan George",
@@ -7649,7 +7675,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Timofei Rudovskii",
@@ -7826,7 +7853,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             }
           ],
           "projected_team_minutes": 200.0
@@ -8190,7 +8218,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Cameron Lomax",
@@ -8535,7 +8564,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "David Terrell Jr.",
@@ -8882,7 +8912,8 @@
               },
               "MinutesRiskFlags": [
                 "Volatile recent playing time"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Gehrig Normand",
@@ -9131,7 +9162,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jacob Patrick",
@@ -9428,7 +9460,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jaden Toombs",
@@ -9773,7 +9806,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jakub Szumert",
@@ -10118,7 +10152,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jaylin Stewart",
@@ -10367,7 +10402,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jermaine O'Neal Jr.",
@@ -10688,7 +10724,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Johan Munch",
@@ -11033,7 +11070,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Nic Codie",
@@ -11354,7 +11392,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Niccolo Kalischer-Stork",
@@ -11579,7 +11618,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Nigel Walls",
@@ -11828,7 +11868,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Oziyah Sellers",
@@ -12173,7 +12214,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Rowan Brumbaugh",
@@ -12472,7 +12514,8 @@
               },
               "MinutesRiskFlags": [
                 "Regular starter with nonappearances; verify reason"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             }
           ],
           "projected_team_minutes": 200.0
@@ -12762,7 +12805,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Alvaro Folgueiras",
@@ -13033,7 +13077,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Boyuan Zhang",
@@ -13232,7 +13277,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Flory Bidunga",
@@ -13503,7 +13549,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Isaac Ellis",
@@ -13752,7 +13799,8 @@
               },
               "MinutesRiskFlags": [
                 "Volatile recent playing time"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Jackson Shelstad",
@@ -14023,7 +14071,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Karter Knox",
@@ -14296,7 +14345,8 @@
               },
               "MinutesRiskFlags": [
                 "Latest appearance materially above projected minutes"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "LJ Wells",
@@ -14567,7 +14617,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Obinna Ekezie Jr.",
@@ -14838,7 +14889,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Seth Trimble",
@@ -15087,7 +15139,8 @@
               },
               "MinutesRiskFlags": [
                 "Recent return after a long gap; verify availability"
-              ]
+              ],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             },
             {
               "Player": "Will Hanke",
@@ -15262,7 +15315,8 @@
                   "ShotStatus": "modeled"
                 }
               },
-              "MinutesRiskFlags": []
+              "MinutesRiskFlags": [],
+              "OpponentModelStatus": "national_snapshot_unavailable_or_stale"
             }
           ],
           "projected_team_minutes": 200.0
