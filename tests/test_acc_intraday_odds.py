@@ -7,6 +7,7 @@ class IntradayTests(unittest.TestCase):
     def test_credit_cap_reserve_and_unknowns(self):
         b={'quota':{'credits_spent_reported':16,'remaining':100}}
         self.assertEqual(budget(b,[],100),8)
+        self.assertEqual(budget({'quota':{'credits_spent_reported':12,'credits_spent_conservative':16,'remaining':100}},[],100),8)
         self.assertEqual(budget(b,[],96),4)
         self.assertEqual(budget(b,[{'quota':{'charged':None}}],100),4)
         self.assertEqual(budget(b,[{'quota':{'charged':4}}],96),4)
