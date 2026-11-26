@@ -1,7 +1,7 @@
 'use strict';
 // Immutable game-level pregame snapshots; use exactly the browser's pricing implementation.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const {evaluate}=require('../pregame-edges.js');
+const {evaluate,latestSnapshots}=require('../pregame-edges.js');
 const root=path.resolve(__dirname,'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const stamp=s=>Date.parse(s||'');
@@ -45,5 +45,12 @@ if(require.main===module){
   const board=read('data/daily_board.json');
   let odds=null;try{odds=read('data/odds_snapshots/'+board.date_eastern+'.json');}catch(e){if(e.code!=='ENOENT')throw e;}
   const hash=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'pregame-edges.js'))).update(fs.readFileSync(__filename)).digest('hex');
-  console.log(JSON.stringify(capture(board,odds,new Date().toISOString(),path.join(root,'data/archives/pregame'),hash)));
+  let manifest=null;try{manifest=read('data/odds_snapshots/intraday/'+board.date_eastern+'.json');}catch(e){if(e.code!=='ENOENT')throw e;}
+  const snapshots=new Map(latestSnapshots(board,odds,manifest).map(s=>[String(s.events[0].schedule_game_id),s]));
+  const now=new Date().toISOString(),total={written:0,skipped:0,priced:0,positive:0};
+  for(const game of board.games||[]){
+    const result=capture({...board,games:[game]},snapshots.get(String(game.game_id))||null,now,path.join(root,'data/archives/pregame'),hash);
+    for(const k of Object.keys(total))total[k]+=result[k];
+  }
+  console.log(JSON.stringify(total));
 }
