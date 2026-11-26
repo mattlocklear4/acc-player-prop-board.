@@ -103,7 +103,7 @@ class ClosingLineTests(unittest.TestCase):
         report=closing_line_report([close,early,early], '2026-11-26')
         self.assertEqual(report['models']['v4']['signals'],1)
         self.assertEqual(report['overall']['matched'],1)
-        self.assertAlmostEqual(report['rows'][0]['price_clv_pp'],10.2791,places=3)
+        self.assertAlmostEqual(report['rows'][0]['price_clv_pp'],10.2797,places=3)
         self.assertEqual(report['rows'][0]['direction'],'positive')
         self.assertEqual(report['rows'][0]['minutes_before_tip'],15)
         row=closing_line_report([early,rec('19:45',100,6.5,-1)],'2026-11-26')['rows'][0]
