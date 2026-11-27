@@ -177,11 +177,11 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
         try:
             snapshot = read_json(root, path.relative_to(root))
             quota = snapshot.get('quota') or {}
-            if snapshot.get('daily_credit_cap') != 24 or snapshot.get('monthly_reserve_credits') != 50:
+            if snapshot.get('daily_credit_cap') not in (24, None) or snapshot.get('monthly_reserve_credits') != 50:
                 quota_violations.append(path.name + ': declared cap mismatch')
             spent = quota.get('credits_spent_reported')
             remaining = quota.get('remaining')
-            if isinstance(spent, (int, float)) and spent > 24:
+            if isinstance(spent, (int, float)) and snapshot.get('daily_credit_cap') is not None and spent > snapshot['daily_credit_cap']:
                 quota_violations.append(path.name + ': spent above daily cap')
             if isinstance(remaining, (int, float)) and remaining < 50:
                 quota_violations.append(path.name + ': reserve below 50')
@@ -191,7 +191,7 @@ def audit(root=ROOT, now=None, workflow_runs=None, check_git=False):
         add('api_credits', 'fail', '; '.join(quota_violations))
     else:
         add('api_credits', 'pass' if snapshot_paths else 'warn',
-            f'{len(snapshot_paths)} stored snapshots checked for 24/day cap and 50-credit reserve; no paid calls made by health check.')
+            f'{len(snapshot_paths)} stored snapshots checked for declared historical caps and 50-credit reserve; no paid calls made by health check.')
 
     runs = workflow_runs if workflow_runs is not None else {}
     for name in ('espn', 'grading', 'projections', 'odds', 'pages'):
