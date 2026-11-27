@@ -66,7 +66,7 @@ def main():
     p.add_argument('--fetch-odds', action='store_true', help='Spend credits; disabled by default')
     p.add_argument('--max-events', type=int, default=100)
     p.add_argument('--daily', action='store_true', help='Target only today in Eastern time, not Friday')
-    p.add_argument('--max-credits', type=int, default=24, help='Conservative maximum charged credits this invocation')
+    p.add_argument('--max-credits', type=int, default=24, help='Conservative maximum charged credits this invocation (0 = no cap)')
     p.add_argument('--min-credits-remaining', type=int, default=30)
     a=p.parse_args()
     if not 1<=a.max_events<=100:
@@ -156,11 +156,11 @@ def main():
         friday_matches=[(g,e) for g,e in matches
             if utc(e.get('commence_time')).astimezone(ZoneInfo('America/New_York')).date()==(today if a.daily else friday)]
         out['target_date_eastern']=(today if a.daily else friday).isoformat()
-        out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches),a.max_credits//len(MARKETS))*len(MARKETS)
+        out['quota']['estimated_max_credits']=min(a.max_events,len(friday_matches),a.max_credits//len(MARKETS) if a.max_credits else len(friday_matches))*len(MARKETS)
         if not friday_matches:
             out['warnings'].append('No matched eligible events on target date; zero paid requests.');save();return
         for game,event in sorted(friday_matches,key=lambda ge:utc(ge[1]['commence_time']))[:a.max_events]:
-            if out['quota']['credits_spent_conservative']+len(MARKETS)>a.max_credits:
+            if a.max_credits and out['quota']['credits_spent_conservative']+len(MARKETS)>a.max_credits:
                 out['warnings'].append('Daily credit cap reached; remaining events skipped.');break
             if out['quota']['requests_sent']>=a.max_events:break
             if out['quota'].get('remaining') is not None and out['quota']['remaining']<a.min_credits_remaining+len(MARKETS):
