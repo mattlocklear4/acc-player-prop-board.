@@ -414,6 +414,258 @@
           "williamhill_us"
         ]
       }
+    },
+    {
+      "event_id": "0e10d0c5de8b05e7dc93f8989d1bee0d",
+      "schedule_game_id": "espn_event_401929283",
+      "home_team": "Boston College Eagles",
+      "away_team": "Cincinnati Bearcats",
+      "tipoff_utc": "2026-11-27T21:30:00+00:00",
+      "phase": "midday",
+      "generated_at_utc": "2026-11-27T19:35:59.250927+00:00",
+      "status": "ODDS_RETRIEVED",
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Zak Smrekar",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 146,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Zak Smrekar",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -192,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Tyler Tejada",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -110,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Tyler Tejada",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -118,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "MJ Collins Jr.",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 120,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "MJ Collins Jr.",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -156,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Zak Smrekar",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -108,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Zak Smrekar",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -120,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "MJ Collins Jr.",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -120,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "MJ Collins Jr.",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -108,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Tyler Tejada",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -105,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Tyler Tejada",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -123,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Zak Smrekar",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -149,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Zak Smrekar",
+          "side": "Under",
+          "line": 3.5,
+          "odds": 115,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Tyler Tejada",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -125,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Tyler Tejada",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -103,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "MJ Collins Jr.",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -120,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "MJ Collins Jr.",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -108,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Zak Smrekar",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 132,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Zak Smrekar",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -172,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "MJ Collins Jr.",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -149,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "MJ Collins Jr.",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 115,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Tyler Tejada",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 109,
+          "last_update": "2026-11-27T19:35:29Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Tyler Tejada",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -141,
+          "last_update": "2026-11-27T19:35:29Z"
+        }
+      ],
+      "quota": {
+        "charged": 4,
+        "remaining_before": 306,
+        "remaining_after": 302
+      },
+      "coverage": {
+        "quotes": 24,
+        "unique_players": 3,
+        "quotes_by_bookmaker": {
+          "betonlineag": 24
+        },
+        "quotes_by_market": {
+          "player_assists": 6,
+          "player_points": 6,
+          "player_rebounds": 6,
+          "player_threes": 6
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      }
     }
   ]
 }
