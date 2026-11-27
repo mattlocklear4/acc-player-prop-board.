@@ -30,5 +30,8 @@ try{
  const invalid={...fresh,generated_at_utc:'2026-11-25T20:01:00Z'};
  assert.equal(latestSnapshots(board,base,{date_eastern:board.date_eastern,observations:[invalid]})[0].generated_at_utc,base.generated_at_utc);
  assert.equal(latestSnapshots(board,base,{date_eastern:board.date_eastern,observations:[{...fresh,home_team:'Wrong'}]})[0].generated_at_utc,base.generated_at_utc);
+ const newEvent={...fresh,identity_verified:true,schedule_home_team:'Duke',schedule_away_team:'Other'};
+ assert.equal(latestSnapshots(board,{...base,events:[]},{date_eastern:board.date_eastern,observations:[newEvent]}).length,1);
+ assert.equal(latestSnapshots(board,{...base,events:[]},{date_eastern:board.date_eastern,observations:[{...newEvent,schedule_home_team:'Wrong'}]}).length,0);
  console.log('Immutable archive and browser pricing parity tests passed');
 }finally{fs.rmSync(output,{recursive:true,force:true});}
