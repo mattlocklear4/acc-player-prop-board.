@@ -1,0 +1,419 @@
+{
+  "date_eastern": "2026-11-27",
+  "observations": [
+    {
+      "event_id": "eaf627a916aa57020a2810007ee9bcf2",
+      "schedule_game_id": "espn_event_401929288",
+      "home_team": "Wake Forest Demon Deacons",
+      "away_team": "Memphis Tigers",
+      "tipoff_utc": "2026-11-27T18:30:00+00:00",
+      "phase": "midday",
+      "generated_at_utc": "2026-11-27T16:04:03.486643+00:00",
+      "status": "ODDS_RETRIEVED",
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Tylik Weeks",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -169,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Tylik Weeks",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 130,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jayden Reid",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -123,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jayden Reid",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -105,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 106,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -137,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 134,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -175,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -118,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -110,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Tylik Weeks",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -103,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Tylik Weeks",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -125,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Luke Almodovar",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -111,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Luke Almodovar",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -116,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 15.5,
+          "odds": -119,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 15.5,
+          "odds": -109,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Rihards Vavers",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -102,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Rihards Vavers",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -127,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jayden Reid",
+          "side": "Over",
+          "line": 19.5,
+          "odds": 109,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jayden Reid",
+          "side": "Under",
+          "line": 19.5,
+          "odds": -141,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jayden Reid",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -130,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jayden Reid",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 100,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -101,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -128,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Rihards Vavers",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 102,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Rihards Vavers",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -132,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Tylik Weeks",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 103,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Tylik Weeks",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -133,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 8.5,
+          "odds": 103,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -133,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Rihards Vavers",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -154,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Rihards Vavers",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 119,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jayden Reid",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 106,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jayden Reid",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -137,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Luke Almodovar",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -164,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Luke Almodovar",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 125,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kevair Kennedy",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -147,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kevair Kennedy",
+          "side": "Under",
+          "line": 0.5,
+          "odds": 113,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Tylik Weeks",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -112,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Tylik Weeks",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -115,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Gavin Placide",
+          "side": "Over",
+          "line": 0.5,
+          "odds": -103,
+          "last_update": "2026-11-27T16:02:51Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Gavin Placide",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -125,
+          "last_update": "2026-11-27T16:02:51Z"
+        }
+      ],
+      "quota": {
+        "charged": 4,
+        "remaining_before": 312,
+        "remaining_after": 308
+      },
+      "coverage": {
+        "quotes": 42,
+        "unique_players": 6,
+        "quotes_by_bookmaker": {
+          "betonlineag": 42
+        },
+        "quotes_by_market": {
+          "player_assists": 8,
+          "player_points": 12,
+          "player_rebounds": 10,
+          "player_threes": 12
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      }
+    }
+  ]
+}
