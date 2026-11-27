@@ -15,6 +15,21 @@ CAP=24
 RESERVE=50
 COST=len(MARKETS)
 
+def initial_collection_due(board, now, lead_minutes=120):
+    """Start at 11 ET normally, or earlier for early tipoffs.
+    Never collect against a previous day's board or an already-started slate.
+    A current-day published slate is required; no paid discovery here.
+    """
+    local=now.astimezone(ZoneInfo('America/New_York'))
+    if board.get('date_eastern')!=local.date().isoformat():return False
+    tips=[utc(g.get('tipoff_utc')) for g in board.get('games') or []
+          if any(t.get('players') for t in g.get('teams') or [])]
+    tips=[t for t in tips if t and t>now and t.astimezone(local.tzinfo).date()==local.date()]
+    if not tips:return False
+    nominal=local.replace(hour=11,minute=0,second=0,microsecond=0)
+    deadline=min(nominal,min(tips)-dt.timedelta(minutes=lead_minutes))
+    return now>=deadline
+
 def integer(x):
     try:
         v=int(x)
