@@ -1,5 +1,5 @@
 {
   "date_eastern": "2026-11-27",
-  "request": "Refresh daily projections following confirmed updated KenPom import",
-  "previous_snapshot_id": "28ef8f26-5f73-464e-b945-fa46c86f2e8b"
+  "request": "Rebuild current slate with V12 active-player minutes; preserve frozen V11",
+  "request_id": "2026-11-27-v12-active-minutes"
 }
