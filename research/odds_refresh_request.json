@@ -1,7 +1,5 @@
 {
-  "date_eastern": "2026-11-26",
-  "request_id": "2026-11-26-pittsburgh-endpoint-repair",
-  "schedule_game_id": "espn_event_401909506",
-  "repair_failed": true,
-  "reason": "Corrected missing /odds endpoint suffix; one repair attempt only after verified budget preflight"
+  "date_eastern": "2026-11-27",
+  "request_id": "2026-11-27-full-slate-uncapped",
+  "reason": "User authorized removal of daily credit cap; scan full remaining slate now"
 }
