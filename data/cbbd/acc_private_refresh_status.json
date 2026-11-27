@@ -1,16 +1,16 @@
 {
-  "checked_at_utc": "2026-11-26T19:18:26.086118+00:00",
+  "checked_at_utc": "2026-11-27T12:17:50.692408+00:00",
   "status": "OK",
   "data_updated": true,
   "datasets": {
     "players_2027": {
-      "last_successful_run_utc": "2026-11-26T19:06:38.230837+00:00",
+      "last_successful_run_utc": "2026-11-27T12:17:13.474606+00:00",
       "api_requests": 18,
-      "total_player_games": 1410,
+      "total_player_games": 1456,
       "team_counts": {
         "Boston College": {
-          "games": 6,
-          "players": 61
+          "games": 7,
+          "players": 70
         },
         "California": {
           "games": 7,
@@ -33,12 +33,12 @@
           "players": 85
         },
         "Louisville": {
-          "games": 5,
-          "players": 47
+          "games": 6,
+          "players": 55
         },
         "Miami": {
-          "games": 7,
-          "players": 78
+          "games": 8,
+          "players": 90
         },
         "NC State": {
           "games": 7,
@@ -53,12 +53,12 @@
           "players": 97
         },
         "Pittsburgh": {
-          "games": 7,
-          "players": 73
+          "games": 8,
+          "players": 81
         },
         "SMU": {
-          "games": 7,
-          "players": 83
+          "games": 8,
+          "players": 92
         },
         "Stanford": {
           "games": 8,
@@ -80,20 +80,19 @@
           "games": 7,
           "players": 81
         }
-      },
-      "reused_verified_today": true
+      }
     },
     "teams_2027": {
-      "last_successful_run_utc": "2026-11-26T19:18:16.277877+00:00",
+      "last_successful_run_utc": "2026-11-27T12:17:15.904380+00:00",
       "api_requests": 1,
       "team_count": 18,
       "national_team_count": 365
     },
     "substitutions_2027": {
       "season": 2027,
-      "last_successful_run_utc": "2026-11-26T19:18:24.650192+00:00",
+      "last_successful_run_utc": "2026-11-27T12:17:49.328048+00:00",
       "team_count": 18,
-      "stints": 4804,
+      "stints": 5009,
       "api_requests": 18
     }
   },
@@ -101,8 +100,8 @@
     "patronLevel": 3,
     "tierName": "Tier 3",
     "monthlyLimit": 75000,
-    "remainingCalls": 74638,
-    "usedCalls": 362,
+    "remainingCalls": 74378,
+    "usedCalls": 622,
     "resetAt": "2026-12-01T00:00:00.000Z",
     "sharedPool": true
   },
@@ -110,8 +109,8 @@
     "patronLevel": 3,
     "tierName": "Tier 3",
     "monthlyLimit": 75000,
-    "remainingCalls": 74619,
-    "usedCalls": 381,
+    "remainingCalls": 74341,
+    "usedCalls": 659,
     "resetAt": "2026-12-01T00:00:00.000Z",
     "sharedPool": true
   }
