@@ -1,8 +1,8 @@
 {
   "date_eastern": "2026-11-27",
-  "generated_at_utc": "2026-11-27T19:56:58.084875+00:00",
+  "generated_at_utc": "2026-11-27T19:57:34.596816+00:00",
   "status": "OK",
-  "latest_capture_utc": "2026-11-27T19:56:57.662000+00:00",
+  "latest_capture_utc": "2026-11-27T19:57:34.089000+00:00",
   "games": 7,
   "games_with_priced_quotes": 6,
   "player_projections": 100,
@@ -76,6 +76,13 @@
       "positive_selections": 59,
       "shot_fallbacks": 0,
       "mean_expected_roi_percent": 16.28
+    },
+    "v12-active-minutes": {
+      "player_projections": 68,
+      "quotes_priced": 90,
+      "positive_selections": 41,
+      "shot_fallbacks": 0,
+      "mean_expected_roi_percent": 16.45
     }
   },
   "method": "Latest valid archived pregame projection and latest odds-backed capture per game, same selection and validation as grading. Today is pending until the next-day grading run. Individual sportsbook quote sides are hypothetical opportunities, not placed bets."
