@@ -141,13 +141,18 @@ function latestSnapshots(board,base,manifest){
   }
   return [...chosen.values()];
 }
-const api={latestSnapshots,quoteFresh,quotePregame,quoteEligible,evaluate,probabilities,negativeBinomialCdf,experimentalBoard,groupRows,projectionValue,projectionProfileContext};
+const MODEL_PREF='acc-edge-projection-view-v1';
+const MODEL_VIEWS=['v12','v11','v10','control','adjusted'];
+function normalizeProjectionView(value){return MODEL_VIEWS.includes(value)?value:'v12';}
+function readProjectionView(storage){try{return normalizeProjectionView(storage?.getItem(MODEL_PREF));}catch(_e){return 'v12';}}
+function writeProjectionView(storage,value){const view=normalizeProjectionView(value);try{storage?.setItem(MODEL_PREF,view);}catch(_e){}return view;}
+const api={readProjectionView,writeProjectionView,normalizeProjectionView,latestSnapshots,quoteFresh,quotePregame,quoteEligible,evaluate,probabilities,negativeBinomialCdf,experimentalBoard,groupRows,projectionValue,projectionProfileContext};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;
 root.ACCPregameEdges=api;
 if(!root.document)return;
 const doc=root.document;
 const host=doc.getElementById('sportsbookResults')||doc.getElementById('dailyResults');if(!host)return;
-const section=doc.createElement('section');section.id='pregameEdges';section.innerHTML='<div class="edge-toolbar"><label>Market<select id="edgeMarket"><option value="">All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option><option value="Threes">Made threes</option></select></label><label>Game<select id="edgeGame"><option value="">All games</option></select></label><div class="edge-book-filter"><span class="edge-book-label" id="edgeBookLabel">Book</span><details id="edgeBook"><summary aria-labelledby="edgeBookLabel edgeBookText"><span id="edgeBookText">All books</span></summary><div class="edge-book-menu"><div class="edge-book-actions"><button type="button" id="edgeBookAll">Select all</button><button type="button" id="edgeBookNone">Clear</button></div><div id="edgeBookChoices" role="group" aria-labelledby="edgeBookLabel"></div><button type="button" id="edgeBookDone">Done</button></div></details></div><label>Projection view<select id="edgeAvailability"><option value="adjusted">Availability-adjusted (where available)</option><option value="control">V4 control</option><option value="v10">V10 · Player distributions (research)</option><option value="v11">V11 · Combined model (research)</option><option value="v12">V12 · Active-player minutes (research)</option></select></label><label>Sort<select id="edgeSort"><option value="roi">Highest ROI</option><option value="time">Tipoff time</option><option value="player">Player A–Z</option><option value="projection">Projection</option></select></label><label class="edge-search">Search<input id="edgeSearch" type="search" placeholder="Player or team"></label><label class="check edge-check"><input type="checkbox" id="edgePositive">Positive ROI only</label><label class="check edge-check" title="Limit to pregame quotes captured and updated within 60 minutes"><input type="checkbox" id="edgeFreshOnly">Updated within 60 min</label><button id="edgeReload" class="secondary" type="button">Refresh board</button></div><p id="edgeStatus" class="note" role="status">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="edge-scroll" tabindex="0" aria-label="Scrollable sportsbook odds comparison"></div><div id="edgeMissing"></div><details class="edge-method"><summary>Pricing methodology</summary><p class="note">Experimental research estimates, not validated win probabilities. Default pricing: points normal SD 5.5, rebounds, assists and threes Poisson. V10 uses the same V6 averages with shrunk player-specific count variance (negative binomial or Poisson), conditional on playing; small samples use priors. V11 combines V9 rotations, V6 production, V8 matchup adjustments and V10 count pricing; unavailable inputs are excluded, zero-minute players are not priced. ROI is expected profit per $1 staked. Only timestamp-verified pregame quotes and matched projections are priced; saved odds are not live. Saved ROI is calculated from the displayed price, not a live sportsbook quote. Each quote shows its last collection time; older quotes may still be available but should be verified. The optional 60-minute filter requires both the provider update and capture to be recent. Started games retain historical ROI but are excluded from best-edge and positive-ROI rankings. Historical CLV requirements are unchanged. Refresh board reloads existing files, not the paid odds API.</p></details>';
+const section=doc.createElement('section');section.id='pregameEdges';section.innerHTML='<div class="edge-toolbar"><label>Market<select id="edgeMarket"><option value="">All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option><option value="Threes">Made threes</option></select></label><label>Game<select id="edgeGame"><option value="">All games</option></select></label><div class="edge-book-filter"><span class="edge-book-label" id="edgeBookLabel">Book</span><details id="edgeBook"><summary aria-labelledby="edgeBookLabel edgeBookText"><span id="edgeBookText">All books</span></summary><div class="edge-book-menu"><div class="edge-book-actions"><button type="button" id="edgeBookAll">Select all</button><button type="button" id="edgeBookNone">Clear</button></div><div id="edgeBookChoices" role="group" aria-labelledby="edgeBookLabel"></div><button type="button" id="edgeBookDone">Done</button></div></details></div><label>Projection view<select id="edgeAvailability"><option value="adjusted">Availability-adjusted (where available)</option><option value="control">V4 control</option><option value="v10">V10 · Player distributions (research)</option><option value="v11">V11 · Combined model (research)</option><option value="v12" selected>V12 · Active-player minutes (research)</option></select></label><label>Sort<select id="edgeSort"><option value="roi">Highest ROI</option><option value="time">Tipoff time</option><option value="player">Player A–Z</option><option value="projection">Projection</option></select></label><label class="edge-search">Search<input id="edgeSearch" type="search" placeholder="Player or team"></label><label class="check edge-check"><input type="checkbox" id="edgePositive">Positive ROI only</label><label class="check edge-check" title="Limit to pregame quotes captured and updated within 60 minutes"><input type="checkbox" id="edgeFreshOnly">Updated within 60 min</label><button id="edgeReload" class="secondary" type="button">Refresh board</button></div><p id="edgeStatus" class="note" role="status">Loading saved odds…</p><div id="edgeCoverage" class="note"></div><div id="edgeTable" class="edge-scroll" tabindex="0" aria-label="Scrollable sportsbook odds comparison"></div><div id="edgeMissing"></div><details class="edge-method"><summary>Pricing methodology</summary><p class="note">Experimental research estimates, not validated win probabilities. Default view: V12 active-player minutes, conditional on appearing. Model selection is saved in this browser. V4 control pricing: points normal SD 5.5, rebounds, assists and threes Poisson. V10 uses the same V6 averages with shrunk player-specific count variance (negative binomial or Poisson), conditional on playing; small samples use priors. V11 combines V9 rotations, V6 production, V8 matchup adjustments and V10 count pricing; unavailable inputs are excluded, zero-minute players are not priced. V12 keeps those safeguards and separates active-player minutes from the expected team rotation. ROI is expected profit per $1 staked. Only timestamp-verified pregame quotes and matched projections are priced; saved odds are not live. Saved ROI is calculated from the displayed price, not a live sportsbook quote. Each quote shows its last collection time; older quotes may still be available but should be verified. The optional 60-minute filter requires both the provider update and capture to be recent. Started games retain historical ROI but are excluded from best-edge and positive-ROI rankings. Historical CLV requirements are unchanged. Refresh board reloads existing files, not the paid odds API.</p></details>';
 if(host.id==='sportsbookResults')host.appendChild(section);else host.parentNode.insertBefore(section,host.nextSibling);
 const bookStyle=doc.createElement('style');
 bookStyle.textContent=`
@@ -174,7 +179,15 @@ const fmt=n=>n===null||n===undefined?'—':Number(n).toFixed(1);
 const odds=n=>n===null||n===undefined?'—':(n>0?'+':'')+n;
 const roi=n=>n===null||n===undefined?'—':(n>0?'+':'')+fmt(n)+'%';
 let current={rows:[],diagnostics:[]},requested=[],meta={},activeBoard=null,rawBoard=null,profileRows=[],profileFocus=null;
-let showAvailability=true,showV10=false,showV11=false,showV12=false;
+let projectionView='v12';
+let showAvailability=false,showV10=false,showV11=false,showV12=true;
+function selectProjectionView(value,persist=false){
+  projectionView=normalizeProjectionView(value);
+  if(persist){try{writeProjectionView(root.localStorage,projectionView);}catch(_e){}}
+  showAvailability=projectionView==='adjusted';showV10=projectionView==='v10';showV11=projectionView==='v11';showV12=projectionView==='v12';
+  $('edgeAvailability').value=projectionView;
+}
+try{selectProjectionView(readProjectionView(root.localStorage));}catch(_e){selectProjectionView('v12');}
 const BOOK_PREF='acc-edge-selected-books-v1';
 let selectedBooks=null; // null means all books, [] means none
 try{const pref=JSON.parse(root.localStorage.getItem(BOOK_PREF)||'null');if(Array.isArray(pref)&&pref.every(k=>typeof k==='string'))selectedBooks=new Set(pref);}catch(_e){}
@@ -204,7 +217,7 @@ function render(){
   const older=rows.reduce((n,r)=>n+['over','under'].filter(side=>quotePregame(r,side,now)&&!fresh(r,side)).length,0);
   profileRows=grouped;
   const cmp=(a,b)=>sort==='time'?(time(a.tipoffUtc)||0)-(time(b.tipoffUtc)||0)||a.player.localeCompare(b.player):sort==='player'?a.player.localeCompare(b.player):sort==='projection'?b.projection-a.projection:(b.best?.roi??-Infinity)-(a.best?.roi??-Infinity);
-  $('edgeStatus').textContent=(showV12?'V12 active-player minutes · ':showV11?'V11 combined research pricing · ':showV10?'V10 research pricing · ':'')+(meta.date||'')+' · Latest odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines · '+books.length+' of '+requested.length+' books shown'+(older?' · '+older+' pregame quote sides older than 60 min'+(freshOnly?' (filtered)':' (verify prices)'):'')+' · Started games excluded from best ROI';
+  $('edgeStatus').textContent=(showV12?'V12 active-player minutes · ':showV11?'V11 combined research pricing · ':showV10?'V10 research pricing · ':showAvailability?'Availability-adjusted V4 · ':'V4 control · ')+(meta.date||'')+' · Latest odds saved '+(meta.oddsAt?new Date(meta.oddsAt).toLocaleString():'—')+' · Projections '+(meta.projectionAt?new Date(meta.projectionAt).toLocaleString():'—')+' · '+grouped.length+' player/market rows · '+current.rows.length+' matched book lines · '+books.length+' of '+requested.length+' books shown'+(older?' · '+older+' pregame quote sides older than 60 min'+(freshOnly?' (filtered)':' (verify prices)'):'')+' · Started games excluded from best ROI';
   function quote(r,side){
     const value=r[side],edge=side==='over'?r.roiOver:r.roiUnder,fair=side==='over'?r.fairOver:r.fairUnder;
     if(value==null||(freshOnly&&!fresh(r,side)))return '';
@@ -355,7 +368,7 @@ function renderProfile(g,p,choice=0){
       if(clear)delete settings[key];else settings[key]=value;
       root.ACCAvailability.scenario(board,settings,true);
       root.ACCAvailability.save(board,game,team,player,value);
-      showAvailability=true;showV10=false;showV11=false;$('edgeAvailability').value='adjusted';
+      selectProjectionView('adjusted',true);
       root.dispatchEvent(new Event('acc-availability-changed'));load();profile.close();
     }catch(e){$('manualAvailMessage').textContent=e.message;}
   }
@@ -404,6 +417,10 @@ async function load(){try{const b=await fetch('data/daily_board.json?edge='+Date
   try{const rr=await fetch('data/odds_snapshots/intraday/'+board.date_eastern+'.json?edge='+Date.now(),{cache:'no-store'});if(rr.ok)manifest=await rr.json();}catch(_e){}
   const snapshots=latestSnapshots(board,base,manifest);
   current={rows:[],diagnostics:[]};
+  if(showV12||showV11||showV10){
+    const version=showV12?ACTIVE_VERSION:showV11?COMBINED_VERSION:DISTRIBUTION_VERSION;
+    for(const g of rawBoard.games||[])for(const t of g.teams||[]){const missing=(t.players||[]).filter(p=>!p.ExperimentalModels?.[version]).length;if(missing)current.diagnostics.push({game:g.away_team+' at '+g.home_team,reason:missing+' '+t.team+' player projections unavailable for '+projectionView.toUpperCase()+'; select another model to review them.'});}
+  }
   for(const snap of snapshots){const result=evaluate(board,snap);current.rows.push(...result.rows);current.diagnostics.push(...result.diagnostics);}
   current.rows.sort((a,b)=>b.bestRoi-a.bestRoi);
   // Optional separately archived pregame refreshes; never rewrite the immutable morning snapshot.
@@ -452,7 +469,7 @@ $('edgeBook').addEventListener('keydown',e=>{if(e.key==='Escape'){$('edgeBook').
 
 $('edgeSearch').addEventListener('input',render);
 $('edgeReload').addEventListener('click',load);
-$('edgeAvailability').addEventListener('change',e=>{showAvailability=e.target.value==='adjusted';showV10=e.target.value==='v10';showV11=e.target.value==='v11';showV12=e.target.value==='v12';load();});
+$('edgeAvailability').addEventListener('change',e=>{selectProjectionView(e.target.value,true);load();});
 doc.querySelector('[data-tab="sportsbook"]')?.addEventListener('click',load);
 // Update the age display even if no new snapshot is published.
 root.setInterval(()=>{if(activeBoard)render();},60000);
