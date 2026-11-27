@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-27T19:56:27.677359+00:00",
+  "generated_at_utc": "2026-11-27T19:56:58.567736+00:00",
   "method": "Latest actually captured pre-tipoff projection per game; latest odds-backed capture per game. Each distinct sportsbook/market/player/line/side priced quote is graded independently; positive expected ROI only in summaries. Flat 1-unit hypothetical stake; correlated quotes are not independent bets. No backfill or post-tipoff repricing.",
   "status": "PARTIAL",
   "games": 11,
@@ -8374,6 +8374,114 @@
           "profit_units": 3.8737,
           "roi_percent": 11.74,
           "mean_expected_roi_percent": 14.65
+        }
+      },
+      "v12-active-minutes": {
+        "control_model": "v11-combined",
+        "paired_players": 0,
+        "projection_metrics": {
+          "Minutes": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Points": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Rebounds": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Assists": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          },
+          "Threes": {
+            "control": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            },
+            "experimental": {
+              "n": 0,
+              "mae": null,
+              "rmse": null,
+              "bias": null
+            }
+          }
+        },
+        "paired_settled_quote_sides": 0,
+        "control_calibration": {
+          "n": 0,
+          "brier": null,
+          "log_loss": null
+        },
+        "experimental_calibration": {
+          "n": 0,
+          "brier": null,
+          "log_loss": null
+        },
+        "calibration_by_market": {},
+        "control_positive_roi": {
+          "selections": 0,
+          "settled": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "profit_units": 0,
+          "roi_percent": null,
+          "mean_expected_roi_percent": null
+        },
+        "experimental_positive_roi": {
+          "selections": 0,
+          "settled": 0,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "profit_units": 0,
+          "roi_percent": null,
+          "mean_expected_roi_percent": null
         }
       }
     },
