@@ -134,8 +134,10 @@ function latestSnapshots(board,base,manifest){
     if(!['ODDS_RETRIEVED','NO_REQUESTED_BOOK_PROPS_RETURNED'].includes(o.status))continue;
     const id=String(o.schedule_game_id),g=games.get(id),old=chosen.get(id),e=old?.events?.[0];
     const collected=time(o.generated_at_utc),tip=time(g?.tipoff_utc);
-    if(!g||!e||e.event_id!==o.event_id||e.home_team!==o.home_team||e.away_team!==o.away_team||!collected||!tip||time(o.tipoff_utc)!==tip||collected>=tip||collected<=time(old.generated_at_utc))continue;
-    chosen.set(id,{...base,generated_at_utc:o.generated_at_utc,events:[{...e,props:o.props||[]}]});
+    if(!g||!collected||!tip||time(o.tipoff_utc)!==tip||collected>=tip)continue;
+    if(e){if(e.event_id!==o.event_id||e.home_team!==o.home_team||e.away_team!==o.away_team||collected<=time(old.generated_at_utc))continue;}
+    else if(o.identity_verified!==true||!o.event_id||!o.home_team||!o.away_team||o.schedule_home_team!==g.home_team||o.schedule_away_team!==g.away_team||[...chosen.values()].some(s=>s.events[0].event_id===o.event_id))continue;
+    chosen.set(id,{...base,snapshot_date_eastern:board.date_eastern,generated_at_utc:o.generated_at_utc,events:[{...e,event_id:o.event_id,schedule_game_id:id,home_team:o.home_team,away_team:o.away_team,props:o.props||[]}]});
   }
   return [...chosen.values()];
 }
