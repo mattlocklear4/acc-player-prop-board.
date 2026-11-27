@@ -1,9 +1,25 @@
 import sys, unittest, datetime as dt
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from acc_intraday_odds import budget,candidates,choose
+from acc_intraday_odds import budget,candidates,choose,initial_collection_due
 
 class IntradayTests(unittest.TestCase):
+    def test_initial_collection_uses_earliest_tipoff(self):
+        from zoneinfo import ZoneInfo
+        zone=ZoneInfo('America/New_York')
+        def at(h,m=0):
+            return dt.datetime(2026,11,27,h,m,tzinfo=zone)
+        def board(h,day='2026-11-27'):
+            return {'date_eastern':day,'games':[{'tipoff_utc':at(h).isoformat(),'teams':[{'players':[{}]}]}]}
+        self.assertFalse(initial_collection_due(board(11),at(8,59)))
+        self.assertTrue(initial_collection_due(board(11),at(9)))
+        self.assertFalse(initial_collection_due(board(19),at(10,59)))
+        self.assertTrue(initial_collection_due(board(19),at(11)))
+        self.assertFalse(initial_collection_due(board(11),at(11)))
+        self.assertFalse(initial_collection_due(board(11,'2026-11-26'),at(9)))
+        self.assertFalse(initial_collection_due({'date_eastern':'2026-11-27','games':[]},at(11)))
+        self.assertTrue(initial_collection_due(board(10),at(8)))
+
     def test_credit_cap_reserve_and_unknowns(self):
         b={'quota':{'credits_spent_reported':16,'remaining':100}}
         self.assertEqual(budget(b,[],100),8)
