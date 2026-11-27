@@ -12,6 +12,7 @@ from acc_distribution_model import distribution,PRICING,VERSION as DISTRIBUTION
 from research_engine import STATS,clamp
 
 VERSION='v11-combined'
+ACTIVE_VERSION='v12-active-minutes'
 INTERMEDIATE='_v11_matchup_internal'
 
 def attach_combined(players,opponent,context):
@@ -70,4 +71,71 @@ def attach_combined(players,opponent,context):
         out.append({**p,'CombinedModelStatus':'available','ExperimentalModels':{**p['ExperimentalModels'],VERSION:x}})
     if sum(round(p['ExperimentalModels'][VERSION]['Minutes']*10) for p in out)!=2000:
         return absent('invalid_team_minutes')
+    return attach_active_minutes(out,f)
+
+
+def attach_active_minutes(players, matchup_factors):
+    """V12: individual minutes conditional on appearing, not an all-active team lineup.
+
+    V11 stays frozen. Its 200-minute allocation represents the expected rotation.
+    For players with observed nonappearances, replace the participation-weighted
+    raw minutes signal with the same 60/40 blend over appearances only, retaining
+    V11's allocation factor. Do not infer injury or exclude short appearances.
+    Manual availability/minutes overrides always win.
+    """
+    out=[]
+    for p in players:
+        v=p['ExperimentalModels'][VERSION]
+        x=deepcopy(v)
+        m=float(v['Minutes'])
+        inp=v.get('RotationInputs') or {}
+        excluded=set(v['CombinedModelInputs'].get('excluded_games') or [])
+        logs=sorted([g for g in p.get('CurrentSeasonLog') or [] if g.get('date') not in excluded and (finite(g.get('minutes')) or 0)>0],key=lambda g:g.get('date',''),reverse=True)
+        total=finite(inp.get('team_games'))
+        appearances=finite(inp.get('appearances'))
+        season=finite(inp.get('season_minutes_including_nonappearances'))
+        recent=finite(inp.get('recent_team_game_minutes'))
+        raw=.6*season+.4*recent if season is not None and recent is not None else None
+        active_raw=None
+        manual=v['CombinedModelInputs'].get('manual_minutes') is not None
+        corrected=False
+        if not manual and m>0 and total and appearances is not None and 0<appearances<total and len(logs)>=3 and raw and raw>0:
+            ms=[min(40,float(g['minutes'])) for g in logs]
+            active_raw=.6*sum(ms)/len(ms)+.4*sum(ms[:3])/len(ms[:3])
+            m=round(clamp(m*active_raw/raw,0,40),1)
+            corrected=True
+        x['TeamRotationMinutes']=v['Minutes']
+        x['Minutes']=m
+        x['ModelVersion']=ACTIVE_VERSION
+        x['ConditionalMinutesInputs']={'observed_appearances':appearances,'observed_team_games':total,
+            'observed_participation_rate':appearances/total if total and appearances is not None else None,
+            'participation_weighted_raw_minutes':raw,'appearance_only_raw_minutes':active_raw,
+            'team_rotation_minutes':v['Minutes'],'conditional_minutes':m,'adjusted':corrected,
+            'manual_override':manual,'conditional_on_playing':True,
+            'note':'Individual active-player scenario; conditional minutes across players need not sum to 200.'}
+        if corrected:
+            ratio=m/v['Minutes']
+            for stat in STATS:
+                for prefix in ('Baseline','KenPom','Vegas','Combined'):
+                    k=prefix+stat
+                    val=finite(v.get(k))
+                    x[k]=val*ratio if val is not None else None
+            shot=deepcopy(v.get('ShotInputs'))
+            if shot:
+                shot['projected_attempts']={k:a*ratio for k,a in shot['projected_attempts'].items()}
+                x['ShotInputs']=deepcopy(shot)
+            if shot and 'Points' not in v['OpponentAdjustment']['fallback_stats']:
+                pace=finite(p.get('PaceFactor'))
+                if pace is not None and pace>0:
+                    for k,rate,eff in (('2P','2PA','2P_eff'),('3P','3PA','3P_eff'),('FT','FTA',None)):
+                        shot['projected_attempts'][k]*=matchup_factors[rate]*pace
+                        if eff:shot['components'][k]['expected_pct']=clamp(shot['components'][k]['expected_pct']*matchup_factors[eff],0,1)
+                else:shot=None
+            else:shot=None
+            x['Distributions']={}
+            for stat,col in STATS.items():
+                d=distribution(logs,stat,col,finite(x.get('KenPom'+stat)),m,shot if stat=='Points' else None)
+                if d is not None:x['Distributions'][stat]=d
+        x['DistributionBaseModel']=VERSION+' active-player scenario'
+        out.append({**p,'ExperimentalModels':{**p['ExperimentalModels'],ACTIVE_VERSION:x}})
     return out
