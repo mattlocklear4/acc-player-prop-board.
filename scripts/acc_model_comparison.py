@@ -6,7 +6,7 @@ from acc_experimental_models import VERSIONS, SHOOTING
 from acc_opponent_model import VERSION as OPPONENT_VERSION
 from acc_rotation_model import VERSION as ROTATION_VERSION
 from acc_distribution_model import VERSION as DISTRIBUTION_VERSION
-from acc_combined_model import VERSION as COMBINED_VERSION
+from acc_combined_model import VERSION as COMBINED_VERSION,ACTIVE_VERSION
 from acc_availability import VERSION as AVAILABILITY_VERSION
 
 def error_metrics(errors):
@@ -96,8 +96,8 @@ def common_cohort(latest,odds,logs,today):
 def compare(records,logs,today):
     latest, odds, _=select_snapshots(records,lambda date:date<today)
     output={}
-    for version in (*VERSIONS,AVAILABILITY_VERSION,OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION,COMBINED_VERSION):
-        control_version=SHOOTING if version in (OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION) else None
+    for version in (*VERSIONS,AVAILABILITY_VERSION,OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION,COMBINED_VERSION,ACTIVE_VERSION):
+        control_version=COMBINED_VERSION if version==ACTIVE_VERSION else SHOOTING if version in (OPPONENT_VERSION,ROTATION_VERSION,DISTRIBUTION_VERSION) else None
         pc=[];pe=[];qc=[];qe=[]
         for _,r in latest.values():
             teams=[]
