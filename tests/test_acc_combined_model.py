@@ -1,7 +1,7 @@
 import sys,unittest,copy
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from acc_combined_model import attach_combined,VERSION
+from acc_combined_model import attach_combined,VERSION,ACTIVE_VERSION
 from acc_rotation_model import VERSION as ROTATION
 from acc_opponent_model import VERSION as OPPONENT
 from acc_availability import VERSION as AVAILABILITY
@@ -52,6 +52,22 @@ class CombinedTests(unittest.TestCase):
         self.assertNotIn(VERSION,attach_combined(ps,'Michigan',c)[0]['ExperimentalModels'])
         ps,c=self.sample();ps[0]['ExperimentalModels'][AVAILABILITY]['AvailabilityAdjustment']['minutes']=25
         self.assertEqual(attach_combined(ps,'Michigan',c)[0]['CombinedModelStatus'],'manual_minutes_mismatch')
+    def test_active_minutes_excludes_nonappearances_not_short_games(self):
+        ps,c=self.sample()
+        p=ps[1]
+        v=p['ExperimentalModels'][ROTATION]
+        v['RotationInputs']={'team_games':8,'appearances':6,'season_minutes_including_nonappearances':22.5,'recent_team_game_minutes':20}
+        out=attach_combined(ps,'Michigan',c)
+        old=out[1]['ExperimentalModels'][VERSION]
+        new=out[1]['ExperimentalModels'][ACTIVE_VERSION]
+        self.assertEqual(old['Minutes'],35)
+        self.assertEqual(new['Minutes'],40)
+        self.assertEqual(new['TeamRotationMinutes'],35)
+        self.assertAlmostEqual(new['KenPomPoints'],old['KenPomPoints']*40/35)
+        self.assertEqual(new['Distributions']['Points']['mean'],new['KenPomPoints'])
+        self.assertEqual(sum(round(p['ExperimentalModels'][ACTIVE_VERSION]['TeamRotationMinutes']*10) for p in out),2000)
+        self.assertEqual(out[0]['ExperimentalModels'][ACTIVE_VERSION]['Minutes'],29)
+        self.assertEqual(out[2]['ExperimentalModels'][ACTIVE_VERSION]['Minutes'],35)
     def test_out_player(self):
         ps,c=self.sample()
         # Reallocate to 5 remaining players (40 each).
