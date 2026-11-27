@@ -85,3 +85,19 @@ assert.equal(quoteEligible(row,'over',Date.parse(row.tipoffUtc)),false);
 assert.equal(groupRows([row],(r,side)=>quoteEligible(r,side,Date.parse(row.tipoffUtc)))[0].best,null);
 assert.ok(groupRows([row],(r,side)=>quoteEligible(r,side,now))[0].best);
 console.log('Stale quote and active-edge ranking safeguards passed');
+
+ // Projection preference: V12 for new browsers, persist explicit choices,
+ // reject stale/invalid choices and tolerate unavailable storage.
+const {readProjectionView,writeProjectionView,normalizeProjectionView}=require('../pregame-edges.js');
+const prefs=new Map();
+const storage={getItem:k=>prefs.get(k)??null,setItem:(k,v)=>prefs.set(k,v)};
+assert.equal(readProjectionView(storage),'v12');
+for(const v of ['v4','garbage',null,undefined])assert.equal(normalizeProjectionView(v),'v12');
+for(const v of ['control','adjusted','v10','v11','v12']){
+  assert.equal(writeProjectionView(storage,v),v);
+  assert.equal(readProjectionView(storage),v);
+}
+assert.equal(readProjectionView({getItem(){throw Error('storage blocked')}}),'v12');
+assert.equal(writeProjectionView({setItem(){throw Error('storage blocked')}},'v11'),'v11');
+assert.equal(readProjectionView(undefined),'v12');
+console.log('Default V12 and saved model preference tests passed');
