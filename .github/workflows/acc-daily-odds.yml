@@ -27,15 +27,29 @@ jobs:
           REQUEST_PUSH: ${{ github.event_name == 'push' }}
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
-          import datetime,os,json,pathlib
+          import datetime,os,json,pathlib,sys
           from zoneinfo import ZoneInfo
+          sys.path.insert(0,'scripts')
+          from acc_intraday_odds import initial_collection_due,utc
           n=datetime.datetime.now(ZoneInfo('America/New_York'))
-          allowed=n.hour>=11 or os.environ.get('MANUAL','').lower()=='true'
-          if os.environ.get('REQUEST_PUSH','').lower()=='true':
+          today=n.date().isoformat()
+          path=pathlib.Path('data/daily_board.json')
+          board=json.loads(path.read_text()) if path.exists() else {}
+          upcoming=board.get('date_eastern')==today and any(
+              utc(g.get('tipoff_utc')) and utc(g['tipoff_utc'])>n
+              and utc(g['tipoff_utc']).astimezone(n.tzinfo).date()==n.date()
+              for g in board.get('games') or [])
+          exists=pathlib.Path('data/odds_snapshots',today+'.json').exists()
+          manual=os.environ.get('MANUAL','').lower()=='true'
+          requested=os.environ.get('REQUEST_PUSH','').lower()=='true'
+          valid_request=False
+          if requested:
               request=json.loads(pathlib.Path('research/odds_refresh_request.json').read_text())
-              allowed=allowed and request.get('date_eastern')==n.date().isoformat()
+              valid_request=request.get('date_eastern')==today
+          allowed=upcoming and (exists or manual or valid_request or initial_collection_due(board,n))
+          if requested and not valid_request:allowed=False
           print('run='+str(allowed).lower())
-          print('date='+n.date().isoformat())
+          print('date='+today)
           PY
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.run == 'true'
