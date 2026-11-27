@@ -4,67 +4,44 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from acc_intraday_odds import budget,candidates,choose,initial_collection_due
 
 class IntradayTests(unittest.TestCase):
-    def test_initial_collection_uses_earliest_tipoff(self):
+    def test_initial_collection(self):
         from zoneinfo import ZoneInfo
-        zone=ZoneInfo('America/New_York')
-        def at(h,m=0):
-            return dt.datetime(2026,11,27,h,m,tzinfo=zone)
+        z=ZoneInfo('America/New_York')
+        def at(h,m=0):return dt.datetime(2026,11,27,h,m,tzinfo=z)
         def board(h,day='2026-11-27'):
             return {'date_eastern':day,'games':[{'tipoff_utc':at(h).isoformat(),'teams':[{'players':[{}]}]}]}
-        self.assertFalse(initial_collection_due(board(11),at(8,59)))
-        self.assertTrue(initial_collection_due(board(11),at(9)))
-        self.assertFalse(initial_collection_due(board(19),at(10,59)))
-        self.assertTrue(initial_collection_due(board(19),at(11)))
+        self.assertFalse(initial_collection_due(board(19),at(7,59)))
+        self.assertTrue(initial_collection_due(board(19),at(8)))
+        self.assertTrue(initial_collection_due(board(9),at(7)))
         self.assertFalse(initial_collection_due(board(11),at(11)))
         self.assertFalse(initial_collection_due(board(11,'2026-11-26'),at(9)))
-        self.assertFalse(initial_collection_due({'date_eastern':'2026-11-27','games':[]},at(11)))
-        self.assertTrue(initial_collection_due(board(10),at(8)))
-
-    def test_credit_cap_reserve_and_unknowns(self):
-        b={'quota':{'credits_spent_reported':16,'remaining':100}}
-        self.assertEqual(budget(b,[],100),8)
-        failed=[{'status':'REQUEST_FAILED','quota':{'charged':None,'remaining_before':98}},{'status':'REQUEST_FAILED','quota':{'charged':None,'remaining_before':98}}]
-        self.assertEqual(budget(b,failed,98),6)
-        self.assertEqual(budget(b,failed,94),2)
-        self.assertEqual(budget({'quota':{'credits_spent_reported':12,'credits_spent_conservative':16,'remaining':100}},[],100),8)
-        self.assertEqual(budget(b,[],96),4)
-        self.assertEqual(budget(b,[{'quota':{'charged':None}}],100),4)
-        self.assertEqual(budget(b,[{'quota':{'charged':4}}],96),4)
-        self.assertEqual(budget(b,[],92),0)
-        self.assertEqual(budget(b,[],101),0)
+    def test_provider_balance_only(self):
+        b={'quota':{'remaining':100,'credits_spent_reported':24}}
+        self.assertEqual(budget(b,[],100),50)
+        self.assertEqual(budget(b,[{'quota':{'charged':60}}],5000),4950)
+        self.assertEqual(budget(b,[],52),2)
         self.assertEqual(budget(b,[],None),0)
-        self.assertEqual(budget({'quota':{'credits_spent_reported':8,'remaining':52}},[],52),2)
-
-    def test_due_games_and_reserve(self):
-        now=dt.datetime(2026,11,26,18,tzinfo=dt.timezone.utc)
+        self.assertEqual(budget(b,[],49),0)
+    def test_full_slate_and_refresh(self):
+        now=dt.datetime(2026,11,27,18,tzinfo=dt.timezone.utc)
         def game(i,mins):
             tip=(now+dt.timedelta(minutes=mins)).isoformat()
-            return ({'game_id':i,'tipoff_utc':tip,'teams':[{'players':[{'Player':'P'}]}]},
-                    {'id':i,'home_team':'Home','away_team':'Away','commence_time':tip},
-                    {'event_id':i,'schedule_game_id':i,'home_team':'Home','away_team':'Away','props':[{}]})
-        a,b,c,d,e=[game(str(i),m) for i,m in enumerate((25,120,240,-5,3))]
-        base={'events':[x[2] for x in (a,b,c,d,e)]}
+            h='School'+i;a='Visitor'+i
+            return ({'game_id':i,'home_team':h,'away_team':a,'tipoff_utc':tip,'teams':[{'players':[{}]}]},
+                    {'id':i,'home_team':h,'away_team':a,'commence_time':tip},
+                    {'event_id':i,'schedule_game_id':i,'home_team':h,'away_team':a,'props':[{}]})
+        a,b,c,d,e=[game(str(i),m) for i,m in enumerate((25,120,420,-5,3))]
+        base={'generated_at_utc':(now-dt.timedelta(minutes=190)).isoformat(),'events':[a[2],b[2]]}
         board={'games':[x[0] for x in (a,b,c,d,e)]}
         api=[x[1] for x in (a,b,c,d,e)]
         due=candidates(base,board,api,[],now)
-        self.assertEqual([(x['event']['event_id'],x['phase']) for x in due],[('0','close'),('1','midday')])
-        self.assertEqual([x['event']['event_id'] for x in choose(due,8,base,[],now,board)],['0'])
-        self.assertEqual([x['event']['event_id'] for x in choose(due,16,base,[],now,board)],['0','1'])
-        self.assertEqual(candidates(base,board,api,[{'event_id':'0','phase':'close'},{'event_id':'1','phase':'midday'}],now),[])
-        manual=candidates(base,board,api,[],now,'2')
-        self.assertEqual([(x['event']['event_id'],x['phase']) for x in manual],[('2','manual')])
-        self.assertEqual(candidates(base,board,api,[{'event_id':'2','phase':'manual'}],now,'2'),[])
-        self.assertEqual(candidates(base,board,api,[],now,'3'),[])
-        failed=[{'event_id':'2','phase':'manual','status':'REQUEST_FAILED'}]
-        retry=candidates(base,board,api,failed,now,'2',True)
-        self.assertEqual([(x['event']['event_id'],x['phase']) for x in retry],[('2','manual_retry')])
-        self.assertEqual(candidates(base,board,api,failed+[{'event_id':'2','phase':'manual_retry','status':'REQUEST_FAILED'}],now,'2',True),[])
-        self.assertEqual(candidates(base,board,api,[{'event_id':'2','phase':'manual','status':'ODDS_RETRIEVED'}],now,'2',True),[])
-        failures=failed+[{'event_id':'2','phase':'manual_retry','status':'REQUEST_FAILED','http_status':404}]
-        repaired=candidates(base,board,api,failures,now,'2',False,True)
-        self.assertEqual([(x['event']['event_id'],x['phase']) for x in repaired],[('2','manual_repair')])
-        self.assertEqual(candidates(base,board,api,failures+[{'event_id':'2','phase':'manual_repair','status':'ODDS_RETRIEVED'}],now,'2',False,True),[])
-        wrong=[{**a[1],'commence_time':b[1]['commence_time']}]
-        self.assertEqual(candidates(base,board,wrong,[],now),[])
-
+        self.assertEqual([(x['event']['event_id'],x['phase']) for x in due],[('2','opening'),('0','close'),('1','refresh')])
+        self.assertEqual(len(choose(due,100,base,[],now,board)),3)
+        self.assertEqual(len(choose(due,4,base,[],now,board)),1)
+        empty={**c[2],'props':[],'status':'NO_REQUESTED_BOOK_PROPS_RETURNED','generated_at_utc':(now-dt.timedelta(minutes=30)).isoformat()}
+        self.assertEqual(candidates(base,board,api,[empty],now)[0]['phase'],'opening')
+        self.assertNotIn('2',[x['event']['event_id'] for x in candidates(base,board,api,[{**empty,'generated_at_utc':now.isoformat()}],now)])
+        self.assertEqual(candidates(base,board,api,[],now,'2')[0]['phase'],'manual')
+        self.assertEqual(candidates(base,board,api+[dict(c[1],id='ambiguous')],[],now,'2'),[])
+        self.assertEqual(candidates(base,board,[dict(c[1],commence_time=b[1]['commence_time'])],[],now,'2'),[])
 if __name__=='__main__':unittest.main()
