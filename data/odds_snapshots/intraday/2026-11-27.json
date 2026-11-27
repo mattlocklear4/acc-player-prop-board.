@@ -2143,6 +2143,38 @@
           "williamhill_us"
         ]
       }
+    },
+    {
+      "event_id": "198026478bc045be9a9cf746579c4230",
+      "schedule_game_id": "espn_event_401920382",
+      "home_team": "Virginia Tech Hokies",
+      "away_team": "Old Dominion Monarchs",
+      "tipoff_utc": "2026-11-27T22:00:00+00:00",
+      "schedule_home_team": "Virginia Tech Hokies",
+      "schedule_away_team": "Old Dominion Monarchs",
+      "identity_verified": true,
+      "phase": "opening",
+      "generated_at_utc": "2026-11-27T21:30:38.637359+00:00",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "props": [],
+      "quota": {
+        "charged": 0,
+        "remaining_before": 290,
+        "remaining_after": 290
+      },
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      }
     }
   ]
 }
