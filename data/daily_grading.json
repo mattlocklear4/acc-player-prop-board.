@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-26T16:00:28.006838+00:00",
+  "generated_at_utc": "2026-11-27T12:38:57.892708+00:00",
   "status": "PARTIAL",
-  "players_graded": 190,
-  "projected_players": 256,
+  "players_graded": 218,
+  "projected_players": 295,
   "days": [
     {
       "date": "2026-11-21",
@@ -48,33 +48,42 @@
       "projected_players": 72,
       "issues": 16,
       "snapshot_utc": "2026-11-25T14:16:23.458792+00:00"
+    },
+    {
+      "date": "2026-11-26",
+      "games": 5,
+      "games_with_final_logs": 5,
+      "players_graded": 28,
+      "projected_players": 39,
+      "issues": 11,
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00"
     }
   ],
   "metrics": {
     "Minutes": {
-      "n": 190,
-      "mae": 5.971,
-      "bias": -0.182
+      "n": 218,
+      "mae": 5.825,
+      "bias": -0.476
     },
     "Points": {
-      "n": 189,
-      "mae": 4.312,
-      "bias": 0.387
+      "n": 217,
+      "mae": 4.261,
+      "bias": 0.157
     },
     "Rebounds": {
-      "n": 189,
-      "mae": 1.928,
-      "bias": 0.013
+      "n": 217,
+      "mae": 1.925,
+      "bias": 0.077
     },
     "Assists": {
-      "n": 189,
-      "mae": 1.095,
-      "bias": 0.076
+      "n": 217,
+      "mae": 1.078,
+      "bias": 0.104
     },
     "Threes": {
-      "n": 189,
-      "mae": 0.613,
-      "bias": -0.003
+      "n": 217,
+      "mae": 0.614,
+      "bias": -0.018
     }
   },
   "issues": [
@@ -388,6 +397,72 @@
       "date": "2026-11-25",
       "game_id": "espn_event_401921672",
       "player": "Anthony Batson Jr.",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "player": "Caleb Gaskins",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Benjamin Mayhew",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Colin Hawkins",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Dominique Diomande",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Jermal Jones",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Kraig Gilbert",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Macari Moore",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "player": "Timofei Rudovskii",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "player": "Boyuan Zhang",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "player": "Isaac Ellis",
+      "reason": "player_not_uniquely_matched"
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "player": "Will Hanke",
       "reason": "player_not_uniquely_matched"
     }
   ],
@@ -7019,6 +7094,986 @@
           "projection": 0.753,
           "actual": 1.0,
           "error": -0.247
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Acaden Lewis",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 31.0,
+          "actual": 28.0,
+          "error": 3.0
+        },
+        "Points": {
+          "projection": 9.948,
+          "actual": 12.0,
+          "error": -2.052
+        },
+        "Rebounds": {
+          "projection": 4.264,
+          "actual": 1.0,
+          "error": 3.264
+        },
+        "Assists": {
+          "projection": 5.469,
+          "actual": 3.0,
+          "error": 2.469
+        },
+        "Threes": {
+          "projection": 0.359,
+          "actual": 0.0,
+          "error": 0.359
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Brent Bland",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 13.7,
+          "actual": 18.0,
+          "error": -4.3
+        },
+        "Points": {
+          "projection": 6.085,
+          "actual": 3.0,
+          "error": 3.085
+        },
+        "Rebounds": {
+          "projection": 2.103,
+          "actual": 2.0,
+          "error": 0.103
+        },
+        "Assists": {
+          "projection": 0.531,
+          "actual": 0.0,
+          "error": 0.531
+        },
+        "Threes": {
+          "projection": 1.611,
+          "actual": 1.0,
+          "error": 0.611
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Christopher Birden Jr.",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 1.9,
+          "actual": 2.0,
+          "error": -0.1
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.318,
+          "actual": 2.0,
+          "error": -1.682
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Dante Allen",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.0,
+          "actual": 32.0,
+          "error": -10.0
+        },
+        "Points": {
+          "projection": 8.36,
+          "actual": 21.0,
+          "error": -12.64
+        },
+        "Rebounds": {
+          "projection": 4.953,
+          "actual": 2.0,
+          "error": 2.953
+        },
+        "Assists": {
+          "projection": 3.653,
+          "actual": 2.0,
+          "error": 1.653
+        },
+        "Threes": {
+          "projection": 0.301,
+          "actual": 3.0,
+          "error": -2.699
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "DeSean Goode",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 5.5,
+          "actual": 4.0,
+          "error": 1.5
+        },
+        "Points": {
+          "projection": 0.621,
+          "actual": 0.0,
+          "error": 0.621
+        },
+        "Rebounds": {
+          "projection": 1.535,
+          "actual": 0.0,
+          "error": 1.535
+        },
+        "Assists": {
+          "projection": 0.313,
+          "actual": 0.0,
+          "error": 0.313
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Egor Ryzhov",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 5.9,
+          "actual": 6.0,
+          "error": -0.1
+        },
+        "Points": {
+          "projection": 3.511,
+          "actual": 1.0,
+          "error": 2.511
+        },
+        "Rebounds": {
+          "projection": 1.626,
+          "actual": 1.0,
+          "error": 0.626
+        },
+        "Assists": {
+          "projection": 0.161,
+          "actual": 0.0,
+          "error": 0.161
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Malik Reneau",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 18.4,
+          "actual": 20.0,
+          "error": -1.6
+        },
+        "Points": {
+          "projection": 7.91,
+          "actual": 11.0,
+          "error": -3.09
+        },
+        "Rebounds": {
+          "projection": 4.395,
+          "actual": 4.0,
+          "error": 0.395
+        },
+        "Assists": {
+          "projection": 1.45,
+          "actual": 2.0,
+          "error": -0.55
+        },
+        "Threes": {
+          "projection": 0.549,
+          "actual": 1.0,
+          "error": -0.451
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Nick Dorn",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 15.5,
+          "actual": 26.0,
+          "error": -10.5
+        },
+        "Points": {
+          "projection": 8.332,
+          "actual": 14.0,
+          "error": -5.668
+        },
+        "Rebounds": {
+          "projection": 1.764,
+          "actual": 6.0,
+          "error": -4.236
+        },
+        "Assists": {
+          "projection": 0.433,
+          "actual": 1.0,
+          "error": -0.567
+        },
+        "Threes": {
+          "projection": 2.391,
+          "actual": 3.0,
+          "error": -0.609
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Quin Berger",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 2.9,
+          "actual": 2.0,
+          "error": 0.9
+        },
+        "Points": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Rebounds": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Robert Miller III",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 13.6,
+          "actual": 17.0,
+          "error": -3.4
+        },
+        "Points": {
+          "projection": 6.494,
+          "actual": 4.0,
+          "error": 2.494
+        },
+        "Rebounds": {
+          "projection": 3.145,
+          "actual": 2.0,
+          "error": 1.145
+        },
+        "Assists": {
+          "projection": 0.146,
+          "actual": 0.0,
+          "error": 0.146
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Shelton Henderson",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 24.5,
+          "actual": 31.0,
+          "error": -6.5
+        },
+        "Points": {
+          "projection": 13.351,
+          "actual": 25.0,
+          "error": -11.649
+        },
+        "Rebounds": {
+          "projection": 6.849,
+          "actual": 10.0,
+          "error": -3.151
+        },
+        "Assists": {
+          "projection": 2.407,
+          "actual": 6.0,
+          "error": -3.593
+        },
+        "Threes": {
+          "projection": 0.149,
+          "actual": 1.0,
+          "error": -0.851
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920537",
+      "team": "Miami",
+      "player": "Somto Cyril",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-26T20:30:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 19.3,
+          "actual": 14.0,
+          "error": 5.3
+        },
+        "Points": {
+          "projection": 8.199,
+          "actual": 6.0,
+          "error": 2.199
+        },
+        "Rebounds": {
+          "projection": 5.595,
+          "actual": 2.0,
+          "error": 3.595
+        },
+        "Assists": {
+          "projection": 0.196,
+          "actual": 0.0,
+          "error": 0.196
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "A'lahn Sumler",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.1,
+          "actual": 38.0,
+          "error": -11.9
+        },
+        "Points": {
+          "projection": 9.642,
+          "actual": 18.0,
+          "error": -8.358
+        },
+        "Rebounds": {
+          "projection": 1.622,
+          "actual": 1.0,
+          "error": 0.622
+        },
+        "Assists": {
+          "projection": 3.031,
+          "actual": 0.0,
+          "error": 3.031
+        },
+        "Threes": {
+          "projection": 1.845,
+          "actual": 3.0,
+          "error": -1.155
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Akir Souare",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 12.6,
+          "actual": 11.0,
+          "error": 1.6
+        },
+        "Points": {
+          "projection": 3.021,
+          "actual": 0.0,
+          "error": 3.021
+        },
+        "Rebounds": {
+          "projection": 4.025,
+          "actual": 2.0,
+          "error": 2.025
+        },
+        "Assists": {
+          "projection": 0.143,
+          "actual": 0.0,
+          "error": 0.143
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Armani Mighty",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 7.5,
+          "actual": 1.0,
+          "error": 6.5
+        },
+        "Points": {
+          "projection": 1.137,
+          "actual": 0.0,
+          "error": 1.137
+        },
+        "Rebounds": {
+          "projection": 1.645,
+          "actual": 0.0,
+          "error": 1.645
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Baye Ndongo",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.7,
+          "actual": 34.0,
+          "error": -7.3
+        },
+        "Points": {
+          "projection": 17.693,
+          "actual": 18.0,
+          "error": -0.307
+        },
+        "Rebounds": {
+          "projection": 9.635,
+          "actual": 15.0,
+          "error": -5.365
+        },
+        "Assists": {
+          "projection": 0.946,
+          "actual": 2.0,
+          "error": -1.054
+        },
+        "Threes": {
+          "projection": 0.433,
+          "actual": 0.0,
+          "error": 0.433
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Chase Foster",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 23.9,
+          "actual": 34.0,
+          "error": -10.1
+        },
+        "Points": {
+          "projection": 10.581,
+          "actual": 9.0,
+          "error": 1.581
+        },
+        "Rebounds": {
+          "projection": 5.937,
+          "actual": 7.0,
+          "error": -1.063
+        },
+        "Assists": {
+          "projection": 0.276,
+          "actual": 0.0,
+          "error": 0.276
+        },
+        "Threes": {
+          "projection": 0.944,
+          "actual": 2.0,
+          "error": -1.056
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Jalil Bethea",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 20.1,
+          "actual": 18.0,
+          "error": 2.1
+        },
+        "Points": {
+          "projection": 6.806,
+          "actual": 5.0,
+          "error": 1.806
+        },
+        "Rebounds": {
+          "projection": 1.767,
+          "actual": 1.0,
+          "error": 0.767
+        },
+        "Assists": {
+          "projection": 1.113,
+          "actual": 0.0,
+          "error": 1.113
+        },
+        "Threes": {
+          "projection": 1.024,
+          "actual": 0.0,
+          "error": 1.024
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Jonathan Powell",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 33.5,
+          "actual": 39.0,
+          "error": -5.5
+        },
+        "Points": {
+          "projection": 12.53,
+          "actual": 7.0,
+          "error": 5.53
+        },
+        "Rebounds": {
+          "projection": 3.397,
+          "actual": 4.0,
+          "error": -0.603
+        },
+        "Assists": {
+          "projection": 1.166,
+          "actual": 1.0,
+          "error": 0.166
+        },
+        "Threes": {
+          "projection": 2.632,
+          "actual": 1.0,
+          "error": 1.632
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401909506",
+      "team": "Pittsburgh",
+      "player": "Naithan George",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T00:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 29.5,
+          "actual": 25.0,
+          "error": 4.5
+        },
+        "Points": {
+          "projection": 11.774,
+          "actual": 14.0,
+          "error": -2.226
+        },
+        "Rebounds": {
+          "projection": 2.531,
+          "actual": 0.0,
+          "error": 2.531
+        },
+        "Assists": {
+          "projection": 7.3,
+          "actual": 4.0,
+          "error": 3.3
+        },
+        "Threes": {
+          "projection": 1.296,
+          "actual": 2.0,
+          "error": -0.704
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Adrian Wooley",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 27.6,
+          "actual": 34.0,
+          "error": -6.4
+        },
+        "Points": {
+          "projection": 10.821,
+          "actual": 19.0,
+          "error": -8.179
+        },
+        "Rebounds": {
+          "projection": 4.955,
+          "actual": 4.0,
+          "error": 0.955
+        },
+        "Assists": {
+          "projection": 2.238,
+          "actual": 1.0,
+          "error": 1.238
+        },
+        "Threes": {
+          "projection": 1.143,
+          "actual": 4.0,
+          "error": -2.857
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Alvaro Folgueiras",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 22.8,
+          "actual": 35.0,
+          "error": -12.2
+        },
+        "Points": {
+          "projection": 7.085,
+          "actual": 2.0,
+          "error": 5.085
+        },
+        "Rebounds": {
+          "projection": 4.669,
+          "actual": 8.0,
+          "error": -3.331
+        },
+        "Assists": {
+          "projection": 3.163,
+          "actual": 2.0,
+          "error": 1.163
+        },
+        "Threes": {
+          "projection": 1.616,
+          "actual": 0.0,
+          "error": 1.616
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Flory Bidunga",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 27.1,
+          "actual": 30.0,
+          "error": -2.9
+        },
+        "Points": {
+          "projection": 12.395,
+          "actual": 12.0,
+          "error": 0.395
+        },
+        "Rebounds": {
+          "projection": 8.977,
+          "actual": 9.0,
+          "error": -0.023
+        },
+        "Assists": {
+          "projection": 1.719,
+          "actual": 2.0,
+          "error": -0.281
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Jackson Shelstad",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 30.8,
+          "actual": 35.0,
+          "error": -4.2
+        },
+        "Points": {
+          "projection": 10.266,
+          "actual": 10.0,
+          "error": 0.266
+        },
+        "Rebounds": {
+          "projection": 4.381,
+          "actual": 2.0,
+          "error": 2.381
+        },
+        "Assists": {
+          "projection": 2.423,
+          "actual": 1.0,
+          "error": 1.423
+        },
+        "Threes": {
+          "projection": 2.095,
+          "actual": 2.0,
+          "error": 0.095
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Karter Knox",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 21.8,
+          "actual": 22.0,
+          "error": -0.2
+        },
+        "Points": {
+          "projection": 13.31,
+          "actual": 15.0,
+          "error": -1.69
+        },
+        "Rebounds": {
+          "projection": 7.768,
+          "actual": 2.0,
+          "error": 5.768
+        },
+        "Assists": {
+          "projection": 1.112,
+          "actual": 2.0,
+          "error": -0.888
+        },
+        "Threes": {
+          "projection": 1.326,
+          "actual": 1.0,
+          "error": 0.326
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "LJ Wells",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 5.8,
+          "actual": 5.0,
+          "error": 0.8
+        },
+        "Points": {
+          "projection": 1.673,
+          "actual": 0.0,
+          "error": 1.673
+        },
+        "Rebounds": {
+          "projection": 0.948,
+          "actual": 1.0,
+          "error": -0.052
+        },
+        "Assists": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        },
+        "Threes": {
+          "projection": 0.0,
+          "actual": 0.0,
+          "error": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Obinna Ekezie Jr.",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 13.9,
+          "actual": 7.0,
+          "error": 6.9
+        },
+        "Points": {
+          "projection": 5.878,
+          "actual": 2.0,
+          "error": 3.878
+        },
+        "Rebounds": {
+          "projection": 3.593,
+          "actual": 0.0,
+          "error": 3.593
+        },
+        "Assists": {
+          "projection": 0.176,
+          "actual": 0.0,
+          "error": 0.176
+        },
+        "Threes": {
+          "projection": 0.719,
+          "actual": 0.0,
+          "error": 0.719
+        }
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "game_id": "espn_event_401920530",
+      "team": "Louisville",
+      "player": "Seth Trimble",
+      "snapshot_utc": "2026-11-26T12:42:45.629063+00:00",
+      "tipoff_utc": "2026-11-27T02:00:00+00:00",
+      "stats": {
+        "Minutes": {
+          "projection": 26.9,
+          "actual": 32.0,
+          "error": -5.1
+        },
+        "Points": {
+          "projection": 14.399,
+          "actual": 33.0,
+          "error": -18.601
+        },
+        "Rebounds": {
+          "projection": 3.974,
+          "actual": 4.0,
+          "error": -0.026
+        },
+        "Assists": {
+          "projection": 2.516,
+          "actual": 5.0,
+          "error": -2.484
+        },
+        "Threes": {
+          "projection": 1.169,
+          "actual": 1.0,
+          "error": 0.169
         }
       }
     }
