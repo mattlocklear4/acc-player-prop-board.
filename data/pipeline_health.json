@@ -1,79 +1,74 @@
 {
-  "generated_at_utc": "2026-11-26T20:23:34.989985+00:00",
-  "date_eastern": "2026-11-26",
-  "status": "warn",
-  "failures": 0,
-  "warnings": 3,
+  "generated_at_utc": "2026-11-27T19:50:17.001701+00:00",
+  "date_eastern": "2026-11-27",
+  "status": "fail",
+  "failures": 1,
+  "warnings": 2,
   "checks": [
     {
       "code": "espn",
       "level": "pass",
-      "detail": "ESPN collector OK 7.7h ago; 10813 player rows."
+      "detail": "ESPN collector OK 7.2h ago; 10909 player rows."
     },
     {
       "code": "supplemental_team_stats",
       "level": "warn",
-      "detail": "Team Stats tab data age=11.3 days; CBBD quota status=CBBD_MONTHLY_QUOTA_EXHAUSTED. Existing saved data retained."
+      "detail": "Team Stats tab data age=12.3 days; CBBD quota status=CBBD_MONTHLY_QUOTA_EXHAUSTED. Existing saved data retained."
     },
     {
       "code": "archives",
       "level": "pass",
-      "detail": "6 pregame archive dates checked; no post-tipoff timestamps or revisions detected."
+      "detail": "7 pregame archive dates checked; no post-tipoff timestamps or revisions detected."
     },
     {
       "code": "grading",
       "level": "warn",
-      "detail": "190 players graded; 52 unresolved matching issues."
+      "detail": "218 players graded; 63 unresolved matching issues."
     },
     {
       "code": "projections",
       "level": "pass",
-      "detail": "4 scheduled games; 54 player projections."
-    },
-    {
-      "code": "today_archive_coverage",
-      "level": "warn",
-      "detail": "Immutable first snapshot has 39 players vs live board 54; later additions cannot be graded retrospectively."
+      "detail": "7 scheduled games; 100 player projections."
     },
     {
       "code": "roi",
       "level": "pass",
-      "detail": "598 actual saved quotes, 59 settled selections; ROI=15.68 (no inferred odds)."
+      "detail": "646 actual saved quotes, 101 settled selections; ROI=12.51 (no inferred odds)."
     },
     {
       "code": "api_credits",
       "level": "pass",
-      "detail": "6 stored snapshots checked for 24/day cap and 50-credit reserve; no paid calls made by health check."
+      "detail": "7 stored snapshots checked for declared historical caps and 50-credit reserve; no paid calls made by health check."
     },
     {
       "code": "workflow_espn",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45822052236"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/46000353595"
     },
     {
       "code": "workflow_grading",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45854607182"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/46024397814"
     },
     {
       "code": "workflow_projections",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45884750926"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/46053151318"
     },
     {
       "code": "workflow_odds",
       "level": "pass",
       "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45888580285"
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/46057812775"
     },
     {
       "code": "workflow_pages",
-      "level": "pass",
-      "detail": "Last completed run succeeded.",
-      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/45888647339"
+      "level": "fail",
+      "detail": "Last completed pages run: cancelled.",
+      "url": "https://github.com/mattlocklear4/acc-player-prop-board./actions/runs/46059420165"
     }
   ],
   "note": "Read-only diagnostic; workflow success alone does not prove ongoing unattended reliability."
