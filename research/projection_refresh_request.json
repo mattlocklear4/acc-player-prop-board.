@@ -1,5 +1,6 @@
 {
-  "date_eastern": "2026-11-27",
-  "request": "Rebuild current slate with V12 active-player minutes; preserve frozen V11",
-  "request_id": "2026-11-27-v12-active-minutes"
+  "date_eastern": "2026-11-28",
+  "request_id": "2026-11-28-kenpom-refresh",
+  "request": "User confirms updated KenPom ratings this morning; refresh all current-slate models",
+  "previous_snapshot_id": "fc0e0220-ac77-4802-b12d-1817d35ba16a"
 }
