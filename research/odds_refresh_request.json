@@ -1,5 +1,5 @@
 {
-  "date_eastern": "2026-11-27",
-  "request_id": "2026-11-27-full-slate-uncapped",
-  "reason": "User authorized removal of daily credit cap; scan full remaining slate now"
+  "date_eastern": "2026-11-28",
+  "request_id": "2026-11-28-morning-full-slate",
+  "reason": "Morning snapshot missing at 10:04 ET; request regular full-slate collection before earliest tip"
 }
