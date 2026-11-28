@@ -1,6 +1,6 @@
 {
   "date_eastern": "2026-11-28",
-  "generated_at_utc": "2026-11-28T12:05:02.099147+00:00",
+  "generated_at_utc": "2026-11-28T12:30:30.165879+00:00",
   "schedule_status": "OK_ESPN_CANONICAL",
   "kenpom_source": {
     "source": "supabase_snapshot",
@@ -41183,7 +41183,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -42214,7 +42215,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -43247,7 +43249,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -44170,7 +44173,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -45201,7 +45205,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -46186,7 +46191,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -47217,7 +47223,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -48248,7 +48255,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -49255,7 +49263,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -50286,7 +50295,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
@@ -51293,7 +51303,8 @@
                 "2026-11-02: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-19: possible cross-date duplicate; ESPN game omitted",
                 "2026-11-24: possible cross-date duplicate; ESPN game omitted",
-                "2026-11-26: possible cross-date duplicate; ESPN game omitted"
+                "2026-11-26: possible cross-date duplicate; ESPN game omitted",
+                "2026-11-27: provider opponent mismatch; ESPN supplement excluded"
               ],
               "CurrentMinutesWeight": 1.0,
               "CurrentProductionWeight": 1.0,
