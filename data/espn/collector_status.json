@@ -1,9 +1,9 @@
 {
-  "checked_at_utc": "2026-11-27T12:38:47.721767+00:00",
+  "checked_at_utc": "2026-11-28T12:29:57.412692+00:00",
   "source": "ESPN unofficial public scoreboard/summary",
-  "completed_games_parsed": 24,
-  "new_player_rows": 96,
-  "total_player_rows": 10909,
+  "completed_games_parsed": 28,
+  "new_player_rows": 138,
+  "total_player_rows": 11047,
   "issues": [],
   "status": "OK"
 }
