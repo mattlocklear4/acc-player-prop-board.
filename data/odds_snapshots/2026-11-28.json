@@ -1,0 +1,1039 @@
+{
+  "mode": "READ_ONLY",
+  "generated_at_utc": "2026-11-28T15:04:41.229939+00:00",
+  "bookmakers": [
+    "draftkings",
+    "fanduel",
+    "williamhill_us",
+    "fanatics",
+    "betonlineag"
+  ],
+  "markets": [
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+    "player_threes"
+  ],
+  "paid_requests_enabled": true,
+  "events": [
+    {
+      "event_id": "116e2b16a8e37b44d9c399492ba4ec7c",
+      "schedule_game_id": "espn_event_401918961",
+      "home_team": "NC State Wolfpack",
+      "away_team": "Elon Phoenix",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": []
+    },
+    {
+      "event_id": "6b7546051f151f75d04c67037d323b96",
+      "schedule_game_id": "espn_event_401920310",
+      "home_team": "Georgia Tech Yellow Jackets",
+      "away_team": "Alcorn St Braves",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": []
+    },
+    {
+      "event_id": "ec961e773c72348f784ad65dd8fd83a3",
+      "schedule_game_id": "espn_event_401919851",
+      "home_team": "Notre Dame Fighting Irish",
+      "away_team": "Stonehill Skyhawks",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": []
+    },
+    {
+      "event_id": "2969a91168251baffa46c87c548deab4",
+      "schedule_game_id": "espn_event_401916308",
+      "home_team": "Minnesota Golden Gophers",
+      "away_team": "California Golden Bears",
+      "status": "ODDS_RETRIEVED",
+      "coverage": {
+        "quotes": 40,
+        "unique_players": 5,
+        "quotes_by_bookmaker": {
+          "betonlineag": 40
+        },
+        "quotes_by_market": {
+          "player_assists": 10,
+          "player_points": 10,
+          "player_rebounds": 10,
+          "player_threes": 10
+        },
+        "requested_books_with_no_returned_quotes": [
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": [
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Isaac Asuma",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 115,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Isaac Asuma",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -149,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Grayson Grove",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -141,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Grayson Grove",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 108,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Bobby Durkin",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 103,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Bobby Durkin",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -133,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kyan Evans",
+          "side": "Over",
+          "line": 7.5,
+          "odds": 126,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Kyan Evans",
+          "side": "Under",
+          "line": 7.5,
+          "odds": -164,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -143,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_assists",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 110,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Grayson Grove",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -108,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Grayson Grove",
+          "side": "Under",
+          "line": 6.5,
+          "odds": -120,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Isaac Asuma",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -120,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Isaac Asuma",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -108,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kyan Evans",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -135,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Kyan Evans",
+          "side": "Under",
+          "line": 11.5,
+          "odds": 104,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Bobby Durkin",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -111,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Bobby Durkin",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -116,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Over",
+          "line": 17.5,
+          "odds": -115,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_points",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Under",
+          "line": 17.5,
+          "odds": -112,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Isaac Asuma",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -130,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Isaac Asuma",
+          "side": "Under",
+          "line": 5.5,
+          "odds": 101,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Grayson Grove",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 102,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Grayson Grove",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -132,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kyan Evans",
+          "side": "Over",
+          "line": 4.5,
+          "odds": 117,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Kyan Evans",
+          "side": "Under",
+          "line": 4.5,
+          "odds": -152,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Bobby Durkin",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -141,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Bobby Durkin",
+          "side": "Under",
+          "line": 3.5,
+          "odds": 109,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Over",
+          "line": 8.5,
+          "odds": 100,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_rebounds",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -130,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Isaac Asuma",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 130,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Isaac Asuma",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -169,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Grayson Grove",
+          "side": "Over",
+          "line": 0.5,
+          "odds": 171,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Grayson Grove",
+          "side": "Under",
+          "line": 0.5,
+          "odds": -227,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Bobby Durkin",
+          "side": "Over",
+          "line": 1.5,
+          "odds": -135,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Bobby Durkin",
+          "side": "Under",
+          "line": 1.5,
+          "odds": 105,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kyan Evans",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 112,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Kyan Evans",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -145,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -119,
+          "last_update": "2026-11-28T15:04:33Z"
+        },
+        {
+          "bookmaker": "betonlineag",
+          "market": "player_threes",
+          "player": "Jaylen Crocker-Johnson",
+          "side": "Under",
+          "line": 2.5,
+          "odds": -109,
+          "last_update": "2026-11-28T15:04:33Z"
+        }
+      ]
+    },
+    {
+      "event_id": "c12532f69cb63c9a2e000c7d4d4575b6",
+      "schedule_game_id": "espn_event_401920536",
+      "home_team": "Louisville Cardinals",
+      "away_team": "Creighton Bluejays",
+      "status": "NO_REQUESTED_BOOK_PROPS_RETURNED",
+      "coverage": {
+        "quotes": 0,
+        "unique_players": 0,
+        "quotes_by_bookmaker": {},
+        "quotes_by_market": {},
+        "requested_books_with_no_returned_quotes": [
+          "betonlineag",
+          "draftkings",
+          "fanatics",
+          "fanduel",
+          "williamhill_us"
+        ]
+      },
+      "props": []
+    }
+  ],
+  "warnings": [],
+  "quota": {
+    "estimated_max_credits": 20,
+    "requests_sent": 5,
+    "credits_spent_reported": 4,
+    "credits_spent_conservative": 4,
+    "remaining": 272
+  },
+  "discovered_ncaab_events": 63,
+  "discovery_diagnostic": {
+    "api_event_sample": [
+      {
+        "home_team": "NC State Wolfpack",
+        "away_team": "Elon Phoenix",
+        "commence_time": "2026-11-28T17:00:00Z"
+      },
+      {
+        "home_team": "Princeton Tigers",
+        "away_team": "St. Thomas (MN) Tommies",
+        "commence_time": "2026-11-28T17:00:00Z"
+      },
+      {
+        "home_team": "Seton Hall Pirates",
+        "away_team": "Siena Saints",
+        "commence_time": "2026-11-28T17:00:00Z"
+      },
+      {
+        "home_team": "Georgia Tech Yellow Jackets",
+        "away_team": "Alcorn St Braves",
+        "commence_time": "2026-11-28T18:00:00Z"
+      },
+      {
+        "home_team": "Colgate Raiders",
+        "away_team": "Vermont Catamounts",
+        "commence_time": "2026-11-28T18:00:00Z"
+      },
+      {
+        "home_team": "Fort Wayne Mastodons",
+        "away_team": "Wofford Terriers",
+        "commence_time": "2026-11-28T18:00:00Z"
+      },
+      {
+        "home_team": "Gardner-Webb Bulldogs",
+        "away_team": "North Carolina Central Eagles",
+        "commence_time": "2026-11-28T18:00:00Z"
+      },
+      {
+        "home_team": "Hampton Pirates",
+        "away_team": "Radford Highlanders",
+        "commence_time": "2026-11-28T18:00:00Z"
+      },
+      {
+        "home_team": "Northern Iowa Panthers",
+        "away_team": "Robert Morris Colonials",
+        "commence_time": "2026-11-28T18:00:00Z"
+      },
+      {
+        "home_team": "Pepperdine Waves",
+        "away_team": "Lehigh Mountain Hawks",
+        "commence_time": "2026-11-28T18:30:00Z"
+      },
+      {
+        "home_team": "Southern Indiana Screaming Eagles",
+        "away_team": "Ball State Cardinals",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Bradley Braves",
+        "away_team": "Chicago St Cougars",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Navy Midshipmen",
+        "away_team": "Central Connecticut St Blue Devils",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Chattanooga Mocs",
+        "away_team": "Troy Trojans",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Columbia Lions",
+        "away_team": "North Florida Ospreys",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "North Carolina A&T Aggies",
+        "away_team": "Delaware St Hornets",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Marshall Thundering Herd",
+        "away_team": "East Texas A&M Lions",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Harvard Crimson",
+        "away_team": "Fordham Rams",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "George Mason Patriots",
+        "away_team": "Marist Red Foxes",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "UNC Asheville Bulldogs",
+        "away_team": "Georgia Southern Eagles",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "High Point Panthers",
+        "away_team": "The Citadel Bulldogs",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Iowa Hawkeyes",
+        "away_team": "Prairie View Panthers",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Niagara Purple Eagles",
+        "away_team": "Le Moyne Dolphins",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Morgan St Bears",
+        "away_team": "Manhattan Jaspers",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Presbyterian Blue Hose",
+        "away_team": "Sacramento St Hornets",
+        "commence_time": "2026-11-28T19:00:00Z"
+      },
+      {
+        "home_team": "Air Force Falcons",
+        "away_team": "Brown Bears",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "Coastal Carolina Chanticleers",
+        "away_team": "Western Illinois Leathernecks",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "New Mexico St Aggies",
+        "away_team": "Denver Pioneers",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "Eastern Illinois Panthers",
+        "away_team": "Northern Illinois Huskies",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "UNC Wilmington Seahawks",
+        "away_team": "Liberty Flames",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "UMKC Kangaroos",
+        "away_team": "SE Missouri St Redhawks",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "Valparaiso Beacons",
+        "away_team": "Toledo Rockets",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "UNLV Rebels",
+        "away_team": "UT Rio Grande Valley Vaqueros",
+        "commence_time": "2026-11-28T20:00:00Z"
+      },
+      {
+        "home_team": "Boise State Broncos",
+        "away_team": "North Texas Mean Green",
+        "commence_time": "2026-11-28T20:30:00Z"
+      },
+      {
+        "home_team": "Towson Tigers",
+        "away_team": "Buffalo Bulls",
+        "commence_time": "2026-11-28T20:30:00Z"
+      },
+      {
+        "home_team": "Hofstra Pride",
+        "away_team": "Merrimack Warriors",
+        "commence_time": "2026-11-28T20:30:00Z"
+      },
+      {
+        "home_team": "American Eagles",
+        "away_team": "UMass Lowell River Hawks",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Furman Paladins",
+        "away_team": "Austin Peay Governors",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Stony Brook Seawolves",
+        "away_team": "Delaware Blue Hens",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Mt. St. Mary's Mountaineers",
+        "away_team": "Drexel Dragons",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Eastern Kentucky Colonels",
+        "away_team": "Tennessee Tech Golden Eagles",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Louisiana Ragin' Cajuns",
+        "away_team": "McNeese Cowboys",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "San Diego Toreros",
+        "away_team": "N Colorado Bears",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Utah Valley Wolverines",
+        "away_team": "San Jos\u00e9 St Spartans",
+        "commence_time": "2026-11-28T21:00:00Z"
+      },
+      {
+        "home_team": "Lafayette Leopards",
+        "away_team": "Maine Black Bears",
+        "commence_time": "2026-11-28T21:30:00Z"
+      },
+      {
+        "home_team": "CSU Bakersfield Roadrunners",
+        "away_team": "Northern Arizona Lumberjacks",
+        "commence_time": "2026-11-28T22:00:00Z"
+      },
+      {
+        "home_team": "CSU Fullerton Titans",
+        "away_team": "Weber State Wildcats",
+        "commence_time": "2026-11-28T22:00:00Z"
+      },
+      {
+        "home_team": "Seattle Redhawks",
+        "away_team": "UC Irvine Anteaters",
+        "commence_time": "2026-11-28T22:00:00Z"
+      },
+      {
+        "home_team": "Pennsylvania Quakers",
+        "away_team": "Bucknell Bison",
+        "commence_time": "2026-11-28T23:00:00Z"
+      },
+      {
+        "home_team": "Drake Bulldogs",
+        "away_team": "North Dakota St Bison",
+        "commence_time": "2026-11-28T23:00:00Z"
+      },
+      {
+        "home_team": "Richmond Spiders",
+        "away_team": "VMI Keydets",
+        "commence_time": "2026-11-28T23:00:00Z"
+      },
+      {
+        "home_team": "South Dakota St Jackrabbits",
+        "away_team": "South Alabama Jaguars",
+        "commence_time": "2026-11-28T23:00:00Z"
+      },
+      {
+        "home_team": "Army Knights",
+        "away_team": "Rider Broncs",
+        "commence_time": "2026-11-29T00:00:00Z"
+      },
+      {
+        "home_team": "San Francisco Dons",
+        "away_team": "Bethune-Cookman Wildcats",
+        "commence_time": "2026-11-29T00:00:00Z"
+      },
+      {
+        "home_team": "Morehead St Eagles",
+        "away_team": "Charleston Southern Buccaneers",
+        "commence_time": "2026-11-29T00:00:00Z"
+      },
+      {
+        "home_team": "Monmouth Hawks",
+        "away_team": "Saint Joseph's Hawks",
+        "commence_time": "2026-11-29T00:00:00Z"
+      },
+      {
+        "home_team": "Southern Illinois Salukis",
+        "away_team": "Portland St Vikings",
+        "commence_time": "2026-11-29T00:00:00Z"
+      },
+      {
+        "home_team": "Santa Clara Broncos",
+        "away_team": "Utah Tech Trailblazers",
+        "commence_time": "2026-11-29T00:00:00Z"
+      },
+      {
+        "home_team": "Duquesne Dukes",
+        "away_team": "South Carolina St Bulldogs",
+        "commence_time": "2026-11-29T00:30:00Z"
+      },
+      {
+        "home_team": "Minnesota Golden Gophers",
+        "away_team": "California Golden Bears",
+        "commence_time": "2026-11-29T01:00:00Z"
+      },
+      {
+        "home_team": "Notre Dame Fighting Irish",
+        "away_team": "Stonehill Skyhawks",
+        "commence_time": "2026-11-29T01:00:00Z"
+      },
+      {
+        "home_team": "UC San Diego Tritons",
+        "away_team": "Loyola Marymount Lions",
+        "commence_time": "2026-11-29T03:00:00Z"
+      },
+      {
+        "home_team": "Louisville Cardinals",
+        "away_team": "Creighton Bluejays",
+        "commence_time": "2026-11-29T03:30:00Z"
+      }
+    ],
+    "schedule_comparisons": [
+      {
+        "schedule_home": "NC State Wolfpack",
+        "schedule_away": "Elon Phoenix",
+        "schedule_tipoff_utc": "2026-11-28T17:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "NC State Wolfpack",
+            "away_team": "Elon Phoenix",
+            "commence_time": "2026-11-28T17:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Stony Brook Seawolves",
+            "away_team": "Delaware Blue Hens",
+            "commence_time": "2026-11-28T21:00:00Z",
+            "name_similarity": 0.346,
+            "tipoff_difference_minutes": 240
+          },
+          {
+            "home_team": "Colgate Raiders",
+            "away_team": "Vermont Catamounts",
+            "commence_time": "2026-11-28T18:00:00Z",
+            "name_similarity": 0.332,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "North Carolina A&T Aggies",
+            "away_team": "Delaware St Hornets",
+            "commence_time": "2026-11-28T19:00:00Z",
+            "name_similarity": 0.33,
+            "tipoff_difference_minutes": 120
+          },
+          {
+            "home_team": "CSU Fullerton Titans",
+            "away_team": "Weber State Wildcats",
+            "commence_time": "2026-11-28T22:00:00Z",
+            "name_similarity": 0.323,
+            "tipoff_difference_minutes": 300
+          }
+        ]
+      },
+      {
+        "schedule_home": "Georgia Tech Yellow Jackets",
+        "schedule_away": "Alcorn State Braves",
+        "schedule_tipoff_utc": "2026-11-28T18:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Georgia Tech Yellow Jackets",
+            "away_team": "Alcorn St Braves",
+            "commence_time": "2026-11-28T18:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "George Mason Patriots",
+            "away_team": "Marist Red Foxes",
+            "commence_time": "2026-11-28T19:00:00Z",
+            "name_similarity": 0.483,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "Morgan St Bears",
+            "away_team": "Manhattan Jaspers",
+            "commence_time": "2026-11-28T19:00:00Z",
+            "name_similarity": 0.421,
+            "tipoff_difference_minutes": 60
+          },
+          {
+            "home_team": "Colgate Raiders",
+            "away_team": "Vermont Catamounts",
+            "commence_time": "2026-11-28T18:00:00Z",
+            "name_similarity": 0.421,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Valparaiso Beacons",
+            "away_team": "Toledo Rockets",
+            "commence_time": "2026-11-28T20:00:00Z",
+            "name_similarity": 0.405,
+            "tipoff_difference_minutes": 120
+          }
+        ]
+      },
+      {
+        "schedule_home": "Notre Dame Fighting Irish",
+        "schedule_away": "Stonehill Skyhawks",
+        "schedule_tipoff_utc": "2026-11-29T01:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Notre Dame Fighting Irish",
+            "away_team": "Stonehill Skyhawks",
+            "commence_time": "2026-11-29T01:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "American Eagles",
+            "away_team": "UMass Lowell River Hawks",
+            "commence_time": "2026-11-28T21:00:00Z",
+            "name_similarity": 0.43,
+            "tipoff_difference_minutes": -240
+          },
+          {
+            "home_team": "Eastern Illinois Panthers",
+            "away_team": "Northern Illinois Huskies",
+            "commence_time": "2026-11-28T20:00:00Z",
+            "name_similarity": 0.425,
+            "tipoff_difference_minutes": -300
+          },
+          {
+            "home_team": "Hampton Pirates",
+            "away_team": "Radford Highlanders",
+            "commence_time": "2026-11-28T18:00:00Z",
+            "name_similarity": 0.419,
+            "tipoff_difference_minutes": -420
+          },
+          {
+            "home_team": "Monmouth Hawks",
+            "away_team": "Saint Joseph's Hawks",
+            "commence_time": "2026-11-29T00:00:00Z",
+            "name_similarity": 0.395,
+            "tipoff_difference_minutes": -60
+          }
+        ]
+      },
+      {
+        "schedule_home": "Minnesota Golden Gophers",
+        "schedule_away": "California Golden Bears",
+        "schedule_tipoff_utc": "2026-11-29T01:00:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Minnesota Golden Gophers",
+            "away_team": "California Golden Bears",
+            "commence_time": "2026-11-29T01:00:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Morgan St Bears",
+            "away_team": "Manhattan Jaspers",
+            "commence_time": "2026-11-28T19:00:00Z",
+            "name_similarity": 0.502,
+            "tipoff_difference_minutes": -360
+          },
+          {
+            "home_team": "San Diego Toreros",
+            "away_team": "N Colorado Bears",
+            "commence_time": "2026-11-28T21:00:00Z",
+            "name_similarity": 0.473,
+            "tipoff_difference_minutes": -240
+          },
+          {
+            "home_team": "Northern Iowa Panthers",
+            "away_team": "Robert Morris Colonials",
+            "commence_time": "2026-11-28T18:00:00Z",
+            "name_similarity": 0.429,
+            "tipoff_difference_minutes": -420
+          },
+          {
+            "home_team": "Valparaiso Beacons",
+            "away_team": "Toledo Rockets",
+            "commence_time": "2026-11-28T20:00:00Z",
+            "name_similarity": 0.411,
+            "tipoff_difference_minutes": -300
+          }
+        ]
+      },
+      {
+        "schedule_home": "Creighton Bluejays",
+        "schedule_away": "Louisville Cardinals",
+        "schedule_tipoff_utc": "2026-11-29T03:30:00+00:00",
+        "top_candidates": [
+          {
+            "home_team": "Louisville Cardinals",
+            "away_team": "Creighton Bluejays",
+            "commence_time": "2026-11-29T03:30:00Z",
+            "name_similarity": 1.0,
+            "tipoff_difference_minutes": 0
+          },
+          {
+            "home_team": "Southern Indiana Screaming Eagles",
+            "away_team": "Ball State Cardinals",
+            "commence_time": "2026-11-28T19:00:00Z",
+            "name_similarity": 0.43,
+            "tipoff_difference_minutes": -510
+          },
+          {
+            "home_team": "Pepperdine Waves",
+            "away_team": "Lehigh Mountain Hawks",
+            "commence_time": "2026-11-28T18:30:00Z",
+            "name_similarity": 0.428,
+            "tipoff_difference_minutes": -540
+          },
+          {
+            "home_team": "Louisiana Ragin' Cajuns",
+            "away_team": "McNeese Cowboys",
+            "commence_time": "2026-11-28T21:00:00Z",
+            "name_similarity": 0.418,
+            "tipoff_difference_minutes": -390
+          },
+          {
+            "home_team": "UC San Diego Tritons",
+            "away_team": "Loyola Marymount Lions",
+            "commence_time": "2026-11-29T03:00:00Z",
+            "name_similarity": 0.411,
+            "tipoff_difference_minutes": -30
+          }
+        ]
+      }
+    ]
+  },
+  "matched_events": 5,
+  "target_date_eastern": "2026-11-28",
+  "snapshot_date_eastern": "2026-11-28",
+  "daily_credit_cap": null,
+  "morning_credit_cap": null,
+  "monthly_reserve_credits": 50,
+  "note": "Initial immutable pregame snapshot; later intraday observations are archived separately."
+}
